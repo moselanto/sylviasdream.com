@@ -84,7 +84,7 @@ while (queue.length) {
   const emptyImg = (out.match(/src=""/g) || []).length;
   results.push({ h, is404, len: out.length, links: links.length, imgs, emptyImg, title: document.title });
 }
-results.forEach(r => console.log((r.is404 ? 'FAIL-404 ' : 'OK       ') + r.h.padEnd(48) + ' links=' + String(r.links).padStart(3) + ' imgs=' + r.imgs + (r.emptyImg ? ' EMPTYIMG=' + r.emptyImg : '') + '  | ' + r.title));
+const mg=nodes['#megabooks']?String(nodes['#megabooks'].innerHTML):'';console.log('MEGA links: '+(mg.match(/href=/g)||[]).length);results.forEach(r => console.log((r.is404 ? 'FAIL-404 ' : 'OK       ') + r.h.padEnd(48) + ' links=' + String(r.links).padStart(3) + ' imgs=' + r.imgs + (r.emptyImg ? ' EMPTYIMG=' + r.emptyImg : '') + '  | ' + r.title));
 console.log('\nPages checked: ' + results.length + ', 404s: ' + results.filter(r => r.is404).length + ', errors: ' + errors.length);
 errors.forEach(e => console.log('ERR ' + e));
 // pages with no outgoing links (dead ends)

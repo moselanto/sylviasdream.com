@@ -64,8 +64,7 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(251,247,239,.94);ba
 .brand svg{width:42px;height:42px;flex:none}
 .brand .t{font-family:var(--serif);font-size:1.65rem;font-weight:700;line-height:1}
 .brand .s{display:block;font-family:var(--sans);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-top:4px}
-nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;align-items:center}
-nav.main a{display:block;padding:.5em .8em;border-radius:8px;text-decoration:none;color:var(--ink);font-weight:600;font-size:1rem}
+nav.main ul{list-style:none;margin:0;padding:0}
 nav.main a:hover,nav.main a[aria-current="page"]{background:var(--gold-l);color:var(--gold-d)}
 .hactions{display:flex;align-items:center;gap:10px}
 .cartbtn{position:relative;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none}
@@ -123,6 +122,34 @@ nav.main .menu>li>a:hover,nav.main .menu>li>a[aria-current="page"]{background:va
   .mega .mf{display:none}
   .m-only{display:block;border:0}
   .hide-m{display:none}
+}
+/* dropdown polish (desktop) */
+@media (min-width:1101px){
+  nav.main ul.sub{display:block;top:calc(100% + 12px);left:50%;transform:translate(-50%,8px);min-width:320px;padding:10px}
+  nav.main .has-sub:hover>ul.sub,nav.main .has-sub:focus-within>ul.sub,nav.main .has-sub.open>ul.sub{transform:translate(-50%,0)}
+  nav.main .sub:before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+  nav.main .sub:after{content:"";position:absolute;top:-7px;left:50%;width:14px;height:14px;background:#fff;border-left:1px solid var(--line);border-top:1px solid var(--line);transform:translateX(-50%) rotate(45deg)}
+  nav.main ul.sub>li>a{display:grid;grid-template-columns:40px 1fr;column-gap:12px;align-items:center;padding:10px 12px;border-radius:10px;white-space:normal}
+  nav.main ul.sub>li>a:before{content:"";grid-row:1 / span 2;width:40px;height:40px;border-radius:10px;background:var(--gold-l) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='2'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center/16px no-repeat;transition:.2s}
+  nav.main ul.sub>li>a:hover:before{background-color:var(--gold);}
+  nav.main ul.sub>li>a b,nav.main ul.sub>li>a span{grid-column:2}
+  nav.main ul.sub>li>a:hover b{color:var(--gold-d)}
+  nav.main .mega{top:calc(100% + 12px);left:50%;transform:translate(-50%,8px)}
+  nav.main .has-sub:hover>.mega,nav.main .has-sub:focus-within>.mega,nav.main .has-sub.open>.mega{transform:translate(-50%,0)}
+  nav.main .mega ul{display:block}
+  nav.main .mega ul li a{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.98rem}
+  nav.main .mega ul li a:hover{background:var(--cream);color:var(--gold-d)}
+  nav.main .menu>li.m-only{display:none}
+  .has-sub:hover>.subtoggle svg,.has-sub.open>.subtoggle svg{transform:rotate(180deg)}
+  .subtoggle svg{transition:transform .2s}
+}
+.brand .s{white-space:nowrap}
+@media (max-width:1100px){
+  nav.main ul.sub{display:none}
+  nav.main .has-sub.open>ul.sub,nav.main .has-sub.open>.mega{display:block}
+  nav.main .sub a{padding:10px 12px}
+  nav.main .mega ul li a{display:block;padding:8px 12px;text-decoration:none;color:var(--ink)}
+  nav.main .menu>li.m-only{display:block}
 }
 .search-ov{position:fixed;inset:0;background:rgba(43,33,24,.6);backdrop-filter:blur(6px);z-index:300;padding-top:10vh}
 .search-ov[hidden]{display:none}
@@ -628,7 +655,7 @@ var BOOKS=[
   d:"A journey of discovery into what a miracle is and what it means, with testimonies from inspired authors.",
   pts:["Testimonies from several authors","Everyday encounters with God"],fm:["Coming soon"],ed:["English"]}
 ];
-BOOKS.forEach(function(b){if(b.i==="globe2")b.i="path";});
+BOOKS.forEach(function(b){if(b.i==="globe2")b.i="path";b.lg=[];if(b.s==="from-fear-to-freedom")b.lg=["fr"];if(b.s==="one-life")b.lg=["es"];if(b.s==="sent")b.lg=["id"];});
 
 var FREE=[
  {t:"7 Days to Trusting God with Your Journey",d:"A free 7-day devotional offering gentle encouragement, reflection and spiritual renewal.",c:["#5c4a1f","#efd28a"],i:"sun"},
@@ -727,7 +754,7 @@ P.books=function(q){
   return pagehead("The bookshop","Books by Sylvia Suhr","eBooks delivered instantly by secure download. Paperbacks and Kindle editions through Amazon.","bible","Books")+
   '<section class="section"><div class="wrap">'+
    '<div class="searchbar"><label for="bs" style="position:absolute;left:-999px">Search books</label><input id="bs" type="search" placeholder="Search by title or topic, e.g. fear, missions, healing"></div>'+
-   '<div class="filters" role="group" aria-label="Filter by category">'+cats.map(function(c,i){return '<button type="button" data-cat="'+c+'" aria-pressed="'+(i===0)+'">'+c+'</button>';}).join('')+'</div>'+
+   '<div id="langnote"></div><div class="filters" role="group" aria-label="Filter by category">'+cats.map(function(c,i){return '<button type="button" data-cat="'+c+'" aria-pressed="'+(i===0)+'">'+c+'</button>';}).join('')+'</div>'+
    '<div class="books" id="bookgrid">'+BOOKS.map(bookCard).join('')+'</div>'+
    '<p id="noresults" class="center muted" style="display:none;margin-top:30px">No books match your search.</p>'+
    '<div class="notice info" style="margin-top:48px">Looking for a translation? From Fear to Freedom is available in French, One Life in Spanish and SENT in Bahasa Indonesia.</div>'+
@@ -832,6 +859,7 @@ P.post=function(slug){
   '<section class="section"><div class="wrap"><article class="article">'+p.body.slice(0,2).map(function(x){return '<p>'+x+'</p>';}).join('')+'<blockquote>'+p.q+'</blockquote>'+p.body.slice(2).map(function(x){return '<p>'+x+'</p>';}).join('')+
   '<p class="muted" style="font-size:1rem">Full article continues in WordPress. This preview shows the opening.</p>'+
   '<div class="card" style="display:grid;grid-template-columns:110px 1fr;gap:22px;align-items:center;margin-top:40px"><div>'+cover(b)+'</div><div><span class="eyebrow">Go deeper</span><h3>'+b.t+'</h3><p>'+b.sh+'</p><a class="btn sm" href="#/book/'+b.s+'">View the book</a></div></div>'+
+  (function(){var i=POSTS.indexOf(p),pv=POSTS[i-1],nx=POSTS[i+1];return '<nav class="prevnext" aria-label="More reflections">'+(pv?'<a href="#/journal/'+pv.s+'"><small>&larr; Newer</small><br>'+pv.t+'</a>':'<span></span>')+(nx?'<a href="#/journal/'+nx.s+'" style="text-align:right"><small>Older &rarr;</small><br>'+nx.t+'</a>':'<span></span>')+'</nav>';})()+
   '<div style="display:flex;justify-content:space-between;margin-top:40px;flex-wrap:wrap;gap:12px"><a href="#/journal">&larr; All reflections</a><span class="muted">Share: <a href="#/contact">Facebook</a> &middot; <a href="#/contact">WhatsApp</a> &middot; <a href="#/contact">Email</a></span></div>'+
   '</article></div></section>';
 };
@@ -1034,6 +1062,39 @@ function reveal(){
   var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target);}});},{threshold:.12});
   els.forEach(function(e){io.observe(e);});
 }
+/* mega menu */
+(function(){
+  var cats=[];BOOKS.forEach(function(b){if(cats.indexOf(b.cat)<0)cats.push(b.cat);});
+  var feat=BOOKS.filter(function(b){return b.feat;}).slice(0,3);
+  $("#megabooks").innerHTML='<div><h5>Browse by topic</h5><ul>'+cats.map(function(c){return '<li><a href="#/books?cat='+encodeURIComponent(c)+'">'+c+'</a></li>';}).join('')+'<li><a href="#/books"><b>All books &rarr;</b></a></li></ul></div>'+
+   '<div><h5>Other languages</h5><ul><li><a href="#/books?lang=fr">Fran&ccedil;ais</a></li><li><a href="#/books?lang=es">Espa&ntilde;ol</a></li><li><a href="#/books?lang=id">Bahasa Indonesia</a></li></ul><h5 style="margin-top:18px">Readers</h5><ul><li><a href="#/free">Free downloads</a></li><li><a href="#/downloads">My downloads</a></li><li><a href="#/refunds">Download help</a></li></ul></div>'+
+   '<div><h5>Start here</h5><div class="mf">'+feat.map(function(b){return '<a href="#/book/'+b.s+'">'+cover(b)+b.t+'</a>';}).join('')+'</div></div>';
+})();
+$$(".subtoggle").forEach(function(b){b.addEventListener("click",function(e){e.stopPropagation();var li=b.parentNode,o=li.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false");$$(".has-sub").forEach(function(x){if(x!==li){x.classList.remove("open");var t=$(".subtoggle",x);if(t)t.setAttribute("aria-expanded","false");}});});});
+document.addEventListener("click",function(e){if(e.target.closest&&e.target.closest(".has-sub")===null)$$(".has-sub").forEach(function(x){x.classList.remove("open");});});
+window.addEventListener("hashchange",function(){$$(".has-sub").forEach(function(x){x.classList.remove("open");});if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();});
+function setNavTop(){var h=$("header.site").getBoundingClientRect().bottom;document.documentElement.style.setProperty("--navtop",Math.max(h,0)+"px");}
+window.addEventListener("resize",setNavTop);window.addEventListener("scroll",setNavTop,{passive:true});setNavTop();
+/* language */
+$("#langsel").addEventListener("change",function(){location.hash=this.value?"#/books?lang="+this.value:"#/books";});
+/* search */
+var SIDX=[];
+BOOKS.forEach(function(b){SIDX.push({t:b.t,d:b.st+" "+b.sh+" "+b.cat,h:"#/book/"+b.s,k:"Book"});});
+POSTS.forEach(function(p){SIDX.push({t:p.t,d:p.ex,h:"#/journal/"+p.s,k:"Devotional"});});
+[["About Sylvia","story missionary author","#/about"],["Heaven on Earth","kenya charity children orphans","#/heaven-on-earth"],["Become a Dream Partner","give donate monthly partner","#/give"],["Free resources","free download devotional manual","#/free"],["Author Support","publishing manuscript writers","#/author-support"],["Podcasts & Videos","video podcast interview","#/media"],["Invite Sylvia to speak","speaking events church","#/speaking"],["Contact","email message","#/contact"],["My downloads","download link lost resend","#/downloads"],["Privacy Policy","privacy data","#/privacy"],["Terms of Sale","terms","#/terms"],["Refunds & Downloads","refund","#/refunds"]].forEach(function(x){SIDX.push({t:x[0],d:x[1],h:x[2],k:"Page"});});
+function openSearch(){$("#searchov").hidden=false;$("#sq").value="";$("#sres").innerHTML="";setTimeout(function(){$("#sq").focus();},30);}
+function closeSearch(){$("#searchov").hidden=true;}
+$("#searchbtn").addEventListener("click",openSearch);
+$("#sclose").addEventListener("click",closeSearch);
+$("#searchov").addEventListener("click",function(e){if(e.target===this)closeSearch();});
+$("#sq").addEventListener("input",function(){var q=this.value.trim().toLowerCase();if(q.length<2){$("#sres").innerHTML="";return;}
+  var r=SIDX.filter(function(x){return (x.t+" "+x.d).toLowerCase().indexOf(q)>=0;}).slice(0,10);
+  $("#sres").innerHTML=r.length?r.map(function(x){return '<a href="'+x.h+'"><span>'+x.t+'</span><small>'+x.k+'</small></a>';}).join(''):'<p style="padding:16px 20px;margin:0" class="muted">No results. Try "fear", "missions" or "free".</p>';});
+$("#sres").addEventListener("click",function(e){if(e.target.closest("a"))closeSearch();});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeSearch();var tg=document.activeElement.tagName;if(e.key==="/"&&tg!=="INPUT"&&tg!=="TEXTAREA"&&tg!=="SELECT"){e.preventDefault();openSearch();}});
+/* back to top */
+window.addEventListener("scroll",function(){$("#totop").classList.toggle("show",window.scrollY>600);},{passive:true});
+$("#totop").addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});
 $("#yr").textContent=new Date().getFullYear();
 window.addEventListener("hashchange",route);
 updCount(); route();
