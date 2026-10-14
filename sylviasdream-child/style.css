@@ -1,0 +1,106 @@
+/*
+Theme Name: Sylvia's Dream
+Theme URI: https://sylviasdream.com
+Author: Pimofy Digital
+Author URI: https://pimofydigital.com
+Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold design, large readable text, simple navigation, book shop (WooCommerce) and Heaven on Earth giving.
+Template: sylviasdream
+Version: 0.1.0
+Requires at least: 6.4
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sylviasdream-child
+*/
+
+/* ==========================================================
+   Design tokens. Warm gold, large readable text.
+   Colours are a starting point and will be matched to the
+   current logo at kick-off.
+   ========================================================== */
+:root{
+	--sd-gold:#B8862B;
+	--sd-gold-dark:#8A6216;      /* text-safe gold on light backgrounds */
+	--sd-gold-soft:#F6EBD3;
+	--sd-cream:#FFFBF3;
+	--sd-ink:#2B2620;
+	--sd-ink-soft:#5A5148;
+	--sd-white:#ffffff;
+	--sd-line:#E7DCC6;
+	--sd-radius:14px;
+	--sd-shadow:0 8px 28px rgba(43,38,32,.08);
+	--sd-max:1180px;
+	--sd-text:1.1875rem;          /* 19px body for easy reading */
+	--sd-font-body:Georgia,"Times New Roman",serif;
+	--sd-font-head:"Playfair Display",Georgia,serif;
+	--sd-font-ui:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+
+html{font-size:100%}
+body{margin:0;background:var(--sd-cream);color:var(--sd-ink);font-family:var(--sd-font-body);font-size:var(--sd-text);line-height:1.7}
+img{max-width:100%;height:auto}
+a{color:var(--sd-gold-dark);text-underline-offset:3px}
+a:hover{color:var(--sd-ink)}
+:focus-visible{outline:3px solid var(--sd-gold);outline-offset:3px}
+h1,h2,h3,h4{font-family:var(--sd-font-head);line-height:1.2;color:var(--sd-ink);margin:0 0 .6em}
+h1{font-size:clamp(2.1rem,4vw,3.2rem)}
+h2{font-size:clamp(1.7rem,3vw,2.4rem)}
+h3{font-size:1.45rem}
+.container{max-width:var(--sd-max);margin:0 auto;padding:0 1.25rem}
+.site-main{padding:2.5rem 0 4rem}
+.entry-content > *{max-width:760px;margin-left:auto;margin-right:auto}
+.entry-content > .alignwide{max-width:var(--sd-max)}
+.entry-content > .alignfull{max-width:none}
+
+/* Buttons: 48px touch targets */
+.sd-btn,.wp-block-button__link,.button,button[type=submit]{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1.5rem;border-radius:999px;border:2px solid var(--sd-gold-dark);background:var(--sd-gold-dark);color:var(--sd-white);font-family:var(--sd-font-ui);font-weight:600;font-size:1.05rem;text-decoration:none;cursor:pointer}
+.sd-btn:hover,.wp-block-button__link:hover,.button:hover{background:var(--sd-ink);border-color:var(--sd-ink);color:var(--sd-white)}
+.sd-btn--ghost{background:transparent;color:var(--sd-gold-dark)}
+
+/* Header */
+.site-header{background:var(--sd-white);border-bottom:1px solid var(--sd-line);position:sticky;top:0;z-index:50}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:84px}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--sd-ink);font-family:var(--sd-font-head);font-size:1.5rem}
+.brand img{max-height:64px;width:auto}
+.nav-toggle{display:none;font-family:var(--sd-font-ui)}
+.primary-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.25rem;align-items:center}
+.primary-nav a{display:block;padding:.75rem .9rem;font-family:var(--sd-font-ui);font-size:1.05rem;font-weight:600;color:var(--sd-ink);text-decoration:none;border-radius:8px}
+.primary-nav a:hover,.primary-nav .current-menu-item > a{background:var(--sd-gold-soft)}
+.primary-nav li{position:relative}
+.primary-nav .sub-menu{display:none;position:absolute;top:100%;left:0;min-width:260px;background:var(--sd-white);box-shadow:var(--sd-shadow);border-radius:var(--sd-radius);padding:.5rem;flex-direction:column;align-items:stretch}
+.primary-nav li:hover > .sub-menu,.primary-nav li:focus-within > .sub-menu{display:flex}
+@media (max-width:900px){
+	.nav-toggle{display:inline-flex}
+	.primary-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--sd-white);box-shadow:var(--sd-shadow)}
+	.primary-nav.is-open{display:block}
+	.primary-nav ul{flex-direction:column;align-items:stretch;padding:.5rem 1rem 1rem}
+	.primary-nav .sub-menu{display:flex;position:static;box-shadow:none;padding-left:1rem}
+}
+
+/* Home */
+.sd-hero{background:linear-gradient(135deg,var(--sd-gold-soft),var(--sd-cream));padding:4rem 0}
+.sd-hero .container{display:grid;grid-template-columns:1.2fr .8fr;gap:2.5rem;align-items:center}
+.sd-hero .eyebrow{font-family:var(--sd-font-ui);text-transform:uppercase;letter-spacing:.12em;font-size:.9rem;color:var(--sd-gold-dark);font-weight:700}
+.sd-hero .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.sd-section{padding:3.5rem 0}
+.sd-section--soft{background:var(--sd-white)}
+.sd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem}
+.sd-card{background:var(--sd-white);border:1px solid var(--sd-line);border-radius:var(--sd-radius);padding:1.25rem;box-shadow:var(--sd-shadow)}
+@media (max-width:800px){.sd-hero .container{grid-template-columns:1fr}}
+
+/* Dream Partner progress (sylviasdream-core shortcode) */
+.sd-progress{background:var(--sd-white);border:1px solid var(--sd-line);border-radius:var(--sd-radius);padding:1.25rem}
+.sd-progress__bar{height:18px;background:var(--sd-gold-soft);border-radius:999px;overflow:hidden}
+.sd-progress__fill{height:100%;background:var(--sd-gold)}
+.sd-progress__label{font-family:var(--sd-font-ui);font-weight:600;margin-top:.5rem}
+
+/* Footer */
+.site-footer{background:var(--sd-ink);color:#EFE7D8;padding:3rem 0 1.5rem;font-family:var(--sd-font-ui);font-size:1rem}
+.site-footer a{color:#F3D99B}
+.site-footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem}
+.site-footer ul{list-style:none;margin:0;padding:0}
+.site-footer li{margin:.35rem 0}
+.site-footer h2{color:#fff;font-size:1.2rem}
+.site-footer .legal{border-top:1px solid rgba(255,255,255,.15);margin-top:2rem;padding-top:1rem;font-size:.95rem}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

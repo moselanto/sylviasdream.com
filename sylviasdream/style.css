@@ -1,0 +1,18 @@
+/*
+Theme Name: Sylvia's Dream Base
+Theme URI: https://sylviasdream.com
+Author: Pimofy Digital
+Author URI: https://pimofydigital.com
+Description: Lightweight, dependency-free base theme for Sylvia's Dream. Provides the document structure, menus and template fallbacks. All design and templates live in the Sylvia's Dream child theme.
+Version: 1.0.0
+Requires at least: 6.4
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sylviasdream
+*/
+
+/* The base theme intentionally ships almost no CSS.
+   The child theme (sylviasdream-child) provides the design system. */
+.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}
+.screen-reader-text:focus{clip:auto!important;clip-path:none;height:auto;width:auto;z-index:100000;padding:1rem;background:#fff}
