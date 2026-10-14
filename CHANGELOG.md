@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-14 - Backup and launch runbook
+
+### Added
+- `docs/BACKUP-AND-LAUNCH.md`: checklist for backup (Jetpack, XML export, subscribers, Stripe exports and payment-link map), day-1 protection, staging, live-site drafts, switch-over, rollback and post-launch Stripe checks.
+- `scripts/backup-inventory.sh`: read-only WP-CLI inventory (pages, media, menus, theme settings, plugins, Author Support content) and database export.
+
 ## 2026-10-14 - Scaffold
 
 ### Added

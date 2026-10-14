@@ -1,6 +1,7 @@
 # Deployment
 
 The live site must keep selling and taking gifts throughout. These steps make that possible.
+For a tick-box version with exact commands, use [`BACKUP-AND-LAUNCH.md`](BACKUP-AND-LAUNCH.md).
 
 ## 0. Before anything
 
