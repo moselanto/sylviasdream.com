@@ -151,6 +151,61 @@ nav.main .menu>li>a:hover,nav.main .menu>li>a[aria-current="page"]{background:va
   nav.main .mega ul li a{display:block;padding:8px 12px;text-decoration:none;color:var(--ink)}
   nav.main .menu>li.m-only{display:block}
 }
+/* ===== mobile and tablet fixes ===== */
+html,body{max-width:100%;overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+svg{max-width:100%}
+@media (max-width:1100px){
+  /* backdrop-filter makes the header the containing block for the fixed menu, which pushed the menu into the page */
+  header.site{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--cream)}
+  nav.main{display:none;position:fixed;top:var(--navtop,116px);left:0;right:0;bottom:0;transform:none;visibility:visible;z-index:80;box-shadow:0 20px 40px rgba(0,0,0,.12)}
+  nav.main.open{display:block}
+  body.menu-open{overflow:hidden}
+}
+@media (max-width:760px){
+  body{font-size:17px}
+  .proto{font-size:.72rem;line-height:1.4;padding:5px 12px}
+  .util{font-size:.78rem}
+  .ubar{min-height:34px;gap:10px}
+  .u-left{display:none}
+  .u-right{width:100%;justify-content:space-between;gap:12px}
+  .wrap{padding:0 18px}
+  .section{padding:60px 0}
+  .hbar{height:64px;gap:10px}
+  .brand{gap:8px;min-width:0}
+  .brand svg{width:34px;height:34px}
+  .brand .t{font-size:1.3rem}
+  .brand .s{font-size:.58rem;letter-spacing:.12em}
+  .hactions{gap:6px;flex:none}
+  .iconbtn,.cartbtn,.menu-toggle{width:40px;height:40px}
+  .hero{min-height:auto;padding:72px 0 64px}
+  .hero:before{background:linear-gradient(180deg,rgba(43,33,24,.55),rgba(43,33,24,.82))}
+  .hero p{font-size:1.05rem}
+  .hero .quote{font-size:1.15rem}
+  .pagehead{padding:72px 0 52px}
+  .band{padding:72px 0}
+  .news{padding:30px 22px;border-radius:18px}
+  .news form{flex-direction:column}
+  .news form .btn{justify-content:center}
+  .buybox,.givebox,.card{padding:22px}
+  .product .cover-wrap{max-width:240px}
+  .feature-photo .tag{position:static;max-width:none;margin-top:-30px;margin-left:16px;margin-right:16px;position:relative}
+  .summary{position:static}
+  .g2[style*="grid-template-columns"]{grid-template-columns:1fr !important}
+  .btn-row .btn{flex:1 1 auto;justify-content:center}
+  .fbottom{flex-direction:column}
+  .totop{right:14px;bottom:14px}
+}
+@media (max-width:420px){
+  .brand .s{display:none}
+  .brand .t{font-size:1.18rem}
+  .brand svg{width:30px;height:30px}
+  .util .sel select{max-width:120px}
+  .books{gap:24px 14px}
+  .book h3{font-size:1.05rem}
+  .book .meta{flex-direction:column;align-items:flex-start;gap:0;font-size:.82rem}
+  .amounts button{font-size:1rem;padding:12px 6px}
+}
 .search-ov{position:fixed;inset:0;background:rgba(43,33,24,.6);backdrop-filter:blur(6px);z-index:300;padding-top:10vh}
 .search-ov[hidden]{display:none}
 .sbox{display:flex;align-items:center;gap:12px;background:#fff;border-radius:16px;padding:10px 12px 10px 20px;box-shadow:var(--shadow-l)}
@@ -1010,8 +1065,9 @@ function route(){
   closeMenu(); window.scrollTo(0,0); bind(); reveal();
   var q=(location.hash.split("?")[1]||""); if(k==="contact"&&q.indexOf("topic=")===0){var sel=$("#ct");if(sel)sel.value=q.slice(6);}
 }
-function closeMenu(){$("#nav").classList.remove("open");$("#mt").setAttribute("aria-expanded","false");}
-$("#mt").addEventListener("click",function(){var o=$("#nav").classList.toggle("open");this.setAttribute("aria-expanded",o?"true":"false");});
+function closeMenu(){$("#nav").classList.remove("open");$("#mt").setAttribute("aria-expanded","false");if(document.body)document.body.classList.remove("menu-open");}
+$("#mt").addEventListener("click",function(){if(typeof setNavTop==="function")setNavTop();var o=$("#nav").classList.toggle("open");this.setAttribute("aria-expanded",o?"true":"false");document.body.classList.toggle("menu-open",o);});
+window.addEventListener("resize",function(){if(window.innerWidth>1100)closeMenu();});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeMenu();});
 
 function toast(m){var t=$("#toast");t.innerHTML=m;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove("show");},3600);}
