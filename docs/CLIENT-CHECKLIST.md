@@ -20,5 +20,8 @@
 - [ ] Original logo files and any preferred gold / colours
 
 ## Approvals
+- [ ] Wording about book purchases supporting Heaven on Earth
+- [ ] Final biography (About Sylvia) and Heaven on Earth ministry information
+- [ ] Each book or resource to be offered as a free download (none are free until approved, including the book-writing guide)
 - [ ] One point of contact; feedback on each milestone within 2 working days
 - [ ] Written approval before any paid item is added

@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-10-15 - Prototype v3: Sylvia's feedback
+
+### Changed
+- `prototype/index.html` (v3), based on Sylvia's feedback of 15 October and a full read of the live site:
+  - Complete catalogue of 25 titles. Titles, subtitles, descriptions, formats and prices taken from the live pages; unknown details are marked "to confirm".
+  - Angelique: A Journey of Becoming and Angelique Finds Her Light listed as separate books.
+  - Location shown as "Australia" only (removed Peake and South Australia).
+  - Dream Partner levels $5, $15, $30 and $50 with the impact wording from the live Heaven on Earth page, plus "Or choose another amount"; 100 Dream Partners goal and the 90% to programs note.
+  - No free downloads: Resources items marked "Awaiting Sylvia's approval"; free links and labels removed from the menu, footer, books and newsletter.
+  - Author Support page uses Sylvia's live wording verbatim.
+  - Heaven on Earth purchase wording flagged for approval; biography and ministry details marked as drafts.
+  - Larger body text: 20px desktop, 19px phones.
+  - New "For Sylvia's review" page (`#/for-sylvia`) listing changes, pending approvals and book questions.
+- README: location, agreed feedback and prototype notes. Client and QA checklists: catalogue questions and approvals.
+
 ## 2026-10-14 - Backup and launch runbook
 
 ### Added

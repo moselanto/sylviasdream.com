@@ -13,6 +13,13 @@ Run on staging before preview approval, and again on production at launch.
 - [ ] Existing Stripe subscriptions still active (check Stripe dashboard)
 - [ ] Test monthly Dream Partner gift and one-off gift both process and send a receipt
 - [ ] `[sd_partner_progress]` shows the correct count
+- [ ] Giving levels are $5, $15, $30 and $50 monthly, plus a "choose another amount" option
+- [ ] Heaven on Earth purchase wording matches the version Sylvia approved
+
+## Client approvals
+- [ ] Only books and resources Sylvia approved are offered free (check the book-writing guide)
+- [ ] Biography and ministry information match Sylvia's reviewed version
+- [ ] Location shows "Australia" only, with no town or street address
 
 ## Structure and SEO
 - [ ] Main menu has 6-7 items; Home opens the home page

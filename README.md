@@ -44,3 +44,18 @@ See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). In short: build and test on the 
 - Keep the recently updated **Author Support** page content as it is.
 - Keep the warm gold style, with large, readable text and straightforward navigation.
 - Balance is due after Sylvia approves the preview, including a successful test purchase, secure download and test gift.
+
+## Sylvia's feedback on the prototype (15 October 2026)
+
+- **Complete catalogue.** All current titles appear (25 in prototype v3), including Fields of Becoming, When the River Flows Again and Guard Your Heart Renew Your Mind. The price stays at USD 280.
+- **Angelique.** *Angelique: A Journey of Becoming* (novel) and *Angelique Finds Her Light* (children's book) are separate books. Sylvia confirms all titles, subtitles, descriptions, formats and prices.
+- **Location.** Show "Australia" only. No town or street address anywhere.
+- **Dream Partner giving.** Keep $5, $15, $30 and $50 monthly, plus "choose another amount".
+- **Free downloads.** Nothing is listed as free without Sylvia's approval, especially the book-writing guide.
+- **Approvals before publishing.** The wording about book purchases supporting Heaven on Earth, the final biography and the ministry information.
+- **Author Support.** Keep her recently updated wording exactly as published.
+- **Readability.** Large, easy-to-read text, especially on phones.
+
+## Prototype
+
+[`prototype/index.html`](prototype/index.html) is a single-file design preview (v3). Open it in a browser; the **For Sylvia's review** page (`#/for-sylvia`) lists every change and open question. Run `node prototype/verify.js` to render every route and check for broken internal links.

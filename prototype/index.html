@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sylvia's Dream | Christian Author, Speaker and Missionary</title>
-<meta name="description" content="Faith-based books and devotionals by Sylvia Suhr, Christian author and missionary in South Australia, and the work of Heaven on Earth in rural Kenya.">
+<meta name="description" content="Faith-based books and devotionals by Sylvia Suhr, Christian author and missionary in Australia, and the work of Heaven on Earth in rural Kenya.">
 <meta name="theme-color" content="#8a5a14">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--sans);font-size:19px;line-height:1.7;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:var(--sans);font-size:20px;line-height:1.7;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:var(--gold-d);text-underline-offset:3px}
 a:hover{color:var(--ink)}
@@ -163,7 +163,7 @@ svg{max-width:100%}
   body.menu-open{overflow:hidden}
 }
 @media (max-width:760px){
-  body{font-size:17px}
+  body{font-size:19px}
   .proto{font-size:.72rem;line-height:1.4;padding:5px 12px}
   .util{font-size:.78rem}
   .ubar{min-height:34px;gap:10px}
@@ -458,11 +458,13 @@ footer.site li{margin-bottom:8px}
 .tl div{position:relative;margin-bottom:28px}
 .tl div:before{content:"";position:absolute;left:-37px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--gold);border:3px solid var(--cream)}
 .tl b{font-family:var(--serif);font-size:1.3rem;display:block;color:var(--gold-d)}
+.approve{font-style:normal;font-size:.8em;color:#8a5a14;background:#fff3d6;border-radius:6px;padding:1px 6px}
+.levels{list-style:none;padding:0;margin:14px 0 4px;font-size:.95rem}.levels li{padding:6px 0;border-bottom:1px solid var(--line)}.levels b{display:inline-block;min-width:44px;color:var(--gold-d)}.rlist li{margin:0 0 12px}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="proto" role="note"><b>Prototype</b> by Pimofy Digital &middot; Design preview for Sylvia Suhr. Covers, photos and items marked "to confirm" are placeholders. No real payments are taken.</div>
+<div class="proto" role="note"><b>Prototype</b> by Pimofy Digital &middot; Design preview for Sylvia Suhr. Covers, photos and items marked "to confirm" are placeholders. Biography, ministry details and Heaven on Earth wording are drafts for Sylvia's review. No real payments are taken. <a href="#/for-sylvia" style="color:#fff;font-weight:700">See what changed for your review &rarr;</a></div>
 
 <div class="util" role="region" aria-label="Site utilities">
   <div class="wrap ubar">
@@ -517,11 +519,11 @@ footer.site li{margin-bottom:8px}
           <ul class="sub">
             <li><a href="#/heaven-on-earth"><b>Heaven on Earth, Kenya</b><span>Children, education and church</span></a></li>
             <li><a href="#/give"><b>Become a Dream Partner</b><span>Give monthly or once</span></a></li>
-            <li><a href="#/free"><b>Kenya Ministry Training Manual</b><span>Free for mission teams</span></a></li>
+            <li><a href="#/free"><b>Kenya Ministry Training Manual</b><span>For mission teams</span></a></li>
           </ul>
         </li>
         <li><a href="#/journal" data-nav="journal">Devotionals</a></li>
-        <li><a href="#/free" data-nav="free">Free</a></li>
+        
         <li><a href="#/contact" data-nav="contact">Contact</a></li>
         <li class="m-only"><a href="#/give" class="btn" style="justify-content:center;margin-top:16px;color:#fff">Become a Dream Partner</a></li>
       </ul>
@@ -570,7 +572,7 @@ footer.site li{margin-bottom:8px}
           <li><a href="#/book/one-life">One Life: The Narrow Path</a></li>
           <li><a href="#/book/from-fear-to-freedom">From Fear to Freedom</a></li>
           <li><a href="#/book/sent">SENT</a></li>
-          <li><a href="#/free">Free downloads</a></li>
+          
           <li><a href="#/downloads">My downloads</a></li>
         </ul>
       </div>
@@ -593,7 +595,7 @@ footer.site li{margin-bottom:8px}
           <li><a href="#/terms">Terms of Sale</a></li>
           <li><a href="#/refunds">Refunds &amp; Downloads</a></li>
         </ul>
-        <p style="margin-top:16px;font-size:.88rem">Peake, South Australia<br>Serving readers worldwide</p>
+        <p style="margin-top:16px;font-size:.88rem">Australia<br>Serving readers worldwide</p>
       </div>
     </div>
     <div class="fbottom">
@@ -630,94 +632,42 @@ var ICON={
 
 /* Books: titles, descriptions and prices taken from sylviasdream.com. price:null = to confirm with Sylvia. */
 var BOOKS=[
- {s:"one-life",t:"One Life",st:"The Narrow Path",cat:"Memoir",price:12.99,c:["#5b3a1a","#b8862b"],i:"path",feat:1,
-  sh:"A missionary memoir of faith, obedience and transformation across Australia, Africa and Asia.",
-  d:"From the streets of England to the villages of Africa and the Philippines, Sylvia Suhr's story is a journey of courage, obedience and God's unending faithfulness. Through heartbreak, miracles and unexpected moments of grace, she discovered something life-changing: comfortable is scary.",
-  pts:["You enjoy true stories of faith and real-life testimony","You are walking a challenging season and need hope","You long to live with deeper purpose and step beyond fear and comfort"],
-  fm:["eBook (instant download)","Audiobook","Hardcover (Amazon)"],ed:["English","Spanish: Una Vida, Sendero Estrecho"]},
- {s:"from-fear-to-freedom",t:"From Fear to Freedom",st:"Breaking the Chains of Worry and Discovering Peace in Christ",cat:"Christian Living",price:null,c:["#2f4a5c","#8fb3c4"],i:"dove",feat:1,
-  sh:"For anyone struggling with anxiety, fear or uncertainty about the future.",
-  d:"Rooted in Scripture and personal experience, this faith-based guide helps readers grow in trust, peace and confidence in Christ.",
-  pts:["Understand where fear takes hold and how to let it go","Grow in trust, peace and confidence in Christ","Practical, Scripture-rooted steps for everyday worry"],
-  fm:["eBook (instant download)","Paperback (Amazon)"],ed:["English","French: De la Peur a la Liberte"]},
- {s:"the-hidden-key",t:"The Hidden Key",st:"to Healing and Breakthrough",cat:"Healing & Faith",price:12.99,c:["#3d2c4f","#b8862b"],i:"key",feat:1,
-  sh:"Unlocking the power of faith, imagination and God's Word.",
-  d:"Why do so many sincere believers pray, yet still struggle to see lasting healing and breakthrough? God does not begin with your circumstances. He begins with your heart. The key is not striving harder. The key is receiving more deeply.",
-  pts:["How God's promises are received inwardly, planted and nurtured","How to align your heart with God's Word","Breaking free from fear and doubt"],
-  fm:["eBook (instant download)","Paperback (Amazon)"],ed:["English"]},
- {s:"learning-to-recognise-gods-voice",t:"Learning to Recognise God's Voice",st:"Understanding the Heart and God's Desire to Speak",cat:"Christian Living",price:null,c:["#24493a","#9cc3a8"],i:"leaf",
-  sh:"What if recognising God's voice was not meant to be complicated?",
-  d:"God desires relationship with His people. He speaks through His Word, through the Holy Spirit and through quiet promptings. This book helps you grow in confidence as you learn to recognise His leading.",
-  pts:["The relationship between the heart, the mind, the Holy Spirit and the Word","Recognising God's voice is not reserved for a special few","Growing in confidence day by day"],
-  fm:["eBook (instant download)","Paperback (Amazon)"],ed:["English"]},
- {s:"when-the-word-becomes-life",t:"When the Word Becomes Life",st:"How God's Word Becomes Living Reality",cat:"Christian Living",price:null,c:["#6b2f2f","#d9a066"],i:"sun",
-  sh:"Moving from knowing Scripture to living from its truth.",
-  d:"A Christian book about spiritual growth, renewing your mind and discovering your identity in Christ. What if God's Word was never meant to remain information in your mind, but to become life within you?",
-  pts:["Renewing your mind","Discovering your identity in Christ","Living from the truth of Scripture every day"],
-  fm:["eBook (instant download)","Paperback (Amazon)"],ed:["English"]},
- {s:"guard-your-heart",t:"Guard Your Heart",st:"The Inner Life and the Miracle of Being Born Again",cat:"Christian Living",price:null,c:["#7a3b4f","#e2a9b4"],i:"cross",
-  sh:"What is the heart, and why does God place such importance on it?",
-  d:"Sylvia gently explores the inner life, the place where thoughts are formed, beliefs take root and life begins to flow outward.",
-  pts:["The true meaning of the heart in the Bible","How thoughts, words and influences shape our inner life","God's promise to give us a new heart"],
-  fm:["eBook (instant download)","Paperback (Amazon)"],ed:["English"]},
- {s:"sent",t:"SENT",st:"Preparing Your Heart for Missions",cat:"Missions",price:null,c:["#1f3d5a","#b8862b"],i:"globe2",feat:1,
-  sh:"Lessons from many years of mission journeys around the world.",
-  d:"Many people feel a stirring toward missions. But before God sends someone across nations, He prepares the heart. SENT explores the spiritual foundations that shape a life ready to serve. Free for missionaries.",
-  pts:["Recognising a call to missions","The heart preparation God does first","Practical wisdom from the field"],
-  fm:["eBook (instant download)","Paperback (Amazon)","Free for missionaries"],ed:["English","Bahasa Indonesia (free)"]},
- {s:"wisdom-for-soul-winning",t:"Wisdom for Soul-Winning",st:"Sharing the Gospel with Compassion and Truth",cat:"Missions",price:null,c:["#4a3a1c","#e0b75a"],i:"sun",
-  sh:"A practical guide for sharing the love of Christ naturally.",
-  d:"Many believers long to share their faith but feel unsure how to begin. Soul-winning is not about pressure or persuasion. It is about compassion, prayer and faithfully sharing the good news.",
-  pts:["The biblical foundation for soul-winning","Overcoming fear when speaking about your faith","How everyday conversations can lead people to Christ"],
-  fm:["eBook (instant download)","Paperback (Amazon)"],ed:["English"]},
- {s:"the-kings-way",t:"The King's Way",st:"Walking the Narrow Path to Peace, Purpose and Freedom",cat:"Christian Living",price:null,c:["#3a2a12","#c99a3e"],i:"cross",
-  sh:"The Gospel is not just about getting to heaven. It is about living in God's Kingdom now.",
-  d:"Salvation through Christ, baptism in water and Spirit, and living as a kingdom ambassador. Perfect for new believers and small groups.",
-  pts:["A clearer understanding of God's plan for salvation","The nature of God's Kingdom","How to live a transformed life under Christ's kingship"],
-  fm:["eBook (instant download)","Paperback (Amazon)"],ed:["English"]},
- {s:"how-to-find-the-real-you",t:"How to Find the Real You",st:"A Faith-Based Journey of Self-Discovery",cat:"Healing & Faith",price:16.99,c:["#2e5a5a","#a6d1c9"],i:"leaf",
-  sh:"Freedom from old patterns, and peace, clarity and purpose.",
-  d:"You were never meant to live trapped in old patterns, fear or a noisy mind. A gentle, faith-filled guide to uncovering who God created you to be.",
-  pts:["Reconnect with your true identity","Say goodbye to sabotaging thoughts","Heart-centred living and lasting freedom"],
-  fm:["eBook (instant download)","Audiobook","Paperback (Amazon)"],ed:["English"]},
- {s:"from-chance-to-choice",t:"From Chance to Choice",st:"The Quantum Path to Living by Faith",cat:"Healing & Faith",price:9.99,c:["#20304f","#7e8fd1"],i:"sun",
-  sh:"Where faith and quantum reality meet.",
-  d:"Through miraculous testimonies, spiritual insight and practical revelation, this book opens your eyes to how the Kingdom works behind the scenes.",
-  pts:["How your focus becomes a creative force","Why gratitude shifts the atmosphere","Miraculous accounts from Africa, Asia and beyond"],
-  fm:["eBook (instant download)"],ed:["English"]},
- {s:"all-shall-be-well",t:"All Shall Be Well",st:"A Novel Inspired by Julian of Norwich",cat:"Fiction",price:null,c:["#3b3b3b","#c9b48a"],i:"cross",
-  sh:"England, 1349. Amid the plague, a few souls still believe in love.",
-  d:"The Black Death sweeps across the land. Faith crumbles, families shatter and hope feels like a foolish dream. But amidst the darkness, ordinary people make small, stubborn choices to care for one another.",
-  pts:["A historical novel of faith and hope","Written in the spirit of Bryce Courtenay","For readers who love story-driven faith"],
-  fm:["eBook (instant download)","Paperback (Amazon)","Kindle"],ed:["English"]},
- {s:"angelique",t:"Angelique",st:"A Journey of Becoming",cat:"Fiction",price:12.99,c:["#5a2d4a","#e3b3cf"],i:"dove",
-  sh:"She left England seeking a new beginning. What she found was a name and a calling.",
-  d:"Blending memoir and spiritual reflection, Angelique follows one woman's awakening to her divine identity through migration, motherhood and moments of divine clarity.",
-  pts:["A soul-stirring story of identity, faith and transformation","Memoir blended with spiritual reflection"],
-  fm:["eBook (instant download)"],ed:["English"]},
- {s:"trusting-god-deeper",t:"Trusting God Deeper",st:"A Devotional Journey Beyond the First Seven Days",cat:"Devotionals",price:null,c:["#5c4a1f","#efd28a"],i:"sun",
-  sh:"Go beyond the first steps of faith and discover His peace day by day.",
-  d:"A devotional companion for readers ready to go deeper after the free 7-day devotional.",
-  pts:["Daily Scripture and reflection","Growing trust one day at a time"],
-  fm:["eBook (instant download)","Paperback (Amazon)"],ed:["English"]},
- {s:"when-fear-has-the-final-word",t:"When Fear Has the Final Word",st:"A Devotional on Peace",cat:"Devotionals",price:4.5,c:["#34495e","#c3d3e0"],i:"dove",
-  sh:"The world says face your fears. The Kingdom says fix your eyes on Jesus.",
-  d:"Fear has a way of slipping quietly into our lives. Yet Jesus never called us to live in the what-ifs. He called us to live in His peace.",
-  pts:["Short, focused readings","Rooted in John 14:27"],
-  fm:["eBook (instant download)"],ed:["English"]},
- {s:"manifesting-miracles-now",t:"Manifesting Miracles Now",st:"Everyday God Encounters of Selected Authors",cat:"Coming Soon",price:null,soon:1,c:["#4b2e10","#f0c36a"],i:"sun",
-  sh:"Coming soon: testimonies that reveal the supernatural in everyday life.",
-  d:"A journey of discovery into what a miracle is and what it means, with testimonies from inspired authors.",
-  pts:["Testimonies from several authors","Everyday encounters with God"],fm:["Coming soon"],ed:["English"]}
+ {"s": "the-report-of-the-lord", "t": "The Report of the Lord", "st": "From the Old Report to the Living Hope of the Risen Christ", "cat": "Christian Living", "price": null, "c": ["#3a2a12", "#e0b75a"], "i": "sun", "sh": "We are surrounded by reports of fear, uncertainty, sickness, conflict and despair. But there is another report.", "d": "This book invites you to move beyond fear and rediscover the living hope, faith and assurance found in the risen Christ. “He is not here. He is risen.” (Luke 24:6)", "pts": ["Moving beyond the reports of fear and despair", "Rediscovering living hope in the risen Christ", "Faith and assurance for uncertain times"], "fm": ["eBook (instant download)", "Paperback (Amazon)"], "ed": ["English"], "feat": 1},
+ {"s": "one-life", "t": "One Life", "st": "The Narrow Path", "cat": "Memoir", "price": 12.99, "c": ["#5b3a1a", "#b8862b"], "i": "path", "sh": "A missionary memoir of faith, obedience and transformation across Australia, Africa and Asia.", "d": "From the streets of England to the villages of Africa and the Philippines, Sylvia Suhr’s story is a journey of courage, obedience and God’s unending faithfulness. Through real-life stories of hardship, calling and God’s faithfulness, this book offers hope and encouragement to anyone walking the narrow path of faith.", "pts": ["You enjoy true stories of faith and real-life testimony", "You are walking a challenging season and need encouragement", "You are interested in missionary life and trusting God’s leading", "You want to see how God works through ordinary obedience"], "fm": ["eBook (instant download)", "Audiobook", "Paperback (Amazon)"], "ed": ["English", "Spanish: Una Vida, Sendero Estrecho"], "feat": 1},
+ {"s": "from-fear-to-freedom", "t": "From Fear to Freedom", "st": "Overcoming Anxiety Through Faith", "cat": "Christian Living", "price": null, "c": ["#2f4a5c", "#8fb3c4"], "i": "dove", "sh": "A compassionate, faith-based book for anyone struggling with anxiety, worry or overwhelming fear.", "d": "Drawing on spiritual truth, practical insight and gentle encouragement, Sylvia Suhr guides readers toward peace, freedom and renewed trust in God. You were never meant to live imprisoned by fear.", "pts": ["Understand anxiety through a faith-filled lens", "Break free from cycles of fear and overthinking", "Replace anxious thoughts with peace and hope", "Walk forward with renewed confidence and freedom"], "fm": ["eBook (instant download)", "Paperback (Amazon)"], "ed": ["English", "French: De la Peur à la Liberté"], "feat": 1},
+ {"s": "the-hidden-key", "t": "The Hidden Key to Healing and Breakthrough", "st": "Unlocking the Power of Faith, Imagination, and God’s Word", "cat": "Healing & Faith", "price": 12.99, "c": ["#3d2c4f", "#b8862b"], "i": "key", "sh": "Why do so many sincere believers pray, yet still struggle to see lasting healing and breakthrough?", "d": "God does not begin with your circumstances. He begins with your heart. Sylvia reveals how God’s promises are received inwardly, planted, nurtured and brought to life from within. The key is not striving harder. The key is receiving more deeply.", "pts": ["How to align your heart with God’s Word", "Breaking free from fear and doubt", "Walking in healing, peace and lasting breakthrough"], "fm": ["eBook (instant download)", "Paperback (Amazon)"], "ed": ["English"]},
+ {"s": "learning-to-recognise-gods-voice", "t": "Learning to Recognise God’s Voice", "st": "Understanding the Heart and God’s Desire to Speak", "cat": "Christian Living", "price": null, "c": ["#24493a", "#9cc3a8"], "i": "leaf", "sh": "What if recognising God’s voice was not meant to be complicated?", "d": "God desires relationship with His people. He is not distant or silent. He speaks through His Word, through the Holy Spirit, through quiet promptings, and in ways that draw us closer to His heart. “My sheep hear My voice” (John 10:27).", "pts": ["How God speaks to His children", "How to distinguish God’s voice from your own thoughts", "The role of the Holy Spirit in guiding us", "How peace, wisdom and discernment grow over time"], "fm": ["eBook (instant download)", "Paperback (Amazon)"], "ed": ["English"]},
+ {"s": "when-the-word-becomes-life", "t": "When the Word Becomes Life", "st": "How God’s Word Becomes Living Reality", "cat": "Christian Living", "price": null, "c": ["#6b2f2f", "#d9a066"], "i": "sun", "sh": "What if God’s Word was never meant to remain information in your mind, but to become life within you?", "d": "More than forty years ago, a simple conversation around Sylvia’s kitchen table changed the direction of her life. This book helps believers move beyond simply knowing Scripture to living from its truth: spiritual growth, renewing your mind and discovering your identity in Christ.", "pts": ["You love God but feel there must be more", "You know many Scriptures but struggle to experience their reality", "You want to move beyond religion into a living relationship with God"], "fm": ["eBook (instant download)", "Paperback (Amazon)"], "ed": ["English"]},
+ {"s": "guard-your-heart", "t": "Guard Your Heart", "st": "Understanding the Heart, the Inner Life, and the Miracle of Being Born Again", "cat": "Christian Living", "price": null, "c": ["#7a3b4f", "#e2a9b4"], "i": "cross", "sh": "What is the heart, and why does God place such importance on it?", "d": "Sylvia gently explores the inner life, the place where thoughts are formed, beliefs take root and life begins to flow outward. This is not a complicated book. It is a gentle invitation to pause, reflect and allow God to work within your heart.", "pts": ["The true meaning of the heart in the Bible", "How thoughts, words and influences shape our inner life", "God’s promise to give us a new heart", "How to walk with God day by day"], "fm": ["eBook (instant download)", "Paperback (Amazon)"], "ed": ["English"]},
+ {"s": "guard-your-heart-renew-your-mind", "t": "Guard Your Heart Renew Your Mind", "st": "Subtitle to confirm", "cat": "Christian Living", "price": null, "c": ["#6b3550", "#e8b9c8"], "i": "dove", "sh": "Details to confirm with Sylvia.", "d": "Title, subtitle, description, formats and price to be confirmed with Sylvia, including how this title relates to Guard Your Heart.", "pts": ["Details to confirm with Sylvia"], "fm": ["Formats to confirm"], "ed": ["English"]},
+ {"s": "when-the-river-flows-again", "t": "When the River Flows Again", "st": "Returning to a Spirit-Led Life of Peace, Clarity, and Power", "cat": "Christian Living", "price": null, "c": ["#1f4a5c", "#9fd0d8"], "i": "dove", "sh": "For anyone whose walk with God has become complicated, a gentle invitation to return.", "d": "In When the River Flows Again, Sylvia Suhr invites readers back to a Spirit-led life of peace, clarity and power. Full description to be confirmed with Sylvia.", "pts": ["Details to confirm with Sylvia"], "fm": ["eBook (instant download)", "Paperback (Amazon)"], "ed": ["English"]},
+ {"s": "sent", "t": "SENT", "st": "Preparing Your Heart for Missions", "cat": "Missions", "price": null, "c": ["#1f3d5a", "#b8862b"], "i": "path", "sh": "Lessons from many years of walking with God and mission journeys around the world.", "d": "Many people feel a stirring toward missions. But before God sends someone across nations, He prepares the heart. SENT explores the spiritual foundations that shape a life ready to serve.", "pts": ["Total surrender and laying your life before God", "The empowering work of the Holy Spirit", "Hearing God’s voice clearly", "A disciplined life of prayer and fellowship"], "fm": ["eBook (instant download)", "Paperback (Amazon)"], "ed": ["English", "Bahasa Indonesia"], "feat": 1},
+ {"s": "wisdom-for-soul-winning", "t": "Wisdom for Soul-Winning", "st": "Sharing the Gospel with Compassion and Truth", "cat": "Missions", "price": 5.99, "c": ["#4a3a1c", "#e0b75a"], "i": "sun", "sh": "A practical, encouraging guide to sharing the love of Christ naturally.", "d": "Many believers long to share their faith but feel unsure how to begin. Soul-winning is not about pressure or persuasion. It is about compassion, prayer and faithfully sharing the good news of salvation. “Whoever wins souls is wise” (Proverbs 11:30).", "pts": ["The biblical foundation for soul-winning", "Overcoming fear when speaking about your faith", "How the Holy Spirit guides and prepares hearts", "How everyday conversations can lead people to Christ"], "fm": ["eBook (instant download)", "Paperback (Amazon)"], "ed": ["English"]},
+ {"s": "the-kings-way", "t": "The King’s Way", "st": "Walking the Narrow Path to Peace, Purpose, and Freedom in Christ", "cat": "Christian Living", "price": null, "c": ["#3a2a12", "#c99a3e"], "i": "cross", "sh": "The Gospel is not just about getting to heaven. It is about learning to live in God’s Kingdom now.", "d": "A faith-based book exploring God’s plan for salvation and life in His Kingdom. Through scripture-based teaching, Sylvia helps readers understand the Gospel, the nature of God’s Kingdom and how to live a transformed life under Christ’s kingship.", "pts": ["The meaning of salvation through Jesus Christ", "What it means to live in God’s Kingdom today", "How obedience, faith and grace work together"], "fm": ["eBook (instant download)", "Paperback (Amazon)"], "ed": ["English"]},
+ {"s": "how-to-find-the-real-you", "t": "How to Find the Real You", "st": "A Faith-Based Journey of Self-Discovery", "cat": "Healing & Faith", "price": 16.99, "c": ["#2e5a5a", "#a6d1c9"], "i": "leaf", "sh": "Freedom from old patterns, and peace, clarity and purpose.", "d": "You were never meant to live trapped in old patterns, fear or a noisy mind. The real you is not missing. It has been buried under expectations, stress and self-doubt. A gentle, faith-filled guide to uncovering who God created you to be.", "pts": ["Reconnect with your true identity", "Let go of sabotaging thoughts", "Heart-centred living and lasting freedom"], "fm": ["eBook (instant download)", "Audiobook", "Paperback (Amazon)"], "ed": ["English"]},
+ {"s": "from-chance-to-choice", "t": "From Chance to Choice", "st": "The Quantum Path to Living by Faith", "cat": "Healing & Faith", "price": 9.99, "c": ["#20304f", "#7e8fd1"], "i": "sun", "sh": "Where faith and quantum reality meet.", "d": "Journey with Sylvia into the unseen world where faith and quantum reality meet. Through miraculous testimonies, spiritual insight and practical revelation, this book opens your eyes to how the Kingdom works behind the scenes.", "pts": ["How your focus becomes a creative force", "Why gratitude shifts the atmosphere", "The true power of choice in shaping your destiny", "Miraculous accounts from Africa, Asia and beyond"], "fm": ["eBook (instant download)"], "ed": ["English"]},
+ {"s": "fields-of-becoming", "t": "Fields of Becoming", "st": "From Striving to Rest, From Loss to Life", "cat": "Fiction", "price": null, "c": ["#4f5a24", "#d8c78a"], "i": "leaf", "sh": "What if the life you lost was never the life you were meant to hold onto?", "d": "When Anna’s world grows quiet, a journey from striving to rest and from loss to life begins. Full description to be confirmed with Sylvia.", "pts": ["Details to confirm with Sylvia"], "fm": ["eBook (instant download)", "Paperback (Amazon)"], "ed": ["English"]},
+ {"s": "angelique", "t": "Angelique", "st": "A Journey of Becoming", "cat": "Fiction", "price": 12.99, "c": ["#5a2d4a", "#e3b3cf"], "i": "dove", "sh": "She left England seeking a new beginning. What she found was a name, and a calling.", "d": "Blending memoir and spiritual reflection, Angelique follows one woman’s awakening to her divine identity through migration, motherhood and moments of divine clarity. A deeply personal, faith-filled journey from the fog of England to the promise of Australia.", "pts": ["A soul-stirring story of identity, faith and transformation", "Memoir blended with spiritual reflection"], "fm": ["eBook (instant download)", "Audiobook (Spotify)", "Paperback (Amazon)"], "ed": ["English"]},
+ {"s": "all-shall-be-well", "t": "All Shall Be Well", "st": "A Novel Inspired by Julian of Norwich", "cat": "Fiction", "price": null, "c": ["#3b3b3b", "#c9b48a"], "i": "cross", "sh": "England, 1349. Amid the plague, a few souls still believe in love.", "d": "The plague devours cities and villages, leaving fear in its wake. Faith crumbles, families shatter and hope feels like a foolish dream. But amidst the darkness, ordinary people make small, stubborn choices to care for one another.", "pts": ["A historical novel of faith and hope", "Written in the spirit of Bryce Courtenay"], "fm": ["eBook (instant download)", "Paperback (Amazon)", "Kindle"], "ed": ["English"]},
+ {"s": "angelique-finds-her-light", "t": "Angelique Finds Her Light", "st": "A Christian Children’s Book", "cat": "Children", "price": null, "c": ["#6a3d7a", "#f2c9e6"], "i": "sun", "sh": "A gentle story about believing in yourself, God’s love and inner light. Ages 3 to 8.", "d": "Angelique is a little girl whose light sometimes shines brightly and sometimes feels small. Through kindness, encouragement and learning to trust who she is, she discovers that her light grows stronger when she believes in who God created her to be. Soft watercolour illustrations and simple, comforting words.", "pts": ["God placed a light inside them", "They don’t have to be like everyone else", "Kindness and encouragement help us shine", "Belonging begins from within"], "fm": ["eBook (instant download)", "Paperback (Amazon)"], "ed": ["English"]},
+ {"s": "seven-days-trusting-god", "t": "7 Days to Trusting God with Your Journey", "st": "A Faith-Based Devotional", "cat": "Devotionals", "price": null, "c": ["#5c4a1f", "#efd28a"], "i": "sun", "sh": "Gentle encouragement, reflection and spiritual renewal, one day at a time.", "d": "Dedicating just seven days to deepen your trust in God can lead to transformative change. Each day is an opportunity to reflect on Scripture, engage in prayer and seek guidance from the Lord.", "pts": ["Daily Scripture and reflection", "Learning to surrender worries", "Experiencing God’s peace"], "fm": ["eBook", "Paperback (Amazon)"], "ed": ["English"]},
+ {"s": "trusting-god-deeper", "t": "Trusting God Deeper", "st": "A Devotional Journey Beyond the First Seven Days", "cat": "Devotionals", "price": 9.99, "c": ["#5c4a1f", "#efd28a"], "i": "sun", "sh": "Go beyond the first steps of faith and discover His peace day by day.", "d": "A 13-day devotional designed to help you grow closer to God, strengthen your faith and find peace in His promises.", "pts": ["13 days of Scripture and reflection", "Growing trust one day at a time"], "fm": ["eBook (instant download)", "Paperback (Amazon)"], "ed": ["English"]},
+ {"s": "seven-days-fear-to-freedom", "t": "7 Days from Fear to Freedom", "st": "A Devotional", "cat": "Devotionals", "price": null, "c": ["#2f4a5c", "#c3d3e0"], "i": "dove", "sh": "Details to confirm with Sylvia.", "d": "Description, formats and price to be confirmed with Sylvia.", "pts": ["Details to confirm with Sylvia"], "fm": ["Formats to confirm"], "ed": ["English"]},
+ {"s": "when-fear-has-the-final-word", "t": "When Fear Has the Final Word", "st": "A Devotional on Peace", "cat": "Devotionals", "price": 4.5, "c": ["#34495e", "#c3d3e0"], "i": "dove", "sh": "The world says face your fears. The Kingdom says fix your eyes on Jesus.", "d": "Fear has a way of slipping quietly into our lives. It hides beneath worry, behind busyness and under the desire to stay in control. Yet Jesus never called us to live in the what-ifs. He called us to live in His peace (John 14:27).", "pts": ["Short, focused readings", "Rooted in John 14:27"], "fm": ["eBook (instant download)"], "ed": ["English"]},
+ {"s": "write-and-publish-in-7-days", "t": "How to Write and Publish a Spirit-Led Christian Book in 7 Days", "st": "A Simple Guide to Sharing God’s Message with Clarity and Confidence", "cat": "For Writers", "price": null, "c": ["#3d2c4f", "#b8862b"], "i": "leaf", "sh": "A simple guide for anyone who feels called to write.", "d": "A practical guide to sharing God’s message with clarity and confidence, from first idea to published book. Whether this book is sold or offered free is for Sylvia to decide.", "pts": ["From first idea to published book", "Writing with clarity and confidence"], "fm": ["Paperback (Amazon)", "eBook: to confirm with Sylvia"], "ed": ["English"]},
+ {"s": "fast-forward-to-success", "t": "Fast Forward to Success", "st": "Break Through Your Limitations to Change Your Finances, Family, Fame, Freedom & Future", "cat": "Christian Living", "price": null, "c": ["#20304f", "#b8862b"], "i": "path", "sh": "Break through your limitations.", "d": "Available in print through Lulu. Description and price to be confirmed with Sylvia.", "pts": ["Details to confirm with Sylvia"], "fm": ["Paperback (Lulu)"], "ed": ["English"]},
+ {"s": "manifesting-miracles-now", "t": "Manifesting Miracles Now", "st": "Everyday God Encounters of Selected Authors", "cat": "Coming Soon", "price": null, "c": ["#4b2e10", "#f0c36a"], "i": "sun", "sh": "Coming soon: testimonies that reveal the supernatural in everyday life.", "d": "A journey of discovery into what a miracle is and what it means, revealing the way God shows Himself in our everyday lives, with testimonies from inspired authors.", "pts": ["Testimonies from several authors", "Everyday encounters with God"], "fm": ["Coming soon"], "ed": ["English"], "soon": 1}
 ];
 BOOKS.forEach(function(b){if(b.i==="globe2")b.i="path";b.lg=[];if(b.s==="from-fear-to-freedom")b.lg=["fr"];if(b.s==="one-life")b.lg=["es"];if(b.s==="sent")b.lg=["id"];});
 
 var FREE=[
- {t:"7 Days to Trusting God with Your Journey",d:"A free 7-day devotional offering gentle encouragement, reflection and spiritual renewal.",c:["#5c4a1f","#efd28a"],i:"sun"},
- {t:"Kenya Ministry Training Manual",d:"Prepare. Serve. Transform. An essential companion for short-term mission teams to Kenya.",c:["#24493a","#9cc3a8"],i:"path"},
- {t:"How to Write and Publish a Spirit-Led Christian Book in 7 Days",d:"A simple guide to sharing God's message with clarity and confidence.",c:["#3d2c4f","#b8862b"],i:"leaf"},
- {t:"SENT (Bahasa Indonesia)",d:"Preparing Your Heart for Missions, free for Indonesian-speaking missionaries.",c:["#1f3d5a","#b8862b"],i:"path"},
- {t:"How to Find the Real You: Free Sample",d:"Read the opening chapters before you buy.",c:["#2e5a5a","#a6d1c9"],i:"leaf"}
+ {t:"7 Days to Trusting God with Your Journey",d:"A 7-day faith-based devotional offering gentle encouragement, reflection and spiritual renewal.",c:["#5c4a1f","#efd28a"],i:"sun"},
+ {t:"Kenya Ministry Training Manual",d:"Prepare. Serve. Transform. A training manual for short-term mission teams to Kenya.",c:["#24493a","#9cc3a8"],i:"path"},
+ {t:"How to Write and Publish a Spirit-Led Christian Book in 7 Days",d:"Shown as a free download on the current website. Sylvia to decide whether it stays free or is sold.",c:["#3d2c4f","#b8862b"],i:"leaf"},
+ {t:"The King\u2019s Way",d:"Shown as a free eBook on the current Shop page but as a paid download on its own page. Sylvia to confirm.",c:["#3a2a12","#c99a3e"],i:"cross"},
+ {t:"SENT (Bahasa Indonesia)",d:"Preparing Your Heart for Missions, for Indonesian-speaking missionaries.",c:["#1f3d5a","#b8862b"],i:"path"},
+ {t:"SENT for missionaries",d:"The current website offers SENT free to missionaries. Sylvia to confirm.",c:["#1f3d5a","#b8862b"],i:"path"},
+ {t:"How to Find the Real You: Sample",d:"Opening chapters to read before buying.",c:["#2e5a5a","#a6d1c9"],i:"leaf"}
 ];
 
 /* Posts: titles, dates and opening lines from Sylvia's blog. */
@@ -736,7 +686,7 @@ var POSTS=[
   body:["Many Christians at some point ask a quiet but important question: Is God calling me to missions?","For some people the sense of calling comes suddenly. For others it develops slowly over time through prayer, experience and a growing concern for people who have not yet heard the message of Christ.","While every calling is unique, Scripture shows that God often prepares the heart long before He sends someone into His work. I explore this further in my book SENT: Preparing Your Heart for Missions."],q:"God prepares the heart long before He sends.",book:"sent"},
  {s:"trusting-god-deeper",t:"Trusting God Deeper",dt:"19 December 2025",img:"give",
   ex:"Go beyond the first steps of faith and discover His peace, day by day.",
-  body:["Trust is not built in a single moment. It grows, day by day, as we bring each worry back to the One who holds our future.","This reflection continues where the free 7-day devotional leaves off, inviting you to go deeper."],q:"Trust grows one day at a time.",book:"trusting-god-deeper"}
+  body:["Trust is not built in a single moment. It grows, day by day, as we bring each worry back to the One who holds our future.","This reflection continues where the 7-day devotional leaves off, inviting you to go deeper."],q:"Trust grows one day at a time.",book:"trusting-god-deeper"}
 ];
 
 var CUR="AUD";
@@ -761,7 +711,7 @@ function pagehead(eyebrow,title,lead,img,crumb){
    '<span class="eyebrow">'+eyebrow+'</span><h1>'+title+'</h1>'+(lead?'<p>'+lead+'</p>':'')+'</div></section>';
 }
 function newsletter(){
-  return '<section class="section"><div class="wrap"><div class="news rv"><div><span class="eyebrow" style="color:#f3e3bf">Grace for the Journey</span><h2>Weekly encouragement in your inbox</h2><p>Receive Sylvia\'s devotional letter, new book announcements and news from Kenya. Plus the free 7-day devotional as a welcome gift.</p></div>'+
+  return '<section class="section"><div class="wrap"><div class="news rv"><div><span class="eyebrow" style="color:#f3e3bf">Grace for the Journey</span><h2>Weekly encouragement in your inbox</h2><p>Receive Sylvia\'s devotional letter, new book announcements and news from Kenya.</p></div>'+
    '<form data-form="news" novalidate><label for="nl" class="visually" style="position:absolute;left:-999px">Email address</label><input id="nl" type="email" placeholder="Your email address" required><button class="btn light" type="submit">Subscribe</button><p style="font-size:.85rem;width:100%;margin:6px 0 0">No spam. Unsubscribe at any time. See our <a href="#/privacy" style="color:#fff">Privacy Policy</a>.</p></form></div></div></section>';
 }
 
@@ -770,18 +720,18 @@ var P={};
 P.home=function(){
   var feat=BOOKS.filter(function(b){return b.feat;});
   return ''+
-  '<section class="hero"><img class="bg" src="'+IMG.hero+'" alt="Sunrise over golden fields in South Australia"><div class="wrap">'+
+  '<section class="hero"><img class="bg" src="'+IMG.hero+'" alt="Sunrise over golden fields in Australia"><div class="wrap">'+
    '<span class="eyebrow">Christian Author &middot; Speaker &middot; Missionary</span>'+
    '<h1>From fear to lasting peace in Christ</h1>'+
    '<p>Faith-based books and devotionals by Sylvia Suhr, written from more than twenty years of mission work across Africa and Asia.</p>'+
    '<div class="quote">"One life can make a difference. Restoring dignity, revealing Jesus."</div>'+
-   '<div class="btn-row"><a class="btn light" href="#/books">Explore the books</a><a class="btn ghost" style="color:#fff;border-color:#fff" href="#/free">Free 7-day devotional</a></div>'+
+   '<div class="btn-row"><a class="btn light" href="#/books">Explore the books</a><a class="btn ghost" style="color:#fff;border-color:#fff" href="#/about">Meet Sylvia</a></div>'+
   '</div></section>'+
   '<section class="strip"><div class="wrap">'+
-   '<div class="it"><div class="ic">'+ICON.book+'</div><div><b>18+ titles</b><span>eBooks, paperbacks and audio</span></div></div>'+
+   '<div class="it"><div class="ic">'+ICON.book+'</div><div><b>25 titles</b><span>eBooks, paperbacks and audio</span></div></div>'+
    '<div class="it"><div class="ic">'+ICON.dl+'</div><div><b>Instant download</b><span>Secure link after purchase</span></div></div>'+
    '<div class="it"><div class="ic">'+ICON.globe+'</div><div><b>Readers worldwide</b><span>English, French, Spanish, Bahasa</span></div></div>'+
-   '<div class="it"><div class="ic">'+ICON.heart+'</div><div><b>Every purchase helps</b><span>Heaven on Earth, Kenya</span></div></div>'+
+   '<div class="it"><div class="ic">'+ICON.heart+'</div><div><b>Every purchase helps</b><span>Heaven on Earth, Kenya <em class="approve">(wording for Sylvia&rsquo;s approval)</em></span></div></div>'+
   '</div></section>'+
   '<section class="section"><div class="wrap"><div class="center rv" style="max-width:720px;margin:0 auto 48px"><span class="eyebrow">Featured books</span><h2>Books that bring hope and healing</h2><p class="lead">Start with the story that began it all, or choose the book for the season you are in.</p></div>'+
    '<div class="books">'+feat.map(bookCard).join('')+'</div>'+
@@ -790,7 +740,7 @@ P.home=function(){
    '<div class="rv feature-photo"><div class="photo"><img src="'+IMG.bible+'" alt="An open Bible and journal by a sunny window"></div><div class="tag"><b>Eighty-one and still becoming</b>Sylvia\'s own portrait replaces this photo once supplied.</div></div>'+
    '<div class="rv"><span class="eyebrow">Meet Sylvia</span><h2>Called to ministry at fifty-seven</h2>'+
    '<p class="lead">Sylvia was born in post-war England, the youngest of six children. She came to know Jesus at thirty-eight and was called to ministry at fifty-seven.</p>'+
-   '<p>She travelled to Kenya often, preaching the gospel and visiting prisons, churches and schools. She helped establish Heaven on Earth Ministries for orphans and children in remote villages. Today, at eighty-one, she writes from South Australia to help readers trust God more deeply.</p>'+
+   '<p>She travelled to Kenya often, preaching the gospel and visiting prisons, churches and schools. She helped establish Heaven on Earth Ministries for orphans and children in remote villages. Today, at eighty-one, she writes from Australia to help readers trust God more deeply.</p>'+
    '<div class="btn-row"><a class="btn" href="#/about">Read Sylvia\'s story</a><a class="btn ghost" href="#/book/one-life">One Life: the memoir</a></div></div>'+
   '</div></section>'+
   '<section class="band"><img class="bg" src="'+IMG.mission+'" alt=""><div class="wrap rv"><span class="eyebrow" style="color:#f3e3bf">Heaven on Earth, Kenya</span><blockquote>Rescuing vulnerable children, educating the next generation and bringing the love of Christ to rural villages.</blockquote><div class="btn-row" style="justify-content:center;margin-top:28px"><a class="btn light" href="#/give">Become a Dream Partner</a><a class="btn ghost" style="color:#fff;border-color:#fff" href="#/heaven-on-earth">About the ministry</a></div></div></section>'+
@@ -841,7 +791,7 @@ P.book=function(slug){
 };
 
 P.about=function(){
-  return pagehead("About Sylvia","One life, led by God","Christian author, speaker and missionary based in South Australia.","hero","About Sylvia")+
+  return pagehead("About Sylvia","One life, led by God","Christian author, speaker and missionary based in Australia.","hero","About Sylvia")+
   '<section class="section"><div class="wrap g2"><div class="rv"><div class="portrait"><span class="mono">SS</span><small>Sylvia\'s portrait here</small></div></div>'+
   '<div class="rv"><span class="eyebrow">My story</span><h2>No life surrendered to Him is ever wasted</h2>'+
   '<p class="lead">Sylvia Suhr writes faith-based books that help readers overcome anxiety, fear and uncertainty by learning to trust God more deeply.</p>'+
@@ -855,7 +805,7 @@ P.about=function(){
    '<div><b>Age 57</b>Called to ministry. Begins travelling to Kenya.</div>'+
    '<div><b>Africa and Asia</b>Preaching, visiting prisons, churches and schools; helps establish Heaven on Earth Ministries.</div>'+
    '<div><b>2011</b>Ministry visit to Lagos, Nigeria.</div>'+
-   '<div><b>Today, age 81</b>Writing from South Australia and still becoming.</div>'+
+   '<div><b>Today, age 81</b>Writing from Australia and still becoming.</div>'+
   '</div><div class="photo rv" style="aspect-ratio:4/3"><img src="'+IMG.mission+'" alt="A village church in rural Kenya at golden hour"><span class="cap">Rural Kenya, where Heaven on Earth serves</span></div></div></div></section>'+
   '<section class="section"><div class="wrap g3">'+
    '<div class="card rv"><div class="stat">81</div><p>years old and still becoming</p></div>'+
@@ -878,9 +828,9 @@ P["heaven-on-earth"]=function(){
   '</div></div></section>'+
   '<section class="band"><img class="bg" src="'+IMG.give+'" alt=""><div class="wrap rv"><blockquote>"One life can make a difference."</blockquote><cite>Sylvia Suhr</cite><div class="btn-row" style="justify-content:center;margin-top:28px"><a class="btn light" href="#/give">Give monthly as a Dream Partner</a></div></div></section>'+
   '<section class="section"><div class="wrap" style="max-width:860px"><h2 class="center rv">Questions about giving</h2>'+
-   '<details><summary>Where does my gift go?</summary><p>Gifts support Heaven on Earth\'s work with children and families in rural Kenya. Sylvia shares regular updates with Dream Partners.</p></details>'+
+   '<details><summary>Where does my gift go?</summary><p>Around 90% of donations go directly to the work in Kenya: feeding programs, medical care, school fees, tuition, uniforms, books and stationery. The remaining 10% supports essential administration.</p></details>'+
    '<details><summary>Can I give from outside Australia?</summary><p>Yes. Cards from any country are accepted, and PayPal is available. Your bank converts the amount to your currency.</p></details>'+
-   '<details><summary>Can I change or cancel my monthly gift?</summary><p>Yes, at any time, from the link in your receipt email or by contacting Sylvia.</p></details>'+
+   '<details><summary>Can I change or cancel my monthly gift?</summary><p>Yes. You can cancel your monthly support at any time.</p></details>'+
    '<details><summary>Is my gift tax-deductible?</summary><p>To be confirmed by Sylvia based on the charity\'s registration.</p></details>'+
   '</div></section>';
 };
@@ -889,20 +839,46 @@ P.give=function(){
   return pagehead("Dream Partners","Become a Dream Partner","Join a community of monthly givers bringing hope, education and the love of Christ to children in rural Kenya.","give","Give")+
   '<section class="section"><div class="wrap g2" style="align-items:start">'+
    '<div class="rv"><span class="eyebrow">Why partner</span><h2>Your monthly gift, a lasting difference</h2><p class="lead">Regular giving lets Heaven on Earth plan ahead: keeping children in school and supporting families month after month.</p>'+
-   '<div class="card" style="margin-top:24px"><b>2026 Dream Partner goal</b><div class="progress" aria-label="Sample progress"><span style="width:62%"></span></div><div style="display:flex;justify-content:space-between;font-size:.92rem" class="muted"><span>Sample figures</span><span>Goal set by Sylvia</span></div></div>'+
+   '<div class="card" style="margin-top:24px"><b>Goal: 100 Dream Partners</b><div class="progress" aria-label="Sample progress"><span style="width:62%"></span></div><div style="display:flex;justify-content:space-between;font-size:.92rem" class="muted"><span>Sample figures</span><span>Even $5 a month makes a difference</span></div></div>'+
    '<div class="impact"><div><b>School</b>fees and uniforms</div><div><b>Meals</b>for children</div><div><b>Church</b>and community</div></div>'+
-   '<p class="muted" style="margin-top:20px;font-size:.92rem">Partner giving is kept separate from the bookshop, so your gift and your book orders are never mixed.</p></div>'+
+   '<p style="margin-top:20px">Around 90% of all donations go directly to programs in Kenya: feeding children and families, medical support, school fees, uniforms, books and stationery. Dream Partners receive regular updates and stories.</p><p class="muted" style="margin-top:12px;font-size:.95rem">Partner giving is kept separate from the bookshop, so your gift and your book orders are never mixed.</p></div>'+
    '<div class="givebox rv"><div class="toggle" role="group" aria-label="Frequency"><button type="button" data-freq="m" aria-pressed="true">Monthly</button><button type="button" data-freq="o" aria-pressed="false">One-off</button></div>'+
-    '<h3 style="margin-top:14px">Choose your gift (AUD)</h3><div class="amounts" role="group" aria-label="Amount">'+[10,25,50,100].map(function(a,i){return '<button type="button" data-amt="'+a+'" aria-pressed="'+(i===1)+'">$'+a+'</button>';}).join('')+'</div>'+
-    '<div class="field"><label for="ca">Or another amount</label><input id="ca" type="number" min="1" placeholder="e.g. 35"></div>'+
+    '<h3 style="margin-top:14px">Choose your gift (AUD)</h3><div class="amounts" role="group" aria-label="Amount">'+[5,15,30,50].map(function(a,i){return '<button type="button" data-amt="'+a+'" aria-pressed="'+(i===1)+'">$'+a+'</button>';}).join('')+'</div>'+
+    '<ul class="levels"><li><b>$5</b> helps provide essential items and contributes to meals and school support</li><li><b>$15</b> helps provide food and basic care</li><li><b>$30</b> helps with school supplies and uniforms</li><li><b>$50</b> helps cover school fees and urgent medical needs</li></ul>'+
+    '<div class="field"><label for="ca">Or choose another amount</label><input id="ca" type="number" min="1" placeholder="e.g. 20"></div>'+
     '<div class="field"><label for="gn">Full name</label><input id="gn" autocomplete="name"></div>'+
     '<div class="field"><label for="ge">Email</label><input id="ge" type="email" autocomplete="email"></div>'+
-    '<button class="btn" style="width:100%;justify-content:center" id="givebtn">Give $25 monthly</button>'+
+    '<button class="btn" style="width:100%;justify-content:center" id="givebtn">Give $15 monthly</button>'+
     '<div class="secure" style="justify-content:center">'+ICON.lock+' Secured by Stripe. Card, Apple Pay, Google Pay or PayPal.</div>'+
     '<div id="givemsg"></div></div>'+
   '</div></section>';
 };
 
+P["for-sylvia"]=function(){
+  function L(a){return '<ul class="rlist">'+a.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>';}
+  return pagehead("For Sylvia\u2019s review","What changed in this version","Your feedback of 15 October, and what still needs your confirmation.","hero","For Sylvia")+
+  '<section class="section"><div class="wrap" style="max-width:900px">'+
+  '<h2>Your requests, now in the prototype</h2>'+L([
+   'Complete catalogue: all 25 titles now appear in <a href="#/books">Books</a>, including Fields of Becoming, When the River Flows Again, Guard Your Heart Renew Your Mind, The Report of the Lord, 7 Days from Fear to Freedom and Fast Forward to Success. Titles, subtitles, descriptions and prices are taken from your current website where available.',
+   'Angelique: <a href="#/book/angelique">Angelique: A Journey of Becoming</a> (novel) and <a href="#/book/angelique-finds-her-light">Angelique Finds Her Light</a> (children&rsquo;s book, ages 3 to 8) are listed as two separate books.',
+   'Location: shown as Australia only. No town or street address appears anywhere.',
+   'Dream Partner giving: <a href="#/give">$5, $15, $30 and $50</a>, each with the impact wording from your current Heaven on Earth page, plus &ldquo;Or choose another amount&rdquo;.',
+   'Free downloads: nothing is offered free. Every item on the <a href="#/free">Resources</a> page is marked &ldquo;Awaiting Sylvia&rsquo;s approval&rdquo;, including the book-writing guide.',
+   'Author Support: your <a href="#/author-support">current wording</a> is used exactly as published.',
+   'Text size: larger body text on every screen, 20px on computers and 19px on phones.'])+
+  '<h2 style="margin-top:40px">Waiting for your approval</h2>'+L([
+   'Wording about book purchases supporting Heaven on Earth (home page: &ldquo;Every purchase helps Heaven on Earth, Kenya&rdquo;).',
+   'Your biography on <a href="#/about">About Sylvia</a> and the <a href="#/heaven-on-earth">Heaven on Earth</a> ministry details.',
+   'Which resources, if any, may be offered free.'])+
+  '<h2 style="margin-top:40px">Questions about the books</h2>'+L([
+   'Is Guard Your Heart Renew Your Mind a separate book from Guard Your Heart: Understanding the Heart, the Inner Life, and the Miracle of Being Born Again?',
+   'Fields of Becoming, When the River Flows Again, 7 Days from Fear to Freedom and Fast Forward to Success: please share descriptions, formats and prices.',
+   'Your Shop page also lists &ldquo;Freedom From Fear: Overcoming Anxiety Through Faith&rdquo;. Is this the same book as From Fear to Freedom?',
+   'Prices to confirm for books without a price on the current website.',
+   'Heaven on Earth registration number, and whether gifts are tax-deductible.'])+
+  '<p class="muted" style="margin-top:32px">Photos and covers are placeholders until your original materials arrive.</p>'+
+  '</div></section>';
+};
 P.journal=function(){
   return pagehead("Grace for the Journey","Reflections and encouragement","Weekly devotional writing from Sylvia on trust, peace and walking with God.","bible","Grace for the Journey")+
   '<section class="section"><div class="wrap"><div class="g3">'+POSTS.map(postCard).join('')+'</div></div></section>'+newsletter();
@@ -920,19 +896,18 @@ P.post=function(slug){
 };
 
 P.free=function(){
-  return pagehead("Free resources","Gifts for your journey","Devotionals, training manuals and samples, free to download with your email.","bible","Free Resources")+
-  '<section class="section"><div class="wrap"><div class="g3">'+FREE.map(function(f){return '<div class="card rv" style="display:flex;flex-direction:column"><div style="max-width:160px;margin:0 auto 20px">'+cover({t:f.t,st:"",c:f.c,i:f.i})+'</div><span class="pill green" style="align-self:flex-start">Free</span><h3 style="margin-top:12px">'+f.t+'</h3><p>'+f.d+'</p><button class="btn sm" style="margin-top:auto;align-self:flex-start" data-free="'+f.t+'">Send it to me</button></div>';}).join('')+'</div></div></section>';
+  return pagehead("Resources","Gifts for your journey","Devotionals, training manuals and samples for readers and mission teams.","bible","Resources")+
+  '<section class="section"><div class="wrap"><div class="notice info" style="margin:0 0 32px">Nothing on this page will be offered as a free download until Sylvia has approved each item.</div><div class="g3">'+FREE.map(function(f){return '<div class="card rv" style="display:flex;flex-direction:column"><div style="max-width:160px;margin:0 auto 20px">'+cover({t:f.t,st:"",c:f.c,i:f.i})+'</div><span class="pill" style="align-self:flex-start">Awaiting Sylvia\'s approval</span><h3 style="margin-top:12px">'+f.t+'</h3><p>'+f.d+'</p></div>';}).join('')+'</div></div></section>';
 };
 
 P["author-support"]=function(){
-  return pagehead("Author Support & Publishing","From draft to market","Personal guidance with manuscript preparation, self-publishing, book launches and marketing.","desk","Author Support")+
-  '<section class="section"><div class="wrap"><div class="center rv" style="max-width:740px;margin:0 auto 44px"><span class="eyebrow">How I can help you</span><h2>You do not have to navigate publishing alone</h2><p class="lead">Whether you are still shaping your manuscript, preparing to publish or wondering how to promote your finished book, I can walk alongside you.</p></div><div class="g3">'+
-   '<div class="card rv"><div class="ic">'+ICON.pen+'</div><h3>Book Clarity Session</h3><p>For writers with an idea, an unfinished manuscript or unsure of the next step. We look at your message, audience, structure, title and direction.</p><p><span class="pill">Ideal for first-time authors</span></p></div>'+
-   '<div class="card rv"><div class="ic">'+ICON.book+'</div><h3>Manuscript to Market</h3><p>For authors with a completed or nearly completed manuscript who want support taking it through to publication.</p><p><span class="pill">Self-publishing guidance</span></p></div>'+
-   '<div class="card rv"><div class="ic">'+ICON.mic+'</div><h3>Launch and Promotion</h3><p>Practical help to launch your book and reach readers, from someone who has published more than eighteen titles.</p><p><span class="pill">Book launches and marketing</span></p></div>'+
-  '</div><p class="center muted" style="margin-top:24px;font-size:.95rem">Sylvia\'s existing Author Support wording will be kept exactly as she has written it.</p>'+
-  '<div class="center" style="margin-top:28px"><a class="btn" href="#/contact?topic=author">Let\'s talk about your book</a></div></div></section>'+
-  '<section class="section tint"><div class="wrap g2"><div class="photo rv" style="aspect-ratio:4/3"><img src="'+IMG.desk+'" alt=""></div><div class="rv"><span class="eyebrow">Free guide</span><h2>Write and publish a Spirit-led Christian book in 7 days</h2><p>A simple guide to sharing God\'s message with clarity and confidence.</p><a class="btn" href="#/free">Download free</a></div></div></section>';
+  return pagehead("Author Support & Publishing Services","Helping Authors Take Their Manuscripts from Draft to Market","Personal guidance with manuscript preparation, self-publishing, book launches, and marketing.","desk","Author Support")+
+  '<section class="section"><div class="wrap"><div class="center rv" style="max-width:740px;margin:0 auto 44px"><span class="eyebrow">How I Can Help You</span><h2>You don&rsquo;t have to navigate the publishing journey alone.</h2><p class="lead">Whether you are still shaping your manuscript, preparing to publish, or wondering how to promote your finished book, I can walk alongside you with practical, personal guidance.</p></div><div class="g3">'+
+   '<div class="card rv"><div class="ic">'+ICON.pen+'</div><h3>Book Clarity Session</h3><p>For writers who have an idea, an unfinished manuscript, or simply feel unsure about the next step.</p><p>Together we can look at your message, audience, structure, title, direction, and what needs to happen next.</p><p><b>Ideal for:</b> first-time authors, stalled manuscripts, or anyone needing clarity and encouragement.</p></div>'+
+   '<div class="card rv"><div class="ic">'+ICON.book+'</div><h3>Manuscript to Market</h3><p>For authors who want support taking a completed or nearly completed manuscript through the publishing process.</p><p>This may include manuscript review, structure, editing guidance, formatting preparation, cover and back-cover wording, book descriptions, publishing platforms, pricing, keywords, categories, and launch preparation.</p><p><b>Ideal for:</b> authors who want someone beside them from manuscript preparation through to publication.</p></div>'+
+   '<div class="card rv"><div class="ic">'+ICON.mic+'</div><h3>Book Launch &amp; Marketing Support</h3><p>Publishing the book is only the beginning. I can help you prepare to introduce your book confidently to readers.</p><p>Support may include launch planning, social-media posts, promotional graphics, QR codes, author pages, book descriptions, website copy, email promotion, and ideas for reaching the right readers.</p><p><b>Ideal for:</b> newly published authors or authors wanting to give an existing book fresh visibility.</p></div>'+
+  '</div></div></section>'+
+  '<section class="section tint"><div class="wrap g2"><div class="photo rv" style="aspect-ratio:4/3"><img src="'+IMG.desk+'" alt="A writer&rsquo;s desk with books and wildflowers"></div><div class="rv"><span class="eyebrow">Author Support</span><h2>Your Book Matters</h2><p class="lead">You may already have the message in your heart. Sometimes what you need is someone to help you bring the pieces together and move forward with confidence.</p><a class="btn" href="#/contact?topic=author">Let&rsquo;s talk about your book</a></div></div></section>';
 };
 
 P.media=function(){
@@ -941,14 +916,14 @@ P.media=function(){
    '<div class="rv"><div class="video" data-video><img src="'+IMG.mission+'" alt=""><div class="play"><span>'+ICON.play+'</span></div></div><h3 style="margin-top:20px">Memories of my visit to Lagos, Nigeria (2011)</h3><p class="muted">With thanks to Pastor Emmanuel Falodun and Apostle Psalm Okpe for a visit I will never forget.</p></div>'+
    '<div class="rv"><div class="video" data-video><img src="'+IMG.desk+'" alt=""><div class="play"><span>'+ICON.play+'</span></div></div><h3 style="margin-top:20px">Podcast: discovering who you really are</h3><p class="muted">Sylvia talks about her books, her journey through England, Africa and Australia, and life lessons on discovering who you really are.</p></div>'+
   '</div><div class="notice info" style="margin-top:40px">Videos are embedded from YouTube and only load when played, so the page stays fast.</div></div></section>'+
-  '<section class="section alt"><div class="wrap g2"><div class="rv"><span class="eyebrow">Speaking</span><h2>Invite Sylvia to your church or event</h2><p class="lead">Testimony, missions and living by faith, in person in South Australia or online anywhere in the world.</p><a class="btn" href="#/contact?topic=speaking">Send an invitation</a></div><div class="photo rv" style="aspect-ratio:4/3"><img src="'+IMG.hero+'" alt=""></div></div></section>';
+  '<section class="section alt"><div class="wrap g2"><div class="rv"><span class="eyebrow">Speaking</span><h2>Invite Sylvia to your church or event</h2><p class="lead">Testimony, missions and living by faith, in person in Australia or online anywhere in the world.</p><a class="btn" href="#/contact?topic=speaking">Send an invitation</a></div><div class="photo rv" style="aspect-ratio:4/3"><img src="'+IMG.hero+'" alt=""></div></div></section>';
 };
 
 P.contact=function(){
   return pagehead("Contact","Let's talk","Questions about a book, a download, speaking or partnering, Sylvia would love to hear from you.","hero","Contact")+
   '<section class="section"><div class="wrap g2" style="align-items:start">'+
    '<div class="rv"><h2>Get in touch</h2><p class="lead">Sylvia reads every message personally and replies as soon as she can.</p>'+
-   '<div class="card" style="margin:24px 0"><p style="margin:0 0 8px"><b>Email</b><br><a href="mailto:sylviasuhr@gmail.com">sylviasuhr@gmail.com</a></p><p style="margin:0"><b>Location</b><br>Peake, South Australia</p></div>'+
+   '<div class="card" style="margin:24px 0"><p style="margin:0 0 8px"><b>Email</b><br><a href="mailto:sylviasuhr@gmail.com">sylviasuhr@gmail.com</a></p><p style="margin:0"><b>Location</b><br>Australia</p></div>'+
    '<details><summary>I did not receive my download link</summary><p>Check your spam folder first. You can also open <a href="#/downloads">My downloads</a> with the email you used to purchase, or contact Sylvia and she will resend it.</p></details>'+
    '<details><summary>Can I buy a paperback?</summary><p>Yes, most titles are available as paperbacks on Amazon in many countries.</p></details>'+
    '<details><summary>Do you ship internationally?</summary><p>eBooks are delivered instantly worldwide. Paperbacks are printed and shipped by Amazon in your region.</p></details></div>'+
@@ -1008,13 +983,13 @@ function legal(title,items){
   return pagehead("Policies",title,"Draft for Sylvia\'s review. Final wording to be approved before launch.","bible",title)+
   '<section class="section"><div class="wrap article">'+items.map(function(x){return '<h3>'+x[0]+'</h3><p>'+x[1]+'</p>';}).join('')+'</div></section>';
 }
-P.privacy=function(){return legal("Privacy Policy",[["Who we are","Sylvia\'s Dream is the website of author Sylvia Suhr, South Australia."],["What we collect","Your name and email when you buy, give, subscribe or contact us. Payments are processed by Stripe and PayPal; we never see or store your card details."],["How we use it","To deliver your books, send receipts, send the newsletter if you opt in, and reply to your messages. We never sell your information."],["Your rights","You can ask to see, correct or delete your information at any time. Readers in the UK and EU have rights under GDPR; Australian readers under the Privacy Act 1988."]]);};
+P.privacy=function(){return legal("Privacy Policy",[["Who we are","Sylvia\'s Dream is the website of author Sylvia Suhr, Australia."],["What we collect","Your name and email when you buy, give, subscribe or contact us. Payments are processed by Stripe and PayPal; we never see or store your card details."],["How we use it","To deliver your books, send receipts, send the newsletter if you opt in, and reply to your messages. We never sell your information."],["Your rights","You can ask to see, correct or delete your information at any time. Readers in the UK and EU have rights under GDPR; Australian readers under the Privacy Act 1988."]]);};
 P.terms=function(){return legal("Terms of Sale",[["eBooks","eBooks are for personal use. Please do not share or resell download files."],["Prices","Prices are in Australian dollars. Your bank may convert to your currency."],["Delivery","Download links are emailed immediately after payment."],["Paperbacks","Paperbacks are sold and shipped by Amazon under Amazon\'s terms."]]);};
 P.refunds=function(){return legal("Refunds & Downloads",[["Digital products","If a file will not open or you were charged twice, contact us within 14 days and we will fix it or refund you."],["Lost links","Request fresh links any time from My downloads."],["Gifts","Monthly gifts can be changed or cancelled at any time. One-off gifts are refunded on request within 14 days if made in error."]]);};
 P.notfound=function(){return '<section class="section"><div class="wrap center" style="max-width:640px"><span class="eyebrow">Page not found</span><h1>This path does not lead anywhere</h1><p class="lead">The page may have moved when the site was reorganised.</p><div class="btn-row" style="justify-content:center"><a class="btn" href="#/">Go home</a><a class="btn ghost" href="#/books">Browse books</a></div></div></section>';};
 
 P.speaking=function(){
-  return pagehead("Speaking","Invite Sylvia to speak","Testimony, missions and living by faith. In person in South Australia, or online for churches and groups anywhere in the world.","hero","Speaking")+
+  return pagehead("Speaking","Invite Sylvia to speak","Testimony, missions and living by faith. In person in Australia, or online for churches and groups anywhere in the world.","hero","Speaking")+
   '<section class="section"><div class="wrap"><div class="center rv" style="max-width:720px;margin:0 auto 44px"><span class="eyebrow">Topics</span><h2>Messages Sylvia shares</h2></div><div class="g3">'+
    '<div class="card rv"><div class="ic">'+ICON.heart+'</div><h3>From fear to freedom</h3><p>Trusting God through anxiety and uncertainty, drawn from From Fear to Freedom.</p><a href="#/book/from-fear-to-freedom">Related book &rarr;</a></div>'+
    '<div class="card rv"><div class="ic">'+ICON.globe+'</div><h3>Called and sent</h3><p>Preparing your heart for missions, from twenty years in Africa and Asia.</p><a href="#/book/sent">Related book &rarr;</a></div>'+
@@ -1031,7 +1006,7 @@ var LINKS={
  hoe:["Ministry","Heaven on Earth, Kenya","#/heaven-on-earth"],
  give:["Give","Become a Dream Partner","#/give"],
  journal:["Devotionals","Grace for the Journey","#/journal"],
- free:["Free","Free devotional and resources","#/free"],
+ free:["Resources","Devotionals and resources","#/free"],
  author:["Writers","Author Support","#/author-support"],
  media:["Watch","Podcasts and videos","#/media"],
  speaking:["Events","Invite Sylvia to speak","#/speaking"],
@@ -1045,7 +1020,7 @@ function nextStrip(k,sub){
 }
 
 /* ---------- router ---------- */
-var TITLES={"":"Home",books:"Books",about:"About Sylvia","heaven-on-earth":"Heaven on Earth",give:"Become a Dream Partner",journal:"Grace for the Journey",free:"Free Resources","author-support":"Author Support",media:"Podcasts & Videos",contact:"Contact",cart:"Cart",checkout:"Checkout","thank-you":"Thank you",downloads:"My downloads",privacy:"Privacy Policy",terms:"Terms of Sale",refunds:"Refunds"};
+var TITLES={"":"Home",books:"Books",about:"About Sylvia","heaven-on-earth":"Heaven on Earth",give:"Become a Dream Partner",journal:"Grace for the Journey",free:"Resources","author-support":"Author Support",media:"Podcasts & Videos",contact:"Contact",cart:"Cart",checkout:"Checkout","thank-you":"Thank you",downloads:"My downloads",privacy:"Privacy Policy",terms:"Terms of Sale",refunds:"Refunds"};
 function route(){
   var h=(location.hash||"#/").replace(/^#\/?/,"").split("?")[0];
   var parts=h.split("/"),k=parts[0]||"",html;
@@ -1056,7 +1031,7 @@ function route(){
   else html=P.notfound();
   html+=nextStrip(k,parts[1]);
   $("#main").innerHTML=html;
-  TITLES.speaking="Invite Sylvia to Speak";
+  TITLES.speaking="Invite Sylvia to Speak";TITLES["for-sylvia"]="For Sylvia\u2019s review";
   var t=TITLES[k]||"Sylvia\'s Dream";
   if(k==="book"&&bySlug(parts[1]))t=bySlug(parts[1]).t;
   if(k==="journal"&&parts[1])POSTS.forEach(function(x){if(x.s===parts[1])t=x.t;});
@@ -1097,7 +1072,7 @@ function bind(){
   }
   // give
   var gb=$("#givebtn");
-  if(gb){var amt=25,freq="m";
+  if(gb){var amt=15,freq="m";
     function lab(){gb.textContent="Give $"+amt+(freq==="m"?" monthly":" once");}
     $$("[data-amt]").forEach(function(b){b.addEventListener("click",function(){$$("[data-amt]").forEach(function(x){x.setAttribute("aria-pressed","false");});b.setAttribute("aria-pressed","true");amt=+b.getAttribute("data-amt");$("#ca").value="";lab();});});
     $$("[data-freq]").forEach(function(b){b.addEventListener("click",function(){$$("[data-freq]").forEach(function(x){x.setAttribute("aria-pressed","false");});b.setAttribute("aria-pressed","true");freq=b.getAttribute("data-freq");lab();});});
@@ -1123,7 +1098,7 @@ function reveal(){
   var cats=[];BOOKS.forEach(function(b){if(cats.indexOf(b.cat)<0)cats.push(b.cat);});
   var feat=BOOKS.filter(function(b){return b.feat;}).slice(0,3);
   $("#megabooks").innerHTML='<div><h5>Browse by topic</h5><ul>'+cats.map(function(c){return '<li><a href="#/books?cat='+encodeURIComponent(c)+'">'+c+'</a></li>';}).join('')+'<li><a href="#/books"><b>All books &rarr;</b></a></li></ul></div>'+
-   '<div><h5>Other languages</h5><ul><li><a href="#/books?lang=fr">Fran&ccedil;ais</a></li><li><a href="#/books?lang=es">Espa&ntilde;ol</a></li><li><a href="#/books?lang=id">Bahasa Indonesia</a></li></ul><h5 style="margin-top:18px">Readers</h5><ul><li><a href="#/free">Free downloads</a></li><li><a href="#/downloads">My downloads</a></li><li><a href="#/refunds">Download help</a></li></ul></div>'+
+   '<div><h5>Other languages</h5><ul><li><a href="#/books?lang=fr">Fran&ccedil;ais</a></li><li><a href="#/books?lang=es">Espa&ntilde;ol</a></li><li><a href="#/books?lang=id">Bahasa Indonesia</a></li></ul><h5 style="margin-top:18px">Readers</h5><ul><li><a href="#/downloads">My downloads</a></li><li><a href="#/refunds">Download help</a></li></ul></div>'+
    '<div><h5>Start here</h5><div class="mf">'+feat.map(function(b){return '<a href="#/book/'+b.s+'">'+cover(b)+b.t+'</a>';}).join('')+'</div></div>';
 })();
 $$(".subtoggle").forEach(function(b){b.addEventListener("click",function(e){e.stopPropagation();var li=b.parentNode,o=li.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false");$$(".has-sub").forEach(function(x){if(x!==li){x.classList.remove("open");var t=$(".subtoggle",x);if(t)t.setAttribute("aria-expanded","false");}});});});
@@ -1137,7 +1112,7 @@ $("#langsel").addEventListener("change",function(){location.hash=this.value?"#/b
 var SIDX=[];
 BOOKS.forEach(function(b){SIDX.push({t:b.t,d:b.st+" "+b.sh+" "+b.cat,h:"#/book/"+b.s,k:"Book"});});
 POSTS.forEach(function(p){SIDX.push({t:p.t,d:p.ex,h:"#/journal/"+p.s,k:"Devotional"});});
-[["About Sylvia","story missionary author","#/about"],["Heaven on Earth","kenya charity children orphans","#/heaven-on-earth"],["Become a Dream Partner","give donate monthly partner","#/give"],["Free resources","free download devotional manual","#/free"],["Author Support","publishing manuscript writers","#/author-support"],["Podcasts & Videos","video podcast interview","#/media"],["Invite Sylvia to speak","speaking events church","#/speaking"],["Contact","email message","#/contact"],["My downloads","download link lost resend","#/downloads"],["Privacy Policy","privacy data","#/privacy"],["Terms of Sale","terms","#/terms"],["Refunds & Downloads","refund","#/refunds"]].forEach(function(x){SIDX.push({t:x[0],d:x[1],h:x[2],k:"Page"});});
+[["About Sylvia","story missionary author","#/about"],["Heaven on Earth","kenya charity children orphans","#/heaven-on-earth"],["Become a Dream Partner","give donate monthly partner","#/give"],["Resources","devotional manual resources","#/free"],["Author Support","publishing manuscript writers","#/author-support"],["Podcasts & Videos","video podcast interview","#/media"],["Invite Sylvia to speak","speaking events church","#/speaking"],["Contact","email message","#/contact"],["My downloads","download link lost resend","#/downloads"],["Privacy Policy","privacy data","#/privacy"],["Terms of Sale","terms","#/terms"],["Refunds & Downloads","refund","#/refunds"]].forEach(function(x){SIDX.push({t:x[0],d:x[1],h:x[2],k:"Page"});});
 function openSearch(){$("#searchov").hidden=false;$("#sq").value="";$("#sres").innerHTML="";setTimeout(function(){$("#sq").focus();},30);}
 function closeSearch(){$("#searchov").hidden=true;}
 $("#searchbtn").addEventListener("click",openSearch);
