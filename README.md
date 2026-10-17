@@ -29,9 +29,9 @@ See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). In short: build and test on the 
 
 | File | Purpose |
 |---|---|
-| [`docs/BACKUP-AND-LAUNCH.md`](docs/BACKUP-AND-LAUNCH.md) | Step-by-step checklist: backup, day-1 protection, staging, switch-over, rollback, Stripe checks |
-| [`scripts/backup-inventory.sh`](scripts/backup-inventory.sh) | Read-only WP-CLI inventory and database export |
-| [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) | Staging, GitHub deployment, launch day and rollback |
+| [`docs/BACKUP-AND-LAUNCH.md`](docs/BACKUP-AND-LAUNCH.md) | Step-by-step checklist (Personal plan): manual backups, day-1 protection, local build, preview, switch-over, rollback, post-launch, restoration test |
+| [`scripts/backup-inventory.sh`](scripts/backup-inventory.sh) | Read-only WP-CLI inventory, for the local copy only (no WP-CLI on Personal) |
+| [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) | Local build, WP Admin uploads, drafts, launch day and rollback |
 | [`docs/CLIENT-CHECKLIST.md`](docs/CLIENT-CHECKLIST.md) | Access and content needed from Sylvia |
 | [`docs/REDIRECT-MAP.md`](docs/REDIRECT-MAP.md) | Content audit: keep, merge, redirect, protect |
 | [`docs/QA-CHECKLIST.md`](docs/QA-CHECKLIST.md) | Acceptance checks before the balance is due |

@@ -22,8 +22,10 @@ function sdc_defaults() {
 		'hero_text'      => 'Christian books and resources to help you find freedom in Christ and prepare your heart for God\'s calling.',
 		'hero_cta_label' => 'Explore the Books',
 		'hero_cta_url'   => '/shop/',
-		'hero_cta2_label'=> 'Get a Free eBook',
-		'hero_cta2_url'  => '/free-ebook/',
+		// No free download is offered without Sylvia's approval, so the
+		// second button points to the ministry page by default.
+		'hero_cta2_label'=> 'Heaven on Earth',
+		'hero_cta2_url'  => '/heaven-on-earth/',
 		'hero_image'     => '',
 		'contact_email'  => '',
 		'social_facebook'=> '',

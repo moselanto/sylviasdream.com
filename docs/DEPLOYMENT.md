@@ -1,55 +1,44 @@
-# Deployment
+# Deployment (WordPress.com Personal plan)
 
-The live site must keep selling and taking gifts throughout. These steps make that possible.
-For a tick-box version with exact commands, use [`BACKUP-AND-LAUNCH.md`](BACKUP-AND-LAUNCH.md).
+The live site must keep selling and taking gifts throughout. The site stays on the **Personal** plan (agreed 17 Oct 2026), which has **no staging site, no SFTP/SSH, no GitHub Deployments and no one-click restore**. So: build privately on a local copy, upload code through WP Admin, prepare content as drafts, and switch over in one short window.
+For the tick-box version, use [`BACKUP-AND-LAUNCH.md`](BACKUP-AND-LAUNCH.md). Project context: [`../project/`](../project/README.md).
 
 ## 0. Before anything
-
-1. Sylvia invites Pimofy Digital as an **Administrator** (Users > Invite). No password sharing.
-2. Confirm the plan in **Upgrades > Plans** (must be Business or Commerce).
-3. Take a full backup (Jetpack backup / Activity log restore point).
-4. Export the page list and every Stripe payment link with its redirect URL.
+1. Sylvia invites mosemqute@gmail.com as **Administrator**. No passwords shared. No Stripe access (see `../project/STRIPE-DATA-REQUEST.md`).
+2. First look, change nothing: confirm **Upgrades > Plans** shows Personal, storage used (6 GB limit), how giving works now, that **Appearance > Themes > Add New > Upload** and **Plugins > Add New > Upload** are available, and where the domain is registered.
+3. Take the full backup set (`BACKUP-AND-LAUNCH.md` section 1).
 
 ## 1. Day 1 on production (no visible change)
-
-1. Deploy **only** `sylviasdream-core/` to production and activate it.
-2. Settings > Sylvia's Dream: check the protected slugs list. Leave **Redirects off**.
+1. Zip `sylviasdream-core/` and upload it in **Plugins > Add New > Upload Plugin**. Activate.
+2. Settings > Sylvia's Dream: check the protected slugs list against the payment-link table. Leave **Redirects off**.
 3. Verify: thank-you pages still open, show `noindex`, and are gone from `/sitemap.xml`.
-4. Request removal of the thank-you URLs in Google Search Console if already indexed.
 
-## 2. Build on staging
+## 2. Build privately (local copy)
+1. Create a local WordPress site (LocalWP or `wp-env`) and import the backup set (XML, media, Customizer export).
+2. Install the themes and plugin from this repo, WooCommerce, WooCommerce Stripe Gateway and WooCommerce PayPal Payments. **Stripe test keys only.**
+3. Build the design, shop, Give page and policies. Run `QA-CHECKLIST.md`.
+4. Run `node prototype/verify.js` after any prototype change.
 
-1. Hosting > Staging site: create a staging copy.
-2. Connect this repo with **GitHub Deployments** to the staging site:
-   - `sylviasdream/` -> `wp-content/themes/sylviasdream`
-   - `sylviasdream-child/` -> `wp-content/themes/sylviasdream-child`
-   - `sylviasdream-core/` -> `wp-content/plugins/sylviasdream-core`
-   (SFTP upload of the same folders works too.)
-3. Install WooCommerce + WooCommerce Stripe Gateway + WooCommerce PayPal Payments (free). Use **test mode** only on staging.
-4. Build the design, shop and Give page; run `docs/QA-CHECKLIST.md`.
+## 3. Prepare production (no visible change)
+1. Zip and upload `sylviasdream/` and `sylviasdream-child/` in **Appearance > Themes > Add New > Upload**. **Do not activate.**
+2. Install WooCommerce and the payment plugins; keep payments disabled or in test mode.
+3. Create merged book pages, About Sylvia, Give, policies and new menus **as drafts**. Create books as **draft** WooCommerce products with final PDF/EPUB files.
+4. WooCommerce > Settings > Products > Downloadable: Force downloads, grant access after payment, download limit and expiry. Confirm the file URL cannot be opened directly.
+5. Preview for Sylvia: **Appearance > Themes > Live Preview** of the child theme on a call, plus draft preview links. Her approval plus test purchase, secure download and test gift trigger the USD 168 balance.
 
-## 3. Prepare production content (as drafts)
-
-- Create merged book pages, About Sylvia, Give, policies and the new menu on **production as drafts**, so live orders, subscribers and the Author Support edits are never overwritten.
-- Products: create books in WooCommerce on production as drafts, upload final PDF/EPUB files as downloadable files.
-- WooCommerce > Settings > Products > Downloadable: **Force downloads**, require login off, grant access after payment, set a download limit and expiry. Confirm that the file URL cannot be opened directly.
-
-> **Never use "sync staging to production"** for the database. Code only.
-
-## 4. Launch (afternoon Kenya time = night in Adelaide)
-
-1. Deploy themes to production (GitHub Deployments or SFTP).
-2. Appearance > Themes: **Live Preview** the child theme, then **Activate**.
-3. Publish drafts, set the new menus, set the Home page.
-4. Settings > Sylvia's Dream: turn **Redirects on**.
-5. Switch payments to live keys; run one real low-value purchase and refund it.
-6. Run the full QA checklist.
+## 4. Launch (Kenya afternoon = evening in Melbourne)
+1. Fresh backup set (section 1 of the runbook).
+2. Activate the child theme. Publish drafts, set menus and Home page.
+3. Settings > Sylvia's Dream: **Redirects on**.
+4. Live Stripe/PayPal keys. One real low-value purchase, confirm the download email and that **no WordPress.com fee** was taken, then refund.
+5. Full QA checklist on production.
 
 ## 5. After launch
-
-- Email past buyers their new secure links (Stripe customer list), then retire old public files.
-- Keep the thank-you pages hidden (not deleted) for the agreed transition period.
+- Confirm the active Stripe subscription count is unchanged (Sylvia checks and tells us the number).
+- Past ebook buyers get new secure links on launch day (sent by Pimofy, or by Sylvia from her own account).
+- Old thank-you pages stay working and hidden for 30 days, then are retired only with Sylvia's written OK; old payment links are re-pointed or switched off with her written OK.
 
 ## Rollback
-
-- Activate Twenty Twenty again (one click), turn redirects off, or restore the backup from step 0.
+1. Reactivate **Twenty Twenty** (Appearance > Themes).
+2. Turn **Redirects off**.
+3. Content problems: restore from the launch-day backup set by hand. On Personal this takes hours, not minutes (see `../project/SUPPORT-AND-RESTORATION.md`). Never edit Stripe during a rollback.

@@ -1,7 +1,8 @@
 // Headless verification harness: renders every route with a stub DOM,
 // collects internal links and confirms each resolves to a real page (not the 404).
 const fs = require('fs');
-const html = fs.readFileSync('/home/user/proto/index.html', 'utf8');
+const path = require('path');
+const html = fs.readFileSync(process.argv[2] || path.join(__dirname, 'index.html'), 'utf8');
 const js = html.split('<script>')[1].split('</script>')[0];
 
 function stub(name) {
