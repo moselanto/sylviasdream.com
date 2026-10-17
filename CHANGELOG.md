@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-17 - Handover pack
+
+### Added
+- `HANDOFF.md`: start-here guide for a person or AI agent taking over (status, ordered next steps, must-not-do list, where off-repo files are, repo map, known gaps).
+- `project/CORRESPONDENCE.md`: message history with Sylvia, latest drafted reply, writing style.
+- `project/QUOTATION.md` and `project/WEBSITE-AUDIT.md`: full text of quotation v2 and the 15 Oct website review, private details removed.
+
+### Changed
+- README, AGENTS.md and `project/README.md` point to `HANDOFF.md`.
+
 ## 2026-10-17 - Personal plan, project folder, child theme 0.1.1
 
 ### Added

@@ -1,34 +1,43 @@
 # Sylvia's Dream - sylviasdream.com
 
 ![Parent theme](https://img.shields.io/badge/Parent%20theme-v1.0.0-8A6216)
-![Child theme](https://img.shields.io/badge/Child%20theme-v0.1.0-B8862B)
+![Child theme](https://img.shields.io/badge/Child%20theme-v0.1.1-B8862B)
 ![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.1.0-2B2620)
 
-Website for **Sylvia Suhr**, Christian author, speaker and missionary (South Australia), and her Kenya ministry **Heaven on Earth**. Built and maintained by **Pimofy Digital** (quotation PMF-QT-2026-0106).
+Website for **Sylvia Suhr**, Christian author, speaker and missionary (Australia), and her Kenya ministry **Heaven on Earth**. Built and maintained by **Pimofy Digital** (quotation PMF-QT-2026-0106).
 
 > Status: **scaffold**. Nothing here is live yet. The live site still runs the WordPress.com Twenty Twenty theme.
+
+## Taking over this project?
+
+Start with [`HANDOFF.md`](HANDOFF.md): current status, next steps in order, and what must not happen. Then [`project/README.md`](project/README.md) for everything agreed with the client.
 
 ## Packages
 
 | Package | Folder | Version | Role |
 |---|---|---|---|
 | Sylvia's Dream Base (parent theme) | [`sylviasdream/`](sylviasdream) | 1.0.0 | Minimal shell. Never activated on its own. |
-| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 0.1.0 | **Activate this one.** Warm gold design, large text, simple menu, home, shop wrapper, footer. |
+| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 0.1.1 | **Activate this one.** Warm gold design, large text, simple menu, home, shop wrapper, footer. |
 | Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.1.0 | Download-page protection, redirects, structured data, Dream Partner progress. |
 
 ## Hosting
 
-WordPress.com (plugin-capable plan: Business or Commerce; confirm in Upgrades > Plans). **Not cPanel.**
-Custom themes and plugins are allowed, with SFTP/SSH, staging sites and GitHub Deployments.
+WordPress.com **Personal** plan (agreed with Sylvia, 17 October 2026). No upgrade, no migration. Plugins, including WooCommerce, run on all paid plans since April 2026.
+Personal has **no staging site, no SFTP/SSH, no GitHub Deployments and no one-click restore**. The WordPress.com 8% fee applies only to its own Payments/Donations blocks, which this build does not use; a real test purchase confirms fees before launch.
 
 ## How work reaches the site
 
-See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). In short: build and test on the WordPress.com **staging** site, deploy only **code** to production, never sync the staging database over production.
+See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). In short: build and test on a private **local copy**, upload theme and plugin zips through WP Admin, prepare content as **drafts**, then switch over in one short window. Backups are taken by hand before each major step.
+
+## Project folder
+
+[`project/`](project/README.md) holds everything agreed with Sylvia: brief, decision log, quotation and audit text, book catalogue and Amazon check, the minimum Stripe data, support and restoration terms, the 11-phase workflow, call guide, correspondence and open items.
 
 ## Docs
 
 | File | Purpose |
 |---|---|
+| [`HANDOFF.md`](HANDOFF.md) | Start here: status, next steps, must-not-do list |
 | [`docs/BACKUP-AND-LAUNCH.md`](docs/BACKUP-AND-LAUNCH.md) | Step-by-step checklist (Personal plan): manual backups, day-1 protection, local build, preview, switch-over, rollback, post-launch, restoration test |
 | [`scripts/backup-inventory.sh`](scripts/backup-inventory.sh) | Read-only WP-CLI inventory, for the local copy only (no WP-CLI on Personal) |
 | [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) | Local build, WP Admin uploads, drafts, launch day and rollback |
@@ -39,11 +48,13 @@ See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). In short: build and test on the 
 
 ## Agreed with the client
 
-- Keep the domain, WordPress.com plan, blog posts, subscribers and Stripe account.
+- Keep the domain, WordPress.com Personal plan, blog posts, subscribers and Stripe account. USD 280 fixed (deposit USD 112, balance USD 168).
+- No Stripe team access: Sylvia exports only the minimum data (see `project/STRIPE-DATA-REQUEST.md`).
 - Existing buyers keep access to their ebooks; existing Stripe giving subscriptions are not touched.
 - Keep the recently updated **Author Support** page content as it is.
 - Keep the warm gold style, with large, readable text and straightforward navigation.
 - Balance is due after Sylvia approves the preview, including a successful test purchase, secure download and test gift.
+- Restoration test before handover (see `project/SUPPORT-AND-RESTORATION.md`).
 
 ## Sylvia's feedback on the prototype (15 October 2026)
 
@@ -58,4 +69,4 @@ See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). In short: build and test on the 
 
 ## Prototype
 
-[`prototype/index.html`](prototype/index.html) is a single-file design preview (v3). Open it in a browser; the **For Sylvia's review** page (`#/for-sylvia`) lists every change and open question. Run `node prototype/verify.js` to render every route and check for broken internal links.
+[`prototype/index.html`](prototype/index.html) is a single-file design preview (v3). Open it in a browser; the **For Sylvia's review** page (`#/for-sylvia`) lists every change and open question. Run `node prototype/verify.js` (from any folder) to render every route and check for broken internal links.

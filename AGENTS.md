@@ -1,14 +1,16 @@
 # AGENTS.md - working on this repository
 
-WordPress site for Sylvia's Dream (sylviasdream.com), hosted on WordPress.com.
+WordPress site for Sylvia's Dream (sylviasdream.com), hosted on the WordPress.com **Personal** plan (no staging, SFTP/SSH, GitHub Deployments or one-click restore).
+
+**Taking over? Read [`HANDOFF.md`](HANDOFF.md) first** (status, next steps, what must not happen), then [`project/README.md`](project/README.md) for everything agreed with the client.
 
 ## Layout
 
 - `sylviasdream/` - minimal parent theme. Rarely changes. Never activated directly.
 - `sylviasdream-child/` - the site design. Most work happens here.
 - `sylviasdream-core/` - plugin for anything that must survive a theme change (protection, redirects, schema, giving progress).
-- `docs/` - deployment, client checklist, redirect map, QA.
-- `project/` - brief, decision log, book catalogue, Stripe data request, support and restoration, workflow, call guide, open items.
+- `docs/` - deployment, backup and launch runbook, client checklist, redirect map, QA.
+- `project/` - brief, decision log, quotation and audit text, book catalogue, Stripe data request, support and restoration, workflow, call guide, correspondence, open items.
 
 ## Rules
 
@@ -17,10 +19,11 @@ WordPress site for Sylvia's Dream (sylviasdream.com), hosted on WordPress.com.
 3. **Escape on output, sanitise on input.** Nonces and `current_user_can()` on every save.
 4. **Never touch existing Stripe subscriptions or payment links.** Giving is separate from the shop cart.
 5. **Never redirect or delete thank-you / download pages** until past buyers have their new links.
-6. **Never sync the staging database over production.** Deploy code only.
+6. **Never sync a local or staging database over production.** Deploy code only.
 7. **Bump versions** (`style.css` header + version constant) for each release, and update `CHANGELOG.md`, the README badges and docs in the same commit.
 8. **Accessibility:** one `h1` per page, visible focus, 48px touch targets, alt text on every image, 19px+ body text.
 9. Run `php -l` on every changed PHP file before committing.
 10. **No private data in Git:** no Stripe exports, subscriber or buyer lists, backups, phone numbers or bank details. They live in the private Google Drive folder.
 11. **Nothing is offered free** (no default "free ebook" links) without Sylvia's written approval.
-12. Record every client decision in `project/DECISIONS.md` and keep `project/OPEN-ITEMS.md` current.
+12. Record every client decision in `project/DECISIONS.md`, keep `project/OPEN-ITEMS.md` and the status table in `HANDOFF.md` current.
+13. Do not contact Sylvia or send anything to her without Moses's approval. Do not mention this repo to her.

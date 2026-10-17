@@ -16,6 +16,11 @@ Everything agreed with Sylvia, mapped to where it lives. Read this before starti
 | [`WORKFLOW.md`](WORKFLOW.md) | The 11 phases from acceptance to handover, with owners and links to the runbooks |
 | [`CALL-GUIDE.md`](CALL-GUIDE.md) | Agenda and decisions to capture on the call with Sylvia |
 | [`OPEN-ITEMS.md`](OPEN-ITEMS.md) | What is still waiting on Sylvia or on Pimofy |
+| [`CORRESPONDENCE.md`](CORRESPONDENCE.md) | Message history with Sylvia, the latest drafted reply, and how to write to her |
+| [`QUOTATION.md`](QUOTATION.md) | Full text of quotation v2 (scope, pricing, terms), private details removed |
+| [`WEBSITE-AUDIT.md`](WEBSITE-AUDIT.md) | Full text of the 15 Oct website review (findings, priorities, acceptance checks) |
+
+New here? Start with [`../HANDOFF.md`](../HANDOFF.md).
 
 ## Related files elsewhere in the repo
 
