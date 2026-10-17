@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-10-17 - Personal plan, project folder, child theme 0.1.1
+
+### Added
+- `project/`: README map, project brief, decision log (15-17 Oct), book catalogue with the 17 Oct Amazon.com.au check and questions, minimum Stripe data request, support and restoration terms with the pre-handover restoration test, 11-phase workflow, call guide, open items.
+
+### Changed
+- `docs/DEPLOYMENT.md` and `docs/BACKUP-AND-LAUNCH.md` rewritten for the WordPress.com Personal plan: manual backups (including WooCommerce orders and download access), local build instead of staging, WP Admin uploads instead of GitHub Deployments, manual rollback, no Stripe access for Pimofy, restoration test.
+- `docs/CLIENT-CHECKLIST.md`: 25 titles, Stripe exports by Sylvia instead of team access, domain, covers, payment-link approval.
+- `docs/QA-CHECKLIST.md`: WordPress.com fee check on a real purchase, past-buyer links, backup and restoration section.
+- `scripts/backup-inventory.sh`: marked for the local copy only (no WP-CLI on Personal).
+- README and AGENTS.md: Personal plan, project folder, data and free-download rules.
+
+### Fixed
+- `sylviasdream-child` 0.1.1: the default second hero button no longer says "Get a Free eBook"; it now links to Heaven on Earth (nothing is free without Sylvia's approval).
+- `prototype/verify.js`: reads `index.html` next to the script (or a path argument) instead of a hard-coded sandbox path.
+
 ## 2026-10-15 - Prototype v3: Sylvia's feedback
 
 ### Changed

@@ -8,6 +8,8 @@ Run on staging before preview approval, and again on production at launch.
 - [ ] Download link stops working after the limit / expiry
 - [ ] Old public ebook file URLs no longer open the paid files (after buyer transition)
 - [ ] Prices and titles match Sylvia's confirmed list
+- [ ] Real low-value purchase on production shows **no WordPress.com fee** (only Stripe/PayPal fees), then refunded
+- [ ] Past buyers' new secure links work
 
 ## Giving
 - [ ] Existing Stripe subscriptions still active (check Stripe dashboard)
@@ -35,6 +37,12 @@ Run on staging before preview approval, and again on production at launch.
 - [ ] Alt text on all images on key pages
 - [ ] Mobile menu works by touch and keyboard (Escape closes)
 - [ ] Phone, tablet and desktop in Chrome, Safari, Firefox and Edge
+
+## Backups and restoration (before handover)
+- [ ] Launch-day backup set complete in the private folder (content, media, subscribers, settings, products, orders)
+- [ ] Restoration test passed on a private copy: site, shop, settings, orders and download access (see `../project/SUPPORT-AND-RESTORATION.md`)
+- [ ] Result shared with Sylvia; restore steps and time recorded in the handover guide
+- [ ] No Stripe exports, subscriber lists or backups committed to this repo
 
 ## Legal
 - [ ] Privacy Policy, Terms of Sale and Refund Policy live and linked in footer and checkout

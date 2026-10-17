@@ -1,109 +1,100 @@
-# Backup and launch runbook
+# Backup and launch runbook (Personal plan)
 
-Step-by-step for sylviasdream.com once Pimofy Digital has **Administrator** access on WordPress.com and **team member** access in Stripe.
-Read together with [`DEPLOYMENT.md`](DEPLOYMENT.md) and [`QA-CHECKLIST.md`](QA-CHECKLIST.md).
+Tick-box steps for sylviasdream.com once Pimofy has **Administrator** access on WordPress.com. Pimofy has **no Stripe access**; Sylvia provides the items in [`../project/STRIPE-DATA-REQUEST.md`](../project/STRIPE-DATA-REQUEST.md).
+Read with [`DEPLOYMENT.md`](DEPLOYMENT.md), [`QA-CHECKLIST.md`](QA-CHECKLIST.md) and [`../project/SUPPORT-AND-RESTORATION.md`](../project/SUPPORT-AND-RESTORATION.md).
 
-> **Where backups live:** a private folder (Sylvia's or Pimofy's Google Drive). **Never commit backups, subscriber lists or Stripe exports to this repo.** They contain readers' and donors' personal data. Only the page inventory and redirect map belong in Git.
+> **Where backups live:** the private Google Drive folder "Sylvia's Dream - Backups (private)", shared only between Sylvia and Moses. **Never commit backups, subscriber lists or Stripe exports to this repo, and never send them by WhatsApp.**
+
+> **Personal plan:** no Jetpack one-click restore, no Activity Log restore, no SSH/WP-CLI, no staging. Every backup below is taken by hand, and a restore is a manual reinstall that takes hours.
 
 ---
 
-## 1. Back up (before touching anything, about 1 hour)
+## 1. Back up (before touching anything, about 1-2 hours)
 
-### 1.1 Website restore point
-- [ ] wordpress.com > the site > **Jetpack > Backup**: confirm today's backup completed.
-- [ ] Click **Download backup** and save the zip (files + database) to the private folder.
-- [ ] Note the backup date/time here: `__________`. Any later point can also be restored from the **Activity Log**.
+Note the date and time: `__________`
 
-### 1.2 Independent content export
-- [ ] WP Admin > **Tools > Export > All content** (XML).
-- [ ] WP Admin > **Tools > Export > Export media library** (zip).
+### 1.1 Content and media
+- [ ] Tools > Export > **All content** (XML).
+- [ ] Tools > Export > **Export media library** (zip).
 
-### 1.3 Subscribers
-- [ ] **Subscribers** screen > download CSV (email list; not reliably covered by the site backup).
+### 1.2 Subscribers
+- [ ] **Subscribers** > download CSV. Record the count: `____`
 
-### 1.4 Inventory (SSH / WP-CLI)
-Enable SSH in the site's hosting settings, connect, then run [`scripts/backup-inventory.sh`](../scripts/backup-inventory.sh), or the commands individually:
+### 1.3 Settings and appearance
+- [ ] Screenshots: Pages list, Posts list, Appearance > Menus (each menu), Widgets, Customizer panels, footer, Settings > General/Reading/Discussion.
+- [ ] If a Customizer export plugin runs on the plan, export Customizer settings (`.dat`).
+- [ ] Copy the **Author Support** page content into a document (must stay exactly as written).
+- [ ] Plugins screen screenshot (names and versions).
 
-```bash
-wp post list --post_type=page,post --post_status=any \
-  --fields=ID,post_title,post_name,post_status,post_modified --format=csv > inventory.csv
-wp post list --post_type=attachment --fields=ID,post_title,guid --format=csv > media.csv
-wp menu list --format=csv > menus.csv
-wp menu item list primary --fields=db_id,title,link --format=csv > menu-primary.csv
-wp option get theme_mods_twentytwenty --format=json > theme-mods.json
-wp widget list sidebar-1 --format=csv > widgets.csv
-wp db export "backup-$(date +%F).sql"
-```
+### 1.4 Full database (if available)
+- [ ] Check whether a full-site backup plugin (for example UpdraftPlus) installs and runs on the plan (some backup plugins, such as BackWPup, are not supported on WordPress.com). If yes, back up database + uploads to Sylvia's Google Drive. If not, rely on 1.1-1.3 plus the WooCommerce exports in 1.5 once the shop exists.
 
-No SSH? Screenshot **Pages**, **Posts**, **Appearance > Menus** and **Widgets** instead.
+### 1.5 Shop (after WooCommerce is installed, and on launch day)
+- [ ] WooCommerce > Products > **Export** (CSV).
+- [ ] WooCommerce **orders** export in a re-importable format (orders are not reliably in the XML export).
+- [ ] Screenshots of WooCommerce settings tabs (General, Products > Downloadable, Payments, Emails).
+- [ ] Settings > Sylvia's Dream screenshot.
 
-### 1.5 Pages to protect by hand
-- [ ] Copy the **Author Support** page content into a document (recently updated by Sylvia; must be kept as is).
-- [ ] Screenshot the current menu, Customizer settings and footer so the old look can be rebuilt exactly.
+### 1.6 Stripe (Sylvia exports; Pimofy never edits Stripe)
+- [ ] Number of **active subscriptions** (number only): `____`
+- [ ] Ebook buyers: name, email, book (or Sylvia sends the launch email herself).
+- [ ] Product catalogue (names, prices).
+- [ ] Payment links:
 
-### 1.6 Stripe (read only)
-- [ ] **Subscriptions > Export** (CSV). Write down the number of **active** subscriptions: `____`
-- [ ] **Customers > Export** (CSV), used later to email past buyers their new links.
-- [ ] **Product catalogue > Export** (products and prices).
-- [ ] **Payment links**: record every link in a spreadsheet:
-
-| Link name | Price | Product | After-payment redirect page | Active? |
+| Link name | Price | Product | After-payment page | Active? |
 |---|---|---|---|---|
 | | | | | |
 
-The redirect column maps each book to its thank-you page (see `sylviasdream-core/inc/protect-downloads.php`).
+The after-payment page column feeds the protected slugs (`sylviasdream-core/inc/protect-downloads.php`).
 
-- [ ] **Do not edit, archive or deactivate anything in Stripe.**
+### 1.7 Inventory
+[`../scripts/backup-inventory.sh`](../scripts/backup-inventory.sh) needs WP-CLI, which Personal does not offer. Run it only on the **local copy** after importing the backup, to record what the backup contains.
 
 ---
 
 ## 2. Protect (day 1, live site, no visible change)
+- [ ] Upload and activate `sylviasdream-core` (Plugins > Add New > Upload Plugin).
+- [ ] Settings > Sylvia's Dream: protected slugs match the payment-link table. **Redirects OFF.**
+- [ ] One thank-you page still opens and its source contains `noindex`.
+- [ ] `/sitemap.xml` no longer lists thank-you pages.
+- [ ] One test download from a thank-you page still works.
+- [ ] Google Search Console: request removal of any indexed thank-you URLs.
 
-- [ ] Zip `sylviasdream-core/` and upload: **Plugins > Add New > Upload Plugin** (or SFTP to `wp-content/plugins/`). Activate.
-- [ ] **Settings > Sylvia's Dream**: confirm the protected slugs list matches the payment-link spreadsheet. Leave **Redirects OFF**.
-- [ ] Check one thank-you page still opens and its page source contains `noindex`.
-- [ ] Check `/sitemap.xml` (and its sub-sitemaps) no longer lists the thank-you pages.
-- [ ] Do one test download from a thank-you page to confirm it still works.
-- [ ] Google Search Console: request removal of any thank-you URLs already indexed.
-
-## 3. Staging
-
-- [ ] Hosting > **Staging site**: create it.
-- [ ] Connect this repo with **GitHub Deployments** to staging:
-  - `sylviasdream/` -> `wp-content/themes/sylviasdream`
-  - `sylviasdream-child/` -> `wp-content/themes/sylviasdream-child`
-  - `sylviasdream-core/` -> `wp-content/plugins/sylviasdream-core`
-- [ ] Install WooCommerce, WooCommerce Stripe Gateway and WooCommerce PayPal Payments (free).
-- [ ] Use **Stripe test mode keys only** on staging.
-- [ ] Build design, shop and Give page; run `QA-CHECKLIST.md`.
+## 3. Local build
+- [ ] Local WordPress (LocalWP or wp-env) with the backup imported.
+- [ ] Themes and plugin from this repo; WooCommerce + Stripe Gateway + PayPal Payments; **Stripe test keys only**.
+- [ ] Build design, shop, Give page; run `QA-CHECKLIST.md`.
 
 ## 4. Live-site preparation (no visible change)
+- [ ] Back up again (section 1).
+- [ ] Upload both themes; **do not activate**.
+- [ ] Create drafts: merged book pages, About Sylvia, Give, Privacy / Terms / Refund, WooCommerce products with final ebook files, new menus.
 
-- [ ] Deploy theme and plugin **code** to production. **Do not activate** the new theme yet.
-- [ ] Create on production **as drafts**: merged book pages, About Sylvia, Give, Privacy / Terms / Refund pages, WooCommerce books with final ebook files, new menus.
-- [ ] **Never use "sync staging to production".**
+## 5. Preview and approval
+- [ ] Walk Sylvia through Live Preview and draft previews on a call.
+- [ ] Test purchase, secure download and test gift pass (test mode).
+- [ ] Written approval received; USD 168 balance received.
 
-## 5. Switch-over (afternoon Kenya time = night in Adelaide)
-
-- [ ] Fresh Jetpack backup; note the time: `__________`
-- [ ] **Appearance > Themes**: Live Preview the child theme, then **Activate**.
-- [ ] Publish the drafts; assign the menus and the Home page.
-- [ ] **Settings > Sylvia's Dream**: turn **Redirects ON**.
-- [ ] Switch WooCommerce payments to **live** Stripe/PayPal keys.
-- [ ] One small real purchase, confirm the download email, then refund it.
+## 6. Switch-over (Kenya afternoon = evening in Melbourne)
+- [ ] Fresh backup set (section 1, including 1.5). Time: `__________`
+- [ ] Activate the child theme. Publish drafts; assign menus and Home page.
+- [ ] Settings > Sylvia's Dream: **Redirects ON**.
+- [ ] WooCommerce payments to **live** keys.
+- [ ] One small real purchase; confirm the download email and that no WordPress.com fee was taken; refund it.
 - [ ] Run `QA-CHECKLIST.md` on production.
 
-## 6. Rollback (if anything breaks)
+## 7. Rollback
+1. Appearance > Themes: reactivate **Twenty Twenty**.
+2. Settings > Sylvia's Dream: **Redirects OFF**.
+3. If content is affected: restore by hand from the section 6 backup set (XML, media, settings, products, orders). Allow several hours.
 
-1. **Appearance > Themes**: reactivate **Twenty Twenty**.
-2. **Settings > Sylvia's Dream**: turn **Redirects OFF**.
-3. If content is affected: restore the step-5 backup point from the **Activity Log**.
+## 8. After launch
+- [ ] Sylvia confirms the active subscription count equals 1.6.
+- [ ] Two old payment links still reach their thank-you pages.
+- [ ] Past buyers receive their new secure links (Pimofy or Sylvia sends).
+- [ ] After 30 days, and only with Sylvia's written OK: retire old public ebook files; re-point or switch off old payment links.
 
-The plugin's protection can stay active during a rollback; it changes nothing visible.
-
-## 7. Stripe check after launch
-
-- [ ] Active subscriptions count equals the number recorded in 1.6.
-- [ ] Open two old payment links and confirm they still reach their thank-you pages.
-- [ ] Email past buyers (from the Customers export) their new secure download links.
-- [ ] After the agreed transition period, retire the old public ebook files and confirm their URLs no longer open.
+## 9. Restoration test (before handover)
+- [ ] Restore the latest backup set onto a fresh private local copy.
+- [ ] Complete the checklist in [`../project/SUPPORT-AND-RESTORATION.md`](../project/SUPPORT-AND-RESTORATION.md) (site, shop, settings, orders, download access).
+- [ ] Share the result with Sylvia before handover; record the steps and time taken in the handover guide.

@@ -8,6 +8,7 @@ WordPress site for Sylvia's Dream (sylviasdream.com), hosted on WordPress.com.
 - `sylviasdream-child/` - the site design. Most work happens here.
 - `sylviasdream-core/` - plugin for anything that must survive a theme change (protection, redirects, schema, giving progress).
 - `docs/` - deployment, client checklist, redirect map, QA.
+- `project/` - brief, decision log, book catalogue, Stripe data request, support and restoration, workflow, call guide, open items.
 
 ## Rules
 
@@ -20,3 +21,6 @@ WordPress site for Sylvia's Dream (sylviasdream.com), hosted on WordPress.com.
 7. **Bump versions** (`style.css` header + version constant) for each release, and update `CHANGELOG.md`, the README badges and docs in the same commit.
 8. **Accessibility:** one `h1` per page, visible focus, 48px touch targets, alt text on every image, 19px+ body text.
 9. Run `php -l` on every changed PHP file before committing.
+10. **No private data in Git:** no Stripe exports, subscriber or buyer lists, backups, phone numbers or bank details. They live in the private Google Drive folder.
+11. **Nothing is offered free** (no default "free ebook" links) without Sylvia's written approval.
+12. Record every client decision in `project/DECISIONS.md` and keep `project/OPEN-ITEMS.md` current.

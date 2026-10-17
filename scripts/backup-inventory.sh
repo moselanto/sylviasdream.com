@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-# Read-only inventory and database export for sylviasdream.com (WordPress.com, WP-CLI over SSH).
-# Run from the site root after enabling SSH. Changes nothing on the site.
+# Read-only inventory and database export for sylviasdream.com.
+# The live site is on the WordPress.com Personal plan, which has NO SSH or WP-CLI.
+# Run this only on the private LOCAL copy (LocalWP / wp-env) after importing the backup,
+# to record what the backup contains, and again during the restoration test.
+# Changes nothing on the site.
 # Output goes to ./sd-backup-YYYY-MM-DD/. Download it to a PRIVATE folder; never commit it to Git.
 set -euo pipefail
 

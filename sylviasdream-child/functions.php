@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '0.1.0' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '0.1.1' );
 
 /**
  * Child theme assets. Loads after the parent base stylesheet.
