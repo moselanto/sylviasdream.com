@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-10-22 - Core 0.1.1: redirect map corrected
+
+### Fixed
+- `sylviasdream-core` 0.1.1: redirects now work when WordPress is installed in a subfolder (the request path is read relative to the site home), so they can be tested on the private preview at `/sylviasdream/`.
+- Redirect map: `/my-autobiography/` now goes to `/one-life/` (it is the One Life hardcover page, not a biography); `/how-to-find-the-real-you-2/` removed from redirects because it is a buyer download page; `/manifesting-miracles-now/` removed until Sylvia decides.
+
+### Added
+- `how-to-find-the-real-you-2` added to the default protected download pages.
+
+### Changed
+- `docs/REDIRECT-MAP.md` revised with the reasons for each redirect and the merges.
+
 ## 2026-10-17 - Handover pack
 
 ### Added

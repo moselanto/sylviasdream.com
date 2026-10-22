@@ -3,7 +3,7 @@
  * Plugin Name: Sylvia's Dream Core
  * Plugin URI:  https://sylviasdream.com
  * Description: Site functions that must survive a theme change: download-page protection, redirects, structured data and the Dream Partner progress bar.
- * Version:     0.1.0
+ * Version:     0.1.1
  * Author:      Pimofy Digital
  * Author URI:  https://pimofydigital.com
  * License:     GPL-2.0-or-later
