@@ -11,6 +11,24 @@ Run on staging before preview approval, and again on production at launch.
 - [ ] Real low-value purchase on production shows **no WordPress.com fee** (only Stripe/PayPal fees), then refunded
 - [ ] Past buyers' new secure links work
 
+## Past buyers and protected downloads (`BUYER-TRANSITION-PLAN.md`)
+Before launch (test mode, private copy, then live):
+- [ ] Ebook files are uploaded to each product (stored in `woocommerce_uploads`), not linked from the public Media Library
+- [ ] Download settings: Force downloads; access granted after payment; download limit and expiry set to the numbers Sylvia approved
+- [ ] **Signed-out direct file address refused:** opening the file's direct `woocommerce_uploads` address in a private (signed-out) window does not download the file. Required on WordPress.com hosting, not assumed
+- [ ] **Expired link refused:** after the download limit is used up or the expiry date passes, the emailed link no longer downloads the file
+
+Launch day:
+- [ ] **Legacy test order email link works:** a zero-price manual order (note "Legacy Stripe purchase", status Completed) for a test email address sends the Completed order email, and its private link downloads the right book
+- [ ] Each past buyer's legacy order is created and their email sent (or sent by Sylvia); count matches the buyer list
+- [ ] **Old thank-you / download pages still work** during the 30 days: each protected page opens, shows `noindex`, is absent from `/sitemap.xml` and site search
+
+30 days after launch:
+- [ ] Sylvia confirms no old book payment link is still active (giving links untouched)
+- [ ] **Old thank-you / download pages redirect** to My account > Downloads (book pages only; giving thank-you pages unchanged)
+- [ ] Old public `.docx` / ebook file addresses return 404 after the files are retired, and copies are in the private backup
+- [ ] A past buyer's new secure link still works after the old files are removed
+
 ## Giving
 - [ ] Existing Stripe subscriptions still active (check Stripe dashboard)
 - [ ] Test monthly Dream Partner gift and one-off gift both process and send a receipt
