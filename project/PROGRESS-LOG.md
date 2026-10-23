@@ -4,6 +4,10 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Testimonials removed; legacy Stripe/.docx links replaced on dev (about 15:30-16:00 EAT)
+- Dev Home: placeholder testimonials section removed (it only had "Reader review goes here" / "Reader name, country" x3). Repo: testimonials removed from `content/blocks/home.html`; the pattern stays for later, used only with real, permitted reviews.
+- Dev: 31 book-purchase buy.stripe.com links on 18 pages (incl. 3 drafts) now go to /shop-for-books/; two public .docx links removed (draft 6304 "Download My Story"; /to-ensure-you-end-up-going-to-heaven/ "Download free ebook"). Giving links, thank-you/download pages, media files and Stripe untouched. Sample click-tests passed; no posts had matches. Full map: `docs/LEGACY-LINK-MAP.md`. Live still has all of these links.
+
 ### Books target set to /shop-for-books/ (about 15:15-15:25 EAT)
 - Agnes chose /shop-for-books/ as the single Books target. Theme commit da977d5: Customizer "Books page link" (default /shop-for-books/) drives sdc_shop_url(), so every theme/pattern book button, the 404 "Browse the books" and WooCommerce "Return to shop"/"Continue shopping" go there. WooCommerce Shop page stays "Shop" (/shop/).
 - Deployed to dev (cPanel Git update to da977d5; inc/customizer.php, inc/template-tags.php, inc/woocommerce.php copied). Saved dev block links updated: Home "Explore the Books" and "See all books", Books CTA strip "Explore the Books".

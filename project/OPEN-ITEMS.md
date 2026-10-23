@@ -10,6 +10,8 @@
 - [ ] Approve Give page amounts ($5/$15/$30/$50 + other) and the 100 Dream Partners goal
 - [ ] Approve home hero intro and About Sylvia paragraphs (draft biography from the prototype); "Every purchase helps Heaven on Earth" line yes/no
 - [ ] Photo of Sylvia; newsletter sign-up preference
+- [ ] Reader reviews for the Home page: up to 3 real quotes, verbatim, with the book, the reader's approved display name (and country if they want it) and their permission to quote on the website
+- [ ] Free Downloads page (`/free-7-day-devotional/`) offers the book-writing guide as a free .docx: approve or remove
 - [ ] Stripe set-up/access for real payments (Pimofy never edits Stripe)
 - [ ] Old Manifesting Miracles Now page: keep or redirect
 - [ ] Earlier items still open: signed acceptance and USD 112 deposit, WordPress.com Administrator invite, Stripe data per `STRIPE-DATA-REQUEST.md`, domain registrar, ebook files, logo, social links, written approval of wording
@@ -23,14 +25,16 @@
 - [x] Author Support on dev: Jetpack enquiry form restored, two intro paragraphs, same-page `#book-enquiry` button
 - [x] Dev Home blocks: change "Meet Sylvia" and "Read Sylvia's story" button links from /about/ to /my-story/ (the expanded blocks kept the old pattern link; patterns are fixed in the repo now)
 - [x] (23 Oct) Books and Contact page headers still show placeholder text ("Small heading", "Page title", "A short introduction to this page."): replace with the prototype wording (Books: "The bookshop" / "Books by Sylvia Suhr" / "eBooks delivered instantly by secure download. Paperbacks and Kindle editions through Amazon."; Contact: "Contact" / "Let's talk" / "Questions about a book, a download, speaking or partnering, Sylvia would love to hear from you.")
-- [ ] Home testimonials show placeholders ("Reader review goes here"): fill only with real reviews Sylvia approves, or remove the section
+- [x] Home testimonials placeholders removed from dev and from `content/blocks/home.html` (23 Oct)
 - [x] (da977d5, deployed; Agnes chose /shop-for-books/) Shop journey: Home book buttons and the Books CTA strip go to /shop/ (WooCommerce product archive, empty while products are Draft) while the menu uses /shop-for-books/ (block-based Books page). Recommended: /shop-for-books/. Waiting on Agnes's choice; then update patterns (sdc_shop_url) and dev pages
 - [x] (f0ab2bc, deployed) Mobile 320px: header wordmark clipped behind the action icons; store notice overlaps the header at the top of the page (theme CSS fix)
 - [ ] Newsletter sign-up on the Home newsletter section does not render on dev (no WordPress.com connection, by decision); check on live at launch
 - [ ] Author Support on dev: restore the enquiry form (live likely uses a CoBlocks or Crowdsignal form; those plugins are on live, not dev), split the two intro lines back into two paragraphs, fix the top button to the same-page `#book-enquiry` anchor. Wording itself must stay exactly as live.
 - [x] Mobile: store notice overlap fixed (f0ab2bc); pointer taps work in the 320px preview. Still confirm on a real phone
 - [ ] Dev clean-up from QA: footer Archives/Categories widgets (remove), "Browse the books" on 404 goes to /shop/ while the menu uses /shop-for-books/ (pick one), My Story run-together sentence and repeated intro, Ministry repeated intro and "dav" captions (fix only with Sylvia's wording)
-- [ ] Legacy catalogue on dev links to buy.stripe.com and exposes direct .docx downloads (7 Days to Trusting God, The King's Way): review before any preview is shared; never edit Stripe
+- [x] Dev: book buy.stripe.com links replaced with /shop-for-books/ and public .docx links removed from ordinary pages (`docs/LEGACY-LINK-MAP.md`)
+- [ ] Launch: repeat the `docs/LEGACY-LINK-MAP.md` replacements on live, with Sylvia's written OK; point each button at its product page once products are published
+- [ ] Old download pages and media files are still publicly reachable by direct URL: plan the buyer transition and file protection (WooCommerce protected downloads) before launch
 - [ ] Launch: live Jetpack Newsletter emails new posts by default; publish no posts during switch-over without checking, and confirm the email byline shows Sylvia, not "mosemqute"
 - [ ] Launch: remove the street address and town/postcode from the live Contact page (Australia only), with Sylvia's OK
 - [ ] Launch: decide whether MailPoet (2 unconfirmed records) stays; Jetpack Newsletter is the real list
