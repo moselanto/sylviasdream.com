@@ -131,6 +131,7 @@ function sdc_fields() {
 
 		// Shop header.
 		'shop_eyebrow'       => array( 'sdc_shop', __( 'Small heading', 'sylviasdream-child' ), 'text', 'The bookshop' ),
+		'books_page_url'     => array( 'sdc_shop', __( 'Books page link used by every "Explore the Books" / "See all books" button (blank = WooCommerce shop page)', 'sylviasdream-child' ), 'link', '/shop-for-books/' ),
 		'shop_intro'         => array( 'sdc_shop', __( 'Intro text', 'sylviasdream-child' ), 'textarea', 'eBooks delivered instantly by secure download. Paperbacks and Kindle editions through Amazon.' ),
 
 		// Footer.

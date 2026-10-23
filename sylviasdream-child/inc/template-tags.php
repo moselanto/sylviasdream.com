@@ -98,11 +98,16 @@ function sdc_link( $value ) {
 }
 
 /**
- * URL of the WooCommerce shop page, or the home page without WooCommerce.
+ * URL of the public Books page: the Customizer "Books page link"
+ * (default /shop-for-books/), else the WooCommerce shop page, else home.
  *
  * @return string
  */
 function sdc_shop_url() {
+	$books = sdc_link( sdc_get( 'books_page_url' ) );
+	if ( $books ) {
+		return $books;
+	}
 	if ( function_exists( 'wc_get_page_permalink' ) ) {
 		return wc_get_page_permalink( 'shop' );
 	}

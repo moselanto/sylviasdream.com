@@ -228,3 +228,14 @@ function sdc_home_products( $limit ) {
 	}
 	return $featured;
 }
+
+/**
+ * "Return to shop" and "Continue shopping" go to the Books page too.
+ *
+ * @return string
+ */
+function sdc_wc_books_redirect() {
+	return sdc_shop_url();
+}
+add_filter( 'woocommerce_return_to_shop_redirect', 'sdc_wc_books_redirect' );
+add_filter( 'woocommerce_continue_shopping_redirect', 'sdc_wc_books_redirect' );
