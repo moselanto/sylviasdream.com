@@ -139,6 +139,8 @@ function sdc_fields() {
 		'footer_location_note' => array( 'sdc_footer', __( 'Footer: line under the location', 'sylviasdream-child' ), 'text', 'Serving readers worldwide' ),
 		'copyright_name'     => array( 'sdc_footer', __( 'Footer: copyright holder', 'sylviasdream-child' ), 'text', 'Sylvia Suhr' ),
 		'footer_credit'      => array( 'sdc_footer', __( 'Footer: credit line', 'sylviasdream-child' ), 'text', 'Website by Pimofy Digital.' ),
+		'footer_payment_badges' => array( 'sdc_footer', __( 'Footer: payment badges, separated by commas (blank hides the row)', 'sylviasdream-child' ), 'text', 'VISA, Mastercard, AMEX, Apple Pay, Google Pay, PayPal' ),
+		'footer_news_title'  => array( 'sdc_footer', __( 'Footer: newsletter line (blank hides it)', 'sylviasdream-child' ), 'text', 'Weekly encouragement in your inbox' ),
 		'contact_email'      => array( 'sdc_footer', __( 'Footer: contact email', 'sylviasdream-child' ), 'email', '' ),
 		'social_facebook'    => array( 'sdc_footer', __( 'Facebook URL', 'sylviasdream-child' ), 'url', '' ),
 		'social_instagram'   => array( 'sdc_footer', __( 'Instagram URL', 'sylviasdream-child' ), 'url', 'https://www.instagram.com/sylviasuhr/' ),

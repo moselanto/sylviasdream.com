@@ -432,6 +432,22 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 .sd-footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; border-top: 1px solid #3a2e22; margin-top: clamp(2.5rem, 6vw, 3.5rem); padding-block: 22px; font-size: .9rem; color: #b8a88d; }
 .sd-footer__bottom p { margin: 0; }
 .site-footer :focus-visible { outline-color: var(--gold-l); }
+/* 1.1.0: newsletter line, credit and payment badges (prototype v3) */
+.sd-footer__news-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: #fff; margin: 0 0 .5em; }
+.sd-footer__news-link { display: inline-flex; align-items: center; gap: .35em; min-height: var(--tap); font-weight: 700; color: var(--gold-l) !important; }
+.sd-footer__newsletter input[type=email] { background: #2f2419; border-color: #4a3c2c; color: #fff; }
+.sd-footer__newsletter input[type=email]::placeholder { color: #b8a88d; }
+.sd-footer__credit { display: inline; margin-left: .25em; }
+.sd-paybadges { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.sd-paybadges li { border: 1px solid #4a3c2c; border-radius: 6px; padding: 3px 9px; font-size: .78rem; font-weight: 700; letter-spacing: .04em; color: #d9ccb5; line-height: 1.6; }
+@media (max-width: 639px) { .sd-footer__bottom { flex-direction: column; } }
+
+/* 1.1.0: six-item menu with one dropdown */
+@media (min-width: 1024px) {
+	.sd-menu .sub-menu { min-width: 240px; }
+	.sd-menu .sub-menu a { white-space: nowrap; }
+}
+.sd-template-canvas .site-header, .sd-template-canvas .sd-utility { display: none; }
 
 /* ==========================================================================
    12. Motion and print
