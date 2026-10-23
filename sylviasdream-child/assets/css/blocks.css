@@ -62,3 +62,11 @@
 .sd-template-full .sd-builder > .entry-content > :last-child.alignfull { margin-bottom: 0; }
 .sd-builder > .entry-content > .alignfull + .alignfull { margin-top: 0; }
 .sd-template-canvas { background: #fbf7ef; }
+
+/* Pages that open with their own banner: banner sits flush under the header */
+.sd-has-banner .sd-page-body { padding-inline: 0; max-width: none; }
+.sd-has-banner .sd-page-body > .entry-content > :first-child.alignfull { margin-top: 0; }
+.sd-has-banner .sd-page-body > .entry-content > :not(.alignfull) { padding-inline: clamp(1.125rem, 4vw, 1.5rem); box-sizing: content-box; }
+.sd-builder .entry-content > *:not(.alignfull):not(.alignwide) { padding-inline: clamp(1.125rem, 4vw, 1.5rem); box-sizing: content-box; }
+.sd-builder .entry-content > .alignwide { padding-inline: clamp(1.125rem, 4vw, 1.5rem); }
+.sd-builder .entry-content > .alignfull { margin-left: 0; margin-right: 0; width: 100%; }

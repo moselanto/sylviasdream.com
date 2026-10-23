@@ -9,6 +9,29 @@
 
 defined( 'ABSPATH' ) || exit;
 
+// 1.1.0: when the Home page has its own block content (built from the
+// "Sylvia's Dream" patterns), show only that, full width. Otherwise fall
+// back to the Customizer-driven 1.0.0 sections below.
+if ( function_exists( 'sdc_front_page_has_blocks' ) && sdc_front_page_has_blocks() ) {
+	get_header();
+	?>
+	<main id="main-content" class="site-main sd-builder" tabindex="-1">
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			?>
+			<div class="entry-content">
+				<?php the_content(); ?>
+			</div>
+			<?php
+		endwhile;
+		?>
+	</main>
+	<?php
+	get_footer();
+	return;
+}
+
 get_header();
 
 $sdc_has_wc   = class_exists( 'WooCommerce' ) && function_exists( 'sdc_home_products' );

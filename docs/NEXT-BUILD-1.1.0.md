@@ -1,5 +1,7 @@
 # Next build: child theme 1.1.0 (approved by Moses 23 Oct 2026, not started)
 
+> **Status (23 Oct 2026, 13:40 EAT): built and committed to `main` in four parts. Not yet deployed to dev.**
+
 Upgrade `sylviasdream-child` from 1.0.0 (commit `fd1aaa1`) to 1.1.0. One single commit to `main`. Keep the 1.0.0 design (gold/cream palette, Cormorant Garamond + Source Sans 3, 20px body, sticky header, mobile drawer) and do not break current behaviour.
 
 **Goal:** Sylvia (non-technical) can edit EVERY page visually, like a page builder, in the WordPress block editor; the site matches or beats `prototype/index.html` v3, including its images and footer; international-standard, mobile-first, "one of the best book websites in the world".

@@ -4,6 +4,12 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Child theme 1.1.0 built (about 13:15-13:40 EAT)
+- `scripts/check-theme.js` added (commit 1b84a23). The GitHub Actions workflow (PHP lint 8.0-8.3) could not be committed: the GitHub connection lacks the `workflow` permission.
+- 1.1.0 committed in four parts: A images + theme.json + block support (9d986dd); B prototype footer + payment badges (ee8a338); C 14 patterns + `content/blocks` pages (34c45dc); D templates, editing guide and docs.
+- Not yet deployed to dev; `php -l` still not run. Next: deploy, menu, Jetpack, paste pages, QA.
+
+
 ### Where work stopped (about 13:00 EAT)
 - Moses approved the **1.1.0 build** (fully editable pages, prototype images, prototype footer, 6-item menu, Elementor-ready). Brief: `docs/NEXT-BUILD-1.1.0.md`.
 - Two build attempts failed immediately: the Town account ran out of credits. **Nothing from 1.1.0 exists yet.** Start there.

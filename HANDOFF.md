@@ -1,6 +1,6 @@
 # HANDOFF: start here (for a person or AI agent taking over)
 
-Last updated: Friday 23 October 2026, about 13:00 Kenya time (EAT, UTC+3).
+Last updated: Friday 23 October 2026, about 13:40 Kenya time (EAT, UTC+3).
 
 ## 1. What this project is
 Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suhr** (Christian author and missionary, Australia; ministry Heaven on Earth in Kenya). Custom theme, WooCommerce book shop with secure ebook downloads, Dream Partner giving page, content clean-up and SEO. Fixed price **USD 280** (quotation PMF-QT-2026-0106). The live site stays on the **WordPress.com Personal plan** (plugins and theme uploads are allowed on paid plans since April 2026, see `project/DECISIONS.md`).
@@ -10,7 +10,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 ## 2. Read in this order
 1. This file.
 2. [`project/PROGRESS-LOG.md`](project/PROGRESS-LOG.md): what was done, day by day, 21-23 Oct, and exactly where work stopped.
-3. [`docs/NEXT-BUILD-1.1.0.md`](docs/NEXT-BUILD-1.1.0.md): the full brief for the next theme build (approved by Moses, not started).
+3. [`docs/NEXT-BUILD-1.1.0.md`](docs/NEXT-BUILD-1.1.0.md): the brief for theme 1.1.0 (built 23 Oct; see CHANGELOG).
 4. [`AGENTS.md`](AGENTS.md): rules for working in this repo.
 5. [`project/README.md`](project/README.md), [`project/DECISIONS.md`](project/DECISIONS.md), [`project/OPEN-ITEMS.md`](project/OPEN-ITEMS.md).
 6. Runbooks in `docs/` (`DEPLOYMENT.md`, `BACKUP-AND-LAUNCH.md`, `QA-CHECKLIST.md`, `REDIRECT-MAP.md`).
@@ -21,16 +21,16 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | Dev site | Private build copy at `https://topnotchmall.co.ke/sylviasdream/` (WP admin `/sylviasdream/wp-admin/`), password-gated and hidden from search. All work happens here. |
 | Live site | **Untouched.** Never edit sylviasdream.com until launch. |
 | Code on dev | Child theme **1.0.0** (commit `fd1aaa1`) running; parent "Sylvia's Dream Base" 1.0.0; core plugin **0.1.1** active, redirects ON (dev only). |
-| Next build | Child theme **1.1.0** (fully editable block patterns, theme.json, prototype images, prototype footer, 6-item menu, Elementor-ready templates). **Approved, not started**: the build agent stopped because the Town account ran out of credits. Brief: `docs/NEXT-BUILD-1.1.0.md`. |
+| Next build | Child theme **1.1.0 built and committed to `main`** (commits 9d986dd, ee8a338, 34c45dc and the docs/templates commit): theme.json, 14 patterns, prototype images, prototype footer, page-builder templates, editing guide. **Not yet deployed to dev.** |
 | Products | 25 WooCommerce products, **all Draft**. All 25 have main descriptions (Sylvia's own wording from her pages or Amazon). Titles/subtitles checked against Amazon. 21 have covers. |
 | Pages on dev | Give (test placeholders), Privacy Policy, Terms of Sale, Refund Policy (all marked "Draft for Sylvia's review"), store notice banner on, merged duplicate pages, 5 old pages set to Draft. |
 | Things needed from Sylvia | Town document "Things needed from Sylvia" (Moses's Town library). Summary in `project/OPEN-ITEMS.md`. |
 | Quotation / deposit | Check with Moses; last known: v2 sent, signature and USD 112 deposit pending. |
 
 ## 4. What to do next (in order)
-1. **Build child theme 1.1.0** exactly per `docs/NEXT-BUILD-1.1.0.md`. One single commit to `main`.
-2. **Deploy to dev** (see section 6), then set the approved menu: Home · Books (dropdown: All Books, Devotionals) · About Sylvia · Ministry · Podcasts & Videos · Contact. Give is the gold header button, not a menu item.
-3. **Rebuild Home, Books and Contact** pages on dev from the 1.1.0 patterns (`content/blocks/*.html`, paste into the page Code editor). Install Jetpack on dev so the contact form and newsletter work (the Contact page currently prints a raw `[jetpack_subscription_form]` shortcode and has no form).
+1. ~~Build child theme 1.1.0~~ done 23 Oct (four commits). Commit `.github/workflows/checks.yml` once the GitHub connection has the `workflow` permission.
+2. **Deploy 1.1.0 to dev** (see section 6), then set the approved menu: Home · Books (dropdown: All Books, Devotionals) · About Sylvia · Ministry · Podcasts & Videos · Contact. Give is the gold header button, not a menu item.
+3. **Rebuild Home, Books and Contact** pages on dev from the 1.1.0 patterns (`sylviasdream-child/content/blocks/*.html`, paste into the page Code editor, then open the visual editor once and Update so the patterns become editable blocks). Install Jetpack on dev so the contact form and newsletter work (the Contact page currently prints a raw `[jetpack_subscription_form]` shortcode and has no form).
 4. **Visual QA** at 390px phone, tablet and desktop; fix; run `docs/QA-CHECKLIST.md`.
 5. Keep adding to "Things needed from Sylvia"; when the build is done Moses sends it to her.
 6. Then the workflow phases 7-11 in `project/WORKFLOW.md` (live prep as drafts, preview with Sylvia, launch, handover).

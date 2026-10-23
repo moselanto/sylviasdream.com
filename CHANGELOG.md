@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-10-23 - Child theme 1.1.0: fully editable pages
+
+Built from `docs/NEXT-BUILD-1.1.0.md` in four commits (A to D) so a stopped build cannot lose work.
+
+### Added
+- `scripts/check-theme.js`: JSON, block-markup nesting, no `ad-` classes and version checks (`node scripts/check-theme.js`). A GitHub Actions workflow (PHP lint 8.0-8.3 + this script) is written but not yet committed: the GitHub connection lacks the `workflow` permission.
+- Prototype photos `assets/images/{hero,bible,mission,give,desk}.jpg` (extracted from prototype v3).
+- `theme.json` v2: brand palette only, fonts, fluid sizes, spacing, 760/1200 layout, 48px pill buttons; editor styles so the editor looks like the site.
+- 14 block patterns in `patterns/` (category "Sylvia's Dream"): hero, trust strip, featured books, book showcase, About Sylvia, Heaven on Earth, Dream Partners, testimonials, newsletter and contact, page header, FAQ, text and image, call to action strip, contact layout.
+- `content/blocks/{home,books,contact}.html` ready to paste into the page Code editor.
+- Block styles: Card (group), Book cover shadow (image); core Outline button styled.
+- Page templates "Full width (page builder)" and "Canvas (no header or footer)"; Elementor theme-location compatibility (Elementor not required).
+- `docs/EDITING-GUIDE.md` for Sylvia.
+
+### Changed
+- Footer rebuilt to match the prototype: newsletter line, credit, payment badges row (Customizer: Footer).
+- `front-page.php`: shows the Home page's own blocks full width when it has them; otherwise the 1.0.0 sections.
+- `page.php`: wide and full-width blocks break out of the 760px column; pages that start with a banner skip the theme page header (one h1).
+- Version 1.1.0.
+
+### Not verified
+- `php -l` not run (no PHP in the build environment); visual check on dev still to do.
+
 ## 2026-10-23 - Handoff update (docs only)
 
 ### Added

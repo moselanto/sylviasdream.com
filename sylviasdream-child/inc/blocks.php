@@ -127,3 +127,30 @@ function sdc_front_page_has_blocks() {
 	$content = get_post_field( 'post_content', $page_id );
 	return is_string( $content ) && '' !== trim( $content ) && has_blocks( $content );
 }
+
+/**
+ * Does the content open with its own banner (Cover block or a pattern
+ * reference such as the Page header pattern)?
+ *
+ * @param string $content Raw post content.
+ * @return bool
+ */
+function sdc_content_starts_with_banner( $content ) {
+	if ( ! is_string( $content ) || ! has_blocks( $content ) ) {
+		return false;
+	}
+	foreach ( parse_blocks( $content ) as $block ) {
+		if ( empty( $block['blockName'] ) ) {
+			continue; // Whitespace between blocks.
+		}
+		if ( 'core/cover' === $block['blockName'] ) {
+			return true;
+		}
+		if ( 'core/pattern' === $block['blockName'] ) {
+			$slug = isset( $block['attrs']['slug'] ) ? (string) $block['attrs']['slug'] : '';
+			return in_array( $slug, array( 'sylviasdream-child/page-header', 'sylviasdream-child/hero' ), true );
+		}
+		return false;
+	}
+	return false;
+}

@@ -22,7 +22,7 @@ WordPress site for Sylvia's Dream (sylviasdream.com), hosted on the WordPress.co
 6. **Never sync a local or staging database over production.** Deploy code only.
 7. **Bump versions** (`style.css` header + version constant) for each release, and update `CHANGELOG.md`, the README badges and docs in the same commit.
 8. **Accessibility:** one `h1` per page, visible focus, 48px touch targets, alt text on every image, 19px+ body text.
-9. Run `php -l` on every changed PHP file before committing.
+9. Run `php -l` on every changed PHP file and `node scripts/check-theme.js` before committing (no PHP on cPanel or in the Town sandbox; the GitHub Actions workflow lints PHP once it is committed).
 10. **No private data in Git:** no Stripe exports, subscriber or buyer lists, backups, phone numbers or bank details. They live in the private Google Drive folder.
 11. **Nothing is offered free** (no default "free ebook" links) without Sylvia's written approval.
 12. Record every client decision in `project/DECISIONS.md`, keep `project/OPEN-ITEMS.md` and the status table in `HANDOFF.md` current.

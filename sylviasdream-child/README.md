@@ -1,6 +1,10 @@
-# Sylvia's Dream (child theme) - v1.0.0
+# Sylvia's Dream (child theme) - v1.1.0
 
 The actual site design. **Activate this theme** (the parent `sylviasdream` must also be installed). Built from the approved prototype v3 (`prototype/index.html`): warm gold and cream, Cormorant Garamond headings, Source Sans 3 body text at 19-20px.
+
+## Page builder (1.1.0)
+
+Every page can be edited visually in the block editor. Add sections from **+ > Patterns > Sylvia's Dream** (14 patterns in `patterns/`). Brand colours, fonts and sizes come from `theme.json`. Templates: Default, **Full width (page builder)** (`template-full-width.php`) and **Canvas** (`template-canvas.php`). When the Home page has block content, `front-page.php` shows only that; otherwise the Customizer sections below. Ready-to-paste pages: `content/blocks/*.html`. Guide for Sylvia: `docs/EDITING-GUIDE.md`.
 
 ## Editing map
 
@@ -35,6 +39,13 @@ Blank Customizer fields hide their item. Reader reviews appear only when a revie
 | `style.css` | Theme header and design system (tokens, header, home, cards, posts, footer, print) |
 | `assets/css/woocommerce.css` | Shop grid, single book, cart, checkout, my account and downloads (loaded only with WooCommerce) |
 | `assets/js/nav.js` | Sticky header, dropdowns, mobile drawer, search panel (vanilla, deferred) |
+| `theme.json` | Palette, fonts, sizes, spacing, layout widths, button and block styles |
+| `patterns/*.php` | Block patterns (category "Sylvia's Dream") |
+| `content/blocks/*.html` | Home, Books and Contact pages to paste into the Code editor |
+| `inc/blocks.php` | Pattern category, block styles, editor fonts, image helper, Elementor support |
+| `assets/css/blocks.css`, `assets/css/editor.css` | Pattern and block-style CSS (site and editor) |
+| `assets/images/*.jpg` | Prototype photos: hero, bible, mission, give, desk |
+| `template-full-width.php`, `template-canvas.php` | Page-builder templates |
 | `functions.php` | Version, setup, menus, assets (filemtime versioning), fonts and preconnect, includes |
 | `inc/customizer.php` | All editable text and image settings |
 | `inc/template-tags.php` | Icons, links, cart link, page header, post cards, pagination, social links |
