@@ -1,7 +1,7 @@
 # Sylvia's Dream - sylviasdream.com
 
 ![Parent theme](https://img.shields.io/badge/Parent%20theme-v1.0.0-8A6216)
-![Child theme](https://img.shields.io/badge/Child%20theme-v0.1.1-B8862B)
+![Child theme](https://img.shields.io/badge/Child%20theme-v1.0.0-B8862B)
 ![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.1.0-2B2620)
 
 Website for **Sylvia Suhr**, Christian author, speaker and missionary (Australia), and her Kenya ministry **Heaven on Earth**. Built and maintained by **Pimofy Digital** (quotation PMF-QT-2026-0106).
@@ -17,7 +17,7 @@ Start with [`HANDOFF.md`](HANDOFF.md): current status, next steps in order, and 
 | Package | Folder | Version | Role |
 |---|---|---|---|
 | Sylvia's Dream Base (parent theme) | [`sylviasdream/`](sylviasdream) | 1.0.0 | Minimal shell. Never activated on its own. |
-| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 0.1.1 | **Activate this one.** Warm gold design, large text, simple menu, home, shop wrapper, footer. |
+| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 1.0.0 | **Activate this one.** Warm gold design from prototype v3, sticky header and mobile drawer, home sections, devotionals, WooCommerce shop styling, footer. |
 | Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.1.0 | Download-page protection, redirects, structured data, Dream Partner progress. |
 
 ## Hosting

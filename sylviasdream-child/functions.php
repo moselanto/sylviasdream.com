@@ -7,27 +7,151 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '0.1.1' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '1.0.0' );
+define( 'SYLVIASDREAM_CHILD_DIR', get_stylesheet_directory() );
+define( 'SYLVIASDREAM_CHILD_URI', get_stylesheet_directory_uri() );
 
 /**
- * Child theme assets. Loads after the parent base stylesheet.
+ * Version an asset by its modified time so browsers pick up changes.
+ *
+ * @param string $relative Path relative to the child theme folder.
+ * @return string
+ */
+function sdc_asset_version( $relative ) {
+	$file = SYLVIASDREAM_CHILD_DIR . '/' . ltrim( $relative, '/' );
+	return file_exists( $file ) ? (string) filemtime( $file ) : SYLVIASDREAM_CHILD_VERSION;
+}
+
+/**
+ * Theme setup: text domain, WooCommerce support, image sizes.
+ */
+function sdc_setup() {
+	load_child_theme_textdomain( 'sylviasdream-child', SYLVIASDREAM_CHILD_DIR . '/languages' );
+
+	add_theme_support( 'woocommerce', array(
+		'thumbnail_image_width' => 600,
+		'single_image_width'    => 900,
+		'product_grid'          => array(
+			'default_rows'    => 3,
+			'min_rows'        => 1,
+			'default_columns' => 4,
+			'min_columns'     => 2,
+			'max_columns'     => 4,
+		),
+	) );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+
+	// Menu locations are registered by the parent theme (primary,
+	// footer_books, footer_about, footer_legal). They are re-registered
+	// here with the same keys so existing menus keep attaching even if
+	// the parent changes.
+	register_nav_menus( array(
+		'primary'      => __( 'Primary Navigation', 'sylviasdream-child' ),
+		'footer_books' => __( 'Footer: Books & Resources', 'sylviasdream-child' ),
+		'footer_about' => __( 'Footer: About & Ministry', 'sylviasdream-child' ),
+		'footer_legal' => __( 'Footer: Policies', 'sylviasdream-child' ),
+	) );
+}
+add_action( 'after_setup_theme', 'sdc_setup', 20 );
+
+/**
+ * Front-end assets. Child CSS loads after the parent base stylesheet.
  */
 function sdc_assets() {
-	wp_enqueue_style( 'sylviasdream-child', get_stylesheet_uri(), array( 'sylviasdream-base' ), SYLVIASDREAM_CHILD_VERSION );
-	wp_enqueue_script( 'sylviasdream-child-nav', get_stylesheet_directory_uri() . '/assets/js/nav.js', array(), SYLVIASDREAM_CHILD_VERSION, array( 'strategy' => 'defer', 'in_footer' => true ) );
+	if ( sdc_get_bool( 'use_google_fonts' ) ) {
+		wp_enqueue_style(
+			'sylviasdream-fonts',
+			'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap',
+			array(),
+			null // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts URL is versioned by its query.
+		);
+	}
+
+	$deps = array( 'sylviasdream-base' );
+	if ( wp_style_is( 'sylviasdream-fonts', 'enqueued' ) ) {
+		$deps[] = 'sylviasdream-fonts';
+	}
+	wp_enqueue_style( 'sylviasdream-child', get_stylesheet_uri(), $deps, sdc_asset_version( 'style.css' ) );
+
+	if ( class_exists( 'WooCommerce' ) ) {
+		wp_enqueue_style( 'sylviasdream-child-shop', SYLVIASDREAM_CHILD_URI . '/assets/css/woocommerce.css', array( 'sylviasdream-child' ), sdc_asset_version( 'assets/css/woocommerce.css' ) );
+	}
+
+	wp_enqueue_script(
+		'sylviasdream-child-nav',
+		SYLVIASDREAM_CHILD_URI . '/assets/js/nav.js',
+		array(),
+		sdc_asset_version( 'assets/js/nav.js' ),
+		array(
+			'strategy'  => 'defer',
+			'in_footer' => true,
+		)
+	);
 }
 add_action( 'wp_enqueue_scripts', 'sdc_assets', 20 );
 
 /**
- * WooCommerce support (book shop).
+ * Preconnect to Google Fonts when they are used.
+ *
+ * @param array  $urls          URLs to print for resource hints.
+ * @param string $relation_type The relation type.
+ * @return array
  */
-function sdc_woocommerce_support() {
-	add_theme_support( 'woocommerce' );
-	add_theme_support( 'wc-product-gallery-zoom' );
-	add_theme_support( 'wc-product-gallery-lightbox' );
+function sdc_resource_hints( $urls, $relation_type ) {
+	if ( 'preconnect' === $relation_type && sdc_get_bool( 'use_google_fonts' ) ) {
+		$urls[] = array( 'href' => 'https://fonts.googleapis.com' );
+		$urls[] = array(
+			'href'        => 'https://fonts.gstatic.com',
+			'crossorigin' => 'anonymous',
+		);
+	}
+	return $urls;
 }
-add_action( 'after_setup_theme', 'sdc_woocommerce_support' );
+add_filter( 'wp_resource_hints', 'sdc_resource_hints', 10, 2 );
 
-require_once get_stylesheet_directory() . '/inc/customizer.php';
-require_once get_stylesheet_directory() . '/inc/template-tags.php';
-require_once get_stylesheet_directory() . '/inc/widgets.php';
+/**
+ * Body classes used by the stylesheet.
+ *
+ * @param string[] $classes Classes.
+ * @return string[]
+ */
+function sdc_body_classes( $classes ) {
+	if ( sdc_get_bool( 'show_utility_bar' ) ) {
+		$classes[] = 'sd-has-utility';
+	}
+	if ( function_exists( 'is_cart' ) && ( is_cart() || is_checkout() || is_account_page() ) ) {
+		$classes[] = 'sd-wide-page';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'sdc_body_classes' );
+
+/**
+ * Shorter, cleaner excerpts for devotional cards.
+ *
+ * @return int
+ */
+function sdc_excerpt_length() {
+	return 28;
+}
+add_filter( 'excerpt_length', 'sdc_excerpt_length' );
+
+/**
+ * Plain ellipsis instead of [&hellip;].
+ *
+ * @return string
+ */
+function sdc_excerpt_more() {
+	return '&hellip;';
+}
+add_filter( 'excerpt_more', 'sdc_excerpt_more' );
+
+require_once SYLVIASDREAM_CHILD_DIR . '/inc/customizer.php';
+require_once SYLVIASDREAM_CHILD_DIR . '/inc/template-tags.php';
+require_once SYLVIASDREAM_CHILD_DIR . '/inc/class-sdc-walker-primary.php';
+require_once SYLVIASDREAM_CHILD_DIR . '/inc/widgets.php';
+if ( class_exists( 'WooCommerce' ) ) {
+	require_once SYLVIASDREAM_CHILD_DIR . '/inc/woocommerce.php';
+}

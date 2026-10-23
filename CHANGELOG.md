@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-10-23 - Child theme 1.0.0: full design build
+
+### Added
+- `sylviasdream-child` 1.0.0, built from prototype v3:
+  - Sticky header: optional utility bar, wordmark and tagline, primary menu with accessible desktop dropdowns (hover, keyboard, Escape), search panel, WooCommerce cart count, Give button. Shrinks and gains a shadow on scroll without layout shift.
+  - Mobile and tablet drawer (below 1024px): slide-in, 48px tap targets, accordion submenus, focus trap, Escape and overlay close, scroll lock.
+  - Home page: hero with featured covers, trust strip, featured books from published WooCommerce products (hidden when none), about Sylvia, Heaven on Earth band, Dream Partner band with `[sd_partner_progress]`, latest devotionals, reader reviews (only when entered), newsletter and contact band.
+  - Templates: `page.php` (page header and 760px column), `single.php`, `index.php`, `archive.php`, `search.php`, `404.php`, `searchform.php`, `template-parts/content-none.php`.
+  - Shop: `assets/css/woocommerce.css` and `inc/woocommerce.php` (2/3/4-column cover-first grid, 2:3 covers, single book layout with subtitle from short description, format badges, description in a reading column, four related books, cart, checkout, my account and downloads styling; 48px buttons).
+  - Multi-column footer: about text, social links, Books, Ministry and Policies menus, country-only location, copyright with current year.
+  - Customizer panel "Sylvia's Dream" with sections for header, every home section, devotionals, shop header and footer. Defaults come only from prototype wording; items awaiting Sylvia's approval default to blank.
+  - Google Fonts (Cormorant Garamond, Source Sans 3) with preconnect and `display=swap`, switchable to system fonts. Assets versioned by file modified time.
+  - Print styles and `prefers-reduced-motion` support.
+
+### Changed
+- Hero defaults now use the prototype wording; second hero button goes to About ("Meet Sylvia").
+- All four existing menu locations kept (`primary`, `footer_books`, `footer_about`, `footer_legal`).
+
+### Not verified
+- `php -l` could not be run (no PHP in the build environment). Run it on every child-theme PHP file before uploading.
+
 ## 2026-10-22 - Core 0.1.1: redirect map corrected
 
 ### Fixed

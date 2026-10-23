@@ -22,7 +22,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | Sylvia's latest message | Asked what Stripe data is needed, asked for a restoration test before handover, asked about restoration support costs. Reply drafted (see CORRESPONDENCE.md); **check with Moses whether it was sent** |
 | Call | Times offered for Sat 17 to Wed 21 Oct. **Sylvia has not confirmed a time.** Call guide: `project/CALL-GUIDE.md` |
 | Book list | v2 (25 titles) sent; Amazon check done 17 Oct; **awaiting Sylvia's answers.** v3 not started |
-| Code | Parent theme 1.0.0, child theme 0.1.1, core plugin 0.1.0. Scaffold only. **Nothing is live.** Live site still runs Twenty Twenty |
+| Code | Parent theme 1.0.0, child theme 1.0.0 (full design build, 23 Oct), core plugin 0.1.1. **Nothing is live.** Live site still runs Twenty Twenty |
 | Prototype | `prototype/index.html` v3 (single-file preview). Not yet updated with Amazon findings |
 | Live site | Untouched. No backups taken yet (no access yet) |
 
@@ -69,7 +69,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | `project/` | Brief, decisions, catalogue, quotation scope, audit, Stripe data request, support and restoration, workflow, call guide, correspondence, open items |
 
 ## 8. Known gaps in the code
-- `php -l` has not been run on the 0.1.1 child theme changes (no PHP in the last build environment). Run it before uploading.
+- `php -l` has not been run on the 1.0.0 child theme (no PHP in the build environment). Run it before uploading.
 - Book data, covers and prices are placeholders until Sylvia confirms them.
 - Protected slugs in `sylviasdream-core` must be checked against Sylvia's payment-link list before activation.
 

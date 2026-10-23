@@ -1,31 +1,48 @@
-# Sylvia's Dream (child theme)
+# Sylvia's Dream (child theme) - v1.0.0
 
-The actual site design. **Activate this theme** (the parent `sylviasdream` must also be installed).
+The actual site design. **Activate this theme** (the parent `sylviasdream` must also be installed). Built from the approved prototype v3 (`prototype/index.html`): warm gold and cream, Cormorant Garamond headings, Source Sans 3 body text at 19-20px.
 
 ## Editing map
 
 | What | Where in WordPress |
 |---|---|
-| Home hero text, buttons and photo | Appearance > Customise > Sylvia's Dream |
-| Home sections below the hero | Edit the Home page (blocks) |
-| Main menu (6-7 items) | Appearance > Menus > Primary Navigation |
-| Footer link columns | Appearance > Menus > Footer menus |
-| Footer newsletter | Appearance > Widgets > Footer: Newsletter sign-up |
-| Contact email and social links | Appearance > Customise > Sylvia's Dream |
-| Books, prices, ebook files | Products (WooCommerce) |
-| Dream Partner count and goal | Settings > Sylvia's Dream (plugin) |
+| All home page text (hero, trust strip, books heading, about band, Heaven on Earth, Dream Partners, devotionals, reader reviews, newsletter) | Appearance > Customise > Sylvia's Dream |
+| Hero cover image, photo of Sylvia, Heaven on Earth background | Appearance > Customise > Sylvia's Dream (image fields) |
+| Header tagline, Give button, utility bar, Google Fonts on/off | Customise > Sylvia's Dream > Header and menu |
+| Footer text, location (country only), copyright, contact email, social links | Customise > Sylvia's Dream > Footer, contact and social |
+| Main menu (6-7 items, one level of dropdowns) | Appearance > Menus > Primary Navigation |
+| Footer columns | Appearance > Menus > Footer: Books & Resources, Footer: About & Ministry, Footer: Policies |
+| Newsletter sign-up | Appearance > Widgets > Home: Newsletter sign-up / Footer: Newsletter sign-up |
+| Books, prices, covers, ebook files | Products (WooCommerce). Short description = subtitle. A "Format" attribute gives the format badges |
+| Featured books on the home page | Products > star a product as Featured (featured first, then newest). Only published products are shown; with none, the section is hidden |
+| Dream Partner count and goal | Settings > Sylvia's Dream (core plugin, `[sd_partner_progress]`) |
+
+Blank Customizer fields hide their item. Reader reviews appear only when a review is filled in (with the reader's permission).
+
+**Wording awaiting Sylvia's approval** (prototype drafts used as defaults): hero intro, about-Sylvia paragraphs. The "Every purchase helps Heaven on Earth" trust item is blank until approved.
+
+## Header and menu behaviour
+
+- Sticky header (translucent cream, backdrop blur). After scrolling it shrinks (84px to 68px desktop) and gains a shadow. The outer box keeps its height, so nothing below moves (no layout shift).
+- Desktop (1024px and up): dropdowns open on hover and on keyboard focus; the chevron button beside each parent toggles it (aria-expanded/aria-controls); Escape closes and returns focus; click outside closes.
+- Phone and tablet (below 1024px): the hamburger opens a full-height slide-in drawer with 48px+ tap targets, accordion submenus, focus trap, Escape and overlay click to close, body scroll lock and a "Become a Dream Partner" button.
+- Search button opens a search panel; cart icon shows the WooCommerce item count (updated after AJAX add to cart).
 
 ## File map
 
 | File | Purpose |
 |---|---|
-| `style.css` | Theme header and design system (tokens, header, hero, cards, footer) |
-| `functions.php` | Version, assets, WooCommerce support, includes |
-| `inc/customizer.php` | Editable hero, contact and social settings |
-| `inc/template-tags.php` | Social links and link helpers |
-| `inc/widgets.php` | Footer newsletter widget area |
-| `header.php` / `footer.php` | Site header with mobile menu, full footer |
-| `front-page.php` | Home page: Customizer hero + page blocks |
-| `page.php` | Standard page |
+| `style.css` | Theme header and design system (tokens, header, home, cards, posts, footer, print) |
+| `assets/css/woocommerce.css` | Shop grid, single book, cart, checkout, my account and downloads (loaded only with WooCommerce) |
+| `assets/js/nav.js` | Sticky header, dropdowns, mobile drawer, search panel (vanilla, deferred) |
+| `functions.php` | Version, setup, menus, assets (filemtime versioning), fonts and preconnect, includes |
+| `inc/customizer.php` | All editable text and image settings |
+| `inc/template-tags.php` | Icons, links, cart link, page header, post cards, pagination, social links |
+| `inc/class-sdc-walker-primary.php` | Primary menu walker with submenu toggle buttons |
+| `inc/woocommerce.php` | Shop hooks: 2:3 covers, columns, single book layout, format badges, cart fragment, home products |
+| `inc/widgets.php` | Newsletter widget areas |
+| `header.php` / `footer.php` | Header (utility bar, brand, menu, actions) and multi-column footer |
+| `front-page.php` | Home page sections |
+| `page.php` | Pages: page header + 760px reading column (wider for cart, checkout, account) |
+| `single.php`, `index.php`, `archive.php`, `search.php`, `404.php`, `searchform.php`, `template-parts/content-none.php` | Devotionals, listings, search, not found |
 | `woocommerce.php` | Shop wrapper |
-| `assets/js/nav.js` | Mobile menu toggle |
