@@ -32,7 +32,7 @@ defined( 'ABSPATH' ) || exit;
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( sdc_shop_url() ); ?>">Explore the Books</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/about/' ) ); ?>">Meet Sylvia</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/my-story/' ) ); ?>">Meet Sylvia</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

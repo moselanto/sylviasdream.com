@@ -63,7 +63,7 @@ function sdc_fields() {
 		'hero_cta_label'     => array( 'sdc_home', __( 'Hero: main button label', 'sylviasdream-child' ), 'text', 'Explore the Books' ),
 		'hero_cta_url'       => array( 'sdc_home', __( 'Hero: main button link (blank = shop page)', 'sylviasdream-child' ), 'link', '' ),
 		'hero_cta2_label'    => array( 'sdc_home', __( 'Hero: second button label', 'sylviasdream-child' ), 'text', 'Meet Sylvia' ),
-		'hero_cta2_url'      => array( 'sdc_home', __( 'Hero: second button link', 'sylviasdream-child' ), 'link', '/about/' ),
+		'hero_cta2_url'      => array( 'sdc_home', __( 'Hero: second button link', 'sylviasdream-child' ), 'link', '/my-story/' ),
 
 		// Trust strip. Item 4 ("Every purchase helps") is blank until Sylvia approves the wording.
 		'strip_1_title'      => array( 'sdc_strip', __( 'Item 1: heading', 'sylviasdream-child' ), 'text', '25 titles' ),
@@ -88,7 +88,7 @@ function sdc_fields() {
 		'about_text'         => array( 'sdc_about', __( 'Intro paragraph', 'sylviasdream-child' ), 'textarea', 'Sylvia was born in post-war England, the youngest of six children. She came to know Jesus at thirty-eight and was called to ministry at fifty-seven.' ),
 		'about_text_2'       => array( 'sdc_about', __( 'Second paragraph', 'sylviasdream-child' ), 'textarea', 'She travelled to Kenya often, preaching the gospel and visiting prisons, churches and schools. She helped establish Heaven on Earth Ministries for orphans and children in remote villages. Today, at eighty-one, she writes from Australia to help readers trust God more deeply.' ),
 		'about_cta_label'    => array( 'sdc_about', __( 'Button label', 'sylviasdream-child' ), 'text', "Read Sylvia's story" ),
-		'about_cta_url'      => array( 'sdc_about', __( 'Button link', 'sylviasdream-child' ), 'link', '/about/' ),
+		'about_cta_url'      => array( 'sdc_about', __( 'Button link', 'sylviasdream-child' ), 'link', '/my-story/' ),
 
 		// Heaven on Earth and Dream Partner bands.
 		'hoe_eyebrow'        => array( 'sdc_ministry', __( 'Heaven on Earth: small heading', 'sylviasdream-child' ), 'text', 'Heaven on Earth, Kenya' ),

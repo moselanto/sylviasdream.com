@@ -4,6 +4,12 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Author Support fixed and Home/Books/Contact rebuilt on dev (about 14:40-14:55 EAT)
+- Author Support (dev page 6235): the live enquiry form is a **Jetpack** form (reusable form 6255), not CoBlocks or Crowdsignal. Restored inline on dev: Name (required), Email (required), Message, "Contact us"; live thank-you wording kept; recipient sylviasuhr@gmail.com. Intro split back into the two live paragraphs; top button now `#book-enquiry` on the same page (duplicate anchor id removed, click-tested). Template: Full width (page builder). Wording matches live. No test message sent.
+- Home (page 6365), Books (/shop-for-books/, page 3001) and Contact (page 20) rebuilt from `content/blocks/*.html`: pasted into the Code editor, expanded in the visual editor, saved; template Full width (page builder). Previous content kept as revisions (Home's body was empty before; it used the theme fallback).
+- Render checks, desktop browser and 320px Customizer mobile preview: all three render without errors. Home shows hero, trust strip, featured books, About, ministry, Dream Partners, testimonials, newsletter CTA. Books shows page header, products area (empty: products are Draft) and CTA strip. Contact shows info, FAQ and the Jetpack form (Name, Email, Message required; "Send message"); fields fit at 320px.
+- Repo: hero and About Sylvia patterns and the Customizer defaults now link to /my-story/ instead of /about/ (404).
+
 ### Dev deploy, dev fixes and live read-only check (about 13:45-14:40 EAT)
 - CI: Moses added `.github/workflows/checks.yml` (c4f2692). PHP lint 8.0-8.3 and `check-theme.js` all pass (first ever PHP lint of the repo).
 - 1.1.0 deployed to dev (cPanel Git update to c4f2692 + File Manager copy). Home, Shop For Books, Contact and 404 render without errors.
