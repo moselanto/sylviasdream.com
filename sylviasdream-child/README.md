@@ -1,10 +1,16 @@
-# Sylvia's Dream (child theme) - v1.1.0
+# Sylvia's Dream (child theme) - v1.2.2
 
 The actual site design. **Activate this theme** (the parent `sylviasdream` must also be installed). Built from the approved prototype v3 (`prototype/index.html`): warm gold and cream, Cormorant Garamond headings, Source Sans 3 body text at 19-20px.
 
 ## Page builder (1.1.0)
 
 Every page can be edited visually in the block editor. Add sections from **+ > Patterns > Sylvia's Dream** (14 patterns in `patterns/`). Brand colours, fonts and sizes come from `theme.json`. Templates: Default, **Full width (page builder)** (`template-full-width.php`) and **Canvas** (`template-canvas.php`). When the Home page has block content, `front-page.php` shows only that; otherwise the Customizer sections below. Ready-to-paste pages: `content/blocks/*.html`. Guide for Sylvia: `docs/EDITING-GUIDE.md`.
+
+## Navigation (1.2.x, prototype v4)
+- Main menu: Appearance > Menus > Primary Navigation. Turn on Screen Options > **CSS Classes** and **Description**.
+- **Mega menu:** give a top-level item the CSS class `sd-mega`. Under it, add Custom Links with URL `#` as column headings and put links under each heading. Published featured books appear automatically as "Start here" (heading in Customizer > Header and menu).
+- **Descriptions:** the Description of a submenu item shows under its title.
+- **Phone bottom bar:** Customizer > Sylvia's Dream > Header and menu (on/off, ministry label and link). Books uses the Books page link, Give uses the Give button settings; More opens the menu.
 
 ## Editing map
 

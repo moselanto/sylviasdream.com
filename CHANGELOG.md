@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-10-23 - Child theme 1.2.0-1.2.2: navigation from prototype v4
+
+### Added
+- Books **mega menu** (top-level menu item with CSS class `sd-mega`): `#` children become column headings with their own links; published featured books appear as a "Start here" column.
+- **Submenu descriptions**: each submenu item's menu Description shows under its title.
+- **Phone bottom bar** (up to 760px): Home, Books, Ministry, Give, More (opens the menu drawer); active state, safe-area spacing, 48px+ targets. Header Give button hidden on phones. Customizer: show bar, ministry label/link, mega heading.
+- `prototype/index.html` replaced with the updated standalone prototype (v4); review document `project/PROTOTYPE-REVIEW-v4.docx`.
+
+### Fixed
+- 1.2.1: links inside a closed mega panel were reachable by Tab.
+- 1.2.2: nested mega links stayed hidden when the panel was open (now `visibility: inherit`).
+
 ## 2026-10-23 - Child theme 1.1.0: fully editable pages
 
 Built from `docs/NEXT-BUILD-1.1.0.md` in four commits (A to D) so a stopped build cannot lose work.

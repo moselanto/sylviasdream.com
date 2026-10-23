@@ -17,6 +17,9 @@
 - [ ] Earlier items still open: signed acceptance and USD 112 deposit, WordPress.com Administrator invite, Stripe data per `STRIPE-DATA-REQUEST.md`, domain registrar, ebook files, logo, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+- [ ] Real-phone check of the v4 navigation (iPhone and Android, 320-430px): bottom bar clearance, drawer, no sideways scroll, wordmark
+- [ ] Add "Invite Sylvia to speak" to About and Spanish to Other languages once those pages exist; Kenya Ministry Training Manual only after Sylvia approves it
+- [ ] Mark 3 confirmed books as Featured so the Books mega menu shows "Start here" (after products are published)
 - [x] Build child theme 1.1.0 per `docs/NEXT-BUILD-1.1.0.md` (done 23 Oct)
 - [x] `.github/workflows/checks.yml` added by Moses; PHP lint 8.0-8.3 and check-theme.js pass
 - [ ] Trust strip item 4 and "Every purchase helps" line: add to the pattern only after Sylvia approves

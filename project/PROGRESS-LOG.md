@@ -4,6 +4,12 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Prototype v4 navigation (about 16:40-17:30 EAT)
+- Agnes supplied the updated prototype (v4) and review document; navigation rebuilt to match: theme 1.2.0 (ef803f6) mega menu, submenu descriptions, phone bottom bar; 1.2.1 (37228c2) and 1.2.2 (037ceed) keyboard/visibility fixes. All deployed to dev.
+- Dev Primary menu: Home · Books (sd-mega: Browse by topic = 10 WooCommerce categories + All books; Readers = My downloads, Download help; Other languages = French -> From Fear to Freedom page, Bahasa Indonesia -> SENT page) · About (Sylvia's story, Podcasts & Videos, Author Support) · Ministry (Heaven on Earth Kenya, Become a Dream Partner) · Devotionals · Contact. Spanish and "Invite Sylvia to speak" omitted (no page); Kenya Ministry Training Manual omitted (not approved).
+- Desktop front end: Books panel opens on hover and toggle with all 15 links; Tab order correct; Escape closes and hides at once; About/Ministry dropdowns with descriptions pass.
+- Customizer Mobile preset on Home, Books, Contact, Give, My Story: bottom bar labels and active state pass, More opens/closes the drawer, accordions pass, Contact form button and footer reachable. Not yet verified: exact 320/390px geometry, sideways scroll and full footer clearance (browser tool could not resize or screenshot reliably). Needs a real-phone check.
+
 ### Buyer transition plan and email to Sylvia (about 16:20 EAT)
 - `docs/BUYER-TRANSITION-PLAN.md` written: inventory and WooCommerce protected downloads before launch, zero-price legacy orders for past buyers on launch day, old pages kept 30 days, then redirect and retire the public files.
 - Email to Sylvia drafted (reader reviews with permission, free book-writing guide decision, OK to replace old book Stripe links on live). Not sent.

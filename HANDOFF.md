@@ -1,6 +1,6 @@
 # HANDOFF: start here (for a person or AI agent taking over)
 
-Last updated: Friday 23 October 2026, about 14:40 Kenya time (EAT, UTC+3).
+Last updated: Friday 23 October 2026, about 17:30 Kenya time (EAT, UTC+3).
 
 ## 1. What this project is
 Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suhr** (Christian author and missionary, Australia; ministry Heaven on Earth in Kenya). Custom theme, WooCommerce book shop with secure ebook downloads, Dream Partner giving page, content clean-up and SEO. Fixed price **USD 280** (quotation PMF-QT-2026-0106). The live site stays on the **WordPress.com Personal plan** (plugins and theme uploads are allowed on paid plans since April 2026, see `project/DECISIONS.md`).
@@ -20,7 +20,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 |---|---|
 | Dev site | Private build copy at `https://topnotchmall.co.ke/sylviasdream/` (WP admin `/sylviasdream/wp-admin/`), password-gated and hidden from search. All work happens here. |
 | Live site | **Untouched.** Never edit sylviasdream.com until launch. |
-| Code on dev | Child theme **1.1.0** (repo at `c4f2692`) running; Jetpack installed (Forms on, Newsletter not connected); approved 6-item menu set; parent "Sylvia's Dream Base" 1.0.0; core plugin **0.1.1** active, redirects ON (dev only). |
+| Code on dev | Child theme **1.2.2** (repo at `037ceed`) running, prototype v4 menu and phone bottom bar set; Jetpack installed (Forms on, Newsletter not connected); approved 6-item menu set; parent "Sylvia's Dream Base" 1.0.0; core plugin **0.1.1** active, redirects ON (dev only). |
 | Next build | Child theme **1.1.0 built and committed to `main`** (commits 9d986dd, ee8a338, 34c45dc and the docs/templates commit): theme.json, 14 patterns, prototype images, prototype footer, page-builder templates, editing guide. **Deployed to dev 23 Oct** (smoke test passed); CI (PHP lint + check-theme.js) passing. |
 | Products | 25 WooCommerce products, **all Draft**. All 25 have main descriptions (Sylvia's own wording from her pages or Amazon). Titles/subtitles checked against Amazon. 21 have covers. |
 | Pages on dev | Give (test placeholders), Privacy Policy, Terms of Sale, Refund Policy (all marked "Draft for Sylvia's review"), store notice banner on, merged duplicate pages, 5 old pages set to Draft. |

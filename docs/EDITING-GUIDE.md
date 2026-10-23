@@ -32,6 +32,11 @@ Click the button, type the new words, and click the **link** icon to change wher
 ## 6. Change the menu
 Go to **Appearance > Menus**. Drag items to reorder them, or drag an item slightly to the right to put it inside a dropdown (for example Devotionals under Books). Click **Save Menu**.
 
+## 6a. Menu details
+- Turn on **Screen Options > Description** in Appearance > Menus to edit the small line under each dropdown item (for example "Author, speaker and missionary").
+- The Books menu is a wide panel. Its column headings are links with "#" as the address; drag books links under the right heading.
+- On phones, a bar at the bottom shows Home, Books, Ministry, Give and More. Change it in Appearance > Customize > Sylvia's Dream > Header and menu.
+
 ## 7. Change the footer, Give button, or social links
 Go to **Appearance > Customize > Sylvia's Dream**. Each part of the header and footer has a box you can type into. Click **Publish** to save.
 
