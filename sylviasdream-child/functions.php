@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '1.0.0' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '1.1.0' );
 define( 'SYLVIASDREAM_CHILD_DIR', get_stylesheet_directory() );
 define( 'SYLVIASDREAM_CHILD_URI', get_stylesheet_directory_uri() );
 
@@ -42,6 +42,13 @@ function sdc_setup() {
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
+
+	// Block editor: the editor looks like the site (theme.json + blocks.css).
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'wp-block-styles' );
+	add_theme_support( 'editor-styles' );
+	add_editor_style( array( 'assets/css/editor.css', 'assets/css/blocks.css' ) );
 
 	// Menu locations are registered by the parent theme (primary,
 	// footer_books, footer_about, footer_legal). They are re-registered
@@ -78,6 +85,8 @@ function sdc_assets() {
 	if ( class_exists( 'WooCommerce' ) ) {
 		wp_enqueue_style( 'sylviasdream-child-shop', SYLVIASDREAM_CHILD_URI . '/assets/css/woocommerce.css', array( 'sylviasdream-child' ), sdc_asset_version( 'assets/css/woocommerce.css' ) );
 	}
+
+	wp_enqueue_style( 'sylviasdream-child-blocks', SYLVIASDREAM_CHILD_URI . '/assets/css/blocks.css', array( 'sylviasdream-child' ), sdc_asset_version( 'assets/css/blocks.css' ) );
 
 	wp_enqueue_script(
 		'sylviasdream-child-nav',
@@ -149,6 +158,7 @@ function sdc_excerpt_more() {
 add_filter( 'excerpt_more', 'sdc_excerpt_more' );
 
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/customizer.php';
+require_once SYLVIASDREAM_CHILD_DIR . '/inc/blocks.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/template-tags.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/class-sdc-walker-primary.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/widgets.php';

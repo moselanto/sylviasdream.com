@@ -1,0 +1,64 @@
+/*
+ * Sylvia's Dream 1.1.0: styles for block patterns and block styles.
+ * Loaded on the site and inside the block editor, so what Sylvia sees
+ * while editing matches the live page. Class names use the sd- prefix.
+ */
+
+/* Small uppercase label above headings (paragraph class "sd-eyebrow") */
+.sd-eyebrow, p.sd-eyebrow { font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; text-transform: uppercase; letter-spacing: .16em; font-size: .8rem !important; font-weight: 700; color: #8a5a14; margin-bottom: .6em; line-height: 1.4; }
+.has-ink-background-color .sd-eyebrow, .wp-block-cover .sd-eyebrow { color: #f3e3bf; }
+.sd-lead { font-size: 1.15em; color: #5a4a3a; }
+
+/* Full-width sections never touch the screen edge on phones */
+.wp-block-group.alignfull, .wp-block-cover.alignfull { padding-left: clamp(1.125rem, 4vw, 1.5rem); padding-right: clamp(1.125rem, 4vw, 1.5rem); }
+.wp-block-group.alignfull > .wp-block-group__inner-container, .wp-block-group.alignfull.is-layout-constrained > * { max-width: 1200px; }
+
+/* Hero cover */
+.sd-hero-cover { min-height: min(86vh, 720px) !important; }
+.sd-hero-cover .wp-block-cover__inner-container { max-width: 1200px; width: 100%; }
+.sd-hero-cover h1 { color: #fff; max-width: 15ch; }
+.sd-hero-cover p { max-width: 38rem; }
+
+/* Card style for groups (Styles > Card) */
+.wp-block-group.is-style-sd-card { background: #fff; border: 1px solid #e7dcc6; border-radius: 14px; padding: clamp(1.25rem, 3vw, 1.75rem); box-shadow: 0 10px 30px rgba(60, 40, 10, .10); height: 100%; }
+
+/* Book cover shadow for images (Styles > Book cover shadow) */
+.wp-block-image.is-style-sd-cover-shadow img { border-radius: 4px 10px 10px 4px; box-shadow: 0 20px 50px rgba(60, 40, 10, .25), inset 4px 0 0 rgba(0, 0, 0, .08); }
+
+/* Rounded photos used in bands */
+.sd-photo-round img { border-radius: 14px; box-shadow: 0 20px 50px rgba(60, 40, 10, .18); width: 100%; height: auto; object-fit: cover; }
+
+/* Buttons: at least 48px, outline style */
+.wp-block-button__link { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; }
+.wp-block-button.is-style-outline > .wp-block-button__link, .wp-block-button__link.is-style-outline { background: transparent; color: #8a5a14; border: 2px solid #8a5a14; }
+.wp-block-button.is-style-outline > .wp-block-button__link:hover { background: #8a5a14; color: #fff; }
+.has-ink-background-color .wp-block-button.is-style-outline > .wp-block-button__link, .wp-block-cover .wp-block-button.is-style-outline > .wp-block-button__link { color: #fff; border-color: #fff; }
+.has-ink-background-color .wp-block-button.is-style-outline > .wp-block-button__link:hover, .wp-block-cover .wp-block-button.is-style-outline > .wp-block-button__link:hover { background: #fff; color: #2b2118; }
+@media (max-width: 479px) { .wp-block-buttons > .wp-block-button { flex: 1 1 100%; } .wp-block-buttons > .wp-block-button > .wp-block-button__link { width: 100%; } }
+
+/* Trust strip */
+.sd-trust .wp-block-column { text-align: center; }
+.sd-trust h3 { font-size: 1.35rem !important; margin-bottom: .2em; }
+.sd-trust p { margin: 0; color: #5a4a3a; font-size: 1rem; }
+
+/* Testimonials */
+.sd-testimonial .wp-block-quote { border: 0; padding: 0; margin: 0; font-size: 1.25rem; }
+.sd-testimonial .wp-block-quote cite { display: block; margin-top: .8em; font-family: "Source Sans 3", Arial, sans-serif; font-style: normal; font-size: .9rem; font-weight: 700; color: #8a5a14; letter-spacing: .04em; }
+
+/* FAQ (details block) */
+.wp-block-details { margin-bottom: 12px; }
+.wp-block-details summary { cursor: pointer; font-weight: 700; font-size: 1.05rem; min-height: 32px; }
+.wp-block-details summary::marker { color: #8a5a14; }
+.wp-block-details[open] summary { margin-bottom: .6em; }
+
+/* Shortcode output inside patterns (products grid, partner progress) */
+.wp-block-group .woocommerce ul.products { margin-top: 0; }
+
+/* Page-builder templates */
+.sd-template-full .sd-builder > .entry-content > * { max-width: 760px; margin-left: auto; margin-right: auto; }
+.sd-template-full .sd-builder > .entry-content > .alignwide { max-width: 1200px; }
+.sd-template-full .sd-builder > .entry-content > .alignfull { max-width: none; margin-left: 0; margin-right: 0; }
+.sd-template-full .sd-builder > .entry-content > :first-child.alignfull { margin-top: 0; }
+.sd-template-full .sd-builder > .entry-content > :last-child.alignfull { margin-bottom: 0; }
+.sd-builder > .entry-content > .alignfull + .alignfull { margin-top: 0; }
+.sd-template-canvas { background: #fbf7ef; }
