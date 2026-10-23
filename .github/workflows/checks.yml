@@ -1,0 +1,42 @@
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  php-lint:
+    name: PHP lint (${{ matrix.php }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.0', '8.1', '8.2', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          tools: none
+      - name: php -l on every PHP file
+        run: |
+          set -e
+          status=0
+          while IFS= read -r -d '' f; do
+            php -l "$f" > /dev/null || { echo "::error file=$f::PHP syntax error"; status=1; }
+          done < <(find sylviasdream sylviasdream-child sylviasdream-core -name '*.php' -print0)
+          exit $status
+
+  theme-files:
+    name: theme.json, block markup and rules
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check theme files
+        run: node scripts/check-theme.js
