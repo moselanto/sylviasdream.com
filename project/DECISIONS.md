@@ -4,6 +4,8 @@ Newest first. Each entry: what was decided, who decided, and why.
 
 ## 23 October 2026
 
+- **Dev site is never connected to Sylvia's WordPress.com account** (Agnes, 23 Oct afternoon). Her subscribers stay on the live WordPress.com site (Jetpack Newsletter, built in on the Personal plan); the subscriber export is never imported into dev or Git. On dev the Subscribe block may stay empty; the sign-up is checked on live at launch.
+- **Approved 6-item menu applied on dev** (Moses's approved menu; About Sylvia points to /my-story/, Give stays a header button only).
 - **Quality bar raised** (Moses). The site must be international-standard, very professional, mobile-ready, with a beautiful fixed menu, and match or beat prototype v3 including its images and footer.
 - **Fully editable by Sylvia** (Moses). Every page must be editable like a page builder. Approach: WordPress block editor with brand `theme.json` and "Sylvia's Dream" block patterns (no extra plugin, works on Personal), plus Elementor-compatible page templates in case she installs Elementor later. Brief: `docs/NEXT-BUILD-1.1.0.md`.
 - **Main menu** (Moses): Home · Books (All Books, Devotionals) · About Sylvia · Ministry · Podcasts & Videos · Contact. Give is the gold header button, not a menu item.

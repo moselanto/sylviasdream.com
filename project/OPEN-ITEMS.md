@@ -16,9 +16,18 @@
 
 ## Pimofy (Moses / next agent)
 - [x] Build child theme 1.1.0 per `docs/NEXT-BUILD-1.1.0.md` (done 23 Oct)
-- [ ] Commit `.github/workflows/checks.yml` (needs GitHub `workflow` permission) and confirm PHP lint passes
+- [x] `.github/workflows/checks.yml` added by Moses; PHP lint 8.0-8.3 and check-theme.js pass
 - [ ] Trust strip item 4 and "Every purchase helps" line: add to the pattern only after Sylvia approves
-- [ ] Deploy to dev, set approved 6-item menu, install Jetpack on dev, rebuild Home/Books/Contact from patterns
+- [x] Deploy 1.1.0 to dev; approved 6-item menu; Jetpack (Forms) on dev; Home "Meet Sylvia"/"Read Sylvia's story" links fixed to /my-story/
+- [ ] Rebuild Home, Books and Contact on dev from `content/blocks/*.html`
+- [ ] Author Support on dev: restore the enquiry form (live likely uses a CoBlocks or Crowdsignal form; those plugins are on live, not dev), split the two intro lines back into two paragraphs, fix the top button to the same-page `#book-enquiry` anchor. Wording itself must stay exactly as live.
+- [ ] Mobile: store notice overlaps the header in narrow view; check the menu toggle by touch on a real phone, fix the stacking if confirmed
+- [ ] Dev clean-up from QA: footer Archives/Categories widgets (remove), "Browse the books" on 404 goes to /shop/ while the menu uses /shop-for-books/ (pick one), My Story run-together sentence and repeated intro, Ministry repeated intro and "dav" captions (fix only with Sylvia's wording)
+- [ ] Legacy catalogue on dev links to buy.stripe.com and exposes direct .docx downloads (7 Days to Trusting God, The King's Way): review before any preview is shared; never edit Stripe
+- [ ] Launch: live Jetpack Newsletter emails new posts by default; publish no posts during switch-over without checking, and confirm the email byline shows Sylvia, not "mosemqute"
+- [ ] Launch: remove the street address and town/postcode from the live Contact page (Australia only), with Sylvia's OK
+- [ ] Launch: decide whether MailPoet (2 unconfirmed records) stays; Jetpack Newsletter is the real list
+- [ ] Do not connect the dev site to Sylvia's WordPress.com account and never import her subscriber export anywhere
 - [ ] Visual QA at 390px, tablet, desktop; full `docs/QA-CHECKLIST.md`
 - [ ] SEO pass: meta descriptions for every page (her wording), book JSON-LD on book pages
 - [ ] Confirm the restoration-help policy for the 3-month period (`SUPPORT-AND-RESTORATION.md`)

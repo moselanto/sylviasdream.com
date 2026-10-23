@@ -4,6 +4,16 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Dev deploy, dev fixes and live read-only check (about 13:45-14:40 EAT)
+- CI: Moses added `.github/workflows/checks.yml` (c4f2692). PHP lint 8.0-8.3 and `check-theme.js` all pass (first ever PHP lint of the repo).
+- 1.1.0 deployed to dev (cPanel Git update to c4f2692 + File Manager copy). Home, Shop For Books, Contact and 404 render without errors.
+- Dev changes: Jetpack 16.3.1 installed, Forms active; Contact (page 20) now renders its existing form (recipient, subject and fields unchanged). Subscribe block still empty: Jetpack Newsletter needs a WordPress.com connection. Decision: do NOT connect dev to Sylvia's WordPress.com account.
+- Dev: Hero "Meet Sylvia" and About band "Read Sylvia's story" now link to /my-story/ (was /about/, 404).
+- Dev: approved menu applied: Home, Books (All Books, Devotionals), About Sylvia (/my-story/), Ministry, Podcasts & Videos, Contact. Give removed from the menu; gold header Give button kept. Desktop dropdown and mobile drawer (keyboard) work; pointer tap on the mobile toggle timed out in the Customizer preview (store notice overlaps header), needs a real-phone check.
+- Live sylviasdream.com read-only check (nothing changed): WordPress.com Personal (bought by another WordPress.com account); theme Twenty Twenty; active plugins Akismet, CoBlocks, Crowdsignal Dashboard, Crowdsignal Forms, Gravatar Enhanced, Gutenberg, Jetpack (managed), Layout Grid, MailPoet, Page Optimize; WooCommerce not installed. Jetpack Newsletter: 21 total subscribers (51 records incl. not confirmed/bounced), 0 paid; "email new posts to subscribers by default" is ON; email byline shows "mosemqute". MailPoet holds 2 unconfirmed records (separate list).
+- Live Contact still shows a street address and town/postcode (against the Australia-only rule). Not changed.
+- Author Support on dev: wording matches Sylvia's live text, but the enquiry form (Name, Email, Message, "Contact us") does not render on dev, the two intro lines are merged into one paragraph, and the top "Let's Talk About Your Book" button points to /sylviasdream/#book-enquiry (home page) instead of the same-page #book-enquiry anchor.
+
 ### Child theme 1.1.0 built (about 13:15-13:40 EAT)
 - `scripts/check-theme.js` added (commit 1b84a23). The GitHub Actions workflow (PHP lint 8.0-8.3) could not be committed: the GitHub connection lacks the `workflow` permission.
 - 1.1.0 committed in four parts: A images + theme.json + block support (9d986dd); B prototype footer + payment badges (ee8a338); C 14 patterns + `content/blocks` pages (34c45dc); D templates, editing guide and docs.

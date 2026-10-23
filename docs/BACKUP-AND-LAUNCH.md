@@ -83,6 +83,13 @@ The after-payment page column feeds the protected slugs (`sylviasdream-core/inc/
 - [ ] One small real purchase; confirm the download email and that no WordPress.com fee was taken; refund it.
 - [ ] Run `QA-CHECKLIST.md` on production.
 
+### 6.1 Live-site facts to respect at switch-over (checked 23 Oct 2026)
+- Jetpack Newsletter on live has 21 subscribers and **emails new posts to subscribers by default**. Pages do not trigger emails; posts do. Do not publish or re-publish posts during switch-over unless an email is intended.
+- Newsletter email byline currently shows "mosemqute": set the author display name to Sylvia's before any post is published.
+- Active live plugins: Akismet, CoBlocks, Crowdsignal Dashboard, Crowdsignal Forms, Gravatar Enhanced, Gutenberg, Jetpack, Layout Grid, MailPoet, Page Optimize. Existing page forms (e.g. Author Support) may depend on CoBlocks or Crowdsignal; keep them active until each form is checked on the new theme.
+- WooCommerce is not yet installed on live.
+- The live Contact page shows a street address and town/postcode; remove (Australia only) with Sylvia's OK.
+
 ## 7. Rollback
 1. Appearance > Themes: reactivate **Twenty Twenty**.
 2. Settings > Sylvia's Dream: **Redirects OFF**.
