@@ -1,77 +1,85 @@
 # HANDOFF: start here (for a person or AI agent taking over)
 
-Last updated: Saturday 17 October 2026, about 12:00 Kenya time (EAT, UTC+3).
+Last updated: Friday 23 October 2026, about 13:00 Kenya time (EAT, UTC+3).
 
 ## 1. What this project is
-Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suhr** (Christian author and missionary, Melbourne, Australia; ministry Heaven on Earth in Kenya). Custom theme, WooCommerce book shop with secure ebook downloads, Dream Partner giving page, content clean-up and SEO. Fixed price **USD 280** (quotation PMF-QT-2026-0106). The site stays on the **WordPress.com Personal plan**.
+Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suhr** (Christian author and missionary, Australia; ministry Heaven on Earth in Kenya). Custom theme, WooCommerce book shop with secure ebook downloads, Dream Partner giving page, content clean-up and SEO. Fixed price **USD 280** (quotation PMF-QT-2026-0106). The live site stays on the **WordPress.com Personal plan** (plugins and theme uploads are allowed on paid plans since April 2026, see `project/DECISIONS.md`).
+
+**Moses's quality bar (23 Oct):** the new site must be international-standard, very professional, mobile-ready, with a beautiful fixed (sticky) menu, and "one of the best book websites in the world". It must match or beat `prototype/index.html` v3, **including its images and footer**, and every page must be **fully editable by Sylvia, like a page builder**, so handover is easy.
 
 ## 2. Read in this order
 1. This file.
-2. [`AGENTS.md`](AGENTS.md): rules for working in this repo (never invent facts, no private data in Git, nothing free without approval, never touch Stripe).
-3. [`project/README.md`](project/README.md): map of every project file.
-4. [`project/PROJECT-BRIEF.md`](project/PROJECT-BRIEF.md) and [`project/DECISIONS.md`](project/DECISIONS.md): what was agreed and why.
-5. [`project/OPEN-ITEMS.md`](project/OPEN-ITEMS.md): what is waiting, and on whom.
-6. [`project/CORRESPONDENCE.md`](project/CORRESPONDENCE.md): the message history with Sylvia and how to write to her.
-7. Then the runbooks in `docs/` when you start real work.
+2. [`project/PROGRESS-LOG.md`](project/PROGRESS-LOG.md): what was done, day by day, 21-23 Oct, and exactly where work stopped.
+3. [`docs/NEXT-BUILD-1.1.0.md`](docs/NEXT-BUILD-1.1.0.md): the full brief for the next theme build (approved by Moses, not started).
+4. [`AGENTS.md`](AGENTS.md): rules for working in this repo.
+5. [`project/README.md`](project/README.md), [`project/DECISIONS.md`](project/DECISIONS.md), [`project/OPEN-ITEMS.md`](project/OPEN-ITEMS.md).
+6. Runbooks in `docs/` (`DEPLOYMENT.md`, `BACKUP-AND-LAUNCH.md`, `QA-CHECKLIST.md`, `REDIRECT-MAP.md`).
 
-## 3. Current status (17 Oct 2026)
+## 3. Current status (23 Oct 2026)
 | Area | Status |
 |---|---|
-| Quotation | Revised v2 sent (Personal plan, 25 titles, valid to 31 Oct). Sylvia accepted staying on Personal. **Not yet signed; deposit (USD 112) not yet paid** |
-| Access | Sylvia said she will invite mosemqute@gmail.com as WordPress Administrator. **Not confirmed received.** No Stripe access (she declined; she exports the minimum herself) |
-| Sylvia's latest message | Asked what Stripe data is needed, asked for a restoration test before handover, asked about restoration support costs. Reply drafted (see CORRESPONDENCE.md); **check with Moses whether it was sent** |
-| Call | Times offered for Sat 17 to Wed 21 Oct. **Sylvia has not confirmed a time.** Call guide: `project/CALL-GUIDE.md` |
-| Book list | v2 (25 titles) sent; Amazon check done 17 Oct; **awaiting Sylvia's answers.** v3 not started |
-| Code | Parent theme 1.0.0, child theme 1.0.0 (full design build, 23 Oct), core plugin 0.1.1. **Nothing is live.** Live site still runs Twenty Twenty |
-| Prototype | `prototype/index.html` v3 (single-file preview). Not yet updated with Amazon findings |
-| Live site | Untouched. No backups taken yet (no access yet) |
+| Dev site | Private build copy at `https://topnotchmall.co.ke/sylviasdream/` (WP admin `/sylviasdream/wp-admin/`), password-gated and hidden from search. All work happens here. |
+| Live site | **Untouched.** Never edit sylviasdream.com until launch. |
+| Code on dev | Child theme **1.0.0** (commit `fd1aaa1`) running; parent "Sylvia's Dream Base" 1.0.0; core plugin **0.1.1** active, redirects ON (dev only). |
+| Next build | Child theme **1.1.0** (fully editable block patterns, theme.json, prototype images, prototype footer, 6-item menu, Elementor-ready templates). **Approved, not started**: the build agent stopped because the Town account ran out of credits. Brief: `docs/NEXT-BUILD-1.1.0.md`. |
+| Products | 25 WooCommerce products, **all Draft**. All 25 have main descriptions (Sylvia's own wording from her pages or Amazon). Titles/subtitles checked against Amazon. 21 have covers. |
+| Pages on dev | Give (test placeholders), Privacy Policy, Terms of Sale, Refund Policy (all marked "Draft for Sylvia's review"), store notice banner on, merged duplicate pages, 5 old pages set to Draft. |
+| Things needed from Sylvia | Town document "Things needed from Sylvia" (Moses's Town library). Summary in `project/OPEN-ITEMS.md`. |
+| Quotation / deposit | Check with Moses; last known: v2 sent, signature and USD 112 deposit pending. |
 
 ## 4. What to do next (in order)
-1. **Confirm with Moses** whether the reply to Sylvia's 17 Oct message was sent, and settle the open policy question: is restoration help free in the first 3 months for any cause, or only for problems from our work? (`project/SUPPORT-AND-RESTORATION.md`)
-2. **Hold the call** once Sylvia picks a time (`project/CALL-GUIDE.md`). Capture decisions in `project/DECISIONS.md`.
-3. **Wait for acceptance and deposit.** No work on her live site before the signed acceptance page and USD 112 are in.
-4. **On first WordPress login, change nothing.** Check: plan (Personal), storage used, how giving works today (Stripe links or WordPress.com Donations block, which costs 8%), theme and plugin upload available, domain registrar, whether a full-database backup plugin (e.g. UpdraftPlus) runs.
-5. **Backups** per `docs/BACKUP-AND-LAUNCH.md` section 1, into the private Google Drive folder.
-6. **Protect** paid downloads (section 2): upload and activate `sylviasdream-core`, redirects OFF.
-7. **Book list v3 + prototype update** from Sylvia's answers (`project/BOOK-CATALOGUE.md`).
-8. **Build locally**, prepare live drafts, preview with Sylvia, test purchase/download/gift, balance USD 168, launch, post-launch, restoration test, handover: `project/WORKFLOW.md` phases 6-11.
+1. **Build child theme 1.1.0** exactly per `docs/NEXT-BUILD-1.1.0.md`. One single commit to `main`.
+2. **Deploy to dev** (see section 6), then set the approved menu: Home · Books (dropdown: All Books, Devotionals) · About Sylvia · Ministry · Podcasts & Videos · Contact. Give is the gold header button, not a menu item.
+3. **Rebuild Home, Books and Contact** pages on dev from the 1.1.0 patterns (`content/blocks/*.html`, paste into the page Code editor). Install Jetpack on dev so the contact form and newsletter work (the Contact page currently prints a raw `[jetpack_subscription_form]` shortcode and has no form).
+4. **Visual QA** at 390px phone, tablet and desktop; fix; run `docs/QA-CHECKLIST.md`.
+5. Keep adding to "Things needed from Sylvia"; when the build is done Moses sends it to her.
+6. Then the workflow phases 7-11 in `project/WORKFLOW.md` (live prep as drafts, preview with Sylvia, launch, handover).
 
 ## 5. Things that must not happen
-- No changes to the live site before backups.
-- No Stripe edits, ever. Existing subscriptions and payment links stay as they are; old links are re-pointed or switched off only with Sylvia's written OK.
-- No free downloads without Sylvia's written approval (including the book-writing guide).
-- No publishing of biography, ministry info or "purchases support Heaven on Earth" wording without her approval. Author Support wording stays exactly as she wrote it.
-- No street address or town on the site: "Australia" only.
-- No passwords requested or accepted.
-- No Stripe exports, subscriber or buyer lists, backups, phone numbers or bank details committed to Git.
-- Do not promise any fee is zero; WordPress.com pricing shows no WooCommerce fee on Personal, confirmed by a real test purchase before launch.
-- Do not mention this repo to Sylvia (Moses's instruction, 16 Oct).
-- Never sync a local or staging database over production.
+- No changes to the live site before backups and launch day.
+- No Stripe edits, ever. Existing subscriptions and payment links stay; old links change only with Sylvia's written OK.
+- Products stay **Draft** until launch.
+- Use **Sylvia's own wording only**; never invent facts, reviews, numbers or addresses. Draft wording (biography, home intro) needs her approval.
+- No free downloads without her written approval.
+- "Australia" only: no street address or town anywhere.
+- No passwords requested, stored or committed. No private data (Stripe exports, buyer lists, backups, phone numbers, bank details) in Git.
+- Do not mention this repo to Sylvia.
+- Never sync a dev or local database over production.
+- CSS class names never start with `ad-` (ad blockers hide them); use `sd-`.
 
-## 6. Where things are that are NOT in this repo
+## 6. How code reaches the dev site
+- cPanel: `https://cpanel.topnotchmall.co.ke/` > Git Version Control. Repo clone: `/home/topnotch/repositories/sylviasdream.com`. "Update from Remote" pulls `main`.
+- Then copy folders with **File Manager** (there is **no Terminal/shell** on this account) into `/home/topnotch/public_html/sylviasdream/wp-content/themes/` (`sylviasdream`, `sylviasdream-child`) and `/wp-content/plugins/sylviasdream-core`.
+- The active dev theme already uses the `sylviasdream-child` folder, so replacing files updates the site immediately. If a page shows a critical error, re-upload the previous version from Git.
+- `php -l` **cannot be run** on cPanel or in the Town sandbox. Review PHP carefully; after deploy, load Home, Shop For Books, Contact and a 404 URL to smoke-test.
+- The live site (WordPress.com) gets code by zip upload through WP Admin (`docs/DEPLOYMENT.md`).
+
+## 7. Where things are that are NOT in this repo
 | Item | Where |
 |---|---|
-| Quotation v2 (.docx), book list v2 (.docx), website audit (.docx) | Moses's Town library, collection "Sylvias Dream". Text versions without private details: `project/QUOTATION.md`, `project/BOOK-CATALOGUE.md`, `project/WEBSITE-AUDIT.md` |
-| Call prep guide and spoken call script | Moses's Town documents (summary in `project/CALL-GUIDE.md`) |
-| Payment details (bank, M-PESA, PayPal) and phone numbers | Quotation .docx only |
-| Stripe exports, subscriber CSV, backups | Private Google Drive folder "Sylvia's Dream - Backups (private)" (to be created) |
-| Book covers, ebook files, photos | Coming from Sylvia by email; store privately, then upload to WordPress |
+| Quotation v2, book list v2, website audit (.docx) | Moses's Town library, collection "Sylvias Dream" |
+| Book covers (final set) | Town library: "Sylvias Dream/Book covers/Final clean set" (+ covers Moses uploaded to WP Media on 23 Oct) |
+| Prototype photos (hero, bible, mission, give, desk) | Town library: "Sylvias Dream/Theme builds/prototype-images/". Also embedded as base64 in `prototype/index.html` (the `IMG` object: hero, bible, mission, give, desk) |
+| "Things needed from Sylvia" list | Town document of that name |
+| Live-site content export | Private backups (not in Git) |
+| Payment details, phone numbers | Quotation .docx only |
 
-## 7. Repo map
+## 8. Repo map
 | Path | What |
 |---|---|
-| `sylviasdream/` | Parent theme (minimal shell, never activated alone) |
-| `sylviasdream-child/` | The design. Activate this one |
-| `sylviasdream-core/` | Plugin: download-page protection, redirects (off by default), schema, Dream Partner progress shortcode, Settings > Sylvia's Dream |
-| `prototype/` | Design preview v3 and `verify.js` (`node prototype/verify.js`) |
-| `docs/` | Deployment, backup and launch runbook, client checklist, QA checklist, redirect map |
-| `scripts/backup-inventory.sh` | WP-CLI inventory, local copy only |
-| `project/` | Brief, decisions, catalogue, quotation scope, audit, Stripe data request, support and restoration, workflow, call guide, correspondence, open items |
+| `sylviasdream/` | Parent theme shell |
+| `sylviasdream-child/` | The design (1.0.0 now; 1.1.0 next) |
+| `sylviasdream-core/` | Plugin 0.1.1: download-page protection, redirects (subfolder-safe), schema, `[sd_partner_progress]`, Settings > Sylvia's Dream |
+| `prototype/` | Design prototype v3 (the visual target) |
+| `docs/` | Deployment, backup and launch, QA checklist, redirect map, client checklist, next-build brief |
+| `project/` | Brief, decisions, catalogue, progress log, open items, workflow, correspondence |
 
-## 8. Known gaps in the code
-- `php -l` has not been run on the 1.0.0 child theme (no PHP in the build environment). Run it before uploading.
-- Book data, covers and prices are placeholders until Sylvia confirms them.
-- Protected slugs in `sylviasdream-core` must be checked against Sylvia's payment-link list before activation.
+## 9. Known gaps
+- `php -l` never run on any theme version (no PHP available). Dev pages render without errors on 1.0.0.
+- Books page on dev is still the legacy long catalogue page; the product grid stays empty until products are published at launch.
+- Book JSON-LD missing on legacy book pages; meta descriptions missing on all pages (Rank Math/SEO pass still to do, using her wording).
+- `sitemap.xml` returns 404 on dev (search engines are discouraged there); check on live.
+- Mobile tested only in the 320px WordPress preview; needs a real phone check.
 
-## 9. Keeping this file current
-Whoever finishes a step updates section 3, `project/OPEN-ITEMS.md`, `project/DECISIONS.md` and `CHANGELOG.md` in the same commit.
+## 10. Keeping this file current
+Whoever finishes a step updates section 3, `project/PROGRESS-LOG.md`, `project/OPEN-ITEMS.md`, `project/DECISIONS.md` and `CHANGELOG.md` in the same commit.

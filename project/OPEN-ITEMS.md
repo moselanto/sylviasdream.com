@@ -1,21 +1,23 @@
-# Open items (17 October 2026)
+# Open items (23 October 2026)
 
 ## Waiting on Sylvia
-- [ ] Call time (offered Sat 17, Mon 19, Tue 20, Wed 21 Oct)
-- [ ] Signed acceptance page and USD 112 deposit
-- [ ] WordPress.com Administrator invite to mosemqute@gmail.com
-- [ ] Stripe items per `STRIPE-DATA-REQUEST.md`, in the private Drive folder
-- [ ] Domain registrar and renewal date
-- [ ] Book list answers (`BOOK-CATALOGUE.md`), ebook files (PDF/EPUB), covers (coming by email)
-- [ ] Photos of Sylvia; Heaven on Earth registration, programmes, stories (with consent); reviews; logo files
-- [ ] Social links (Facebook, YouTube) and GoFundMe link; PayPal Business account (later)
-- [ ] Approvals: purchase wording, biography, ministry info, any free resources
-- [ ] Later, in writing: re-point or switch off old payment links
+(Kept in full in Moses's Town document "Things needed from Sylvia"; send it to her when the build is done.)
+- [ ] Covers: From Fear to Freedom, When Fear Has the Final Word, Manifesting Miracles Now, Fast Forward to Success
+- [ ] Confirm titles/subtitles (not on Amazon): When Fear Has the Final Word ("A Devotional on Peace"), Manifesting Miracles Now ("Everyday God Encounters of Selected Authors")
+- [ ] Fast Forward to Success: add a line about her own chapter? (Amazon text describes the whole collection)
+- [ ] Other Amazon editions in the shop or not: French (De la Peur à la Liberté), Spanish (UNA VIDA), Angelique Legacy Edition, The King's Way: God's Plan For Salvation paperback, large-print editions
+- [ ] Approve Privacy Policy, Terms of Sale, Refund Policy
+- [ ] Approve Give page amounts ($5/$15/$30/$50 + other) and the 100 Dream Partners goal
+- [ ] Approve home hero intro and About Sylvia paragraphs (draft biography from the prototype); "Every purchase helps Heaven on Earth" line yes/no
+- [ ] Photo of Sylvia; newsletter sign-up preference
+- [ ] Stripe set-up/access for real payments (Pimofy never edits Stripe)
+- [ ] Old Manifesting Miracles Now page: keep or redirect
+- [ ] Earlier items still open: signed acceptance and USD 112 deposit, WordPress.com Administrator invite, Stripe data per `STRIPE-DATA-REQUEST.md`, domain registrar, ebook files, logo, social links, written approval of wording
 
-## Pimofy (Moses)
+## Pimofy (Moses / next agent)
+- [ ] Build child theme 1.1.0 per `docs/NEXT-BUILD-1.1.0.md` (approved, not started; stopped when Town credits ran out)
+- [ ] Deploy to dev, set approved 6-item menu, install Jetpack on dev, rebuild Home/Books/Contact from patterns
+- [ ] Visual QA at 390px, tablet, desktop; full `docs/QA-CHECKLIST.md`
+- [ ] SEO pass: meta descriptions for every page (her wording), book JSON-LD on book pages
 - [ ] Confirm the restoration-help policy for the 3-month period (`SUPPORT-AND-RESTORATION.md`)
-- [ ] On first login (change nothing): confirm Personal plan and storage used; how giving works; theme upload allowed; whether a full-database backup plugin runs
 - [ ] Create the private Google Drive folder "Sylvia's Dream - Backups (private)"
-- [ ] Book list v3 and prototype update after Sylvia's answers
-- [ ] Match cover images to titles when they arrive
-- [ ] Send a short WhatsApp summary after the call

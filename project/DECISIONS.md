@@ -2,6 +2,16 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 23 October 2026
+
+- **Quality bar raised** (Moses). The site must be international-standard, very professional, mobile-ready, with a beautiful fixed menu, and match or beat prototype v3 including its images and footer.
+- **Fully editable by Sylvia** (Moses). Every page must be editable like a page builder. Approach: WordPress block editor with brand `theme.json` and "Sylvia's Dream" block patterns (no extra plugin, works on Personal), plus Elementor-compatible page templates in case she installs Elementor later. Brief: `docs/NEXT-BUILD-1.1.0.md`.
+- **Main menu** (Moses): Home · Books (All Books, Devotionals) · About Sylvia · Ministry · Podcasts & Videos · Contact. Give is the gold header button, not a menu item.
+- **Covers chosen** (Moses): How to Find the Real You uses the blue "True Identity in Christ" cover; The Hidden Key uses the dark bordered cover with the key (as on Amazon).
+- **Book titles and subtitles follow Amazon** (Moses), from his PDF of her Amazon author page, normal title case. Amazon book descriptions supplied by Moses are used as product descriptions.
+- **Things still needed from Sylvia** are collected in one list (Town document "Things needed from Sylvia"), sent to her when the build is done.
+- **Contact page shows "Australia" only** (street and town removed on dev, per the existing rule).
+
 ## 22 October 2026
 
 - **Redirect map corrected and merges approved** (Pimofy). After a content check of each duplicate page: `/how-to-find-the-real-you-2/` is a buyer download page, so it is protected, not redirected; `/my-autobiography/` (One Life hardcover page) goes to `/one-life/`; the fuller text from `/sylvias-dream/` and the original Hidden Key page is merged into the kept `-3` pages; `/manifesting-miracles-now/` waits for Sylvia. No current URL is lost: old pages are retired only when redirects are on. Core plugin 0.1.1; see `docs/REDIRECT-MAP.md`.

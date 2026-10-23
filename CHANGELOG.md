@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-23 - Handoff update (docs only)
+
+### Added
+- `project/PROGRESS-LOG.md`: day-by-day log of 21-23 Oct and where work stopped.
+- `docs/NEXT-BUILD-1.1.0.md`: approved brief for child theme 1.1.0 (editable block patterns, theme.json, prototype images, prototype footer, 6-item menu, Elementor-ready templates). Not started.
+
+### Changed
+- `HANDOFF.md`: current status, dev site and deployment method (cPanel Git + File Manager, no shell), next steps.
+- `project/OPEN-ITEMS.md`, `project/DECISIONS.md`: 23 Oct items and decisions.
+
 ## 2026-10-23 - Child theme 1.0.0: full design build
 
 ### Added
