@@ -43,6 +43,8 @@ See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). In short: build and test on a pr
 | [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) | Local build, WP Admin uploads, drafts, launch day and rollback |
 | [`docs/CLIENT-CHECKLIST.md`](docs/CLIENT-CHECKLIST.md) | Access and content needed from Sylvia |
 | [`docs/REDIRECT-MAP.md`](docs/REDIRECT-MAP.md) | Content audit: keep, merge, redirect, protect |
+| [`docs/BUYER-TRANSITION-PLAN.md`](docs/BUYER-TRANSITION-PLAN.md) | Moving past buyers to WooCommerce protected downloads; retiring public files |
+| [`docs/LEGACY-LINK-MAP.md`](docs/LEGACY-LINK-MAP.md) | Old Stripe and .docx links: what was replaced, kept and why |
 | [`docs/EDITING-GUIDE.md`](docs/EDITING-GUIDE.md) | Plain-English editing guide for Sylvia |
 | [`docs/QA-CHECKLIST.md`](docs/QA-CHECKLIST.md) | Acceptance checks before the balance is due |
 | [`CHANGELOG.md`](CHANGELOG.md) | Release history |

@@ -83,6 +83,9 @@ The after-payment page column feeds the protected slugs (`sylviasdream-core/inc/
 - [ ] One small real purchase; confirm the download email and that no WordPress.com fee was taken; refund it.
 - [ ] Run `QA-CHECKLIST.md` on production.
 
+### 6.0 Past buyers and downloads
+Follow `BUYER-TRANSITION-PLAN.md` (Phase 1 on launch day, Phase 2 after 30 days) and `LEGACY-LINK-MAP.md`.
+
 ### 6.1 Live-site facts to respect at switch-over (checked 23 Oct 2026)
 - Jetpack Newsletter on live has 21 subscribers and **emails new posts to subscribers by default**. Pages do not trigger emails; posts do. Do not publish or re-publish posts during switch-over unless an email is intended.
 - Newsletter email byline currently shows "mosemqute": set the author display name to Sylvia's before any post is published.

@@ -4,6 +4,10 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Buyer transition plan and email to Sylvia (about 16:20 EAT)
+- `docs/BUYER-TRANSITION-PLAN.md` written: inventory and WooCommerce protected downloads before launch, zero-price legacy orders for past buyers on launch day, old pages kept 30 days, then redirect and retire the public files.
+- Email to Sylvia drafted (reader reviews with permission, free book-writing guide decision, OK to replace old book Stripe links on live). Not sent.
+
 ### Testimonials removed; legacy Stripe/.docx links replaced on dev (about 15:30-16:00 EAT)
 - Dev Home: placeholder testimonials section removed (it only had "Reader review goes here" / "Reader name, country" x3). Repo: testimonials removed from `content/blocks/home.html`; the pattern stays for later, used only with real, permitted reviews.
 - Dev: 31 book-purchase buy.stripe.com links on 18 pages (incl. 3 drafts) now go to /shop-for-books/; two public .docx links removed (draft 6304 "Download My Story"; /to-ensure-you-end-up-going-to-heaven/ "Download free ebook"). Giving links, thank-you/download pages, media files and Stripe untouched. Sample click-tests passed; no posts had matches. Full map: `docs/LEGACY-LINK-MAP.md`. Live still has all of these links.

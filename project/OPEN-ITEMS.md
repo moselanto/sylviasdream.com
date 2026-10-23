@@ -34,7 +34,8 @@
 - [ ] Dev clean-up from QA: footer Archives/Categories widgets (remove), "Browse the books" on 404 goes to /shop/ while the menu uses /shop-for-books/ (pick one), My Story run-together sentence and repeated intro, Ministry repeated intro and "dav" captions (fix only with Sylvia's wording)
 - [x] Dev: book buy.stripe.com links replaced with /shop-for-books/ and public .docx links removed from ordinary pages (`docs/LEGACY-LINK-MAP.md`)
 - [ ] Launch: repeat the `docs/LEGACY-LINK-MAP.md` replacements on live, with Sylvia's written OK; point each button at its product page once products are published
-- [ ] Old download pages and media files are still publicly reachable by direct URL: plan the buyer transition and file protection (WooCommerce protected downloads) before launch
+- [ ] Old download pages and media files are still publicly reachable by direct URL: follow `docs/BUYER-TRANSITION-PLAN.md` (plan written 23 Oct; Phase 0 before launch)
+- [ ] Email to Sylvia drafted 23 Oct (reviews, free guide, OK for old book Stripe links); send only after Moses approves
 - [ ] Launch: live Jetpack Newsletter emails new posts by default; publish no posts during switch-over without checking, and confirm the email byline shows Sylvia, not "mosemqute"
 - [ ] Launch: remove the street address and town/postcode from the live Contact page (Australia only), with Sylvia's OK
 - [ ] Launch: decide whether MailPoet (2 unconfirmed records) stays; Jetpack Newsletter is the real list
