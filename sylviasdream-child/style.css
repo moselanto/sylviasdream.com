@@ -469,3 +469,26 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 	img { max-width: 50% !important; break-inside: avoid; }
 	.sd-prose { max-width: none; }
 }
+
+/* 1.1.0: WooCommerce store notice sits in the page flow above the header
+   (WooCommerce positions it absolutely at the top, over the sticky header). */
+.woocommerce-store-notice, p.demo_store {
+	position: relative !important; top: auto !important; bottom: auto !important; left: auto !important; right: auto !important;
+	z-index: 1; margin: 0; padding: .7em var(--gutter); background: var(--gold-d); color: #fff;
+	font-size: .9rem; line-height: 1.45; text-align: center; box-shadow: none;
+}
+.admin-bar .woocommerce-store-notice, .admin-bar p.demo_store { top: auto !important; }
+.woocommerce-store-notice a, p.demo_store a { color: #fff; text-decoration: underline; display: inline-flex; align-items: center; min-height: 40px; margin-left: .5em; }
+
+/* 1.1.0: narrow phones (320-400px): the wordmark must not run under the
+   action icons. Tap targets stay 48px; the mark and gaps shrink instead. */
+@media (max-width: 400px) {
+	.site-header__inner { gap: 8px; }
+	.sd-wrap.site-header__inner { padding-inline: 12px; }
+	.sd-brand { flex: 1 1 auto; gap: 8px; }
+	.sd-brand__mark { display: none; }
+	.sd-brand__text { overflow: hidden; }
+	.sd-brand__name { font-size: 1.15rem; overflow: hidden; text-overflow: ellipsis; }
+	.sd-actions { gap: 4px; }
+	.sd-brand__logo { max-height: 40px; max-width: 120px; }
+}
