@@ -4,6 +4,11 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Books target set to /shop-for-books/ (about 15:15-15:25 EAT)
+- Agnes chose /shop-for-books/ as the single Books target. Theme commit da977d5: Customizer "Books page link" (default /shop-for-books/) drives sdc_shop_url(), so every theme/pattern book button, the 404 "Browse the books" and WooCommerce "Return to shop"/"Continue shopping" go there. WooCommerce Shop page stays "Shop" (/shop/).
+- Deployed to dev (cPanel Git update to da977d5; inc/customizer.php, inc/template-tags.php, inc/woocommerce.php copied). Saved dev block links updated: Home "Explore the Books" and "See all books", Books CTA strip "Explore the Books".
+- Click-tested all three buttons and the 404 "Browse the books": all open /shop-for-books/. Home, Books and a 404 render at desktop and 320px (Customizer preview); 320px header/notice fix still intact.
+
 ### Dev link/header fixes and 320px CSS fix (about 15:00-15:10 EAT)
 - Dev Home (6365): block buttons "Meet Sylvia" and "Read Sylvia's story" now go to /my-story/ (click-tested).
 - Dev Books (3001) header: "The bookshop" / "Books by Sylvia Suhr" / "eBooks delivered instantly by secure download. Paperbacks and Kindle editions through Amazon." Dev Contact (20) header: "Contact" / "Let's talk" / "Questions about a book, a download, speaking or partnering, Sylvia would love to hear from you." Both render at desktop and 320px (Customizer preview); Contact form present; no message sent.
