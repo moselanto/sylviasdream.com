@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.2.0
+Version: 1.2.1
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -503,7 +503,8 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 
 /* Mega menu: column headings, nested lists, featured books */
 .sd-mega__heading { display: block; font-family: var(--sans); font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-d); margin: 10px 0 6px; padding-inline: 12px; }
-.sd-menu .sub-menu .sub-menu { display: block; position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: 0; background: none; min-width: 0; width: auto; padding: 0 0 6px; margin: 0; }
+/* Nested lists inherit the panel's visibility, so a closed panel's links are never reachable by Tab. */
+.sd-menu .sub-menu .sub-menu { display: block; position: static; opacity: 1; transform: none; box-shadow: none; border: 0; background: none; min-width: 0; width: auto; padding: 0 0 6px; margin: 0; transition: none; }
 .sd-menu .sub-menu .sub-menu::before, .sd-menu .sub-menu .sub-menu::after { display: none; }
 .sd-mega__feature { display: none; }
 .sd-mega__books { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding-inline: 12px; }
@@ -563,3 +564,7 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 	.sd-dock__item svg { width: 19px; height: 19px; }
 }
 @media print { .sd-dock { display: none !important; } }
+/* 1.2.1: a submenu closed with Escape or a click hides at once (no fade), so focus cannot land inside it. */
+@media (min-width: 1024px) {
+	.sd-menu > li.is-closed > .sub-menu, .sd-menu > li.is-closed > .sub-menu .sub-menu { visibility: hidden !important; transition: none; }
+}
