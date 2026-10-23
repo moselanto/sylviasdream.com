@@ -21,14 +21,14 @@
 - [x] Deploy 1.1.0 to dev; approved 6-item menu; Jetpack (Forms) on dev; Home "Meet Sylvia"/"Read Sylvia's story" links fixed to /my-story/
 - [x] Rebuild Home, Books and Contact on dev from `content/blocks/*.html` (23 Oct; old content kept as revisions)
 - [x] Author Support on dev: Jetpack enquiry form restored, two intro paragraphs, same-page `#book-enquiry` button
-- [ ] Dev Home blocks: change "Meet Sylvia" and "Read Sylvia's story" button links from /about/ to /my-story/ (the expanded blocks kept the old pattern link; patterns are fixed in the repo now)
-- [ ] Books and Contact page headers still show placeholder text ("Small heading", "Page title", "A short introduction to this page."): replace with the prototype wording (Books: "The bookshop" / "Books by Sylvia Suhr" / "eBooks delivered instantly by secure download. Paperbacks and Kindle editions through Amazon."; Contact: "Contact" / "Let's talk" / "Questions about a book, a download, speaking or partnering, Sylvia would love to hear from you.")
+- [x] Dev Home blocks: change "Meet Sylvia" and "Read Sylvia's story" button links from /about/ to /my-story/ (the expanded blocks kept the old pattern link; patterns are fixed in the repo now)
+- [x] (23 Oct) Books and Contact page headers still show placeholder text ("Small heading", "Page title", "A short introduction to this page."): replace with the prototype wording (Books: "The bookshop" / "Books by Sylvia Suhr" / "eBooks delivered instantly by secure download. Paperbacks and Kindle editions through Amazon."; Contact: "Contact" / "Let's talk" / "Questions about a book, a download, speaking or partnering, Sylvia would love to hear from you.")
 - [ ] Home testimonials show placeholders ("Reader review goes here"): fill only with real reviews Sylvia approves, or remove the section
-- [ ] Shop journey: Home book buttons and the Books CTA strip go to /shop/ (WooCommerce shop page) while the menu uses /shop-for-books/; pick one target
-- [ ] Mobile 320px: header wordmark clipped behind the action icons; store notice overlaps the header at the top of the page (theme CSS fix)
+- [ ] Shop journey: Home book buttons and the Books CTA strip go to /shop/ (WooCommerce product archive, empty while products are Draft) while the menu uses /shop-for-books/ (block-based Books page). Recommended: /shop-for-books/. Waiting on Agnes's choice; then update patterns (sdc_shop_url) and dev pages
+- [x] (f0ab2bc, deployed) Mobile 320px: header wordmark clipped behind the action icons; store notice overlaps the header at the top of the page (theme CSS fix)
 - [ ] Newsletter sign-up on the Home newsletter section does not render on dev (no WordPress.com connection, by decision); check on live at launch
 - [ ] Author Support on dev: restore the enquiry form (live likely uses a CoBlocks or Crowdsignal form; those plugins are on live, not dev), split the two intro lines back into two paragraphs, fix the top button to the same-page `#book-enquiry` anchor. Wording itself must stay exactly as live.
-- [ ] Mobile: store notice overlaps the header in narrow view; check the menu toggle by touch on a real phone, fix the stacking if confirmed
+- [x] Mobile: store notice overlap fixed (f0ab2bc); pointer taps work in the 320px preview. Still confirm on a real phone
 - [ ] Dev clean-up from QA: footer Archives/Categories widgets (remove), "Browse the books" on 404 goes to /shop/ while the menu uses /shop-for-books/ (pick one), My Story run-together sentence and repeated intro, Ministry repeated intro and "dav" captions (fix only with Sylvia's wording)
 - [ ] Legacy catalogue on dev links to buy.stripe.com and exposes direct .docx downloads (7 Days to Trusting God, The King's Way): review before any preview is shared; never edit Stripe
 - [ ] Launch: live Jetpack Newsletter emails new posts by default; publish no posts during switch-over without checking, and confirm the email byline shows Sylvia, not "mosemqute"

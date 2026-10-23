@@ -4,6 +4,12 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Dev link/header fixes and 320px CSS fix (about 15:00-15:10 EAT)
+- Dev Home (6365): block buttons "Meet Sylvia" and "Read Sylvia's story" now go to /my-story/ (click-tested).
+- Dev Books (3001) header: "The bookshop" / "Books by Sylvia Suhr" / "eBooks delivered instantly by secure download. Paperbacks and Kindle editions through Amazon." Dev Contact (20) header: "Contact" / "Let's talk" / "Questions about a book, a download, speaking or partnering, Sylvia would love to hear from you." Both render at desktop and 320px (Customizer preview); Contact form present; no message sent.
+- CSS fix committed (f0ab2bc): store notice in page flow above the header; up to 400px brand mark hidden, smaller wordmark, tighter gaps (48px tap targets kept). Deployed to dev (cPanel Git update to f0ab2bc, style.css copied). At 320px the full "Sylvia's Dream" wordmark fits beside Search, Cart and Menu; the notice no longer covers the header; pointer taps on Open menu, the Books submenu toggle and All Books now work. Desktop header unaffected.
+- Shop URLs on dev: /shop/ is the WooCommerce product archive (WooCommerce > Settings > Products > Shop page = "Shop"), currently "No products were found" (all products Draft). /shop-for-books/ is the rebuilt block-based Books page (menu target). Home book buttons and the Books CTA strip still link to /shop/; target decision pending.
+
 ### Author Support fixed and Home/Books/Contact rebuilt on dev (about 14:40-14:55 EAT)
 - Author Support (dev page 6235): the live enquiry form is a **Jetpack** form (reusable form 6255), not CoBlocks or Crowdsignal. Restored inline on dev: Name (required), Email (required), Message, "Contact us"; live thank-you wording kept; recipient sylviasuhr@gmail.com. Intro split back into the two live paragraphs; top button now `#book-enquiry` on the same page (duplicate anchor id removed, click-tested). Template: Full width (page builder). Wording matches live. No test message sent.
 - Home (page 6365), Books (/shop-for-books/, page 3001) and Contact (page 20) rebuilt from `content/blocks/*.html`: pasted into the Code editor, expanded in the visual editor, saved; template Full width (page builder). Previous content kept as revisions (Home's body was empty before; it used the theme fallback).
