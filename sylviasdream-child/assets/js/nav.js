@@ -37,7 +37,10 @@
 	onScroll();
 
 	/* ---------- Drawer (mobile / tablet) ---------- */
+	var dockMore = doc.querySelector('[data-sd-dock-more]');
+
 	function setToggleLabel(open) {
+		if (dockMore) { dockMore.setAttribute('aria-expanded', open ? 'true' : 'false'); }
 		if (!toggle) { return; }
 		toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
 		var label = toggle.querySelector('.screen-reader-text');
@@ -100,6 +103,13 @@
 
 		toggle.addEventListener('click', function () {
 			if (isOpen()) { closeDrawer(); } else { openDrawer(); }
+		});
+	}
+
+	// Phone bottom bar: "More" opens and closes the same menu drawer.
+	if (dockMore && nav) {
+		dockMore.addEventListener('click', function () {
+			if (isOpen()) { closeDrawer(false); dockMore.focus(); } else { openDrawer(); }
 		});
 	}
 

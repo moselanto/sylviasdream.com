@@ -81,7 +81,7 @@ endif;
 					'container'      => false,
 					'menu_class'     => 'sd-menu',
 					'menu_id'        => 'sd-primary-menu',
-					'depth'          => 2,
+					'depth'          => 3,
 					'fallback_cb'    => false,
 					'walker'         => new SDC_Walker_Primary(),
 				) );

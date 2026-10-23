@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.1.0
+Version: 1.2.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -492,3 +492,74 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 	.sd-actions { gap: 4px; }
 	.sd-brand__logo { max-height: 40px; max-width: 120px; }
 }
+
+/* ==========================================================================
+   1.2.0 Navigation from the updated prototype (v4)
+   ========================================================================== */
+/* Submenu item descriptions (Appearance > Menus > item Description) */
+.sd-menu .sub-menu .sd-menu-title { display: block; font-weight: 700; }
+.sd-menu .sub-menu .sd-menu-desc { display: block; font-size: .85rem; font-weight: 400; color: var(--ink-2); line-height: 1.35; margin-top: 2px; }
+.sd-menu .sub-menu a:has(.sd-menu-desc) { flex-direction: column; align-items: flex-start; justify-content: center; }
+
+/* Mega menu: column headings, nested lists, featured books */
+.sd-mega__heading { display: block; font-family: var(--sans); font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-d); margin: 10px 0 6px; padding-inline: 12px; }
+.sd-menu .sub-menu .sub-menu { display: block; position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: 0; background: none; min-width: 0; width: auto; padding: 0 0 6px; margin: 0; }
+.sd-menu .sub-menu .sub-menu::before, .sd-menu .sub-menu .sub-menu::after { display: none; }
+.sd-mega__feature { display: none; }
+.sd-mega__books { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding-inline: 12px; }
+.sd-mega__book { display: flex; flex-direction: column; gap: 8px; text-align: center; font-size: .85rem; font-weight: 600; line-height: 1.3; color: var(--ink); text-decoration: none; }
+.sd-mega__book img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 4px 8px 8px 4px; box-shadow: var(--shadow); }
+.sd-mega__book:hover { color: var(--gold-d); }
+
+@media (min-width: 1024px) {
+	.sd-nav { position: relative; }
+	.sd-menu > li.sd-mega { position: static; }
+	.sd-menu > li.sd-mega > .sd-mega__panel {
+		display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px 26px;
+		width: min(880px, 92vw); left: 50%; padding: 22px 16px;
+	}
+	.sd-menu > li.sd-mega > .sd-mega__panel::after { display: none; }
+	.sd-mega__panel > li > a { font-weight: 700; }
+	.sd-mega__panel .sub-menu a { min-height: 40px; padding: 6px 12px; font-size: .98rem; }
+	.sd-mega__panel > .sd-mega__feature { display: block; grid-column: span 2; min-width: 300px; }
+	.sd-menu .sub-menu .sd-menu-desc { white-space: normal; }
+	.sd-menu > li:not(.sd-mega) > .sub-menu { min-width: 300px; }
+	.sd-menu > li:not(.sd-mega) > .sub-menu a { white-space: normal; }
+}
+@media (max-width: 1023px) {
+	.sd-mega__heading { padding-inline: 12px; margin-top: 14px; }
+	.sd-menu .sub-menu .sub-menu { padding-left: 0; }
+}
+
+/* Phone bottom navigation (Home, Books, Ministry, Give, More) */
+.sd-dock { display: none; }
+@media (max-width: 760px) {
+	body.sd-has-dock { padding-bottom: calc(78px + env(safe-area-inset-bottom, 0px)); }
+	.sd-has-dock .sd-give { display: none; }
+	.sd-has-dock .sd-nav { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
+	.sd-dock {
+		position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
+		display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2px;
+		padding: 8px 8px calc(8px + env(safe-area-inset-bottom, 0px));
+		background: rgba(255, 255, 255, .96); border-top: 1px solid var(--line);
+		box-shadow: 0 -8px 26px rgba(40, 28, 12, .12);
+		-webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+	}
+	.sd-dock__item {
+		min-width: 0; min-height: 52px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+		border: 0; border-radius: 12px; background: transparent; color: #625342; text-decoration: none;
+		font: 600 .7rem/1.15 var(--sans); padding: 6px 2px; cursor: pointer; -webkit-tap-highlight-color: transparent;
+	}
+	.sd-dock__item svg { width: 21px; height: 21px; flex: none; }
+	.sd-dock__item span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+	.sd-dock__item:hover { color: var(--gold-d); }
+	.sd-dock__item[aria-current="page"], .sd-dock__more[aria-expanded="true"] { background: #f6e9ca; color: #775014; }
+	.sd-dock__item--give { background: var(--gold-d); color: #fff; }
+	.sd-dock__item--give:hover, .sd-dock__item--give[aria-current="page"] { background: var(--ink); color: #fff; }
+	.sd-dock__item:focus-visible { outline: 3px solid var(--gold); outline-offset: 1px; }
+}
+@media (max-width: 380px) {
+	.sd-dock__item { font-size: .64rem; }
+	.sd-dock__item svg { width: 19px; height: 19px; }
+}
+@media print { .sd-dock { display: none !important; } }

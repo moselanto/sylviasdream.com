@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '1.1.0' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '1.2.0' );
 define( 'SYLVIASDREAM_CHILD_DIR', get_stylesheet_directory() );
 define( 'SYLVIASDREAM_CHILD_URI', get_stylesheet_directory_uri() );
 
@@ -161,6 +161,7 @@ require_once SYLVIASDREAM_CHILD_DIR . '/inc/customizer.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/blocks.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/template-tags.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/class-sdc-walker-primary.php';
+require_once SYLVIASDREAM_CHILD_DIR . '/inc/navigation.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/widgets.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require_once SYLVIASDREAM_CHILD_DIR . '/inc/woocommerce.php';

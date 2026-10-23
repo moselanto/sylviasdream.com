@@ -123,6 +123,7 @@ $sdc_badges    = array_filter( array_map( 'trim', explode( ',', sdc_get( 'footer
 	</div>
 </footer>
 <?php endif; ?>
+<?php sdc_mobile_dock(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>
