@@ -137,6 +137,12 @@ function sdc_tidy_inner_blocks( $html, $block ) {
 			return '<p' . $attrs . '>' . $m[2] . '</p>';
 		}
 	}
+	// 1.4.1: page banners built from the Page header pattern get the same breadcrumb.
+	if ( 'core/cover' === $block['blockName'] && false !== strpos( $html, 'sd-pagehead-cover' ) && false === strpos( $html, 'sd-crumbs' ) ) {
+		$crumbs = '<nav class="sd-crumbs" aria-label="' . esc_attr__( 'Breadcrumb', 'sylviasdream-child' ) . '"><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'sylviasdream-child' ) . '</a> <span aria-hidden="true">&rsaquo;</span> <span aria-current="page">' . esc_html( get_the_title() ) . '</span></nav>';
+		$out    = preg_replace( '#(<div class="wp-block-cover__inner-container[^"]*"[^>]*>)#', '$1' . $crumbs, $html, 1 );
+		return is_string( $out ) ? $out : $html;
+	}
 	// The theme header already shows the page title; hide a matching first H1.
 	if ( 'core/heading' === $block['blockName'] && isset( $block['attrs']['level'] ) && 1 === (int) $block['attrs']['level'] && ! empty( $GLOBALS['sdc_header_title'] ) ) {
 		$norm = function ( $s ) {
@@ -162,7 +168,9 @@ function sdc_video_grid( $content ) {
 		return $content;
 	}
 	$out = preg_replace_callback(
-		'#(?:<figure class="wp-block-embed[^"]*"[^>]*>.*?</figure>\s*){2,}#s',
+		// Each figure may not contain another figure tag, so a run never spans
+		// across a columns block or other wrappers (1.4.1 fix).
+		'#(?:<figure class="wp-block-embed[^"]*"[^>]*>(?:(?!</?figure).)*</figure>\s*){2,}#s',
 		function ( $m ) {
 			return '<div class="sd-video-grid">' . $m[0] . '</div>';
 		},

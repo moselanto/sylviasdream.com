@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.4.0
+Version: 1.4.1
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -706,7 +706,7 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 @media (min-width: 760px) { .page:not(.home) .entry-content > .sd-video-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* Contact forms in page content: a tidy card. */
-.page:not(.home) .entry-content .wp-block-jetpack-contact-form { margin: 2.5rem auto; padding: clamp(1.25rem, 3vw, 2rem); background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+.page:not(.home) .entry-content > .wp-block-jetpack-contact-form { margin: 2.5rem auto; padding: clamp(1.25rem, 3vw, 2rem); background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
 .page:not(.home) .entry-content .wp-block-jetpack-contact-form label, .page:not(.home) .entry-content .grunion-field-label { font-weight: 700; color: var(--ink); font-size: .98rem; }
 .page:not(.home) .entry-content .wp-block-jetpack-contact-form input[type=text], .page:not(.home) .entry-content .wp-block-jetpack-contact-form input[type=email], .page:not(.home) .entry-content .wp-block-jetpack-contact-form textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--cream); font: inherit; font-size: 1rem; }
 .page:not(.home) .entry-content .wp-block-jetpack-contact-form input:focus, .page:not(.home) .entry-content .wp-block-jetpack-contact-form textarea:focus { outline: 3px solid var(--gold-l); border-color: var(--gold); background: #fff; }
@@ -731,3 +731,8 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 	.sd-wrap.site-header__inner { padding-inline: var(--gutter); }
 	.sd-actions .sd-iconbtn { width: 44px; height: 44px; }
 }
+
+/* 1.4.1: breadcrumb inside pattern banners; columns holding a video stay two even columns. */
+.sd-pagehead-cover .sd-crumbs { margin-bottom: 1.25rem !important; }
+.page:not(.home) .entry-content .wp-block-columns > .wp-block-column { min-width: 0; }
+.page:not(.home) .entry-content .wp-block-columns .wp-block-embed { margin: 0; }
