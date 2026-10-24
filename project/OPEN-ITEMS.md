@@ -17,6 +17,8 @@
 - [ ] Earlier items still open: signed acceptance and USD 112 deposit, WordPress.com Administrator invite, Stripe data per `STRIPE-DATA-REQUEST.md`, domain registrar, ebook files, logo, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+- [ ] Kenya Ministry Training Manual page (dev 4303) is Published; unpublish until Sylvia approves it as a free resource, or confirm it stays (it is public on the live site today)
+- [ ] Home page gaps against prototype v4: see PROGRESS-LOG 24 Oct (Latest from Sylvia, Have a book on your heart?, newsletter form, featured covers, Meet Sylvia quote card, 4th trust item)
 - [ ] cPanel licence error on topnotchmall.co.ke ("License is not for this host"): ask the host to fix it. Until then deploy the child theme by WordPress theme-zip upload (Replace active)
 - [ ] Start here welcome card wording ("New to Sylvia's books? Begin with her story, or browse every title by topic.") is ours: include in Sylvia's review; it is replaced by 3 featured covers once books are published
 - [ ] Real-phone check of the v4 navigation (iPhone and Android, 320-430px): bottom bar clearance, drawer, no sideways scroll, wordmark

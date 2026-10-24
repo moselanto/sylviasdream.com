@@ -4,6 +4,13 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Inner pages, Ministry/About layouts and Contact (24 Oct, 20:20-23:45 EAT)
+- Theme 1.3.2 to 1.5.2 deployed to dev by WordPress theme-zip upload (cPanel licence still broken).
+- Agnes chose: prototype layouts with Sylvia's current words; Give gift box with the existing test links; Ministry pages Heaven on Earth, Give, Kenya Ministry Training Manual.
+- Page content replaced on dev from content/blocks: Heaven on Earth 1932, Give 6428, Kenya manual 4303, My Story 2665, Author Support 6235 (existing Jetpack forms and slideshows kept). Contact (20): Topic dropdown added to the form.
+- Kenya manual page 4303 is Published on dev (it was already published, copied from live); Agnes's note said it stays a draft until Sylvia approves it as free: decide.
+- Dev QA on 1.5.2 (desktop + Customizer Mobile 320px): all rebuilt pages, Contact and grids pass. Open: Devotionals sign-up form does not render on dev (no WordPress.com/Jetpack connection, by decision); My downloads (account page) has no eyebrow or Keep exploring by design.
+
 ### Phone QA and speaking page (24 Oct, afternoon EAT)
 - Phone checklist run in the Customizer Mobile preview (320 x 480; exact iPhone/Android sizes not available in the browser tool): 12 pass, 3 partial, 3 not testable (safe area, rotate, zoom), 1 fail (Invite Sylvia to speak 404, page was a draft).
 - Agnes chose to publish the speaking page on dev (ID 6511). Verified: page loads, About link opens it on desktop and from the phone drawer, "Send an invitation" opens /contact/.

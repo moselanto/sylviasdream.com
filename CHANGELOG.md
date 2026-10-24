@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-24 (evening) - Child theme 1.3.2-1.5.2: hero, inner pages, Ministry/About layouts, Contact
+
+- 1.3.2: Home hero content on one left edge (eyebrow, heading, intro, quote, buttons) with the prototype shade and sizes.
+- 1.4.0-1.4.1: inner-page header band (photo, breadcrumb, eyebrow, title); older content tidied on display (oversized and all-bold paragraphs, 22px HTML block, empty paragraphs, duplicate first H1); video grid; form cards; "Keep exploring" links; breadcrumbs on pattern banners; Podcasts layout fix.
+- 1.5.0: prototype layouts built from blocks with Sylvia's current words for Heaven on Earth, Give (gift box with the test giving links), Kenya Ministry Training Manual, My Story, Author Support (content/blocks/*.html). Band, split, card, gift box, FAQ, quote band, callout, checks and monogram styles.
+- 1.5.1: page bands light (older dark .sd-band rule no longer applies); Give tiles even; Contact tidy (compact info card, FAQ accordions, social icons) and Topic dropdown; short page-header intros; eyebrow for pages in no menu.
+- 1.5.2: grid items no longer offset by WordPress flow-layout margins.
+
 ## 2026-10-24 - Child theme 1.3.0-1.3.1: header, mega menu and footer to prototype v4
 
 ### Changed
