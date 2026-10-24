@@ -202,9 +202,26 @@
 			if (!open && desktop.matches) { li.classList.add('is-closed'); }
 		});
 
-		// Keep aria-expanded in step with hover on desktop.
+		// Keep aria-expanded in step with hover on desktop. 1.3.1: pointing at one menu
+		// closes any other menu opened by click or keyboard, so two never overlap.
 		li.addEventListener('mouseenter', function () {
-			if (desktop.matches && !li.classList.contains('is-closed')) { btn.setAttribute('aria-expanded', 'true'); }
+			if (!desktop.matches) { return; }
+			Array.prototype.forEach.call(header.querySelectorAll('.sd-menu > li.menu-item-has-children'), function (other) {
+				if (other === li) { return; }
+				if (other.classList.contains('is-open')) { setSub(other, false); }
+				if (other.contains(doc.activeElement)) {
+					other.classList.add('is-closed');
+					var ob = other.querySelector(':scope > .sd-subtoggle');
+					if (ob) { ob.setAttribute('aria-expanded', 'false'); }
+				}
+			});
+			if (!li.classList.contains('is-closed')) { btn.setAttribute('aria-expanded', 'true'); }
+		});
+		// Keyboard focus returning to a menu lifts its hover-closed state.
+		li.addEventListener('focusin', function (e) {
+			if (desktop.matches && e.target !== btn && li.classList.contains('is-closed') && !li.matches(':hover')) {
+				li.classList.remove('is-closed');
+			}
 		});
 		li.addEventListener('mouseleave', function () {
 			if (desktop.matches) {
