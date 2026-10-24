@@ -4,6 +4,10 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Phone QA and speaking page (24 Oct, afternoon EAT)
+- Phone checklist run in the Customizer Mobile preview (320 x 480; exact iPhone/Android sizes not available in the browser tool): 12 pass, 3 partial, 3 not testable (safe area, rotate, zoom), 1 fail (Invite Sylvia to speak 404, page was a draft).
+- Agnes chose to publish the speaking page on dev (ID 6511). Verified: page loads, About link opens it on desktop and from the phone drawer, "Send an invitation" opens /contact/.
+
 ### Header, Books mega menu and footer to prototype v4 (24 Oct, 11:15-14:00 EAT)
 - Agnes: home header/menu and footer did not look good; Books menu must match the prototype exactly.
 - Theme 1.3.0 (2124c93) and 1.3.1 (3f51f47). Checked first in a local headless Chromium harness against the prototype at 1440/1280/1024/390/320.
