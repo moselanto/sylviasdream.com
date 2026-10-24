@@ -204,6 +204,10 @@ function sdc_page_header( $title, $eyebrow = '', $intro = '', $image = '' ) {
 	if ( '' === $image && function_exists( 'sdc_page_header_image' ) ) {
 		$image = sdc_page_header_image();
 	}
+	// 1.5.1: a long excerpt is page text, not an intro line; keep the header short.
+	if ( strlen( wp_strip_all_tags( (string) $intro ) ) > 240 ) {
+		$intro = '';
+	}
 	$GLOBALS['sdc_header_title'] = $title;
 	?>
 	<header class="sd-pagehead<?php echo $image ? ' sd-pagehead--photo' : ''; ?>">

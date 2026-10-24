@@ -70,6 +70,13 @@ function sdc_page_section_label( $post_id, $title = '' ) {
 				}
 			}
 		}
+		// 1.5.1: pages in no menu take a section from their address.
+		$slug = (string) get_post_field( 'post_name', $post_id );
+		foreach ( array( 'kenya' => __( 'Ministry', 'sylviasdream-child' ), 'ministr' => __( 'Ministry', 'sylviasdream-child' ), 'heaven' => __( 'Ministry', 'sylviasdream-child' ), 'download' => __( 'Resources', 'sylviasdream-child' ), 'devotion' => __( 'Devotionals', 'sylviasdream-child' ), 'policy' => __( 'Help', 'sylviasdream-child' ) ) as $needle => $label ) {
+			if ( false !== strpos( $slug, $needle ) ) {
+				return $label;
+			}
+		}
 		return '';
 	}
 	$guard = 0;

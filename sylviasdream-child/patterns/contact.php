@@ -75,6 +75,8 @@ defined( 'ABSPATH' ) || exit;
 
 <!-- wp:jetpack/field-email {"label":"Email","required":true} /-->
 
+<!-- wp:jetpack/field-select {"label":"Topic","options":["General question","A book or download","Speaking invitation","Author Support","Dream Partners and giving"]} /-->
+
 <!-- wp:jetpack/field-textarea {"label":"Message","required":true} /-->
 
 <!-- wp:jetpack/button {"element":"button","text":"Send message"} /-->

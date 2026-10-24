@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.5.0
+Version: 1.5.1
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -836,3 +836,38 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 /* 1.4.1 follow-ups: banner eyebrows readable on photos. */
 .sd-pagehead .sd-eyebrow, .sd-pagehead-cover .sd-eyebrow, .sd-hero-cover .sd-eyebrow, .wp-block-cover .sd-eyebrow { color: #f3e3bf !important; text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }
 @media (max-width: 781px) { .sd-split > .wp-block-column:has(.sd-monogram), .sd-split > .wp-block-column:has(.wp-block-image) { order: -1; } }
+
+/* ==========================================================================
+   1.5.1: page bands light (the older dark .sd-band rule no longer applies),
+   Give tiles even, Contact page tidy
+   ========================================================================== */
+.entry-content .sd-band:not(.sd-quote-band):not(.sd-band--alt) { background: var(--cream); color: var(--ink); text-align: left; }
+.entry-content .sd-band.sd-band--alt { background: var(--cream-2); color: var(--ink); text-align: left; }
+.entry-content .sd-band.sd-quote-band { background: linear-gradient(90deg, rgba(31, 24, 17, .92), rgba(31, 24, 17, .78)), url("assets/images/mission.jpg") center / cover; color: #fff; text-align: center; }
+.entry-content .sd-band .sd-band__inner { position: static; z-index: auto; }
+.entry-content .sd-band:not(.sd-quote-band) :is(h2, h3, h4) { color: var(--ink); }
+.entry-content .sd-band:not(.sd-quote-band) .sd-eyebrow { color: var(--gold-d) !important; text-shadow: none; }
+.entry-content .sd-band.sd-band--alt .sd-quote-band__text { color: var(--ink) !important; }
+/* Give: amount tiles equal height, button on the bottom line. */
+.sd-amounts { align-items: stretch; }
+.sd-amount { height: 100%; }
+.sd-amount > .sd-amount__btn { margin-top: auto !important; padding-top: 6px; }
+/* Contact page (Contact pattern): info card sized to its content, FAQ accordions, social icons. */
+.page:not(.home) .entry-content .wp-block-columns:has(.wp-block-jetpack-contact-form) { align-items: flex-start; gap: clamp(2rem, 5vw, 3.5rem); }
+.page:not(.home) .entry-content .wp-block-column .wp-block-group.is-style-sd-card { height: auto; }
+.page:not(.home) .entry-content .wp-block-column > * + * { margin-top: 1.1rem; }
+.page:not(.home) .entry-content .wp-block-column .is-style-sd-card p { margin: 0 0 .9rem; font-size: 1rem; line-height: 1.6; }
+.page:not(.home) .entry-content .wp-block-column .is-style-sd-card p:last-child { margin-bottom: 0; }
+.page:not(.home) .entry-content .wp-block-column .is-style-sd-card p strong { display: inline-block; margin-bottom: 2px; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-d); }
+.page:not(.home) .entry-content .wp-block-details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 0; margin-top: 12px; }
+.page:not(.home) .entry-content .wp-block-details summary { position: relative; list-style: none; cursor: pointer; padding: 16px 48px 16px 18px; font-weight: 700; color: var(--ink); }
+.page:not(.home) .entry-content .wp-block-details summary::-webkit-details-marker { display: none; }
+.page:not(.home) .entry-content .wp-block-details summary::after { content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-size: 1.35rem; color: var(--gold-d); }
+.page:not(.home) .entry-content .wp-block-details[open] summary::after { content: "\2212"; }
+.page:not(.home) .entry-content .wp-block-details > p { margin: 0; padding: 0 18px 16px; font-size: 1rem; }
+.page:not(.home) .entry-content .wp-block-social-links { gap: 10px; margin-top: 1.25rem; }
+.page:not(.home) .entry-content .wp-block-social-links .wp-social-link { background: #fff !important; color: var(--gold-d) !important; border: 1px solid var(--line); }
+.page:not(.home) .entry-content .wp-block-social-links .wp-social-link a { padding: 10px; }
+.page:not(.home) .entry-content .wp-block-social-links .wp-social-link:hover { background: var(--gold-d) !important; color: #fff !important; border-color: var(--gold-d); }
+.page:not(.home) .entry-content .is-style-sd-card .wp-block-jetpack-contact-form { padding: 0; border: 0; box-shadow: none; background: none; }
+.page:not(.home) .entry-content .is-style-sd-card select, .page:not(.home) .entry-content .wp-block-jetpack-contact-form select { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--cream); font: inherit; font-size: 1rem; }
