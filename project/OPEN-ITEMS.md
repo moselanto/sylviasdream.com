@@ -17,6 +17,8 @@
 - [ ] Earlier items still open: signed acceptance and USD 112 deposit, WordPress.com Administrator invite, Stripe data per `STRIPE-DATA-REQUEST.md`, domain registrar, ebook files, logo, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+- [ ] cPanel licence error on topnotchmall.co.ke ("License is not for this host"): ask the host to fix it. Until then deploy the child theme by WordPress theme-zip upload (Replace active)
+- [ ] Start here welcome card wording ("New to Sylvia's books? Begin with her story, or browse every title by topic.") is ours: include in Sylvia's review; it is replaced by 3 featured covers once books are published
 - [ ] Real-phone check of the v4 navigation (iPhone and Android, 320-430px): bottom bar clearance, drawer, no sideways scroll, wordmark
 - [ ] "Invite Sylvia to speak" draft page created on dev (ID 6511, content/blocks/speaking.html) and added under About as a Custom Link (WordPress cannot add draft pages to menus). Until Sylvia approves and it is published, that menu link opens a not-found page for anyone past the dev password; on approval publish it, or remove the link if she declines
 - [ ] Add Spanish to Other languages once that page exists; Kenya Ministry Training Manual only after Sylvia approves it

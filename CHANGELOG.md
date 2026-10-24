@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-10-24 - Child theme 1.3.0-1.3.1: header, mega menu and footer to prototype v4
+
+### Changed
+- Desktop header 80px; logo, menu and actions on one centre line; smaller chevrons.
+- Books mega panel as the prototype: Browse by topic | Other languages + Readers | Start here; anchored under Books with its arrow, kept on screen by nav.js; "All books ->" bold. Until featured books are published, Start here shows a welcome card (Browse all books / Read Sylvia's story).
+- About/Ministry dropdowns: icon tile, bold title, description.
+- Footer: even columns; the newsletter widget areas show only sign-up widgets on the front end (WordPress default Archives/Categories widgets can no longer leak in).
+
+### Fixed
+- 1.3.1: menu sat 32px low when the WordPress toolbar showed (drawer admin-bar offset applied on desktop).
+- 1.3.1: About and Ministry could show together under mixed keyboard and mouse use.
+
 ## 2026-10-23 - Child theme 1.2.0-1.2.2: navigation from prototype v4
 
 ### Added

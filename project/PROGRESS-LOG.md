@@ -4,6 +4,13 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Header, Books mega menu and footer to prototype v4 (24 Oct, 11:15-14:00 EAT)
+- Agnes: home header/menu and footer did not look good; Books menu must match the prototype exactly.
+- Theme 1.3.0 (2124c93) and 1.3.1 (3f51f47). Checked first in a local headless Chromium harness against the prototype at 1440/1280/1024/390/320.
+- cPanel showed "License is not for this host", so Git update and File Manager were unavailable. Deployed instead with WordPress Appearance > Themes > Upload > "Replace active with uploaded" (zip of sylviasdream-child from main).
+- Dev menu: Books columns reordered (Browse by topic, Other languages, Readers). Footer menus set to the prototype: Books (All books, One Life, From Fear to Freedom, SENT, My downloads), Ministry (About Sylvia, Heaven on Earth Kenya, Become a Dream Partner, Podcasts & Videos, Author Support), Help (Contact Sylvia, Privacy Policy, Terms of Sale, Refunds & Downloads). Archives and Categories widgets removed from Footer: Newsletter sign-up.
+- Dev QA on 1.3.1, logged in and in the Customizer: all pass (header on one line, Books 3 columns with arrow and on screen, tiles, mixed keyboard/mouse, Escape then Tab, footer, mobile bar and drawer).
+
 ### Speaking page and phone QA checklist (24 Oct, morning EAT)
 - "Invite Sylvia to speak" page built from the v4 prototype speaking route (710750c, content/blocks/speaking.html) and created on dev as a Draft, ID 6511; invitation button goes to /contact/. Added to Primary > About after Sylvia's story with the description "Churches and events, online or in person" (Custom Link, as drafts cannot be picked).
 - docs/PHONE-QA-v4-NAV.md: iPhone and Android checklist at 320-430px.
