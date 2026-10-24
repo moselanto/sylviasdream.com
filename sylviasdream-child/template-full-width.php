@@ -17,11 +17,18 @@ get_header();
 	<?php
 	while ( have_posts() ) :
 		the_post();
+		// 1.4.0: pages on this template that do not open with their own banner get the
+		// standard page header (a matching first H1 in the content is then hidden).
+		$sdc_own_header = sdc_content_starts_with_banner( get_the_content() );
+		if ( ! $sdc_own_header ) {
+			sdc_page_header( get_the_title(), '', has_excerpt() ? get_the_excerpt() : '' );
+		}
 		?>
-		<div class="entry-content">
+		<div class="entry-content<?php echo $sdc_own_header ? '' : ' sd-builder__body'; ?>">
 			<?php the_content(); ?>
 		</div>
 		<?php
+		sdc_related_links();
 	endwhile;
 	?>
 </main>

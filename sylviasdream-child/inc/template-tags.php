@@ -186,16 +186,36 @@ function sdc_cart_link() {
 }
 
 /**
- * Elegant page header with one h1.
+ * Page header band (1.4.0, prototype v4 "pagehead"): photo with a dark shade,
+ * breadcrumb, eyebrow, page title and optional intro, left-aligned on the
+ * site grid. The photo is the page's featured image when set, otherwise a
+ * theme photo chosen for the page (see sdc_page_header_image()).
  *
- * @param string $title   Title (plain text).
- * @param string $eyebrow Optional small heading above.
- * @param string $intro   Optional intro text.
+ * @param string $title   Page title.
+ * @param string $eyebrow Small label above the title (default: the page's
+ *                        section in the main menu, e.g. "About").
+ * @param string $intro   Optional intro line.
+ * @param string $image   Optional image URL.
  */
-function sdc_page_header( $title, $eyebrow = '', $intro = '' ) {
+function sdc_page_header( $title, $eyebrow = '', $intro = '', $image = '' ) {
+	if ( '' === $eyebrow && function_exists( 'sdc_page_section_label' ) && is_singular() ) {
+		$eyebrow = sdc_page_section_label( get_queried_object_id(), $title );
+	}
+	if ( '' === $image && function_exists( 'sdc_page_header_image' ) ) {
+		$image = sdc_page_header_image();
+	}
+	$GLOBALS['sdc_header_title'] = $title;
 	?>
-	<header class="sd-pagehead">
+	<header class="sd-pagehead<?php echo $image ? ' sd-pagehead--photo' : ''; ?>">
+		<?php if ( $image ) : ?>
+			<img class="sd-pagehead__bg" src="<?php echo esc_url( $image ); ?>" alt="" decoding="async" fetchpriority="high">
+		<?php endif; ?>
 		<div class="sd-wrap sd-pagehead__inner">
+			<nav class="sd-crumbs" aria-label="<?php esc_attr_e( 'Breadcrumb', 'sylviasdream-child' ); ?>">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'sylviasdream-child' ); ?></a>
+				<span aria-hidden="true">&rsaquo;</span>
+				<span aria-current="page"><?php echo esc_html( $title ); ?></span>
+			</nav>
 			<?php if ( $eyebrow ) : ?>
 				<p class="sd-eyebrow"><?php echo esc_html( $eyebrow ); ?></p>
 			<?php endif; ?>

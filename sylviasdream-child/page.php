@@ -40,6 +40,7 @@ get_header();
 			</div>
 		</article>
 		<?php
+		sdc_related_links();
 	endwhile;
 	?>
 </main>
