@@ -55,7 +55,12 @@ function sdc_mega_featured_html() {
 		)
 	);
 	if ( empty( $products ) ) {
-		return '';
+		// 1.3.0: until featured books are published, a short welcome card fills the column.
+		return '<li class="menu-item sd-mega__col sd-mega__feature"><span class="sd-mega__heading">' . esc_html( $label ) . '</span>'
+			. '<div class="sd-mega__start"><p class="sd-mega__start-title">' . esc_html__( 'New to Sylvia\'s books?', 'sylviasdream-child' ) . '</p>'
+			. '<p>' . esc_html__( 'Begin with her story, or browse every title by topic.', 'sylviasdream-child' ) . '</p>'
+			. '<a class="sd-btn" href="' . esc_url( sdc_shop_url() ) . '">' . esc_html__( 'Browse all books', 'sylviasdream-child' ) . '</a>'
+			. '<a class="sd-mega__start-link" href="' . esc_url( sdc_link( sdc_get( 'about_cta_url' ) ) ) . '">' . esc_html__( 'Read Sylvia\'s story', 'sylviasdream-child' ) . ' &rarr;</a></div></li>';
 	}
 	$items = '';
 	foreach ( $products as $product ) {

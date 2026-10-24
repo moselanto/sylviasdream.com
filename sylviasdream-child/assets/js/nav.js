@@ -153,6 +153,26 @@
 	}
 
 	/* ---------- Submenus ---------- */
+	// 1.3.0: keep the Books mega panel inside the window; the arrow stays under Books.
+	function placeMega(li) {
+		var panel = li.querySelector(':scope > .sd-mega__panel');
+		if (!panel) { return; }
+		if (!desktop.matches) { li.style.removeProperty('--sd-shift'); return; }
+		var r = li.getBoundingClientRect();
+		var w = panel.offsetWidth;
+		var vw = doc.documentElement.clientWidth;
+		var want = r.left + r.width / 2 - w / 2;
+		var left = Math.min(Math.max(want, 16), vw - 16 - w);
+		li.style.setProperty('--sd-shift', Math.round(left - want) + 'px');
+	}
+	var megas = header.querySelectorAll('.sd-menu > li.sd-mega');
+	Array.prototype.forEach.call(megas, function (li) {
+		placeMega(li);
+		li.addEventListener('mouseenter', function () { placeMega(li); });
+		li.addEventListener('focusin', function () { placeMega(li); });
+	});
+	window.addEventListener('resize', function () { Array.prototype.forEach.call(megas, placeMega); });
+
 	var subToggles = header.querySelectorAll('.sd-subtoggle');
 
 	function setSub(li, open) {

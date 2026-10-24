@@ -31,3 +31,38 @@ function sdc_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'sdc_widgets_init' );
+
+/**
+ * 1.3.0: the newsletter widget areas only show sign-up widgets on the front end.
+ * WordPress drops its default widgets (Archives, Categories, Meta, Recent posts,
+ * Search) into a theme's first widget area on activation; they are hidden here
+ * and stay visible in Appearance > Widgets so they can be removed there.
+ *
+ * @param array $sidebars Sidebar ID => widget IDs.
+ * @return array
+ */
+function sdc_newsletter_widgets_only( $sidebars ) {
+	if ( is_admin() || ! is_array( $sidebars ) ) {
+		return $sidebars;
+	}
+	$blocks = get_option( 'widget_block', array() );
+	foreach ( array( 'sdc-footer-newsletter', 'sdc-home-newsletter' ) as $area ) {
+		if ( empty( $sidebars[ $area ] ) || ! is_array( $sidebars[ $area ] ) ) {
+			continue;
+		}
+		$sidebars[ $area ] = array_values(
+			array_filter(
+				$sidebars[ $area ],
+				function ( $widget_id ) use ( $blocks ) {
+					if ( preg_match( '/^block-(\d+)$/', (string) $widget_id, $m ) ) {
+						$content = isset( $blocks[ (int) $m[1] ]['content'] ) ? (string) $blocks[ (int) $m[1] ]['content'] : '';
+						return (bool) preg_match( '/subscri|newsletter|mailpoet|mailchimp|jetpack\/|wp:shortcode/i', $content );
+					}
+					return (bool) preg_match( '/subscri|newsletter|mailpoet|mailchimp|jetpack/i', (string) $widget_id );
+				}
+			)
+		);
+	}
+	return $sidebars;
+}
+add_filter( 'sidebars_widgets', 'sdc_newsletter_widgets_only' );
