@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-25 - Child theme 1.5.3-1.5.5: Home sections and Books "Start here"
+
+- 1.5.3: Home gains Latest from Sylvia (3 newest devotionals), Have a book on your heart? (Author Support), Meet Sylvia photo note and "One Life: the memoir" button, "Become a Dream Partner" in the Heaven on Earth band, gold newsletter card (Contact fallback while no sign-up form renders). Dream Partners kept.
+- 1.5.4: Books mega "Start here" shows the prototype's three CSS covers (The Report of the Lord, One Life, From Fear to Freedom) until featured books are published; Latest from Sylvia cards side by side with a photo fallback.
+- 1.5.5: Start here covers in three equal columns.
+
 ## 2026-10-24 (evening) - Child theme 1.3.2-1.5.2: hero, inner pages, Ministry/About layouts, Contact
 
 - 1.3.2: Home hero content on one left edge (eyebrow, heading, intro, quote, buttons) with the prototype shade and sizes.

@@ -4,6 +4,10 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Home sections and Books "Start here" (24 Oct 23:45 - 25 Oct 00:15 EAT)
+- Theme 1.5.3-1.5.5 deployed to dev (theme-zip upload); Home page 6365 content replaced from content/blocks/home.html.
+- Dev QA (desktop + Customizer Mobile): all new Home sections pass; Start here covers equal and contained; Escape/Tab still correct. Open: Featured books empty until products are published; newsletter shows the Contact fallback on dev; "One Life: the memoir" goes to the Books page until the product is published.
+
 ### Inner pages, Ministry/About layouts and Contact (24 Oct, 20:20-23:45 EAT)
 - Theme 1.3.2 to 1.5.2 deployed to dev by WordPress theme-zip upload (cPanel licence still broken).
 - Agnes chose: prototype layouts with Sylvia's current words; Give gift box with the existing test links; Ministry pages Heaven on Earth, Give, Kenya Ministry Training Manual.
