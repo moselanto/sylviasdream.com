@@ -22,6 +22,9 @@ defined( 'ABSPATH' ) || exit;
 <!-- /wp:heading -->
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons">
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/give/' ) ); ?>">Become a Dream Partner</a></div>
+<!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/heaven-on-earth/' ) ); ?>">About the ministry</a></div>
 <!-- /wp:button -->

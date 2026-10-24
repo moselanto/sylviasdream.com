@@ -16,11 +16,19 @@ defined( 'ABSPATH' ) || exit;
 <div class="wp-block-group alignfull has-cream-2-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 <!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
 <div class="wp-block-columns are-vertically-aligned-center alignwide">
-<!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center">
+<!-- wp:column {"verticalAlignment":"center","className":"sd-photo-wrap"} -->
+<div class="wp-block-column is-vertically-aligned-center sd-photo-wrap">
 <!-- wp:image {"sizeSlug":"large","className":"sd-photo-round"} -->
 <figure class="wp-block-image size-large sd-photo-round"><img src="<?php echo esc_url( sdc_theme_image( 'bible' ) ); ?>" alt="An open Bible and journal by a sunny window"/></figure>
 <!-- /wp:image -->
+<!-- wp:group {"className":"sd-photo-note","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-photo-note"><!-- wp:paragraph {"className":"sd-photo-note__title"} -->
+<p class="sd-photo-note__title">Eighty-one and still becoming</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"sd-photo-note__text"} -->
+<p class="sd-photo-note__text">Writing from Australia to help readers trust God more deeply.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"center"} -->
@@ -41,6 +49,9 @@ defined( 'ABSPATH' ) || exit;
 <div class="wp-block-buttons">
 <!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/my-story/' ) ); ?>">Read Sylvia’s story</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( sdc_shop_url() ); ?>">One Life: the memoir</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
