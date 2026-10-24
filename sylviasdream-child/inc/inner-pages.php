@@ -58,6 +58,18 @@ function sdc_page_section_label( $post_id, $title = '' ) {
 		}
 	}
 	if ( ! $match ) {
+		// 1.5.0: pages linked only from the footer (policies) take that column's name.
+		$footer = array( 'footer_legal' => __( 'Help', 'sylviasdream-child' ), 'footer_about' => __( 'Ministry', 'sylviasdream-child' ), 'footer_books' => __( 'Books', 'sylviasdream-child' ) );
+		foreach ( $footer as $loc => $label ) {
+			if ( empty( $locations[ $loc ] ) ) {
+				continue;
+			}
+			foreach ( (array) wp_get_nav_menu_items( $locations[ $loc ] ) as $item ) {
+				if ( ( 'post_type' === $item->type && (int) $item->object_id === (int) $post_id ) || ( $item->url && sdc_url_path( $item->url ) === $here ) ) {
+					return $label;
+				}
+			}
+		}
 		return '';
 	}
 	$guard = 0;

@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.4.1
+Version: 1.5.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -736,3 +736,103 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 .sd-pagehead-cover .sd-crumbs { margin-bottom: 1.25rem !important; }
 .page:not(.home) .entry-content .wp-block-columns > .wp-block-column { min-width: 0; }
 .page:not(.home) .entry-content .wp-block-columns .wp-block-embed { margin: 0; }
+
+/* ==========================================================================
+   1.5.0: Ministry and About page layouts (prototype v4) built from blocks
+   ========================================================================== */
+/* Full-width bands inside page content. */
+.page:not(.home) .sd-page-body:has(> .entry-content > .sd-band:first-child), .page:not(.home) .sd-builder__body:has(> .sd-band:first-child) { padding-top: 0; }
+.page:not(.home) .sd-page-body:has(.entry-content > .sd-band:last-child), .page:not(.home) .sd-builder__body:has(> .sd-band:last-child) { padding-bottom: 0; }
+.entry-content > .sd-band, .entry-content > .wp-block-group.sd-band { max-width: none; margin: 0 calc(50% - 50vw); padding: clamp(3.5rem, 8vw, 5.5rem) var(--gutter); }
+.sd-builder__body > .sd-band { margin-inline: calc(-1 * var(--gutter)); }
+.sd-band--alt { background: var(--cream-2); border-block: 1px solid var(--line); }
+.sd-band__inner { max-width: calc(var(--max) - 2 * var(--gutter)); margin-inline: auto; }
+.sd-band--narrow .sd-band__inner { max-width: 760px; }
+.sd-band__inner > * + * { margin-top: 1.1rem; }
+.sd-band__inner > .sd-cards, .sd-band__inner > .wp-block-columns, .sd-band__inner > .sd-faqs, .sd-band__inner > .sd-video-grid, .sd-band__inner > .wp-block-jetpack-slideshow { margin-top: clamp(1.75rem, 4vw, 2.5rem); }
+.sd-band .wp-block-heading { margin-top: 0; }
+.sd-band h2.has-text-align-center, .sd-band p.has-text-align-center { margin-left: auto; margin-right: auto; }
+.sd-band p.sd-lead.has-text-align-center { max-width: 680px; }
+.page:not(.home) .entry-content .sd-band p.sd-lead { font-size: clamp(1.08rem, 1.4vw, 1.2rem) !important; color: var(--ink-2); }
+.sd-band .sd-eyebrow { color: var(--gold-d); }
+/* Two-column split. */
+.page:not(.home) .entry-content .sd-split { gap: clamp(2rem, 5vw, 3.75rem); margin-block: 0; align-items: center; }
+.sd-split .wp-block-image { margin: 0; }
+.sd-split .wp-block-image img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.sd-split .wp-block-buttons { margin-top: 1.5rem; }
+/* Cards. */
+.sd-band .sd-cards { display: grid; gap: clamp(18px, 2.5vw, 26px); grid-template-columns: 1fr; }
+@media (min-width: 640px) { .sd-band .sd-cards--2, .sd-band .sd-cards--3, .sd-band .sd-cards--4 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .sd-band .sd-cards--3 { grid-template-columns: repeat(3, 1fr); } .sd-band .sd-cards--4 { grid-template-columns: repeat(4, 1fr); } }
+.sd-band .sd-card { height: 100%; padding: clamp(1.4rem, 3vw, 2rem); text-align: left; }
+.sd-band .sd-card > * + * { margin-top: .75rem; }
+.sd-band .sd-card h3 { font-size: clamp(1.3rem, 2vw, 1.55rem); margin: 0; line-height: 1.2; }
+.sd-band .sd-card p { font-size: 1rem !important; line-height: 1.65; margin: 0; }
+.sd-card__icon { display: grid; place-items: center; width: 46px; height: 46px; margin: 0 0 1rem !important; border-radius: 12px; background: var(--gold-l); color: var(--gold-d); font-family: var(--serif); font-size: 1.35rem !important; font-weight: 700; }
+.sd-card__ideal { padding-top: .75rem; border-top: 1px solid var(--line); color: var(--ink) !important; }
+/* Quote band. */
+.sd-quote-band { position: relative; background: linear-gradient(90deg, rgba(31, 24, 17, .92), rgba(31, 24, 17, .78)), url("assets/images/mission.jpg") center / cover; border: 0; }
+.entry-content .sd-quote-band__text, .page:not(.home) .entry-content .sd-band p.sd-quote-band__text { font-family: var(--serif); font-style: italic; font-size: clamp(1.6rem, 3.6vw, 2.5rem) !important; line-height: 1.3; color: #fff; max-width: 860px; margin-inline: auto; }
+.sd-band--alt .sd-quote-band__text, .page:not(.home) .entry-content .sd-band--alt p.sd-quote-band__text { color: var(--ink); font-size: clamp(1.4rem, 3vw, 2rem) !important; }
+.sd-quote-band .sd-eyebrow { color: var(--gold-l) !important; }
+.sd-quote-band .wp-block-button:not(.is-style-outline) .wp-block-button__link { background: #fff; color: var(--ink); }
+.sd-quote-band .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover { background: var(--gold-l); }
+/* Gift box (Give). */
+.sd-split--give { align-items: flex-start !important; }
+.sd-split--give > .wp-block-column { align-self: flex-start !important; }
+.sd-givebox { padding: clamp(1.4rem, 3vw, 2rem); background: #fff; border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow-l); }
+.sd-givebox > * + * { margin-top: 1rem; }
+.sd-givebox__tab { display: inline-block; padding: .35em 1em; border-radius: 999px; background: var(--gold-l); color: var(--gold-d) !important; font-weight: 700; font-size: .9rem !important; }
+.sd-givebox h3 { font-size: 1.45rem; margin: .5rem 0 0; }
+.sd-amounts { display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 480px) { .sd-amounts { grid-template-columns: repeat(2, 1fr); } }
+.sd-amount { display: flex; flex-direction: column; gap: 6px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--cream); transition: border-color .2s, box-shadow .2s; }
+.sd-amount:hover { border-color: var(--gold); box-shadow: var(--shadow); }
+.sd-amount p { margin: 0 !important; }
+.sd-amount__value { font-family: var(--serif); font-size: 1.15rem !important; color: var(--ink) !important; }
+.sd-amount__value strong { font-size: 1.7rem; color: var(--gold-d); }
+.sd-amount__desc { font-size: .9rem !important; line-height: 1.45 !important; }
+.sd-amount__btn { margin-top: auto !important; }
+.sd-amount__btn .wp-block-button, .sd-amount__btn .wp-block-button__link, .sd-givebox__other .wp-block-button, .sd-givebox__other .wp-block-button__link { width: 100%; }
+.sd-amount__btn .wp-block-button__link { min-height: 42px; padding: .5em .8em; font-size: .9rem; }
+.sd-givebox .wp-block-separator { margin: 1.25rem 0 !important; }
+.sd-givebox__note { font-size: .95rem !important; }
+.sd-goal { margin-top: 1.5rem !important; }
+.sd-goal .sd-progress { border: 0; padding: 0; background: transparent; }
+.sd-goal__note { font-weight: 700; color: var(--gold-d) !important; }
+.sd-impact { display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); }
+.sd-impact p { margin: 0 !important; padding: 14px; border-radius: 12px; background: var(--gold-l); font-size: .95rem !important; line-height: 1.4 !important; text-align: center; }
+.sd-impact strong { display: block; font-family: var(--serif); font-size: 1.3rem; color: var(--gold-d); }
+.page:not(.home) .entry-content p.sd-small { font-size: .9rem !important; color: var(--ink-2); }
+.page:not(.home) .entry-content p.sd-preview-note { max-width: none; margin: 0 calc(50% - 50vw); padding: 10px var(--gutter); background: var(--gold-l); color: var(--gold-d); font-size: .9rem !important; text-align: center; }
+/* FAQ accordions. */
+.sd-faqs { display: grid; gap: 12px; }
+.sd-faq { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 0; }
+.sd-faq summary { position: relative; list-style: none; cursor: pointer; padding: 18px 52px 18px 20px; font-weight: 700; color: var(--ink); }
+.sd-faq summary::-webkit-details-marker { display: none; }
+.sd-faq summary::after { content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--gold-d); }
+.sd-faq[open] summary::after { content: "\2212"; }
+.sd-faq > p { margin: 0 !important; padding: 0 20px 18px; }
+.sd-faq summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 12px; }
+/* Callout, checks, monogram, download, enquiry. */
+.sd-callout { padding: clamp(1.4rem, 3vw, 2rem); border-radius: 16px; background: #fff; border-left: 4px solid var(--gold); box-shadow: var(--shadow); }
+.page:not(.home) .entry-content p.sd-callout__text { margin: 0; font-family: var(--serif); font-size: clamp(1.2rem, 2vw, 1.45rem) !important; line-height: 1.45; color: var(--ink); }
+.sd-checks { list-style: none; padding: 0 !important; }
+.sd-checks li { position: relative; padding-left: 2rem; margin-bottom: .8rem; }
+.sd-checks li::before { content: ""; position: absolute; left: 0; top: .35em; width: 1.2rem; height: 1.2rem; border-radius: 50%; background: var(--gold-l) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='3'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center / 70% no-repeat; }
+.sd-monogram { display: flex; flex-direction: column; align-items: center; justify-content: center; aspect-ratio: 4 / 5; max-width: 440px; margin-inline: auto; border-radius: 18px; background: linear-gradient(160deg, #f6e7c4 0%, #e3c27f 55%, #c9a052 100%); box-shadow: var(--shadow-l); }
+.page:not(.home) .entry-content p.sd-monogram__letters { margin: 0; font-family: var(--serif); font-size: clamp(4rem, 9vw, 6rem) !important; line-height: 1; color: var(--gold-d); }
+.page:not(.home) .entry-content p.sd-monogram__name { margin: .5rem 0 0; font-size: .78rem !important; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-d); }
+.sd-download { text-align: center; }
+.sd-enquiry > * + * { margin-top: 1rem; }
+/* Videos inside bands: tidy grid. */
+.sd-band .sd-video-grid { display: grid; gap: clamp(1.25rem, 3vw, 2rem); grid-template-columns: 1fr; }
+@media (min-width: 760px) { .sd-band .sd-video-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .sd-band .sd-video-grid:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, 1fr); } }
+.sd-band .sd-video-grid .wp-block-embed { margin: 0; }
+.sd-band .wp-block-embed.wp-embed-aspect-9-16 { max-width: 340px; margin-inline: auto; }
+/* Forms anywhere in content, except inside an existing card. */
+.page:not(.home) .entry-content .wp-block-jetpack-contact-form:not(:is(.sd-card, .is-style-sd-card) .wp-block-jetpack-contact-form) { margin: 1.5rem auto 0; padding: clamp(1.25rem, 3vw, 2rem); background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+/* 1.4.1 follow-ups: banner eyebrows readable on photos. */
+.sd-pagehead .sd-eyebrow, .sd-pagehead-cover .sd-eyebrow, .sd-hero-cover .sd-eyebrow, .wp-block-cover .sd-eyebrow { color: #f3e3bf !important; text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }
+@media (max-width: 781px) { .sd-split > .wp-block-column:has(.sd-monogram), .sd-split > .wp-block-column:has(.wp-block-image) { order: -1; } }
