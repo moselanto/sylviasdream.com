@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.5.5
+Version: 1.5.6
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -950,3 +950,35 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 .sd-menu .sd-mega__book { min-width: 0; width: 100%; }
 .sd-menu .sd-mega__book > span:last-child { overflow-wrap: anywhere; }
 .sd-menu > li.sd-mega > .sd-mega__panel { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.25fr); }
+
+/* ==========================================================================
+   1.5.6: responsive cross-check fixes and phone polish
+   ========================================================================== */
+/* F1: CTA strip on the gold-dark band: buttons readable (white button, dark text). */
+.sd-cta-strip .wp-block-button:not(.is-style-outline) > .wp-block-button__link { background: #fff !important; color: var(--ink) !important; border: 2px solid #fff; }
+.sd-cta-strip .wp-block-button.is-style-outline > .wp-block-button__link { background: transparent !important; color: #fff !important; border: 2px solid #fff !important; }
+.sd-cta-strip .wp-block-button > .wp-block-button__link:hover { background: var(--gold-l) !important; color: var(--ink) !important; border-color: var(--gold-l) !important; }
+/* F2: videos in a grid share one 16:9 frame; an odd last video sits centred. */
+.sd-video-grid .wp-block-embed.wp-has-aspect-ratio .wp-block-embed__wrapper::before { padding-top: 56.25% !important; }
+@media (min-width: 760px) {
+	.sd-video-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - clamp(.625rem, 1.5vw, 1rem)); justify-self: center; }
+}
+@media (min-width: 1024px) { .sd-band .sd-video-grid:has(> :nth-child(3):last-child) > :last-child { grid-column: auto; width: auto; } }
+/* F3: split-section images keep their own shape (artwork with lettering is never cropped). */
+.sd-split .wp-block-image img, .sd-home-band .sd-split .wp-block-image img { aspect-ratio: auto; height: auto; object-fit: contain; }
+/* F4/F5: an odd last card in a two-column grid spans the row instead of leaving a gap. */
+@media (min-width: 640px) and (max-width: 1023px) {
+	.sd-cards > :last-child:nth-child(odd), .sd-band .sd-cards--3 > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+/* Phones: the bottom bar's More opens the menu, so the header keeps search and cart only;
+   tighter utility bar; larger, calmer tap areas. */
+@media (max-width: 760px) {
+	.sd-has-dock .sd-nav-toggle { display: none; }
+	.sd-utility__inner { min-height: 34px; }
+	.sd-utility { font-size: .78rem; }
+	.sd-wrap.site-header__inner { padding-inline: var(--gutter); }
+	.sd-brand__name { font-size: 1.3rem; }
+	.sd-hero-cover .wp-block-buttons { gap: 10px; }
+	.sd-next__card { padding: 18px 54px 18px 20px; }
+	.site-footer .menu a { min-height: 44px; }
+}

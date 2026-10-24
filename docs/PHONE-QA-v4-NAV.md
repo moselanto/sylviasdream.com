@@ -17,7 +17,7 @@ Tester: ________  Date: ________  iPhone model / iOS: ________  Android model / 
 | 5 | Bar sits above the iPhone home indicator / Android gesture bar, not under it | [ ] | [ ] |
 | 6 | Bar stays put while scrolling; no jumping when the browser address bar hides or shows | [ ] | [ ] |
 | **Drawer and accordions** | | | |
-| 7 | More (and the header menu button) opens the drawer; it closes with the close button and by tapping More again | [ ] | [ ] |
+| 7 | More opens the drawer (the header menu button is hidden on phones from theme 1.5.6); it closes with the close button and by tapping More again | [ ] | [ ] |
 | 8 | Page behind the drawer does not scroll while the drawer is open | [ ] | [ ] |
 | 9 | Books opens: Browse by topic, Readers and Other languages headings with all their links readable, stacked in one column | [ ] | [ ] |
 | 10 | About opens with its links and short descriptions; Ministry opens with its links | [ ] | [ ] |
