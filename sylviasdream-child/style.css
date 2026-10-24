@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.5.3
+Version: 1.5.4
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -923,3 +923,24 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 .sd-news-card:has(form) .sd-news-fallback { display: none; }
 .sd-news-card .wp-block-jetpack-subscriptions__container form { display: flex; flex-wrap: wrap; gap: 10px; }
 .sd-news-card .wp-block-jetpack-subscriptions__container form > * { flex: 1 1 200px; margin: 0 !important; }
+
+/* 1.5.4: Books mega menu "Start here" covers (prototype), Latest from Sylvia grid fix */
+.sd-cover { position: relative; display: flex; align-items: flex-start; justify-content: center; width: 100%; aspect-ratio: 2 / 3; padding: 14% 8%; overflow: hidden; border-radius: 4px 10px 10px 4px; color: #fff; text-align: center; box-shadow: -6px 8px 0 -2px rgba(0, 0, 0, .08), 0 14px 28px rgba(40, 25, 5, .28); transition: transform .3s var(--ease); }
+.sd-cover::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 7%; background: linear-gradient(90deg, rgba(0, 0, 0, .28), rgba(255, 255, 255, .12) 60%, rgba(0, 0, 0, 0)); }
+.sd-cover::after { content: ""; position: absolute; inset: 6%; border: 1px solid rgba(255, 255, 255, .45); border-radius: 4px; pointer-events: none; }
+.sd-cover__title { position: relative; z-index: 1; font-family: var(--serif); font-weight: 700; font-size: .78rem; line-height: 1.1; text-shadow: 0 1px 6px rgba(0, 0, 0, .25); white-space: normal; }
+.sd-menu .sd-mega__book { display: flex !important; flex-direction: column; gap: 8px; padding: 0 !important; background: none !important; text-align: center; font-size: .85rem !important; font-weight: 600; line-height: 1.3; white-space: normal; color: var(--ink); }
+.sd-menu .sd-mega__book:hover { color: var(--gold-d) !important; }
+.sd-menu .sd-mega__book:hover .sd-cover { transform: translateY(-4px) rotate(-.6deg); }
+@media (max-width: 1023px) { .sd-mega__feature { display: none !important; } }
+
+.entry-content .wp-block-latest-posts.sd-latest.is-grid { display: grid !important; flex-wrap: nowrap; }
+@media (min-width: 760px) { .entry-content .wp-block-latest-posts.sd-latest.is-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; } }
+.entry-content .wp-block-latest-posts.sd-latest.is-grid > li { width: auto !important; max-width: none; margin: 0 !important; display: flex; flex-direction: column; }
+.sd-latest .wp-block-latest-posts__featured-image { order: -2; }
+.sd-latest .wp-block-latest-posts__featured-image a { display: block; }
+.sd-latest .wp-block-latest-posts__featured-image img { width: 100% !important; height: auto !important; max-width: none; aspect-ratio: 16 / 10; object-fit: cover; }
+.sd-latest > li:not(:has(.wp-block-latest-posts__featured-image))::before { content: ""; order: -2; display: block; aspect-ratio: 16 / 10; background: linear-gradient(0deg, rgba(31, 24, 17, .25), rgba(31, 24, 17, .25)), url("assets/images/bible.jpg") center / cover; }
+.sd-latest .wp-block-latest-posts__post-date { order: -1; }
+.sd-latest .wp-block-latest-posts__post-title { order: 0; }
+.sd-latest .wp-block-latest-posts__post-excerpt { order: 1; }

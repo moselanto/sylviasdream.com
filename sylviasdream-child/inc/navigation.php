@@ -55,12 +55,24 @@ function sdc_mega_featured_html() {
 		)
 	);
 	if ( empty( $products ) ) {
-		// 1.3.0: until featured books are published, a short welcome card fills the column.
-		return '<li class="menu-item sd-mega__col sd-mega__feature"><span class="sd-mega__heading">' . esc_html( $label ) . '</span>'
-			. '<div class="sd-mega__start"><p class="sd-mega__start-title">' . esc_html__( 'New to Sylvia\'s books?', 'sylviasdream-child' ) . '</p>'
-			. '<p>' . esc_html__( 'Begin with her story, or browse every title by topic.', 'sylviasdream-child' ) . '</p>'
-			. '<a class="sd-btn" href="' . esc_url( sdc_shop_url() ) . '">' . esc_html__( 'Browse all books', 'sylviasdream-child' ) . '</a>'
-			. '<a class="sd-mega__start-link" href="' . esc_url( sdc_link( sdc_get( 'about_cta_url' ) ) ) . '">' . esc_html__( 'Read Sylvia\'s story', 'sylviasdream-child' ) . ' &rarr;</a></div></li>';
+		// 1.5.4: until featured books are published, show the prototype's three
+		// "Start here" covers (drawn in CSS) linking to the Books page.
+		$picks = array(
+			array( 'The Report of the Lord', '#3a2a12', '#e0b75a' ),
+			array( 'One Life', '#5b3a1a', '#b8862b' ),
+			array( 'From Fear to Freedom', '#2f4a5c', '#8fb3c4' ),
+		);
+		$items = '';
+		foreach ( $picks as $pick ) {
+			$items .= sprintf(
+				'<a class="sd-mega__book" href="%1$s"><span class="sd-cover" style="background:linear-gradient(160deg,%2$s 0%%,%2$s 55%%,%3$s 140%%)" aria-hidden="true"><span class="sd-cover__title">%4$s</span></span><span>%4$s</span></a>',
+				esc_url( sdc_shop_url() ),
+				esc_attr( $pick[1] ),
+				esc_attr( $pick[2] ),
+				esc_html( $pick[0] )
+			);
+		}
+		return '<li class="menu-item sd-mega__col sd-mega__feature"><span class="sd-mega__heading">' . esc_html( $label ) . '</span><div class="sd-mega__books">' . $items . '</div></li>';
 	}
 	$items = '';
 	foreach ( $products as $product ) {
