@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.5.1
+Version: 1.5.2
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -871,3 +871,7 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 .page:not(.home) .entry-content .wp-block-social-links .wp-social-link:hover { background: var(--gold-d) !important; color: #fff !important; border-color: var(--gold-d); }
 .page:not(.home) .entry-content .is-style-sd-card .wp-block-jetpack-contact-form { padding: 0; border: 0; box-shadow: none; background: none; }
 .page:not(.home) .entry-content .is-style-sd-card select, .page:not(.home) .entry-content .wp-block-jetpack-contact-form select { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--cream); font: inherit; font-size: 1rem; }
+
+/* 1.5.2: grids ignore WordPress's flow-layout top margin on every item but the first,
+   which pushed the first card about 20px above the others. Gaps do the spacing. */
+:is(.sd-cards, .sd-amounts, .sd-impact, .sd-faqs, .sd-video-grid, .sd-next__grid) > * { margin-block-start: 0 !important; margin-top: 0 !important; }
