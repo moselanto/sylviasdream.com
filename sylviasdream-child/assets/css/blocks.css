@@ -13,11 +13,28 @@
 .wp-block-group.alignfull, .wp-block-cover.alignfull { padding-left: clamp(1.125rem, 4vw, 1.5rem); padding-right: clamp(1.125rem, 4vw, 1.5rem); }
 .wp-block-group.alignfull > .wp-block-group__inner-container, .wp-block-group.alignfull.is-layout-constrained > * { max-width: 1200px; }
 
-/* Hero cover */
-.sd-hero-cover { min-height: min(86vh, 720px) !important; }
-.sd-hero-cover .wp-block-cover__inner-container { max-width: 1200px; width: 100%; }
-.sd-hero-cover h1 { color: #fff; max-width: 15ch; }
-.sd-hero-cover p { max-width: 38rem; }
+/* Hero cover (1.3.2, prototype v4): one left-aligned column on the site grid.
+   WordPress's constrained layout centres every child at the content width; the
+   hero overrides that so eyebrow, heading, intro, quote and buttons share one left edge. */
+.sd-hero-cover { min-height: min(82vh, 750px) !important; align-items: center !important; justify-content: center !important; padding-top: clamp(4rem, 9vw, 6rem) !important; padding-bottom: clamp(4rem, 9vw, 6rem) !important; }
+.sd-hero-cover > .wp-block-cover__background { background: linear-gradient(90deg, rgba(27, 23, 18, .84) 0%, rgba(27, 23, 18, .59) 48%, rgba(27, 23, 18, .14) 100%) !important; opacity: 1 !important; }
+.sd-hero-cover > .wp-block-cover__inner-container { width: 100%; max-width: calc(1200px - 2 * clamp(1.125rem, 4vw, 1.5rem)); margin-inline: auto; text-align: left; color: #fff; }
+.sd-hero-cover > .wp-block-cover__inner-container > * { margin-left: 0 !important; margin-right: auto !important; text-align: left; }
+.sd-hero-cover .sd-eyebrow { max-width: none; margin: 0 0 1rem !important; color: #f3e3bf; }
+.sd-hero-cover h1 { max-width: 720px; margin: 0 0 1.25rem !important; color: #fff; font-size: clamp(2.6rem, 5.4vw, 4.4rem); line-height: 1.08; letter-spacing: -.025em; text-wrap: balance; }
+.sd-hero-cover p.sd-lead { max-width: 600px; margin: 0 0 1.5rem !important; font-size: clamp(1.05rem, 1.4vw, 1.22rem); line-height: 1.6; color: #f6ecd8 !important; }
+.sd-hero-cover p.has-gold-light-color { max-width: 560px; margin: 0 0 2rem !important; padding-left: 16px; border-left: 3px solid #b8862b; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.15rem, 1.7vw, 1.4rem); line-height: 1.4; }
+.sd-hero-cover p.has-gold-light-color em { font-style: italic; }
+.sd-hero-cover .wp-block-buttons { justify-content: flex-start; gap: 12px; margin: 0 !important; }
+.sd-hero-cover .wp-block-button:not(.is-style-outline) > .wp-block-button__link { background: #fff; color: #2b2118; border: 2px solid #fff; }
+.sd-hero-cover .wp-block-button:not(.is-style-outline) > .wp-block-button__link:hover { background: #f3e3bf; border-color: #f3e3bf; color: #2b2118; }
+.sd-hero-cover .wp-block-button__link { padding: .85em 1.6em; font-weight: 700; }
+@media (max-width: 760px) {
+	.sd-hero-cover { min-height: 0 !important; padding-top: 72px !important; padding-bottom: 64px !important; }
+	.sd-hero-cover > .wp-block-cover__background { background: linear-gradient(180deg, rgba(27, 23, 18, .78) 0%, rgba(27, 23, 18, .66) 100%) !important; }
+	.sd-hero-cover .wp-block-buttons > .wp-block-button { flex: 1 1 auto; }
+	.sd-hero-cover .wp-block-buttons > .wp-block-button > .wp-block-button__link { width: 100%; }
+}
 
 /* Card style for groups (Styles > Card) */
 .wp-block-group.is-style-sd-card { background: #fff; border: 1px solid #e7dcc6; border-radius: 14px; padding: clamp(1.25rem, 3vw, 1.75rem); box-shadow: 0 10px 30px rgba(60, 40, 10, .10); height: 100%; }
