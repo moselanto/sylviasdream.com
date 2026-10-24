@@ -4,6 +4,11 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Speaking page and phone QA checklist (24 Oct, morning EAT)
+- "Invite Sylvia to speak" page built from the v4 prototype speaking route (710750c, content/blocks/speaking.html) and created on dev as a Draft, ID 6511; invitation button goes to /contact/. Added to Primary > About after Sylvia's story with the description "Churches and events, online or in person" (Custom Link, as drafts cannot be picked).
+- docs/PHONE-QA-v4-NAV.md: iPhone and Android checklist at 320-430px.
+- Book publishing, Featured books, Stripe test mode and test purchase wait for Sylvia's confirmed prices and ebook files (the two emails to her are still unsent, pending Moses).
+
 ### Prototype v4 navigation (about 16:40-17:30 EAT)
 - Agnes supplied the updated prototype (v4) and review document; navigation rebuilt to match: theme 1.2.0 (ef803f6) mega menu, submenu descriptions, phone bottom bar; 1.2.1 (37228c2) and 1.2.2 (037ceed) keyboard/visibility fixes. All deployed to dev.
 - Dev Primary menu: Home · Books (sd-mega: Browse by topic = 10 WooCommerce categories + All books; Readers = My downloads, Download help; Other languages = French -> From Fear to Freedom page, Bahasa Indonesia -> SENT page) · About (Sylvia's story, Podcasts & Videos, Author Support) · Ministry (Heaven on Earth Kenya, Become a Dream Partner) · Devotionals · Contact. Spanish and "Invite Sylvia to speak" omitted (no page); Kenya Ministry Training Manual omitted (not approved).

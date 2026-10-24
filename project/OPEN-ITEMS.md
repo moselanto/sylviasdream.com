@@ -18,7 +18,8 @@
 
 ## Pimofy (Moses / next agent)
 - [ ] Real-phone check of the v4 navigation (iPhone and Android, 320-430px): bottom bar clearance, drawer, no sideways scroll, wordmark
-- [ ] Add "Invite Sylvia to speak" to About and Spanish to Other languages once those pages exist; Kenya Ministry Training Manual only after Sylvia approves it
+- [ ] "Invite Sylvia to speak" draft page created on dev (ID 6511, content/blocks/speaking.html) and added under About as a Custom Link (WordPress cannot add draft pages to menus). Until Sylvia approves and it is published, that menu link opens a not-found page for anyone past the dev password; on approval publish it, or remove the link if she declines
+- [ ] Add Spanish to Other languages once that page exists; Kenya Ministry Training Manual only after Sylvia approves it
 - [ ] Mark 3 confirmed books as Featured so the Books mega menu shows "Start here" (after products are published)
 - [x] Build child theme 1.1.0 per `docs/NEXT-BUILD-1.1.0.md` (done 23 Oct)
 - [x] `.github/workflows/checks.yml` added by Moses; PHP lint 8.0-8.3 and check-theme.js pass
