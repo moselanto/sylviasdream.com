@@ -2,6 +2,11 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 26 October 2026 (night)
+
+- **All existing Stripe payments and contribution links are kept, permanently** (Lightof, 26 Oct). Every live Stripe book-purchase button, every Dream Partner / contribution link, their after-payment thank-you and download pages, and every existing subscription keep working exactly as now, before, during and after the move. Consequences: the `LEGACY-LINK-MAP.md` replacements are **not** carried to live; `BUYER-TRANSITION-PLAN.md` Phase 2 (switching off links, redirecting thank-you pages, deleting files) is **cancelled**; the Give page uses the existing Dream Partner links; WooCommerce, if used, is an addition, never a replacement. The repo never stores payment-link addresses: the launch pack marks those buttons `#KEEP-LIVE-STRIPE-BUTTON` / `#KEEP-LIVE-DREAM-PARTNER-LINK-*`, and the person pasting copies the existing link from the same live page.
+- **Amazon is the source for book titles, subtitles, formats and descriptions** (Lightof, 26 Oct), except where Sylvia's own site text exists. See `project/BOOK-CATALOGUE.md` and `project/AMAZON-CATALOGUE.md`.
+
 ## 26 October 2026
 
 - **Migration approach confirmed** (Lightof, 26 Oct evening): build on dev without interrupting the live site; move to sylviasdream.com only after Sylvia approves, because the Personal plan has no staging. Plan: `docs/MIGRATION-PLAN.md` (content pasted into existing live pages in one switch-over window; new pages, themes, plugin, media and products prepared invisibly first).

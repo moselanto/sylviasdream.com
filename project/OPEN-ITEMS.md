@@ -38,6 +38,8 @@ Was: apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 27
 - [x] cPanel licence error fixed by the host (26 Oct); theme-zip upload (Replace active) still the usual deploy
 - [ ] Start here welcome card wording ("New to Sylvia's books? Begin with her story, or browse every title by topic.") is ours: include in Sylvia's review; it is replaced by 3 featured covers once books are published
 - [x] Launch content pack `content/live/` (26 Oct): all 16 content files with dev addresses rewritten for sylviasdream.com, plus an image list (5 October images must be uploaded to live first)
+- [ ] Amazon descriptions still missing for 22 titles (`project/AMAZON-CATALOGUE.md`): copy from each Amazon page by ASIN
+- [ ] Keep every existing Stripe payment and Dream Partner link (DECISIONS 26 Oct): at paste time fill every `#KEEP-LIVE-*` button in `content/live/` from the same live page; click-test all payment links after switch-over
 - [ ] Book titles: rename the 25 dev products to the Amazon titles in `project/BOOK-CATALOGUE.md` (Amazon check 26 Oct); descriptions from each Amazon book page where Sylvia has no site text
 - [ ] Migration blockers (`docs/MIGRATION-PLAN.md` section 3), remaining: list and upload missing media to live; copy final dev page content into Git; decide paste-at-launch (recommended) or staged-revision plugin; keep dev-only items (password gate, preview store notice, test links) off live
 - [ ] Redesign handoff (26 Oct) gaps still open: meta descriptions and Open Graph per page (need Sylvia's wording), real form/newsletter/payment/download integrations (live only), WCAG 2.2 AA contrast check with a tool, responsive QA at 320/375/768/1024/1440 on real devices, Core Web Vitals on mobile

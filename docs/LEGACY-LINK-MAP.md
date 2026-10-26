@@ -1,5 +1,7 @@
 # Legacy Stripe and .docx links: replacement map
 
+> **Superseded for the live site (26 Oct 2026, decision in `project/DECISIONS.md`): all existing Stripe payment and contribution links stay exactly as they are on sylviasdream.com.** The replacements below were made on the **dev site only** and must **not** be repeated on live. At switch-over, every book purchase button keeps its existing live Stripe link (the launch pack marks it `#KEEP-LIVE-STRIPE-BUTTON`). On dev, the original links are still in each page's Revisions if they need restoring there. The table is kept as a record of what was changed on dev.
+
 Checked and fixed on dev on 23 October 2026. **The live site still has all of these links.** Repeat the same replacements on live during switch-over (`BACKUP-AND-LAUNCH.md` section 6), only after Sylvia's written OK for each old payment link (`project/PROJECT-BRIEF.md`).
 
 ## Journey

@@ -8,6 +8,13 @@ Paste each file into the matching live page's Code editor during the switch-over
 
 Regenerate this folder whenever a file in `content/blocks/` changes (same two replacements), and keep `content/blocks/` as the source.
 
+## Payment and contribution buttons (never changed)
+All existing Stripe payments stay as they are (`project/DECISIONS.md`, 26 Oct). This pack never contains payment-link addresses:
+- `#KEEP-LIVE-STRIPE-BUTTON` (6 buttons: book-one-life 2, book-from-fear-to-freedom 2, book-sent 1, append-one-life-hardcover 1, append-hidden-key 1): before pasting, open the same live page and copy its existing Stripe button link **and label** into this button.
+- `#KEEP-LIVE-DREAM-PARTNER-LINK-5/15/30/50/other/once` (give.html): use the existing Dream Partner contribution links from the live Heaven on Earth / My Story pages for the matching amount; Sylvia confirms any amount that has no existing link.
+- My Story's "Partner with us" button already carries its existing live link.
+- After pasting: search the page for `#KEEP-LIVE`; none may remain.
+
 Before pasting:
 1. Every page edited directly on dev must first be copied back into `content/blocks/` (MIGRATION-PLAN blocker 3).
 2. Images below marked "Upload to live first" must be in the live Media Library.

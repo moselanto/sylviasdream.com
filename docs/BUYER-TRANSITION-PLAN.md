@@ -1,5 +1,7 @@
 # Past buyers and protected downloads: transition plan
 
+> **Changed 26 Oct 2026 (`project/DECISIONS.md`): existing Stripe payment links, contribution links and their thank-you / download pages are kept working permanently.** Phase 1 step 4 (replacing old book buttons) and step 5 (deactivating or re-pointing payment links) are cancelled. **Phase 2 is cancelled**: no thank-you page is redirected, no payment link is switched off, no file is deleted. What remains: thank-you pages stay protected (noindex, out of search) by the core plugin, and new WooCommerce downloads, if used, are added alongside, never instead.
+
 Status: proposed 23 October 2026, not started. Owner: Pimofy (Moses). Nothing here touches Stripe: every Stripe change is made by Sylvia herself.
 
 ## The problem

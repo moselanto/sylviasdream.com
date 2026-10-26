@@ -8,6 +8,9 @@ Written 26 Oct 2026 after studying all repo documentation and a read-only audit 
 - Only then is the new site moved into her live WordPress.com site in one planned switch-over window.
 - Her plan is **WordPress.com Personal**: no staging, no SFTP/SSH, no one-click restore. So every live step is either invisible preparation or part of the one switch-over window, and a full manual backup comes first.
 
+## 1a. Payments rule (26 Oct, overrides older docs)
+All existing Stripe payments stay untouched and working: every book purchase button, every Dream Partner / contribution link, every after-payment thank-you or download page, every subscription. Nothing in this plan edits Stripe, switches a link off, or redirects a thank-you page. In the launch pack these buttons are marked `#KEEP-LIVE-STRIPE-BUTTON` (book purchases) and `#KEEP-LIVE-DREAM-PARTNER-LINK-*` (Give page amounts); before pasting a page, copy the existing link and label from the same live page into that button. After switch-over, click every payment and contribution button on live and confirm it opens the same Stripe page as before.
+
 ## 2. What the live site is today (audit, 26 Oct)
 | Item | Live now | What it means for the move |
 |---|---|---|
@@ -29,7 +32,7 @@ Slug differences to respect: on live `/all-shall-be-well/` is the **thank-you pa
 2. **Media.** Book covers uploaded on dev (e.g. One Life, SENT, From Fear to Freedom, Oct 2026) are not in the live Media Library. Action: list every image the new pages use; upload the missing ones to live Media in the preparation phase (invisible).
 3. **Final page content lives on dev, not only in Git.** Some pages were edited directly on dev (restored live wording, covers, menus). Action: before the content pack is built, copy each dev page's final Code-editor content into the repo so Git is the single source.
 4. **Published live pages cannot hold a hidden draft** in core WordPress. Options: (a) paste the new content into each existing page during the switch-over window (about 30 pages, 2-3 hours, URLs unchanged); or (b) a "staged revision" plugin, only if it installs and works on WordPress.com and is removed afterwards. Recommended: (a), with the content pack ready so it is copy and paste only.
-5. **Dev-only things that must not reach live:** the password gate plugin, the WooCommerce store notice "Private preview ... test mode", test giving links, test Stripe keys, "Draft for Sylvia's review" notes on the policy pages.
+5. **Dev-only things that must not reach live:** the password gate plugin, the WooCommerce store notice "Private preview ... test mode", test giving links (replaced by the existing Dream Partner links at paste time), test Stripe keys, "Draft for Sylvia's review" notes on the policy pages.
 6. **Items still waiting on Sylvia** (from OPEN-ITEMS): approval of the dev site and wording, ebook files, prices, download limit/expiry, Give amounts and Stripe set-up, logo originals, photo, reviews, policies, the free-download decisions, the buyer list or her own emails to past buyers.
 
 ## 4. Order of work
@@ -56,13 +59,13 @@ Slug differences to respect: on live `/all-shall-be-well/` is the **thank-you pa
 4. Settings > Reading: Home = new Home page; posts page = Journal.
 5. Settings > Sylvia's Dream: **Redirects ON** (`REDIRECT-MAP.md`).
 6. Publish products; switch payments to live keys; one small real purchase, check the download email and that no WordPress.com fee was taken; refund.
-7. Replace old book buttons per `LEGACY-LINK-MAP.md` (with Sylvia's written OK).
+7. Do **not** replace any old book button: every existing Stripe button keeps its live link (section 1a). Click-test each payment and contribution link.
 8. Run `QA-CHECKLIST.md` and `LAUNCH-QA-CHECKLIST.md` on live.
 9. Do not publish or re-publish any post (newsletter emails). Author display name = Sylvia.
 
 ### Phase D: after launch
 - Past buyers get new secure links (`BUYER-TRANSITION-PLAN.md` Phase 1); Sylvia confirms the subscription count is unchanged.
-- 30 days later, with her written OK: retire old thank-you pages and public files (Phase 2).
+- Thank-you / download pages and payment links stay as they are (section 1a); no Phase 2 retirement.
 - Restoration test before handover; delete the dev copy after handover.
 
 ## 5. Rollback (any time in Phase C)

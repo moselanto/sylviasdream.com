@@ -59,6 +59,7 @@ Home 6365 (front page) · Journal 6368 (posts page) · Books 3001 · Contact 20 
 - Products to Published; newsletter checked on live (Jetpack); legacy link replacements per `docs/LEGACY-LINK-MAP.md`; redirects per `docs/REDIRECT-MAP.md`; protect downloads per `docs/BUYER-TRANSITION-PLAN.md` (on live the protected slug is `all-shall-be-well`, never `all-shall-be-well-2`, which is the book page 4216); repeat the content and menu changes above; `docs/BACKUP-AND-LAUNCH.md` first.
 
 ## 5. Things that must not happen
+- **Never break an existing Stripe payment or contribution link** (26 Oct): every live book purchase button, Dream Partner link, thank-you/download page and subscription keeps working exactly as now. No link is replaced, switched off or redirected (`project/DECISIONS.md`).
 - No changes to the live site before backups and launch day.
 - No Stripe edits, ever. Existing subscriptions and payment links stay; old links change only with Sylvia's written OK.
 - Products stay **Draft** until launch.
