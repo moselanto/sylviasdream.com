@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-26 - Block validation fixes (content files only, theme stays 1.8.4)
+- `content/blocks/author-support.html` and `content/blocks/heaven-on-earth.html`: the `<!-- KEEP: paste the existing Jetpack ... block here -->` placeholders sat loose inside a group or column, so the editor flagged those blocks as invalid. Each placeholder is now wrapped in its own Custom HTML block; the wording of the pages is unchanged. `docs/hoe-segments/README.md` updated to match.
+- Gutenberg validator (@wordpress/blocks + block-library under jsdom): all 16 files in `content/blocks/` pass.
+
 ## 2026-10-26 - Child theme 1.8.4: Priority 1 clean-up
 - Book covers: `book-one-life.html` uses dev media 6604 (`2026/10/one-life-683x1024.png`, was a guessed URL); `book-sent.html` uses media 6605 (`2026/10/sent-683x1024.png`); `book-from-fear-to-freedom.html` uses media 6603 (`2026/10/from-fear-to-freedom.png`). Each image block now carries its media ID.
 - Menus: product-category links are hidden on the front end when the category is WooCommerce's default "Uncategorized" or has no published products (`sdc_hide_empty_product_cat_items` in `inc/woocommerce.php`). On dev this hides "Coming soon" (item 6492) and "Uncategorized" (item 6499) under Books > Browse by topic; "Coming soon" returns by itself once a published book is filed under it. Appearance > Menus is unchanged.

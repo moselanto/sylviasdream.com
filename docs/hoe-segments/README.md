@@ -7,4 +7,4 @@ Used when the full `content/blocks/heaven-on-earth.html` cannot be pasted in one
 3. `part3.txt` between the second slideshow block and the Jetpack contact form block
 4. `part4.txt` after the contact form block
 
-Everything else in the old content is removed. The result equals `heaven-on-earth.html` with the KEEP lines filled.
+Everything else in the old content is removed. The result equals `heaven-on-earth.html` with each KEEP placeholder (a Custom HTML block holding only the KEEP comment) replaced by the existing Jetpack block.
