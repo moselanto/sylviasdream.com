@@ -78,7 +78,7 @@ Source: Sylvia's Amazon.com.au author page "All Books" (31 listings) and an Amaz
 
 Other Amazon listings (editions; Sylvia decides whether the shop shows them): De la Peur à la Liberté: Surmonter l'anxiété par la foi (French, Kindle); Una Vida: El Sendero Estrecho (Spanish, Kindle and Paperback); Angelique Legacy Edition: A Journey of Becoming, Belonging, and Blessing (Hardcover); The King's Way. God's Plan For Salvation (Paperback, older edition); How to Find the Real You: A Journey of Self Discovery (older Kindle edition); All Shall Be Well Large Print; Trusting God Deeper Large Print.
 
-To do: rename the 25 dev WooCommerce products (Draft) to the titles above; take each product description from the book's Amazon page where the site has none of Sylvia's own text.
+Done 26 Oct: the 23 Amazon-listed dev products (Draft) renamed to the titles above. Still to do: take each product description from the book's Amazon page where the site has none of Sylvia's own text.
 
 ## Questions for Sylvia
 1. Angelique novel and *Angelique Finds Her Light*: separate books? Should the *Angelique Legacy Edition* appear?

@@ -3,6 +3,13 @@
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
 
+
+## Monday 26 October 2026 (night): payments rule, Amazon titles, launch pack
+- Decision: every existing Stripe payment, Dream Partner contribution link, thank-you/download page and subscription stays working unchanged (DECISIONS). Launch pack buttons marked `#KEEP-LIVE-*`; no payment-link addresses stored in Git.
+- `content/live/` launch pack built (dev addresses rewritten for sylviasdream.com, image list).
+- Amazon check: titles for all listed books (`BOOK-CATALOGUE.md`); verbatim descriptions found for 5 listings only (`AMAZON-CATALOGUE.md`).
+- Dev products 6376-6400: 23 renamed to Amazon titles, all still Draft; no description changed.
+
 ## Monday 26 October 2026 (afternoon): theme 1.8.4, Priority 1
 - Theme 1.8.4 (b316844) uploaded to dev with "Replace active with uploaded"; active.
 - One Life 2766, SENT 4686 and From Fear to Freedom 4231 re-pasted from f859bfe (real covers 6604, 6605, 6603). The first paste of 2766 showed an invalid-content warning: the image blocks had `width`/`height` on `<img>` that the block does not save. Fixed in all three files, checked with the Gutenberg validator, re-applied. No warnings in the editor.
