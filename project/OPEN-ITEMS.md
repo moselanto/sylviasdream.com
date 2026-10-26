@@ -37,6 +37,7 @@ Was: apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 27
 - [ ] Home page gaps against prototype v4: see PROGRESS-LOG 24 Oct (Latest from Sylvia, Have a book on your heart?, newsletter form, featured covers, Meet Sylvia quote card, 4th trust item)
 - [x] cPanel licence error fixed by the host (26 Oct); theme-zip upload (Replace active) still the usual deploy
 - [ ] Start here welcome card wording ("New to Sylvia's books? Begin with her story, or browse every title by topic.") is ours: include in Sylvia's review; it is replaced by 3 featured covers once books are published
+- [ ] Redesign handoff (26 Oct) gaps still open: meta descriptions and Open Graph per page (need Sylvia's wording), real form/newsletter/payment/download integrations (live only), WCAG 2.2 AA contrast check with a tool, responsive QA at 320/375/768/1024/1440 on real devices, Core Web Vitals on mobile
 - [x] Browse by topic matches the prototype; phone bar docked (theme 1.12.0, 26 Oct). Topic links open empty category pages until books are published at launch
 - [x] Polish on every ordinary page and the Journal (theme 1.11.0, 26 Oct); Home and WooCommerce Shop/Cart/Checkout/My account left as they are
 - [ ] Your Free Gift (3586): the "Free Downloads" card is a WordPress post embed (iframe), so the theme cannot style its dark-on-dark text. Replace it with a plain link or button to /free-7-day-devotional/ (needs an edit to the page; wording unchanged)

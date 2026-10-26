@@ -16,12 +16,12 @@
 				{
 					"slug": "gold",
 					"name": "Gold",
-					"color": "#b8862b"
+					"color": "#c18b2d"
 				},
 				{
 					"slug": "gold-dark",
 					"name": "Gold (dark)",
-					"color": "#8a5a14"
+					"color": "#775014"
 				},
 				{
 					"slug": "gold-light",
@@ -31,17 +31,17 @@
 				{
 					"slug": "cream",
 					"name": "Cream",
-					"color": "#fbf7ef"
+					"color": "#fcfaf5"
 				},
 				{
 					"slug": "cream-2",
 					"name": "Cream (deeper)",
-					"color": "#f5ecdb"
+					"color": "#f4eddf"
 				},
 				{
 					"slug": "ink",
 					"name": "Ink",
-					"color": "#2b2118"
+					"color": "#231b14"
 				},
 				{
 					"slug": "ink-2",

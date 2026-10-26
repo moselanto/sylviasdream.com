@@ -1038,7 +1038,7 @@ P.checkout=function(){
 P["thank-you"]=function(){
   var last=[];try{last=JSON.parse(sessionStorage.getItem("sd_last")||"[]");}catch(e){}
   return '<section class="section"><div class="wrap" style="max-width:820px"><div class="center"><div style="width:80px;height:80px;border-radius:50%;background:#e3efe5;color:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 20px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg></div>'+
-  '<h1>Thank you for your order</h1><p class="lead">Your books are ready. We have also emailed your secure download links.</p></div>'+
+  '<h1>Order confirmation preview</h1><p class="lead">This is a preview of the post-checkout experience. No order or payment is created by this prototype.</p></div>'+
   '<div style="margin-top:36px">'+(last.length?last:[{s:"one-life",q:1}]).map(function(i){var b=bySlug(i.s);return '<div class="dl"><div style="display:flex;gap:16px;align-items:center"><div style="width:56px">'+cover(b)+'</div><div><b>'+b.t+'</b><div class="muted" style="font-size:.88rem">PDF and EPUB &middot; link valid for 7 days, 5 downloads</div></div></div><button class="btn sm" data-dl>'+ICON.dl+' Download</button></div>';}).join('')+'</div>'+
   '<div class="notice info">'+ICON.lock+' This page is private, hidden from Google, and download links are unique to your order.</div>'+
   '<div class="center" style="margin-top:30px"><a class="btn ghost" href="#/give">Would you like to become a Dream Partner?</a></div></div></section>';
@@ -1145,14 +1145,14 @@ function bind(){
     $$("[data-amt]").forEach(function(b){b.addEventListener("click",function(){$$("[data-amt]").forEach(function(x){x.setAttribute("aria-pressed","false");});b.setAttribute("aria-pressed","true");amt=+b.getAttribute("data-amt");$("#ca").value="";lab();});});
     $$("[data-freq]").forEach(function(b){b.addEventListener("click",function(){$$("[data-freq]").forEach(function(x){x.setAttribute("aria-pressed","false");});b.setAttribute("aria-pressed","true");freq=b.getAttribute("data-freq");lab();});});
     $("#ca").addEventListener("input",function(){var v=parseFloat(this.value);if(v>0){amt=v;$$("[data-amt]").forEach(function(x){x.setAttribute("aria-pressed","false");});lab();}});
-    gb.addEventListener("click",function(){$("#givemsg").innerHTML='<div class="notice">Thank you. On the live site this opens a secure Stripe checkout for $'+amt+(freq==="m"?" a month":"")+', then sends a welcome email to new Dream Partners.</div>';});
+    gb.addEventListener("click",function(){$("#givemsg").innerHTML='<div class="notice info" role="status">Prototype preview only: no donation has been made and no payment details have been collected. Before launch, connect this choice to the approved secure donation checkout and verify the recipient, currency, frequency and receipts.</div>';});
   }
   $$("form[data-form]").forEach(function(f){f.addEventListener("submit",function(e){e.preventDefault();var k=f.getAttribute("data-form");
-    if(k==="news"){var i=$("input",f);if(validEmail(i.value)){toast("Thank you for subscribing. Your free devotional is on its way.");i.value="";}else{toast("Please enter a valid email address.");}return;}
+    if(k==="news"){var i=$("input",f);if(validEmail(i.value)){toast("Prototype preview only: you are not subscribed and no email has been sent. Connect the approved newsletter provider before launch.");}else{toast("Please enter a valid email address.");}return;}
     if(check(f)===false)return;
-    if(k==="contact"){$("#cmsg").innerHTML='<div class="notice">Thank you. Your message has been sent to Sylvia.</div>';f.reset();}
-    if(k==="resend"){$("#rmsg").innerHTML='<div class="notice">If we find an order for that email, fresh links are on their way.</div>';}
-    if(k==="checkout"){try{sessionStorage.setItem("sd_last",JSON.stringify(getCart()));}catch(x){}setCart([]);location.hash="#/thank-you";}
+    if(k==="contact"){$("#cmsg").innerHTML='<div class="notice info" role="status">Prototype preview only: your message has not been sent. Connect and test the approved WordPress form handler before launch.</div>';}
+    if(k==="resend"){$("#rmsg").innerHTML='<div class="notice info" role="status">Prototype preview only: no order lookup or email has occurred. Connect the secure order lookup and expiring download service before launch.</div>';}
+    if(k==="checkout"){var old=f.querySelector(".checkout-demo-status");if(old)old.remove();f.insertAdjacentHTML("afterbegin",'<div class="notice info checkout-demo-status" role="status">Prototype preview only: no order has been created, no payment has been taken and the cart has been kept intact. Connect the approved payment provider in test mode, verify webhook handling and email delivery, then run end-to-end tests before enabling live checkout.</div>');f.querySelector(".checkout-demo-status").scrollIntoView({behavior:"smooth",block:"center"});}
   });});
 }
 function reveal(){

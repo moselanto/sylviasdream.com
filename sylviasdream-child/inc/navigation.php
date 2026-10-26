@@ -59,7 +59,7 @@ function sdc_mega_featured_html() {
 		// "Start here" covers (drawn in CSS) linking to the Books page.
 		$picks = array(
 			array( 'The Report of the Lord', '#3a2a12', '#e0b75a' ),
-			array( 'One Life', '#5b3a1a', '#b8862b' ),
+			array( 'One Life', '#5b3a1a', '#c18b2d' ),
 			array( 'From Fear to Freedom', '#2f4a5c', '#8fb3c4' ),
 		);
 		$items = '';

@@ -95,7 +95,10 @@ function sdc_hero_books_render( $content, $block ) {
 	if ( false === strpos( $class, 'sd-hero-cover' ) || false !== strpos( $content, 'sd-hero-books' ) ) {
 		return $content;
 	}
-	$books = sdc_hero_books_html();
+	// 1.16.0: the hero photo is the largest thing on the first screen; load it first (handoff: LCP).
+	$content = preg_replace( '/<img(?![^>]*fetchpriority)([^>]*wp-block-cover__image-background)/', '<img fetchpriority="high" decoding="async"$1', $content, 1 );
+	$content = preg_replace( '/(<img[^>]*wp-block-cover__image-background[^>]*?)\sloading="lazy"/', '$1', $content, 1 );
+	$books   = sdc_hero_books_html();
 	$pos   = strrpos( $content, '</div>' );
 	if ( '' === $books || false === $pos ) {
 		return $content;

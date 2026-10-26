@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.16.0: redesign handoff, first pass
+- Colours aligned with the visual system in `docs/REDESIGN-HANDOFF.docx`: ink #231B14, gold action #775014 (darker, better contrast for buttons and links), gold accent #C18B2D, cream #FCFAF5, cream tint #F4EDDF. Updated in `style.css`, `theme.json` (editor palette), `blocks.css`, `editor.css` and the drawer icons.
+- Home hero photo now loads first (`fetchpriority="high"`, never lazy), for a faster first screen (LCP).
+- Repo: `prototype/index.html` replaced with the latest prototype (honest "preview only" messages instead of fake success); handoff document saved as `docs/REDESIGN-HANDOFF.docx`; checklist as `docs/LAUNCH-QA-CHECKLIST.md`.
+- Not changed on purpose: the handoff suggests a "More" item in the phone bar; it stays out because the header menu button already opens the menu (Moses, 26 Oct).
+
 ## 2026-10-26 - Child theme 1.15.0: home hero right side
 - The empty right side of the home hero now shows three of Sylvia's book covers (From Fear to Freedom, One Life, SENT), fanned with soft shadows and a warm glow, each linking to its book page. Covers are read from the book pages' own cover images (`inc/hero-books.php`, filter `sdc_hero_book_pages`), so it works on live without media IDs. Wide screens (1100px and up) only; phones and tablets keep the text-only hero. No wording added (links carry the book titles as their accessible names).
 

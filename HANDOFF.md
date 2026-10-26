@@ -8,6 +8,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 **Moses's quality bar (23 Oct):** the new site must be international-standard, very professional, mobile-ready, with a beautiful fixed (sticky) menu, and "one of the best book websites in the world". It must match or beat `prototype/index.html` v3, **including its images and footer**, and every page must be **fully editable by Sylvia, like a page builder**, so handover is easy.
 
 ## 2. Read in this order
+0. `docs/REDESIGN-HANDOFF.docx` (design direction, acceptance criteria, integration matrix) and `docs/LAUNCH-QA-CHECKLIST.md` (26 Oct).
 1. This file.
 2. [`project/PROGRESS-LOG.md`](project/PROGRESS-LOG.md): what was done, day by day, 21-23 Oct, and exactly where work stopped.
 3. [`docs/NEXT-BUILD-1.1.0.md`](docs/NEXT-BUILD-1.1.0.md): the brief for theme 1.1.0 (built 23 Oct; see CHANGELOG).
@@ -21,7 +22,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | Dev site | `https://topnotchmall.co.ke/sylviasdream/` (admin `/sylviasdream/wp-admin/`), password-gated, hidden from search. All work happens here. |
 | Live site | **Untouched.** Agnes's login (mosemqute) is Administrator on wp-admin and my.wordpress.com (used for backups); read-only until migration. Domain with WordPress.com (paid to 25 Nov 2027, auto-renew); Personal plan renews 29 Oct 2026; Stripe connected via WordPress.com Payments; WooCommerce not installed on live. |
 | Migration | **Only after Sylvia reviews and approves the dev site** (Agnes, 26 Oct). |
-| Child theme on dev | **1.15.0** (repo main; see CHANGELOG 26 Oct "Priority 1 clean-up"). Parent "Sylvia's Dream Base" 1.0.1. Core plugin 0.1.2 (`dist/sylviasdream-core-0.1.2.zip`). |
+| Child theme on dev | **1.16.0** (repo main; see CHANGELOG 26 Oct "Priority 1 clean-up"). Parent "Sylvia's Dream Base" 1.0.1. Core plugin 0.1.2 (`dist/sylviasdream-core-0.1.2.zip`). |
 | Deploy method | Build with `bash scripts/build-theme-zip.sh` (runs `check-theme.js`; last run "OK: 88 files checked, 32 block files"), then WP Admin > Appearance > Themes > Upload > **Replace active with uploaded**. cPanel Git also works again (host fixed the licence 26 Oct). |
 | Page content | Pasted into each page's Code editor from `sylviasdream-child/content/blocks/*.html`. Old content stays in page revisions. |
 | Products | 25 WooCommerce products, **all Draft** (Books grid empty until launch). |
