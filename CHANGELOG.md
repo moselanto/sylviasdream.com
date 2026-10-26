@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.14.0: header balanced; hero fits one screen
+- Header (desktop): three equal zones (logo | menu | actions) so the menu sits on the true centre line; quieter menu items with a short gold underline for hover and the current page instead of the filled pill; search, cart and Give all 44px tall, Give as a pill with a soft shadow.
+- Home hero, laptops and up (13" 1366x768 included): height = screen minus utility bar and header, so the whole hero, buttons included, fits without scrolling; spacing and type scale with screen height so short screens stay balanced.
+- Home hero, phones: fills the space between the header and the bottom bar; tighter spacing, smaller title, the two buttons side by side. No wording changed.
+- Fix: earlier hero type sizes were overridden by blocks.css (loaded later); the new rules carry enough weight to apply.
+
 ## 2026-10-26 - Child theme 1.13.1: hero corner
 - Home hero: a rounded corner still showed at the top right. The hero photo and shade layers (and the containers around the hero on Home) now have square corners and fill the hero edge to edge.
 

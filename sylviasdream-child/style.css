@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.13.1
+Version: 1.14.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1302,3 +1302,62 @@ font[style*="vertical-align"] { vertical-align: baseline !important; }
 .sd-hero-cover, .sd-hero-cover > .wp-block-cover__image-background, .sd-hero-cover > .wp-block-cover__background, .sd-hero-cover > video { border-radius: 0 !important; }
 .sd-hero-cover > .wp-block-cover__image-background, .sd-hero-cover > .wp-block-cover__background { position: absolute; inset: 0; width: 100% !important; height: 100% !important; max-width: none !important; margin: 0 !important; box-shadow: none !important; }
 .home :is(.site-main, .sd-builder, .sd-builder__body, .sd-page-body, .entry-content):has(> .sd-hero-cover) { border-radius: 0 !important; overflow: visible; }
+
+/* ==========================================================================
+   1.14.0: header bar balanced, and the home hero fits the first screen on
+   every screen size (laptops 13" and up, tablets, phones). Styling only.
+   Note: blocks.css loads after this file, so hero rules use "body" for weight.
+   ========================================================================== */
+:root { --sd-chrome: calc(38px + var(--head-h)); }
+@media (max-width: 760px) { :root { --sd-chrome: calc(34px + var(--head-h)); } }
+
+/* ---------- Header (desktop) ---------- */
+@media (min-width: 1024px) {
+	.site-header__inner { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; column-gap: 24px; }
+	.site-header__inner > .sd-brand { justify-self: start; }
+	.site-header__inner > .sd-nav { flex: none; justify-self: center; }
+	.site-header__inner > .sd-actions { justify-self: end; gap: 10px; }
+	.sd-menu { gap: 4px; }
+	.sd-menu > li > a { position: relative; padding: .5em .75em; border-radius: 6px; font-weight: 600; color: var(--ink); }
+	.sd-menu > li > a:hover, .sd-menu > li > a[aria-current="page"], .sd-menu > .current-menu-item > a, .sd-menu > .current-menu-ancestor > a { background: transparent; color: var(--gold-d); }
+	/* Active page: a short gold underline instead of a filled pill. */
+	.sd-menu > li > a::after { content: ""; position: absolute; left: .75em; right: .75em; bottom: 5px; height: 2px; border-radius: 2px; background: var(--gold); transform: scaleX(0); transition: transform .25s var(--ease); }
+	.sd-menu > li.menu-item-has-children > a::after { right: .25em; }
+	.sd-menu > li > a:hover::after, .sd-menu > li > a[aria-current="page"]::after, .sd-menu > .current-menu-item > a::after, .sd-menu > .current-menu-ancestor > a::after { transform: scaleX(1); }
+	.sd-menu > li > a[aria-current="page"]::after, .sd-menu > .current-menu-item > a::after { background: var(--gold-d); }
+	/* Search, cart and Give share one 44px height. */
+	.sd-actions .sd-iconbtn { width: 44px; height: 44px; box-shadow: 0 1px 2px rgba(60, 40, 10, .05); }
+	.sd-actions .sd-give { height: 44px; min-height: 44px; padding: 0 22px; border-radius: 999px; font-weight: 700; box-shadow: 0 6px 16px rgba(138, 90, 20, .22); }
+}
+@media (prefers-reduced-motion: reduce) { .sd-menu > li > a::after { transition: none; } }
+
+/* ---------- Home hero: one screen, all sizes ---------- */
+@media (min-width: 782px) {
+	body .sd-hero-cover {
+		min-height: 0 !important;
+		height: clamp(460px, calc(100svh - var(--sd-chrome) - var(--admin-top)), 820px);
+		padding-top: clamp(1.5rem, 5vh, 4rem) !important; padding-bottom: clamp(1.5rem, 5vh, 4rem) !important;
+	}
+	body .sd-hero-cover .sd-eyebrow { margin-bottom: clamp(.6rem, 1.8vh, 1.25rem) !important; }
+	body .sd-hero-cover h1 { font-size: clamp(2.2rem, min(4.9vw, 8vh), 4.2rem); line-height: 1.06; margin-bottom: clamp(.75rem, 2.2vh, 1.4rem) !important; }
+	body .sd-hero-cover p.sd-lead { font-size: clamp(1rem, min(1.3vw, 2.4vh), 1.2rem); line-height: 1.6; margin-bottom: clamp(.8rem, 2.4vh, 1.6rem) !important; }
+	body .sd-hero-cover p.has-gold-light-color { font-size: clamp(1.05rem, min(1.6vw, 2.8vh), 1.35rem); margin-bottom: clamp(1rem, 3vh, 2.2rem) !important; }
+	body .sd-hero-cover .wp-block-button__link { min-height: clamp(46px, 7vh, 54px); }
+}
+@media (max-width: 781px) {
+	body .sd-hero-cover {
+		min-height: calc(100svh - var(--sd-chrome) - var(--admin-top)) !important;
+		padding-top: 24px !important;
+		padding-bottom: 20px !important;
+		align-items: center !important;
+	}
+	body.sd-has-dock .sd-hero-cover { min-height: calc(100svh - var(--sd-chrome) - var(--admin-top) - 62px - env(safe-area-inset-bottom, 0px)) !important; }
+	body .sd-hero-cover .sd-eyebrow { margin-bottom: 10px !important; font-size: .68rem !important; letter-spacing: .14em; }
+	body .sd-hero-cover .sd-eyebrow::before { width: 22px; }
+	body .sd-hero-cover h1 { font-size: clamp(1.9rem, min(8.6vw, 5.4vh), 2.6rem); line-height: 1.08; margin-bottom: 12px !important; }
+	body .sd-hero-cover p.sd-lead { font-size: .98rem !important; line-height: 1.5; margin-bottom: 12px !important; }
+	body .sd-hero-cover p.has-gold-light-color { font-size: 1rem; line-height: 1.4; margin-bottom: 18px !important; padding-left: 12px; }
+	body .sd-hero-cover .wp-block-buttons { flex-wrap: nowrap; gap: 10px; }
+	body .sd-hero-cover .wp-block-buttons > .wp-block-button { flex: 1 1 0; min-width: 0; }
+	body .sd-hero-cover .wp-block-button__link { width: 100%; min-height: 48px; padding: 0 12px !important; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; font-size: .95rem; white-space: nowrap; }
+}
