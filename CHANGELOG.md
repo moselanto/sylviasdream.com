@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-26 - Core plugin 0.2.0: social sharing tags and page structured data
+- `inc/social.php`: Open Graph and Twitter card tags (title, description, image, URL) on the home page, pages and posts, so shared links show a picture and text. Skipped automatically when Jetpack, Yoast SEO, Rank Math or SEOPress already print them (likely on live with Jetpack).
+- Structured data: BlogPosting on posts, WebPage plus BreadcrumbList on pages (added to the existing graph; Home keeps Person, WebSite, Organization).
+- Descriptions are never invented: the page excerpt, else the first sentence(s) of the page's own text (160 characters). Images: featured image, else the first image on the page, else the site icon.
+
 ## 2026-10-26 - Child theme 1.16.1: automatic alt text for book covers
 - `inc/cover-alt.php`: a book-cover image block (`sd-book-cover`) or a WooCommerce product image with no alt text now reads "Book cover of <title> by Sylvia Suhr", using the page or product name already on the site. Alt text set in the Media Library or the block always wins.
 
