@@ -15,6 +15,8 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Other Amazon editions in the shop or not: French (De la Peur à la Liberté), Spanish (UNA VIDA), Angelique Legacy Edition, The King's Way: God's Plan For Salvation paperback, large-print editions
 - [ ] Approve Privacy Policy, Terms of Sale, Refund Policy
 - [ ] Approve Give page amounts ($5/$15/$30/$50 + other) and the 100 Dream Partners goal
+- [ ] Stripe links for the $15, $30 and $50 monthly Dream Partner levels (27 Oct: the only existing link, buy.stripe.com/9B66..., is "Dream Partner - Monthly Support", fixed A$5/month, billed monthly; dev Give now uses it for the $5 level and the main button; other levels show no button until Sylvia supplies links)
+- [ ] Site-wide store notice on dev still says "test mode, no real money": remove or reword when Sylvia approves real payments on dev
 - [ ] Approve home hero intro and About Sylvia paragraphs (draft biography from the prototype); "Every purchase helps Heaven on Earth" line yes/no
 - [ ] Photo of Sylvia; newsletter sign-up preference
 - [ ] Reader reviews for the Home page: up to 3 real quotes, verbatim, with the book, the reader's approved display name (and country if they want it) and their permission to quote on the website
