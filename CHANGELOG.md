@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.9.2: More videos layout
+- The 1.9.1 "three, then a centred two" layout did not apply on dev, where the five players sit inside a nested `.sd-video-grid` (display: contents) and kept the older `grid-column: auto` rule, so all five fell into one row. The layout now targets those players too.
+
 ## 2026-10-26 - Child theme 1.9.1: About pages fixes from the page printouts
 - Card headings on Speaking, Author Support and My Story all left-aligned (short ones had looked centred, wrapped ones left).
 - Space between paragraphs inside cards (Author Support service cards ran together).

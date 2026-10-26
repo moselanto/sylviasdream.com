@@ -37,7 +37,7 @@ Was: apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 27
 - [ ] Home page gaps against prototype v4: see PROGRESS-LOG 24 Oct (Latest from Sylvia, Have a book on your heart?, newsletter form, featured covers, Meet Sylvia quote card, 4th trust item)
 - [x] cPanel licence error fixed by the host (26 Oct); theme-zip upload (Replace active) still the usual deploy
 - [ ] Start here welcome card wording ("New to Sylvia's books? Begin with her story, or browse every title by topic.") is ours: include in Sylvia's review; it is replaced by 3 featured covers once books are published
-- [x] About pages fixes, theme 1.9.1 (26 Oct): card heading alignment, card paragraph spacing, Podcasts interview card, centred last row of videos
+- [x] About pages fixes, theme 1.9.1-1.9.2 (26 Oct): card heading alignment, card paragraph spacing, Podcasts interview card, More videos as three plus a centred two (1.9.2)
 - [x] About pages polish, theme 1.9.0 (26 Oct): My Story, Invite Sylvia to speak, Podcasts & Videos, Author Support. A real photo of Sylvia would replace the My Story monogram card (photo still awaited from Sylvia)
 - [x] Phone bottom bar redesigned (1.8.5): Home, Books, Ministry, Give; More removed; floating rounded bar
 - [x] PHONE-QA-v4-NAV in the Customizer Mobile preview (26 Oct, 1.8.5): items 1, 2, 4, 7-15, 17 pass; #9 failed (Books drawer links two per row), fixed in 1.8.6
