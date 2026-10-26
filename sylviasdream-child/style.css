@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.8.1
+Version: 1.8.2
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1169,3 +1169,28 @@ font[style*="vertical-align"] { vertical-align: baseline !important; }
 .sd-lang-offer button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 @media (max-width: 760px) { .sd-lang-offer { left: 16px; right: 16px; width: auto; bottom: calc(92px + env(safe-area-inset-bottom, 0px)); } }
 @media (prefers-reduced-motion: reduce) { .sd-lang-offer { transition: none; } }
+
+/* 1.8.2: book pages (SENT, From Fear to Freedom). */
+.sd-book-hero { align-items: center !important; }
+.sd-book-cover { margin: 0 auto !important; max-width: 360px; }
+.sd-book-cover img { width: 100%; height: auto !important; aspect-ratio: auto !important; object-fit: contain !important; border-radius: 4px 12px 12px 4px !important; box-shadow: -8px 10px 0 -2px rgba(0, 0, 0, .08), 0 26px 50px rgba(40, 25, 5, .3) !important; transition: transform .35s var(--ease); }
+.sd-book-cover a:hover img { transform: translateY(-6px) rotate(-.6deg); }
+.sd-book-edition .sd-book-cover { max-width: 300px; }
+@media (min-width: 782px) { .sd-book-hero > .wp-block-column:first-child, .sd-book-edition > .wp-block-column:first-child { flex-basis: 40% !important; flex-grow: 0 !important; } }
+.page:not(.home) .entry-content p.sd-book-author { margin: -.25rem 0 1rem; font-size: .95rem !important; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-d); }
+.page:not(.home) .entry-content p.sd-book-meta { margin-top: 1rem; font-size: .95rem !important; color: var(--ink-2); }
+.page:not(.home) .entry-content p.sd-book-meta a { font-weight: 700; color: var(--gold-d); }
+.sd-split--top { align-items: flex-start !important; }
+.sd-checks--card { padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 3vw, 1.75rem) .5rem !important; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+.page:not(.home) .entry-content p.sd-card__kicker { font-weight: 700; color: var(--ink) !important; }
+.sd-band .sd-card .sd-checks { margin-top: .5rem; }
+/* Reviews: quote cards. */
+.sd-reviews { display: grid; gap: clamp(16px, 2.5vw, 24px); grid-template-columns: 1fr; margin-top: clamp(1.75rem, 4vw, 2.5rem) !important; }
+@media (min-width: 640px) { .sd-reviews { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .sd-reviews { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.sd-reviews > * { margin: 0 !important; }
+.sd-review { position: relative; padding-top: 2.6rem !important; }
+.sd-review::before { content: "\201C"; position: absolute; top: .4rem; left: 1.4rem; font-family: var(--serif); font-size: 3.6rem; line-height: 1; color: var(--gold); }
+.page:not(.home) .entry-content p.sd-review__text { font-family: var(--serif); font-style: italic; font-size: 1.2rem !important; line-height: 1.45; color: var(--ink); }
+.page:not(.home) .entry-content p.sd-review__who { margin-top: auto !important; padding-top: .75rem; font-size: .8rem !important; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-d); }
+@media (min-width: 640px) and (max-width: 1023px) { .sd-reviews > :last-child:nth-child(odd) { grid-column: 1 / -1; } }
