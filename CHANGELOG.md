@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.16.3: slideshow alt text
+- Jetpack slideshow and gallery images with an empty alt now show the alt text saved in the Media Library (Heaven on Earth slideshows kept `alt=""` in their saved block data).
+
 ## 2026-10-26 - Child theme 1.16.2, core plugin 0.2.1
 - 23 images on Heaven on Earth, Give, Grace for the Journey and the latest posts now have saved alt text in the Media Library (factual, no names; listed in `docs/ALT-TEXT-AND-SEO-AUDIT.md`).
 - Theme: an image block with an empty alt now shows the alt text saved in the Media Library (WordPress does not copy it into blocks already on a page).

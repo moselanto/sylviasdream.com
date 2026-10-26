@@ -103,3 +103,35 @@ function sdc_image_block_library_alt( $content, $block ) {
 	return preg_replace( '/(<img\b[^>]*\b)alt=""/', '$1alt="' . esc_attr( $alt ) . '"', $content, 1 );
 }
 add_filter( 'render_block_core/image', 'sdc_image_block_library_alt', 9, 2 );
+
+/**
+ * 1.16.3: slideshow and gallery images with an empty alt take the alt text
+ * saved in the Media Library (matched by data-id or the wp-image-<ID> class).
+ *
+ * @param string $content Rendered block.
+ * @return string
+ */
+function sdc_fill_alt_from_library( $content ) {
+	if ( false === strpos( $content, 'alt=""' ) ) {
+		return $content;
+	}
+	return preg_replace_callback(
+		'/<img\b[^>]*>/i',
+		function ( $m ) {
+			$tag = $m[0];
+			if ( ! preg_match( '/\balt=""/', $tag ) ) {
+				return $tag;
+			}
+			if ( preg_match( '/\bdata-id="(\d+)"/', $tag, $id ) || preg_match( '/\bwp-image-(\d+)\b/', $tag, $id ) ) {
+				$alt = trim( (string) get_post_meta( (int) $id[1], '_wp_attachment_image_alt', true ) );
+				if ( '' !== $alt ) {
+					return preg_replace( '/\balt=""/', 'alt="' . esc_attr( $alt ) . '"', $tag, 1 );
+				}
+			}
+			return $tag;
+		},
+		$content
+	);
+}
+add_filter( 'render_block_jetpack/slideshow', 'sdc_fill_alt_from_library', 9 );
+add_filter( 'render_block_core/gallery', 'sdc_fill_alt_from_library', 9 );

@@ -23,7 +23,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | Dev site | `https://topnotchmall.co.ke/sylviasdream/` (admin `/sylviasdream/wp-admin/`), password-gated, hidden from search. All work happens here. |
 | Live site | **Untouched.** Agnes's login (mosemqute) is Administrator on wp-admin and my.wordpress.com (used for backups); read-only until migration. Domain with WordPress.com (paid to 25 Nov 2027, auto-renew); Personal plan renews 29 Oct 2026; Stripe connected via WordPress.com Payments; WooCommerce not installed on live. |
 | Migration | **Only after Sylvia reviews and approves the dev site** (Agnes, 26 Oct). |
-| Child theme on dev | **1.16.2** (repo main; see CHANGELOG 26 Oct "Priority 1 clean-up"). Parent "Sylvia's Dream Base" 1.0.1. Core plugin 0.2.1 (`dist/sylviasdream-core-0.2.1.zip`). |
+| Child theme on dev | **1.16.3** (repo main; see CHANGELOG 26 Oct "Priority 1 clean-up"). Parent "Sylvia's Dream Base" 1.0.1. Core plugin 0.2.1 (`dist/sylviasdream-core-0.2.1.zip`). |
 | Deploy method | Build with `bash scripts/build-theme-zip.sh` (runs `check-theme.js`; last run "OK: 88 files checked, 32 block files"), then WP Admin > Appearance > Themes > Upload > **Replace active with uploaded**. cPanel Git also works again (host fixed the licence 26 Oct). |
 | Page content | Pasted into each page's Code editor from `sylviasdream-child/content/blocks/*.html`. Old content stays in page revisions. |
 | Products | 25 WooCommerce products, **all Draft** (Books grid empty until launch). |
