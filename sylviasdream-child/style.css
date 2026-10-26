@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.6.0
+Version: 1.6.1
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1041,3 +1041,18 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 	.sd-footer__bottom { flex-direction: column; align-items: center; text-align: center; gap: 14px; }
 	.sd-paybadges { justify-content: center; }
 }
+
+/* 1.6.1: "Explore Sylvia's Books" showcase card with QR code (books.sylviasdream.com). */
+.sd-showcase { padding: clamp(1.75rem, 4vw, 2.75rem); background: #fff; border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); }
+.sd-showcase .sd-showcase__cols { gap: clamp(1.5rem, 4vw, 3rem); margin: 0; }
+.sd-showcase h2 { margin: 0 0 .5rem; }
+.sd-showcase .sd-lead { max-width: 560px; }
+.sd-showcase__qr-col { flex: 0 0 auto !important; width: auto !important; }
+.sd-showcase__qr { margin: 0 auto; text-align: center; }
+.sd-showcase__qr a { display: inline-block; padding: 12px; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 10px 26px rgba(60, 40, 10, .12); transition: transform .2s var(--ease), box-shadow .2s; }
+.sd-showcase__qr a:hover { transform: translateY(-3px); box-shadow: var(--shadow-l); }
+.sd-showcase__qr img { display: block; width: 180px; height: 180px; border-radius: 0 !important; box-shadow: none !important; }
+.sd-showcase__qr figcaption { margin-top: 10px; font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-d); }
+@media (max-width: 781px) { .sd-showcase { text-align: center; } .sd-showcase .sd-lead { margin-inline: auto; } .sd-showcase .wp-block-buttons { justify-content: center; } }
+/* Phones open the link directly; the QR is for reading on a computer or in print. */
+@media (max-width: 600px) { .sd-showcase__qr-col { display: none !important; } }
