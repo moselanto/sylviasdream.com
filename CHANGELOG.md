@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.8.6: phone QA fix
+- PHONE-QA-v4-NAV run on dev (Customizer Mobile preview, theme 1.8.5): 12 pass, 1 fail, 6 need a real phone. Fail #9: Books drawer links sat two per row. Phones (760px and below) now stack them in one full-width column with 48px tap height; tablets keep two columns.
+
 ## 2026-10-26 - Child theme 1.8.5: phone bottom bar
 - Bottom bar on phones is now Home, Books, Ministry, Give. "More" removed (the header menu button already opens the menu); its script removed from `nav.js` and its button from `inc/navigation.php`.
 - New look (Moses's request, reference: cisternofhopefoundation.org): floating rounded bar with even side gaps and a soft shadow, four equal columns, icon and label centred on one axis, uppercase labels, active page tinted, Give as a filled gold-dark pill. Very small phones (360px and below) get tighter spacing. Customizer label and docs updated.
