@@ -2,7 +2,7 @@
 Contributors: pimofydigital
 Requires at least: 6.4
 Requires PHP: 8.0
-Stable tag: 0.1.0
+Stable tag: 0.1.2
 License: GPLv2 or later
 
 Site functions for sylviasdream.com that must survive a theme change.

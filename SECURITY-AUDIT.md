@@ -19,7 +19,7 @@ Scope: `sylviasdream/` 1.0.0, `sylviasdream-child/` 1.5.7, `sylviasdream-core/` 
 | S1 | Public `.docx` and Stripe payment links on ordinary pages | Fixed on dev (`docs/LEGACY-LINK-MAP.md`); repeat on live at launch |
 | S2 | Old download pages and files reachable by direct URL | Planned: `docs/BUYER-TRANSITION-PLAN.md` Phase 0 before launch |
 | S3 | Default WordPress widgets (Archives, Categories) leaking into the footer | Fixed (1.3.0, front-end filter) |
-| S4 | Core plugin version constant (0.1.0) differs from header (0.1.1) | Open: align on next plugin release |
+| S4 | Core plugin version constant (0.1.0) differs from header (0.1.1) | Fixed in 0.1.2 |
 | S5 | Street address on live Contact page | Open: remove at launch with Sylvia's OK |
 
 ## 3. Controls confirmed sound

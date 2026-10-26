@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.5.7
+Version: 1.6.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -985,3 +985,59 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 
 /* 1.5.7: tablets (601-760px) keep the header menu button alongside the bottom bar. */
 @media (min-width: 601px) and (max-width: 760px) { .sd-has-dock .sd-nav-toggle { display: inline-flex; } }
+
+/* ==========================================================================
+   1.6.0: phone header menu button back, drawer submenus redesigned,
+   footer centred on phones
+   ========================================================================== */
+/* Header: the menu button shows on every phone again (bottom bar stays too). */
+@media (max-width: 760px) { .sd-has-dock .sd-nav-toggle { display: inline-flex; } }
+@media (max-width: 400px) { .sd-brand__name { font-size: 1.15rem; } .sd-actions { gap: 4px; } }
+
+/* Drawer (phones and tablets). */
+@media (max-width: 1023px) {
+	.sd-nav { padding: 0 18px 32px; background: var(--cream); }
+	.sd-nav__head { min-height: 64px; margin-bottom: 4px; }
+	.sd-menu > li { border-bottom: 1px solid var(--line); }
+	.sd-menu > li > a { min-height: 54px; padding: 6px 4px; font-size: 1.12rem; font-weight: 700; }
+	.sd-menu > li.is-open > a { color: var(--gold-d); }
+	.sd-subtoggle { width: 40px; height: 40px; border: 0; border-radius: 10px; background: var(--cream-2); color: var(--gold-d); }
+	.sd-subtoggle:hover, .sd-subtoggle[aria-expanded="true"] { background: var(--gold-l); }
+	/* Open submenu: one white panel with tidy rows. */
+	.sd-menu > li > .sub-menu { margin: 2px 0 14px; padding: 6px; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 8px 22px rgba(60, 40, 10, .08); }
+	.sd-menu > li:not(.sd-mega) > .sub-menu > li + li { border-top: 1px solid var(--line); }
+	.sd-menu > li:not(.sd-mega) > .sub-menu > li > a { display: grid; grid-template-columns: 36px 1fr; column-gap: 12px; align-items: center; min-height: 56px; padding: 10px; border-radius: 10px; color: var(--ink); }
+	.sd-menu > li:not(.sd-mega) > .sub-menu > li > a::before { content: ""; grid-row: 1 / span 2; width: 36px; height: 36px; border-radius: 10px; background: var(--gold-l) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='2.4'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / 14px no-repeat; }
+	.sd-menu > li:not(.sd-mega) > .sub-menu > li > a:hover, .sd-menu > li:not(.sd-mega) > .sub-menu > li > a:focus-visible { background: var(--cream); }
+	.sd-menu > li:not(.sd-mega) > .sub-menu .sd-menu-title { grid-column: 2; display: block; font-size: 1rem; font-weight: 700; line-height: 1.3; }
+	.sd-menu > li:not(.sd-mega) > .sub-menu .sd-menu-desc { grid-column: 2; display: block; margin-top: 2px; font-size: .84rem; font-weight: 400; line-height: 1.35; color: var(--ink-2); }
+	.sd-menu > li:not(.sd-mega) > .sub-menu > li > a:not(:has(.sd-menu-desc))::before { grid-row: auto; }
+	.sd-menu > li:not(.sd-mega) > .sub-menu > li > a:not(:has(.sd-menu-title)) { font-size: 1rem; font-weight: 700; }
+	/* Books (mega) in the drawer: labelled groups, links as two-column chips. */
+	.sd-mega__panel > .sd-mega__col { padding: 6px 4px 8px; }
+	.sd-mega__panel > .sd-mega__col + .sd-mega__col { border-top: 1px solid var(--line); }
+	.sd-mega__heading { display: block; margin: 6px 0 8px; padding: 0 6px; font-size: .72rem; letter-spacing: .16em; color: var(--gold-d); }
+	.sd-menu .sd-mega__panel .sub-menu { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; padding: 0 !important; margin: 0; background: none; border: 0; box-shadow: none; }
+	.sd-menu .sd-mega__panel .sub-menu a { display: flex; align-items: center; min-height: 44px; padding: 8px 10px; border-radius: 10px; background: var(--cream); font-size: .92rem; font-weight: 600; line-height: 1.25; color: var(--ink); }
+	.sd-menu .sd-mega__panel .sub-menu a:hover, .sd-menu .sd-mega__panel .sub-menu a:focus-visible { background: var(--gold-l); color: var(--gold-d); }
+	.sd-mega__panel > li:first-child > .sub-menu > li:last-child { grid-column: 1 / -1; }
+	.sd-mega__panel > li:first-child > .sub-menu > li:last-child > a { justify-content: center; background: var(--gold-d); color: #fff; font-weight: 700; }
+	.sd-mega__panel > li:first-child > .sub-menu > li:last-child > a::after { content: " \2192"; margin-left: .3em; }
+	.sd-nav__cta { margin-top: 20px; }
+}
+
+/* Footer on phones: centred, two menu columns side by side. */
+@media (max-width: 760px) {
+	.site-footer { text-align: center; }
+	.sd-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 18px; }
+	.sd-footer__grid > .sd-footer__brand { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; padding-bottom: 26px; border-bottom: 1px solid #3a2e22; }
+	.sd-footer__grid > .sd-footer__col:last-child { grid-column: 1 / -1; padding-top: 22px; border-top: 1px solid #3a2e22; }
+	.sd-footer__brand p { margin-inline: auto; max-width: 32ch; }
+	.sd-social { justify-content: center; }
+	.sd-footer__newsletter { display: flex; flex-direction: column; align-items: center; }
+	.sd-footer__heading { margin-bottom: 8px; }
+	.site-footer .menu a { justify-content: center; min-height: 40px; font-size: .97rem; }
+	.sd-footer__location { margin-inline: auto; }
+	.sd-footer__bottom { flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+	.sd-paybadges { justify-content: center; }
+}

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.6.0, core plugin 0.1.2
+
+- Theme 1.6.0: header menu button back on phones; drawer submenus redesigned (white panel, icon tiles with title and description, Books groups as two-column chips with an "All books" button); footer centred on phones with Books and Ministry side by side.
+- Core 0.1.2: version constant matches the plugin header (was 0.1.0 vs 0.1.1); published books with a price carry an Offer (price, currency, availability), plus `inLanguage` and a stable `@id` in the Book structured data.
+- Docs: Kenya manual stays published (DECISIONS); host cPanel licence guide (`docs/HOST-CPANEL-LICENCE.md`).
+
 ## 2026-10-26 - Child theme 1.5.6-1.5.7 and repository standards
 
 - 1.5.6: responsive fixes from the cross-check (Books CTA strip readable, Podcasts odd video centred with equal 16:9 frames, Author Support artwork not cropped, odd last card spans the row at tablet), phone polish (bottom bar More replaces the header menu button, compact utility bar).

@@ -1,12 +1,12 @@
 # Sylvia's Dream - sylviasdream.com
 
 ![Parent theme](https://img.shields.io/badge/Parent%20theme-v1.0.0-8A6216)
-![Child theme](https://img.shields.io/badge/Child%20theme-v1.5.7-B8862B)
-![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.1.1-2B2620)
+![Child theme](https://img.shields.io/badge/Child%20theme-v1.6.0-B8862B)
+![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.1.2-2B2620)
 
 Website for **Sylvia Suhr**, Christian author, speaker and missionary (Australia), and her Kenya ministry **Heaven on Earth**. Built and maintained by **Pimofy Digital** (quotation PMF-QT-2026-0106).
 
-> Status: **dev build, pre-launch.** Child theme 1.5.7 runs on the private dev copy (topnotchmall.co.ke/sylviasdream). Nothing is live yet; the live site still runs Twenty Twenty. Launch waits on Sylvia's book prices and files, Stripe set-up and approvals ([docs/KNOWN-LIMITATIONS.md](docs/KNOWN-LIMITATIONS.md)).
+> Status: **dev build, pre-launch.** Child theme 1.6.0 runs on the private dev copy (topnotchmall.co.ke/sylviasdream). Nothing is live yet; the live site still runs Twenty Twenty. Launch waits on Sylvia's book prices and files, Stripe set-up and approvals ([docs/KNOWN-LIMITATIONS.md](docs/KNOWN-LIMITATIONS.md)).
 
 ## Taking over this project?
 
@@ -17,8 +17,8 @@ Start with [`HANDOFF.md`](HANDOFF.md): current status, next steps in order, and 
 | Package | Folder | Version | Role |
 |---|---|---|---|
 | Sylvia's Dream Base (parent theme) | [`sylviasdream/`](sylviasdream) | 1.0.0 | Minimal shell. Never activated on its own. |
-| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 1.5.7 | **Activate this one.** Prototype v4 design: Books mega menu, phone bottom bar, page header band, Home sections, Ministry/About/Contact layouts, WooCommerce styling. |
-| Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.1.1 | Download-page protection, redirects, structured data, Dream Partner progress. |
+| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 1.6.0 | **Activate this one.** Prototype v4 design: Books mega menu, phone bottom bar, page header band, Home sections, Ministry/About/Contact layouts, WooCommerce styling. |
+| Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.1.2 | Download-page protection, redirects, structured data, Dream Partner progress. |
 
 ## Quality gate
 
