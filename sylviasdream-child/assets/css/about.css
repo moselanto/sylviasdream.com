@@ -103,7 +103,7 @@
 
 /* ---------- 1.9.1: fixes from the page printouts ---------- */
 /* Card headings: one alignment (left) whether they fit on one line or wrap. */
-.sd-about .entry-content .sd-band .sd-card :is(h2, h3, h4) { text-align: left !important; margin-left: 0 !important; margin-right: 0 !important; max-width: none !important; width: auto !important; }
+.sd-about .entry-content .sd-band .sd-cards:not(.sd-cards--4) > .sd-card :is(h2, h3, h4) { text-align: left !important; margin-left: 0 !important; margin-right: 0 !important; max-width: none !important; width: auto !important; }
 /* Card paragraphs: clear space between paragraphs inside a card. */
 .sd-about .entry-content .sd-band .sd-card p + p { margin-top: .8rem !important; }
 .sd-about .entry-content .sd-band .sd-card p { margin-bottom: 0; }
@@ -127,4 +127,56 @@
 	.sd-about .entry-content .sd-video-more > .sd-video-grid > * { grid-column: span 2 !important; }
 	.sd-about .entry-content .sd-video-more > .sd-video-grid > :nth-child(3n+1):nth-last-child(2) { grid-column: 2 / span 2 !important; }
 	.sd-about .entry-content .sd-video-more > .sd-video-grid > :nth-child(3n+1):last-child { grid-column: 3 / span 2 !important; }
+}
+
+/* ==========================================================================
+   1.10.0: the same polish on Give, Heaven on Earth, Kenya Ministry Training
+   Manual, Contact and Grace for the Journey, plus page fixes from the
+   printouts. Page classes: .sd-p-<slug>. Styling only, no wording.
+   ========================================================================== */
+
+/* ---------- Give ---------- */
+.sd-about .entry-content .sd-givebox { border-radius: 22px !important; box-shadow: var(--shadow-l) !important; border-color: var(--gold-l) !important; }
+.sd-about .entry-content .sd-amounts { gap: 12px; }
+.sd-about .entry-content .sd-amount { border-radius: 16px !important; border: 1px solid var(--line) !important; background: var(--cream) !important; transition: border-color .2s, box-shadow .2s, transform .2s var(--ease); }
+.sd-about .entry-content .sd-amount:hover, .sd-about .entry-content .sd-amount:focus-within { border-color: var(--gold) !important; box-shadow: 0 8px 22px rgba(60, 40, 10, .10); transform: translateY(-2px); }
+.sd-about .entry-content .sd-goal { border-radius: 18px; border-top: 3px solid var(--gold) !important; }
+.sd-about .entry-content .sd-impact > * { border-radius: 14px !important; border: 1px solid var(--gold-l); }
+.sd-p-give .entry-content .sd-split--give { align-items: flex-start !important; gap: clamp(2rem, 5vw, 4rem); }
+
+/* ---------- FAQ accordions (Give, Heaven on Earth, Contact) ---------- */
+.sd-about .entry-content .sd-faqs { max-width: 820px; margin-inline: auto; }
+.sd-about .entry-content details.sd-faq, .sd-about .entry-content .sd-faq { margin: 0 0 10px !important; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: 0 4px 14px rgba(60, 40, 10, .04); transition: border-color .2s, box-shadow .2s; }
+.sd-about .entry-content details.sd-faq[open] { border-color: var(--gold-l); box-shadow: 0 10px 26px rgba(60, 40, 10, .08); }
+.sd-about .entry-content details.sd-faq > summary { min-height: 56px; display: flex; align-items: center; padding: 14px 20px; font-weight: 700; cursor: pointer; }
+.sd-about .entry-content details.sd-faq > :not(summary) { padding: 0 20px 16px; margin: 0; color: var(--ink-2); }
+
+/* ---------- Kenya Ministry Training Manual ---------- */
+.sd-p-kenya-ministry-training-manual-free-download .entry-content .sd-split .wp-block-image img { max-width: 400px; margin-inline: auto; border-radius: 10px; box-shadow: 0 24px 50px rgba(40, 28, 12, .28); }
+.sd-p-kenya-ministry-training-manual-free-download .entry-content .sd-split .wp-block-image { text-align: center; }
+.sd-about .entry-content .sd-download { max-width: 760px; margin-inline: auto; padding: clamp(1.75rem, 4vw, 2.75rem) !important; border-radius: 22px; border-top: 3px solid var(--gold) !important; text-align: center; box-shadow: var(--shadow-l); }
+.sd-about .entry-content .sd-download .wp-block-buttons { justify-content: center; }
+
+/* ---------- Heaven on Earth ---------- */
+.sd-about .entry-content .sd-callout { padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 3vw, 2rem) !important; border: 1px solid var(--line); border-left: 4px solid var(--gold) !important; border-radius: 0 16px 16px 0 !important; background: #fff; box-shadow: 0 10px 26px rgba(60, 40, 10, .06); }
+.sd-about .entry-content .sd-cards--4 > .sd-card { align-items: center; text-align: center; border-top: 3px solid var(--gold); }
+.sd-about .entry-content .gfm-embed { max-width: 460px; margin-inline: auto; }
+.sd-about .entry-content .wp-block-jetpack-slideshow { border-radius: 18px; overflow: hidden; }
+
+/* ---------- Grace for the Journey ---------- */
+.sd-p-grace-for-the-journey .sd-post { border-radius: 18px; }
+.sd-p-grace-for-the-journey .sd-post__media img { aspect-ratio: 16 / 10; width: 100%; object-fit: cover; }
+.sd-p-grace-for-the-journey .sd-post__body { padding: 1.25rem 1.4rem 1.5rem; }
+.sd-p-grace-for-the-journey .sd-post__title { font-size: clamp(1.25rem, 2vw, 1.45rem); line-height: 1.25; text-wrap: balance; }
+.sd-p-grace-for-the-journey .sd-post__excerpt { color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.sd-p-grace-for-the-journey .entry-content > :is(p, h2, h3, figure):not(.alignfull):not(.alignwide) { max-width: 720px; margin-inline: auto; }
+.sd-p-grace-for-the-journey .entry-content figure.wp-block-image img { border-radius: 18px; box-shadow: var(--shadow-l); }
+
+/* ---------- Contact ---------- */
+.sd-p-contact .entry-content .wp-block-columns:has(.wp-block-jetpack-contact-form) > .wp-block-column:has(.wp-block-jetpack-contact-form) > * { border-radius: 22px; box-shadow: var(--shadow-l); }
+.sd-p-contact .entry-content .sd-card { border-radius: 18px; }
+
+@media (max-width: 781px) {
+	.sd-about .entry-content .sd-amount:hover { transform: none; }
+	.sd-p-kenya-ministry-training-manual-free-download .entry-content .sd-split .wp-block-image img { max-width: 280px; }
 }

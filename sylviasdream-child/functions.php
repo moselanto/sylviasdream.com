@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '1.9.2' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '1.10.0' );
 define( 'SYLVIASDREAM_CHILD_DIR', get_stylesheet_directory() );
 define( 'SYLVIASDREAM_CHILD_URI', get_stylesheet_directory_uri() );
 
@@ -148,7 +148,7 @@ add_filter( 'body_class', 'sdc_body_classes' );
  * @return bool
  */
 function sdc_is_about_page() {
-	$slugs = (array) apply_filters( 'sdc_about_page_slugs', array( 'my-story', 'invite-sylvia-to-speak', 'podcasts-and-videos', 'author-support-publishing-services' ) );
+	$slugs = (array) apply_filters( 'sdc_about_page_slugs', array( 'my-story', 'invite-sylvia-to-speak', 'podcasts-and-videos', 'author-support-publishing-services', 'give', 'heaven-on-earth', 'kenya-ministry-training-manual-free-download', 'contact', 'grace-for-the-journey' ) );
 	return is_page( $slugs );
 }
 
@@ -161,6 +161,10 @@ function sdc_is_about_page() {
 function sdc_about_body_class( $classes ) {
 	if ( sdc_is_about_page() ) {
 		$classes[] = 'sd-about';
+		$slug = get_post_field( 'post_name', get_queried_object_id() );
+		if ( $slug ) {
+			$classes[] = 'sd-p-' . sanitize_html_class( $slug );
+		}
 	}
 	return $classes;
 }

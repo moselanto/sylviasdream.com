@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.10.0: Give, Heaven on Earth, Kenya manual, Contact, Grace for the Journey
+- The About-pages stylesheet (`assets/css/about.css`) now also loads on Give, Heaven on Earth, Kenya Ministry Training Manual, Contact and Grace for the Journey, so they share the same banner, section rhythm, cards and forms. Each of these pages also gets a `sd-p-<slug>` body class for page-level styling. Styling only; no wording changed.
+- Give: raised giving box, amount tiles with hover state, goal card with gold top edge, rounded impact tiles. FAQ accordions on Give, Heaven on Earth and Contact as clean white rows, highlighted when open.
+- Kenya manual: book cover kept to a sensible size with a soft shadow; download card centred with a gold top edge.
+- Heaven on Earth: callout with a gold left edge; monthly amount cards centred; GoFundMe widget no longer sits in a full-width white slab; rounded slideshow.
+- Grace for the Journey: devotional cards with even image crops, tidier titles and excerpts trimmed to four lines; the sign-up text and image below keep a readable width.
+- Contact: rounded form card. Card headings stay left-aligned except the four monthly amount cards, which stay centred.
+
 ## 2026-10-26 - Child theme 1.9.2: More videos layout
 - The 1.9.1 "three, then a centred two" layout did not apply on dev, where the five players sit inside a nested `.sd-video-grid` (display: contents) and kept the older `grid-column: auto` rule, so all five fell into one row. The layout now targets those players too.
 
