@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '1.8.6' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '1.9.0' );
 define( 'SYLVIASDREAM_CHILD_DIR', get_stylesheet_directory() );
 define( 'SYLVIASDREAM_CHILD_URI', get_stylesheet_directory_uri() );
 
@@ -88,6 +88,11 @@ function sdc_assets() {
 
 	wp_enqueue_style( 'sylviasdream-child-blocks', SYLVIASDREAM_CHILD_URI . '/assets/css/blocks.css', array( 'sylviasdream-child' ), sdc_asset_version( 'assets/css/blocks.css' ) );
 
+	// 1.9.0: About pages polish (My Story, Speaking, Podcasts, Author Support).
+	if ( sdc_is_about_page() ) {
+		wp_enqueue_style( 'sylviasdream-child-about', SYLVIASDREAM_CHILD_URI . '/assets/css/about.css', array( 'sylviasdream-child-blocks' ), sdc_asset_version( 'assets/css/about.css' ) );
+	}
+
 	wp_enqueue_script(
 		'sylviasdream-child-nav',
 		SYLVIASDREAM_CHILD_URI . '/assets/js/nav.js',
@@ -136,6 +141,30 @@ function sdc_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'sdc_body_classes' );
+
+/**
+ * 1.9.0: the About pages that get the extra polish stylesheet.
+ *
+ * @return bool
+ */
+function sdc_is_about_page() {
+	$slugs = (array) apply_filters( 'sdc_about_page_slugs', array( 'my-story', 'invite-sylvia-to-speak', 'podcasts-and-videos', 'author-support-publishing-services' ) );
+	return is_page( $slugs );
+}
+
+/**
+ * Body class for the About pages.
+ *
+ * @param string[] $classes Classes.
+ * @return string[]
+ */
+function sdc_about_body_class( $classes ) {
+	if ( sdc_is_about_page() ) {
+		$classes[] = 'sd-about';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'sdc_about_body_class' );
 
 /**
  * Shorter, cleaner excerpts for devotional cards.

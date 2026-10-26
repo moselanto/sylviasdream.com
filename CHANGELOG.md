@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.9.0: About pages polish
+- New `assets/css/about.css`, loaded only on My Story, Invite Sylvia to speak, Podcasts & Videos and Author Support (body class `sd-about`, slugs filterable with `sdc_about_page_slugs`). Layout and styling only; no wording added or changed.
+- Banner: deeper shade, gold rule before the eyebrow, balanced title, larger intro. Sections: steadier spacing, alternating cream / white / warm bands, larger balanced headings with a short gold rule under centred titles, 66-character reading width in split sections, 52px buttons (full width on phones).
+- Cards: rounded, softer shadow, gold top accent and lift on hover (off on phones and with reduced motion); numbered story cards get ink circle badges; "Ideal for" lines become a gold-edged callout.
+- My Story: framed monogram card, milestone timeline as connected cards, stats centred with a gold top border, large decorative quote marks on quote bands. `my-story.html`: monogram line "Sylvia's portrait here" (placeholder) now shows "Sylvia Suhr".
+- Podcasts: video cards framed in white with rounded players; More videos grid as framed tiles; YouTube note as a quiet info line. Speaking: formats checklist as a card. Forms: larger fields, clear focus ring, pill send button; Author Support enquiry sits in a raised card.
+
 ## 2026-10-26 - Child theme 1.8.6: phone QA fix
 - PHONE-QA-v4-NAV run on dev (Customizer Mobile preview, theme 1.8.5): 12 pass, 1 fail, 6 need a real phone. Fail #9: Books drawer links sat two per row. Phones (760px and below) now stack them in one full-width column with 48px tap height; tablets keep two columns.
 
