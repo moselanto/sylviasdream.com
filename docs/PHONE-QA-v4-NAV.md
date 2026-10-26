@@ -10,14 +10,14 @@ Tester: ________  Date: ________  iPhone model / iOS: ________  Android model / 
 | # | Check | iPhone | Android |
 |---|---|---|---|
 | **Bottom bar** | | | |
-| 1 | Bar shows Home, Books, Ministry, Give, More on every test page | [ ] | [ ] |
+| 1 | Bar shows Home, Books, Ministry, Give (no More, theme 1.8.5) on every test page, icons and labels centred, bar floating with even side gaps | [ ] | [ ] |
 | 2 | The current page's button is highlighted (Home, Books, Give); Contact and My Story highlight nothing wrongly | [ ] | [ ] |
 | 3 | Each bar button is easy to tap with a thumb and opens the right page | [ ] | [ ] |
 | 4 | Bar does not cover the last footer line (scroll to the very bottom on each page) | [ ] | [ ] |
 | 5 | Bar sits above the iPhone home indicator / Android gesture bar, not under it | [ ] | [ ] |
 | 6 | Bar stays put while scrolling; no jumping when the browser address bar hides or shows | [ ] | [ ] |
 | **Drawer and accordions** | | | |
-| 7 | More opens the drawer (the header menu button is hidden on phones from theme 1.5.6); it closes with the close button and by tapping More again | [ ] | [ ] |
+| 7 | The header menu button opens the drawer; it closes with the close button | [ ] | [ ] |
 | 8 | Page behind the drawer does not scroll while the drawer is open | [ ] | [ ] |
 | 9 | Books opens: Browse by topic, Readers and Other languages headings with all their links readable, stacked in one column | [ ] | [ ] |
 | 10 | About opens with its links and short descriptions; Ministry opens with its links | [ ] | [ ] |

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.8.5: phone bottom bar
+- Bottom bar on phones is now Home, Books, Ministry, Give. "More" removed (the header menu button already opens the menu); its script removed from `nav.js` and its button from `inc/navigation.php`.
+- New look (Moses's request, reference: cisternofhopefoundation.org): floating rounded bar with even side gaps and a soft shadow, four equal columns, icon and label centred on one axis, uppercase labels, active page tinted, Give as a filled gold-dark pill. Very small phones (360px and below) get tighter spacing. Customizer label and docs updated.
+
 ## 2026-10-26 - Block validation fixes (content files only, theme stays 1.8.4)
 - `content/blocks/author-support.html` and `content/blocks/heaven-on-earth.html`: the `<!-- KEEP: paste the existing Jetpack ... block here -->` placeholders sat loose inside a group or column, so the editor flagged those blocks as invalid. Each placeholder is now wrapped in its own Custom HTML block; the wording of the pages is unchanged. `docs/hoe-segments/README.md` updated to match.
 - Gutenberg validator (@wordpress/blocks + block-library under jsdom): all 16 files in `content/blocks/` pass.

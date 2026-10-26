@@ -3,7 +3,7 @@
  * Navigation extras (1.2.0, updated prototype):
  * - submenu item descriptions (menu item "Description" field),
  * - "Start here" featured books in the Books mega menu,
- * - persistent mobile dock (Home, Books, Ministry, Give, More).
+ * - persistent mobile dock (Home, Books, Ministry, Give; 1.8.5 dropped More).
  *
  * @package SylviasDreamChild
  */
@@ -183,9 +183,6 @@ function sdc_mobile_dock() {
 			esc_html( $item['label'] )
 		);
 	}
-	printf(
-		'<button type="button" class="sd-dock__item sd-dock__more" data-sd-dock-more aria-controls="sd-primary-nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>%s</span></button>',
-		esc_html__( 'More', 'sylviasdream-child' )
-	);
+	// 1.8.5: no "More" here; the menu button in the header opens the menu.
 	echo '</nav>';
 }

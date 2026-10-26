@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.8.4
+Version: 1.8.5
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1198,3 +1198,36 @@ font[style*="vertical-align"] { vertical-align: baseline !important; }
 /* 1.8.3: language links in menus */
 .sd-lang-link.is-current-lang{font-weight:700}
 .sd-lang-link.is-current-lang::after{content:" \2713";}
+
+
+/* ==========================================================================
+   1.8.5: phone bottom bar, four items (Home, Books, Ministry, Give).
+   "More" removed: the header menu button already opens the menu.
+   Floating rounded bar, equal columns, icon and label centred on one axis.
+   ========================================================================== */
+@media (max-width: 760px) {
+	body.sd-has-dock { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
+	.sd-dock {
+		left: 12px; right: 12px; bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+		grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; align-items: stretch;
+		padding: 6px; border: 1px solid var(--line); border-radius: 24px;
+		background: rgba(255, 255, 255, .97);
+		box-shadow: 0 12px 32px rgba(40, 28, 12, .18), 0 2px 6px rgba(40, 28, 12, .08);
+	}
+	.sd-dock__item {
+		min-height: 58px; padding: 8px 4px; gap: 6px; border-radius: 18px;
+		font: 700 .72rem/1 var(--sans); letter-spacing: .03em; text-transform: uppercase; color: var(--ink-2, #5a4a3a);
+	}
+	.sd-dock__item svg { display: block; width: 23px; height: 23px; margin: 0 auto; }
+	.sd-dock__item span { display: block; line-height: 1; text-align: center; }
+	.sd-dock__item[aria-current="page"] { background: #f6e9ca; color: #775014; }
+	.sd-dock__item--give { background: var(--gold-d); color: #fff; box-shadow: 0 6px 14px rgba(138, 90, 20, .3); }
+	.sd-dock__item--give:hover, .sd-dock__item--give[aria-current="page"] { background: var(--ink); color: #fff; }
+	.sd-dock__item:active { transform: scale(.97); }
+}
+@media (max-width: 360px) {
+	.sd-dock { left: 8px; right: 8px; gap: 4px; padding: 5px; }
+	.sd-dock__item { font-size: .66rem; letter-spacing: .01em; }
+	.sd-dock__item svg { width: 21px; height: 21px; }
+}
+@media (prefers-reduced-motion: reduce) { .sd-dock__item:active { transform: none; } }

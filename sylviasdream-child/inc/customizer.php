@@ -48,7 +48,7 @@ function sdc_fields() {
 		'give_label'         => array( 'sdc_header', __( 'Give button label', 'sylviasdream-child' ), 'text', 'Give' ),
 		'give_url'           => array( 'sdc_header', __( 'Give button link (Dream Partner page)', 'sylviasdream-child' ), 'link', '/give/' ),
 		'mobile_cta_label'   => array( 'sdc_header', __( 'Mobile menu: giving button label', 'sylviasdream-child' ), 'text', 'Become a Dream Partner' ),
-		'show_mobile_dock'   => array( 'sdc_header', __( 'Phones: show the bottom navigation bar (Home, Books, Ministry, Give, More)', 'sylviasdream-child' ), 'checkbox', true ),
+		'show_mobile_dock'   => array( 'sdc_header', __( 'Phones: show the bottom navigation bar (Home, Books, Ministry, Give)', 'sylviasdream-child' ), 'checkbox', true ),
 		'dock_ministry_label' => array( 'sdc_header', __( 'Phone bottom bar: ministry label', 'sylviasdream-child' ), 'text', 'Ministry' ),
 		'dock_ministry_url'  => array( 'sdc_header', __( 'Phone bottom bar: ministry link', 'sylviasdream-child' ), 'link', '/heaven-on-earth/' ),
 		'mega_feature_label' => array( 'sdc_header', __( 'Books mega menu: heading above featured books (blank hides them)', 'sylviasdream-child' ), 'text', 'Start here' ),

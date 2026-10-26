@@ -37,7 +37,8 @@ Was: apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 27
 - [ ] Home page gaps against prototype v4: see PROGRESS-LOG 24 Oct (Latest from Sylvia, Have a book on your heart?, newsletter form, featured covers, Meet Sylvia quote card, 4th trust item)
 - [x] cPanel licence error fixed by the host (26 Oct); theme-zip upload (Replace active) still the usual deploy
 - [ ] Start here welcome card wording ("New to Sylvia's books? Begin with her story, or browse every title by topic.") is ours: include in Sylvia's review; it is replaced by 3 featured covers once books are published
-- [ ] Real-phone check of the v4 navigation (iPhone and Android, 320-430px): bottom bar clearance, drawer, no sideways scroll, wordmark
+- [x] Phone bottom bar redesigned (1.8.5): Home, Books, Ministry, Give; More removed; floating rounded bar
+- [ ] Real-phone check of the v4 navigation (now 1.8.5 bar) (iPhone and Android, 320-430px): bottom bar clearance, drawer, no sideways scroll, wordmark
 - [ ] "Invite Sylvia to speak" page (dev ID 6511) **published on dev 24 Oct at Agnes's choice** so the About menu link stops returning 404. Wording still needs Sylvia's approval before launch; change or unpublish it if she asks
 - [x] Other languages: Français, Español, Bahasa Indonesia language links; Kenya Ministry Training Manual under Ministry (26 Oct, theme 1.8.3)
 - [x] Books > Browse by topic "Uncategorized" and "Coming soon": hidden on the front end while empty (theme 1.8.4). Verified on dev 26 Oct: menu shows All books, From Fear to Freedom, SENT
