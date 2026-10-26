@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.16.3
+Version: 1.16.4
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1408,3 +1408,51 @@ font[style*="vertical-align"] { vertical-align: baseline !important; }
 }
 @media (min-width: 1100px) and (max-height: 620px) { .sd-hero-books { height: 80%; width: clamp(320px, 30vw, 440px); } }
 @media (prefers-reduced-motion: reduce) { .sd-hero-book { transition: none; } }
+
+/* 1.16.4: numbered step badges (My Story 1-4) were hard to see.
+   Solid text-safe gold circle with white numerals (about 7:1 contrast). */
+.sd-card .sd-card__icon,
+p.sd-card__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.75rem;
+	height: 2.75rem;
+	margin: 0 0 .75rem;
+	padding: 0;
+	border-radius: 50%;
+	background: var(--gold-d, #775014);
+	color: #fff !important;
+	font-family: var(--wp--preset--font-family--serif, Georgia, serif);
+	font-size: 1.25rem;
+	font-weight: 700;
+	line-height: 1;
+	opacity: 1;
+	-webkit-text-fill-color: #fff;
+	box-shadow: 0 0 0 3px var(--gold-l, #f3e3bf);
+}
+
+/* 1.16.4: phone Books mega menu, tighter and more polished (phone QA 26 Oct).
+   Replaces the 1.8.6 one-column stack: topics as compact two-column chips,
+   "All books" moved to the top of its group, languages on one row of pills,
+   reader links side by side. Tap targets stay at least 44px. */
+@media (max-width: 760px) {
+	.sd-menu > li.sd-mega > .sub-menu { padding: 10px 10px 6px; border-radius: 16px; }
+	.sd-mega__panel > .sd-mega__col { padding: 8px 2px 12px; }
+	.sd-mega__heading { margin: 2px 0 10px; padding: 0 4px; font-size: .7rem; letter-spacing: .18em; }
+	.sd-menu .sd-mega__panel .sub-menu { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+	.sd-menu .sd-mega__panel .sub-menu a {
+		min-height: 44px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px;
+		background: var(--cream); font-size: .9rem; font-weight: 600; line-height: 1.2;
+	}
+	.sd-menu .sd-mega__panel .sub-menu a:active { background: var(--gold-l); }
+	/* "All books" first, full width, as the group's main action. */
+	.sd-mega__panel > li:first-child > .sub-menu > li:last-child { order: -1; grid-column: 1 / -1; }
+	.sd-mega__panel > li:first-child > .sub-menu > li:last-child > a { min-height: 48px; border-color: var(--gold-d); font-size: .98rem; }
+	/* Other languages: three equal pills on one row. */
+	.sd-mega__panel > li:nth-child(2):not(.sd-mega__feature) > .sub-menu { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+	.sd-mega__panel > li:nth-child(2):not(.sd-mega__feature) > .sub-menu a { justify-content: center; padding: 8px 6px; border-radius: 999px; text-align: center; font-size: .84rem; }
+}
+@media (max-width: 360px) {
+	.sd-mega__panel > li:nth-child(2):not(.sd-mega__feature) > .sub-menu { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
