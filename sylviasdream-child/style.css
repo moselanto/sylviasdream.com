@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.12.0
+Version: 1.13.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1272,4 +1272,28 @@ font[style*="vertical-align"] { vertical-align: baseline !important; }
 @media (max-width: 360px) {
 	.sd-dock { left: 0; right: 0; padding-inline: 0; gap: 0; }
 	.sd-dock__item { font-size: .68rem; }
+}
+
+/* ==========================================================================
+   1.13.0: home hero (the "slider"), balanced on desktop; phones kept.
+   Styling only, no wording.
+   ========================================================================== */
+/* Home hero: full bleed, square edges, fits the first screen with the buttons in view. */
+.sd-hero-cover { border-radius: 0 !important; width: 100%; overflow: hidden; }
+@media (min-width: 782px) {
+	.sd-hero-cover { min-height: clamp(560px, calc(100svh - 150px), 760px) !important; padding-top: clamp(3rem, 6vw, 4.5rem) !important; padding-bottom: clamp(3.5rem, 7vw, 5rem) !important; }
+	.sd-hero-cover > .wp-block-cover__background { background: linear-gradient(90deg, rgba(24, 19, 14, .86) 0%, rgba(24, 19, 14, .70) 34%, rgba(24, 19, 14, .30) 64%, rgba(24, 19, 14, .08) 100%) !important; }
+	.sd-hero-cover::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 90px; z-index: 1; background: linear-gradient(180deg, rgba(24, 19, 14, 0), rgba(24, 19, 14, .28)); pointer-events: none; }
+	.sd-hero-cover > .wp-block-cover__inner-container { position: relative; z-index: 2; }
+	.sd-hero-cover > .wp-block-cover__inner-container > * { max-width: 640px; }
+	.sd-hero-cover .sd-eyebrow { display: inline-flex !important; align-items: center; gap: .8rem; margin-bottom: 1.25rem !important; font-size: .8rem !important; letter-spacing: .2em; }
+	.sd-hero-cover .sd-eyebrow::before { content: ""; width: 36px; height: 2px; background: var(--gold); }
+	.sd-hero-cover h1 { max-width: 11.5em !important; margin-bottom: 1.4rem !important; font-size: clamp(2.8rem, 4.9vw, 4.2rem); line-height: 1.06; }
+	.sd-hero-cover p.sd-lead { max-width: 34em !important; margin-bottom: 1.6rem !important; font-size: clamp(1.08rem, 1.3vw, 1.2rem); line-height: 1.65; }
+	.sd-hero-cover p.has-gold-light-color { max-width: 30em !important; margin-bottom: 2.2rem !important; padding-left: 18px; }
+	.sd-hero-cover .wp-block-buttons { gap: 14px; }
+	.sd-hero-cover .wp-block-button__link { min-height: 54px; padding: 0 30px !important; display: inline-flex; align-items: center; border-radius: 999px; font-size: 1rem; }
+	.sd-hero-cover .wp-block-button:not(.is-style-outline) > .wp-block-button__link { box-shadow: 0 10px 24px rgba(0, 0, 0, .22); }
+	.sd-hero-cover .is-style-outline > .wp-block-button__link { border-width: 2px; background: rgba(255, 255, 255, .06); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+	.sd-hero-cover .is-style-outline > .wp-block-button__link:hover { background: rgba(255, 255, 255, .16); }
 }

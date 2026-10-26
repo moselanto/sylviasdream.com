@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.13.0: home hero balanced
+- Home hero (the top "slider"): full bleed with square edges; height fits the first screen so the buttons are in view on laptops (560-760px); stronger left shade fading to the photo on the right; eyebrow with a gold rule; title, intro and quote on balanced line lengths; 54px pill buttons, the outline one on frosted glass; soft fade at the foot. Phones unchanged. No wording changed.
+
 ## 2026-10-26 - Child theme 1.12.0: Browse by topic as the prototype; docked phone bar
 - Books > Browse by topic: product-category topics now show even while they have no published books, as in prototype v4 (Christian Living, Memoir, Healing & Faith, Missions, Fiction, Children, Devotionals, For Writers, Coming Soon, then All books). Only "Uncategorized" stays hidden. This reverses the 1.8.4 "hide empty categories" rule at Moses's request (26 Oct); "Coming soon" is back because the prototype shows it.
 - Dev menu (Appearance > Menus, Primary): Browse by topic reordered to the prototype; From Fear to Freedom and SENT taken out of that group (still under All books and the Books page).
