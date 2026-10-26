@@ -22,3 +22,10 @@ The core plugin's default protected list uses the **live** slug `all-shall-be-we
 - **My Story**: the approved prototype layout replaced Sylvia's sections (From Australia to Africa; A Mission to the Nations; One Life Can Make a Difference; Why I Write; Proverbs 3:5 quote; Let's Walk Together; YouTube Short; Partner with us button; contact form). Restore below Milestones.
 - **Podcasts and Videos**: Sylvia's descriptive paragraphs about the interview and her books. Restore under the featured videos.
 - Author Support, SENT, From Fear to Freedom, Kenya manual, Give: all wording kept. Heaven on Earth: unchanged on dev (new layout not yet applied).
+
+## Done on dev (26 October 2026, main 818921b)
+- My Story: Sylvia's own sections restored after the approved prototype sections (intro, quote, four story cards, Proverbs 3:5, Let's Walk Together with video and Partner with us, contact form).
+- Podcasts and Videos: her Lagos captions and "About the interview" paragraphs restored.
+- The Hidden Key (6171): fuller description from the duplicate page appended.
+- One Life (2766): hardcover text from My Autobiography appended. Its Amazon link (from page 1239) opens the Kindle listing; ask Sylvia for the hardcover link.
+- Grace For the Journey category added to all 15 posts (existing categories kept); the archive lists all 15. Repeat on live at launch with Sylvia's OK.

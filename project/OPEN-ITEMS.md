@@ -1,6 +1,8 @@
 # Open items (23 October 2026)
 
 ## Waiting on Sylvia
+- [ ] One Life hardcover Amazon link (the My Autobiography page links to the Kindle edition)
+- [ ] OK to file the devotional posts under Grace For the Journey on live (done on dev 26 Oct)
 (Kept in full in Moses's Town document "Things needed from Sylvia"; send it to her when the build is done.)
 - [ ] Covers: From Fear to Freedom, When Fear Has the Final Word, Manifesting Miracles Now, Fast Forward to Success
 - [ ] Confirm titles/subtitles (not on Amazon): When Fear Has the Final Word ("A Devotional on Peace"), Manifesting Miracles Now ("Everyday God Encounters of Selected Authors")
