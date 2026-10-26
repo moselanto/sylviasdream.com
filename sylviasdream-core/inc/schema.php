@@ -25,12 +25,16 @@ function sd_core_schema_home() {
 		'url'         => $home,
 		'jobTitle'    => 'Christian author, speaker and missionary',
 		'description' => get_bloginfo( 'description' ),
-		'sameAs'      => array_values( array_filter( array(
-			function_exists( 'sdc_get' ) ? sdc_get( 'social_instagram' ) : '',
-			function_exists( 'sdc_get' ) ? sdc_get( 'social_patreon' ) : '',
-			function_exists( 'sdc_get' ) ? sdc_get( 'social_youtube' ) : '',
-			function_exists( 'sdc_get' ) ? sdc_get( 'social_facebook' ) : '',
-		) ) ),
+		'sameAs'      => array_values(
+			array_filter(
+				array(
+					function_exists( 'sdc_get' ) ? sdc_get( 'social_instagram' ) : '',
+					function_exists( 'sdc_get' ) ? sdc_get( 'social_patreon' ) : '',
+					function_exists( 'sdc_get' ) ? sdc_get( 'social_youtube' ) : '',
+					function_exists( 'sdc_get' ) ? sdc_get( 'social_facebook' ) : '',
+				)
+			)
+		),
 	);
 	$site = array(
 		'@type'     => 'WebSite',
@@ -40,10 +44,10 @@ function sd_core_schema_home() {
 		'publisher' => array( '@id' => $home . '#sylvia' ),
 	);
 	$org = array(
-		'@type'   => 'Organization',
-		'@id'     => $home . '#heaven-on-earth',
-		'name'    => (string) sd_core_opt( 'charity_name' ),
-		'founder' => array( '@id' => $home . '#sylvia' ),
+		'@type'      => 'Organization',
+		'@id'        => $home . '#heaven-on-earth',
+		'name'       => (string) sd_core_opt( 'charity_name' ),
+		'founder'    => array( '@id' => $home . '#sylvia' ),
 		'areaServed' => 'Kenya',
 	);
 	return array( $person, $site, $org );
@@ -108,6 +112,11 @@ function sd_core_print_schema() {
 	if ( ! $graph ) {
 		return;
 	}
-	echo "\n" . '<script type="application/ld+json">' . wp_json_encode( array( '@context' => 'https://schema.org', '@graph' => $graph ), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>' . "\n";
+	// 0.3.0: JSON_HEX_TAG so text such as "</script>" in a title or description
+	// can never close the script element (was an editor-to-visitor XSS path).
+	$json = wp_json_encode( array( '@context' => 'https://schema.org', '@graph' => $graph ), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP );
+	if ( $json ) {
+		echo "\n" . '<script type="application/ld+json">' . $json . '</script>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- JSON with < > & hex-escaped.
+	}
 }
 add_action( 'wp_head', 'sd_core_print_schema', 20 );

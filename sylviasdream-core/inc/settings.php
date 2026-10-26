@@ -1,6 +1,7 @@
 <?php
 /**
- * Settings > Sylvia's Dream.
+ * Settings > Sylvia's Dream (administrators only; saved through the Settings
+ * API, so WordPress checks the nonce and the manage_options capability).
  *
  * @package SylviasDreamCore
  */
@@ -14,12 +15,13 @@ defined( 'ABSPATH' ) || exit;
  */
 function sd_core_defaults() {
 	return array(
-		'partners_current'   => 0,
-		'partners_goal'      => 100,
-		'charity_name'       => 'Heaven on Earth Ministries',
-		'charity_reg'        => '',
-		'redirects_enabled'  => 0,
-		'protected_slugs'    => implode( "\n", sd_core_default_protected_slugs() ),
+		'partners_current'  => 0,
+		'partners_goal'     => 100,
+		'charity_name'      => 'Heaven on Earth Ministries',
+		'charity_reg'       => '',
+		'redirects_enabled' => 0,
+		'protected_slugs'   => implode( "\n", sd_core_default_protected_slugs() ),
+		'og_default_image'  => '',
 	);
 }
 
@@ -46,11 +48,15 @@ add_action( 'admin_menu', 'sd_core_admin_menu' );
  * Register setting with sanitisation.
  */
 function sd_core_register_setting() {
-	register_setting( 'sd_core', 'sd_core', array(
-		'type'              => 'array',
-		'sanitize_callback' => 'sd_core_sanitize',
-		'default'           => sd_core_defaults(),
-	) );
+	register_setting(
+		'sd_core',
+		'sd_core',
+		array(
+			'type'              => 'array',
+			'sanitize_callback' => 'sd_core_sanitize',
+			'default'           => sd_core_defaults(),
+		)
+	);
 }
 add_action( 'admin_init', 'sd_core_register_setting' );
 
@@ -70,6 +76,7 @@ function sd_core_sanitize( $in ) {
 		'charity_reg'       => sanitize_text_field( $in['charity_reg'] ?? '' ),
 		'redirects_enabled' => empty( $in['redirects_enabled'] ) ? 0 : 1,
 		'protected_slugs'   => implode( "\n", $slugs ),
+		'og_default_image'  => esc_url_raw( trim( (string) ( $in['og_default_image'] ?? '' ) ), array( 'http', 'https' ) ),
 	);
 }
 
@@ -100,6 +107,9 @@ function sd_core_render_settings() {
 				<tr><th scope="row"><label for="sd-ps"><?php esc_html_e( 'Download / thank-you page slugs', 'sylviasdream-core' ); ?></label></th>
 					<td><textarea id="sd-ps" class="large-text code" rows="10" name="sd_core[protected_slugs]"><?php echo esc_textarea( sd_core_opt( 'protected_slugs' ) ); ?></textarea>
 					<p class="description"><?php esc_html_e( 'One per line. These pages stay working for past buyers but are hidden from search engines and the sitemap.', 'sylviasdream-core' ); ?></p></td></tr>
+				<tr><th scope="row"><label for="sd-og"><?php esc_html_e( 'Default sharing image', 'sylviasdream-core' ); ?></label></th>
+					<td><input id="sd-og" class="large-text code" type="url" name="sd_core[og_default_image]" value="<?php echo esc_attr( sd_core_opt( 'og_default_image' ) ); ?>" placeholder="<?php echo esc_attr( SD_CORE_URL . 'assets/og-default.jpg' ); ?>">
+					<p class="description"><?php esc_html_e( 'Shown when a page without a featured image is shared (Facebook, WhatsApp, X). Best size 1200 x 630 pixels. Paste an image address from the Media Library, or leave blank for the built-in image.', 'sylviasdream-core' ); ?></p></td></tr>
 			</table>
 			<?php submit_button(); ?>
 		</form>

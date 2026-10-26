@@ -44,7 +44,8 @@ function sd_core_redirect_map() {
  * @return string
  */
 function sd_core_request_path() {
-	$path      = (string) wp_parse_url( isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '', PHP_URL_PATH ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+	$uri       = isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitised with esc_url_raw.
+	$path      = (string) wp_parse_url( $uri, PHP_URL_PATH );
 	$path      = trailingslashit( strtolower( $path ) );
 	$home_path = trailingslashit( strtolower( (string) wp_parse_url( home_url( '/' ), PHP_URL_PATH ) ) );
 	if ( '/' !== $home_path && 0 === strpos( $path, $home_path ) ) {
@@ -62,7 +63,9 @@ function sd_core_do_redirects() {
 	}
 	$path = sd_core_request_path();
 	$map  = sd_core_redirect_map();
-	if ( isset( $map[ $path ] ) && $map[ $path ] !== $path ) {
+	// Targets must be site-relative paths ("/x/"), so a filtered map cannot send
+	// visitors off-site; wp_safe_redirect() is the second guard.
+	if ( isset( $map[ $path ] ) && $map[ $path ] !== $path && str_starts_with( (string) $map[ $path ], '/' ) && ! str_starts_with( (string) $map[ $path ], '//' ) ) {
 		wp_safe_redirect( home_url( $map[ $path ] ), 301, 'Sylvias Dream Core' );
 		exit;
 	}
