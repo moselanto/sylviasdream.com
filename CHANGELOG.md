@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.13.1: hero corner
+- Home hero: a rounded corner still showed at the top right. The hero photo and shade layers (and the containers around the hero on Home) now have square corners and fill the hero edge to edge.
+
 ## 2026-10-26 - Child theme 1.13.0: home hero balanced
 - Home hero (the top "slider"): full bleed with square edges; height fits the first screen so the buttons are in view on laptops (560-760px); stronger left shade fading to the photo on the right; eyebrow with a gold rule; title, intro and quote on balanced line lengths; 54px pill buttons, the outline one on frosted glass; soft fade at the foot. Phones unchanged. No wording changed.
 

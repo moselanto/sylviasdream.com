@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.13.0
+Version: 1.13.1
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1297,3 +1297,8 @@ font[style*="vertical-align"] { vertical-align: baseline !important; }
 	.sd-hero-cover .is-style-outline > .wp-block-button__link { border-width: 2px; background: rgba(255, 255, 255, .06); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
 	.sd-hero-cover .is-style-outline > .wp-block-button__link:hover { background: rgba(255, 255, 255, .16); }
 }
+/* 1.13.1: the hero photo and shade layers were still picking up a rounded image corner (seen top right).
+   Every layer of the hero, and the containers around it on Home, now has square corners and fills the hero. */
+.sd-hero-cover, .sd-hero-cover > .wp-block-cover__image-background, .sd-hero-cover > .wp-block-cover__background, .sd-hero-cover > video { border-radius: 0 !important; }
+.sd-hero-cover > .wp-block-cover__image-background, .sd-hero-cover > .wp-block-cover__background { position: absolute; inset: 0; width: 100% !important; height: 100% !important; max-width: none !important; margin: 0 !important; box-shadow: none !important; }
+.home :is(.site-main, .sd-builder, .sd-builder__body, .sd-page-body, .entry-content):has(> .sd-hero-cover) { border-radius: 0 !important; overflow: visible; }
