@@ -29,7 +29,7 @@ function sdc_customizer_sections() {
 		'sdc_posts'        => __( 'Home and blog: devotionals', 'sylviasdream-child' ),
 		'sdc_testimonials' => __( 'Home: reader reviews', 'sylviasdream-child' ),
 		'sdc_newsletter'   => __( 'Home: newsletter and contact', 'sylviasdream-child' ),
-		'sdc_shop'         => __( 'Shop page header', 'sylviasdream-child' ),
+		'sdc_shop'         => __( 'Shop and book pages', 'sylviasdream-child' ),
 		'sdc_footer'       => __( 'Footer, contact and social', 'sylviasdream-child' ),
 	);
 }
@@ -138,6 +138,11 @@ function sdc_fields() {
 		'shop_eyebrow'       => array( 'sdc_shop', __( 'Small heading', 'sylviasdream-child' ), 'text', 'The bookshop' ),
 		'books_page_url'     => array( 'sdc_shop', __( 'Books page link used by every "Explore the Books" / "See all books" button (blank = WooCommerce shop page)', 'sylviasdream-child' ), 'link', '/shop-for-books/' ),
 		'shop_intro'         => array( 'sdc_shop', __( 'Intro text', 'sylviasdream-child' ), 'textarea', 'eBooks delivered instantly by secure download. Paperbacks and Kindle editions through Amazon.' ),
+		// 1.18.0: book pages.
+		'shop_search_placeholder' => array( 'sdc_shop', __( 'Book search: placeholder text', 'sylviasdream-child' ), 'text', 'Search by title or topic, e.g. fear, missions, healing' ),
+		'shop_note'          => array( 'sdc_shop', __( 'Note under the book grid (blank hides it)', 'sylviasdream-child' ), 'textarea', '' ),
+		'shop_price_note'    => array( 'sdc_shop', __( 'Book page: note beside the price, %s = currency code (blank hides it)', 'sylviasdream-child' ), 'text', 'Charged in %s. Your card converts automatically to your currency.' ),
+		'shop_secure_note'   => array( 'sdc_shop', __( 'Book page: note under the buy buttons for eBooks (blank hides it)', 'sylviasdream-child' ), 'text', 'Secure checkout. Your download link is sent by email after payment.' ),
 
 		// Footer.
 		'footer_about'       => array( 'sdc_footer', __( 'Footer: about text', 'sylviasdream-child' ), 'textarea', 'Faith-based books and devotionals by Sylvia Suhr, helping readers move from fear to lasting peace in Christ.' ),

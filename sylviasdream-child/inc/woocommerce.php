@@ -143,17 +143,37 @@ function sdc_loop_format_badges() {
 }
 
 /**
- * Re-order the single product summary: title, subtitle (short
- * description), price, formats, add to cart, meta. Description moves
- * out of tabs into a readable column below.
+ * Re-order the single product summary to match the prototype (1.18.0):
+ * topic pill, title, subtitle, short description, then a buy box holding
+ * the price, formats, add to cart, Amazon buttons and the download note;
+ * editions and meta below. Description, book details and related books
+ * follow in full-width sections. Loop cards get subtitle, formats and a
+ * topic / price row.
  */
 function sdc_wc_single_layout() {
+	// Single book.
 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+	add_action( 'woocommerce_single_product_summary', 'sdc_single_topic_pill', 4 );
+	add_action( 'woocommerce_single_product_summary', 'sdc_single_subtitle', 5 );
 	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 6 );
+	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 7 );
+	add_action( 'woocommerce_single_product_summary', 'sdc_buybox_open', 9 );
+	add_action( 'woocommerce_single_product_summary', 'sdc_buybox_price_note', 11 );
 	add_action( 'woocommerce_single_product_summary', 'sdc_single_format_badges', 15 );
+	add_action( 'woocommerce_single_product_summary', 'sdc_amazon_buttons', 31 );
+	add_action( 'woocommerce_single_product_summary', 'sdc_buybox_secure_note', 32 );
+	add_action( 'woocommerce_single_product_summary', 'sdc_buybox_close', 35 );
+	add_action( 'woocommerce_single_product_summary', 'sdc_single_editions', 36 );
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 	add_action( 'woocommerce_after_single_product_summary', 'sdc_wc_product_description', 10 );
+	add_action( 'woocommerce_after_single_product_summary', 'sdc_wc_product_details', 12 );
+
+	// Book cards (shop, topics, search, [products] shortcode, related books).
+	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+	add_action( 'woocommerce_after_shop_loop_item_title', 'sdc_loop_subtitle', 3 );
 	add_action( 'woocommerce_after_shop_loop_item_title', 'sdc_loop_format_badges', 6 );
+	add_action( 'woocommerce_after_shop_loop_item_title', 'sdc_loop_meta', 10 );
 }
 add_action( 'wp', 'sdc_wc_single_layout' );
 
@@ -309,3 +329,446 @@ function sdc_hide_empty_product_cat_items( $items ) {
 	);
 }
 add_filter( 'wp_nav_menu_objects', 'sdc_hide_empty_product_cat_items', 20 );
+
+/* ==========================================================================
+   1.18.0: book pages matched to the approved prototype.
+   Every word and number below comes from the product in WooCommerce (or a
+   Customizer field); nothing about a book is written into the theme.
+   ========================================================================== */
+
+/**
+ * First non-empty value of a product attribute (global pa_ or custom).
+ *
+ * @param WC_Product $product Product.
+ * @param string[]   $names   Attribute names without the pa_ prefix.
+ * @return string
+ */
+function sdc_product_attr_value( $product, $names ) {
+	if ( ! $product instanceof WC_Product ) {
+		return '';
+	}
+	foreach ( (array) $names as $name ) {
+		foreach ( array( 'pa_' . $name, $name ) as $key ) {
+			$value = trim( (string) $product->get_attribute( $key ) );
+			if ( '' !== $value ) {
+				return $value;
+			}
+		}
+	}
+	return '';
+}
+
+/**
+ * Book subtitle: the "Subtitle" field on the product's General tab, else a
+ * product attribute named Subtitle. Empty when neither is set.
+ *
+ * @param WC_Product $product Product.
+ * @return string
+ */
+function sdc_product_subtitle( $product ) {
+	if ( ! $product instanceof WC_Product ) {
+		return '';
+	}
+	$subtitle = trim( (string) $product->get_meta( '_sdc_subtitle' ) );
+	if ( '' === $subtitle ) {
+		$subtitle = sdc_product_attr_value( $product, array( 'subtitle' ) );
+	}
+	return (string) apply_filters( 'sdc_product_subtitle', $subtitle, $product );
+}
+
+/**
+ * Editions (languages, large print...) from an attribute named Edition,
+ * Editions or Language.
+ *
+ * @param WC_Product $product Product.
+ * @return string[]
+ */
+function sdc_product_editions( $product ) {
+	$raw = sdc_product_attr_value( $product, array( 'edition', 'editions', 'language', 'languages' ) );
+	$out = array_values( array_unique( array_filter( array_map( 'trim', preg_split( '/[,|]/', $raw ) ) ) ) );
+	return (array) apply_filters( 'sdc_product_editions', $out, $product );
+}
+
+/**
+ * The book's topic: its first product category other than Uncategorized.
+ *
+ * @param WC_Product $product Product.
+ * @return WP_Term|null
+ */
+function sdc_product_topic( $product ) {
+	if ( ! $product instanceof WC_Product ) {
+		return null;
+	}
+	$terms = get_the_terms( $product->get_id(), 'product_cat' );
+	if ( ! $terms || is_wp_error( $terms ) ) {
+		return null;
+	}
+	foreach ( $terms as $term ) {
+		if ( 'uncategorized' !== $term->slug ) {
+			return $term;
+		}
+	}
+	return null;
+}
+
+/**
+ * Amazon fields on the product General tab: meta key => button label.
+ *
+ * @return array<string,string>
+ */
+function sdc_amazon_fields() {
+	return array(
+		'_sdc_amazon_paperback' => __( 'Buy paperback on Amazon', 'sylviasdream-child' ),
+		'_sdc_amazon_hardcover' => __( 'Buy hardcover on Amazon', 'sylviasdream-child' ),
+		'_sdc_amazon_kindle'    => __( 'Buy on Kindle', 'sylviasdream-child' ),
+	);
+}
+
+/**
+ * Is this an Amazon address (amazon.* or amzn.*)?
+ *
+ * @param string $url URL.
+ * @return bool
+ */
+function sdc_is_amazon_url( $url ) {
+	$host = strtolower( (string) wp_parse_url( (string) $url, PHP_URL_HOST ) );
+	return '' !== $host && (bool) preg_match( '/(^|\.)(amazon|amzn)\.[a-z.]+$/', $host );
+}
+
+/**
+ * Amazon links saved on the product.
+ *
+ * @param WC_Product $product Product.
+ * @return array<int,array{url:string,label:string}>
+ */
+function sdc_product_amazon_links( $product ) {
+	$links = array();
+	if ( ! $product instanceof WC_Product ) {
+		return $links;
+	}
+	foreach ( sdc_amazon_fields() as $key => $label ) {
+		$url = (string) $product->get_meta( $key );
+		if ( $url && sdc_is_amazon_url( $url ) ) {
+			$links[] = array(
+				'url'   => $url,
+				'label' => $label,
+			);
+		}
+	}
+	return (array) apply_filters( 'sdc_product_amazon_links', $links, $product );
+}
+
+/**
+ * Product edit screen, General tab: Subtitle and Amazon links.
+ */
+function sdc_product_admin_fields() {
+	echo '<div class="options_group">';
+	woocommerce_wp_text_input(
+		array(
+			'id'          => '_sdc_subtitle',
+			'label'       => __( 'Subtitle', 'sylviasdream-child' ),
+			'desc_tip'    => true,
+			'description' => __( 'Shown under the title on the book page and on book cards.', 'sylviasdream-child' ),
+		)
+	);
+	foreach ( sdc_amazon_fields() as $key => $label ) {
+		woocommerce_wp_text_input(
+			array(
+				'id'          => $key,
+				'label'       => $label,
+				'type'        => 'url',
+				'placeholder' => 'https://www.amazon.com.au/...',
+				'desc_tip'    => true,
+				'description' => __( 'Amazon address only. Leave blank to hide the button.', 'sylviasdream-child' ),
+			)
+		);
+	}
+	echo '</div>';
+}
+add_action( 'woocommerce_product_options_general_product_data', 'sdc_product_admin_fields' );
+
+/**
+ * Save the fields above. WooCommerce has already checked its nonce.
+ *
+ * @param WC_Product $product Product being saved.
+ */
+function sdc_product_admin_save( $product ) {
+	if ( ! current_user_can( 'edit_post', $product->get_id() ) ) {
+		return;
+	}
+	// phpcs:disable WordPress.Security.NonceVerification.Missing -- verified by WooCommerce before this hook.
+	if ( isset( $_POST['_sdc_subtitle'] ) ) {
+		$product->update_meta_data( '_sdc_subtitle', sanitize_text_field( wp_unslash( $_POST['_sdc_subtitle'] ) ) );
+	}
+	foreach ( array_keys( sdc_amazon_fields() ) as $key ) {
+		if ( ! isset( $_POST[ $key ] ) ) {
+			continue;
+		}
+		$url = esc_url_raw( trim( wp_unslash( $_POST[ $key ] ) ), array( 'https', 'http' ) );
+		$product->update_meta_data( $key, ( $url && sdc_is_amazon_url( $url ) ) ? $url : '' );
+	}
+	// phpcs:enable
+}
+add_action( 'woocommerce_admin_process_product_object', 'sdc_product_admin_save' );
+
+/**
+ * Topic pill above the title (links to the topic page).
+ */
+function sdc_single_topic_pill() {
+	global $product;
+	$topic = sdc_product_topic( $product );
+	if ( ! $topic ) {
+		return;
+	}
+	$link = get_term_link( $topic );
+	if ( is_wp_error( $link ) ) {
+		return;
+	}
+	printf( '<a class="sd-pill sd-topic-pill" href="%1$s">%2$s</a>', esc_url( $link ), esc_html( $topic->name ) );
+}
+
+/**
+ * Italic subtitle under the title.
+ */
+function sdc_single_subtitle() {
+	global $product;
+	$subtitle = sdc_product_subtitle( $product );
+	if ( '' !== $subtitle ) {
+		echo '<p class="sd-product-subtitle">' . esc_html( $subtitle ) . '</p>';
+	}
+}
+
+/**
+ * Open the buy box, with the price label.
+ */
+function sdc_buybox_open() {
+	global $product;
+	echo '<div class="sd-buybox">';
+	if ( $product instanceof WC_Product && '' !== $product->get_price_html() ) {
+		$label = $product->is_downloadable() ? __( 'eBook price', 'sylviasdream-child' ) : __( 'Price', 'sylviasdream-child' );
+		echo '<p class="sd-buybox__label">' . esc_html( $label ) . '</p>';
+	}
+}
+
+/**
+ * Currency note beside the price (Customizer text; %s = shop currency).
+ */
+function sdc_buybox_price_note() {
+	global $product;
+	$note = sdc_get( 'shop_price_note' );
+	if ( '' === $note || ! $product instanceof WC_Product || '' === $product->get_price_html() ) {
+		return;
+	}
+	echo '<p class="sd-buybox__note">' . esc_html( str_replace( '%s', get_woocommerce_currency(), $note ) ) . '</p>';
+}
+
+/**
+ * Amazon buttons saved on the product.
+ */
+function sdc_amazon_buttons() {
+	global $product;
+	$links = sdc_product_amazon_links( $product );
+	if ( ! $links ) {
+		return;
+	}
+	echo '<div class="sd-btn-row sd-buybox__amazon">';
+	foreach ( $links as $link ) {
+		printf(
+			'<a class="sd-btn sd-btn--ghost" href="%1$s" target="_blank" rel="noopener">%2$s<span class="screen-reader-text"> %3$s</span></a>',
+			esc_url( $link['url'] ),
+			esc_html( $link['label'] ),
+			esc_html__( '(opens Amazon in a new tab)', 'sylviasdream-child' )
+		);
+	}
+	echo '</div>';
+}
+
+/**
+ * Download note under the buttons (downloadable books only).
+ */
+function sdc_buybox_secure_note() {
+	global $product;
+	$note = sdc_get( 'shop_secure_note' );
+	if ( '' === $note || ! $product instanceof WC_Product || ! $product->is_downloadable() || ! $product->is_purchasable() ) {
+		return;
+	}
+	echo '<p class="sd-buybox__secure">' . wp_kses( sdc_icon( 'download' ), sdc_svg_kses() ) . '<span>' . esc_html( $note ) . '</span></p>';
+}
+
+/**
+ * Close the buy box.
+ */
+function sdc_buybox_close() {
+	echo '</div>';
+}
+
+/**
+ * Editions list.
+ */
+function sdc_single_editions() {
+	global $product;
+	$editions = sdc_product_editions( $product );
+	if ( ! $editions ) {
+		return;
+	}
+	echo '<div class="sd-editions"><h2 class="sd-editions__title">' . esc_html__( 'Editions', 'sylviasdream-child' ) . '</h2><ul class="sd-formats">';
+	foreach ( $editions as $edition ) {
+		echo '<li class="sd-pill sd-pill--grey">' . esc_html( $edition ) . '</li>';
+	}
+	echo '</ul></div>';
+}
+
+/**
+ * "Book details" table: the product's visible attributes (and weight or
+ * dimensions for printed books), as entered in WooCommerce.
+ */
+function sdc_wc_product_details() {
+	global $product;
+	if ( ! $product instanceof WC_Product ) {
+		return;
+	}
+	$has = false;
+	foreach ( $product->get_attributes() as $attribute ) {
+		if ( $attribute->get_visible() ) {
+			$has = true;
+			break;
+		}
+	}
+	if ( ! $has && ! ( $product->has_weight() || $product->has_dimensions() ) ) {
+		return;
+	}
+	echo '<section class="sd-product-details" aria-labelledby="sd-book-details"><h2 id="sd-book-details">' . esc_html__( 'Book details', 'sylviasdream-child' ) . '</h2>';
+	wc_display_product_attributes( $product );
+	echo '</section>';
+}
+
+/**
+ * Subtitle on book cards.
+ */
+function sdc_loop_subtitle() {
+	global $product;
+	$subtitle = sdc_product_subtitle( $product );
+	if ( '' !== $subtitle ) {
+		echo '<p class="sd-card-subtitle">' . esc_html( $subtitle ) . '</p>';
+	}
+}
+
+/**
+ * Topic and price row on book cards (inside the card link, so no links here).
+ */
+function sdc_loop_meta() {
+	global $product;
+	if ( ! $product instanceof WC_Product ) {
+		return;
+	}
+	$topic = sdc_product_topic( $product );
+	$price = $product->get_price_html();
+	if ( ! $topic && '' === $price ) {
+		return;
+	}
+	echo '<div class="sd-card-meta">';
+	echo '<span class="sd-card-meta__topic">' . ( $topic ? esc_html( $topic->name ) : '' ) . '</span>';
+	if ( '' !== $price ) {
+		echo '<span class="price">' . wp_kses_post( $price ) . '</span>';
+	}
+	echo '</div>';
+}
+
+/**
+ * Cards for books that cannot be bought yet say "View the book".
+ *
+ * @param string     $text    Button text.
+ * @param WC_Product $product Product.
+ * @return string
+ */
+function sdc_loop_button_text( $text, $product ) {
+	if ( $product instanceof WC_Product && $product->is_type( 'simple' ) && ! ( $product->is_purchasable() && $product->is_in_stock() ) ) {
+		return __( 'View the book', 'sylviasdream-child' );
+	}
+	return $text;
+}
+add_filter( 'woocommerce_product_add_to_cart_text', 'sdc_loop_button_text', 10, 2 );
+
+/**
+ * Book search box and topic chips (prototype "searchbar" and "filters").
+ * Topics are the product categories in WooCommerce (Uncategorized left out);
+ * like the menu, a topic shows even before its books are published.
+ *
+ * @return string HTML.
+ */
+function sdc_shop_toolbar_html() {
+	$all_url = sdc_shop_url();
+	$current = is_product_category() ? get_queried_object_id() : 0;
+	$terms   = get_terms(
+		(array) apply_filters(
+			'sdc_shop_topic_args',
+			array(
+				'taxonomy'   => 'product_cat',
+				'hide_empty' => false,
+				'parent'     => 0,
+				'orderby'    => 'name',
+			)
+		)
+	);
+	$search  = ( is_search() && 'product' === get_query_var( 'post_type' ) ) ? get_search_query() : '';
+	$id      = wp_unique_id( 'sd-book-search-' );
+	ob_start();
+	?>
+	<div class="sd-shop-toolbar">
+		<form class="sd-booksearch" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<label class="screen-reader-text" for="<?php echo esc_attr( $id ); ?>"><?php esc_html_e( 'Search books', 'sylviasdream-child' ); ?></label>
+			<input type="search" id="<?php echo esc_attr( $id ); ?>" name="s" value="<?php echo esc_attr( $search ); ?>" placeholder="<?php echo esc_attr( sdc_get( 'shop_search_placeholder' ) ); ?>">
+			<input type="hidden" name="post_type" value="product">
+			<button type="submit" class="sd-btn"><?php echo wp_kses( sdc_icon( 'search' ), sdc_svg_kses() ); ?><span><?php esc_html_e( 'Search', 'sylviasdream-child' ); ?></span></button>
+		</form>
+		<?php if ( $terms && ! is_wp_error( $terms ) ) : ?>
+			<nav class="sd-chips" aria-label="<?php esc_attr_e( 'Browse books by topic', 'sylviasdream-child' ); ?>">
+				<ul>
+					<li><a href="<?php echo esc_url( $all_url ); ?>"<?php echo ( ! $current && '' === $search ) ? ' aria-current="page"' : ''; ?>><?php esc_html_e( 'All', 'sylviasdream-child' ); ?></a></li>
+					<?php
+					foreach ( $terms as $term ) :
+						if ( 'uncategorized' === $term->slug ) {
+							continue;
+						}
+						$link = get_term_link( $term );
+						if ( is_wp_error( $link ) ) {
+							continue;
+						}
+						?>
+						<li><a href="<?php echo esc_url( $link ); ?>"<?php echo ( (int) $term->term_id === (int) $current ) ? ' aria-current="page"' : ''; ?>><?php echo esc_html( $term->name ); ?></a></li>
+					<?php endforeach; ?>
+				</ul>
+			</nav>
+		<?php endif; ?>
+	</div>
+	<?php
+	return (string) ob_get_clean();
+}
+
+/**
+ * Print the toolbar on shop, topic and book-search pages.
+ */
+function sdc_shop_toolbar() {
+	echo sdc_shop_toolbar_html(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in sdc_shop_toolbar_html().
+}
+
+/**
+ * [sd_book_filters] for the Books page (a normal page with [products]).
+ *
+ * @return string
+ */
+function sdc_book_filters_shortcode() {
+	return sdc_shop_toolbar_html();
+}
+add_shortcode( 'sd_book_filters', 'sdc_book_filters_shortcode' );
+
+/**
+ * Optional note under the book grid (Customizer; blank hides it).
+ */
+function sdc_shop_note() {
+	$note = sdc_get( 'shop_note' );
+	if ( '' !== $note ) {
+		echo '<p class="sd-shop-note">' . esc_html( $note ) . '</p>';
+	}
+}
+add_action( 'woocommerce_after_shop_loop', 'sdc_shop_note', 20 );

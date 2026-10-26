@@ -26,7 +26,8 @@ get_header();
 		}
 		sdc_page_header( wp_strip_all_tags( woocommerce_page_title( false ) ), sdc_get( 'shop_eyebrow' ), $sdc_intro );
 		?>
-		<div class="sd-wrap sd-section">
+		<div class="sd-wrap sd-section sd-section--shop">
+			<?php sdc_shop_toolbar(); ?>
 			<?php woocommerce_content(); ?>
 		</div>
 	<?php endif; ?>
