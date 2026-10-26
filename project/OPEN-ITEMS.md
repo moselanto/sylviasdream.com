@@ -24,7 +24,11 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Earlier items still open: signed acceptance and USD 112 deposit, Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, logo, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
-- [x] (1.8.4 repo) Cover URLs fixed in `book-one-life.html` (6604), `book-sent.html` (6605), `book-from-fear-to-freedom.html` (6603). Dev: paste into pages 2766, 4686, 4231 and check desktop and mobile. Was: apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 2766 in the Code editor. First replace its cover src (a guess, .../uploads/2026/10/one-life.png) with the real URL of dev media 6604. Then check SENT 4686 and From Fear to Freedom 4231 show the new covers (media 6605, 6603), and check all three on desktop and mobile. Then update the cover URLs in `book-sent.html` and `book-from-fear-to-freedom.html` to media 6605/6603.
+- [x] (26 Oct, 1.8.4, f859bfe) Real covers applied on dev: One Life 2766 (media 6604), SENT 4686 (6605), From Fear to Freedom 4231 (6603). Checked signed in as admin at 1440px: each cover loads, layout and buttons render, and the block editor shows no invalid-content warning on any of the three. The earlier warning on 2766 came from the cover image block: `width`/`height` on the `<img>` without matching block attributes; removed in all three files.
+- [ ] Phone-width check of pages 2766, 4686, 4231 (browser tool cannot resize; real phone needed)
+- [ ] Block validation (Gutenberg validator run 26 Oct): `author-support.html` group `sd-enquiry` and `heaven-on-earth.html` (a column and two `sd-band__inner` groups) would show invalid-content warnings if pasted as they are. Fix before the next paste of either page
+- [ ] Signed-out check of the dev site behind the front-end password gate (gate has no username, so Town cannot save its password; check by hand or use an admin session)
+Was: apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 2766 in the Code editor. First replace its cover src (a guess, .../uploads/2026/10/one-life.png) with the real URL of dev media 6604. Then check SENT 4686 and From Fear to Freedom 4231 show the new covers (media 6605, 6603), and check all three on desktop and mobile. Then update the cover URLs in `book-sent.html` and `book-from-fear-to-freedom.html` to media 6605/6603.
 - [x] New covers (26 Oct, from Agnes): From Fear to Freedom (media 6603, product 6377, page 4231), One Life (6604, product 6376, page 2766), SENT (6605, product 6382, page 4686). 22 of 25 products have covers; still none: Fast Forward to Success 6397, When Fear Has the Final Word 6390, Manifesting Miracles Now 6398
 - [x] One Life (2766) "Purchase on Amazon" buttons now go to Amazon AU paperback https://www.amazon.com.au/dp/1793312702 (Agnes). Page text says "hardcover edition": hardcover link asked of Sylvia
 - [x] Live facts checked read-only 26 Oct with Agnes's admin login: two Administrators (mosemqute, Sylvia); domain registered with WordPress.com since 2019, paid to 25 Nov 2027, auto-renew, WordPress.com name servers; Personal plan renews 29 Oct 2026; Stripe connected via WordPress.com Payments ($5/month plan); WooCommerce not installed on live (11 plugins)
@@ -36,7 +40,7 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Real-phone check of the v4 navigation (iPhone and Android, 320-430px): bottom bar clearance, drawer, no sideways scroll, wordmark
 - [ ] "Invite Sylvia to speak" page (dev ID 6511) **published on dev 24 Oct at Agnes's choice** so the About menu link stops returning 404. Wording still needs Sylvia's approval before launch; change or unpublish it if she asks
 - [x] Other languages: Français, Español, Bahasa Indonesia language links; Kenya Ministry Training Manual under Ministry (26 Oct, theme 1.8.3)
-- [x] Books > Browse by topic "Uncategorized" and "Coming soon": hidden on the front end while empty (theme 1.8.4)
+- [x] Books > Browse by topic "Uncategorized" and "Coming soon": hidden on the front end while empty (theme 1.8.4). Verified on dev 26 Oct: menu shows All books, From Fear to Freedom, SENT
 - [ ] Heaven on Earth (1932) still old layout: paste by hand per `docs/hoe-segments/README.md` (do not retry automated segment paste)
 - [ ] Visual check of SENT and From Fear to Freedom pages (automated screenshots timed out)
 - [ ] Verify the language suggestion card with a French/Spanish/Indonesian browser
@@ -55,7 +59,7 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Newsletter sign-up on the Home newsletter section does not render on dev (no WordPress.com connection, by decision); check on live at launch
 - [ ] Author Support on dev: restore the enquiry form (live likely uses a CoBlocks or Crowdsignal form; those plugins are on live, not dev), split the two intro lines back into two paragraphs, fix the top button to the same-page `#book-enquiry` anchor. Wording itself must stay exactly as live.
 - [x] Mobile: store notice overlap fixed (f0ab2bc); pointer taps work in the 320px preview. Still confirm on a real phone
-- [x] Footer widgets: theme areas empty on dev; inactive defaults to be cleared. 404 "Browse the books" uses the Books page link (1.8.4).
+- [x] Footer widgets: theme areas empty on dev; inactive Search, Recent Posts, Recent Comments removed (26 Oct). 404 "Browse the books" verified on dev: links to /sylviasdream/shop-for-books/ (1.8.4).
 - [ ] Dev clean-up from QA (remaining): My Story run-together sentence and repeated intro, Ministry repeated intro and "dav" captions (fix only with Sylvia's wording)
 - [x] Dev: book buy.stripe.com links replaced with /shop-for-books/ and public .docx links removed from ordinary pages (`docs/LEGACY-LINK-MAP.md`)
 - [ ] Launch: repeat the `docs/LEGACY-LINK-MAP.md` replacements on live, with Sylvia's written OK; point each button at its product page once products are published

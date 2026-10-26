@@ -2,6 +2,14 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+
+## Monday 26 October 2026 (afternoon): theme 1.8.4, Priority 1
+- Theme 1.8.4 (b316844) uploaded to dev with "Replace active with uploaded"; active.
+- One Life 2766, SENT 4686 and From Fear to Freedom 4231 re-pasted from f859bfe (real covers 6604, 6605, 6603). The first paste of 2766 showed an invalid-content warning: the image blocks had `width`/`height` on `<img>` that the block does not save. Fixed in all three files, checked with the Gutenberg validator, re-applied. No warnings in the editor.
+- Verified as admin at 1440px: covers load; Books > Browse by topic = All books, From Fear to Freedom, SENT; 404 "Browse the books" goes to /shop-for-books/. Inactive widgets removed.
+- Not done: phone-width check; signed-out check (front-end gate password cannot be saved in Town: no username field).
+- Validator also flags pre-existing invalid blocks in `author-support.html` and `heaven-on-earth.html` (see OPEN-ITEMS).
+
 ## Monday 26 October 2026
 - Content parity with live restored on dev (`818921b`): My Story, Podcasts, Hidden Key 6171, One Life 2766, Grace For the Journey category on all 15 posts. Verified desktop and mobile. Amazon link from page 1239 is the Kindle edition; hardcover link requested from Sylvia.
 - Theme 1.8.3 (`708dda1`) deployed: menu language links (`#lang-fr/es/id/en`). Primary menu fixed: Books > Other languages = Français, Español, Bahasa Indonesia; From Fear to Freedom and SENT moved to Browse by topic; Kenya Ministry Training Manual under Ministry. All links and language switches verified on desktop and phone drawer.
