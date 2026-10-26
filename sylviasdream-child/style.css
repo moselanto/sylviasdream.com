@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.11.1
+Version: 1.12.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1239,4 +1239,37 @@ font[style*="vertical-align"] { vertical-align: baseline !important; }
 @media (max-width: 760px) {
 	.sd-menu .sd-mega__panel .sub-menu { grid-template-columns: minmax(0, 1fr); }
 	.sd-menu .sd-mega__panel .sub-menu a { min-height: 48px; }
+}
+
+/* ==========================================================================
+   1.12.0: phone bottom bar docked to the bottom edge (no longer floating):
+   full width, hairline top border, quiet items, gold indicator on the
+   current page, Give as a gold icon disc.
+   ========================================================================== */
+@media (max-width: 760px) {
+	body.sd-has-dock { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
+	.sd-dock {
+		left: 0; right: 0; bottom: 0; gap: 0;
+		padding: 0 4px env(safe-area-inset-bottom, 0px);
+		border: 0; border-top: 1px solid var(--line); border-radius: 0;
+		background: rgba(255, 255, 255, .98);
+		box-shadow: 0 -6px 18px rgba(40, 28, 12, .07);
+	}
+	.sd-dock__item {
+		position: relative; min-height: 62px; padding: 9px 2px 8px; gap: 5px;
+		border-radius: 0; background: transparent; box-shadow: none;
+		font: 600 .72rem/1 var(--sans); letter-spacing: .01em; text-transform: none; color: #6b5a48;
+	}
+	.sd-dock__item svg { width: 22px; height: 22px; }
+	.sd-dock__item:active { transform: none; background: var(--cream); }
+	.sd-dock__item[aria-current="page"] { background: transparent; color: var(--gold-d); font-weight: 700; }
+	.sd-dock__item[aria-current="page"]::before { content: ""; position: absolute; top: -1px; left: 30%; right: 30%; height: 3px; border-radius: 0 0 3px 3px; background: var(--gold-d); }
+	.sd-dock__item--give { background: transparent; color: var(--gold-d); box-shadow: none; font-weight: 700; }
+	.sd-dock__item--give svg { box-sizing: content-box; width: 16px; height: 16px; padding: 5px; margin-top: -1px; border-radius: 50%; background: var(--gold-d); color: #fff; }
+	.sd-dock__item--give:hover, .sd-dock__item--give[aria-current="page"] { background: transparent; color: var(--ink); }
+	.sd-dock__item--give[aria-current="page"] svg { background: var(--ink); }
+}
+@media (max-width: 360px) {
+	.sd-dock { left: 0; right: 0; padding-inline: 0; gap: 0; }
+	.sd-dock__item { font-size: .68rem; }
 }

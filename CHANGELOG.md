@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.12.0: Browse by topic as the prototype; docked phone bar
+- Books > Browse by topic: product-category topics now show even while they have no published books, as in prototype v4 (Christian Living, Memoir, Healing & Faith, Missions, Fiction, Children, Devotionals, For Writers, Coming Soon, then All books). Only "Uncategorized" stays hidden. This reverses the 1.8.4 "hide empty categories" rule at Moses's request (26 Oct); "Coming soon" is back because the prototype shows it.
+- Dev menu (Appearance > Menus, Primary): Browse by topic reordered to the prototype; From Fear to Freedom and SENT taken out of that group (still under All books and the Books page).
+- Phone bottom bar: docked to the bottom edge instead of floating. Full width, hairline top border, light shadow, sentence-case labels, a short gold bar marks the current page, Give shown as a gold icon disc.
+
 ## 2026-10-26 - Child theme 1.11.1: button text contrast
 - Bold text inside buttons (for example "Download 7 Days to Trusting God with Your Journey" on Your Free Gift) took the general dark-ink colour for bold text and was hard to read on the gold button. Bold, italic and span text inside buttons and file buttons now keeps the button's own text colour.
 

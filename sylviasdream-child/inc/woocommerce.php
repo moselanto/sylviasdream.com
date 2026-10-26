@@ -266,7 +266,8 @@ function sdc_hide_empty_product_cat_items( $items ) {
 		} else {
 			continue;
 		}
-		if ( ! $term || is_wp_error( $term ) || 'uncategorized' === $term->slug || (int) $term->count < 1 ) {
+		// 1.12.0: topics show even while empty (as in the prototype); only Uncategorized is hidden.
+		if ( ! $term || is_wp_error( $term ) || 'uncategorized' === $term->slug ) {
 			$hidden[] = (int) $item->ID;
 		}
 	}
