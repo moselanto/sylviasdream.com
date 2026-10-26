@@ -1,5 +1,7 @@
 # cPanel licence error on the dev host
 
+**Resolved 26 October 2026.** The host fixed the licence; sign-in, Git Version Control (Update from Remote, HEAD 4dccb83) and File Manager work again. cPanel's "The system cannot deploy" note only means the repo has no `.cpanel.yml`; deployment stays a File Manager copy or a WP Admin theme upload. Kept for reference if it happens again.
+
 Symptom: cPanel on topnotchmall.co.ke shows "License is not for this host. This server does not have a valid license." Git Version Control and File Manager cannot be used. Only the hosting provider can fix it (the licence belongs to their server).
 
 ## Ask the host to fix it

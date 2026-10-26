@@ -18,7 +18,7 @@
 
 ## Pimofy (Moses / next agent)
 - [x] Kenya Ministry Training Manual page stays published (Agnes, 26 Oct)
-- [ ] Host: fix the cPanel licence on topnotchmall.co.ke (`docs/HOST-CPANEL-LICENCE.md`)
+- [x] Host fixed the cPanel licence (26 Oct); Git "Update from Remote" works again, repo at 4dccb83. Was: fix the cPanel licence on topnotchmall.co.ke (`docs/HOST-CPANEL-LICENCE.md`)
 - [ ] Home page gaps against prototype v4: see PROGRESS-LOG 24 Oct (Latest from Sylvia, Have a book on your heart?, newsletter form, featured covers, Meet Sylvia quote card, 4th trust item)
 - [ ] cPanel licence error on topnotchmall.co.ke ("License is not for this host"): ask the host to fix it. Until then deploy the child theme by WordPress theme-zip upload (Replace active)
 - [ ] Start here welcome card wording ("New to Sylvia's books? Begin with her story, or browse every title by topic.") is ours: include in Sylvia's review; it is replaced by 3 featured covers once books are published
