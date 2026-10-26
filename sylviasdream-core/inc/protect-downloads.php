@@ -31,7 +31,7 @@ function sd_core_default_protected_slugs() {
 		'from-fear-to-freedom-2',
 		'thank-you-the-kings-way',
 		'thank-you-for-becoming-a-dream-partner',
-		'all-shall-be-well',
+		'all-shall-be-well-2',
 		'thank-you-for-your-purchase',
 		'thank-you-one-life',
 		'thank-you-angelique',

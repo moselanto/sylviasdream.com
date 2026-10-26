@@ -4,6 +4,13 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 
 ## Friday 23 October 2026
 
+### Phone menu, footer, Phase 0, schema, captions (26 Oct, 07:45-08:30 EAT)
+- Theme 1.6.0 and core plugin 0.1.2 deployed to dev (WP Admin upload). Mobile: header menu button back, drawer submenus as white panels with icon tiles, Books groups as two-column chips, footer centred. All pass in the Customizer Mobile/Tablet presets and desktop.
+- Phase 0: core plugin active; the 19 old thank-you/download pages are noindex and excluded from site search (sitemap exclusion could not be inspected: dev has no sitemap). One listed slug was wrong (`all-shall-be-well`; the page is `all-shall-be-well-2`, ID 3431): fixed in the plugin default list and the dev setting. Pages and files stay reachable by direct link on purpose until past buyers have new WooCommerce links (AGENTS rule 5; file blocking is Phase 1/launch).
+- Book schema: draft sample emits valid Book JSON-LD; Offer (price, currency, availability) appears once products are published with prices. Check `bookFormat` (EBook vs Paperback) per product at publishing.
+- Heaven on Earth: all seven "dav" slideshow captions removed.
+- Kenya Ministry Training Manual stays published (Agnes).
+
 ### Home sections and Books "Start here" (24 Oct 23:45 - 25 Oct 00:15 EAT)
 - Theme 1.5.3-1.5.5 deployed to dev (theme-zip upload); Home page 6365 content replaced from content/blocks/home.html.
 - Dev QA (desktop + Customizer Mobile): all new Home sections pass; Start here covers equal and contained; Escape/Tab still correct. Open: Featured books empty until products are published; newsletter shows the Contact fallback on dev; "One Life: the memoir" goes to the Books page until the product is published.
