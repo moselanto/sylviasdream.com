@@ -8,6 +8,10 @@ Newest first. Each entry: what was decided, who decided, and why.
 - **Kenya Ministry Training Manual page stays published** (Agnes, 26 Oct). It is already public on the live site; the dev page (4303) keeps its Published status.
 - **Header menu button shows on phones** alongside the bottom bar (Agnes, 26 Oct; reverses the 1.5.6 phone-only hide).
 
+## 26 October 2026
+
+- **Menu corrections** (Agnes): Kenya Ministry Training Manual goes under Ministry now (replaces the 23 Oct rule of keeping it out until Sylvia approves). Books > Other languages opens Français, Español and Bahasa Indonesia, which translate the whole site; From Fear to Freedom and SENT belong with the other books, not under Other languages.
+
 ## 23 October 2026
 
 - **Navigation follows prototype v4** (Agnes, 23 Oct evening; replaces the earlier 6-item menu): Home · Books (mega: Browse by topic, Readers, Other languages, Start here) · About (Sylvia's story, Podcasts & Videos, Invite Sylvia to speak when the page exists, Author Support) · Ministry (Heaven on Earth Kenya, Become a Dream Partner) · Devotionals · Contact; plus a phone bottom bar Home / Books / Ministry / Give / More. "Kenya Ministry Training Manual" stays out of the menu until Sylvia approves it as a free resource.

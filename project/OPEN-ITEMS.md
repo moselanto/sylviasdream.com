@@ -26,7 +26,7 @@
 - [ ] Start here welcome card wording ("New to Sylvia's books? Begin with her story, or browse every title by topic.") is ours: include in Sylvia's review; it is replaced by 3 featured covers once books are published
 - [ ] Real-phone check of the v4 navigation (iPhone and Android, 320-430px): bottom bar clearance, drawer, no sideways scroll, wordmark
 - [ ] "Invite Sylvia to speak" page (dev ID 6511) **published on dev 24 Oct at Agnes's choice** so the About menu link stops returning 404. Wording still needs Sylvia's approval before launch; change or unpublish it if she asks
-- [ ] Add Spanish to Other languages once that page exists; Kenya Ministry Training Manual only after Sylvia approves it
+- [x] Other languages: Français, Español, Bahasa Indonesia language links; Kenya Ministry Training Manual under Ministry (26 Oct, theme 1.8.3)
 - [ ] Mark 3 confirmed books as Featured so the Books mega menu shows "Start here" (after products are published)
 - [x] Build child theme 1.1.0 per `docs/NEXT-BUILD-1.1.0.md` (done 23 Oct)
 - [x] `.github/workflows/checks.yml` added by Moses; PHP lint 8.0-8.3 and check-theme.js pass

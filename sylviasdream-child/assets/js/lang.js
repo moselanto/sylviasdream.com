@@ -1,5 +1,5 @@
 /**
- * Sylvia's Dream language switcher (1.8.1).
+ * Sylvia's Dream language switcher (1.8.1, menu links 1.8.3).
  * - Selector: English is the site language; other languages use Google's website
  *   translation (started from the page head, see inc/languages.php). The choice is
  *   kept in the "googtrans" cookie.
@@ -39,6 +39,44 @@
 		sel.value = lang;
 		sel.addEventListener('change', function () { choose(sel.value); });
 	});
+
+	/* ---------- Menu links (1.8.3): a custom menu link whose URL ends in
+	 * "#lang-fr", "#lang-es", "#lang-id" or "#lang-en" switches the site language,
+	 * e.g. Books > Other languages > Français. Labels are never machine-translated. */
+	function langFromHref(a) {
+		var m = String(a.getAttribute('href') || '').match(/#lang-([a-z]{2})$/i);
+		if (!m) { return null; }
+		var c = m[1].toLowerCase();
+		if (c === 'in') { c = 'id'; }
+		return cfg.codes.indexOf(c) > -1 ? c : null;
+	}
+	Array.prototype.forEach.call(document.querySelectorAll('a[href*="#lang-"]'), function (a) {
+		var c = langFromHref(a);
+		if (!c) { return; }
+		a.classList.add('notranslate', 'sd-lang-link');
+		a.setAttribute('translate', 'no');
+		a.setAttribute('lang', c);
+		a.setAttribute('hreflang', c);
+		if (c === lang) { a.setAttribute('aria-current', 'true'); a.classList.add('is-current-lang'); }
+	});
+	document.addEventListener('click', function (e) {
+		var a = e.target && e.target.closest ? e.target.closest('a[href*="#lang-"]') : null;
+		if (!a) { return; }
+		var c = langFromHref(a);
+		if (!c) { return; }
+		e.preventDefault();
+		if (c === lang) { return; }
+		choose(c);
+	});
+	/* Opening a page with #lang-xx in the address (shared link) switches too. */
+	(function () {
+		var m = window.location.hash.match(/^#lang-([a-z]{2})$/i);
+		if (!m) { return; }
+		var c = m[1].toLowerCase();
+		if (cfg.codes.indexOf(c) < 0) { return; }
+		if (window.history && history.replaceState) { history.replaceState(null, '', window.location.pathname + window.location.search); }
+		if (c !== lang) { choose(c); }
+	}());
 
 	/* ---------- Suggest a language from the browser or the visitor's region ---------- */
 	if (lang !== base || read('sdLang') || read(DISMISS)) { return; }

@@ -53,3 +53,11 @@ On the right of any page, under **Template**:
 - **Settings > Sylvia's Dream** redirects.
 
 If something looks wrong, open the page, click the clock icon (**Revisions**) to go back to an earlier version, or contact Moses.
+
+## Language links in the menu (theme 1.8.3)
+To add a language to a menu (for example Books > Other languages), add a Custom Link with:
+- Français: URL `#lang-fr`
+- Español: URL `#lang-es`
+- Bahasa Indonesia: URL `#lang-id`
+- English (back to the original): URL `#lang-en`
+Clicking it translates the whole site, exactly like the language selector at the top.
