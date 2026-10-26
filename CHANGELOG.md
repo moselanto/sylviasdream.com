@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.14.1: phone hero tighter
+- Phones: hero spacing and type scale with screen height so the eyebrow, title, intro, quote and both buttons fit above the bottom bar, short phones included; the dev-only shop preview notice is a slim line on phones. No wording changed.
+
 ## 2026-10-26 - Child theme 1.14.0: header balanced; hero fits one screen
 - Header (desktop): three equal zones (logo | menu | actions) so the menu sits on the true centre line; quieter menu items with a short gold underline for hover and the current page instead of the filled pill; search, cart and Give all 44px tall, Give as a pill with a soft shadow.
 - Home hero, laptops and up (13" 1366x768 included): height = screen minus utility bar and header, so the whole hero, buttons included, fits without scrolling; spacing and type scale with screen height so short screens stay balanced.
