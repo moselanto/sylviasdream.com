@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '1.10.1' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '1.11.0' );
 define( 'SYLVIASDREAM_CHILD_DIR', get_stylesheet_directory() );
 define( 'SYLVIASDREAM_CHILD_URI', get_stylesheet_directory_uri() );
 
@@ -143,13 +143,28 @@ function sdc_body_classes( $classes ) {
 add_filter( 'body_class', 'sdc_body_classes' );
 
 /**
- * 1.9.0: the About pages that get the extra polish stylesheet.
+ * Pages that get the polish stylesheet (about.css).
+ * 1.9.0 started with the About pages; 1.11.0 covers every ordinary page plus
+ * the Journal (posts page). Left out: the Home page (its own design) and the
+ * WooCommerce Shop, Cart, Checkout and My account pages (woocommerce.css).
+ * Filter `sdc_polish_page` (bool, page ID) to opt a page out.
  *
  * @return bool
  */
 function sdc_is_about_page() {
-	$slugs = (array) apply_filters( 'sdc_about_page_slugs', array( 'my-story', 'invite-sylvia-to-speak', 'podcasts-and-videos', 'author-support-publishing-services', 'give', 'heaven-on-earth', 'kenya-ministry-training-manual-free-download', 'contact', 'grace-for-the-journey' ) );
-	return is_page( $slugs );
+	if ( is_front_page() ) {
+		return false;
+	}
+	if ( is_home() ) {
+		return (bool) apply_filters( 'sdc_polish_page', true, (int) get_option( 'page_for_posts' ) );
+	}
+	if ( ! is_page() ) {
+		return false;
+	}
+	if ( function_exists( 'is_cart' ) && ( is_cart() || is_checkout() || is_account_page() || is_shop() ) ) {
+		return false;
+	}
+	return (bool) apply_filters( 'sdc_polish_page', true, get_queried_object_id() );
 }
 
 /**

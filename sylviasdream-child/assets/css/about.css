@@ -1,7 +1,7 @@
 /**
  * Sylvia's Dream 1.9.0: About pages polish.
- * Loaded only on My Story, Invite Sylvia to speak, Podcasts & Videos and
- * Author Support (body class "sd-about"). Layout and styling only: no text.
+ * Loaded on every ordinary page and the Journal (body class "sd-about", see
+ * sdc_is_about_page()); not on Home or the WooCommerce shop pages. Styling only.
  */
 
 /* ---------- Page banner ---------- */
@@ -164,11 +164,11 @@
 .sd-about .entry-content .wp-block-jetpack-slideshow { border-radius: 18px; overflow: hidden; }
 
 /* ---------- Grace for the Journey ---------- */
-.sd-p-grace-for-the-journey .sd-post { border-radius: 18px; }
-.sd-p-grace-for-the-journey .sd-post__media img { aspect-ratio: 16 / 10; width: 100%; object-fit: cover; }
-.sd-p-grace-for-the-journey .sd-post__body { padding: 1.25rem 1.4rem 1.5rem; }
-.sd-p-grace-for-the-journey .sd-post__title { font-size: clamp(1.25rem, 2vw, 1.45rem); line-height: 1.25; text-wrap: balance; }
-.sd-p-grace-for-the-journey .sd-post__excerpt { color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+:is(.sd-p-grace-for-the-journey, .sd-p-journal) .sd-post { border-radius: 18px; }
+:is(.sd-p-grace-for-the-journey, .sd-p-journal) .sd-post__media img { aspect-ratio: 16 / 10; width: 100%; object-fit: cover; }
+:is(.sd-p-grace-for-the-journey, .sd-p-journal) .sd-post__body { padding: 1.25rem 1.4rem 1.5rem; }
+:is(.sd-p-grace-for-the-journey, .sd-p-journal) .sd-post__title { font-size: clamp(1.25rem, 2vw, 1.45rem); line-height: 1.25; text-wrap: balance; }
+:is(.sd-p-grace-for-the-journey, .sd-p-journal) .sd-post__excerpt { color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 .sd-p-grace-for-the-journey .entry-content > :is(p, h2, h3, figure):not(.alignfull):not(.alignwide) { max-width: 720px; margin-inline: auto; }
 .sd-p-grace-for-the-journey .entry-content figure.wp-block-image img { border-radius: 18px; box-shadow: var(--shadow-l); }
 
@@ -184,3 +184,30 @@
 /* 1.10.1: Give amount tiles: the button sits at the foot of each tile, so the four buttons line up. */
 .sd-about .entry-content .sd-amount { display: flex !important; flex-direction: column; height: 100%; }
 .sd-about .entry-content .sd-amount > .wp-block-buttons, .sd-about .entry-content .sd-amount > .wp-block-button { margin-top: auto !important; padding-top: .75rem; }
+
+/* ==========================================================================
+   1.11.0: the polish now covers every ordinary page (book pages, free
+   downloads, thank-you pages, policies, Shop For Books) and the Journal.
+   ========================================================================== */
+/* Long text pages (policies, older book and download pages): comfortable measure and rhythm. */
+.sd-about .entry-content > :is(p, ul, ol, h2, h3, h4, blockquote, .wp-block-table):not(.alignfull):not(.alignwide) { max-width: 760px; margin-inline: auto; }
+.sd-about .entry-content > :is(h2, h3) { margin-top: 2.2em; text-wrap: balance; }
+.sd-about .entry-content > p { line-height: 1.75; }
+.sd-about .entry-content > blockquote, .sd-about .entry-content > .wp-block-quote { padding: 1rem 1.4rem; border-left: 4px solid var(--gold); border-radius: 0 14px 14px 0; background: #fff; box-shadow: 0 8px 22px rgba(60, 40, 10, .06); }
+.sd-about .entry-content > .wp-block-table table { border-collapse: collapse; width: 100%; }
+.sd-about .entry-content > .wp-block-table :is(th, td) { padding: .7rem .9rem; border: 1px solid var(--line); }
+/* Images in older pages: rounded with a soft shadow; book covers keep their own shape. */
+.sd-about .entry-content > .wp-block-image img, .sd-about .entry-content .wp-block-media-text__media img { border-radius: 14px; box-shadow: 0 14px 34px rgba(40, 28, 12, .14); }
+.sd-about .entry-content .sd-book-cover img { border-radius: 6px; box-shadow: 0 24px 50px rgba(40, 28, 12, .28); }
+/* File download blocks on download and thank-you pages: a clear card with a full button. */
+.sd-about .entry-content .wp-block-file { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; max-width: 760px; margin: 1.5rem auto; padding: 1.1rem 1.25rem; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 0 14px 14px 0; background: #fff; box-shadow: 0 8px 22px rgba(60, 40, 10, .06); }
+.sd-about .entry-content .wp-block-file > a:not(.wp-block-file__button) { font-weight: 700; color: var(--ink); }
+.sd-about .entry-content .wp-block-file__button { min-height: 48px; display: inline-flex; align-items: center; padding: 10px 22px; border-radius: 999px; background: var(--gold-d); color: #fff; font-weight: 700; text-decoration: none; }
+/* Book pages: the book hero split gets the same calm spacing. */
+.sd-about .entry-content .sd-book-hero { gap: clamp(2rem, 6vw, 4.5rem); }
+/* Journal listing. */
+.sd-p-journal .sd-posts, .sd-p-journal .sd-post-grid { gap: clamp(1rem, 2.5vw, 1.75rem); }
+@media (max-width: 781px) {
+	.sd-about .entry-content .wp-block-file { flex-direction: column; align-items: stretch; text-align: center; }
+	.sd-about .entry-content .wp-block-file__button { justify-content: center; }
+}

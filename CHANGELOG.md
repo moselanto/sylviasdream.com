@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.11.0: polish on every page
+- `about.css` now loads on every ordinary page and on the Journal (posts page), instead of a list of slugs. Left out on purpose: Home (its own design) and the WooCommerce Shop, Cart, Checkout and My account pages. Opt a page out with the `sdc_polish_page` filter. Styling only; no wording changed.
+- Newly covered (published on dev, 26 Oct): Shop For Books; book pages (One Life, SENT, From Fear to Freedom x2, From Chance to Choice x2, The Hidden Key, How to Find the Real You x2, The King's Way, Guard Your Heart, Learning to Recognise God's Voice, When the Word Becomes Life, Wisdom for Soul-Winning, Fast Forward to Success, Manifesting Miracles Now, Angelique, Angelique Finds Her Light, All Shall Be Well); free and download pages (Free Downloads, Free ebook, Free Resource for Mission Training, Free Sample How to Find the Real You, Your Free Gift, When the Word Becomes Life Download); the 14 thank-you pages; Privacy Policy, Terms of Sale, Refund Policy; You are deeply loved by God; TO ENSURE YOU END UP GOING TO HEAVEN; the older Sylvia's Dream page (5022); Journal.
+- New rules for older and long-text pages: 760px reading width, heading spacing, quotes and tables as cards, rounded images (book covers keep their shape), file-download blocks as a card with a pill button, calmer book-hero spacing. Journal cards share the Grace for the Journey card style.
+
 ## 2026-10-26 - Child theme 1.10.1: fixes from the 1.10.0 check
 - Heaven on Earth: the third video ("Jesse's Mission") was invisible on desktop. In a three-video grid the last player kept `justify-self: center` from the odd-video rule and shrank to zero width; it now stretches to fill its column (`style.css`, affects any three-video grid).
 - Give: the buttons in the four monthly amount tiles now sit at the foot of each tile, so they line up whatever the text length.
