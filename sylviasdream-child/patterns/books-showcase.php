@@ -30,7 +30,7 @@ $sdc_qr = get_theme_file_uri( 'assets/images/qr-books.svg' );
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://books.sylviasdream.com/" target="_blank" rel="noreferrer noopener">Visit books.sylviasdream.com<span class="screen-reader-text"> (opens in a new tab)</span></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://books.sylviasdream.com/" target="_blank" rel="noreferrer noopener">Visit the book showcase<span class="screen-reader-text"> (opens in a new tab)</span></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->

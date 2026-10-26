@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.6.1
+Version: 1.6.2
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1056,3 +1056,6 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 @media (max-width: 781px) { .sd-showcase { text-align: center; } .sd-showcase .sd-lead { margin-inline: auto; } .sd-showcase .wp-block-buttons { justify-content: center; } }
 /* Phones open the link directly; the QR is for reading on a computer or in print. */
 @media (max-width: 600px) { .sd-showcase__qr-col { display: none !important; } }
+
+/* 1.6.2: showcase button never splits its label. */
+.sd-showcase .wp-block-button__link { white-space: nowrap; }
