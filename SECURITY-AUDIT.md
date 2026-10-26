@@ -1,6 +1,6 @@
 # Security audit
 
-Scope: `sylviasdream/` 1.0.0, `sylviasdream-child/` 1.5.7, `sylviasdream-core/` 0.1.x. Method: code review of every PHP and JS file in the repo (grep for superglobals, output, saves, remote calls), plus behaviour checks on the dev site. Last reviewed 26 October 2026.
+Scope: `sylviasdream/` 1.0.0, `sylviasdream-child/` 1.17.0, `sylviasdream-core/` 0.3.0 (full re-review 27 October 2026; earlier review covered child 1.5.7 / core 0.1.x). Method: code review of every PHP and JS file in the repo (grep for superglobals, output, saves, remote calls), plus behaviour checks on the dev site. Last reviewed 26 October 2026.
 
 ## 1. Attack surface
 | Surface | Exposure | Notes |
@@ -21,9 +21,24 @@ Scope: `sylviasdream/` 1.0.0, `sylviasdream-child/` 1.5.7, `sylviasdream-core/` 
 | S3 | Default WordPress widgets (Archives, Categories) leaking into the footer | Fixed (1.3.0, front-end filter) |
 | S4 | Core plugin version constant (0.1.0) differs from header (0.1.1) | Fixed in 0.1.2 |
 | S5 | Street address on live Contact page | Open: remove at launch with Sylvia's OK |
+| S6 | JSON-LD printed without `JSON_HEX_TAG`: entity-encoded `</script>` in a title/excerpt/product text (decoded by `sd_core_page_description`) could break out of the script tag (stored XSS by any author/contributor) | Fixed in core 0.3.0 (`inc/schema.php`) |
+| S7 | Language boot script printed filterable JSON without hex escaping | Fixed in child 1.17.0 (`inc/languages.php`) |
+| S8 | Alt text with `$1` or `\` used as a `preg_replace` replacement (output corruption) | Fixed in child 1.17.0 (`inc/cover-alt.php`) |
+| S9 | REST user list, `?author=N`, user sitemap, XML-RPC and generator tag exposed usernames / version | Fixed in core 0.3.0 (`inc/security.php`) |
+| S10 | No login rate limit, no security headers, any upload type WordPress allows (incl. SVG via other plugins) | Fixed in core 0.3.0 (`inc/security.php`) |
+| S11 | Filtered redirect map could point off-site | Hardened in core 0.3.0 (site-relative targets only + `wp_safe_redirect`) |
+
+## 2a. Hardening module (core 0.3.0, `inc/security.php`)
+Switch any feature off with `define( 'SD_SECURITY_DISABLE', array( '<key>' ) );` or the `sd_core_security_feature` filter. Keys: `headers`, `csp`, `hsts`, `login_limit`, `form_limit`, `session_expiry`, `xmlrpc`, `rest_users`, `author_enum`, `version`, `cors`, `https`, `password_length`, `upload_mimes`.
+- CSP is **Report-Only** on purpose: it never blocks YouTube, Jetpack, Stripe, PayPal, GoFundMe or Google Translate. Tighten only after reviewing reports.
+- CORS: the REST API sends `Access-Control-Allow-Origin` only for the site's own origin (`sd_core_cors_origins` filter); no permissive CORS anywhere.
+- Rate limits use transients keyed by a hash of the IP (`REMOTE_ADDR`; behind a proxy correct it with `sd_core_client_ip`).
+- Passwords: WordPress core hashing (bcrypt from WP 6.8); only a minimum length (12, `sd_core_min_password_length`) is added.
+- Admin HTTPS: set `FORCE_SSL_ADMIN` (see `docs/wp-config-sample-additions.php`).
 
 ## 3. Controls confirmed sound
-- No `eval`, `base64_decode`, remote file reads or cURL in theme or plugin.
+- No `eval`, `unserialize`, `base64_decode`, remote file reads or cURL in theme or plugin. The only SQL is in preview mode's search clause and uses `$wpdb->prepare()` + `esc_like()`.
+- No custom form, AJAX, REST or admin-post handlers: the only save is Settings > Sylvia's Dream (Settings API nonce + `manage_options`); forms are Jetpack Forms.
 - Superglobals used only in the two places above, unslashed and sanitised.
 - All template output uses `esc_html`, `esc_attr`, `esc_url` or `wp_kses_post`; menu and Customizer values sanitised on save.
 - Display filters (`render_block`, `the_content`) never write to the database.

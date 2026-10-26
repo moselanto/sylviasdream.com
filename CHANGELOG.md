@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-10-27 - Child theme 1.17.0, core plugin 0.3.0: security, preview mode, speed, sharing image
+Core plugin 0.3.0
+- New `inc/security.php` (hardening, every feature switchable with `SD_SECURITY_DISABLE` or the `sd_core_security_feature` filter): security headers (nosniff, Referrer-Policy, X-Frame-Options SAMEORIGIN, Permissions-Policy, HSTS only over HTTPS), a Content-Security-Policy in Report-Only mode (blocks nothing, so YouTube, Jetpack, Stripe, PayPal and GoFundMe keep working), login limit (5 failed attempts per 15 minutes per IP), password-reset and comment rate limits, session length 8 hours (7 days with Remember me), XML-RPC and pingbacks off, `/wp/v2/users` hidden from visitors, `?author=N` and author archives redirected for visitors, no user sitemap or oEmbed author URL, WordPress version removed, REST CORS header sent for the site's own origin only, HTTP to HTTPS front-end redirect (proxy-aware, no loops), minimum password length 12 (profile, reset, WooCommerce account), upload types limited to images, PDF, EPUB, DOCX, MP3/M4A, MP4, and SVG refused.
+- New `inc/preview.php`: reviewer preview mode, only when wp-config sets `define( 'SD_PREVIEW_MODE', true );` (dev only). Signed-in users with `edit_posts` or `sd_reviewer` see Draft books in the shop, categories, search, product blocks and shortcodes, home page and Books mega menu, and can open Draft product pages. Visitors never see drafts; Draft products can never be bought (purchasable off and add-to-cart refused); preview pages are noindex. Product statuses are never changed.
+- Sharing: default 1200 x 630 image `assets/og-default.jpg` (wordmark and the theme's default tagline "Author · Speaker · Missionary") for every page without its own image, replaceable in Settings > Sylvia's Dream > Default sharing image; `og:image:width`, `og:image:height`, `og:image:alt`, Twitter title/description/image tags, `summary_large_image`; tagline as the last description fallback; archive, category and posts-page tags. Book pages still share their cover (filter `sd_core_og_use_content_image`).
+- Fix: JSON-LD is printed with `JSON_HEX_TAG` so "</script>" written (or entity-encoded) in a title, excerpt or product description can no longer break out of the script tag.
+- Redirects: request path sanitised with `esc_url_raw`; redirect targets must be site-relative paths.
+
+Child theme 1.17.0
+- New `inc/performance.php` (filter `sdc_perf_feature` switches each part): minified CSS/JS used when built and up to date (`scripts/build-assets.js`, run by `build-theme-zip.sh`; falls back to the source; `SCRIPT_DEBUG` loads the source), emoji script removed, brand font stylesheet and the LCP image (home hero cover or page header photo) preloaded with `fetchpriority="high"`, `decoding="async"` on content images, click-to-play YouTube facade (original iframe kept in `<noscript>`, `assets/js/yt-facade.js`), `comment-reply` async and WooCommerce order-attribution scripts deferred, WooCommerce and WC Blocks stylesheets skipped on pages with no shop content (cart, checkout, account, product, shop, Books page, home and search always keep them).
+- Page header photo now has width, height and srcset (no layout shift, smaller file on phones).
+- Home and Books mega menu product lists read their statuses from `sdc_product_statuses()` (always "publish" unless preview mode is on).
+- Fixes: language boot script JSON is hex-escaped; alt text containing "$1" or a backslash is no longer read as a regex back-reference (`inc/cover-alt.php`); submenu chevron printed through `wp_kses()`.
+- Clean-up: Google Fonts URL defined once (`sdc_google_fonts_url()`), formatting aligned, stale `functions.php` version constant (1.16.3 vs style.css 1.16.5) corrected to 1.17.0.
+
+Repo
+- `scripts/build-assets.js` (no dependencies), `.min.*` files git-ignored and shipped in zips only. `docs/wp-config-sample-additions.php` lists optional constants. `SECURITY-AUDIT.md` updated.
+
 ## 2026-10-26 - Child theme 1.16.3: slideshow alt text
 - Jetpack slideshow and gallery images with an empty alt now show the alt text saved in the Media Library (Heaven on Earth slideshows kept `alt=""` in their saved block data).
 
