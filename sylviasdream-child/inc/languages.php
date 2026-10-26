@@ -93,3 +93,28 @@ function sdc_language_assets() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'sdc_language_assets', 25 );
+
+/**
+ * 1.8.1: start Google's translator as early as possible for visitors who chose
+ * another language (connection warmed up and script requested from the <head>,
+ * instead of after the page has loaded). English visitors load nothing.
+ */
+function sdc_language_head_boot() {
+	if ( ! sdc_language_switcher_enabled() || is_admin() ) {
+		return;
+	}
+	$codes = wp_json_encode( array_keys( sdc_languages() ) );
+	?>
+<script id="sd-lang-boot">
+(function(){var m=document.cookie.match(/(?:^|;\s*)googtrans=\/[a-z-]+\/([a-zA-Z-]+)/),c=m?m[1]:'en',codes=<?php echo $codes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- JSON of fixed codes. ?>;
+if(c==='en'||codes.indexOf(c)<0){return;}
+var d=document,h=d.documentElement;h.classList.add('sd-translated');
+['https://translate.google.com','https://translate.googleapis.com','https://translate-pa.googleapis.com','https://www.gstatic.com'].forEach(function(u){var l=d.createElement('link');l.rel='preconnect';l.href=u;l.crossOrigin='';d.head.appendChild(l);});
+window.sdGoogleInit=function(){var run=function(){var el=d.getElementById('sd-gt');if(!el){el=d.createElement('div');el.id='sd-gt';el.hidden=true;d.body.appendChild(el);}
+if(window.google&&google.translate){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:codes.join(','),autoDisplay:false},'sd-gt');}};
+if(d.body){run();}else{d.addEventListener('DOMContentLoaded',run);}};
+var s=d.createElement('script');s.src='https://translate.google.com/translate_a/element.js?cb=sdGoogleInit';s.async=true;d.head.appendChild(s);})();
+</script>
+	<?php
+}
+add_action( 'wp_head', 'sdc_language_head_boot', 1 );

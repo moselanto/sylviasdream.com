@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.8.0
+Version: 1.8.1
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1155,3 +1155,17 @@ font[style*="vertical-align"] { vertical-align: baseline !important; }
 .page:not(.home) .entry-content .sd-news-card p, .page:not(.home) .entry-content .sd-news-card li { color: #f6ecd8 !important; }
 .page:not(.home) .entry-content .sd-news-card .sd-news-note { color: #f3e3bf !important; }
 .page:not(.home) .entry-content .sd-news-card h2 { color: #fff !important; }
+
+/* 1.8.1: language suggestion card (bottom corner on desktop, above the bottom bar on phones). */
+.sd-lang-offer { position: fixed; z-index: 160; right: 20px; bottom: 20px; width: min(380px, calc(100vw - 32px)); padding: 18px 18px 16px; background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 14px; box-shadow: 0 20px 50px rgba(40, 25, 5, .22); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .3s var(--ease), transform .3s var(--ease); }
+.sd-lang-offer.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+.sd-lang-offer__text { margin: 0 0 12px; font-size: 1rem; line-height: 1.5; color: var(--ink); }
+.sd-lang-offer__actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.sd-lang-offer button { min-height: 44px; padding: 8px 16px; border-radius: 999px; font: 700 .92rem/1.2 var(--sans); cursor: pointer; }
+.sd-lang-offer__yes { border: 2px solid var(--gold-d); background: var(--gold-d); color: #fff; }
+.sd-lang-offer__yes:hover { background: var(--ink); border-color: var(--ink); }
+.sd-lang-offer__no { border: 2px solid var(--line); background: #fff; color: var(--ink); }
+.sd-lang-offer__no:hover { border-color: var(--gold); }
+.sd-lang-offer button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+@media (max-width: 760px) { .sd-lang-offer { left: 16px; right: 16px; width: auto; bottom: calc(92px + env(safe-area-inset-bottom, 0px)); } }
+@media (prefers-reduced-motion: reduce) { .sd-lang-offer { transition: none; } }
