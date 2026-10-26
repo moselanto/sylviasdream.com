@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.10.1: fixes from the 1.10.0 check
+- Heaven on Earth: the third video ("Jesse's Mission") was invisible on desktop. In a three-video grid the last player kept `justify-self: center` from the odd-video rule and shrank to zero width; it now stretches to fill its column (`style.css`, affects any three-video grid).
+- Give: the buttons in the four monthly amount tiles now sit at the foot of each tile, so they line up whatever the text length.
+
 ## 2026-10-26 - Child theme 1.10.0: Give, Heaven on Earth, Kenya manual, Contact, Grace for the Journey
 - The About-pages stylesheet (`assets/css/about.css`) now also loads on Give, Heaven on Earth, Kenya Ministry Training Manual, Contact and Grace for the Journey, so they share the same banner, section rhythm, cards and forms. Each of these pages also gets a `sd-p-<slug>` body class for page-level styling. Styling only; no wording changed.
 - Give: raised giving box, amount tiles with hover state, goal card with gold top edge, rounded impact tiles. FAQ accordions on Give, Heaven on Earth and Contact as clean white rows, highlighted when open.

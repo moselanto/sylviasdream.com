@@ -37,6 +37,8 @@ Was: apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 27
 - [ ] Home page gaps against prototype v4: see PROGRESS-LOG 24 Oct (Latest from Sylvia, Have a book on your heart?, newsletter form, featured covers, Meet Sylvia quote card, 4th trust item)
 - [x] cPanel licence error fixed by the host (26 Oct); theme-zip upload (Replace active) still the usual deploy
 - [ ] Start here welcome card wording ("New to Sylvia's books? Begin with her story, or browse every title by topic.") is ours: include in Sylvia's review; it is replaced by 3 featured covers once books are published
+- [ ] Grace for the Journey: text says "Enter your email below to subscribe" but no sign-up form shows on dev (dev is not connected to WordPress.com, by decision). Check on live at launch; if the form still does not show, ask Sylvia about the wording
+- [x] 1.10.1: Heaven on Earth third video visible on desktop; Give amount buttons aligned
 - [x] Page polish extended to Give, Heaven on Earth, Kenya manual, Contact, Grace for the Journey (theme 1.10.0, 26 Oct). Give amounts are still test placeholders; Heaven on Earth still waits for the hand paste of the new layout
 - [x] About pages fixes, theme 1.9.1-1.9.2 (26 Oct): card heading alignment, card paragraph spacing, Podcasts interview card, More videos as three plus a centred two (1.9.2)
 - [x] About pages polish, theme 1.9.0 (26 Oct): My Story, Invite Sylvia to speak, Podcasts & Videos, Author Support. A real photo of Sylvia would replace the My Story monogram card (photo still awaited from Sylvia)

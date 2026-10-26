@@ -180,3 +180,7 @@
 	.sd-about .entry-content .sd-amount:hover { transform: none; }
 	.sd-p-kenya-ministry-training-manual-free-download .entry-content .sd-split .wp-block-image img { max-width: 280px; }
 }
+
+/* 1.10.1: Give amount tiles: the button sits at the foot of each tile, so the four buttons line up. */
+.sd-about .entry-content .sd-amount { display: flex !important; flex-direction: column; height: 100%; }
+.sd-about .entry-content .sd-amount > .wp-block-buttons, .sd-about .entry-content .sd-amount > .wp-block-button { margin-top: auto !important; padding-top: .75rem; }
