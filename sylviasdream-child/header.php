@@ -40,9 +40,12 @@ if ( sdc_get_bool( 'show_utility_bar' ) ) :
 						<span class="sd-hide-phone"><?php echo esc_html( $sdc_u2 ); ?></span>
 					<?php endif; ?>
 				</p>
+				<div class="sd-utility__end">
+				<?php sdc_language_select( 'sd-lang-bar', 'bar' ); ?>
 				<?php if ( $sdc_ulabel && $sdc_uurl ) : ?>
 					<a class="sd-utility__link" href="<?php echo esc_url( $sdc_uurl ); ?>"><?php echo esc_html( $sdc_ulabel ); ?></a>
 				<?php endif; ?>
+				</div>
 			</div>
 		</div>
 		<?php
@@ -59,7 +62,7 @@ endif;
 				<?php else : ?>
 					<svg class="sd-brand__mark" aria-hidden="true" focusable="false" width="42" height="42" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 11c3 6 9 8 9 15a9 9 0 0 1-18 0c0-7 6-9 9-15z" fill="currentColor" opacity=".9"/><path d="M14 36h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
 					<span class="sd-brand__text">
-						<span class="sd-brand__name"><?php bloginfo( 'name' ); ?></span>
+						<span class="sd-brand__name notranslate" translate="no"><?php bloginfo( 'name' ); ?></span>
 						<?php if ( $sdc_tagline ) : ?>
 							<span class="sd-brand__tagline"><?php echo esc_html( $sdc_tagline ); ?></span>
 						<?php endif; ?>
@@ -75,6 +78,7 @@ endif;
 						<span class="screen-reader-text"><?php esc_html_e( 'Close menu', 'sylviasdream-child' ); ?></span>
 					</button>
 				</div>
+				<?php sdc_language_select( 'sd-lang-drawer', 'drawer' ); ?>
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'primary',

@@ -55,7 +55,7 @@ $sdc_badges    = array_filter( array_map( 'trim', explode( ',', sdc_get( 'footer
 	<div class="sd-wrap">
 		<div class="sd-footer__grid">
 			<div class="sd-footer__col sd-footer__brand">
-				<p class="sd-footer__name"><?php bloginfo( 'name' ); ?></p>
+				<p class="sd-footer__name notranslate" translate="no"><?php bloginfo( 'name' ); ?></p>
 				<?php if ( $sdc_about ) : ?>
 					<p><?php echo esc_html( $sdc_about ); ?></p>
 				<?php endif; ?>

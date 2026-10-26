@@ -1,0 +1,59 @@
+<!-- wp:html -->
+<div class="gfm-embed" data-url="https://www.gofundme.com/f/heaven-on-earth-ministries-cares-for-orphans/widget/large?sharesheet=undefined&attribution_id=sl:d89caf57-a118-4904-8656-14ffd0d89d1f"></div><script defer src="https://www.gofundme.com/static/js/embed.js"></script>
+<!-- /wp:html --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sd-band sd-band--narrow","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull sd-band sd-band--narrow"><!-- wp:group {"className":"sd-band__inner","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-band__inner"><!-- wp:paragraph {"align": "center", "className": "sd-eyebrow"} -->
+<p class="has-text-align-center sd-eyebrow">Questions</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"textAlign": "center"} -->
+<h2 class="wp-block-heading has-text-align-center">Questions about giving</h2>
+<!-- /wp:heading -->
+
+<!-- wp:group {"className":"sd-faqs","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-faqs"><!-- wp:details {"className":"sd-faq"} -->
+<details class="wp-block-details sd-faq"><summary>Is this monthly or one-time?</summary><!-- wp:paragraph -->
+<p>Dream Partners give monthly. If you prefer a one-time donation, you are welcome to do that too.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"className":"sd-faq"} -->
+<details class="wp-block-details sd-faq"><summary>Can I cancel anytime?</summary><!-- wp:paragraph -->
+<p>Yes. You can cancel your monthly support at any time.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"className":"sd-faq"} -->
+<details class="wp-block-details sd-faq"><summary>Do I receive a receipt?</summary><!-- wp:paragraph -->
+<p>Yes, your payment provider will issue a receipt for your donation.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"className":"sd-faq"} -->
+<details class="wp-block-details sd-faq"><summary>How do I know my donation is used well?</summary><!-- wp:paragraph -->
+<p>We provide regular updates and work closely with trusted local leaders on the ground in Kenya to ensure transparency and accountability.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"className":"sd-faq"} -->
+<details class="wp-block-details sd-faq"><summary>I don’t live in Australia — can I still give?</summary><!-- wp:paragraph -->
+<p>A Dream Partner can support from anywhere in the world.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sd-band sd-band--alt sd-band--narrow","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull sd-band sd-band--alt sd-band--narrow"><!-- wp:group {"className":"sd-band__inner","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-band__inner"><!-- wp:heading {"textAlign": "center"} -->
+<h2 class="wp-block-heading has-text-align-center">You will receive updates</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align": "center", "className": "sd-lead"} -->
+<p class="has-text-align-center sd-lead">Dream Partners receive regular updates and stories so you can see how your support is making a real difference in rural Kenya.</p>
+<!-- /wp:paragraph -->

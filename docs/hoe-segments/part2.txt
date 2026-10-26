@@ -1,0 +1,155 @@
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"center"} -->
+<div class="wp-block-column is-vertically-aligned-center"><!-- wp:paragraph {"className": "sd-emph"} -->
+<p class="sd-emph">Heaven on Earth Ministries is more than a mission — it’s a movement of mercy, born from love and lived in the dust and beauty of Kenya.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I’ve had the privilege of helping establish this ministry and living among the people for many years, sharing in their joys, struggles, and breakthroughs. We care for orphans and vulnerable children, offering not only food and education, but dignity and hope.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Every gift matters. Around 90% of donations go directly to the work in Kenya — feeding programs, medical care, school fees, tuition, uniforms, books, and stationery. The remaining 10% supports essential administration.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:group {"className":"sd-callout","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-callout"><!-- wp:paragraph {"className": "sd-callout__text"} -->
+<p class="sd-callout__text">Today, many of our children are thriving in universities, studying Civil Engineering, IT, Business Management, Nursing, and more. We believe each child is called to rise with integrity, discipline, and faith — to become a light in their generation.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sd-band sd-quote-band","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull sd-band sd-quote-band"><!-- wp:group {"className":"sd-band__inner","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-band__inner"><!-- wp:paragraph {"align": "center", "className": "sd-quote-band__text"} -->
+<p class="has-text-align-center sd-quote-band__text">“One life can make a difference.”</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align": "center", "className": "sd-eyebrow"} -->
+<p class="has-text-align-center sd-eyebrow">Sylvia Suhr</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"layout": {"type": "flex", "justifyContent": "center"}} -->
+<div class="wp-block-buttons is-content-justification-center is-layout-flex"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/sylviasdream/give/">Give monthly as a Dream Partner</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sd-band sd-band--alt","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull sd-band sd-band--alt"><!-- wp:group {"className":"sd-band__inner","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-band__inner"><!-- wp:paragraph {"align": "center", "className": "sd-eyebrow"} -->
+<p class="has-text-align-center sd-eyebrow">Dream Partners</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"textAlign": "center"} -->
+<h2 class="wp-block-heading has-text-align-center">Goal: 100 Dream Partners</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align": "center", "className": "sd-lead"} -->
+<p class="has-text-align-center sd-lead">We are building a team of 100 Dream Partners who will partner with our registered charity each month to bring practical help and lasting hope to children and families in Kenya.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"sd-cards sd-cards--4","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-cards sd-cards--4"><!-- wp:group {"className":"sd-card","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-card"><!-- wp:heading {"level": 3} -->
+<h3 class="wp-block-heading">$5/month</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>helps provide essential items and contributes to meals and school support</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sd-card","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-card"><!-- wp:heading {"level": 3} -->
+<h3 class="wp-block-heading">$15/month</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>helps provide food and basic care</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sd-card","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-card"><!-- wp:heading {"level": 3} -->
+<h3 class="wp-block-heading">$30/month</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>helps with school supplies and uniforms</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sd-card","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-card"><!-- wp:heading {"level": 3} -->
+<h3 class="wp-block-heading">$50/month</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>helps cover school fees and urgent medical needs</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"align": "center", "className": "sd-lead"} -->
+<p class="has-text-align-center sd-lead">Even $5 a month makes a difference.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"layout": {"type": "flex", "justifyContent": "center"}} -->
+<div class="wp-block-buttons is-content-justification-center is-layout-flex"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/sylviasdream/give/">Become a Dream Partner</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://gofund.me/dc685ae2">Go Fund Me</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sd-band","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull sd-band"><!-- wp:group {"className":"sd-band__inner","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-band__inner"><!-- wp:paragraph {"align": "center", "className": "sd-eyebrow"} -->
+<p class="has-text-align-center sd-eyebrow">Watch</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"textAlign": "center"} -->
+<h2 class="wp-block-heading has-text-align-center">From the field</h2>
+<!-- /wp:heading -->
+
+<!-- wp:embed {"url":"https://www.youtube.com/watch?v=qizUJpnBO2Q","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=qizUJpnBO2Q
+</div></figure>
+<!-- /wp:embed -->
+
+<!-- wp:embed {"url":"https://www.youtube.com/watch?v=ApgpqMb_wGI","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=ApgpqMb_wGI
+</div></figure>
+<!-- /wp:embed -->
+
+<!-- wp:embed {"url":"https://www.youtube.com/watch?v=eD-pJyawyXk&amp;t=10s","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=eD-pJyawyXk&amp;t=10s
+</div></figure>
+<!-- /wp:embed --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sd-band sd-band--alt","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull sd-band sd-band--alt"><!-- wp:group {"className":"sd-band__inner","layout":{"type":"default"}} -->
+<div class="wp-block-group sd-band__inner"><!-- wp:paragraph {"align": "center", "className": "sd-eyebrow"} -->
+<p class="has-text-align-center sd-eyebrow">Gallery</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"textAlign": "center"} -->
+<h2 class="wp-block-heading has-text-align-center">Life at Heaven on Earth</h2>
+<!-- /wp:heading -->

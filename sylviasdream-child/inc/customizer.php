@@ -52,6 +52,7 @@ function sdc_fields() {
 		'dock_ministry_label' => array( 'sdc_header', __( 'Phone bottom bar: ministry label', 'sylviasdream-child' ), 'text', 'Ministry' ),
 		'dock_ministry_url'  => array( 'sdc_header', __( 'Phone bottom bar: ministry link', 'sylviasdream-child' ), 'link', '/heaven-on-earth/' ),
 		'mega_feature_label' => array( 'sdc_header', __( 'Books mega menu: heading above featured books (blank hides them)', 'sylviasdream-child' ), 'text', 'Start here' ),
+		'show_language_switcher' => array( 'sdc_header', __( 'Show the language selector (English, Français, Español, Bahasa Indonesia; automatic translation)', 'sylviasdream-child' ), 'checkbox', true ),
 		'show_utility_bar'   => array( 'sdc_header', __( 'Show the thin utility bar above the header', 'sylviasdream-child' ), 'checkbox', true ),
 		'utility_text_1'     => array( 'sdc_header', __( 'Utility bar: first note', 'sylviasdream-child' ), 'text', 'Instant eBook delivery worldwide' ),
 		'utility_text_2'     => array( 'sdc_header', __( 'Utility bar: second note (hidden on phones)', 'sylviasdream-child' ), 'text', 'Paperbacks via Amazon in your country' ),
