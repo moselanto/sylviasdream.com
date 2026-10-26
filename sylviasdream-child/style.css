@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.11.0
+Version: 1.11.1
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -683,6 +683,8 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 .page:not(.home) .entry-content p.has-large-font-size, .page:not(.home) .entry-content p.has-larger-font-size, .page:not(.home) .entry-content p.has-x-large-font-size, .page:not(.home) .entry-content p.has-huge-font-size { font-size: clamp(1.06rem, 1.3vw, 1.15rem) !important; line-height: 1.75; }
 .page:not(.home) .entry-content div[style*="font-size"] { font-size: inherit !important; line-height: inherit !important; }
 .page:not(.home) .entry-content strong { color: var(--ink); font-weight: 700; }
+/* 1.11.1: bold text inside a button or file button keeps the button's own text colour (was dark ink on dark gold). */
+.page:not(.home) .entry-content :is(.wp-block-button__link, .wp-block-file__button, .wp-element-button) :is(strong, b, em, span) { color: inherit; }
 /* A paragraph that was bold from start to end: shown as a highlighted passage. */
 .page:not(.home) .entry-content p.sd-emph { font-family: var(--serif); font-size: clamp(1.3rem, 2vw, 1.55rem) !important; line-height: 1.45; font-weight: 600; color: var(--ink); margin-block: 1.5rem; }
 .page:not(.home) .entry-content p:empty { display: none; }

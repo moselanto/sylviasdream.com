@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.11.1: button text contrast
+- Bold text inside buttons (for example "Download 7 Days to Trusting God with Your Journey" on Your Free Gift) took the general dark-ink colour for bold text and was hard to read on the gold button. Bold, italic and span text inside buttons and file buttons now keeps the button's own text colour.
+
 ## 2026-10-26 - Child theme 1.11.0: polish on every page
 - `about.css` now loads on every ordinary page and on the Journal (posts page), instead of a list of slugs. Left out on purpose: Home (its own design) and the WooCommerce Shop, Cart, Checkout and My account pages. Opt a page out with the `sdc_polish_page` filter. Styling only; no wording changed.
 - Newly covered (published on dev, 26 Oct): Shop For Books; book pages (One Life, SENT, From Fear to Freedom x2, From Chance to Choice x2, The Hidden Key, How to Find the Real You x2, The King's Way, Guard Your Heart, Learning to Recognise God's Voice, When the Word Becomes Life, Wisdom for Soul-Winning, Fast Forward to Success, Manifesting Miracles Now, Angelique, Angelique Finds Her Light, All Shall Be Well); free and download pages (Free Downloads, Free ebook, Free Resource for Mission Training, Free Sample How to Find the Real You, Your Free Gift, When the Word Becomes Life Download); the 14 thank-you pages; Privacy Policy, Terms of Sale, Refund Policy; You are deeply loved by God; TO ENSURE YOU END UP GOING TO HEAVEN; the older Sylvia's Dream page (5022); Journal.

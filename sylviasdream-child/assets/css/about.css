@@ -202,7 +202,7 @@
 /* File download blocks on download and thank-you pages: a clear card with a full button. */
 .sd-about .entry-content .wp-block-file { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; max-width: 760px; margin: 1.5rem auto; padding: 1.1rem 1.25rem; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 0 14px 14px 0; background: #fff; box-shadow: 0 8px 22px rgba(60, 40, 10, .06); }
 .sd-about .entry-content .wp-block-file > a:not(.wp-block-file__button) { font-weight: 700; color: var(--ink); }
-.sd-about .entry-content .wp-block-file__button { min-height: 48px; display: inline-flex; align-items: center; padding: 10px 22px; border-radius: 999px; background: var(--gold-d); color: #fff; font-weight: 700; text-decoration: none; }
+.sd-about .entry-content .wp-block-file__button { color: #fff !important; min-height: 48px; display: inline-flex; align-items: center; padding: 10px 22px; border-radius: 999px; background: var(--gold-d); color: #fff; font-weight: 700; text-decoration: none; }
 /* Book pages: the book hero split gets the same calm spacing. */
 .sd-about .entry-content .sd-book-hero { gap: clamp(2rem, 6vw, 4.5rem); }
 /* Journal listing. */
