@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '1.16.0' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '1.16.1' );
 define( 'SYLVIASDREAM_CHILD_DIR', get_stylesheet_directory() );
 define( 'SYLVIASDREAM_CHILD_URI', get_stylesheet_directory_uri() );
 
@@ -214,6 +214,7 @@ require_once SYLVIASDREAM_CHILD_DIR . '/inc/widgets.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/inner-pages.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/languages.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/hero-books.php';
+require_once SYLVIASDREAM_CHILD_DIR . '/inc/cover-alt.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require_once SYLVIASDREAM_CHILD_DIR . '/inc/woocommerce.php';
 }

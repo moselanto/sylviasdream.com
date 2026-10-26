@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.16.1: automatic alt text for book covers
+- `inc/cover-alt.php`: a book-cover image block (`sd-book-cover`) or a WooCommerce product image with no alt text now reads "Book cover of <title> by Sylvia Suhr", using the page or product name already on the site. Alt text set in the Media Library or the block always wins.
+
 ## 2026-10-26 - Child theme 1.16.0: redesign handoff, first pass
 - Colours aligned with the visual system in `docs/REDESIGN-HANDOFF.docx`: ink #231B14, gold action #775014 (darker, better contrast for buttons and links), gold accent #C18B2D, cream #FCFAF5, cream tint #F4EDDF. Updated in `style.css`, `theme.json` (editor palette), `blocks.css`, `editor.css` and the drawer icons.
 - Home hero photo now loads first (`fetchpriority="high"`, never lazy), for a faster first screen (LCP).
