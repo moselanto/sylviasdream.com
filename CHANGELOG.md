@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.7.0: About pages to the approved prototype
+
+- Podcasts and Videos rebuilt (content/blocks/podcasts.html): banner "Listen and watch", two featured video cards with captions, note, grid of more videos, Invite Sylvia speaking promo.
+- Invite Sylvia to speak (speaking.html): banner, "Messages Sylvia shares" cards with line icons, "In person or online" checklist beside a captioned photo.
+- Author Support (author-support.html): banner "Helping Authors Take Their Manuscripts from Draft to Market", intro, three service cards with icons (wording unchanged), "Your Book Matters" split, enquiry form card.
+- Theme: line-icon set for cards, video cards/grid, note style; My Story milestone titles gold; stat cards three across from tablets.
+
 ## 2026-10-26 - Child theme 1.6.3: My Story to the approved prototype
 
 - content/blocks/my-story.html rebuilt to the client-approved prototype: banner, story with portrait card, Milestones timeline beside a captioned photo, stats and Invite Sylvia to speak. New timeline, photo-caption and stat styles.

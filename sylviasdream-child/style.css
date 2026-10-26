@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.6.3
+Version: 1.7.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1075,3 +1075,44 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 .page:not(.home) .entry-content p.sd-stat__num { margin: 0; font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 3.4rem) !important; font-weight: 700; line-height: 1; color: var(--gold-d); }
 .page:not(.home) .entry-content p.sd-stat__text { margin: .4rem 0 0; font-size: .98rem !important; color: var(--ink-2); }
 .sd-band .sd-cards + .wp-block-buttons { margin-top: clamp(1.75rem, 4vw, 2.5rem); }
+
+/* ==========================================================================
+   1.7.0: About pages to the approved prototype; card icons; My Story fixes
+   ========================================================================== */
+/* Icon tiles on cards (Speaking topics, Author Support services). */
+.sd-card--ico::before { content: ""; display: block; width: 48px; height: 48px; margin-bottom: 1.1rem; border-radius: 12px; background-color: var(--gold-l); background-repeat: no-repeat; background-position: center; background-size: 24px; }
+.sd-ico-heart::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20s-7-4.3-9-8.4C1.6 8.4 3.5 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.3 0 5.2 3.4 3.8 6.6C17 15.7 12 20 12 20z'/%3E%3C/svg%3E"); }
+.sd-ico-globe::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z'/%3E%3C/svg%3E"); }
+.sd-ico-book::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z'/%3E%3Cpath d='M4 20.5V5.5M8 7h8'/%3E%3C/svg%3E"); }
+.sd-ico-pen::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20l4.2-1.1L19 8.1a2 2 0 0 0 0-2.8l-.3-.3a2 2 0 0 0-2.8 0L5.1 15.8z'/%3E%3Cpath d='M14 6l4 4'/%3E%3C/svg%3E"); }
+.sd-ico-doc::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 3h7l5 5v13H7z'/%3E%3Cpath d='M14 3v5h5M10 13h6M10 17h6'/%3E%3C/svg%3E"); }
+.sd-ico-mic::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='3' width='6' height='11' rx='3'/%3E%3Cpath d='M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6'/%3E%3C/svg%3E"); }
+.sd-band .sd-card--ico { transition: transform .25s var(--ease), box-shadow .25s, border-color .25s; }
+.sd-band .sd-card--ico:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: var(--shadow-l); }
+.page:not(.home) .entry-content .sd-card__link { margin-top: auto !important; padding-top: .5rem; }
+.page:not(.home) .entry-content .sd-card__link a { font-weight: 700; color: var(--gold-d); text-decoration: none; border-bottom: 1px solid var(--gold-l); }
+.page:not(.home) .entry-content .sd-card__link a:hover { border-bottom-color: var(--gold-d); }
+.sd-band .sd-card { display: flex; flex-direction: column; }
+/* Podcasts: two featured video cards, then a grid of more videos. */
+.sd-video-cards { display: grid; gap: clamp(1.25rem, 3vw, 2rem); grid-template-columns: 1fr; }
+@media (min-width: 760px) { .sd-video-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.sd-video-cards > * { margin: 0 !important; }
+.sd-video-card { display: flex; flex-direction: column; gap: .6rem; }
+.sd-video-card .wp-block-embed { margin: 0 0 .5rem !important; }
+.sd-video-card .wp-block-embed.wp-has-aspect-ratio .wp-block-embed__wrapper::before { padding-top: 56.25% !important; }
+.sd-video-card h3 { margin: 0 !important; font-size: clamp(1.25rem, 2vw, 1.5rem); }
+.page:not(.home) .entry-content .sd-video-card p { margin: 0; font-size: 1rem !important; }
+.page:not(.home) .entry-content p.sd-note { margin-top: clamp(1.5rem, 3vw, 2rem) !important; padding: 12px 18px; border-radius: 12px; background: var(--gold-l); color: var(--gold-d); font-size: .92rem !important; font-weight: 600; }
+.sd-video-more { display: grid; gap: clamp(1rem, 2.5vw, 1.5rem); grid-template-columns: 1fr; margin-top: clamp(1.75rem, 4vw, 2.5rem) !important; }
+@media (min-width: 640px) { .sd-video-more { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .sd-video-more { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.sd-video-more > * { margin: 0 !important; }
+.sd-video-more .wp-block-embed.wp-has-aspect-ratio .wp-block-embed__wrapper::before { padding-top: 56.25% !important; }
+/* My Story: milestone titles gold (beat the generic strong colour); stats three across from tablets. */
+.page:not(.home) .entry-content .sd-timeline li strong { color: var(--gold-d); }
+@media (min-width: 600px) {
+	.sd-band .sd-cards--3:has(> .sd-stat) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.sd-band .sd-cards--3:has(> .sd-stat) > :last-child { grid-column: auto; }
+}
+/* Banner photos: calm, consistent crop on every About page. */
+.sd-pagehead-cover .wp-block-cover__image-background { object-position: center 40%; }
