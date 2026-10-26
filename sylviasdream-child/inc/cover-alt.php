@@ -15,6 +15,28 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * Escape text for a preg_replace() replacement string. 1.17.0 fix: "$1" or a
+ * backslash in a title or alt text was read as a back-reference.
+ *
+ * @param string $text Text.
+ * @return string
+ */
+function sdc_preg_quote_replacement( $text ) {
+	return str_replace( array( '\\', '$' ), array( '\\\\', '\\$' ), (string) $text );
+}
+
+/**
+ * Fill the first empty alt="" in $content.
+ *
+ * @param string $content HTML.
+ * @param string $alt     Alt text (unescaped).
+ * @return string
+ */
+function sdc_set_empty_alt( $content, $alt ) {
+	return preg_replace( '/(<img\b[^>]*\b)alt=""/', '$1alt="' . sdc_preg_quote_replacement( esc_attr( $alt ) ) . '"', $content, 1 );
+}
+
+/**
  * Alt text for a cover, from a title.
  *
  * @param string $title Book or page title.
@@ -47,10 +69,10 @@ function sdc_cover_block_alt( $content, $block ) {
 	}
 	// Empty alt attribute, or no alt attribute at all, on the first <img>.
 	if ( preg_match( '/<img\b[^>]*\balt=""/', $content ) ) {
-		return preg_replace( '/(<img\b[^>]*\b)alt=""/', '$1alt="' . esc_attr( $alt ) . '"', $content, 1 );
+		return sdc_set_empty_alt( $content, $alt );
 	}
 	if ( ! preg_match( '/<img\b[^>]*\balt=/', $content ) ) {
-		return preg_replace( '/<img\b/', '<img alt="' . esc_attr( $alt ) . '"', $content, 1 );
+		return preg_replace( '/<img\b/', '<img alt="' . sdc_preg_quote_replacement( esc_attr( $alt ) ) . '"', $content, 1 );
 	}
 	return $content;
 }
@@ -59,8 +81,8 @@ add_filter( 'render_block_core/image', 'sdc_cover_block_alt', 10, 2 );
 /**
  * Product images (shop grid, product page, cart) with an empty alt.
  *
- * @param array        $attr       Image attributes.
- * @param WP_Post      $attachment Attachment.
+ * @param array   $attr       Image attributes.
+ * @param WP_Post $attachment Attachment.
  * @return array
  */
 function sdc_product_image_alt( $attr, $attachment ) {
@@ -100,7 +122,7 @@ function sdc_image_block_library_alt( $content, $block ) {
 	if ( '' === $alt ) {
 		return $content;
 	}
-	return preg_replace( '/(<img\b[^>]*\b)alt=""/', '$1alt="' . esc_attr( $alt ) . '"', $content, 1 );
+	return sdc_set_empty_alt( $content, $alt );
 }
 add_filter( 'render_block_core/image', 'sdc_image_block_library_alt', 9, 2 );
 
@@ -125,7 +147,7 @@ function sdc_fill_alt_from_library( $content ) {
 			if ( preg_match( '/\bdata-id="(\d+)"/', $tag, $id ) || preg_match( '/\bwp-image-(\d+)\b/', $tag, $id ) ) {
 				$alt = trim( (string) get_post_meta( (int) $id[1], '_wp_attachment_image_alt', true ) );
 				if ( '' !== $alt ) {
-					return preg_replace( '/\balt=""/', 'alt="' . esc_attr( $alt ) . '"', $tag, 1 );
+					return preg_replace( '/\balt=""/', 'alt="' . sdc_preg_quote_replacement( esc_attr( $alt ) ) . '"', $tag, 1 );
 				}
 			}
 			return $tag;

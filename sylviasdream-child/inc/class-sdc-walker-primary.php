@@ -72,7 +72,7 @@ class SDC_Walker_Primary extends Walker_Nav_Menu {
 				esc_attr( $sub_id ),
 				/* translators: %s: menu item title. */
 				esc_html( sprintf( __( 'Show %s submenu', 'sylviasdream-child' ), $title ) ),
-				sdc_icon( 'chevron' ) // Static SVG markup from the theme.
+				wp_kses( sdc_icon( 'chevron' ), sdc_svg_kses() )
 			);
 		}
 	}

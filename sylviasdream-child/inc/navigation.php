@@ -47,7 +47,7 @@ function sdc_mega_featured_html() {
 	}
 	$products = wc_get_products(
 		array(
-			'status'   => 'publish',
+			'status'   => function_exists( 'sdc_product_statuses' ) ? sdc_product_statuses() : 'publish',
 			'featured' => true,
 			'limit'    => 3,
 			'orderby'  => 'menu_order',

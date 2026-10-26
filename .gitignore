@@ -7,3 +7,8 @@ node_modules/
 # Private data never belongs here
 *.csv
 backups/
+
+# Build output of scripts/build-assets.js (shipped in the release zips only)
+sylviasdream-child/**/*.min.css
+sylviasdream-child/**/*.min.js
+sylviasdream-child/style.min.css

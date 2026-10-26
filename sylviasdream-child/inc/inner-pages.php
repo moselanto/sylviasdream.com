@@ -133,6 +133,49 @@ function sdc_page_header_image() {
 }
 
 /**
+ * 1.17.0: header photo with its real size and responsive sources, so the
+ * browser can reserve space (no layout shift) and pick a smaller file on phones.
+ *
+ * @return array{src:string,width:int,height:int,srcset:string}
+ */
+function sdc_page_header_image_data() {
+	$empty = array(
+		'src'    => '',
+		'width'  => 0,
+		'height' => 0,
+		'srcset' => '',
+	);
+	if ( is_singular() && has_post_thumbnail() ) {
+		$id  = (int) get_post_thumbnail_id();
+		$src = wp_get_attachment_image_src( $id, 'full' );
+		if ( $src ) {
+			return array(
+				'src'    => $src[0],
+				'width'  => (int) $src[1],
+				'height' => (int) $src[2],
+				'srcset' => (string) wp_get_attachment_image_srcset( $id, 'full' ),
+			);
+		}
+	}
+	$url = sdc_page_header_image();
+	if ( '' === $url ) {
+		return $empty;
+	}
+	$data        = $empty;
+	$data['src'] = $url;
+	$name        = basename( (string) wp_parse_url( $url, PHP_URL_PATH ) );
+	$file        = SYLVIASDREAM_CHILD_DIR . '/assets/images/' . $name;
+	if ( preg_match( '/^[a-z]+\.jpg$/', $name ) && file_exists( $file ) ) {
+		$size = wp_getimagesize( $file );
+		if ( $size ) {
+			$data['width']  = (int) $size[0];
+			$data['height'] = (int) $size[1];
+		}
+	}
+	return $data;
+}
+
+/**
  * Display-only tidy-up of older page content.
  *
  * @param string $html  Block HTML.
@@ -252,7 +295,7 @@ function sdc_related_links() {
 		'contact'                            => array( 'books', 'about', 'give' ),
 	);
 	$keys = isset( $next[ $slug ] ) ? $next[ $slug ] : array( 'books', 'about', 'give', 'contact' );
-	$here = sdc_url_path( (string) get_permalink() );
+	$here  = sdc_url_path( (string) get_permalink() );
 	$cards = '';
 	$count = 0;
 	foreach ( $keys as $key ) {

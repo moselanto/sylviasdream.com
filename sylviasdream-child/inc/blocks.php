@@ -65,12 +65,8 @@ add_action( 'init', 'sdc_register_block_bits' );
  */
 function sdc_editor_assets() {
 	if ( sdc_get_bool( 'use_google_fonts' ) ) {
-		wp_enqueue_style(
-			'sylviasdream-editor-fonts',
-			'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap',
-			array(),
-			null // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts URL is versioned by its query.
-		);
+		// phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts URL is versioned by its query.
+		wp_enqueue_style( 'sylviasdream-editor-fonts', sdc_google_fonts_url(), array(), null );
 	}
 }
 add_action( 'enqueue_block_editor_assets', 'sdc_editor_assets' );

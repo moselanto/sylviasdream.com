@@ -201,8 +201,15 @@ function sdc_page_header( $title, $eyebrow = '', $intro = '', $image = '' ) {
 	if ( '' === $eyebrow && function_exists( 'sdc_page_section_label' ) && is_singular() ) {
 		$eyebrow = sdc_page_section_label( get_queried_object_id(), $title );
 	}
-	if ( '' === $image && function_exists( 'sdc_page_header_image' ) ) {
-		$image = sdc_page_header_image();
+	$img = array(
+		'src'    => $image,
+		'width'  => 0,
+		'height' => 0,
+		'srcset' => '',
+	);
+	if ( '' === $image && function_exists( 'sdc_page_header_image_data' ) ) {
+		$img   = sdc_page_header_image_data();
+		$image = $img['src'];
 	}
 	// 1.5.1: a long excerpt is page text, not an intro line; keep the header short.
 	if ( strlen( wp_strip_all_tags( (string) $intro ) ) > 240 ) {
@@ -212,7 +219,7 @@ function sdc_page_header( $title, $eyebrow = '', $intro = '', $image = '' ) {
 	?>
 	<header class="sd-pagehead<?php echo $image ? ' sd-pagehead--photo' : ''; ?>">
 		<?php if ( $image ) : ?>
-			<img class="sd-pagehead__bg" src="<?php echo esc_url( $image ); ?>" alt="" decoding="async" fetchpriority="high">
+			<img class="sd-pagehead__bg" src="<?php echo esc_url( $image ); ?>"<?php if ( $img['width'] && $img['height'] ) : ?> width="<?php echo (int) $img['width']; ?>" height="<?php echo (int) $img['height']; ?>"<?php endif; ?><?php if ( $img['srcset'] ) : ?> srcset="<?php echo esc_attr( $img['srcset'] ); ?>" sizes="100vw"<?php endif; ?> alt="" decoding="async" fetchpriority="high">
 		<?php endif; ?>
 		<div class="sd-wrap sd-pagehead__inner">
 			<nav class="sd-crumbs" aria-label="<?php esc_attr_e( 'Breadcrumb', 'sylviasdream-child' ); ?>">

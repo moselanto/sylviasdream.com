@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '1.16.3' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '1.17.0' );
 define( 'SYLVIASDREAM_CHILD_DIR', get_stylesheet_directory() );
 define( 'SYLVIASDREAM_CHILD_URI', get_stylesheet_directory_uri() );
 
@@ -64,40 +64,52 @@ function sdc_setup() {
 add_action( 'after_setup_theme', 'sdc_setup', 20 );
 
 /**
+ * Google Fonts stylesheet URL for the brand fonts (also used by the editor
+ * and the preload link).
+ *
+ * @return string
+ */
+function sdc_google_fonts_url() {
+	return 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap';
+}
+
+/**
  * Front-end assets. Child CSS loads after the parent base stylesheet.
+ * 1.17.0: minified files are used when built (see sdc_asset()).
  */
 function sdc_assets() {
 	if ( sdc_get_bool( 'use_google_fonts' ) ) {
-		wp_enqueue_style(
-			'sylviasdream-fonts',
-			'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap',
-			array(),
-			null // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts URL is versioned by its query.
-		);
+		// phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts URL is versioned by its query.
+		wp_enqueue_style( 'sylviasdream-fonts', sdc_google_fonts_url(), array(), null );
 	}
 
 	$deps = array( 'sylviasdream-base' );
 	if ( wp_style_is( 'sylviasdream-fonts', 'enqueued' ) ) {
 		$deps[] = 'sylviasdream-fonts';
 	}
-	wp_enqueue_style( 'sylviasdream-child', get_stylesheet_uri(), $deps, sdc_asset_version( 'style.css' ) );
+	list( $url, $ver ) = sdc_asset( 'style.css' );
+	wp_enqueue_style( 'sylviasdream-child', $url, $deps, $ver );
 
 	if ( class_exists( 'WooCommerce' ) ) {
-		wp_enqueue_style( 'sylviasdream-child-shop', SYLVIASDREAM_CHILD_URI . '/assets/css/woocommerce.css', array( 'sylviasdream-child' ), sdc_asset_version( 'assets/css/woocommerce.css' ) );
+		list( $url, $ver ) = sdc_asset( 'assets/css/woocommerce.css' );
+		wp_enqueue_style( 'sylviasdream-child-shop', $url, array( 'sylviasdream-child' ), $ver );
 	}
 
-	wp_enqueue_style( 'sylviasdream-child-blocks', SYLVIASDREAM_CHILD_URI . '/assets/css/blocks.css', array( 'sylviasdream-child' ), sdc_asset_version( 'assets/css/blocks.css' ) );
+	list( $url, $ver ) = sdc_asset( 'assets/css/blocks.css' );
+	wp_enqueue_style( 'sylviasdream-child-blocks', $url, array( 'sylviasdream-child' ), $ver );
 
-	// 1.9.0: About pages polish (My Story, Speaking, Podcasts, Author Support).
+	// 1.9.0: polish stylesheet for ordinary pages (see sdc_is_about_page()).
 	if ( sdc_is_about_page() ) {
-		wp_enqueue_style( 'sylviasdream-child-about', SYLVIASDREAM_CHILD_URI . '/assets/css/about.css', array( 'sylviasdream-child-blocks' ), sdc_asset_version( 'assets/css/about.css' ) );
+		list( $url, $ver ) = sdc_asset( 'assets/css/about.css' );
+		wp_enqueue_style( 'sylviasdream-child-about', $url, array( 'sylviasdream-child-blocks' ), $ver );
 	}
 
+	list( $url, $ver ) = sdc_asset( 'assets/js/nav.js' );
 	wp_enqueue_script(
 		'sylviasdream-child-nav',
-		SYLVIASDREAM_CHILD_URI . '/assets/js/nav.js',
+		$url,
 		array(),
-		sdc_asset_version( 'assets/js/nav.js' ),
+		$ver,
 		array(
 			'strategy'  => 'defer',
 			'in_footer' => true,
@@ -176,7 +188,7 @@ function sdc_is_about_page() {
 function sdc_about_body_class( $classes ) {
 	if ( sdc_is_about_page() ) {
 		$classes[] = 'sd-about';
-		$slug = get_post_field( 'post_name', get_queried_object_id() );
+		$slug      = get_post_field( 'post_name', get_queried_object_id() );
 		if ( $slug ) {
 			$classes[] = 'sd-p-' . sanitize_html_class( $slug );
 		}
@@ -206,6 +218,7 @@ function sdc_excerpt_more() {
 add_filter( 'excerpt_more', 'sdc_excerpt_more' );
 
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/customizer.php';
+require_once SYLVIASDREAM_CHILD_DIR . '/inc/performance.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/blocks.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/template-tags.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/class-sdc-walker-primary.php';

@@ -12,6 +12,19 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * Product statuses shown on the home page and in the Books mega menu.
+ * Always "publish"; the core plugin's preview mode (SD_PREVIEW_MODE, dev only)
+ * adds "draft" for signed-in reviewers through the `sdc_product_statuses` filter.
+ *
+ * @return string[]
+ */
+function sdc_product_statuses() {
+	$statuses = (array) apply_filters( 'sdc_product_statuses', array( 'publish' ) );
+	$statuses = array_values( array_intersect( $statuses, array( 'publish', 'draft' ) ) );
+	return $statuses ? $statuses : array( 'publish' );
+}
+
+/**
  * The theme prints its own page header on shop archives.
  */
 add_filter( 'woocommerce_show_page_title', '__return_false' );
@@ -203,27 +216,32 @@ add_filter( 'woocommerce_breadcrumb_defaults', 'sdc_wc_breadcrumb' );
  */
 function sdc_home_products( $limit ) {
 	$limit    = max( 1, (int) $limit );
-	$featured = wc_get_products( array(
-		'status'     => 'publish',
-		'visibility' => 'catalog',
-		'featured'   => true,
-		'limit'      => $limit,
-		'orderby'    => 'menu_order',
-		'order'      => 'ASC',
-	) );
+	$statuses = sdc_product_statuses();
+	$featured = wc_get_products(
+		array(
+			'status'     => $statuses,
+			'visibility' => 'catalog',
+			'featured'   => true,
+			'limit'      => $limit,
+			'orderby'    => 'menu_order',
+			'order'      => 'ASC',
+		)
+	);
 	$ids      = array();
 	foreach ( $featured as $p ) {
 		$ids[] = $p->get_id();
 	}
 	if ( count( $featured ) < $limit ) {
-		$more     = wc_get_products( array(
-			'status'     => 'publish',
-			'visibility' => 'catalog',
-			'limit'      => $limit - count( $featured ),
-			'exclude'    => $ids,
-			'orderby'    => 'date',
-			'order'      => 'DESC',
-		) );
+		$more     = wc_get_products(
+			array(
+				'status'     => $statuses,
+				'visibility' => 'catalog',
+				'limit'      => $limit - count( $featured ),
+				'exclude'    => $ids,
+				'orderby'    => 'date',
+				'order'      => 'DESC',
+			)
+		);
 		$featured = array_merge( $featured, $more );
 	}
 	return $featured;
@@ -239,7 +257,6 @@ function sdc_wc_books_redirect() {
 }
 add_filter( 'woocommerce_return_to_shop_redirect', 'sdc_wc_books_redirect' );
 add_filter( 'woocommerce_continue_shopping_redirect', 'sdc_wc_books_redirect' );
-
 
 /**
  * 1.8.4: keep placeholder and empty product categories out of the menus.

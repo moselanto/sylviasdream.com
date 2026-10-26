@@ -73,11 +73,12 @@ function sdc_language_assets() {
 	if ( ! sdc_language_switcher_enabled() || is_admin() ) {
 		return;
 	}
+	list( $url, $ver ) = sdc_asset( 'assets/js/lang.js' );
 	wp_enqueue_script(
 		'sylviasdream-child-lang',
-		SYLVIASDREAM_CHILD_URI . '/assets/js/lang.js',
+		$url,
 		array(),
-		sdc_asset_version( 'assets/js/lang.js' ),
+		$ver,
 		array(
 			'strategy'  => 'defer',
 			'in_footer' => true,
@@ -103,10 +104,11 @@ function sdc_language_head_boot() {
 	if ( ! sdc_language_switcher_enabled() || is_admin() ) {
 		return;
 	}
-	$codes = wp_json_encode( array_keys( sdc_languages() ) );
+	// 1.17.0: hex-escaped JSON, so codes from the filter can never close the <script>.
+	$codes = wp_json_encode( array_values( array_map( 'strval', array_keys( sdc_languages() ) ) ), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT );
 	?>
 <script id="sd-lang-boot">
-(function(){var m=document.cookie.match(/(?:^|;\s*)googtrans=\/[a-z-]+\/([a-zA-Z-]+)/),c=m?m[1]:'en',codes=<?php echo $codes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- JSON of fixed codes. ?>;
+(function(){var m=document.cookie.match(/(?:^|;\s*)googtrans=\/[a-z-]+\/([a-zA-Z-]+)/),c=m?m[1]:'en',codes=<?php echo $codes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- hex-escaped JSON. ?>;
 if(c==='en'||codes.indexOf(c)<0){return;}
 var d=document,h=d.documentElement;h.classList.add('sd-translated');
 ['https://translate.google.com','https://translate.googleapis.com','https://translate-pa.googleapis.com','https://www.gstatic.com'].forEach(function(u){var l=d.createElement('link');l.rel='preconnect';l.href=u;l.crossOrigin='';d.head.appendChild(l);});
