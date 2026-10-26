@@ -94,6 +94,7 @@ Was: apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 27
 - [ ] Launch: decide whether MailPoet (2 unconfirmed records) stays; Jetpack Newsletter is the real list
 - [ ] Do not connect the dev site to Sylvia's WordPress.com account and never import her subscriber export anywhere
 - [ ] Visual QA at 390px, tablet, desktop; full `docs/QA-CHECKLIST.md`
-- [ ] SEO pass: meta descriptions for every page (her wording), book JSON-LD on book pages
+- [ ] SEO pass (audit 26 Oct, `docs/ALT-TEXT-AND-SEO-AUDIT.md`): no meta descriptions or Open Graph tags on any page; JSON-LD only on Home. To do: meta descriptions (her wording), Open Graph and Article/Breadcrumb schema in the core plugin, shorter Heaven on Earth title, live robots/sitemap check
+- [ ] Alt text (audit 26 Oct): 194 of 219 images have no saved alt text; book covers now automatic (theme 1.16.1); next, describe only the images shown on published pages (ministry photos, blog images); delete junk images on live with Sylvia's OK
 - [ ] Confirm the restoration-help policy for the 3-month period (`SUPPORT-AND-RESTORATION.md`)
 - [ ] Create the private Google Drive folder "Sylvia's Dream - Backups (private)"
