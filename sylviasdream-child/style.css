@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.6.2
+Version: 1.6.3
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1059,3 +1059,19 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 
 /* 1.6.2: showcase button never splits its label. */
 .sd-showcase .wp-block-button__link { white-space: nowrap; }
+
+/* 1.6.3: My Story (approved prototype): milestones timeline, photo caption, stats. */
+.sd-timeline { list-style: none; margin: 0; padding: 0 0 0 30px !important; position: relative; }
+.sd-timeline::before { content: ""; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--gold), var(--gold-l)); }
+.sd-timeline li { position: relative; margin: 0 0 1.6rem !important; padding: 0; line-height: 1.55; color: var(--ink-2); }
+.sd-timeline li:last-child { margin-bottom: 0 !important; }
+.sd-timeline li::before { content: ""; position: absolute; left: -29px; top: .35em; width: 16px; height: 16px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px var(--cream), 0 0 0 5px var(--gold-l); }
+.sd-timeline li strong { display: block; margin-bottom: 2px; font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--gold-d); }
+.sd-split--timeline { align-items: flex-start !important; }
+.sd-photo-captioned { position: relative; }
+.sd-photo-captioned img { aspect-ratio: 4 / 3 !important; object-fit: cover !important; }
+.sd-photo-captioned figcaption { position: absolute; left: 14px; bottom: 14px; margin: 0; padding: 6px 12px; border-radius: 999px; background: rgba(255, 255, 255, .92); font-size: .82rem; font-weight: 600; color: var(--ink); }
+.sd-stat { text-align: left; }
+.page:not(.home) .entry-content p.sd-stat__num { margin: 0; font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 3.4rem) !important; font-weight: 700; line-height: 1; color: var(--gold-d); }
+.page:not(.home) .entry-content p.sd-stat__text { margin: .4rem 0 0; font-size: .98rem !important; color: var(--ink-2); }
+.sd-band .sd-cards + .wp-block-buttons { margin-top: clamp(1.75rem, 4vw, 2.5rem); }

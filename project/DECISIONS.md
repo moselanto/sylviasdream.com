@@ -4,6 +4,7 @@ Newest first. Each entry: what was decided, who decided, and why.
 
 ## 26 October 2026
 
+- **My Story follows the client-approved prototype** (Agnes, 26 Oct): banner "One life, led by God", story section, Milestones timeline, stats (81 / 20+ / 4), Invite Sylvia to speak. Replaces the earlier rebuild with the old page wording (kept in revisions). Portrait placeholder stays until Sylvia sends a photo.
 - **Kenya Ministry Training Manual page stays published** (Agnes, 26 Oct). It is already public on the live site; the dev page (4303) keeps its Published status.
 - **Header menu button shows on phones** alongside the bottom bar (Agnes, 26 Oct; reverses the 1.5.6 phone-only hide).
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.6.3: My Story to the approved prototype
+
+- content/blocks/my-story.html rebuilt to the client-approved prototype: banner, story with portrait card, Milestones timeline beside a captioned photo, stats and Invite Sylvia to speak. New timeline, photo-caption and stat styles.
+
 ## 2026-10-26 - Child theme 1.6.1-1.6.2, parent theme 1.0.1
 
 - 1.6.1: "Explore Sylvia's Books" card on Home and Books: link to books.sylviasdream.com (new tab), wording from the showcase site, crisp SVG QR code in a frame ("Scan with your phone camera"), QR hidden on phones.
