@@ -19,7 +19,8 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | Area | Status |
 |---|---|
 | Dev site | `https://topnotchmall.co.ke/sylviasdream/` (admin `/sylviasdream/wp-admin/`), password-gated, hidden from search. All work happens here. |
-| Live site | **Untouched.** Read-only comparisons only (public REST API). |
+| Live site | **Untouched.** Agnes's login (mosemqute) is Administrator on wp-admin and my.wordpress.com (used for backups); read-only until migration. Domain with WordPress.com (paid to 25 Nov 2027, auto-renew); Personal plan renews 29 Oct 2026; Stripe connected via WordPress.com Payments; WooCommerce not installed on live. |
+| Migration | **Only after Sylvia reviews and approves the dev site** (Agnes, 26 Oct). |
 | Child theme on dev | **1.8.3** (main `708dda1`). Parent "Sylvia's Dream Base" 1.0.1. Core plugin 0.1.2 (`dist/sylviasdream-core-0.1.2.zip`). |
 | Deploy method | Build with `bash scripts/build-theme-zip.sh` (runs `check-theme.js`; last run "OK: 88 files checked, 32 block files"), then WP Admin > Appearance > Themes > Upload > **Replace active with uploaded**. cPanel Git also works again (host fixed the licence 26 Oct). |
 | Page content | Pasted into each page's Code editor from `sylviasdream-child/content/blocks/*.html`. Old content stays in page revisions. |
@@ -43,7 +44,7 @@ Home 6365 (front page) · Journal 6368 (posts page) · Books 3001 · Contact 20 
 6. Home gaps against prototype v4, SEO pass (meta descriptions, book JSON-LD), full `docs/QA-CHECKLIST.md`, footer widget clean-up: see `project/OPEN-ITEMS.md`.
 
 **Waiting on Sylvia (send only after Moses approves; emails open "Dear Sylvia," with no sign-off, no em dashes, no technical words)**
-- Two drafted emails, still unsent: "Three things we need before your new website launches" (reviews, free guide, OK to replace old Buy buttons) and "Download links for your ebooks: two numbers to choose" (download count and link expiry).
+- One consolidated email draft, unsent: "Everything we need to finish your new website" (logo originals first, wording, reviews, books, downloads, photo, socials, payment account, plan renewal). Checklist: Town document "Everything we need from Sylvia (26 Oct 2026)". It replaces the two 23 Oct drafts.
 - One Life hardcover Amazon link (page 1239's link opens the Kindle edition).
 - OK to repeat the Grace For the Journey category change on live.
 - Give page amounts and goal (dev buttons are test placeholders), policies, biography wording, covers, Stripe access, Invite Sylvia to speak wording. Full list: `project/OPEN-ITEMS.md`.

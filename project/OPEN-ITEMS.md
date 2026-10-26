@@ -1,6 +1,11 @@
 # Open items (updated 26 October 2026)
 
 ## Waiting on Sylvia
+All requests now sit in one email draft, "Everything we need to finish your new website" (26 Oct, unsent, Moses to approve), and in the Town document "Everything we need from Sylvia (26 Oct 2026)".
+- [ ] Original logo files (designer originals, transparent or vector; version without tagline; gold colour). Live has PNGs only: logo media 4953 (660x547), icon 4651 (512x512)
+- [ ] Confirm the connected payment account ("Bu...th", WordPress.com Payments/Stripe) is hers
+- [ ] Personal plan renews 29 Oct 2026 (A$60): she must keep it renewing
+- [ ] Her approval of the dev site = go-ahead to migrate
 - [ ] One Life hardcover Amazon link (the My Autobiography page links to the Kindle edition)
 - [ ] OK to file the devotional posts under Grace For the Journey on live (done on dev 26 Oct)
 (Kept in full in Moses's Town document "Things needed from Sylvia"; send it to her when the build is done.)
@@ -16,9 +21,10 @@
 - [ ] Free Downloads page (`/free-7-day-devotional/`) offers the book-writing guide as a free .docx: approve or remove
 - [ ] Stripe set-up/access for real payments (Pimofy never edits Stripe)
 - [ ] Old Manifesting Miracles Now page: keep or redirect
-- [ ] Earlier items still open: signed acceptance and USD 112 deposit, WordPress.com Administrator invite, Stripe data per `STRIPE-DATA-REQUEST.md`, domain registrar, ebook files, logo, social links, written approval of wording
+- [ ] Earlier items still open: signed acceptance and USD 112 deposit, Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, logo, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+- [x] Live facts checked read-only 26 Oct with Agnes's admin login: two Administrators (mosemqute, Sylvia); domain registered with WordPress.com since 2019, paid to 25 Nov 2027, auto-renew, WordPress.com name servers; Personal plan renews 29 Oct 2026; Stripe connected via WordPress.com Payments ($5/month plan); WooCommerce not installed on live (11 plugins)
 - [x] Kenya Ministry Training Manual page stays published (Agnes, 26 Oct)
 - [x] Host fixed the cPanel licence (26 Oct); Git "Update from Remote" works again, repo at 4dccb83. Was: fix the cPanel licence on topnotchmall.co.ke (`docs/HOST-CPANEL-LICENCE.md`)
 - [ ] Home page gaps against prototype v4: see PROGRESS-LOG 24 Oct (Latest from Sylvia, Have a book on your heart?, newsletter form, featured covers, Meet Sylvia quote card, 4th trust item)
