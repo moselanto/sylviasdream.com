@@ -34,7 +34,7 @@ Was: apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 27
 - [x] Live facts checked read-only 26 Oct with Agnes's admin login: two Administrators (mosemqute, Sylvia); domain registered with WordPress.com since 2019, paid to 25 Nov 2027, auto-renew, WordPress.com name servers; Personal plan renews 29 Oct 2026; Stripe connected via WordPress.com Payments ($5/month plan); WooCommerce not installed on live (11 plugins)
 - [x] Kenya Ministry Training Manual page stays published (Agnes, 26 Oct)
 - [x] Host fixed the cPanel licence (26 Oct); Git "Update from Remote" works again, repo at 4dccb83. Was: fix the cPanel licence on topnotchmall.co.ke (`docs/HOST-CPANEL-LICENCE.md`)
-- [ ] Home page gaps against prototype v4: see PROGRESS-LOG 24 Oct (Latest from Sylvia, Have a book on your heart?, newsletter form, featured covers, Meet Sylvia quote card, 4th trust item)
+- [ ] Home page gaps against prototype v4 (26 Oct check: Latest from Sylvia, Have a book on your heart?, Meet Sylvia note and newsletter card were added in 1.5.3; still waiting: featured covers need published products, the 4th trust item needs Sylvia's approval, the newsletter form works only on live): see PROGRESS-LOG 24 Oct (Latest from Sylvia, Have a book on your heart?, newsletter form, featured covers, Meet Sylvia quote card, 4th trust item)
 - [x] cPanel licence error fixed by the host (26 Oct); theme-zip upload (Replace active) still the usual deploy
 - [ ] Start here welcome card wording ("New to Sylvia's books? Begin with her story, or browse every title by topic.") is ours: include in Sylvia's review; it is replaced by 3 featured covers once books are published
 - [x] Launch content pack `content/live/` (26 Oct): all 16 content files with dev addresses rewritten for sylviasdream.com, plus an image list (5 October images must be uploaded to live first)
@@ -43,14 +43,15 @@ Was: apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 27
 - [ ] Shop editions to add once confirmed: Angelique Legacy Edition, French, Spanish, Bahasa Indonesia and Large Print editions
 - [ ] Quotation scope still open (PMF-QT-2026-0106): meta descriptions and social previews (her wording), alt text (117 of 171 images had none), schema check, Search Console and Bing, analytics, form spam protection, 2FA for admins, recorded training, written guide, restoration test, Heaven on Earth registration details
 - [ ] Tell Sylvia, in the consolidated email, that her existing Stripe payment and Dream Partner links will all keep working (a change from the quotation's "replace" wording)
-- [ ] Amazon descriptions still missing for 22 titles (`project/AMAZON-CATALOGUE.md`): copy from each Amazon page by ASIN
+- [x] (26 Oct) Amazon descriptions for 8 books (supplied by Lightof, `project/AMAZON-DESCRIPTIONS.md`) set on dev products 6391, 6392, 6393, 6395, 6396, 6397, 6399, 6400 (still Draft)
+- [ ] Amazon descriptions still missing for 14 titles plus editions (see AMAZON-CATALOGUE). Was: missing for 22 titles (`project/AMAZON-CATALOGUE.md`): copy from each Amazon page by ASIN
 - [ ] Keep every existing Stripe payment and Dream Partner link (DECISIONS 26 Oct): at paste time fill every `#KEEP-LIVE-*` button in `content/live/` from the same live page; click-test all payment links after switch-over
 - [x] (26 Oct) 23 dev products renamed to their Amazon titles (IDs 6376-6400, all still Draft); When Fear Has the Final Word (6390) and Manifesting Miracles Now (6398) unchanged; descriptions unchanged (the three books with Amazon text already had text). Was: rename the 25 dev products to the Amazon titles in `project/BOOK-CATALOGUE.md` (Amazon check 26 Oct); descriptions from each Amazon book page where Sylvia has no site text
 - [ ] Migration blockers (`docs/MIGRATION-PLAN.md` section 3), remaining: list and upload missing media to live; copy final dev page content into Git; decide paste-at-launch (recommended) or staged-revision plugin; keep dev-only items (password gate, preview store notice, test links) off live
 - [ ] Redesign handoff (26 Oct) gaps still open: meta descriptions and Open Graph per page (need Sylvia's wording), real form/newsletter/payment/download integrations (live only), WCAG 2.2 AA contrast check with a tool, responsive QA at 320/375/768/1024/1440 on real devices, Core Web Vitals on mobile
 - [x] Browse by topic matches the prototype; phone bar docked (theme 1.12.0, 26 Oct). Topic links open empty category pages until books are published at launch
 - [x] Polish on every ordinary page and the Journal (theme 1.11.0, 26 Oct); Home and WooCommerce Shop/Cart/Checkout/My account left as they are
-- [ ] Your Free Gift (3586): the "Free Downloads" card is a WordPress post embed (iframe), so the theme cannot style its dark-on-dark text. Replace it with a plain link or button to /free-7-day-devotional/ (needs an edit to the page; wording unchanged)
+- [x] (26 Oct) Your Free Gift: embed replaced by a plain "Free Downloads" link. Was: the "Free Downloads" card is a WordPress post embed (iframe), so the theme cannot style its dark-on-dark text. Replace it with a plain link or button to /free-7-day-devotional/ (needs an edit to the page; wording unchanged)
 - [ ] TO ENSURE YOU END UP GOING TO HEAVEN (2458): text promises a free ebook below, but no download button shows. Ask Sylvia whether a download should be there (no free downloads without her written OK)
 - [ ] Shop For Books: no book grid until products are published at launch (known)
 - [ ] Grace for the Journey: text says "Enter your email below to subscribe" but no sign-up form shows on dev (dev is not connected to WordPress.com, by decision). Check on live at launch; if the form still does not show, ask Sylvia about the wording
@@ -64,7 +65,7 @@ Was: apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 27
 - [ ] "Invite Sylvia to speak" page (dev ID 6511) **published on dev 24 Oct at Agnes's choice** so the About menu link stops returning 404. Wording still needs Sylvia's approval before launch; change or unpublish it if she asks
 - [x] Other languages: Français, Español, Bahasa Indonesia language links; Kenya Ministry Training Manual under Ministry (26 Oct, theme 1.8.3)
 - [x] Books > Browse by topic "Uncategorized" and "Coming soon": hidden on the front end while empty (theme 1.8.4). Verified on dev 26 Oct: menu shows All books, From Fear to Freedom, SENT
-- [ ] Heaven on Earth (1932) still old layout: paste by hand per `docs/hoe-segments/README.md` (do not retry automated segment paste)
+- [x] (26 Oct) Heaven on Earth (1932) on the new layout: its two Jetpack slideshows and contact form were turned into synced patterns (6636, 6637, 6639) and the page pasted from `content/blocks/heaven-on-earth.html`; no editor warning; slideshows, form, GoFundMe, videos and the existing Dream Partner Stripe link all checked
 - [ ] Visual check of SENT and From Fear to Freedom pages (automated screenshots timed out)
 - [ ] Verify the language suggestion card with a French/Spanish/Indonesian browser
 - [ ] Mark 3 confirmed books as Featured so the Books mega menu shows "Start here" (after products are published)
@@ -80,13 +81,13 @@ Was: apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 27
 - [x] (da977d5, deployed; Agnes chose /shop-for-books/) Shop journey: Home book buttons and the Books CTA strip go to /shop/ (WooCommerce product archive, empty while products are Draft) while the menu uses /shop-for-books/ (block-based Books page). Recommended: /shop-for-books/. Waiting on Agnes's choice; then update patterns (sdc_shop_url) and dev pages
 - [x] (f0ab2bc, deployed) Mobile 320px: header wordmark clipped behind the action icons; store notice overlaps the header at the top of the page (theme CSS fix)
 - [ ] Newsletter sign-up on the Home newsletter section does not render on dev (no WordPress.com connection, by decision); check on live at launch
-- [ ] Author Support on dev: restore the enquiry form (live likely uses a CoBlocks or Crowdsignal form; those plugins are on live, not dev), split the two intro lines back into two paragraphs, fix the top button to the same-page `#book-enquiry` anchor. Wording itself must stay exactly as live.
+- [x] (stale; done 1.7.0, form checked 26 Oct) Author Support on dev: restore the enquiry form (live likely uses a CoBlocks or Crowdsignal form; those plugins are on live, not dev), split the two intro lines back into two paragraphs, fix the top button to the same-page `#book-enquiry` anchor. Wording itself must stay exactly as live.
 - [x] Mobile: store notice overlap fixed (f0ab2bc); pointer taps work in the 320px preview. Still confirm on a real phone
 - [x] Footer widgets: theme areas empty on dev; inactive Search, Recent Posts, Recent Comments removed (26 Oct). 404 "Browse the books" verified on dev: links to /sylviasdream/shop-for-books/ (1.8.4).
 - [ ] Dev clean-up from QA (remaining): My Story run-together sentence and repeated intro, Ministry repeated intro and "dav" captions (fix only with Sylvia's wording)
 - [x] Dev: book buy.stripe.com links replaced with /shop-for-books/ and public .docx links removed from ordinary pages (`docs/LEGACY-LINK-MAP.md`)
-- [ ] Launch: repeat the `docs/LEGACY-LINK-MAP.md` replacements on live, with Sylvia's written OK; point each button at its product page once products are published
-- [ ] Old download pages and media files are still publicly reachable by direct URL: follow `docs/BUYER-TRANSITION-PLAN.md` (plan written 23 Oct; Phase 0 before launch)
+- [x] SUPERSEDED 26 Oct (payments rule, DECISIONS): do not repeat the `docs/LEGACY-LINK-MAP.md` replacements on live. Was: repeat the replacements on live, with Sylvia's written OK; point each button at its product page once products are published
+- [x] SUPERSEDED 26 Oct: old download pages and files stay as they are (payments rule); only noindex protection applies. Was: follow `docs/BUYER-TRANSITION-PLAN.md` (plan written 23 Oct; Phase 0 before launch)
 - [ ] Email to Sylvia drafted 23 Oct (reviews, free guide, OK for old book Stripe links); send only after Moses approves
 - [ ] Launch: live Jetpack Newsletter emails new posts by default; publish no posts during switch-over without checking, and confirm the email byline shows Sylvia, not "mosemqute"
 - [ ] Launch: remove the street address and town/postcode from the live Contact page (Australia only), with Sylvia's OK
