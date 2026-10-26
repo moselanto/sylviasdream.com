@@ -1,12 +1,12 @@
 # Sylvia's Dream - sylviasdream.com
 
 ![Parent theme](https://img.shields.io/badge/Parent%20theme-v1.0.0-8A6216)
-![Child theme](https://img.shields.io/badge/Child%20theme-v1.1.0-B8862B)
-![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.1.0-2B2620)
+![Child theme](https://img.shields.io/badge/Child%20theme-v1.5.7-B8862B)
+![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.1.1-2B2620)
 
 Website for **Sylvia Suhr**, Christian author, speaker and missionary (Australia), and her Kenya ministry **Heaven on Earth**. Built and maintained by **Pimofy Digital** (quotation PMF-QT-2026-0106).
 
-> Status: **scaffold**. Nothing here is live yet. The live site still runs the WordPress.com Twenty Twenty theme.
+> Status: **dev build, pre-launch.** Child theme 1.5.7 runs on the private dev copy (topnotchmall.co.ke/sylviasdream). Nothing is live yet; the live site still runs Twenty Twenty. Launch waits on Sylvia's book prices and files, Stripe set-up and approvals ([docs/KNOWN-LIMITATIONS.md](docs/KNOWN-LIMITATIONS.md)).
 
 ## Taking over this project?
 
@@ -17,8 +17,17 @@ Start with [`HANDOFF.md`](HANDOFF.md): current status, next steps in order, and 
 | Package | Folder | Version | Role |
 |---|---|---|---|
 | Sylvia's Dream Base (parent theme) | [`sylviasdream/`](sylviasdream) | 1.0.0 | Minimal shell. Never activated on its own. |
-| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 1.1.0 | **Activate this one.** Warm gold design from prototype v3, sticky header and mobile drawer, home sections, devotionals, WooCommerce shop styling, footer. |
-| Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.1.0 | Download-page protection, redirects, structured data, Dream Partner progress. |
+| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 1.5.7 | **Activate this one.** Prototype v4 design: Books mega menu, phone bottom bar, page header band, Home sections, Ministry/About/Contact layouts, WooCommerce styling. |
+| Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.1.1 | Download-page protection, redirects, structured data, Dream Partner progress. |
+
+## Quality gate
+
+```bash
+node scripts/check-theme.js       # theme.json, block markup, repo rules
+bash scripts/build-theme-zip.sh   # gate + dist/ zips for theme and plugin
+```
+
+GitHub Actions lints every PHP file on PHP 8.0-8.3 and runs the theme check on each push; Dependabot keeps the workflow actions current.
 
 ## Hosting
 
@@ -38,6 +47,13 @@ See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). In short: build and test on a pr
 | File | Purpose |
 |---|---|
 | [`HANDOFF.md`](HANDOFF.md) | Start here: status, next steps, must-not-do list |
+| [`ARCHITECTURE-ESSENTIALS.md`](ARCHITECTURE-ESSENTIALS.md) | One-page architecture: stack, where things are, release, never-do |
+| [`ARCHITECTURE.md`](ARCHITECTURE.md) | Full architecture: layers, modules, request flows, design system, build and release |
+| [`PRD.md`](PRD.md) | Product requirements: purpose, audiences, functional and non-functional requirements |
+| [`SECURITY.md`](SECURITY.md) / [`SECURITY-AUDIT.md`](SECURITY-AUDIT.md) | Reporting policy; attack surface, findings, controls, residual risks |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Workflow, build and check, coding standards, releasing |
+| [`docs/KNOWN-LIMITATIONS.md`](docs/KNOWN-LIMITATIONS.md) | What does not work yet on dev, why, and when it resolves |
+| [`docs/PHONE-QA-v4-NAV.md`](docs/PHONE-QA-v4-NAV.md) | Real-phone checklist for navigation |
 | [`docs/BACKUP-AND-LAUNCH.md`](docs/BACKUP-AND-LAUNCH.md) | Step-by-step checklist (Personal plan): manual backups, day-1 protection, local build, preview, switch-over, rollback, post-launch, restoration test |
 | [`scripts/backup-inventory.sh`](scripts/backup-inventory.sh) | Read-only WP-CLI inventory, for the local copy only (no WP-CLI on Personal) |
 | [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) | Local build, WP Admin uploads, drafts, launch day and rollback |

@@ -1,0 +1,9 @@
+dist/
+*.zip
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
+# Private data never belongs here
+*.csv
+backups/

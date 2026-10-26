@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.5.6-1.5.7 and repository standards
+
+- 1.5.6: responsive fixes from the cross-check (Books CTA strip readable, Podcasts odd video centred with equal 16:9 frames, Author Support artwork not cropped, odd last card spans the row at tablet), phone polish (bottom bar More replaces the header menu button, compact utility bar).
+- 1.5.7: tablets (601-760px) keep the header menu button.
+- Repository brought to the Pimofy standard used on cisternofhopefoundation, dckabeten.org and smilecommunitycentre.org: ARCHITECTURE-ESSENTIALS, ARCHITECTURE, PRD, SECURITY, SECURITY-AUDIT, CONTRIBUTING, docs/KNOWN-LIMITATIONS, .gitignore, Dependabot, scripts/build-theme-zip.sh; README status, badges, quality gate and docs index updated.
+
 ## 2026-10-25 - Child theme 1.5.3-1.5.5: Home sections and Books "Start here"
 
 - 1.5.3: Home gains Latest from Sylvia (3 newest devotionals), Have a book on your heart? (Author Support), Meet Sylvia photo note and "One Life: the memoir" button, "Become a Dream Partner" in the Heaven on Earth band, gold newsletter card (Contact fallback while no sign-up form renders). Dream Partners kept.
