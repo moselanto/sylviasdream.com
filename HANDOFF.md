@@ -1,6 +1,6 @@
 # HANDOFF: start here (for a person or AI agent taking over)
 
-Last updated: Friday 23 October 2026, about 17:30 Kenya time (EAT, UTC+3).
+Last updated: Monday 26 October 2026, about 13:50 Kenya time (EAT, UTC+3).
 
 ## 1. What this project is
 Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suhr** (Christian author and missionary, Australia; ministry Heaven on Earth in Kenya). Custom theme, WooCommerce book shop with secure ebook downloads, Dream Partner giving page, content clean-up and SEO. Fixed price **USD 280** (quotation PMF-QT-2026-0106). The live site stays on the **WordPress.com Personal plan** (plugins and theme uploads are allowed on paid plans since April 2026, see `project/DECISIONS.md`).
@@ -15,26 +15,41 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 5. [`project/README.md`](project/README.md), [`project/DECISIONS.md`](project/DECISIONS.md), [`project/OPEN-ITEMS.md`](project/OPEN-ITEMS.md).
 6. Runbooks in `docs/` (`DEPLOYMENT.md`, `BACKUP-AND-LAUNCH.md`, `QA-CHECKLIST.md`, `REDIRECT-MAP.md`).
 
-## 3. Current status (23 Oct 2026)
+## 3. Current status (Monday 26 October 2026, 13:50 EAT)
 | Area | Status |
 |---|---|
-| Dev site | Private build copy at `https://topnotchmall.co.ke/sylviasdream/` (WP admin `/sylviasdream/wp-admin/`), password-gated and hidden from search. All work happens here. |
-| Live site | **Untouched.** Never edit sylviasdream.com until launch. |
-| Code on dev | Child theme **1.5.7** running (prototype v4 design on all main pages), prototype v4 menu and phone bottom bar set; Jetpack installed (Forms on, Newsletter not connected); approved 6-item menu set; parent "Sylvia's Dream Base" 1.0.0; core plugin **0.1.1** active, redirects ON (dev only). |
-| Next build | Child theme **1.1.0 built and committed to `main`** (commits 9d986dd, ee8a338, 34c45dc and the docs/templates commit): theme.json, 14 patterns, prototype images, prototype footer, page-builder templates, editing guide. **Deployed to dev 23 Oct** (smoke test passed); CI (PHP lint + check-theme.js) passing. |
-| Products | 25 WooCommerce products, **all Draft**. All 25 have main descriptions (Sylvia's own wording from her pages or Amazon). Titles/subtitles checked against Amazon. 21 have covers. |
-| Pages on dev | Give (test placeholders), Privacy Policy, Terms of Sale, Refund Policy (all marked "Draft for Sylvia's review"), store notice banner on, merged duplicate pages, 5 old pages set to Draft. |
-| Things needed from Sylvia | Town document "Things needed from Sylvia" (Moses's Town library). Summary in `project/OPEN-ITEMS.md`. |
-| Quotation / deposit | Check with Moses; last known: v2 sent, signature and USD 112 deposit pending. |
+| Dev site | `https://topnotchmall.co.ke/sylviasdream/` (admin `/sylviasdream/wp-admin/`), password-gated, hidden from search. All work happens here. |
+| Live site | **Untouched.** Read-only comparisons only (public REST API). |
+| Child theme on dev | **1.8.3** (main `708dda1`). Parent "Sylvia's Dream Base" 1.0.1. Core plugin 0.1.2 (`dist/sylviasdream-core-0.1.2.zip`). |
+| Deploy method | Build with `bash scripts/build-theme-zip.sh` (runs `check-theme.js`; last run "OK: 88 files checked, 32 block files"), then WP Admin > Appearance > Themes > Upload > **Replace active with uploaded**. cPanel Git also works again (host fixed the licence 26 Oct). |
+| Page content | Pasted into each page's Code editor from `sylviasdream-child/content/blocks/*.html`. Old content stays in page revisions. |
+| Products | 25 WooCommerce products, **all Draft** (Books grid empty until launch). |
 
-## 4. What to do next (in order)
-1. ~~Build child theme 1.1.0~~ done 23 Oct (four commits); CI added and passing.
-2. ~~Deploy 1.1.0 to dev, menu, Jetpack~~ done 23 Oct. See `project/PROGRESS-LOG.md` and `project/OPEN-ITEMS.md` for the QA findings still open.
-   Original step: **Deploy 1.1.0 to dev** (see section 6), then set the approved menu: Home · Books (dropdown: All Books, Devotionals) · About Sylvia · Ministry · Podcasts & Videos · Contact. Give is the gold header button, not a menu item.
-3. **Rebuild Home, Books and Contact** pages on dev from the 1.1.0 patterns (`sylviasdream-child/content/blocks/*.html`, paste into the page Code editor, then open the visual editor once and Update so the patterns become editable blocks). Install Jetpack on dev so the contact form and newsletter work (the Contact page currently prints a raw `[jetpack_subscription_form]` shortcode and has no form).
-4. **Visual QA** at 390px phone, tablet and desktop; fix; run `docs/QA-CHECKLIST.md`.
-5. Keep adding to "Things needed from Sylvia"; when the build is done Moses sends it to her.
-6. Then the workflow phases 7-11 in `project/WORKFLOW.md` (live prep as drafts, preview with Sylvia, launch, handover).
+### Done (newest first)
+- **26 Oct, theme 1.8.3: menu corrections** (Agnes). Books > Other languages = Français (`#lang-fr`), Español (`#lang-es`), Bahasa Indonesia (`#lang-id`): each translates the whole site, same as the language selector. From Fear to Freedom (`/from-fear-to-freedom-3/`) and SENT (`/sent/`) moved out of Other languages into Books > Browse by topic. Ministry now has Kenya Ministry Training Manual (`/kenya-ministry-training-manual-free-download/`). Verified desktop and phone drawer (Customizer Mobile). How to add language links: `docs/EDITING-GUIDE.md`.
+- **26 Oct, content restored from live** (`818921b`, audit `docs/CONTENT-PARITY-AUDIT.md`): My Story (Sylvia's own sections, Proverbs 3:5, Let's Walk Together video, Partner button, contact form), Podcasts (Lagos captions, About the interview), Hidden Key 6171 (fuller description from duplicate 5319), One Life 2766 (hardcover text from My Autobiography 1239), all 15 posts added to the Grace For the Journey category (dev only). All verified desktop and mobile.
+- 1.8.2 book pages SENT (4686) and From Fear to Freedom (4231); 1.8.0-1.8.1 language selector (English, Français, Español, Bahasa Indonesia) with browser-language suggestion card; 1.7.x About pages (My Story, Podcasts, Speaking 6511, Author Support 6235 with its Jetpack form kept), devotionals section on Grace for the Journey (5593); earlier: prototype v4 design on all main pages, mega menu, phone bottom bar, redirects, Give and policy pages. Details: `CHANGELOG.md`, `project/PROGRESS-LOG.md`.
+
+### Dev page IDs
+Home 6365 (front page) · Journal 6368 (posts page) · Books 3001 · Contact 20 · My Story 2665 · Invite Sylvia to speak 6511 · Podcasts 1366 · Author Support 6235 · Heaven on Earth 1932 · Grace for the Journey 5593 · SENT 4686 · From Fear to Freedom 4231 · One Life 2766 · Hidden Key 6171 (kept) · drafts: Hidden Key duplicate 5319, My Autobiography 1239, From Fear to Freedom duplicate 4580, New Home 5863.
+
+## 4. What is pending (in priority order)
+**Build work (Pimofy / next agent)**
+1. **Heaven on Earth (1932) is still on its old layout.** Three automated paste attempts failed (the browser tool blocks the slideshow/GoFundMe markup; keyboard selection displaced protected blocks; page restored and verified). Do NOT retry the Code-editor segment method. Either Moses/Agnes pastes it by hand using `docs/hoe-segments/README.md` (parts 1-4), or replace block by block in the block editor's List View.
+2. **Visual checks not yet done** (automated screenshots time out): SENT and From Fear to Freedom pages; real-phone QA (iPhone and Android, 320-430px) per `docs/PHONE-QA-v4-NAV.md`.
+3. Language suggestion card (1.8.1) not verified: needs a browser set to French/Spanish/Indonesian or a matching time zone.
+4. Books > Browse by topic shows "Uncategorized" and "Coming soon" product categories: hide or rename before launch.
+5. Mark 3 books as Featured (after products are published) so "Start here" shows covers.
+6. Home gaps against prototype v4, SEO pass (meta descriptions, book JSON-LD), full `docs/QA-CHECKLIST.md`, footer widget clean-up: see `project/OPEN-ITEMS.md`.
+
+**Waiting on Sylvia (send only after Moses approves; emails open "Dear Sylvia," with no sign-off, no em dashes, no technical words)**
+- Two drafted emails, still unsent: "Three things we need before your new website launches" (reviews, free guide, OK to replace old Buy buttons) and "Download links for your ebooks: two numbers to choose" (download count and link expiry).
+- One Life hardcover Amazon link (page 1239's link opens the Kindle edition).
+- OK to repeat the Grace For the Journey category change on live.
+- Give page amounts and goal (dev buttons are test placeholders), policies, biography wording, covers, Stripe access, Invite Sylvia to speak wording. Full list: `project/OPEN-ITEMS.md`.
+
+**Launch (live site, only with Sylvia's written OK)**
+- Products to Published; newsletter checked on live (Jetpack); legacy link replacements per `docs/LEGACY-LINK-MAP.md`; redirects per `docs/REDIRECT-MAP.md`; protect downloads per `docs/BUYER-TRANSITION-PLAN.md` (on live the protected slug is `all-shall-be-well`, never `all-shall-be-well-2`, which is the book page 4216); repeat the content and menu changes above; `docs/BACKUP-AND-LAUNCH.md` first.
 
 ## 5. Things that must not happen
 - No changes to the live site before backups and launch day.

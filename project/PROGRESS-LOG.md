@@ -2,6 +2,11 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Monday 26 October 2026
+- Content parity with live restored on dev (`818921b`): My Story, Podcasts, Hidden Key 6171, One Life 2766, Grace For the Journey category on all 15 posts. Verified desktop and mobile. Amazon link from page 1239 is the Kindle edition; hardcover link requested from Sylvia.
+- Theme 1.8.3 (`708dda1`) deployed: menu language links (`#lang-fr/es/id/en`). Primary menu fixed: Books > Other languages = Français, Español, Bahasa Indonesia; From Fear to Freedom and SENT moved to Browse by topic; Kenya Ministry Training Manual under Ministry. All links and language switches verified on desktop and phone drawer.
+- Stopped here. Next: Heaven on Earth by hand (`docs/hoe-segments/README.md`), visual checks of SENT and From Fear to Freedom, real-phone QA, hide "Uncategorized"/"Coming soon" from Browse by topic. See `HANDOFF.md` section 4.
+
 ## Friday 23 October 2026
 
 ### Phone menu, footer, Phase 0, schema, captions (26 Oct, 07:45-08:30 EAT)

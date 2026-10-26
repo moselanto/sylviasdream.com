@@ -1,4 +1,4 @@
-# Open items (23 October 2026)
+# Open items (updated 26 October 2026)
 
 ## Waiting on Sylvia
 - [ ] One Life hardcover Amazon link (the My Autobiography page links to the Kindle edition)
@@ -22,11 +22,15 @@
 - [x] Kenya Ministry Training Manual page stays published (Agnes, 26 Oct)
 - [x] Host fixed the cPanel licence (26 Oct); Git "Update from Remote" works again, repo at 4dccb83. Was: fix the cPanel licence on topnotchmall.co.ke (`docs/HOST-CPANEL-LICENCE.md`)
 - [ ] Home page gaps against prototype v4: see PROGRESS-LOG 24 Oct (Latest from Sylvia, Have a book on your heart?, newsletter form, featured covers, Meet Sylvia quote card, 4th trust item)
-- [ ] cPanel licence error on topnotchmall.co.ke ("License is not for this host"): ask the host to fix it. Until then deploy the child theme by WordPress theme-zip upload (Replace active)
+- [x] cPanel licence error fixed by the host (26 Oct); theme-zip upload (Replace active) still the usual deploy
 - [ ] Start here welcome card wording ("New to Sylvia's books? Begin with her story, or browse every title by topic.") is ours: include in Sylvia's review; it is replaced by 3 featured covers once books are published
 - [ ] Real-phone check of the v4 navigation (iPhone and Android, 320-430px): bottom bar clearance, drawer, no sideways scroll, wordmark
 - [ ] "Invite Sylvia to speak" page (dev ID 6511) **published on dev 24 Oct at Agnes's choice** so the About menu link stops returning 404. Wording still needs Sylvia's approval before launch; change or unpublish it if she asks
 - [x] Other languages: Français, Español, Bahasa Indonesia language links; Kenya Ministry Training Manual under Ministry (26 Oct, theme 1.8.3)
+- [ ] Books > Browse by topic lists "Uncategorized" and "Coming soon": hide or rename before launch
+- [ ] Heaven on Earth (1932) still old layout: paste by hand per `docs/hoe-segments/README.md` (do not retry automated segment paste)
+- [ ] Visual check of SENT and From Fear to Freedom pages (automated screenshots timed out)
+- [ ] Verify the language suggestion card with a French/Spanish/Indonesian browser
 - [ ] Mark 3 confirmed books as Featured so the Books mega menu shows "Start here" (after products are published)
 - [x] Build child theme 1.1.0 per `docs/NEXT-BUILD-1.1.0.md` (done 23 Oct)
 - [x] `.github/workflows/checks.yml` added by Moses; PHP lint 8.0-8.3 and check-theme.js pass
