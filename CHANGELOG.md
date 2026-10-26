@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.6.1-1.6.2, parent theme 1.0.1
+
+- 1.6.1: "Explore Sylvia's Books" card on Home and Books: link to books.sylviasdream.com (new tab), wording from the showcase site, crisp SVG QR code in a frame ("Scan with your phone camera"), QR hidden on phones.
+- 1.6.2: showcase button "Visit the book showcase" on one line; Books page banner restored ("The bookshop" / "Books by Sylvia Suhr").
+- Both themes ship a screenshot.png, so Appearance > Themes shows the design. Parent theme 1.0.1 (screenshot only).
+
 ## 2026-10-26 - Child theme 1.6.0, core plugin 0.1.2
 
 - Theme 1.6.0: header menu button back on phones; drawer submenus redesigned (white panel, icon tiles with title and description, Books groups as two-column chips with an "All books" button); footer centred on phones with Books and Ministry side by side.
