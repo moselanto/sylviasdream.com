@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.16.2, core plugin 0.2.1
+- 23 images on Heaven on Earth, Give, Grace for the Journey and the latest posts now have saved alt text in the Media Library (factual, no names; listed in `docs/ALT-TEXT-AND-SEO-AUDIT.md`).
+- Theme: an image block with an empty alt now shows the alt text saved in the Media Library (WordPress does not copy it into blocks already on a page).
+- Core plugin: share image addresses are always absolute (My Story's og:image was a relative path).
+
 ## 2026-10-26 - Core plugin 0.2.0: social sharing tags and page structured data
 - `inc/social.php`: Open Graph and Twitter card tags (title, description, image, URL) on the home page, pages and posts, so shared links show a picture and text. Skipped automatically when Jetpack, Yoast SEO, Rank Math or SEOPress already print them (likely on live with Jetpack).
 - Structured data: BlogPosting on posts, WebPage plus BreadcrumbList on pages (added to the existing graph; Home keeps Person, WebSite, Organization).

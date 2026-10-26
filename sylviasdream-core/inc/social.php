@@ -60,6 +60,25 @@ function sd_core_page_description( $post_id ) {
 }
 
 /**
+ * Absolute URL for a site-relative address (/wp-content/...), using the site's
+ * scheme and host only, so a subfolder install is not doubled.
+ *
+ * @param string $url URL.
+ * @return string
+ */
+function sd_core_absolute_url( $url ) {
+	$url = (string) $url;
+	if ( str_starts_with( $url, '//' ) ) {
+		return set_url_scheme( $url );
+	}
+	if ( str_starts_with( $url, '/' ) ) {
+		$p = wp_parse_url( home_url() );
+		return ( isset( $p['scheme'] ) ? $p['scheme'] : 'https' ) . '://' . $p['host'] . ( isset( $p['port'] ) ? ':' . $p['port'] : '' ) . $url;
+	}
+	return $url;
+}
+
+/**
  * Share image: featured image, else the first image in the content, else the site icon.
  *
  * @param int $post_id Post ID.
@@ -75,10 +94,10 @@ function sd_core_page_image( $post_id ) {
 	}
 	$content = (string) get_post_field( 'post_content', $post_id );
 	if ( preg_match( '/<img[^>]+src="([^"]+)"/i', $content, $m ) ) {
-		return esc_url_raw( $m[1] );
+		return esc_url_raw( sd_core_absolute_url( $m[1] ) );
 	}
 	if ( preg_match( '/"url":"([^"]+\.(?:jpe?g|png|webp))"/i', $content, $m ) ) {
-		return esc_url_raw( str_starts_with( $m[1], '/' ) ? home_url( $m[1] ) : $m[1] );
+		return esc_url_raw( sd_core_absolute_url( $m[1] ) );
 	}
 	$icon = get_site_icon_url( 512 );
 	return $icon ? $icon : '';

@@ -83,3 +83,23 @@ function sdc_product_image_alt( $attr, $attachment ) {
 	return $attr;
 }
 add_filter( 'wp_get_attachment_image_attributes', 'sdc_product_image_alt', 10, 2 );
+
+/**
+ * 1.16.2: an image block whose saved alt is empty takes the alt text now set
+ * in the Media Library (WordPress does not copy it into existing blocks).
+ *
+ * @param string $content Rendered block.
+ * @param array  $block   Block data.
+ * @return string
+ */
+function sdc_image_block_library_alt( $content, $block ) {
+	if ( empty( $block['attrs']['id'] ) || ! preg_match( '/<img\b[^>]*\balt=""/', $content ) ) {
+		return $content;
+	}
+	$alt = trim( (string) get_post_meta( (int) $block['attrs']['id'], '_wp_attachment_image_alt', true ) );
+	if ( '' === $alt ) {
+		return $content;
+	}
+	return preg_replace( '/(<img\b[^>]*\b)alt=""/', '$1alt="' . esc_attr( $alt ) . '"', $content, 1 );
+}
+add_filter( 'render_block_core/image', 'sdc_image_block_library_alt', 9, 2 );

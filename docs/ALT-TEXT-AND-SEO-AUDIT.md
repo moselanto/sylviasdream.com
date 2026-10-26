@@ -38,3 +38,9 @@ Method: values read from the loaded pages (the browser cannot open view-source).
 3. Article schema on posts and BreadcrumbList on pages (core plugin).
 4. Shorten the Heaven on Earth page title for search results (Sylvia to approve).
 5. At launch: confirm "Discourage search engines" is OFF on live, submit the sitemap in Search Console and Bing.
+
+## 3. Done 26 Oct (night)
+- Alt text saved in the Media Library for 23 images shown on published pages: Heaven on Earth slideshows and gallery (648, 1943, 1944, 1946, 1947, 1949, 2075, 2076, 2077, 2079, 2081, 2082, 2084, 2086, 2087, 2089, 3999; 1949 also on Give), post and page illustrations (6299, 6226, 6144, 6073, 5925, 5603). Descriptions say only what is visible; no names. No other page needed one.
+- Core plugin 0.2.0-0.2.1: Open Graph tags and WebPage / BlogPosting / BreadcrumbList data now on pages and posts (checked on My Story and a Grace for the Journey post).
+- Theme 1.16.2 shows the saved library alt text in image blocks already on pages.
+- Site Health (dev host, not the plugin): "Page cache is not detected and the server response time is slow" (about 4.2 s against 0.6 s). This is the cPanel dev hosting; WordPress.com live has its own caching. Not a launch blocker; check speed on live after launch.
