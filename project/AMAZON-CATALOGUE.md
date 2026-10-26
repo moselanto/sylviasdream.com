@@ -83,3 +83,21 @@ Purpose: Amazon is the source for book titles, subtitles, formats and descriptio
 No Amazon description could be read for: From Fear to Freedom, The Hidden Key to Healing and Breakthrough, Learning to Recognise God's Voice, When the Word Becomes Life, Guard Your Heart, SENT, Wisdom for Soul-Winning, The King's Way, How to Find the Real You, From Chance to Choice, Angelique, Trusting God Deeper, Fields of Becoming, When the River Flows Again, Guard Your Heart Renew Your Mind, Angelique Finds Her Light, The Report of the Lord, Fast Forward to Success, 7 Days to Trusting God with Your Journey, and the French, Angelique Legacy and older King's Way editions. The Amazon author page lists no books to automated tools and most product pages did not load. These products keep their current text (Sylvia's own site text or the Amazon text Moses supplied earlier). Quickest fix: copy each ASIN from Sylvia's Amazon author page or KDP Bookshelf, then copy the description from amazon.com/dp/ASIN.
 
 Notes from the check: Amazon lists "Wisdom for Soul Winning: Whoever Wins Souls Is Wise" on a price-comparison site, so that subtitle may differ on Amazon; Fast Forward to Success co-authors on Goodreads are Fololi Lologa, Robin Oliver and Alison Manoukian.
+
+## Amazon pages supplied by Lightof (26 Oct, "silvia books.docx")
+Copies of the Amazon Kindle product pages, with ASINs. Descriptions are kept in that document (Amazon wording, verbatim); use them as the product description where the product has no text from Sylvia's own site.
+
+| Book | Kindle ASIN | Amazon page | Print length | Published |
+|---|---|---|---|---|
+| The Report of the Lord: From the Old Report to the Living Hope of the Risen Christ | B0H766HHG8 | https://www.amazon.com.au/dp/B0H766HHG8 | 143 pages | 24 Aug 2026 |
+| 7 Days from Fear to Freedom: A Short Devotional Journey into Peace and Trust in God | B0GSMMPYMC | https://www.amazon.com.au/dp/B0GSMMPYMC | 11 pages | 15 Mar 2026 |
+| Guard Your Heart Renew Your Mind: A 40 Day Journey from Thought to Truth to Transformation | B0HL5S3L6M | https://www.amazon.com.au/dp/B0HL5S3L6M | 51 pages | 27 Sep 2026 |
+| Fast Forward to Success (Fololi Lologa, Sylvia Suhr, Robin Oliver, Alison Manoukian and 6 more; Mesiti Pty Ltd) | B09R99SF6G | https://www.amazon.com.au/dp/B09R99SF6G | 153 pages | 25 Jan 2022 |
+| How to Write and Publish a Spirit-Led Christian Book in 7 Days | B0GXCHJ7R9 | https://www.amazon.com.au/dp/B0GXCHJ7R9 | 130 pages | 19 Apr 2026 |
+| 7 Days to Trusting God with Your Journey: One Life, One Yes, Endless Impact | B0FDBJ9P9Z | https://www.amazon.com.au/dp/B0FDBJ9P9Z | 29 pages (reading age 10-18) | 18 Jun 2025 |
+| When the River Flows Again: The Nature of the River | B0GX35WTNQ | https://www.amazon.com.au/dp/B0GX35WTNQ | 71 pages | 15 Apr 2026 |
+| Fields of Becoming: From Striving to Rest, From Loss to Life | B0GHP6BZR1 | https://www.amazon.com.au/dp/B0GHP6BZR1 | 220 pages | 30 Mar 2026 |
+
+Opening lines, to recognise each description: Report of the Lord "Whose report will you believe when fear, circumstances, and God's Word seem to tell different stories?"; Guard Your Heart Renew Your Mind "What if the thoughts you have carried for years are not the truth about who you are?"; Fast Forward to Success "You're pleased with what you've accomplished in your life."; 7 Days to Trusting God "Embarking on a journey of faith can often feel overwhelming..."; When the River Flows Again "There is a river that flows from the heart of God."; Fields of Becoming "What if the life you lost... was never the life you were meant to hold onto?"
+
+Still without an Amazon description: From Fear to Freedom, The Hidden Key, Learning to Recognise God's Voice, When the Word Becomes Life, Guard Your Heart, SENT, Wisdom for Soul-Winning, The King's Way, How to Find the Real You, From Chance to Choice, Angelique, Trusting God Deeper, Angelique Finds Her Light, and the French, Angelique Legacy and older King's Way editions (14 titles plus editions).
