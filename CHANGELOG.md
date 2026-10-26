@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.15.0: home hero right side
+- The empty right side of the home hero now shows three of Sylvia's book covers (From Fear to Freedom, One Life, SENT), fanned with soft shadows and a warm glow, each linking to its book page. Covers are read from the book pages' own cover images (`inc/hero-books.php`, filter `sdc_hero_book_pages`), so it works on live without media IDs. Wide screens (1100px and up) only; phones and tablets keep the text-only hero. No wording added (links carry the book titles as their accessible names).
+
 ## 2026-10-26 - Child theme 1.14.1: phone hero tighter
 - Phones: hero spacing and type scale with screen height so the eyebrow, title, intro, quote and both buttons fit above the bottom bar, short phones included; the dev-only shop preview notice is a slim line on phones. No wording changed.
 
