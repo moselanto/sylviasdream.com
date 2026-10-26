@@ -4,6 +4,8 @@ Newest first. Each entry: what was decided, who decided, and why.
 
 ## 26 October 2026
 
+- **Migration approach confirmed** (Lightof, 26 Oct evening): build on dev without interrupting the live site; move to sylviasdream.com only after Sylvia approves, because the Personal plan has no staging. Plan: `docs/MIGRATION-PLAN.md` (content pasted into existing live pages in one switch-over window; new pages, themes, plugin, media and products prepared invisibly first).
+
 - **Migration only after Sylvia approves the development site** (Agnes). The new site moves from topnotchmall.co.ke/sylviasdream to sylviasdream.com only after Sylvia has reviewed and approved the dev site.
 - **Live access already in hand** (Agnes): Agnes's login (account mosemqute) is Administrator on sylviasdream.com (wp-admin and my.wordpress.com); used for the backups. No admin invite needed from Sylvia. Live stays read-only until migration.
 - **One consolidated request to Sylvia**: email draft "Everything we need to finish your new website" plus Town document "Everything we need from Sylvia (26 Oct 2026)"; replaces the two 23 Oct drafts. Send only after Moses approves.
