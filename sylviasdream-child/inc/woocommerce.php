@@ -239,3 +239,55 @@ function sdc_wc_books_redirect() {
 }
 add_filter( 'woocommerce_return_to_shop_redirect', 'sdc_wc_books_redirect' );
 add_filter( 'woocommerce_continue_shopping_redirect', 'sdc_wc_books_redirect' );
+
+
+/**
+ * 1.8.4: keep placeholder and empty product categories out of the menus.
+ * WooCommerce's default "Uncategorized" is never shown. Any other product
+ * category link (taxonomy item or custom /product-category/<slug>/ link) is
+ * hidden while it has no published products, so "Coming soon" reappears on
+ * its own once a published book is filed under it. Sub-items go with it.
+ * Appearance > Menus is unaffected.
+ *
+ * @param WP_Post[] $items Menu items.
+ * @return WP_Post[]
+ */
+function sdc_hide_empty_product_cat_items( $items ) {
+	if ( is_admin() || ! is_array( $items ) ) {
+		return $items;
+	}
+	$hidden = array();
+	foreach ( $items as $item ) {
+		$term = null;
+		if ( isset( $item->type, $item->object ) && 'taxonomy' === $item->type && 'product_cat' === $item->object ) {
+			$term = get_term( (int) $item->object_id, 'product_cat' );
+		} elseif ( isset( $item->type, $item->url ) && 'custom' === $item->type && preg_match( '#/product-category/([^/?\#]+)/?#', (string) $item->url, $m ) ) {
+			$term = get_term_by( 'slug', sanitize_title( rawurldecode( $m[1] ) ), 'product_cat' );
+		} else {
+			continue;
+		}
+		if ( ! $term || is_wp_error( $term ) || 'uncategorized' === $term->slug || (int) $term->count < 1 ) {
+			$hidden[] = (int) $item->ID;
+		}
+	}
+	if ( ! $hidden ) {
+		return $items;
+	}
+	do {
+		$added = false;
+		foreach ( $items as $item ) {
+			$id = (int) $item->ID;
+			if ( ! in_array( $id, $hidden, true ) && in_array( (int) $item->menu_item_parent, $hidden, true ) ) {
+				$hidden[] = $id;
+				$added    = true;
+			}
+		}
+	} while ( $added );
+	return array_filter(
+		$items,
+		function ( $item ) use ( $hidden ) {
+			return ! in_array( (int) $item->ID, $hidden, true );
+		}
+	);
+}
+add_filter( 'wp_nav_menu_objects', 'sdc_hide_empty_product_cat_items', 20 );

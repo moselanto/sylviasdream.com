@@ -16,9 +16,8 @@ get_header();
 			<?php get_search_form(); ?>
 			<div class="sd-btn-row sd-404-links">
 				<a class="sd-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Go to the home page', 'sylviasdream-child' ); ?></a>
-				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
-					<a class="sd-btn sd-btn--ghost" href="<?php echo esc_url( sdc_shop_url() ); ?>"><?php esc_html_e( 'Browse the books', 'sylviasdream-child' ); ?></a>
-				<?php endif; ?>
+				<?php // 1.8.4: same Books page as the menu (Customizer "Books page link", default /shop-for-books/). ?>
+				<a class="sd-btn sd-btn--ghost" href="<?php echo esc_url( sdc_shop_url() ); ?>"><?php esc_html_e( 'Browse the books', 'sylviasdream-child' ); ?></a>
 			</div>
 		</div>
 	</div>

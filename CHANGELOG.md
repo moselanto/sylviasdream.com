@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.8.4: Priority 1 clean-up
+- Book covers: `book-one-life.html` uses dev media 6604 (`2026/10/one-life-683x1024.png`, was a guessed URL); `book-sent.html` uses media 6605 (`2026/10/sent-683x1024.png`); `book-from-fear-to-freedom.html` uses media 6603 (`2026/10/from-fear-to-freedom.png`). Each image block now carries its media ID.
+- Menus: product-category links are hidden on the front end when the category is WooCommerce's default "Uncategorized" or has no published products (`sdc_hide_empty_product_cat_items` in `inc/woocommerce.php`). On dev this hides "Coming soon" (item 6492) and "Uncategorized" (item 6499) under Books > Browse by topic; "Coming soon" returns by itself once a published book is filed under it. Appearance > Menus is unchanged.
+- 404 page: "Browse the books" always links to the same Books page as the menu (Customizer "Books page link", default `/shop-for-books/`), with or without WooCommerce.
+- Footer widgets: both theme widget areas were already empty on dev; the leftover default widgets (Search, Recent Posts, Recent Comments) sat in Inactive widgets.
+
 ## 2026-10-26 - One Life book layout
 - `content/blocks/book-one-life.html`: One Life in the same book-page layout as SENT and From Fear to Freedom, using Sylvia's wording only. Not yet applied on dev.
 
