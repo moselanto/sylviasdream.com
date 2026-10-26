@@ -1,91 +1,192 @@
 # Sylvia's Dream - sylviasdream.com
 
 ![Parent theme](https://img.shields.io/badge/Parent%20theme-v1.0.1-8A6216)
-![Child theme](https://img.shields.io/badge/Child%20theme-v1.6.2-B8862B)
-![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.1.2-2B2620)
+![Child theme](https://img.shields.io/badge/Child%20theme-v1.17.0-B8862B)
+![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.3.0-2B2620)
 
-Website for **Sylvia Suhr**, Christian author, speaker and missionary (Australia), and her Kenya ministry **Heaven on Earth**. Built and maintained by **Pimofy Digital** (quotation PMF-QT-2026-0106).
+Last updated: 27 October 2026.
 
-> Status: **dev build, pre-launch.** Child theme 1.6.2 runs on the private dev copy (topnotchmall.co.ke/sylviasdream). Nothing is live yet; the live site still runs Twenty Twenty. Launch waits on Sylvia's book prices and files, Stripe set-up and approvals ([docs/KNOWN-LIMITATIONS.md](docs/KNOWN-LIMITATIONS.md)).
+## 1. What this project is
 
-## Taking over this project?
+A rebuild of **sylviasdream.com**, the website of **Sylvia Suhr**, Christian author, speaker and missionary (Australia), and of her Kenya ministry **Heaven on Earth**. The new site has a custom WordPress theme, a WooCommerce book shop with secure ebook downloads, a Dream Partner giving page, content clean-up and SEO.
 
-Start with [`HANDOFF.md`](HANDOFF.md): current status, next steps in order, and what must not happen. Then [`project/README.md`](project/README.md) for everything agreed with the client.
+| | |
+|---|---|
+| Client | Sylvia Suhr (Sylvia's Dream) |
+| Supplier | Pimofy Digital (Moses Munyi) |
+| Quotation | PMF-QT-2026-0106, revised v2, 17 October 2026, fixed price USD 280 (deposit USD 112, balance USD 168 after approval) |
+| Dev site | https://topnotchmall.co.ke/sylviasdream/ (admin `/sylviasdream/wp-admin/`), password-gated, hidden from search. All build work happens here. |
+| Live site | https://sylviasdream.com on the **WordPress.com Personal plan**. Untouched until Sylvia approves the dev site in writing. Still runs Twenty Twenty. |
 
-## Packages
+Status: **dev build, pre-launch.** Migration to the live site happens only after Sylvia reviews and approves the dev site ([`docs/MIGRATION-PLAN.md`](docs/MIGRATION-PLAN.md)). All 25 WooCommerce products on dev are **Draft** and stay Draft until launch.
 
-| Package | Folder | Version | Role |
+**Taking over?** Read [`HANDOFF.md`](HANDOFF.md) first, then [`AGENTS.md`](AGENTS.md). The working rules in AGENTS.md are mandatory.
+
+## 2. Packages and versions
+
+| Package | Folder | Version in repo | Role |
 |---|---|---|---|
-| Sylvia's Dream Base (parent theme) | [`sylviasdream/`](sylviasdream) | 1.0.1 | Minimal shell. Never activated on its own. |
-| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 1.6.2 | **Activate this one.** Prototype v4 design: Books mega menu, phone bottom bar, page header band, Home sections, Ministry/About/Contact layouts, WooCommerce styling. |
-| Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.1.2 | Download-page protection, redirects, structured data, Dream Partner progress. |
+| Sylvia's Dream Base (parent theme) | [`sylviasdream/`](sylviasdream) | 1.0.1 | Minimal shell: document structure, menus, template fallbacks. Never activated on its own. |
+| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 1.17.0 | **The theme to activate.** All design: templates, CSS, patterns, navigation, WooCommerce styling, performance layer. |
+| Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.3.0 | Behaviour that must survive a theme change: download-page protection, redirects, structured data, social sharing tags, security hardening, reviewer preview mode, Dream Partner progress. |
 
-## Quality gate
+Versions are defined in two places each and must match:
+
+- Child theme: `Version:` in `sylviasdream-child/style.css` and `SYLVIASDREAM_CHILD_VERSION` in `sylviasdream-child/functions.php` (checked by `scripts/check-theme.js`).
+- Core plugin: `Version:` in the header of `sylviasdream-core/sylviasdream-core.php`, `SD_CORE_VERSION` in the same file, and `Stable tag` in `sylviasdream-core/readme.txt`.
+
+Deployment state (from `HANDOFF.md`): child 1.17.0 and core 0.3.0 zips are in the Town library collection `projects/sylviasdream` and are **not yet uploaded to dev**. Dev was last on child 1.16.3 and core 0.2.1. History: [`CHANGELOG.md`](CHANGELOG.md).
+
+## 3. Repository layout
+
+| Path | Contents |
+|---|---|
+| `sylviasdream/` | Parent theme shell |
+| `sylviasdream-child/` | Child theme: `functions.php`, templates (`header.php`, `footer.php`, `front-page.php`, `page.php`, `single.php`, `archive.php`, `search.php`, `404.php`, `woocommerce.php`, `template-full-width.php`, `template-canvas.php`), `inc/` modules, `assets/css`, `assets/js`, `assets/images`, `patterns/`, `template-parts/`, `theme.json`, `content/blocks/*.html` (page layouts as built on dev) |
+| `sylviasdream-core/` | Core plugin: `sylviasdream-core.php`, `inc/*.php`, `assets/og-default.jpg`, `readme.txt` |
+| `content/live/` | Launch content pack: copies of `content/blocks/` with every dev address rewritten for sylviasdream.com ([README](content/live/README.md)) |
+| `scripts/` | `check-theme.js` (quality gate), `build-assets.js` (minifier), `build-theme-zip.sh` (release zips), `backup-inventory.sh` (read-only WP-CLI inventory, local copy only) |
+| `docs/` | Runbooks, audits, checklists, migration plan |
+| `project/` | Everything agreed with the client: brief, decisions, quotation, catalogue, open items, progress log |
+| `prototype/` | Single-file design prototype (`index.html`) and `verify.js` |
+| `.github/` | `workflows/checks.yml` (PHP lint 8.0-8.3, theme check) and `dependabot.yml` (weekly GitHub Actions updates) |
+
+## 4. Requirements for building
+
+- Node.js (CI uses Node 20) for `check-theme.js` and `build-assets.js`. No npm packages are needed.
+- Bash and `zip` for `build-theme-zip.sh`.
+- PHP 8.0 or later to run `php -l` locally if available. There is no PHP on the dev cPanel account or in the Town sandbox; GitHub Actions lints every PHP file on each push.
+- WordPress 6.4+ and PHP 8.0+ on the server (theme and plugin headers).
+
+## 5. Build the release zips
 
 ```bash
-node scripts/check-theme.js       # theme.json, block markup, repo rules
-bash scripts/build-theme-zip.sh   # gate + dist/ zips for theme and plugin
+node scripts/check-theme.js        # quality gate: JSON, block markup, "ad-" class rule, version match
+php -l <each changed .php file>    # where PHP is available; CI runs it on 8.0-8.3 anyway
+bash scripts/build-theme-zip.sh    # runs check-theme.js and build-assets.js, then writes the zips
 ```
 
-GitHub Actions lints every PHP file on PHP 8.0-8.3 and runs the theme check on each push; Dependabot keeps the workflow actions current.
+`build-theme-zip.sh` writes:
 
-## Hosting
+- `dist/sylviasdream-child-<version>.zip` (includes the generated `.min.css` / `.min.js` files)
+- `dist/sylviasdream-core-<version>.zip`
 
-WordPress.com **Personal** plan (agreed with Sylvia, 17 October 2026). No upgrade, no migration. Plugins, including WooCommerce, run on all paid plans since April 2026.
-Personal has **no staging site, no SFTP/SSH, no GitHub Deployments and no one-click restore**. The WordPress.com 8% fee applies only to its own Payments/Donations blocks, which this build does not use; a real test purchase confirms fees before launch.
+`dist/`, `*.zip` and the `.min.*` files are git-ignored. The parent theme is not zipped by the script; zip the `sylviasdream/` folder by hand if it needs reinstalling.
 
-## How work reaches the site
+## 6. Install and deploy to the dev site
 
-See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). In short: build and test on a private **local copy**, upload theme and plugin zips through WP Admin, prepare content as **drafts**, then switch over in one short window. Backups are taken by hand before each major step.
+Dev site: https://topnotchmall.co.ke/sylviasdream/ (cPanel at `https://cpanel.topnotchmall.co.ke/`).
 
-## Project folder
+**Option A: WP Admin upload (usual method)**
 
-[`project/`](project/README.md) holds everything agreed with Sylvia: brief, decision log, quotation and audit text, book catalogue and Amazon check, the minimum Stripe data, support and restoration terms, the 11-phase workflow, call guide, correspondence and open items.
+1. Build the zips (section 5).
+2. Child theme: Appearance > Themes > Add New > Upload > choose the zip > **Replace active with uploaded**.
+3. Core plugin: Plugins > Add New > Upload Plugin > choose the zip > replace the current version.
+4. If a page layout in `sylviasdream-child/content/blocks/` changed, paste it into the Code editor of the matching dev page (old content stays in Revisions).
 
-## Docs
+**Option B: cPanel Git**
+
+1. cPanel > Git Version Control > repository `/home/topnotch/repositories/sylviasdream.com` > **Update from Remote** (pulls `main`).
+2. Copy folders with File Manager (there is no Terminal on this account) into `/home/topnotch/public_html/sylviasdream/wp-content/themes/` (`sylviasdream`, `sylviasdream-child`) and `/wp-content/plugins/sylviasdream-core`.
+3. Git does not contain the `.min.*` files; without them the theme loads the readable source files, which is safe.
+
+**Dev-only configuration.** Add the reviewer preview constant to the dev `wp-config.php` only (see [`docs/wp-config-sample-additions.php`](docs/wp-config-sample-additions.php)):
+
+```php
+define( 'SD_PREVIEW_MODE', true ); // dev only, never on live
+```
+
+**Smoke test after every deploy:** load Home, the Books page (`/shop-for-books/`), Contact and a 404 URL. If a page shows a critical error, re-upload the previous version. Then run the relevant items in [`docs/QA-CHECKLIST.md`](docs/QA-CHECKLIST.md) and [`docs/LAUNCH-QA-CHECKLIST.md`](docs/LAUNCH-QA-CHECKLIST.md).
+
+## 7. Migration to the live site
+
+The live site moves only after Sylvia's written approval. The Personal plan has no staging, SFTP/SSH, GitHub Deployments or one-click restore, so every live step is either invisible preparation or part of one switch-over window. Full plan: [`docs/MIGRATION-PLAN.md`](docs/MIGRATION-PLAN.md); tick-box runbook: [`docs/BACKUP-AND-LAUNCH.md`](docs/BACKUP-AND-LAUNCH.md).
+
+| Phase | What happens |
+|---|---|
+| A. Dev only | Finish the build; build the launch content pack in `content/live/`; export products (Draft); Sylvia reviews and approves in writing. |
+| B. Live, invisible preparation | Full manual backup set; upload and activate the core plugin with **Redirects OFF**; upload both themes without activating; upload missing media; create new pages as Drafts; WooCommerce close to launch with its pages set to Draft; products imported as Draft; new menu built but not assigned; private Live Preview for Sylvia. |
+| C. Switch-over window (about 3 hours) | Fresh backup set; activate child theme; assign menus; paste `content/live/` into each existing page (URLs unchanged), filling every `#KEEP-LIVE-*` button from the same live page; set Home and Journal in Settings > Reading; **Redirects ON**; publish products; one small real purchase then refund; click-test every Stripe and Dream Partner link; run QA. |
+| D. After launch | Past buyers get new secure links; Sylvia confirms the subscription count is unchanged; restoration test before handover; delete the dev copy after handover. |
+
+Rollback: reactivate Twenty Twenty, Redirects OFF, reassign "Top Menu", reset Settings > Reading. Never touch Stripe during a rollback.
+
+Rules that apply throughout: every existing Stripe payment link, Dream Partner link, thank-you/download page and subscription keeps working exactly as now ([`project/DECISIONS.md`](project/DECISIONS.md), 26 October). Do not publish or re-publish posts during switch-over (Jetpack Newsletter emails new posts to subscribers).
+
+## 8. Quality gate and CI
+
+- `node scripts/check-theme.js`: every `*.json` in the three packages parses; block comments in `patterns/*.php` and `content/blocks/*.html` are balanced, nested and have valid attribute JSON; no CSS class starts with `ad-`; child `style.css` version equals `SYLVIASDREAM_CHILD_VERSION`.
+- `.github/workflows/checks.yml` (push to `main`, pull requests, manual): `php -l` on every PHP file under PHP 8.0, 8.1, 8.2 and 8.3; `node scripts/check-theme.js` on Node 20.
+- `.github/dependabot.yml`: weekly update PRs for GitHub Actions.
+
+## 9. Hosting facts
+
+- Live: WordPress.com Personal (agreed with Sylvia on 17 October 2026; no upgrade, no migration of host). Plugins, including WooCommerce, run on all paid WordPress.com plans since April 2026. Domain registered with WordPress.com, paid to 25 November 2027. Personal plan renews 29 October 2026.
+- Dev: cPanel hosting on topnotchmall.co.ke. Site Health reports no page cache and about 4.2 s server response time on this host. The 1-3 s page-load target needs page caching on the final host (see [`ARCHITECTURE.md`](ARCHITECTURE.md) section 9).
+
+## 10. Documentation index
+
+### Root
 
 | File | Purpose |
 |---|---|
-| [`HANDOFF.md`](HANDOFF.md) | Start here: status, next steps, must-not-do list |
-| [`ARCHITECTURE-ESSENTIALS.md`](ARCHITECTURE-ESSENTIALS.md) | One-page architecture: stack, where things are, release, never-do |
-| [`ARCHITECTURE.md`](ARCHITECTURE.md) | Full architecture: layers, modules, request flows, design system, build and release |
-| [`PRD.md`](PRD.md) | Product requirements: purpose, audiences, functional and non-functional requirements |
-| [`SECURITY.md`](SECURITY.md) / [`SECURITY-AUDIT.md`](SECURITY-AUDIT.md) | Reporting policy; attack surface, findings, controls, residual risks |
+| [`HANDOFF.md`](HANDOFF.md) | Start here: current status, priorities, what must not happen |
+| [`AGENTS.md`](AGENTS.md) | Mandatory rules for developers and AI agents |
+| [`ARCHITECTURE-ESSENTIALS.md`](ARCHITECTURE-ESSENTIALS.md) | One-page architecture |
+| [`ARCHITECTURE.md`](ARCHITECTURE.md) | Full architecture: components, hooks, data flow, settings, filters and constants |
+| [`PRD.md`](PRD.md) | Product requirements, acceptance criteria, scope, open items |
+| [`SECURITY.md`](SECURITY.md) | Vulnerability reporting policy |
+| [`SECURITY-AUDIT.md`](SECURITY-AUDIT.md) | Security audit: findings, controls, OWASP checklist, residual risks |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Workflow, build and check, coding standards, releasing |
-| [`docs/KNOWN-LIMITATIONS.md`](docs/KNOWN-LIMITATIONS.md) | What does not work yet on dev, why, and when it resolves |
-| [`docs/PHONE-QA-v4-NAV.md`](docs/PHONE-QA-v4-NAV.md) | Real-phone checklist for navigation |
-| [`docs/BACKUP-AND-LAUNCH.md`](docs/BACKUP-AND-LAUNCH.md) | Step-by-step checklist (Personal plan): manual backups, day-1 protection, local build, preview, switch-over, rollback, post-launch, restoration test |
-| [`scripts/backup-inventory.sh`](scripts/backup-inventory.sh) | Read-only WP-CLI inventory, for the local copy only (no WP-CLI on Personal) |
-| [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) | Local build, WP Admin uploads, drafts, launch day and rollback |
-| [`docs/CLIENT-CHECKLIST.md`](docs/CLIENT-CHECKLIST.md) | Access and content needed from Sylvia |
-| [`docs/REDIRECT-MAP.md`](docs/REDIRECT-MAP.md) | Content audit: keep, merge, redirect, protect |
-| [`docs/BUYER-TRANSITION-PLAN.md`](docs/BUYER-TRANSITION-PLAN.md) | Moving past buyers to WooCommerce protected downloads; retiring public files |
-| [`docs/LEGACY-LINK-MAP.md`](docs/LEGACY-LINK-MAP.md) | Old Stripe and .docx links: what was replaced, kept and why |
-| [`docs/EDITING-GUIDE.md`](docs/EDITING-GUIDE.md) | Plain-English editing guide for Sylvia |
-| [`docs/QA-CHECKLIST.md`](docs/QA-CHECKLIST.md) | Acceptance checks before the balance is due |
 | [`CHANGELOG.md`](CHANGELOG.md) | Release history |
 
-## Agreed with the client
+### docs/
 
-- Keep the domain, WordPress.com Personal plan, blog posts, subscribers and Stripe account. USD 280 fixed (deposit USD 112, balance USD 168).
-- No Stripe team access: Sylvia exports only the minimum data (see `project/STRIPE-DATA-REQUEST.md`).
-- Existing buyers keep access to their ebooks; existing Stripe giving subscriptions are not touched.
-- Keep the recently updated **Author Support** page content as it is.
-- Keep the warm gold style, with large, readable text and straightforward navigation.
-- Balance is due after Sylvia approves the preview, including a successful test purchase, secure download and test gift.
-- Restoration test before handover (see `project/SUPPORT-AND-RESTORATION.md`).
+| File | Purpose |
+|---|---|
+| [`docs/MIGRATION-PLAN.md`](docs/MIGRATION-PLAN.md) | How the finished dev site moves to sylviasdream.com |
+| [`docs/BACKUP-AND-LAUNCH.md`](docs/BACKUP-AND-LAUNCH.md) | Tick-box backup, protection, switch-over, rollback and restoration test |
+| [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) | Deployment on the Personal plan (older parts superseded by the payments rule) |
+| [`docs/LAUNCH-QA-CHECKLIST.md`](docs/LAUNCH-QA-CHECKLIST.md) | Launch QA checklist |
+| [`docs/QA-CHECKLIST.md`](docs/QA-CHECKLIST.md) | Acceptance checks before the balance is due |
+| [`docs/PHONE-QA-v4-NAV.md`](docs/PHONE-QA-v4-NAV.md) | Real-phone navigation checklist |
+| [`docs/REDIRECT-MAP.md`](docs/REDIRECT-MAP.md) | Content audit: keep, merge, redirect, protect |
+| [`docs/LEGACY-LINK-MAP.md`](docs/LEGACY-LINK-MAP.md) | Old Stripe and .docx links changed on dev only (not repeated on live) |
+| [`docs/BUYER-TRANSITION-PLAN.md`](docs/BUYER-TRANSITION-PLAN.md) | Past buyers and protected downloads (Phase 2 cancelled by the payments rule) |
+| [`docs/CONTENT-PARITY-AUDIT.md`](docs/CONTENT-PARITY-AUDIT.md) | Content restored from live |
+| [`docs/ALT-TEXT-AND-SEO-AUDIT.md`](docs/ALT-TEXT-AND-SEO-AUDIT.md) | Alt text and SEO audit |
+| [`docs/EDITING-GUIDE.md`](docs/EDITING-GUIDE.md) | Plain-English editing guide for Sylvia |
+| [`docs/CLIENT-CHECKLIST.md`](docs/CLIENT-CHECKLIST.md) | Access and content needed from Sylvia |
+| [`docs/KNOWN-LIMITATIONS.md`](docs/KNOWN-LIMITATIONS.md) | What does not work yet on dev and why |
+| [`docs/CPANEL-PREVIEW.md`](docs/CPANEL-PREVIEW.md) | Guide to the private cPanel preview site |
+| [`docs/HOST-CPANEL-LICENCE.md`](docs/HOST-CPANEL-LICENCE.md) | Dev host licence issue (fixed 26 October) |
+| [`docs/NEXT-BUILD-1.1.0.md`](docs/NEXT-BUILD-1.1.0.md) | Historical brief for theme 1.1.0 |
+| [`docs/REDESIGN-HANDOFF.docx`](docs/REDESIGN-HANDOFF.docx) | Design direction, acceptance criteria, integration matrix |
+| [`docs/hoe-segments/README.md`](docs/hoe-segments/README.md) | Heaven on Earth page in paste segments |
+| [`docs/wp-config-sample-additions.php`](docs/wp-config-sample-additions.php) | Optional `wp-config.php` constants (documentation only, not loaded) |
 
-## Sylvia's feedback on the prototype (15 October 2026)
+### project/
 
-- **Complete catalogue.** All current titles appear (25 in prototype v3), including Fields of Becoming, When the River Flows Again and Guard Your Heart Renew Your Mind. The price stays at USD 280.
-- **Angelique.** *Angelique: A Journey of Becoming* (novel) and *Angelique Finds Her Light* (children's book) are separate books. Sylvia confirms all titles, subtitles, descriptions, formats and prices.
-- **Location.** Show "Australia" only. No town or street address anywhere.
-- **Dream Partner giving.** Keep $5, $15, $30 and $50 monthly, plus "choose another amount".
-- **Free downloads.** Nothing is listed as free without Sylvia's approval, especially the book-writing guide.
-- **Approvals before publishing.** The wording about book purchases supporting Heaven on Earth, the final biography and the ministry information.
-- **Author Support.** Keep her recently updated wording exactly as published.
-- **Readability.** Large, easy-to-read text, especially on phones.
+| File | Purpose |
+|---|---|
+| [`project/README.md`](project/README.md) | Index of client agreements |
+| [`project/PROJECT-BRIEF.md`](project/PROJECT-BRIEF.md) | Scope source of truth |
+| [`project/DECISIONS.md`](project/DECISIONS.md) | Decision log (newest first) |
+| [`project/OPEN-ITEMS.md`](project/OPEN-ITEMS.md) | Open items: waiting on Sylvia, Pimofy, launch |
+| [`project/PROGRESS-LOG.md`](project/PROGRESS-LOG.md) | Day-by-day work log |
+| [`project/QUOTATION.md`](project/QUOTATION.md) | Quotation PMF-QT-2026-0106 v2 |
+| [`project/STRIPE-DATA-REQUEST.md`](project/STRIPE-DATA-REQUEST.md) | Minimum Stripe data Sylvia exports herself |
+| [`project/SUPPORT-AND-RESTORATION.md`](project/SUPPORT-AND-RESTORATION.md) | Support terms and restoration test |
+| [`project/BOOK-CATALOGUE.md`](project/BOOK-CATALOGUE.md), [`project/AMAZON-CATALOGUE.md`](project/AMAZON-CATALOGUE.md), [`project/AMAZON-DESCRIPTIONS.md`](project/AMAZON-DESCRIPTIONS.md) | Book catalogue and Amazon source data |
+| [`project/WEBSITE-AUDIT.md`](project/WEBSITE-AUDIT.md) | Audit of the original site |
+| [`project/WORKFLOW.md`](project/WORKFLOW.md), [`project/CALL-GUIDE.md`](project/CALL-GUIDE.md), [`project/CORRESPONDENCE.md`](project/CORRESPONDENCE.md) | Workflow, call guide, correspondence record |
+| [`project/PROTOTYPE-REVIEW-v4.docx`](project/PROTOTYPE-REVIEW-v4.docx) | Prototype v4 review |
 
-## Prototype
+### Other
 
-[`prototype/index.html`](prototype/index.html) is a single-file design preview (v3). Open it in a browser; the **For Sylvia's review** page (`#/for-sylvia`) lists every change and open question. Run `node prototype/verify.js` (from any folder) to render every route and check for broken internal links.
+| File | Purpose |
+|---|---|
+| [`content/live/README.md`](content/live/README.md) | Launch content pack: rules, `#KEEP-LIVE-*` markers, images to upload |
+| [`sylviasdream-child/README.md`](sylviasdream-child/README.md) | Child theme notes |
+| [`sylviasdream-core/readme.txt`](sylviasdream-core/readme.txt) | Core plugin readme |
+| [`prototype/index.html`](prototype/index.html) | Design prototype; `node prototype/verify.js` checks every route |
