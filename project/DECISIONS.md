@@ -2,6 +2,23 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 26 October 2026 (late): Sylvia's answers from the call, recorded from Moses's call script notes
+Source: "Call with Sylvia spoken script v2" (Moses's notes typed beside each question). Verbal answers: **confirm in writing** before anything is published, per the quotation.
+- Angelique: A Journey of Becoming and Angelique Finds Her Light are **separate books** (yes). The **Angelique Legacy Edition** should appear (yes).
+- Guard Your Heart Renew Your Mind is **separate** from Guard Your Heart (yes).
+- Titles and subtitles: as on Amazon ("one on Amazon"); matches the 26 Oct Amazon rename.
+- Spanish, French, Bahasa Indonesia and Large Print editions **should show** (yes).
+- Manifesting Miracles Now: "leave it". Read as **leave it out of the shop**; confirm with Sylvia (could also mean leave as is).
+- **Free resources she named:** SENT for missionaries; How to Write and Publish a Spirit-Led Christian Book in 7 Days; 7 Days to Trusting God with Your Journey. Everything else stays paid / not free. Still needs her written OK before launch.
+- Dream Partners give today through **Stripe** payment links (not the WordPress.com donation block), so no 8% WordPress.com fee issue.
+- Open from the call: The King's Way. God's Plan For Salvation (older edition?), co-author credits, ebook prices (AUD).
+
+Reconciled with the project documents (quotation v2, cPanel preview guide v1.1, process checklist, call script):
+- Quotation section D said the shop would "replace about 10 separate Stripe payment links" and that old download files would be retired after a transition. **Superseded by the 26 Oct (night) payments rule**: existing Stripe links, contribution links and thank-you pages stay working permanently; any WooCommerce shop is added alongside. Tell Sylvia this is a change in her favour (nothing she already uses stops working).
+- The call script and preview guide promised "old download pages keep working for 30 days" and "old links point to the new shop or are switched off with your written OK". Also superseded: they keep working, nothing is switched off.
+- Process checklist asked Sylvia for Stripe Analyst access: superseded by 17 Oct (she declined; she exports what is needed).
+- The preview guide named a pimofydigital.com subdomain; the actual preview is topnotchmall.co.ke/sylviasdream/.
+
 ## 26 October 2026 (night)
 
 - **All existing Stripe payments and contribution links are kept, permanently** (Lightof, 26 Oct). Every live Stripe book-purchase button, every Dream Partner / contribution link, their after-payment thank-you and download pages, and every existing subscription keep working exactly as now, before, during and after the move. Consequences: the `LEGACY-LINK-MAP.md` replacements are **not** carried to live; `BUYER-TRANSITION-PLAN.md` Phase 2 (switching off links, redirecting thank-you pages, deleting files) is **cancelled**; the Give page uses the existing Dream Partner links; WooCommerce, if used, is an addition, never a replacement. The repo never stores payment-link addresses: the launch pack marks those buttons `#KEEP-LIVE-STRIPE-BUTTON` / `#KEEP-LIVE-DREAM-PARTNER-LINK-*`, and the person pasting copies the existing link from the same live page.

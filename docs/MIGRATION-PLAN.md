@@ -48,7 +48,9 @@ Slug differences to respect: on live `/all-shall-be-well/` is the **thank-you pa
 3. Upload both themes; **do not activate**.
 4. Upload missing media.
 5. Create the new pages as **Drafts** (Home, Give, Invite Sylvia to speak, Journal, policies).
-6. Install WooCommerce close to launch (it publishes Shop/Cart/Checkout/My account pages); import products as **Draft**; downloads set up per `BUYER-TRANSITION-PLAN.md` Phase 0; payments in test mode.
+5a. Before any of this: in the live **Top Menu** untick "Automatically add new top-level pages to this menu" (cPanel preview guide 9.1), so new draft pages never appear in the menu.
+5b. Design settings: move them with the Customizer Export/Import plugin, imported while the child theme is in Live Preview and saved as a Customizer **draft** (guide 9.2).
+6. Install WooCommerce close to launch; set its Shop, Cart, Checkout and My account pages to **Draft immediately** (guide 9.2) (it publishes Shop/Cart/Checkout/My account pages); import products as **Draft**; downloads set up per `BUYER-TRANSITION-PLAN.md` Phase 0; payments in test mode.
 7. Build the new menu (not assigned).
 8. Private preview for Sylvia with Appearance > Themes > **Live Preview** and draft previews on a call; test purchase, download and gift in test mode.
 
@@ -67,6 +69,9 @@ Slug differences to respect: on live `/all-shall-be-well/` is the **thank-you pa
 - Past buyers get new secure links (`BUYER-TRANSITION-PLAN.md` Phase 1); Sylvia confirms the subscription count is unchanged.
 - Thank-you / download pages and payment links stay as they are (section 1a); no Phase 2 retirement.
 - Restoration test before handover; delete the dev copy after handover.
+
+## 4a. Source documents reconciled (26 Oct)
+Quotation v2 (PMF-QT-2026-0106), cPanel preview guide v1.1 (18 Oct), the process checklist and the call script were checked against this plan. Differences and what wins are in `project/DECISIONS.md` (26 Oct, late). In short: payments rule section 1a wins over the quotation's "replace Stripe links" and the 30-day retirement; new pages may be brought in by Tools > Import (as the guide says) but **existing** pages are updated in place so their URLs never change; the guide's "about one hour" launch assumed import of drafts, while pasting into ~30 existing pages takes 2-3 hours.
 
 ## 5. Rollback (any time in Phase C)
 Reactivate Twenty Twenty; Redirects OFF; reassign "Top Menu"; reset Settings > Reading to the old front page. Content restore from the same-day backup by hand (hours). Never touch Stripe during a rollback.

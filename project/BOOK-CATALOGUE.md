@@ -80,6 +80,9 @@ Other Amazon listings (editions; Sylvia decides whether the shop shows them): De
 
 Done 26 Oct: the 23 Amazon-listed dev products (Draft) renamed to the titles above. Still to do: take each product description from the book's Amazon page where the site has none of Sylvia's own text.
 
+## Answers from the call (26 Oct, verbal; confirm in writing)
+1. Angelique books separate: **yes**; Legacy Edition shown: **yes**. 2. Guard Your Heart Renew Your Mind separate: **yes**. 4. Amazon subtitles: **yes** (done on dev 26 Oct). 6. Spanish, French, Bahasa Indonesia, Large Print shown: **yes**. 7. Manifesting Miracles Now: "leave it" (read as leave out; confirm). 8. Free: **SENT for missionaries, How to Write and Publish a Spirit-Led Christian Book in 7 Days, 7 Days to Trusting God with Your Journey**. Still open: 3 (King's Way older edition), 5 (co-authors), 9 (AUD prices), 10 (missing books).
+
 ## Questions for Sylvia
 1. Angelique novel and *Angelique Finds Her Light*: separate books? Should the *Angelique Legacy Edition* appear?
 2. Is *Guard Your Heart Renew Your Mind* separate from *Guard Your Heart: The Inner Life...*?
