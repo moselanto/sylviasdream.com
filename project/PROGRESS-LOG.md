@@ -5,7 +5,8 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 ## Monday 26 October 2026
 - Content parity with live restored on dev (`818921b`): My Story, Podcasts, Hidden Key 6171, One Life 2766, Grace For the Journey category on all 15 posts. Verified desktop and mobile. Amazon link from page 1239 is the Kindle edition; hardcover link requested from Sylvia.
 - Theme 1.8.3 (`708dda1`) deployed: menu language links (`#lang-fr/es/id/en`). Primary menu fixed: Books > Other languages = Français, Español, Bahasa Indonesia; From Fear to Freedom and SENT moved to Browse by topic; Kenya Ministry Training Manual under Ministry. All links and language switches verified on desktop and phone drawer.
-- Stopped here. Next: Heaven on Earth by hand (`docs/hoe-segments/README.md`), visual checks of SENT and From Fear to Freedom, real-phone QA, hide "Uncategorized"/"Coming soon" from Browse by topic. See `HANDOFF.md` section 4.
+- Afternoon: live facts checked read-only (Agnes's admin login). Consolidated email draft to Sylvia and checklist document. New covers for From Fear to Freedom, One Life and SENT applied on dev (products and book pages). One Life Amazon buttons now point to the AU paperback. `book-one-life.html` built and committed (f04b704) but **not yet applied on dev** because Town credits ran out.
+- Stopped here. Next: apply book-one-life.html to 2766; Heaven on Earth by hand (`docs/hoe-segments/README.md`), visual checks of SENT and From Fear to Freedom, real-phone QA, hide "Uncategorized"/"Coming soon" from Browse by topic. See `HANDOFF.md` section 4.
 
 ## Friday 23 October 2026
 

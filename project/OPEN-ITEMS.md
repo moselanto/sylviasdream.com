@@ -6,10 +6,10 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Confirm the connected payment account ("Bu...th", WordPress.com Payments/Stripe) is hers
 - [ ] Personal plan renews 29 Oct 2026 (A$60): she must keep it renewing
 - [ ] Her approval of the dev site = go-ahead to migrate
-- [ ] One Life hardcover Amazon link (the My Autobiography page links to the Kindle edition)
+- [ ] One Life hardcover Amazon link, if a hardcover exists (dev now links to the AU paperback 1793312702)
 - [ ] OK to file the devotional posts under Grace For the Journey on live (done on dev 26 Oct)
 (Kept in full in Moses's Town document "Things needed from Sylvia"; send it to her when the build is done.)
-- [ ] Covers: From Fear to Freedom, When Fear Has the Final Word, Manifesting Miracles Now, Fast Forward to Success
+- [ ] Covers: When Fear Has the Final Word, Manifesting Miracles Now, Fast Forward to Success (From Fear to Freedom received 26 Oct)
 - [ ] Confirm titles/subtitles (not on Amazon): When Fear Has the Final Word ("A Devotional on Peace"), Manifesting Miracles Now ("Everyday God Encounters of Selected Authors")
 - [ ] Fast Forward to Success: add a line about her own chapter? (Amazon text describes the whole collection)
 - [ ] Other Amazon editions in the shop or not: French (De la Peur à la Liberté), Spanish (UNA VIDA), Angelique Legacy Edition, The King's Way: God's Plan For Salvation paperback, large-print editions
@@ -24,6 +24,9 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Earlier items still open: signed acceptance and USD 112 deposit, Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, logo, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+- [ ] **NEXT (26 Oct, stopped here: Town credits ran out):** apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 2766 in the Code editor. First replace its cover src (a guess, .../uploads/2026/10/one-life.png) with the real URL of dev media 6604. Then check SENT 4686 and From Fear to Freedom 4231 show the new covers (media 6605, 6603), and check all three on desktop and mobile. Then update the cover URLs in `book-sent.html` and `book-from-fear-to-freedom.html` to media 6605/6603.
+- [x] New covers (26 Oct, from Agnes): From Fear to Freedom (media 6603, product 6377, page 4231), One Life (6604, product 6376, page 2766), SENT (6605, product 6382, page 4686). 22 of 25 products have covers; still none: Fast Forward to Success 6397, When Fear Has the Final Word 6390, Manifesting Miracles Now 6398
+- [x] One Life (2766) "Purchase on Amazon" buttons now go to Amazon AU paperback https://www.amazon.com.au/dp/1793312702 (Agnes). Page text says "hardcover edition": hardcover link asked of Sylvia
 - [x] Live facts checked read-only 26 Oct with Agnes's admin login: two Administrators (mosemqute, Sylvia); domain registered with WordPress.com since 2019, paid to 25 Nov 2027, auto-renew, WordPress.com name servers; Personal plan renews 29 Oct 2026; Stripe connected via WordPress.com Payments ($5/month plan); WooCommerce not installed on live (11 plugins)
 - [x] Kenya Ministry Training Manual page stays published (Agnes, 26 Oct)
 - [x] Host fixed the cPanel licence (26 Oct); Git "Update from Remote" works again, repo at 4dccb83. Was: fix the cPanel licence on topnotchmall.co.ke (`docs/HOST-CPANEL-LICENCE.md`)

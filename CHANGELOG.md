@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-26 - One Life book layout
+- `content/blocks/book-one-life.html`: One Life in the same book-page layout as SENT and From Fear to Freedom, using Sylvia's wording only. Not yet applied on dev.
+
 ## 2026-10-26 - Child theme 1.8.3: menu fixes
 - Language links in menus: a custom link whose URL ends in `#lang-fr`, `#lang-es`, `#lang-id` (or `#lang-en`) switches the whole site to that language, the same as the language selector. Labels stay in their own language; the current language is marked with a tick. A shared address ending in `#lang-fr` opens the page in French.
 - Dev menu: Books > Other languages now lists Français, Español and Bahasa Indonesia (language links). From Fear to Freedom and SENT, which had been sitting under Other languages, moved to their proper place with the other books. Ministry now includes Kenya Ministry Training Manual (Agnes, 26 Oct).
