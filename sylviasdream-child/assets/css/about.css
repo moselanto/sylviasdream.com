@@ -100,3 +100,22 @@
 	.sd-about .entry-content .sd-card, .sd-about .entry-content .sd-video-more .wp-block-embed { transition: none; }
 	.sd-about .entry-content .sd-card:hover, .sd-about .entry-content .sd-video-more .wp-block-embed:hover { transform: none; }
 }
+
+/* ---------- 1.9.1: fixes from the page printouts ---------- */
+/* Card headings: one alignment (left) whether they fit on one line or wrap. */
+.sd-about .entry-content .sd-band .sd-card :is(h2, h3, h4) { text-align: left !important; margin-left: 0 !important; margin-right: 0 !important; max-width: none !important; width: auto !important; }
+/* Card paragraphs: clear space between paragraphs inside a card. */
+.sd-about .entry-content .sd-band .sd-card p + p { margin-top: .8rem !important; }
+.sd-about .entry-content .sd-band .sd-card p { margin-bottom: 0; }
+/* Podcasts "About the interview": a band nested inside a band becomes a tidy card, not an empty slab. */
+.sd-about .entry-content .sd-band .sd-band { width: auto !important; max-width: none !important; margin: clamp(2rem, 4vw, 3rem) 0 0 !important; padding: clamp(1.5rem, 4vw, 2.75rem) !important; border: 1px solid var(--line); border-radius: 20px; background: #fff !important; box-shadow: 0 12px 32px rgba(60, 40, 10, .07); text-align: left; }
+.sd-about .entry-content .sd-band .sd-band .sd-band__inner { max-width: none; }
+.sd-about .entry-content .sd-band .sd-band .sd-split { align-items: flex-start !important; }
+.sd-about .entry-content .sd-band .sd-band .wp-block-column { align-self: flex-start !important; }
+/* More videos: five players; the last row of two sits centred on wide screens. */
+@media (min-width: 1024px) {
+	.sd-about .entry-content .sd-video-more { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+	.sd-about .entry-content .sd-video-more > * { grid-column: span 2 !important; }
+	.sd-about .entry-content .sd-video-more > :nth-child(3n+1):nth-last-child(2) { grid-column: 2 / span 2 !important; }
+	.sd-about .entry-content .sd-video-more > :nth-child(3n+1):last-child { grid-column: 3 / span 2 !important; }
+}

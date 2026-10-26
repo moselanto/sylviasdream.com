@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-26 - Child theme 1.9.1: About pages fixes from the page printouts
+- Card headings on Speaking, Author Support and My Story all left-aligned (short ones had looked centred, wrapped ones left).
+- Space between paragraphs inside cards (Author Support service cards ran together).
+- Podcasts "About the interview": the band nested inside More videos is now a white card with normal padding, text top-aligned, no empty slab.
+- More videos: on wide screens the last row of two players is centred under the three above.
+
 ## 2026-10-26 - Child theme 1.9.0: About pages polish
 - New `assets/css/about.css`, loaded only on My Story, Invite Sylvia to speak, Podcasts & Videos and Author Support (body class `sd-about`, slugs filterable with `sdc_about_page_slugs`). Layout and styling only; no wording added or changed.
 - Banner: deeper shade, gold rule before the eyebrow, balanced title, larger intro. Sections: steadier spacing, alternating cream / white / warm bands, larger balanced headings with a short gold rule under centred titles, 66-character reading width in split sections, 52px buttons (full width on phones).
