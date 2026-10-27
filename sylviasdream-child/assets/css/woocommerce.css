@@ -324,3 +324,9 @@
 @media (prefers-reduced-motion: reduce) {
 	.woocommerce ul.products li.product a img, .sd-chips a { transition: none; }
 }
+
+/* 1.18.1: free books */
+.sd-price-free { font-weight: 700; color: var(--green, #3f6b4a); }
+.sd-buybox__free { margin: 12px 0; }
+.sd-buybox__free .sd-btn { display: inline-flex; align-items: center; gap: 8px; }
+.sd-buybox__free .sd-btn svg { width: 18px; height: 18px; }

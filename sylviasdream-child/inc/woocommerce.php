@@ -471,6 +471,16 @@ function sdc_product_admin_fields() {
 			'description' => __( 'Shown under the title on the book page and on book cards.', 'sylviasdream-child' ),
 		)
 	);
+	woocommerce_wp_text_input(
+		array(
+			'id'          => '_sdc_free_download',
+			'label'       => __( 'Free download link', 'sylviasdream-child' ),
+			'type'        => 'url',
+			'placeholder' => home_url( '/wp-content/uploads/...' ),
+			'desc_tip'    => true,
+			'description' => __( 'Only for books Sylvia gives away free. A file or page on this website. When filled, the book shows a Free download button instead of a price and Add to cart. Leave blank for paid books.', 'sylviasdream-child' ),
+		)
+	);
 	foreach ( sdc_amazon_fields() as $key => $label ) {
 		woocommerce_wp_text_input(
 			array(
@@ -499,6 +509,10 @@ function sdc_product_admin_save( $product ) {
 	// phpcs:disable WordPress.Security.NonceVerification.Missing -- verified by WooCommerce before this hook.
 	if ( isset( $_POST['_sdc_subtitle'] ) ) {
 		$product->update_meta_data( '_sdc_subtitle', sanitize_text_field( wp_unslash( $_POST['_sdc_subtitle'] ) ) );
+	}
+	if ( isset( $_POST['_sdc_free_download'] ) ) {
+		$free = esc_url_raw( trim( wp_unslash( $_POST['_sdc_free_download'] ) ), array( 'https', 'http' ) );
+		$product->update_meta_data( '_sdc_free_download', ( $free && sdc_is_own_site_url( $free ) ) ? $free : '' );
 	}
 	foreach ( array_keys( sdc_amazon_fields() ) as $key ) {
 		if ( ! isset( $_POST[ $key ] ) ) {
@@ -772,3 +786,93 @@ function sdc_shop_note() {
 	}
 }
 add_action( 'woocommerce_after_shop_loop', 'sdc_shop_note', 20 );
+
+/* --------------------------------------------------------------------------
+ * 1.18.1: free books (Sylvia's choice: SENT, How to Write and Publish, and
+ * 7 Days to Trusting God). A product with a "Free download link" shows a
+ * Free download button, "Free" instead of a price, and cannot be added to
+ * the cart. Every other book stays paid. Links must point to this website.
+ * ------------------------------------------------------------------------ */
+
+/**
+ * Is the URL on this website (same host as home_url)?
+ *
+ * @param string $url URL.
+ * @return bool
+ */
+function sdc_is_own_site_url( $url ) {
+	$host = strtolower( (string) wp_parse_url( (string) $url, PHP_URL_HOST ) );
+	$home = strtolower( (string) wp_parse_url( home_url(), PHP_URL_HOST ) );
+	return '' !== $host && $host === $home;
+}
+
+/**
+ * Free download link for a product, or ''.
+ *
+ * @param WC_Product|null $product Product.
+ * @return string
+ */
+function sdc_product_free_download( $product ) {
+	if ( ! $product instanceof WC_Product ) {
+		return '';
+	}
+	$url = (string) $product->get_meta( '_sdc_free_download' );
+	return ( $url && sdc_is_own_site_url( $url ) ) ? $url : '';
+}
+
+/**
+ * Free books are never added to the cart.
+ *
+ * @param bool       $purchasable Purchasable.
+ * @param WC_Product $product     Product.
+ * @return bool
+ */
+function sdc_free_not_purchasable( $purchasable, $product ) {
+	return '' !== sdc_product_free_download( $product ) ? false : $purchasable;
+}
+add_filter( 'woocommerce_is_purchasable', 'sdc_free_not_purchasable', 20, 2 );
+
+/**
+ * Show "Free" instead of a price.
+ *
+ * @param string     $html    Price HTML.
+ * @param WC_Product $product Product.
+ * @return string
+ */
+function sdc_free_price_html( $html, $product ) {
+	if ( '' === sdc_product_free_download( $product ) ) {
+		return $html;
+	}
+	return '<span class="sd-price-free">' . esc_html__( 'Free', 'sylviasdream-child' ) . '</span>';
+}
+add_filter( 'woocommerce_get_price_html', 'sdc_free_price_html', 20, 2 );
+
+/**
+ * Free download button in the buy box.
+ */
+function sdc_free_download_button() {
+	global $product;
+	$url = sdc_product_free_download( $product );
+	if ( '' === $url ) {
+		return;
+	}
+	printf(
+		'<div class="sd-btn-row sd-buybox__free"><a class="sd-btn sd-btn--primary" href="%1$s">%2$s%3$s</a></div>',
+		esc_url( $url ),
+		wp_kses( sdc_icon( 'download' ), sdc_svg_kses() ),
+		esc_html__( 'Free download', 'sylviasdream-child' )
+	);
+}
+add_action( 'woocommerce_single_product_summary', 'sdc_free_download_button', 29 );
+
+/**
+ * Card button text for free books.
+ *
+ * @param string     $text    Button text.
+ * @param WC_Product $product Product.
+ * @return string
+ */
+function sdc_free_loop_button_text( $text, $product ) {
+	return '' !== sdc_product_free_download( $product ) ? __( 'Free download', 'sylviasdream-child' ) : $text;
+}
+add_filter( 'woocommerce_product_add_to_cart_text', 'sdc_free_loop_button_text', 20, 2 );

@@ -55,8 +55,10 @@ function sdc_mega_featured_html() {
 		)
 	);
 	if ( empty( $products ) ) {
-		// 1.5.4: until featured books are published, show the prototype's three
-		// "Start here" covers (drawn in CSS) linking to the Books page.
+		// 1.18.1: until featured books are published, show the three "Start here"
+		// books with their real covers (taken from the products, whatever their
+		// status). Links go to the book when it can be viewed, otherwise to the
+		// Books page. A CSS-drawn cover is only used when a product has no image.
 		$picks = array(
 			array( 'The Report of the Lord', '#3a2a12', '#e0b75a' ),
 			array( 'One Life', '#5b3a1a', '#c18b2d' ),
@@ -64,9 +66,36 @@ function sdc_mega_featured_html() {
 		);
 		$items = '';
 		foreach ( $picks as $pick ) {
+			$found = wc_get_products(
+				array(
+					'status' => array( 'publish', 'draft', 'pending', 'private' ),
+					'limit'  => 5,
+					's'      => $pick[0],
+				)
+			);
+			$match = null;
+			foreach ( $found as $candidate ) {
+				if ( 0 === stripos( $candidate->get_name(), $pick[0] ) ) {
+					$match = $candidate;
+					break;
+				}
+			}
+			$url = sdc_shop_url();
+			if ( $match && ( 'publish' === $match->get_status() || ( function_exists( 'sd_core_preview_active' ) && sd_core_preview_active() ) ) ) {
+				$url = $match->get_permalink();
+			}
+			if ( $match && $match->get_image_id() ) {
+				$items .= sprintf(
+					'<a class="sd-mega__book" href="%1$s">%2$s<span>%3$s</span></a>',
+					esc_url( $url ),
+					wp_get_attachment_image( $match->get_image_id(), 'woocommerce_thumbnail', false, array( 'loading' => 'lazy', 'alt' => '' ) ),
+					esc_html( $pick[0] )
+				);
+				continue;
+			}
 			$items .= sprintf(
 				'<a class="sd-mega__book" href="%1$s"><span class="sd-cover" style="background:linear-gradient(160deg,%2$s 0%%,%2$s 55%%,%3$s 140%%)" aria-hidden="true"><span class="sd-cover__title">%4$s</span></span><span>%4$s</span></a>',
-				esc_url( sdc_shop_url() ),
+				esc_url( $url ),
 				esc_attr( $pick[1] ),
 				esc_attr( $pick[2] ),
 				esc_html( $pick[0] )
