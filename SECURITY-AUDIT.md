@@ -2,10 +2,10 @@
 
 | | |
 |---|---|
-| Scope | Parent theme `sylviasdream/` 1.0.1, child theme `sylviasdream-child/` 1.17.0, core plugin `sylviasdream-core/` 0.4.0, repo scripts and CI |
+| Scope | Parent theme `sylviasdream/` 1.0.1, child theme `sylviasdream-child/` 1.17.0, core plugin `sylviasdream-core/` 0.4.1, repo scripts and CI |
 | Out of scope | WordPress core, WooCommerce, Jetpack, Stripe, PayPal, WordPress.com platform and the dev cPanel host (third-party; kept updated, not reviewed line by line) |
 | Environments | Dev https://topnotchmall.co.ke/sylviasdream/ (cPanel); live https://sylviasdream.com (WordPress.com Personal) |
-| Reviews | Core 0.4.0 authentication review 27 October 2026 (login, two-factor, auth hardening, admin branding); full re-review 27 October 2026 (child 1.17.0, core 0.3.0); earlier review covered child 1.5.7 / core 0.1.x |
+| Reviews | Core 0.4.1 2FA QR code review 27 October 2026; core 0.4.0 authentication review 27 October 2026 (login, two-factor, auth hardening, admin branding); full re-review 27 October 2026 (child 1.17.0, core 0.3.0); earlier review covered child 1.5.7 / core 0.1.x |
 | Reporting policy | [SECURITY.md](SECURITY.md) |
 
 ## 1. Method
@@ -27,6 +27,7 @@ Severity scale used below: High (exploitable by an outside visitor or leads to l
 | Settings > Sylvia's Dream | Administrators | Settings API nonce + `manage_options` |
 | 2FA code screen `wp-login.php?action=sd_2fa` (0.4.0) | Visitors holding a pending-login token | Reviewed: HttpOnly token cookie (256-bit, transient keyed by HMAC), nonce bound to token, 5-minute expiry, 5 attempts per token, 10 per IP per 15 min, failures count toward the login lockout; no auth cookie before a valid code |
 | 2FA profile buttons (0.4.0) | Signed-in user, own profile | Part of core's profile form: `update-user_{id}` nonce + `edit_user`; enable needs a valid code, disable needs password + code; failures rate limited |
+| 2FA setup QR code (0.4.1, output only, no handler) | Signed-in user, own profile, setup pending | Inline SVG drawn server-side (`inc/qr-svg.php`, bundled MIT encoder `inc/lib/qrcode.php`); no external request, so the secret never leaves the site. Printed only in the pending-setup branch of `sd_core_2fa_profile_section()` (user = current user, 2FA not on), never after setup or on another user's profile. Markup built from integers and fixed strings, printed through `sd_core_qr_kses()` (svg/title/rect/path allow-list). Encoder errors caught (`Throwable`) and the key shown instead. Same secret as the key already shown on that screen. |
 | 2FA admin reset (0.4.0) | `edit_users` on another user's profile | Core profile nonce + `edit_users` + `edit_user` |
 | 2FA reminder "Remind me in 30 days" link (0.4.0) | Administrators | `check_admin_referer( 'sd_2fa_later' )` + `manage_options`; writes one user-meta timestamp |
 | Password fields | `security.php` length check only | Read after core/WooCommerce verified the nonce; never stored or logged |

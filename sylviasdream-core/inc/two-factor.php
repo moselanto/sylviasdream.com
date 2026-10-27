@@ -6,9 +6,13 @@
  * 6 digits, one step either side allowed, a used step cannot be reused.
  *
  * - Opt-in per user from Users > Profile (own profile only).
- * - Setup shows a base32 secret and an otpauth:// address for manual entry in
- *   Google Authenticator, Microsoft Authenticator, Authy or similar. No QR
- *   image is generated (no external QR service; no bundled encoder).
+ * - Setup shows a QR code of the otpauth:// address (0.4.1: inline SVG made on
+ *   this server by inc/qr-svg.php, no external service), plus the base32
+ *   secret and the otpauth:// link as a fallback for manual entry in Google
+ *   Authenticator, Microsoft Authenticator, Authy or similar. The QR code is
+ *   shown only to the profile owner while setup is pending, never after
+ *   setup and never to other users. Filter `sd_core_2fa_show_qr` (false hides
+ *   it); if the encoder fails, only the key is shown.
  * - Turning it on needs a valid code; 8 one-time recovery codes are shown once
  *   and stored hashed (wp_hash_password).
  * - Turning it off needs the account password and a code (or recovery code).
@@ -625,8 +629,22 @@ function sd_core_2fa_profile_section( $user ) {
 
 				<?php elseif ( '' !== $pending ) : ?>
 					<?php $uri = sd_core_2fa_otpauth_uri( $user, $pending ); ?>
+					<?php
+					// QR code of the otpauth:// address, made on this server (inc/qr-svg.php).
+					// Only here: own profile, setup pending, 2FA not yet on. '' on any failure.
+					$qr_svg = ( function_exists( 'sd_core_qr_svg' ) && (bool) apply_filters( 'sd_core_2fa_show_qr', true, $user ) ) ? sd_core_qr_svg( $uri, 220 ) : '';
+					?>
 					<ol class="sd-2fa-steps">
-						<li><?php esc_html_e( 'Open an authenticator app on your phone (for example Google Authenticator, Microsoft Authenticator or Authy) and choose to add an account by entering a setup key.', 'sylviasdream-core' ); ?></li>
+						<li><?php esc_html_e( 'Open an authenticator app on your phone (for example Google Authenticator, Microsoft Authenticator or Authy) and choose to add an account.', 'sylviasdream-core' ); ?></li>
+						<?php if ( '' !== $qr_svg ) : ?>
+							<li>
+								<?php esc_html_e( 'Scan this QR code with the app:', 'sylviasdream-core' ); ?>
+								<div class="sd-2fa-qr" style="margin:12px 0;line-height:0;">
+									<?php echo sd_core_qr_kses( $qr_svg ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- allow-list filtered by sd_core_qr_kses(); built from integers only. ?>
+								</div>
+								<?php esc_html_e( 'Cannot scan it? Enter the key below instead.', 'sylviasdream-core' ); ?>
+							</li>
+						<?php endif; ?>
 						<li>
 							<?php esc_html_e( 'Account name: your username. Key:', 'sylviasdream-core' ); ?>
 							<code class="sd-2fa-secret"><?php echo esc_html( implode( ' ', str_split( $pending, 4 ) ) ); ?></code>

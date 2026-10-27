@@ -1,6 +1,6 @@
 # Architecture
 
-How the Sylvia's Dream website is built. One-page version: [ARCHITECTURE-ESSENTIALS.md](ARCHITECTURE-ESSENTIALS.md). Covers parent theme 1.0.1, child theme 1.17.0 and core plugin 0.4.0. Last updated 27 October 2026.
+How the Sylvia's Dream website is built. One-page version: [ARCHITECTURE-ESSENTIALS.md](ARCHITECTURE-ESSENTIALS.md). Covers parent theme 1.0.1, child theme 1.17.0 and core plugin 0.4.1. Last updated 27 October 2026.
 
 ## 1. System context
 
@@ -69,7 +69,7 @@ Templates: `header.php`, `footer.php`, `front-page.php`, `page.php`, `template-f
 
 ## 4. Core plugin (`sylviasdream-core/`)
 
-`sylviasdream-core.php` defines `SD_CORE_VERSION` (`0.4.0`), `SD_CORE_DIR`, `SD_CORE_URL` and loads, in order: `settings.php`, `protect-downloads.php`, `redirects.php`, `schema.php`, `dream-partners.php`, `social.php`, `security.php`, `auth-hardening.php`, `two-factor.php`, `login.php`, `admin-brand.php`, `preview.php`.
+`sylviasdream-core.php` defines `SD_CORE_VERSION` (`0.4.1`), `SD_CORE_DIR`, `SD_CORE_URL` and loads, in order: `settings.php`, `protect-downloads.php`, `redirects.php`, `schema.php`, `dream-partners.php`, `social.php`, `security.php`, `auth-hardening.php`, `qr-svg.php` (loads `lib/qrcode.php` only on demand), `two-factor.php`, `login.php`, `admin-brand.php`, `preview.php`.
 
 | File | Responsibility | Main hooks |
 |---|---|---|
@@ -170,7 +170,7 @@ Rate limits are stored in transients keyed by an MD5 of bucket and IP (no raw IP
 
 - TOTP per RFC 6238: HMAC-SHA1, 30-second steps, 6 digits, one step either side, pure PHP (`hash_hmac`), base32 per RFC 4648, 160-bit secret from `random_bytes()`. Codes compared with `hash_equals()`; an accepted step is stored (`_sd_2fa_last_step`) so the same code cannot be used twice. Algorithm checked against the RFC 6238 SHA1 test vectors.
 - User meta (protected, underscore keys): `_sd_2fa_enabled`, `_sd_2fa_secret`, `_sd_2fa_pending` (during setup), `_sd_2fa_recovery` (8 `wp_hash_password()` hashes), `_sd_2fa_last_step`, `_sd_2fa_notice_until`. Secrets are never logged and are not shown once 2FA is on.
-- **Setup** (Users > Profile, own profile only): Set up > a key and an `otpauth://` link are shown (no QR image: no external QR service and no bundled encoder) > enter a valid code > on; 8 recovery codes (format `xxxxx-xxxxx`) shown once (kept in a 10-minute transient only until that page is displayed). Make new recovery codes needs a current app code. Turn off needs the account password and a code or recovery code. The buttons are part of the normal profile form, so core's `update-user_{id}` nonce and capability checks apply; errors stop the save.
+- **Setup** (Users > Profile, own profile only): Set up > a QR code of the `otpauth://` address (0.4.1: inline SVG drawn on the server by `inc/qr-svg.php` with the bundled MIT encoder `inc/lib/qrcode.php`, a namespaced port of kazuhikoarase/qrcode-generator; byte mode, level M, auto version, 8 masks; no external service; shown only to the owner while setup is pending; filter `sd_core_2fa_show_qr`; on any encoder failure only the key is shown), plus the key and the `otpauth://` link as a fallback > enter a valid code > on; 8 recovery codes (format `xxxxx-xxxxx`) shown once (kept in a 10-minute transient only until that page is displayed). Make new recovery codes needs a current app code. Turn off needs the account password and a code or recovery code. The buttons are part of the normal profile form, so core's `update-user_{id}` nonce and capability checks apply; errors stop the save.
 - **Sign in**: when the password is correct for a 2FA user (`authenticate` 100), no auth cookie is set. A random 256-bit token is stored in a 5-minute transient keyed by an HMAC of the token (user, Remember me, redirect, attempts) and sent as an HttpOnly, SameSite=Lax cookie; the visitor is sent to `wp-login.php?action=sd_2fa`. That screen checks a nonce bound to the token, allows 5 codes per token (then the token is deleted and a failed login is counted toward the 15-minute lockout) and 10 failed codes per IP per 15 minutes (`sd_core_2fa_limits`). On success: `wp_set_auth_cookie()` with the original Remember me, `wp_login` action, `login_redirect` filter, redirect. Works for wp-login.php and the WooCommerce My account form; AJAX, REST and XML-RPC sign-ins of 2FA users are refused with a message; Application Password requests are not affected.
 - Administrators without 2FA see a reminder notice (dismiss button, plus "Remind me in 30 days" link with nonce). Administrators with `edit_users` can turn 2FA off for another user from that user's profile.
 - Emergency switch: `define( 'SD_2FA_DISABLE', true );` in `wp-config.php` (or key `two_factor`) stops asking for codes site-wide; user settings are kept.
@@ -232,7 +232,7 @@ Plan: [docs/MIGRATION-PLAN.md](docs/MIGRATION-PLAN.md). Runbook: [docs/BACKUP-AN
 | `DISALLOW_FILE_EDIT` | `wp-config.php` | No code editor in WP Admin (recommended on self-managed hosts) |
 | `SCRIPT_DEBUG` | `wp-config.php` | Readable CSS/JS instead of `.min` |
 
-**Core filters:** `sd_core_security_feature`, `sd_core_security_headers`, `sd_core_client_ip`, `sd_core_login_limit`, `sd_core_lostpassword_limit`, `sd_core_comment_limit`, `sd_core_cors_origins`, `sd_core_min_password_length`, `sd_core_upload_mimes`, `sd_core_allow_svg`, `sd_core_preview_can_view`, `sd_core_redirect_map`, `sd_core_schema_graph`, `sd_core_og_handled_elsewhere`, `sd_core_og_use_content_image`, `sd_core_default_og_image`, `sd_core_generic_login_message`, `sd_core_2fa_issuer`, `sd_core_2fa_limits`, `sd_core_login_texts`, `sd_core_login_image`, `sd_core_login_logo_url`, `sd_core_login_secure_note`, `sd_core_admin_color_default`, `sd_core_admin_footer_text`, `sd_core_admin_welcome`.
+**Core filters:** `sd_core_security_feature`, `sd_core_security_headers`, `sd_core_client_ip`, `sd_core_login_limit`, `sd_core_lostpassword_limit`, `sd_core_comment_limit`, `sd_core_cors_origins`, `sd_core_min_password_length`, `sd_core_upload_mimes`, `sd_core_allow_svg`, `sd_core_preview_can_view`, `sd_core_redirect_map`, `sd_core_schema_graph`, `sd_core_og_handled_elsewhere`, `sd_core_og_use_content_image`, `sd_core_default_og_image`, `sd_core_generic_login_message`, `sd_core_2fa_issuer`, `sd_core_2fa_limits`, `sd_core_2fa_show_qr`, `sd_core_login_texts`, `sd_core_login_image`, `sd_core_login_logo_url`, `sd_core_login_secure_note`, `sd_core_admin_color_default`, `sd_core_admin_footer_text`, `sd_core_admin_welcome`.
 
 **Theme filters:** `sdc_perf_feature`, `sdc_defer_script_handles`, `sdc_request_needs_wc`, `sdc_product_statuses`, `sdc_polish_page`, `sdc_hero_book_pages`.
 

@@ -2,19 +2,10 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
-## Tuesday 27 October 2026: core plugin 0.4.0 on dev
-- Core plugin 0.4.0 (main, commit 65f208d) uploaded to dev; active.
-- Checked visually, signed in as admin: Dashboard Welcome widget (quick links), footer text "Sylvia's Dream Ministry website · Built and supported by Pimofy Digital", "Sylvia's Dream" colour scheme listed in Users > Profile, Two-factor authentication section in the profile (left **Off**), branded sign-in page on desktop and phone (photo panel hidden on phone), Lost password screen.
-- Not done: fresh wrong-password / real sign-in test (generic error, then Dashboard). The test browser could not open a private window, so it could not sign out of the current session safely. Lightof to test (OPEN-ITEMS).
-- Not done: 2FA switched on for any administrator (required before launch); check on the live WordPress.com plan.
 
-## Tuesday 27 October 2026 (earlier): child theme 1.18.1-1.18.3, logo, Amazon links
-- Child 1.18.1 on dev: real book covers in the Books menu "Start here"; new Free download field and button on products. Free books set using existing site files: SENT 6382, How to Write and Publish 6400, 7 Days to Trusting God 6399. All 25 products still Draft (Sylvia's written OK for free books still needed before launch).
-- Child 1.18.2: price note shows the currency; header logo alt text read from the Media Library; taller full logo on desktop; compact logo on phones.
-- Child 1.18.3: narrow-phone logo fix.
-- New header logo and site icon set from the Sylvia's Dream Ministry logo kit.
-- Amazon Kindle links added to 22 products; paperback links to 2 (6400, 6376 One Life).
-- Covers flagged: 6381 (Guard Your Heart) and 6394 (Angelique Finds Her Light) look soft; 6390, 6397 and 6398 have no cover. The Report of the Lord (6396) has no price. All in OPEN-ITEMS.
+## Tuesday 27 October 2026: core 0.4.1, QR code for two-factor setup
+- `inc/qr-svg.php` + `inc/lib/qrcode.php` (MIT port of kazuhikoarase/qrcode-generator): setup screen shows a locally drawn SVG QR code of the otpauth:// address; key and link kept.
+- Tests in the sandbox (no PHP runtime): php-parser PHP 8 mode 0 errors on every plugin PHP file; PHP port run through a php-parser AST interpreter gave matrices identical to the library's JS version for 10 inputs (v1-v15); all decoded with OpenCV to the exact input. Not yet deployed to dev; phone scan and `php -l` / CI still to do.
 
 ## Monday 26 October 2026 (night): payments rule, Amazon titles, launch pack
 - Decision: every existing Stripe payment, Dream Partner contribution link, thank-you/download page and subscription stays working unchanged (DECISIONS). Launch pack buttons marked `#KEEP-LIVE-*`; no payment-link addresses stored in Git.
