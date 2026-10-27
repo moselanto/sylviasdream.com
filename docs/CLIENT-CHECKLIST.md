@@ -3,7 +3,8 @@
 Status and dates: [`../project/OPEN-ITEMS.md`](../project/OPEN-ITEMS.md).
 
 ## To start
-- [ ] Signed acceptance page (quotation v2) and USD 112 deposit, reference PMF-QT-2026-0106
+- [x] Signed acceptance page (quotation v2) and USD 112 deposit, reference PMF-QT-2026-0106 (done at the start)
+- [x] WordPress.com Personal plan renewed (27 Oct 2026)
 
 ## Access (no passwords shared)
 - [ ] WordPress.com: invite mosemqute@gmail.com as **Administrator** (Users > Add new user)
@@ -24,7 +25,7 @@ Status and dates: [`../project/OPEN-ITEMS.md`](../project/OPEN-ITEMS.md).
 - [ ] Social links (Facebook, YouTube) and GoFundMe link
 
 ## Brand
-- [ ] Original logo files and any preferred colours
+- [x] Logo: new logo designed by Lightof, approved by Sylvia (27 Oct 2026)
 
 ## Approvals
 - [ ] Wording about book purchases supporting Heaven on Earth

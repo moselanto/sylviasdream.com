@@ -2,10 +2,11 @@
 
 ## Waiting on Sylvia
 All requests now sit in one email draft, "Everything we need to finish your new website" (26 Oct, unsent, Moses to approve), and in the Town document "Everything we need from Sylvia (26 Oct 2026)".
-- [ ] Original logo files (designer originals, transparent or vector; version without tagline; gold colour). Live has PNGs only: logo media 4953 (660x547), icon 4651 (512x512)
+- [x] (27 Oct) Logo: new Sylvia's Dream Ministry logo designed by Lightof and approved by Sylvia (logo kit in use on dev since theme 1.18.x). No original logo files needed from her
 - [ ] Confirm the connected payment account ("Bu...th", WordPress.com Payments/Stripe) is hers
-- [ ] Personal plan renews 29 Oct 2026 (A$60): she must keep it renewing
-- [ ] Her approval of the dev site = go-ahead to migrate
+- [x] (27 Oct) Personal plan renewed by Sylvia (was due 29 Oct 2026, A$60)
+- [ ] Her approval of the dev site = go-ahead to migrate. 27 Oct: Lightof sends her the link, the gate password and her own sign-in. Her account must be Contributor or higher (preview mode shows Draft books only to users who can edit posts or have `sd_reviewer`; a Subscriber sees no books), and `SD_PREVIEW_MODE` must be set in dev wp-config.php
+- [x] (27 Oct) Plain-English review guide and request list for Sylvia written (Town document "Sylvia's Dream: your new website, how to look at it, and what we still need")
 - [ ] One Life hardcover Amazon link, if a hardcover exists (dev now links to the AU paperback 1793312702)
 - [ ] OK to file the devotional posts under Grace For the Journey on live (done on dev 26 Oct)
 (Kept in full in Moses's Town document "Things needed from Sylvia"; send it to her when the build is done.)
@@ -25,7 +26,8 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Free Downloads page (`/free-7-day-devotional/`) offers the book-writing guide as a free .docx: approve or remove
 - [ ] Stripe set-up/access for real payments (Pimofy never edits Stripe)
 - [ ] Old Manifesting Miracles Now page: keep or redirect
-- [ ] Earlier items still open: signed acceptance and USD 112 deposit, Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, logo, social links, written approval of wording
+- [x] Signed acceptance and USD 112 deposit (PMF-QT-2026-0106): done at the start of the project (confirmed by Lightof 27 Oct)
+- [ ] Earlier items still open: Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
 - [ ] Every administrator switches on two-factor sign-in (Users > Profile) and stores their recovery codes before launch (AGENTS.md rule 32; DECISIONS 27 Oct; SECURITY-AUDIT S13). Built in core 0.4.0; on dev it is still Off for every account
