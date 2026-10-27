@@ -288,3 +288,32 @@ function sdc_pagination() {
 		'screen_reader_text' => esc_html__( 'More reflections', 'sylviasdream-child' ),
 	) );
 }
+
+/**
+ * Header logo (1.18.2). Uses the logo's own alt text from the Media Library
+ * (falls back to the site name), a taller full logo with tagline on larger
+ * screens, and the compact logo without tagline on phones (up to 760px).
+ */
+function sdc_header_logo() {
+	$id = (int) get_theme_mod( 'custom_logo' );
+	if ( ! $id ) {
+		return;
+	}
+	$alt = trim( (string) get_post_meta( $id, '_wp_attachment_image_alt', true ) );
+	if ( '' === $alt ) {
+		$alt = get_bloginfo( 'name' );
+	}
+	$full = wp_get_attachment_image_src( $id, 'full' );
+	if ( ! $full ) {
+		return;
+	}
+	$compact = get_theme_file_uri( 'assets/images/logo-compact.png' );
+	printf(
+		'<picture class="sd-brand__picture"><source media="(max-width: 760px)" srcset="%1$s" width="480" height="147"><img class="sd-brand__logo" src="%2$s" width="%3$d" height="%4$d" alt="%5$s" fetchpriority="high" decoding="async"></picture>',
+		esc_url( $compact ),
+		esc_url( $full[0] ),
+		(int) $full[1],
+		(int) $full[2],
+		esc_attr( $alt )
+	);
+}

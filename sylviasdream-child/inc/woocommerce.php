@@ -569,11 +569,22 @@ function sdc_buybox_open() {
  */
 function sdc_buybox_price_note() {
 	global $product;
-	$note = sdc_get( 'shop_price_note' );
-	if ( '' === $note || ! $product instanceof WC_Product || '' === $product->get_price_html() ) {
+	if ( ! $product instanceof WC_Product || '' === $product->get_price_html() || '' !== sdc_product_free_download( $product ) ) {
 		return;
 	}
-	echo '<p class="sd-buybox__note">' . esc_html( str_replace( '%s', get_woocommerce_currency(), $note ) ) . '</p>';
+	$note = sdc_get( 'shop_price_note' );
+	if ( '' === $note ) {
+		return;
+	}
+	// 1.18.2: a saved note that contains a web address (dev QA 27 Oct showed
+	// "Charged in https://...") falls back to the default wording.
+	if ( false !== stripos( $note, 'http' ) || false !== strpos( $note, '/wp-content/' ) ) {
+		$defaults = sdc_defaults();
+		$note     = (string) ( $defaults['shop_price_note'] ?? '' );
+	}
+	$currency = get_woocommerce_currency();
+	$note     = str_replace( array( '%s', '{currency}' ), $currency, $note );
+	echo '<p class="sd-buybox__note">' . esc_html( $note ) . '</p>';
 }
 
 /**
