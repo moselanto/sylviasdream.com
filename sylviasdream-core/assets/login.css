@@ -87,3 +87,13 @@ body.sd-login .language-switcher select,body.sd-login .language-switcher .button
 	body.sd-login form{border:1px solid CanvasText;}
 	.sd-login-aside::before{display:none;}
 }
+
+/* 0.4.2: Jetpack "Prove your humanity" maths check. Jetpack prints the answer
+   box with inline width:50px/height:25px, which left no room for the typed
+   number once the branded field padding applied. Give it a readable box. */
+body.sd-login #jetpack_protect_answer,body.sd-login input[name="jetpack_protect_num"]{display:inline-block;width:6.5rem !important;height:auto !important;min-height:48px;margin:0 0 0 .5rem;padding:.5rem .75rem !important;font-size:1.1rem !important;line-height:1.4;text-align:center;color:var(--sd-ink);vertical-align:middle;-moz-appearance:textfield;}
+body.sd-login #jetpack_protect_answer::-webkit-outer-spin-button,body.sd-login #jetpack_protect_answer::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+body.sd-login label[for="jetpack_protect_answer"]{display:inline-block;font-size:1.05rem;font-weight:600;color:var(--sd-ink);vertical-align:middle;}
+body.sd-login #loginform p:has(+ br + label[for="jetpack_protect_answer"]),body.sd-login #loginform div:has(> #jetpack_protect_answer) p{margin:0 0 .35rem !important;font-size:.95rem !important;font-weight:600;color:var(--sd-ink);}
+body.sd-login #loginform div:has(> #jetpack_protect_answer){margin:4px 0 18px !important;}
+body.sd-login #loginform div:has(> #jetpack_protect_answer) br{display:none;}
