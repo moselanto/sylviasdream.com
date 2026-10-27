@@ -2,6 +2,13 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 27 October 2026: sign-in security and admin branding (core plugin 0.4.0)
+Recorded with the 0.4.0 release (Lightof, 27 Oct). Code: `sylviasdream-core/inc/two-factor.php`, `auth-hardening.php`, `login.php`, `admin-brand.php`; details in `ARCHITECTURE.md` 7.1-7.4 and `SECURITY-AUDIT.md` S12-S14.
+- **Two-factor sign-in is opt-in per user, but required for every administrator before launch.** Each user switches it on in Users > Profile (authenticator app code, 8 one-time recovery codes stored hashed). The plugin does not force it on anyone; instead administrators without it see a reminder notice, and launch waits until every administrator has it on and has stored their recovery codes (`OPEN-ITEMS.md`). Why: protects the site even if a password leaks (audit A07 launch action, quotation scope H) without locking out a user before they have set up an app.
+- **Generic sign-in errors.** A wrong username, email or password all show "The username/email or password is incorrect.", and lost password for an unknown account behaves like a known one ("check your email"), on wp-login.php and WooCommerce My account. Why: the old messages told anyone which accounts exist (SECURITY-AUDIT S12). The lockout message and empty-field messages are kept.
+- **Branding kept light.** Sign-in screens get the brand design (split screen, photo panel hidden on phones); in the dashboard only an optional "Sylvia's Dream" colour scheme (default for new users only, existing users keep their choice), footer text, a Welcome widget with links to existing screens, and the WordPress logo menu removed for non-administrators. No admin menus are moved or hidden. Why: Sylvia and editors keep the standard WordPress screens that guides and support describe; every part can be switched off (`login_brand`, `admin_brand`).
+- **Emergency path is `define( 'SD_2FA_DISABLE', true );` in wp-config.php.** It stops asking for codes site-wide while keeping every user's 2FA settings; remove it again once the locked-out person is back in. For a single user, an administrator can turn 2FA off on that user's profile. Other switches: `SD_SECURITY_DISABLE` keys `login_brand`, `admin_brand`, `two_factor`, `login_errors`, `app_passwords`, `session_cleanup` (or `'all'`).
+
 ## 26 October 2026 (late): Sylvia's answers from the call, recorded from Moses's call script notes
 Source: "Call with Sylvia spoken script v2" (Moses's notes typed beside each question). Verbal answers: **confirm in writing** before anything is published, per the quotation.
 - Angelique: A Journey of Becoming and Angelique Finds Her Light are **separate books** (yes). The **Angelique Legacy Edition** should appear (yes).

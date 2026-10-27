@@ -1,4 +1,4 @@
-# Open items (updated 26 October 2026)
+# Open items (updated 27 October 2026)
 
 ## Waiting on Sylvia
 All requests now sit in one email draft, "Everything we need to finish your new website" (26 Oct, unsent, Moses to approve), and in the Town document "Everything we need from Sylvia (26 Oct 2026)".
@@ -9,7 +9,9 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] One Life hardcover Amazon link, if a hardcover exists (dev now links to the AU paperback 1793312702)
 - [ ] OK to file the devotional posts under Grace For the Journey on live (done on dev 26 Oct)
 (Kept in full in Moses's Town document "Things needed from Sylvia"; send it to her when the build is done.)
-- [ ] Covers: When Fear Has the Final Word, Manifesting Miracles Now, Fast Forward to Success (From Fear to Freedom received 26 Oct)
+- [ ] Covers: When Fear Has the Final Word (6390), Fast Forward to Success (6397), Manifesting Miracles Now (6398) have no cover (From Fear to Freedom received 26 Oct)
+- [ ] Better (sharper) covers for Guard Your Heart (6381) and Angelique Finds Her Light (6394): the current files look soft (27 Oct check)
+- [ ] Price for The Report of the Lord (6396): the product has no price on dev
 - [ ] Confirm titles/subtitles (not on Amazon): When Fear Has the Final Word ("A Devotional on Peace"), Manifesting Miracles Now ("Everyday God Encounters of Selected Authors")
 - [ ] Fast Forward to Success: add a line about her own chapter? (Amazon text describes the whole collection)
 - [ ] Other Amazon editions in the shop or not: French (De la Peur à la Liberté), Spanish (UNA VIDA), Angelique Legacy Edition, The King's Way: God's Plan For Salvation paperback, large-print editions
@@ -26,6 +28,11 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Earlier items still open: signed acceptance and USD 112 deposit, Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, logo, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+- [ ] Every administrator switches on two-factor sign-in (Users > Profile) and stores their recovery codes before launch (AGENTS.md rule 32; DECISIONS 27 Oct; SECURITY-AUDIT S13). Built in core 0.4.0; on dev it is still Off for every account
+- [ ] Fresh sign-in test on dev (wrong password shows generic error; correct sign-in reaches Dashboard). Not done 27 Oct: the test browser could not open a private window. Lightof to test
+- [ ] Confirm whether the plugin/2FA/branding can run on the live WordPress.com plan before launch (see compatibility check: `SECURITY-AUDIT.md` known limitation "WordPress.com live"; WordPress.com accounts may use their own 2FA, this plugin covers wp-login.php and WooCommerce sign-ins)
+- [x] (27 Oct) Core plugin 0.4.0 (65f208d) uploaded to dev and active: branded sign-in screens, generic login and lost-password errors, opt-in two-factor sign-in, admin branding. Checked visually: Welcome dashboard widget, footer text, colour scheme option, 2FA profile section (left Off), sign-in page desktop and phone, Lost password screen
+- [x] (27 Oct) Child theme 1.18.1-1.18.3 on dev: real covers in Books > Start here; Free download field/button; price note shows the currency; header logo alt from the Media Library; taller full logo on desktop, compact logo on phones, narrow-phone fix; new header logo and site icon from the Sylvia's Dream Ministry logo kit. Amazon Kindle links on 22 products and paperback links on 2 (6400, 6376 One Life). All 25 products still Draft
 - [x] (26 Oct, 1.8.4, f859bfe) Real covers applied on dev: One Life 2766 (media 6604), SENT 4686 (6605), From Fear to Freedom 4231 (6603). Checked signed in as admin at 1440px: each cover loads, layout and buttons render, and the block editor shows no invalid-content warning on any of the three. The earlier warning on 2766 came from the cover image block: `width`/`height` on the `<img>` without matching block attributes; removed in all three files.
 - [ ] Phone-width check of pages 2766, 4686, 4231 (browser tool cannot resize; real phone needed)
 - [x] Block validation (26 Oct): `author-support.html` (`sd-enquiry` group) and `heaven-on-earth.html` (first slideshow column, two `sd-band__inner` groups) were invalid because a bare `<!-- KEEP: ... -->` comment sat inside the block wrapper. Each KEEP comment is now its own Custom HTML block (`wp:html`), which renders nothing; when pasting, replace that whole block with the existing Jetpack block. Gutenberg validator: all 16 files in `content/blocks/` pass. Not re-applied to dev (Author Support 6235 and Heaven on Earth 1932 keep their current content)
@@ -41,9 +48,9 @@ Was: apply `content/blocks/book-one-life.html` (f04b704) to dev One Life page 27
 - [ ] Start here welcome card wording ("New to Sylvia's books? Begin with her story, or browse every title by topic.") is ours: include in Sylvia's review; it is replaced by 3 featured covers once books are published
 - [x] Launch content pack `content/live/` (26 Oct): all 16 content files with dev addresses rewritten for sylviasdream.com, plus an image list (5 October images must be uploaded to live first)
 - [ ] Sylvia's verbal answers from the call (DECISIONS 26 Oct late): get them in writing, especially the three free resources and "leave it" for Manifesting Miracles Now
-- [ ] Free resources now named by Sylvia (SENT for missionaries, the book-writing guide, 7 Days to Trusting God): once confirmed in writing, restore their download buttons on dev (removed 23 Oct under the "nothing free" rule)
+- [ ] Free resources now named by Sylvia (SENT for missionaries, the book-writing guide, 7 Days to Trusting God): download buttons set on dev 27 Oct (theme 1.18.1 Free download field; SENT 6382, How to Write and Publish 6400, 7 Days to Trusting God 6399, existing site files; products still Draft). Her written OK is still needed before launch
 - [ ] Shop editions to add once confirmed: Angelique Legacy Edition, French, Spanish, Bahasa Indonesia and Large Print editions
-- [ ] Quotation scope still open (PMF-QT-2026-0106): meta descriptions and social previews (her wording), alt text (117 of 171 images had none), schema check, Search Console and Bing, analytics, form spam protection, 2FA for admins, recorded training, written guide, restoration test, Heaven on Earth registration details
+- [ ] Quotation scope still open (PMF-QT-2026-0106): meta descriptions and social previews (her wording), alt text (117 of 171 images had none), schema check, Search Console and Bing, analytics, form spam protection, 2FA for admins (built in core 0.4.0; adoption tracked above), recorded training, written guide, restoration test, Heaven on Earth registration details
 - [ ] Tell Sylvia, in the consolidated email, that her existing Stripe payment and Dream Partner links will all keep working (a change from the quotation's "replace" wording)
 - [x] (26 Oct) Amazon descriptions for 8 books (supplied by Lightof, `project/AMAZON-DESCRIPTIONS.md`) set on dev products 6391, 6392, 6393, 6395, 6396, 6397, 6399, 6400 (still Draft)
 - [x] (26 Oct night) Amazon descriptions for the remaining 13 products read from amazon.com in a browser and set on dev (Draft); editions read only. All in `project/AMAZON-DESCRIPTIONS.md` (`project/AMAZON-CATALOGUE.md`): copy from each Amazon page by ASIN
