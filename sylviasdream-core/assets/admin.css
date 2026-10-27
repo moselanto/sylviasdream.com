@@ -1,0 +1,17 @@
+/* Sylvia's Dream Core 0.4.0: welcome widget and two-factor profile section. */
+.sd-welcome__links{display:flex;flex-wrap:wrap;gap:.5rem;margin:.75rem 0 1rem;padding:0;list-style:none;}
+.sd-welcome__links li{margin:0;}
+.sd-welcome__links .button{min-height:40px;line-height:2.4;}
+.sd-welcome__tip a{font-weight:600;}
+.sd-welcome__support{margin-top:1rem;padding-top:.75rem;border-top:1px solid #E7DCC6;color:#5a4a3a;}
+.sd-admin-footer a{text-decoration:underline;}
+.sd-2fa .sd-2fa-secret{display:inline-block;margin:.25rem 0;padding:.35rem .6rem;font-size:1.05rem;letter-spacing:.06em;background:#F7F2E7;border:1px solid #E7DCC6;border-radius:6px;word-break:break-all;}
+.sd-2fa .sd-2fa-steps li{margin-bottom:.9rem;max-width:42rem;}
+.sd-2fa .sd-2fa-input{font-size:1.15rem;letter-spacing:.15em;max-width:14rem;}
+.sd-2fa .sd-2fa-box{max-width:34rem;padding:.75rem 1rem;border:1px solid #E7DCC6;border-radius:8px;}
+.sd-2fa .sd-2fa-box legend{padding:0 .35rem;font-weight:600;}
+.sd-2fa .sd-2fa-codes{max-width:34rem;margin:0 0 1rem;padding:.75rem 1rem;background:#F7F2E7;border-left:4px solid #775014;}
+.sd-2fa .sd-2fa-codes ol{columns:2;margin-left:1.5rem;}
+.sd-2fa .sd-2fa-codes code{font-size:1rem;}
+.sd-2fa .sd-2fa-on strong{color:#3f6b4a;}
+.sd-2fa button{margin:0 .35rem .35rem 0;}

@@ -1,7 +1,7 @@
 <?php
 /**
- * Optional wp-config.php constants for Sylvia's Dream (child theme 1.17.0,
- * core plugin 0.3.0). Copy the lines you need into wp-config.php ABOVE
+ * Optional wp-config.php constants for Sylvia's Dream (child theme 1.17.0+,
+ * core plugin 0.4.0). Copy the lines you need into wp-config.php ABOVE
  * "That's all, stop editing!". This file is documentation; it is not loaded.
  *
  * No keys, passwords or tokens belong in the theme, plugin or this repo.
@@ -20,9 +20,15 @@ define( 'FORCE_SSL_ADMIN', true );
 
 // Switch off individual hardening features if a host conflicts with one of them.
 // Keys: headers, csp, hsts, login_limit, form_limit, session_expiry, xmlrpc,
-// rest_users, author_enum, version, cors, https, password_length, upload_mimes.
+// rest_users, author_enum, version, cors, https, password_length, upload_mimes,
+// login_errors, app_passwords, session_cleanup, two_factor, login_brand, admin_brand.
 // define( 'SD_SECURITY_DISABLE', array( 'xmlrpc' ) );   // e.g. self-hosted Jetpack needing XML-RPC
 // define( 'SD_SECURITY_DISABLE', 'all' );               // everything off
+
+// EMERGENCY ONLY: two-factor authentication off for the whole site (for example
+// if an administrator lost their phone and recovery codes). Users' settings are
+// kept; remove the line again as soon as the account is recovered.
+// define( 'SD_2FA_DISABLE', true );
 
 // Recommended on any self-managed host.
 define( 'DISALLOW_FILE_EDIT', true );   // no theme/plugin code editor in WP Admin

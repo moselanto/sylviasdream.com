@@ -2,7 +2,7 @@
 
 ![Parent theme](https://img.shields.io/badge/Parent%20theme-v1.0.1-8A6216)
 ![Child theme](https://img.shields.io/badge/Child%20theme-v1.17.0-B8862B)
-![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.3.0-2B2620)
+![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.4.0-2B2620)
 
 Last updated: 27 October 2026.
 
@@ -28,14 +28,25 @@ Status: **dev build, pre-launch.** Migration to the live site happens only after
 |---|---|---|---|
 | Sylvia's Dream Base (parent theme) | [`sylviasdream/`](sylviasdream) | 1.0.1 | Minimal shell: document structure, menus, template fallbacks. Never activated on its own. |
 | Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 1.17.0 | **The theme to activate.** All design: templates, CSS, patterns, navigation, WooCommerce styling, performance layer. |
-| Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.3.0 | Behaviour that must survive a theme change: download-page protection, redirects, structured data, social sharing tags, security hardening, reviewer preview mode, Dream Partner progress. |
+| Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.4.0 | Behaviour that must survive a theme change: download-page protection, redirects, structured data, social sharing tags, security hardening, branded sign-in screens, two-factor authentication, admin branding, reviewer preview mode, Dream Partner progress. |
 
 Versions are defined in two places each and must match:
 
 - Child theme: `Version:` in `sylviasdream-child/style.css` and `SYLVIASDREAM_CHILD_VERSION` in `sylviasdream-child/functions.php` (checked by `scripts/check-theme.js`).
 - Core plugin: `Version:` in the header of `sylviasdream-core/sylviasdream-core.php`, `SD_CORE_VERSION` in the same file, and `Stable tag` in `sylviasdream-core/readme.txt`.
 
-Deployment state (from `HANDOFF.md`): child 1.17.0 and core 0.3.0 zips are in the Town library collection `projects/sylviasdream` and are **not yet uploaded to dev**. Dev was last on child 1.16.3 and core 0.2.1. History: [`CHANGELOG.md`](CHANGELOG.md).
+Deployment state (from `HANDOFF.md`): child 1.17.0 and core 0.3.0 zips are in the Town library collection `projects/sylviasdream` and are **not yet uploaded to dev**. Dev was last on child 1.16.3 and core 0.2.1. History: [`CHANGELOG.md`](CHANGELOG.md). Core 0.4.0 (sign-in screens, two-factor authentication, admin branding) is built as `sylviasdream-core-0.4.0.zip` in the same collection and not yet uploaded to dev.
+
+### Two-factor authentication (core 0.4.0)
+
+1. Each person signs in, opens **Users > Profile**, scrolls to **Two-factor authentication** and presses **Set up two-factor authentication**.
+2. In an authenticator app (Google Authenticator, Microsoft Authenticator, Authy or similar) they add an account with the key shown (time based, 6 digits), or tap the link on the phone itself.
+3. They type the 6-digit code and press **Turn on two-factor authentication**. Eight recovery codes are shown once: save them.
+4. From then on, after the password the sign-in asks for the code (or a recovery code).
+5. Turning it off needs the password and a code. An administrator can turn it off for another user from that user's profile.
+6. Emergency (everyone locked out): add `define( 'SD_2FA_DISABLE', true );` to `wp-config.php`, sign in, fix the account, remove the line.
+
+All new controls can be switched off with `SD_SECURITY_DISABLE` keys `login_brand`, `admin_brand`, `two_factor`, `login_errors`, `app_passwords`, `session_cleanup` (see [ARCHITECTURE.md](ARCHITECTURE.md) section 7.1).
 
 ## 3. Repository layout
 
@@ -43,7 +54,7 @@ Deployment state (from `HANDOFF.md`): child 1.17.0 and core 0.3.0 zips are in th
 |---|---|
 | `sylviasdream/` | Parent theme shell |
 | `sylviasdream-child/` | Child theme: `functions.php`, templates (`header.php`, `footer.php`, `front-page.php`, `page.php`, `single.php`, `archive.php`, `search.php`, `404.php`, `woocommerce.php`, `template-full-width.php`, `template-canvas.php`), `inc/` modules, `assets/css`, `assets/js`, `assets/images`, `patterns/`, `template-parts/`, `theme.json`, `content/blocks/*.html` (page layouts as built on dev) |
-| `sylviasdream-core/` | Core plugin: `sylviasdream-core.php`, `inc/*.php`, `assets/og-default.jpg`, `readme.txt` |
+| `sylviasdream-core/` | Core plugin: `sylviasdream-core.php`, `inc/*.php`, `assets/` (`og-default.jpg`, `login-photo.webp`, `login.css`, `admin.css`, `admin-colors.css`), `readme.txt` |
 | `content/live/` | Launch content pack: copies of `content/blocks/` with every dev address rewritten for sylviasdream.com ([README](content/live/README.md)) |
 | `scripts/` | `check-theme.js` (quality gate), `build-assets.js` (minifier), `build-theme-zip.sh` (release zips), `backup-inventory.sh` (read-only WP-CLI inventory, local copy only) |
 | `docs/` | Runbooks, audits, checklists, migration plan |

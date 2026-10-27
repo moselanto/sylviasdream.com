@@ -1,6 +1,6 @@
 # Architecture
 
-How the Sylvia's Dream website is built. One-page version: [ARCHITECTURE-ESSENTIALS.md](ARCHITECTURE-ESSENTIALS.md). Covers parent theme 1.0.1, child theme 1.17.0 and core plugin 0.3.0. Last updated 27 October 2026.
+How the Sylvia's Dream website is built. One-page version: [ARCHITECTURE-ESSENTIALS.md](ARCHITECTURE-ESSENTIALS.md). Covers parent theme 1.0.1, child theme 1.17.0 and core plugin 0.4.0. Last updated 27 October 2026.
 
 ## 1. System context
 
@@ -69,7 +69,7 @@ Templates: `header.php`, `footer.php`, `front-page.php`, `page.php`, `template-f
 
 ## 4. Core plugin (`sylviasdream-core/`)
 
-`sylviasdream-core.php` defines `SD_CORE_VERSION` (`0.3.0`), `SD_CORE_DIR`, `SD_CORE_URL` and loads, in order: `settings.php`, `protect-downloads.php`, `redirects.php`, `schema.php`, `dream-partners.php`, `social.php`, `security.php`, `preview.php`.
+`sylviasdream-core.php` defines `SD_CORE_VERSION` (`0.4.0`), `SD_CORE_DIR`, `SD_CORE_URL` and loads, in order: `settings.php`, `protect-downloads.php`, `redirects.php`, `schema.php`, `dream-partners.php`, `social.php`, `security.php`, `auth-hardening.php`, `two-factor.php`, `login.php`, `admin-brand.php`, `preview.php`.
 
 | File | Responsibility | Main hooks |
 |---|---|---|
@@ -80,6 +80,10 @@ Templates: `header.php`, `footer.php`, `front-page.php`, `page.php`, `template-f
 | `social.php` | Open Graph and Twitter tags; BlogPosting, WebPage and BreadcrumbList nodes | `wp_head` 5, `sd_core_schema_graph` |
 | `dream-partners.php` | `[sd_partner_progress]` and `[sd_charity_reg]` shortcodes | `add_shortcode` |
 | `security.php` | Hardening module (section 7) | many, see section 7 |
+| `auth-hardening.php` | Generic login and lost-password errors, Application Passwords for administrators only, session clean-up on password change (section 7.1) | `authenticate` 99, `lostpassword_post` 99, `wp_is_application_passwords_available_for_user`, `profile_update`, `set_auth_cookie`, `after_password_reset` |
+| `two-factor.php` | TOTP two-factor authentication (section 7.2) | `authenticate` 100, `login_form_sd_2fa`, `show_user_profile`, `user_profile_update_errors` 20, `edit_user_profile(_update)`, `admin_notices` |
+| `login.php` | Branded sign-in screens (section 7.3) | `login_enqueue_scripts`, `login_header`, `login_message` 5, `login_footer` 5, `login_title`, `login_headerurl`, `login_headertext`, `login_site_html_link`, `gettext` |
+| `admin-brand.php` | Admin colour scheme, footer, Welcome widget, toolbar tidy (section 7.4) | `admin_init`, `user_register`, `admin_footer_text`, `wp_dashboard_setup`, `admin_bar_menu` 999 |
 | `preview.php` | Reviewer preview mode (section 8) | `pre_get_posts` 20, `posts_where`, WooCommerce filters, `wp_robots` 100 |
 
 ### 4.1 Settings (option `sd_core`)
@@ -154,6 +158,31 @@ Also: `nav.js` and `yt-facade.js` are deferred; asset URLs are versioned by file
 
 Rate limits are stored in transients keyed by an MD5 of bucket and IP (no raw IPs stored). The IP is `REMOTE_ADDR` only; behind a proxy correct it with `sd_core_client_ip`. Findings and the OWASP mapping are in [SECURITY-AUDIT.md](SECURITY-AUDIT.md).
 
+### 7.1 Sign-in hardening (core `inc/auth-hardening.php`, 0.4.0)
+
+| Key | Control |
+|---|---|
+| `login_errors` | Wrong username, wrong email and wrong password all return "The username/email or password is incorrect." (`authenticate` 99; the lockout and empty-field errors are kept, `wp_login_failed` still counts). WooCommerce My account login lets core resolve email addresses so the same message applies. Lost password for an unknown account redirects exactly like a known one (`wp-login.php?checkemail=confirm`, or WooCommerce `reset-link-sent=true`). Message filter: `sd_core_generic_login_message`. |
+| `app_passwords` | `wp_is_application_passwords_available_for_user` true only for users with `manage_options`. |
+| `session_cleanup` | When a password changes from a profile or WooCommerce account, every other session is destroyed (`WP_Session_Tokens::destroy_others`); the person changing it keeps only the fresh session core issues. Reset by email link destroys all sessions. Note: core already invalidates old cookies on password change; this also removes the stored sessions. |
+
+### 7.2 Two-factor authentication (core `inc/two-factor.php`, 0.4.0)
+
+- TOTP per RFC 6238: HMAC-SHA1, 30-second steps, 6 digits, one step either side, pure PHP (`hash_hmac`), base32 per RFC 4648, 160-bit secret from `random_bytes()`. Codes compared with `hash_equals()`; an accepted step is stored (`_sd_2fa_last_step`) so the same code cannot be used twice. Algorithm checked against the RFC 6238 SHA1 test vectors.
+- User meta (protected, underscore keys): `_sd_2fa_enabled`, `_sd_2fa_secret`, `_sd_2fa_pending` (during setup), `_sd_2fa_recovery` (8 `wp_hash_password()` hashes), `_sd_2fa_last_step`, `_sd_2fa_notice_until`. Secrets are never logged and are not shown once 2FA is on.
+- **Setup** (Users > Profile, own profile only): Set up > a key and an `otpauth://` link are shown (no QR image: no external QR service and no bundled encoder) > enter a valid code > on; 8 recovery codes (format `xxxxx-xxxxx`) shown once (kept in a 10-minute transient only until that page is displayed). Make new recovery codes needs a current app code. Turn off needs the account password and a code or recovery code. The buttons are part of the normal profile form, so core's `update-user_{id}` nonce and capability checks apply; errors stop the save.
+- **Sign in**: when the password is correct for a 2FA user (`authenticate` 100), no auth cookie is set. A random 256-bit token is stored in a 5-minute transient keyed by an HMAC of the token (user, Remember me, redirect, attempts) and sent as an HttpOnly, SameSite=Lax cookie; the visitor is sent to `wp-login.php?action=sd_2fa`. That screen checks a nonce bound to the token, allows 5 codes per token (then the token is deleted and a failed login is counted toward the 15-minute lockout) and 10 failed codes per IP per 15 minutes (`sd_core_2fa_limits`). On success: `wp_set_auth_cookie()` with the original Remember me, `wp_login` action, `login_redirect` filter, redirect. Works for wp-login.php and the WooCommerce My account form; AJAX, REST and XML-RPC sign-ins of 2FA users are refused with a message; Application Password requests are not affected.
+- Administrators without 2FA see a reminder notice (dismiss button, plus "Remind me in 30 days" link with nonce). Administrators with `edit_users` can turn 2FA off for another user from that user's profile.
+- Emergency switch: `define( 'SD_2FA_DISABLE', true );` in `wp-config.php` (or key `two_factor`) stops asking for codes site-wide; user settings are kept.
+
+### 7.3 Branded sign-in screens (core `inc/login.php`, 0.4.0)
+
+Key `login_brand`. Split screen from 960px: fixed photo panel on the left (`assets/login-photo.webp`, filter `sd_core_login_image`; dark overlay; brand row, eyebrow pill, serif headline, one sentence, three check points, tagline), sign-in column on the right (logo from the Customizer `custom_logo`, else the site name in serif; "Welcome back" heading and subtitle; white card; Lost your password?, Back to Sylvia's Dream, Privacy Policy link when a privacy page is set; lock note). Below 960px only the right column shows. The lock note reads the real `sd_core_login_limit` window and only says "Secure connection" over HTTPS. Lost password, reset password, check-email and the 2FA code screen use the same layout. Fonts: the child theme's Google Fonts stylesheet only when the theme already uses it (`sdc_get_bool( 'use_google_fonts' )`), else Georgia / system serif. All text: filter `sd_core_login_texts`; logo: `sd_core_login_logo_url`; note: `sd_core_login_secure_note`. Accessibility: labels, 3px gold focus rings, 4.5:1 text contrast (gold text #775014), 44-50px targets, reduced motion and forced colours respected, works from 320px.
+
+### 7.4 Admin branding (core `inc/admin-brand.php`, 0.4.0)
+
+Key `admin_brand`. "Sylvia's Dream" colour scheme (`assets/admin-colors.css`) registered with `wp_admin_css_color()`; set on `user_register` for new users only (filter `sd_core_admin_color_default`), existing users choose it in Profile. Footer text (filter `sd_core_admin_footer_text`); the WordPress version on the right is unchanged. Welcome dashboard widget (users with `edit_posts`) linking only to existing screens the user can open (Products, Pages, Posts, Media, Settings > Sylvia's Dream) plus a support line without contact details (filter `sd_core_admin_welcome`). WordPress logo toolbar menu removed for users without `manage_options`.
+
 ## 8. Reviewer preview mode (core `inc/preview.php`)
 
 Purpose: let reviewers see the shop exactly as it will look at launch while every product stays Draft.
@@ -197,12 +226,13 @@ Plan: [docs/MIGRATION-PLAN.md](docs/MIGRATION-PLAN.md). Runbook: [docs/BACKUP-AN
 | `SYLVIASDREAM_CHILD_VERSION`, `_DIR`, `_URI` | child `functions.php` | Version and paths |
 | `SD_CORE_VERSION`, `SD_CORE_DIR`, `SD_CORE_URL` | core main file | Version and paths |
 | `SD_PREVIEW_MODE` | `wp-config.php` (dev only) | Reviewer preview |
-| `SD_SECURITY_DISABLE` | `wp-config.php` | Hardening keys to switch off, or `'all'` |
+| `SD_SECURITY_DISABLE` | `wp-config.php` | Hardening keys to switch off, or `'all'` (also switches off the 0.4.0 keys) |
+| `SD_2FA_DISABLE` | `wp-config.php` (emergency only) | Two-factor authentication off site-wide |
 | `FORCE_SSL_ADMIN` | `wp-config.php` | Admin and login over HTTPS (recommended) |
 | `DISALLOW_FILE_EDIT` | `wp-config.php` | No code editor in WP Admin (recommended on self-managed hosts) |
 | `SCRIPT_DEBUG` | `wp-config.php` | Readable CSS/JS instead of `.min` |
 
-**Core filters:** `sd_core_security_feature`, `sd_core_security_headers`, `sd_core_client_ip`, `sd_core_login_limit`, `sd_core_lostpassword_limit`, `sd_core_comment_limit`, `sd_core_cors_origins`, `sd_core_min_password_length`, `sd_core_upload_mimes`, `sd_core_allow_svg`, `sd_core_preview_can_view`, `sd_core_redirect_map`, `sd_core_schema_graph`, `sd_core_og_handled_elsewhere`, `sd_core_og_use_content_image`, `sd_core_default_og_image`.
+**Core filters:** `sd_core_security_feature`, `sd_core_security_headers`, `sd_core_client_ip`, `sd_core_login_limit`, `sd_core_lostpassword_limit`, `sd_core_comment_limit`, `sd_core_cors_origins`, `sd_core_min_password_length`, `sd_core_upload_mimes`, `sd_core_allow_svg`, `sd_core_preview_can_view`, `sd_core_redirect_map`, `sd_core_schema_graph`, `sd_core_og_handled_elsewhere`, `sd_core_og_use_content_image`, `sd_core_default_og_image`, `sd_core_generic_login_message`, `sd_core_2fa_issuer`, `sd_core_2fa_limits`, `sd_core_login_texts`, `sd_core_login_image`, `sd_core_login_logo_url`, `sd_core_login_secure_note`, `sd_core_admin_color_default`, `sd_core_admin_footer_text`, `sd_core_admin_welcome`.
 
 **Theme filters:** `sdc_perf_feature`, `sdc_defer_script_handles`, `sdc_request_needs_wc`, `sdc_product_statuses`, `sdc_polish_page`, `sdc_hero_book_pages`.
 

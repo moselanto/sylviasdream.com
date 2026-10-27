@@ -12,6 +12,11 @@
  * xmlrpc, rest_users, author_enum, version, cors, https, password_length,
  * upload_mimes.
  *
+ * 0.4.0 adds keys handled in other files: login_errors, app_passwords,
+ * session_cleanup (inc/auth-hardening.php), two_factor (inc/two-factor.php,
+ * also SD_2FA_DISABLE), login_brand (inc/login.php), admin_brand
+ * (inc/admin-brand.php). SD_SECURITY_DISABLE 'all' switches these off too.
+ *
  * Everything here uses WordPress APIs only, so it is safe on WordPress.com
  * (where some of it is already done by the platform) and on ordinary hosts.
  * Password hashing is left to WordPress core (bcrypt since WP 6.8).
