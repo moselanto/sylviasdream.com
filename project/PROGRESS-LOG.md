@@ -3,6 +3,12 @@
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
 
+## Tuesday 27 October 2026 (midday): core 0.4.2 on dev, social image, Home SEO, WordPress.com check
+- Core 0.4.2 (0a105be): the Jetpack "Prove your humanity" maths box had an inline 50x25px size that hid the typed number on the branded sign-in page; now 6.5rem wide, 48px tall, larger centred text. Uploaded to dev with 0.4.1 and active; Dashboard fine. The maths question did not appear during the test, so the box itself is not yet seen on screen.
+- Core 0.4.1 on dev: two-factor setup shows the QR code next to the key. Setup was opened and cancelled; 2FA stays Off. Phone scan not done.
+- Social image designed (1200x630, EB Garamond, logo kit colours, mission photo) and uploaded as media 6669. Rank Math on Home (6365): SEO title, description, Facebook and X image/title/description, five focus keywords; global default OpenGraph image set to the same file; X card summary_large_image. Front end checked: each tag once, matching. Rank Math score 85/100.
+- WordPress.com Personal check (documentation only, no live change): plugins and theme uploads allowed; WordPress.com sign-in bypasses the plugin's 2FA and generic errors; no wp-config access, so the plugin's constants cannot be used on live; XML-RPC and login-limit risks. Details in HANDOFF section 4.
+
 ## Tuesday 27 October 2026: core 0.4.1, QR code for two-factor setup
 - `inc/qr-svg.php` + `inc/lib/qrcode.php` (MIT port of kazuhikoarase/qrcode-generator): setup screen shows a locally drawn SVG QR code of the otpauth:// address; key and link kept.
 - Tests in the sandbox (no PHP runtime): php-parser PHP 8 mode 0 errors on every plugin PHP file; PHP port run through a php-parser AST interpreter gave matrices identical to the library's JS version for 10 inputs (v1-v15); all decoded with OpenCV to the exact input. Not yet deployed to dev; phone scan and `php -l` / CI still to do.
