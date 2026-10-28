@@ -228,43 +228,29 @@ function sdc_wc_breadcrumb( $defaults ) {
 add_filter( 'woocommerce_breadcrumb_defaults', 'sdc_wc_breadcrumb' );
 
 /**
- * Published, catalogue-visible products for the home page: featured
- * first, then newest. Returns an empty array when none are published.
+ * Home page Featured Books (1.19.1): a random pick of published,
+ * catalogue-visible books on every page load, so visitors see different
+ * titles each time. Returns an empty array when none are published.
  *
  * @param int $limit Maximum number.
  * @return WC_Product[]
  */
 function sdc_home_products( $limit ) {
-	$limit    = max( 1, (int) $limit );
-	$statuses = sdc_product_statuses();
-	$featured = wc_get_products(
+	$limit = max( 1, (int) $limit );
+	$ids   = wc_get_products(
 		array(
-			'status'     => $statuses,
+			'status'     => sdc_product_statuses(),
 			'visibility' => 'catalog',
-			'featured'   => true,
-			'limit'      => $limit,
-			'orderby'    => 'menu_order',
-			'order'      => 'ASC',
+			'limit'      => 100,
+			'return'     => 'ids',
 		)
 	);
-	$ids      = array();
-	foreach ( $featured as $p ) {
-		$ids[] = $p->get_id();
+	if ( ! $ids ) {
+		return array();
 	}
-	if ( count( $featured ) < $limit ) {
-		$more     = wc_get_products(
-			array(
-				'status'     => $statuses,
-				'visibility' => 'catalog',
-				'limit'      => $limit - count( $featured ),
-				'exclude'    => $ids,
-				'orderby'    => 'date',
-				'order'      => 'DESC',
-			)
-		);
-		$featured = array_merge( $featured, $more );
-	}
-	return $featured;
+	shuffle( $ids );
+	$ids = (array) apply_filters( 'sdc_home_product_ids', array_slice( $ids, 0, $limit ), $limit );
+	return array_values( array_filter( array_map( 'wc_get_product', $ids ) ) );
 }
 
 /**
