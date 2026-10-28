@@ -359,6 +359,11 @@ function sdc_product_subtitle( $product ) {
 	if ( '' === $subtitle ) {
 		$subtitle = sdc_product_attr_value( $product, array( 'subtitle' ) );
 	}
+	// 1.19.3: skip a subtitle already contained in the product title
+	// (Amazon titles such as "One Life: The Narrow Path").
+	if ( '' !== $subtitle && false !== stripos( wp_strip_all_tags( $product->get_name() ), $subtitle ) ) {
+		$subtitle = '';
+	}
 	return (string) apply_filters( 'sdc_product_subtitle', $subtitle, $product );
 }
 
@@ -923,14 +928,15 @@ function sdc_buy_link_button() {
 	if ( '' === $url || '' !== sdc_product_free_download( $product ) ) {
 		return;
 	}
+	$note = $product->is_purchasable() ? '' : __( 'Secure payment by Stripe. Your download link appears straight after payment.', 'sylviasdream-child' );
 	printf(
-		'<div class="sd-btn-row sd-buybox__buy"><a class="sd-btn sd-btn--primary" href="%1$s" rel="noopener">%2$s</a></div><p class="sd-buybox__secure">%3$s</p>',
+		'<div class="sd-btn-row sd-buybox__buy"><a class="sd-btn sd-btn--primary" href="%1$s" rel="noopener">%2$s</a></div>%3$s',
 		esc_url( $url ),
 		( function_exists( 'sd_core_test_payments_active' ) && sd_core_test_payments_active() ) ? esc_html__( 'Buy ebook on Stripe (real payment)', 'sylviasdream-child' ) : esc_html__( 'Buy ebook', 'sylviasdream-child' ),
-		esc_html__( 'Secure payment by Stripe. Your download link appears straight after payment.', 'sylviasdream-child' )
+		'' !== $note ? '<p class="sd-buybox__secure">' . esc_html( $note ) . '</p>' : ''
 	);
 }
-add_action( 'woocommerce_single_product_summary', 'sdc_buy_link_button', 28 );
+add_action( 'woocommerce_single_product_summary', 'sdc_buy_link_button', 31 );
 
 /**
  * Hide the cart button when a Stripe buy link is used, so readers see one clear option.
@@ -948,3 +954,19 @@ function sdc_buy_link_not_purchasable( $purchasable, $product ) {
 	return ( $product instanceof WC_Product && '' !== sdc_product_buy_link( $product ) ) ? false : $purchasable;
 }
 add_filter( 'woocommerce_is_purchasable', 'sdc_buy_link_not_purchasable', 20, 2 );
+
+/**
+ * 1.19.3: ebooks (downloadable or virtual) are bought one at a time, so the
+ * quantity box is hidden.
+ *
+ * @param bool       $individually Sold individually.
+ * @param WC_Product $product      Product.
+ * @return bool
+ */
+function sdc_ebook_sold_individually( $individually, $product ) {
+	if ( $product instanceof WC_Product && ( $product->is_downloadable() || $product->is_virtual() ) ) {
+		return true;
+	}
+	return $individually;
+}
+add_filter( 'woocommerce_is_sold_individually', 'sdc_ebook_sold_individually', 10, 2 );
