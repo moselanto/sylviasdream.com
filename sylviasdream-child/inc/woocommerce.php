@@ -481,6 +481,16 @@ function sdc_product_admin_fields() {
 			'description' => __( 'Only for books Sylvia gives away free. A file or page on this website. When filled, the book shows a Free download button instead of a price and Add to cart. Leave blank for paid books.', 'sylviasdream-child' ),
 		)
 	);
+	woocommerce_wp_text_input(
+		array(
+			'id'          => '_sdc_buy_link',
+			'label'       => __( 'Buy ebook link (Stripe)', 'sylviasdream-child' ),
+			'type'        => 'url',
+			'placeholder' => 'https://buy.stripe.com/...',
+			'desc_tip'    => true,
+			'description' => __( "Sylvia's existing Stripe payment link for this ebook (buy.stripe.com only). When filled, the book shows a Buy ebook button that opens it. Never create or edit Stripe links here; copy the one already used on the website.", 'sylviasdream-child' ),
+		)
+	);
 	foreach ( sdc_amazon_fields() as $key => $label ) {
 		woocommerce_wp_text_input(
 			array(
@@ -513,6 +523,10 @@ function sdc_product_admin_save( $product ) {
 	if ( isset( $_POST['_sdc_free_download'] ) ) {
 		$free = esc_url_raw( trim( wp_unslash( $_POST['_sdc_free_download'] ) ), array( 'https', 'http' ) );
 		$product->update_meta_data( '_sdc_free_download', ( $free && sdc_is_own_site_url( $free ) ) ? $free : '' );
+	}
+	if ( isset( $_POST['_sdc_buy_link'] ) ) {
+		$buy = esc_url_raw( trim( wp_unslash( $_POST['_sdc_buy_link'] ) ), array( 'https' ) );
+		$product->update_meta_data( '_sdc_buy_link', ( $buy && sdc_is_stripe_link( $buy ) ) ? $buy : '' );
 	}
 	foreach ( array_keys( sdc_amazon_fields() ) as $key ) {
 		if ( ! isset( $_POST[ $key ] ) ) {
@@ -887,3 +901,59 @@ function sdc_free_loop_button_text( $text, $product ) {
 	return '' !== sdc_product_free_download( $product ) ? __( 'Free download', 'sylviasdream-child' ) : $text;
 }
 add_filter( 'woocommerce_product_add_to_cart_text', 'sdc_free_loop_button_text', 20, 2 );
+
+/**
+ * 1.19.0: is this a Stripe payment link (https://buy.stripe.com/...)?
+ *
+ * @param string $url URL.
+ * @return bool
+ */
+function sdc_is_stripe_link( $url ) {
+	$parts = wp_parse_url( (string) $url );
+	return ! empty( $parts['scheme'] ) && 'https' === $parts['scheme'] && ! empty( $parts['host'] ) && 'buy.stripe.com' === strtolower( $parts['host'] ) && ! empty( $parts['path'] ) && '/' !== $parts['path'];
+}
+
+/**
+ * Saved Stripe buy link for a product ('' when none).
+ *
+ * @param WC_Product|null $product Product.
+ * @return string
+ */
+function sdc_product_buy_link( $product ) {
+	if ( ! $product instanceof WC_Product ) {
+		return '';
+	}
+	$url = (string) $product->get_meta( '_sdc_buy_link' );
+	return sdc_is_stripe_link( $url ) ? $url : '';
+}
+
+/**
+ * Buy ebook button in the buy box (Sylvia's existing Stripe link). Works for
+ * Draft books too, because it does not use the cart.
+ */
+function sdc_buy_link_button() {
+	global $product;
+	$url = sdc_product_buy_link( $product );
+	if ( '' === $url || '' !== sdc_product_free_download( $product ) ) {
+		return;
+	}
+	printf(
+		'<div class="sd-btn-row sd-buybox__buy"><a class="sd-btn sd-btn--primary" href="%1$s" rel="noopener">%2$s</a></div><p class="sd-buybox__secure">%3$s</p>',
+		esc_url( $url ),
+		esc_html__( 'Buy ebook', 'sylviasdream-child' ),
+		esc_html__( 'Secure payment by Stripe. Your download link appears straight after payment.', 'sylviasdream-child' )
+	);
+}
+add_action( 'woocommerce_single_product_summary', 'sdc_buy_link_button', 28 );
+
+/**
+ * Hide the cart button when a Stripe buy link is used, so readers see one clear option.
+ *
+ * @param bool       $purchasable Purchasable.
+ * @param WC_Product $product     Product.
+ * @return bool
+ */
+function sdc_buy_link_not_purchasable( $purchasable, $product ) {
+	return ( $product instanceof WC_Product && '' !== sdc_product_buy_link( $product ) ) ? false : $purchasable;
+}
+add_filter( 'woocommerce_is_purchasable', 'sdc_buy_link_not_purchasable', 20, 2 );

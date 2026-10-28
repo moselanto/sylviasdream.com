@@ -37,6 +37,7 @@ function sd_core_default_protected_slugs() {
 		'thank-you-angelique',
 		'your-free-gift',
 		'how-to-find-the-real-you-2',
+		'thank-you-for-your-purchase-3',
 	);
 }
 

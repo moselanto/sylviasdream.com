@@ -3,6 +3,8 @@
  * 0.3.0: reviewer preview mode ("exact experience" before launch).
  *
  * OFF unless wp-config.php sets:  define( 'SD_PREVIEW_MODE', true );
+ * or (0.4.3) Settings > Sylvia's Dream > Reviewer preview is ticked. Never on
+ * the live domain, whichever switch is used.
  * Use it on the dev site only. When on:
  *  - signed-in users who can edit posts (or have the `sd_reviewer` capability)
  *    see Draft products in the shop, category, search and product block loops
@@ -23,7 +25,8 @@ defined( 'ABSPATH' ) || exit;
  * @return bool
  */
 function sd_core_preview_active() {
-	if ( ! defined( 'SD_PREVIEW_MODE' ) || true !== SD_PREVIEW_MODE || ! is_user_logged_in() ) {
+	$on = ( defined( 'SD_PREVIEW_MODE' ) && true === SD_PREVIEW_MODE ) || 1 === (int) sd_core_opt( 'preview_enabled' );
+	if ( ! $on || ! is_user_logged_in() || sd_core_is_live_site() ) {
 		return false;
 	}
 	$can = current_user_can( 'edit_posts' ) || current_user_can( 'sd_reviewer' );
