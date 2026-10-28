@@ -970,3 +970,29 @@ function sdc_ebook_sold_individually( $individually, $product ) {
 	return $individually;
 }
 add_filter( 'woocommerce_is_sold_individually', 'sdc_ebook_sold_individually', 10, 2 );
+
+/**
+ * 1.19.4: many imported books keep their subtitle as the whole short
+ * description (One Life: "The Narrow Path"), which repeated the end of the
+ * title under the heading. Hide a short description that only repeats part
+ * of the product title. Real descriptions are untouched.
+ *
+ * @param string $excerpt Short description HTML.
+ * @return string
+ */
+function sdc_hide_title_echo_excerpt( $excerpt ) {
+	global $product;
+	if ( ! $product instanceof WC_Product || ! is_product() ) {
+		return $excerpt;
+	}
+	$text = trim( html_entity_decode( wp_strip_all_tags( (string) $excerpt ), ENT_QUOTES, 'UTF-8' ) );
+	if ( '' === $text || strlen( $text ) > 200 ) {
+		return $excerpt;
+	}
+	$norm  = static function ( $s ) {
+		return strtolower( trim( preg_replace( '/\s+/u', ' ', str_replace( array( "\u{2019}", "\u{2018}" ), "'", $s ) ) ) );
+	};
+	$title = html_entity_decode( wp_strip_all_tags( $product->get_name() ), ENT_QUOTES, 'UTF-8' );
+	return ( false !== strpos( $norm( $title ), $norm( $text ) ) ) ? '' : $excerpt;
+}
+add_filter( 'woocommerce_short_description', 'sdc_hide_title_echo_excerpt', 20 );
