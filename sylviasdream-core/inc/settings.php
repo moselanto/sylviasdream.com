@@ -21,6 +21,7 @@ function sd_core_defaults() {
 		'charity_reg'       => '',
 		'redirects_enabled' => 0,
 		'preview_enabled'   => 0,
+		'test_payments_enabled' => 0,
 		'protected_slugs'   => implode( "\n", sd_core_default_protected_slugs() ),
 		'og_default_image'  => '',
 	);
@@ -77,6 +78,7 @@ function sd_core_sanitize( $in ) {
 		'charity_reg'       => sanitize_text_field( $in['charity_reg'] ?? '' ),
 		'redirects_enabled' => empty( $in['redirects_enabled'] ) ? 0 : 1,
 		'preview_enabled'   => ( empty( $in['preview_enabled'] ) || sd_core_is_live_site() ) ? 0 : 1,
+		'test_payments_enabled' => ( empty( $in['test_payments_enabled'] ) || sd_core_is_live_site() ) ? 0 : 1,
 		'protected_slugs'   => implode( "\n", $slugs ),
 		'og_default_image'  => esc_url_raw( trim( (string) ( $in['og_default_image'] ?? '' ) ), array( 'http', 'https' ) ),
 	);
@@ -111,6 +113,12 @@ function sd_core_render_settings() {
 						<p class="description"><?php esc_html_e( 'Not available on the live website.', 'sylviasdream-core' ); ?></p>
 					<?php else : ?>
 						<label><input type="checkbox" name="sd_core[preview_enabled]" value="1" <?php checked( 1, (int) sd_core_opt( 'preview_enabled' ) ); ?>> <?php esc_html_e( 'Show Draft books to signed-in reviewers (Contributor role or higher). Test site only.', 'sylviasdream-core' ); ?></label>
+					<?php endif; ?></td></tr>
+				<tr><th scope="row"><?php esc_html_e( 'Test payments', 'sylviasdream-core' ); ?></th>
+					<td><?php if ( sd_core_is_live_site() ) : ?>
+						<p class="description"><?php esc_html_e( 'Not available on the live website.', 'sylviasdream-core' ); ?></p>
+					<?php else : ?>
+						<label><input type="checkbox" name="sd_core[test_payments_enabled]" value="1" <?php checked( 1, (int) sd_core_opt( 'test_payments_enabled' ) ); ?>> <?php esc_html_e( 'Add a "Test payment (no money)" option at checkout so reviewers can order and download without paying. Test site only.', 'sylviasdream-core' ); ?></label>
 					<?php endif; ?></td></tr>
 				<tr><th scope="row"><label for="sd-ps"><?php esc_html_e( 'Download / thank-you page slugs', 'sylviasdream-core' ); ?></label></th>
 					<td><textarea id="sd-ps" class="large-text code" rows="10" name="sd_core[protected_slugs]"><?php echo esc_textarea( sd_core_opt( 'protected_slugs' ) ); ?></textarea>

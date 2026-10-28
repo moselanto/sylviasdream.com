@@ -926,7 +926,7 @@ function sdc_buy_link_button() {
 	printf(
 		'<div class="sd-btn-row sd-buybox__buy"><a class="sd-btn sd-btn--primary" href="%1$s" rel="noopener">%2$s</a></div><p class="sd-buybox__secure">%3$s</p>',
 		esc_url( $url ),
-		esc_html__( 'Buy ebook', 'sylviasdream-child' ),
+		( function_exists( 'sd_core_test_payments_active' ) && sd_core_test_payments_active() ) ? esc_html__( 'Buy ebook on Stripe (real payment)', 'sylviasdream-child' ) : esc_html__( 'Buy ebook', 'sylviasdream-child' ),
 		esc_html__( 'Secure payment by Stripe. Your download link appears straight after payment.', 'sylviasdream-child' )
 	);
 }
@@ -940,6 +940,11 @@ add_action( 'woocommerce_single_product_summary', 'sdc_buy_link_button', 28 );
  * @return bool
  */
 function sdc_buy_link_not_purchasable( $purchasable, $product ) {
+	// 1.19.2: on the test site with test payments on, keep Add to cart so
+	// reviewers can try the full checkout and secure download.
+	if ( function_exists( 'sd_core_test_payments_active' ) && sd_core_test_payments_active() ) {
+		return $purchasable;
+	}
 	return ( $product instanceof WC_Product && '' !== sdc_product_buy_link( $product ) ) ? false : $purchasable;
 }
 add_filter( 'woocommerce_is_purchasable', 'sdc_buy_link_not_purchasable', 20, 2 );
