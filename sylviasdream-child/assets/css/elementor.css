@@ -55,6 +55,19 @@ body.sd-elementor-page .site-main.sd-builder { padding: 0; border-radius: 0; ove
 .sd-el-old .wp-block-cover.sd-pagehead-cover .wp-block-cover__inner-container p:not(.sd-eyebrow) { color: #f6ecd8; }
 .sd-el-old .wp-block-cover.sd-pagehead-cover .wp-block-cover__inner-container .sd-crumbs a { color: #f3e3bf; }
 
+/* 1.22.0: YouTube videos in "Section from your page" and the Video widget keep the
+   block embed's shape (16:9, or 9:16 for Shorts) even where WordPress's block
+   library styles are not loaded, so the click-to-play thumbnail fills its frame. */
+:is(.sd-el-old, .sd-el-video) .wp-block-embed.wp-has-aspect-ratio .wp-block-embed__wrapper { position: relative; }
+:is(.sd-el-old, .sd-el-video) .wp-block-embed.wp-has-aspect-ratio .wp-block-embed__wrapper::before { content: ""; display: block; padding-top: 56.25%; }
+:is(.sd-el-old, .sd-el-video) .wp-block-embed.wp-embed-aspect-9-16 .wp-block-embed__wrapper::before { padding-top: 177.78%; }
+:is(.sd-el-old, .sd-el-video) .wp-block-embed.wp-has-aspect-ratio .wp-block-embed__wrapper > iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sd-el-video .wp-block-embed { margin: 0; }
+.sd-el-video .wp-block-embed__wrapper { border-radius: 14px; overflow: hidden; background: #1f1811; box-shadow: 0 20px 50px rgba(60, 40, 10, .18); }
+.sd-el-video .wp-block-embed.wp-embed-aspect-9-16 { max-width: 360px; margin-inline: auto; }
+.sd-el-video--narrow .wp-block-embed { max-width: 640px; margin-inline: auto; }
+.sd-el-video .wp-element-caption { margin-top: .75rem; text-align: center; color: var(--ink-2); }
+
 /* Building blocks */
 .sd-el-logo { display: inline-flex; }
 .sd-el-logo img { width: 100%; height: auto; }

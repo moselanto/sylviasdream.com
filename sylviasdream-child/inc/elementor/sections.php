@@ -882,9 +882,87 @@ function sdc_section_old( $a ) {
 	}
 	$markup = wp_kses_post( $markup ); // The stored markup is treated like post content from any author.
 	$markup = sdc_old_section_apply( $markup, sdc_v( $a, 'texts', array() ), sdc_v( $a, 'photos', array() ) );
-	$html   = do_blocks( $markup );
-	$html   = do_shortcode( shortcode_unautop( $html ) );
-	echo '<div class="entry-content sd-el-old">' . $html . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- kses-filtered block markup rendered by WordPress.
+	echo '<div class="entry-content sd-el-old">' . sdc_render_block_markup( $markup ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- kses-filtered block markup rendered by WordPress.
+}
+
+/**
+ * 1.22.0: render saved block markup exactly as the_content() renders a page.
+ *
+ * Root cause of the 1.21.x blank video: core/embed has no render callback;
+ * on a normal page WP_Embed turns the bare YouTube address into the oEmbed
+ * iframe on the_content (priority 8, before do_blocks at 9), and only then
+ * does the theme's facade (render_block_core/embed) swap the iframe for the
+ * thumbnail and play button. "Section from your page" called do_blocks()
+ * alone, so the embed kept only its address and the facade found no iframe.
+ * Here the same order is used: [embed] shortcodes and auto-embeds, blocks
+ * (facade, reusable blocks, Jetpack forms, shortcode blocks), then shortcodes.
+ * Runs after kses, so the oEmbed iframe (from WordPress's trusted providers)
+ * is not stripped.
+ *
+ * @param string $markup Block markup (already filtered).
+ * @return string
+ */
+function sdc_render_block_markup( $markup ) {
+	global $wp_embed;
+	if ( isset( $wp_embed ) && $wp_embed instanceof WP_Embed ) {
+		$markup = $wp_embed->run_shortcode( $markup );
+		$markup = $wp_embed->autoembed( $markup );
+	}
+	$html = do_blocks( $markup );
+	$html = do_shortcode( shortcode_unautop( $html ) );
+	// GoFundMe widget: its <script> tag cannot survive kses, so load the same file properly.
+	if ( false !== strpos( $html, 'gfm-embed' ) && preg_match( '#class="gfm-embed"[^>]*data-url="https://www\.gofundme\.com/#', $html ) && function_exists( 'sdc_enqueue_gofundme' ) ) {
+		sdc_enqueue_gofundme();
+	}
+	return $html;
+}
+
+/**
+ * 1.22.0: Video widget. Sylvia pastes a YouTube address (normal video, youtu.be
+ * or a Short); it shows the same click-to-play thumbnail as the old pages,
+ * in the same embed figure (9:16 for Shorts, 16:9 otherwise), with a caption.
+ *
+ * @param array $a Values: url, caption, title, shape, size.
+ */
+function sdc_section_video( $a ) {
+	$url = trim( (string) sdc_v( $a, 'url', '' ) );
+	$yt  = function_exists( 'sdc_youtube_parse_url' ) ? sdc_youtube_parse_url( $url ) : null;
+	if ( ! $yt ) {
+		if ( sdc_widget_is_editor() ) {
+			echo '<p class="sd-el-empty">' . esc_html__( 'Paste a YouTube address in Links and buttons (for example https://www.youtube.com/watch?v=... or a YouTube Shorts address).', 'sylviasdream-child' ) . '</p>';
+		}
+		return;
+	}
+	$shape    = (string) sdc_v( $a, 'shape', 'auto' );
+	$portrait = 'portrait' === $shape || ( 'landscape' !== $shape && $yt['short'] );
+	$aspect   = $portrait ? 'wp-embed-aspect-9-16' : 'wp-embed-aspect-16-9';
+	$title    = trim( (string) sdc_v( $a, 'title', '' ) );
+	$inner    = '';
+	global $wp_embed;
+	if ( isset( $wp_embed ) && $wp_embed instanceof WP_Embed ) {
+		// The same oEmbed WordPress uses for the embed block (cached on the page).
+		$inner = (string) $wp_embed->shortcode( array(), esc_url_raw( $url ) );
+		if ( false === strpos( $inner, '<iframe' ) ) {
+			$inner = '';
+		}
+	}
+	if ( '' !== $inner && sdc_perf_on( 'yt_facade' ) ) {
+		if ( '' !== $title ) {
+			$inner = preg_replace( '/\btitle="[^"]*"/i', 'title="' . esc_attr( $title ) . '"', $inner, 1 );
+		}
+		$inner = sdc_youtube_facade_apply( (string) $inner );
+	} elseif ( '' === $inner ) {
+		$inner = sdc_youtube_facade_html( 'https://www.youtube.com/embed/' . $yt['id'] . '?feature=oembed', $yt['id'], $title );
+	}
+	$size    = 'narrow' === sdc_v( $a, 'size', '' ) ? ' sd-el-video--narrow' : '';
+	$caption = trim( (string) sdc_v( $a, 'caption', '' ) );
+	echo '<div class="entry-content sd-el-video' . esc_attr( $size ) . '"><figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube ' . esc_attr( $aspect ) . ' wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">';
+	echo $inner; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- WordPress oEmbed output (trusted provider) or facade markup escaped in sdc_youtube_facade_html().
+	echo '</div>';
+	if ( '' !== $caption ) {
+		echo '<figcaption class="wp-element-caption">' . esc_html( $caption ) . '</figcaption>';
+	}
+	echo '</figure></div>';
 }
 
 /**

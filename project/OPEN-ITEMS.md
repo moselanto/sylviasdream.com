@@ -30,6 +30,15 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Earlier items still open: Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+### 29 Oct (Elementor 1.22.0): YouTube videos on Elementor pages, Video widget
+- [ ] Upload child theme 1.22.0 (zip from `bash scripts/build-theme-zip.sh`), then Elementor > Tools > Regenerate CSS & Data (and clear the element cache if switched on).
+- [ ] My Story (built): "Let's Walk Together" Short shows the thumbnail and play button, tall 9:16 in its column, plays only on click, keyboard Tab + Enter works, label "Play video: ...".
+- [ ] Podcasts and Heaven on Earth (build or "Build again"): every video card shows a thumbnail, 16:9, captions/headings unchanged, grid layout as on the block page.
+- [ ] Heaven on Earth: GoFundMe widget draws; reusable blocks show; Stripe "Become a Dream Partner" button href and label identical to the block page.
+- [ ] Give: Dream Partner progress bar shows; both Stripe buttons identical. My Story and Contact: Jetpack contact forms send a test message from the Elementor-built page (form submission from a rebuilt page not yet tested).
+- [ ] Elementor editor: the videos show thumbnails in the preview; add a Video widget, paste a YouTube Shorts address (tall) and a normal address (wide).
+- [ ] No `#KEEP-LIVE` or dev address in any page after building.
+
 ### 29 Oct (Elementor 1.21.3)
 - [x] Banner gap: no padding between header and a page's own full-width banner (1.21.3). Check My Story, Author Support, Podcasts, Speaking, Heaven on Earth, Give, Contact and a policy page on desktop and phone
 - [ ] Elementor conversion must keep video/embed previews (My Story "Let's Walk Together" broke with 1.21.2)
