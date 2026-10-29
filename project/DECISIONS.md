@@ -2,6 +2,13 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 29 October 2026: whole site editable in Elementor (child theme 1.21.0)
+- **Elementor editing requested by Agnes (29 Oct 2026).** Every page, the header and the footer can be edited in Elementor (free) by Sylvia, with "Sylvia's Dream" widgets whose defaults are the current wording, and Sylvia's Dream Theme Options using the free Redux Framework (basic built-in screen without Redux). Replaces the 23 Oct note "Elementor-compatible page templates in case she installs Elementor later": Elementor is now the recommended editor; the block editor and patterns keep working.
+- **Optional and reversible.** Without Elementor the site looks and works exactly as 1.20.x. Pages are built in Elementor only when an administrator clicks "Build this page in Elementor" (Appearance > Set up page editor); a revision is forced first and "Use old version" switches back. Header/footer fall back to the built-in ones if a template is missing or broken.
+- **Payments untouched.** Widgets only display links. The Buy ebook widget reads the product's "Buy ebook link (Stripe)" field; Give page buttons are kept inside "Section from your page" with their links and labels locked. Stripe is never touched.
+- **Live site: WordPress.com Personal.** Plugin uploads are allowed on paid plans (see 27 Oct WordPress.com check), so Elementor and Redux Framework (both free, wordpress.org) can be installed there. **Verify at launch** that both install and activate on the Personal plan, that WordPress.com does not block the set-up screen's installer (otherwise install from Plugins > Add New), and that Elementor's generated CSS files are written.
+- **Sylvia's role.** Elementor needs a role that can edit published pages (Editor). On the test site she is Contributor; change to Editor when she starts editing (Moses/Lightof to confirm).
+
 ## 27 October 2026: sign-in security and admin branding (core plugin 0.4.0)
 Recorded with the 0.4.0 release (Lightof, 27 Oct). Code: `sylviasdream-core/inc/two-factor.php`, `auth-hardening.php`, `login.php`, `admin-brand.php`; details in `ARCHITECTURE.md` 7.1-7.4 and `SECURITY-AUDIT.md` S12-S14.
 - **Two-factor sign-in is opt-in per user, but required for every administrator before launch.** Each user switches it on in Users > Profile (authenticator app code, 8 one-time recovery codes stored hashed). The plugin does not force it on anyone; instead administrators without it see a reminder notice, and launch waits until every administrator has it on and has stored their recovery codes (`OPEN-ITEMS.md`). Why: protects the site even if a password leaks (audit A07 launch action, quotation scope H) without locking out a user before they have set up an app.

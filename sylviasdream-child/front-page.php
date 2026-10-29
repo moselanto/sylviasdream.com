@@ -12,7 +12,8 @@ defined( 'ABSPATH' ) || exit;
 // 1.1.0: when the Home page has its own block content (built from the
 // "Sylvia's Dream" patterns), show only that, full width. Otherwise fall
 // back to the Customizer-driven 1.0.0 sections below.
-if ( function_exists( 'sdc_front_page_has_blocks' ) && sdc_front_page_has_blocks() ) {
+// 1.21.0: the same when the Home page is built with Elementor.
+if ( ( function_exists( 'sdc_front_page_has_blocks' ) && sdc_front_page_has_blocks() ) || ( function_exists( 'sdc_is_elementor_page' ) && sdc_is_elementor_page( (int) get_option( 'page_on_front' ) ) ) ) {
 	get_header();
 	?>
 	<main id="main-content" class="site-main sd-builder" tabindex="-1">

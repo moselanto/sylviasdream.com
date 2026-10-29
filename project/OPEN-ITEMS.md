@@ -1,4 +1,4 @@
-# Open items (updated 27 October 2026)
+# Open items (updated 29 October 2026)
 
 ## Waiting on Sylvia
 All requests now sit in one email draft, "Everything we need to finish your new website" (26 Oct, unsent, Moses to approve), and in the Town document "Everything we need from Sylvia (26 Oct 2026)".
@@ -30,6 +30,17 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Earlier items still open: Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+### 29 Oct (Elementor): child theme 1.21.0, branch feature/elementor-builder
+- [ ] Review and merge the pull request "Whole site editable in Elementor (child 1.21.0)"; CI `php -l` must pass (not run in the build sandbox: no PHP)
+- [ ] Upload `sylviasdream-child-1.21.0.zip` to the test site (core plugin unchanged, 0.4.4)
+- [ ] Appearance > Set up page editor: install Elementor and Redux Framework, create/seed the default Kit, create the starter header and footer
+- [ ] Test every Sylvia's Dream widget in the editor (Texts, Photos, Links and buttons, Settings, Style) and the fallback (choose a header template, then unpublish it: the built-in header must return; switch Elementor off: site unchanged)
+- [ ] Build Home, Books, My Story, Speaking, Podcasts, Author Support, Heaven on Earth, Give, Contact in Elementor on the test site; compare each with the old version; Elementor > Tools > Regenerate CSS & Data
+- [ ] Give page after building: click-test every Dream Partner button (link unchanged); a book page Buy ebook button; cart drawer; checkout with Test payment; Contact form sends
+- [ ] Change Sylvia's test-site role from Contributor to Editor so she can use Elementor (decision 29 Oct)
+- [ ] Launch: verify Elementor and Redux install on WordPress.com Personal; `content/live/` stays the block-editor launch pack (pages can be built in Elementor on live after pasting)
+- [ ] Phone check of an Elementor header template with the Site header widget (drawer, sticky, bottom bar)
+
 ### 29 Oct (later): theme 1.19.5-1.20.2, posts credited to Sylvia, titles count
 - [x] 1.19.5 (2b17bf0): rebuilt .min assets. Cause of "header fix not showing": WordPress resets file dates on unzip, so the stale style.min.css was served. ALWAYS run `node scripts/build-assets.js` before zipping
 - [x] Header: logo no longer overlaps Home at top or scrolled (checked after 1.19.5)

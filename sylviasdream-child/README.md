@@ -2,6 +2,10 @@
 
 The actual site design. **Activate this theme** (the parent `sylviasdream` must also be installed). Built from the approved prototype v3 (`prototype/index.html`): warm gold and cream, Cormorant Garamond headings, Source Sans 3 body text at 19-20px.
 
+## Elementor (1.21.0)
+
+Optional. Appearance > Set up page editor installs Elementor and Redux, prepares Elementor's colours and fonts, creates the starter header/footer and builds each main page in Elementor. Widgets: Elementor panel > Sylvia's Dream (25). Options: Appearance > Sylvia's Dream Theme Options. Guide for Sylvia: `docs/ELEMENTOR-EDITING-GUIDE.md`; developer notes: ARCHITECTURE.md section 14.
+
 ## Page builder (1.1.0)
 
 Every page can be edited visually in the block editor. Add sections from **+ > Patterns > Sylvia's Dream** (14 patterns in `patterns/`). Brand colours, fonts and sizes come from `theme.json`. Templates: Default, **Full width (page builder)** (`template-full-width.php`) and **Canvas** (`template-canvas.php`). When the Home page has block content, `front-page.php` shows only that; otherwise the Customizer sections below. Ready-to-paste pages: `content/blocks/*.html`. Guide for Sylvia: `docs/EDITING-GUIDE.md`.
