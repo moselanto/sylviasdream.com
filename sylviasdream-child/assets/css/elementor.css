@@ -47,6 +47,13 @@ body.sd-elementor-page .site-main.sd-builder { padding: 0; border-radius: 0; ove
 :is(.elementor-widget-container, .elementor-widget) > .sd-home-band--alt { background: var(--cream-2); border-block: 1px solid var(--line); }
 .sd-el-old > .alignfull, .sd-el-old > .wp-block-cover.alignfull { margin-left: 0; margin-right: 0; width: 100%; max-width: none; }
 .sd-el-old > .alignwide { max-width: var(--max); margin-left: auto; margin-right: auto; }
+/* 1.21.2: a page banner kept as "Section from your page" keeps its Cover photo and
+   light words inside .elementor (Elementor's "img { height: auto }" and the reading
+   column's dark paragraph colour must not reach it). */
+.sd-el-old .wp-block-cover.sd-pagehead-cover img.wp-block-cover__image-background { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; margin: 0; border-radius: 0; box-shadow: none; object-fit: cover; }
+.sd-el-old .wp-block-cover.sd-pagehead-cover .wp-block-cover__inner-container :is(h1, h2) { color: #fff; }
+.sd-el-old .wp-block-cover.sd-pagehead-cover .wp-block-cover__inner-container p:not(.sd-eyebrow) { color: #f6ecd8; }
+.sd-el-old .wp-block-cover.sd-pagehead-cover .wp-block-cover__inner-container .sd-crumbs a { color: #f3e3bf; }
 
 /* Building blocks */
 .sd-el-logo { display: inline-flex; }

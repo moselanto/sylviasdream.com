@@ -2,6 +2,12 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 29 October 2026 (afternoon, later): child theme 1.21.2, page banner photo and light text
+- With 1.21.1 on the test site, "Build this page in Elementor" on Books gave a banner without its photo (bible.jpg) and with a dark intro line; stopped before the other inner pages. Home was fine.
+- Cause found in code: inside Elementor's `.entry-content > .elementor` wrapper, Elementor's `.elementor img { height: auto }` and `.page:not(.home) .entry-content p` (ink-2) beat the theme banner rules; the builder copied only the Cover's `url` attribute (no ID, `<img>`, focal point; old site address kept).
+- Fixed on `feature/elementor-builder`: banner conversion carries photo, focal point, shade, light words, heading and intro; Page top banner widget has photo position, shade and text colour; style.css banner safety rules; elementor.css rules for a banner kept as "Section from your page". All inner-page banners audited (Covers on Books, My Story, Speaking, Podcasts, Author Support, Heaven on Earth; Page header pattern on Contact; none on Give).
+- `check-theme.js` OK; `php -l` not run (no PHP in the sandbox; balance check and manual review; CI runs it); `build-assets.js` and `build-theme-zip.sh` run; zip `sylviasdream-child-1.21.2.zip` with fresh .min files. Not yet uploaded to the test site; nothing changed on live.
+
 ## Thursday 29 October 2026 (afternoon): child theme 1.21.1, Elementor bug fixes
 - 1.21.0 on the test site showed blank dark gold buttons site-wide (Kit link colour, fonts and width seeded into the Elementor Kit) and squeezed Elementor pages (760px reading column); it was rolled back by hand.
 - Fixed on `feature/elementor-builder`: Kit seeding limited to picker choices; one-time clean-up of the 1.21.0 Kit values (hand-set values kept) and of the template of pages built under 1.21.0; new template `templates/sd-elementor-full-width.php`; full-width rules in `elementor.css`; new `button-safety.css` (switch `button_safety`).

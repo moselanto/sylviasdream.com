@@ -349,7 +349,10 @@ function sdc_el_registry() {
 				array( 'title', 'texts', 'text', __( 'Title (empty = the page name)', 'sylviasdream-child' ), '' ),
 				array( 'intro', 'texts', 'textarea', __( 'Short line under the title', 'sylviasdream-child' ), '' ),
 				array( 'image', 'photos', 'media', __( 'Banner photo (empty = the page\'s usual photo)', 'sylviasdream-child' ), sdc_el_media_default() ),
+				array( 'photo_position', 'photos', 'text', __( 'Which part of the photo to show, across then down (for example 50% 40%; empty = the middle)', 'sylviasdream-child' ), '' ),
+				array( 'overlay', 'photos', 'select', __( 'Shade over the photo', 'sylviasdream-child' ), 'theme', array( 'theme' => __( 'Normal (as on the rest of the website)', 'sylviasdream-child' ), 'darker' => __( 'Darker', 'sylviasdream-child' ), 'lighter' => __( 'Lighter', 'sylviasdream-child' ), 'none' => __( 'No shade', 'sylviasdream-child' ) ) ),
 				array( 'links_note', 'links', 'note', __( 'The "Home" link in the banner always goes to the Home page.', 'sylviasdream-child' ) ),
+				array( 'text_colour', 'settings', 'select', __( 'Text colour', 'sylviasdream-child' ), 'light', array( 'light' => __( 'Light words (for a photo or dark background)', 'sylviasdream-child' ), 'dark' => __( 'Dark words (on a pale background)', 'sylviasdream-child' ) ) ),
 			),
 		),
 		'keep-exploring'     => array(
