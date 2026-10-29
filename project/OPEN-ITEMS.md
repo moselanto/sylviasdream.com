@@ -30,6 +30,10 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Earlier items still open: Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+### 29 Oct (Elementor 1.21.3)
+- [x] Banner gap: no padding between header and a page's own full-width banner (1.21.3). Check My Story, Author Support, Podcasts, Speaking, Heaven on Earth, Give, Contact and a policy page on desktop and phone
+- [ ] Elementor conversion must keep video/embed previews (My Story "Let's Walk Together" broke with 1.21.2)
+
 ### 29 Oct (Elementor 1.21.2): banner photo and light text, branch feature/elementor-builder
 - [ ] Upload `sylviasdream-child-1.21.2.zip` (Replace active); Dashboard once as administrator; Elementor > Tools > Regenerate CSS & Data.
 - [ ] Appearance > Set up page editor: "Build again" Books (and any page built with 1.21.1). Books banner: bible.jpg photo fills the band, dark shade, eyebrow "The bookshop", h1 "Books by Sylvia Suhr", intro line light (cream) and readable, breadcrumb light; one h1.

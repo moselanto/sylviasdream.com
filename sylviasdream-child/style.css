@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer; whole site editable in Elementor (optional).
 Template: sylviasdream
-Version: 1.21.2
+Version: 1.21.3
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -743,6 +743,10 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 .page:not(.home) .entry-content .wp-block-jetpack-contact-form input:focus, .page:not(.home) .entry-content .wp-block-jetpack-contact-form textarea:focus { outline: 3px solid var(--gold-l); border-color: var(--gold); background: #fff; }
 .page:not(.home) .sd-builder__body { padding-block: clamp(3rem, 7vw, 4.5rem); padding-inline: var(--gutter); }
 .page:not(.home) .sd-page-body { padding-block: clamp(3rem, 7vw, 4.5rem); }
+/* 1.21.3: no gap between the header and a page that starts with its own full-width banner (Cover / page header),
+   and none above the footer when a page ends with a full-width band. Plain text pages keep their spacing. */
+.page:not(.home) .sd-has-banner > .sd-page-body:has(> .entry-content > :is(.alignfull, .sd-pagehead-cover, .wp-block-cover, .sd-band):first-child) { padding-top: 0; }
+.page:not(.home) .sd-has-banner > .sd-page-body:has(> .entry-content > :is(.alignfull, .sd-band):last-child) { padding-bottom: 0; }
 
 /* Keep exploring (prototype: every page leads somewhere). */
 .sd-next { background: var(--cream-2); border-top: 1px solid var(--line); padding-block: clamp(3rem, 7vw, 4.5rem); }

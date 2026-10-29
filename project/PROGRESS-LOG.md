@@ -2,6 +2,9 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 29 October 2026 (15:00): child theme 1.21.3, banner gap
+- Agnes: gap between header and banner on My Story (not on Author Support). Removed `.sd-page-body` top padding when a banner page starts with a full-width block, and bottom padding when it ends with a full-width band; plain pages keep spacing. Installed and checked on the test site (see OPEN-ITEMS).
+
 ## Thursday 29 October 2026 (afternoon, later): child theme 1.21.2, page banner photo and light text
 - With 1.21.1 on the test site, "Build this page in Elementor" on Books gave a banner without its photo (bible.jpg) and with a dark intro line; stopped before the other inner pages. Home was fine.
 - Cause found in code: inside Elementor's `.entry-content > .elementor` wrapper, Elementor's `.elementor img { height: auto }` and `.page:not(.home) .entry-content p` (ink-2) beat the theme banner rules; the builder copied only the Cover's `url` attribute (no ID, `<img>`, focal point; old site address kept).
