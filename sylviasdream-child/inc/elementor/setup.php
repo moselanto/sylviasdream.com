@@ -182,7 +182,9 @@ function sdc_el_brand_tokens() {
 }
 
 /**
- * Write the brand colours and fonts into the active Kit.
+ * Write the brand colours and fonts into the active Kit as picker choices only
+ * (system_colors, custom_colors, system_typography). 1.21.1: nothing that
+ * produces site-wide CSS is written.
  *
  * @return bool
  */
@@ -220,16 +222,11 @@ function sdc_el_seed_kit() {
 		array( '_id' => 'text', 'title' => __( 'Text', 'sylviasdream-child' ), 'typography_typography' => 'custom', 'typography_font_family' => $sans, 'typography_font_weight' => '400' ),
 		array( '_id' => 'accent', 'title' => __( 'Accent', 'sylviasdream-child' ), 'typography_typography' => 'custom', 'typography_font_family' => $sans, 'typography_font_weight' => '600' ),
 	);
-	$settings['body_color']                   = $c['ink'][1];
-	$settings['body_typography_typography']   = 'custom';
-	$settings['body_typography_font_family']  = $sans;
-	$settings['body_typography_font_size']    = array( 'unit' => 'px', 'size' => 19, 'sizes' => array() );
-	$settings['link_normal_color']            = $c['gold-dark'][1];
-	$settings['container_width']              = array( 'unit' => 'px', 'size' => max( 960, min( 1600, absint( sdc_opt( 'content_width' ) ) ) ), 'sizes' => array() );
-	foreach ( array( 'h1', 'h2', 'h3' ) as $hx ) {
-		$settings[ $hx . '_typography_typography' ]  = 'custom';
-		$settings[ $hx . '_typography_font_family' ] = $serif;
-	}
+	// 1.21.1: only the picker choices above are written. Keys that make Elementor print
+	// site-wide CSS (link and body colours, body and heading fonts, content width,
+	// button styles) are never written: Elementor prints Kit CSS on every page through
+	// the body class elementor-kit-N, and in 1.21.0 the dark gold link colour hid the
+	// labels of the theme's dark gold buttons. See sdc_el_kit_cleanup_1211().
 	update_post_meta( $kit, '_elementor_page_settings', $settings );
 
 	// The theme's own styles stay in charge of colours and fonts.
@@ -239,6 +236,139 @@ function sdc_el_seed_kit() {
 	sdc_el_clear_cache();
 	return true;
 }
+
+/**
+ * Keys 1.21.0 wrote into the Kit that print site-wide CSS, with the exact values
+ * 1.21.0 wrote. Used only by the one-time clean-up below.
+ *
+ * @return array<string,array> key => list of accepted (seeded) values.
+ */
+function sdc_el_kit_1210_values() {
+	$t     = sdc_el_brand_tokens();
+	$c     = $t['colors'];
+	$serif = $t['fonts']['serif'];
+	$sans  = $t['fonts']['sans'];
+	$width = max( 960, min( 1600, absint( sdc_opt( 'content_width' ) ) ) );
+	$vals  = array(
+		'body_color'                  => array( $c['ink'][1], '#231b14' ),
+		'link_normal_color'           => array( $c['gold-dark'][1], '#775014' ),
+		'body_typography_font_family' => array( $sans, 'Source Sans 3' ),
+		'body_typography_font_size'   => array( array( 'unit' => 'px', 'size' => 19 ) ),
+		'container_width'             => array( array( 'unit' => 'px', 'size' => $width ), array( 'unit' => 'px', 'size' => 1200 ) ),
+	);
+	foreach ( array( 'h1', 'h2', 'h3' ) as $hx ) {
+		$vals[ $hx . '_typography_font_family' ] = array( $serif, 'Cormorant Garamond' );
+	}
+	return $vals;
+}
+
+/**
+ * Does a stored Kit value equal one of the values 1.21.0 seeded?
+ *
+ * @param mixed $stored   Stored value.
+ * @param array $accepted Accepted values.
+ * @return bool
+ */
+function sdc_el_kit_value_is_seeded( $stored, $accepted ) {
+	foreach ( $accepted as $want ) {
+		if ( is_array( $want ) ) {
+			if ( is_array( $stored ) && isset( $stored['unit'], $stored['size'] ) && (string) $stored['unit'] === (string) $want['unit'] && (float) $stored['size'] === (float) $want['size'] ) {
+				return true;
+			}
+		} elseif ( is_string( $stored ) && strtolower( trim( $stored ) ) === strtolower( trim( (string) $want ) ) ) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/**
+ * 1.21.1 one-time upgrade (runs once for an administrator on admin_init):
+ * 1. Removes from the active Kit the site-wide keys 1.21.0 seeded (link and body
+ *    colour, body font and size, h1-h3 fonts, content width), but only where the
+ *    stored value still equals what 1.21.0 wrote, so anything a person set by hand
+ *    is kept. A "custom" typography switch is removed only when no other value of
+ *    that group is left. Then clears Elementor's CSS cache.
+ * 2. Moves pages built with "Build this page in Elementor" under 1.21.0 (template
+ *    template-full-width.php) to the full-width Elementor template. Their stored
+ *    previous template is kept, so "Use old version" still restores it.
+ * The option sdc_el_kit_cleanup_1211 records that it has run. It waits (does not
+ * mark itself done) while Elementor is off, so it runs when Elementor is back.
+ */
+function sdc_el_kit_cleanup_1211() {
+	if ( wp_doing_ajax() || get_option( 'sdc_el_kit_cleanup_1211' ) || ! current_user_can( 'edit_theme_options' ) ) {
+		return;
+	}
+	if ( ! did_action( 'elementor/loaded' ) ) {
+		return;
+	}
+	$changed = false;
+	$kit     = sdc_el_kit_id();
+	if ( $kit ) {
+		$settings = get_post_meta( $kit, '_elementor_page_settings', true );
+		if ( is_array( $settings ) ) {
+			foreach ( sdc_el_kit_1210_values() as $key => $accepted ) {
+				if ( array_key_exists( $key, $settings ) && sdc_el_kit_value_is_seeded( $settings[ $key ], $accepted ) ) {
+					unset( $settings[ $key ] );
+					$changed = true;
+				}
+			}
+			foreach ( array( 'body', 'h1', 'h2', 'h3' ) as $group ) {
+				$switch = $group . '_typography_typography';
+				if ( ! isset( $settings[ $switch ] ) || 'custom' !== $settings[ $switch ] ) {
+					continue;
+				}
+				$left = false;
+				foreach ( $settings as $k => $v ) {
+					if ( $k !== $switch && 0 === strpos( (string) $k, $group . '_typography_' ) && '' !== $v && array() !== $v && null !== $v ) {
+						$left = true;
+						break;
+					}
+				}
+				if ( ! $left ) {
+					unset( $settings[ $switch ] );
+					$changed = true;
+				}
+			}
+			if ( $changed ) {
+				update_post_meta( $kit, '_elementor_page_settings', $settings );
+			}
+		}
+	}
+	$pages = get_posts(
+		array(
+			'post_type'      => 'page',
+			'post_status'    => 'any',
+			'posts_per_page' => 100,
+			'fields'         => 'ids',
+			'no_found_rows'  => true,
+			'meta_query'     => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- one-time admin upgrade.
+				'relation' => 'AND',
+				array(
+					'key'   => '_wp_page_template',
+					'value' => 'template-full-width.php',
+				),
+				array(
+					'key'     => '_sdc_old_template',
+					'compare' => 'EXISTS',
+				),
+				array(
+					'key'   => '_elementor_edit_mode',
+					'value' => 'builder',
+				),
+			),
+		)
+	);
+	foreach ( $pages as $pid ) {
+		update_post_meta( (int) $pid, '_wp_page_template', SDC_EL_FULL_TEMPLATE );
+		$changed = true;
+	}
+	update_option( 'sdc_el_kit_cleanup_1211', SYLVIASDREAM_CHILD_VERSION, false );
+	if ( $changed ) {
+		sdc_el_clear_cache();
+	}
+}
+add_action( 'admin_init', 'sdc_el_kit_cleanup_1211', 25 );
 
 /**
  * Clear Elementor's generated CSS (same as Elementor > Tools > Regenerate CSS).
@@ -647,7 +777,8 @@ function sdc_el_build_page_action() {
 	if ( ! metadata_exists( 'post', $id, '_sdc_old_template' ) ) {
 		update_post_meta( $id, '_sdc_old_template', (string) get_post_meta( $id, '_wp_page_template', true ) );
 	}
-	update_post_meta( $id, '_wp_page_template', 'template-full-width.php' );
+	// 1.21.1: full-width Elementor template (theme header/footer, no content column).
+	update_post_meta( $id, '_wp_page_template', SDC_EL_FULL_TEMPLATE );
 	sdc_el_save_data( $id, $data, 'wp-page' );
 	sdc_el_clear_cache();
 	wp_safe_redirect( add_query_arg( array( 'page' => 'sdc-setup', 'sdc_done' => 'page-ok' ), admin_url( 'themes.php' ) ) );

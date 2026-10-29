@@ -1,0 +1,47 @@
+/*
+ * 1.21.1: button safety rule (loaded after Elementor's Kit CSS when Elementor is on).
+ *
+ * Elementor prints the Kit's link and button settings for every page through the
+ * body class elementor-kit-N (selectors such as ".elementor-kit-5 a" and
+ * ".elementor-kit-5 button"). In 1.21.0 a dark gold Kit link colour made the labels
+ * of the theme's dark gold anchor buttons invisible. These rules restate the
+ * theme's own button colours with two extra element selectors ("html body"), which
+ * is just enough to beat any Kit selector, while any theme rule that styles a
+ * button in a particular place (it has one more class) still wins as before.
+ * Scoped to the theme's button classes only: no bare "a" selector, no !important.
+ * Switch off with: add_filter( 'sdc_perf_feature', fn( $on, $k ) => 'button_safety' === $k ? false : $on, 10, 2 );
+ */
+
+/* Theme buttons: .sd-btn (Give button in the header, section and widget buttons,
+   cart drawer), block buttons, WooCommerce block buttons. */
+html body a.sd-btn, html body button.sd-btn,
+html body a.wp-block-button__link, html body a.wp-element-button, html body button.wp-element-button,
+html body button.wc-block-components-button, html body a.wc-block-components-button,
+html body .wc-block-cart__submit-button, html body .wc-block-components-checkout-place-order-button {
+	border-color: var(--gold-d); background: var(--gold-d); color: #fff; text-decoration: none;
+}
+html body a.sd-btn:hover, html body button.sd-btn:hover,
+html body a.wp-block-button__link:hover, html body a.wp-element-button:hover, html body button.wp-element-button:hover,
+html body button.wc-block-components-button:hover, html body a.wc-block-components-button:hover {
+	border-color: var(--ink); background: var(--ink); color: #fff;
+}
+html body a.sd-btn--ghost, html body button.sd-btn--ghost { background: transparent; color: var(--gold-d); }
+html body a.sd-btn--ghost:hover, html body button.sd-btn--ghost:hover { border-color: var(--gold-d); background: var(--gold-d); color: #fff; }
+html body a.sd-btn--light, html body button.sd-btn--light { border-color: #fff; background: #fff; color: var(--ink); }
+html body a.sd-btn--light:hover, html body button.sd-btn--light:hover { border-color: var(--gold-l); background: var(--gold-l); color: var(--ink); }
+html body .is-style-outline a.wp-block-button__link { background: transparent; color: var(--gold-d); }
+
+/* WooCommerce buttons (shop grid add to cart, product page, cart, checkout,
+   messages). Same colours as assets/css/woocommerce.css. */
+html body .woocommerce a.button, html body .woocommerce button.button, html body .woocommerce input.button,
+html body .woocommerce #respond input#submit, html body .woocommerce a.button.alt, html body .woocommerce button.button.alt,
+html body .woocommerce-page a.button, html body .woocommerce-page button.button, html body .woocommerce-page input.button,
+html body a.button.add_to_cart_button, html body a.checkout-button, html body button.single_add_to_cart_button, html body button#place_order {
+	border-color: var(--gold-d); background: var(--gold-d); color: #fff; text-decoration: none;
+}
+html body .woocommerce a.button:hover, html body .woocommerce button.button:hover, html body .woocommerce input.button:hover,
+html body .woocommerce a.button.alt:hover, html body .woocommerce button.button.alt:hover,
+html body .woocommerce-page a.button:hover, html body .woocommerce-page button.button:hover,
+html body a.button.add_to_cart_button:hover, html body a.checkout-button:hover, html body button.single_add_to_cart_button:hover, html body button#place_order:hover {
+	border-color: var(--ink); background: var(--ink); color: #fff;
+}

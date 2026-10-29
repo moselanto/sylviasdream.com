@@ -17,6 +17,15 @@
 
 defined( 'ABSPATH' ) || exit;
 
+/*
+ * 1.21.1: page template given to pages built with "Build this page in Elementor":
+ * the theme header and footer (sticky header, phone bottom bar, cart drawer) and
+ * no content column, so Elementor sections run full width.
+ */
+if ( ! defined( 'SDC_EL_FULL_TEMPLATE' ) ) {
+	define( 'SDC_EL_FULL_TEMPLATE', 'templates/sd-elementor-full-width.php' );
+}
+
 /**
  * Is Elementor loaded and able to render templates?
  *

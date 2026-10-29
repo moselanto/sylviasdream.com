@@ -390,7 +390,11 @@ function sdc_el_styles() {
 		return;
 	}
 	list( $url, $ver ) = sdc_asset( 'assets/css/elementor.css' );
-	wp_enqueue_style( 'sylviasdream-child-elementor', $url, array( 'sylviasdream-child' ), $ver );
+	$deps = array( 'sylviasdream-child' );
+	if ( wp_style_is( 'elementor-frontend', 'registered' ) ) {
+		$deps[] = 'elementor-frontend'; // 1.21.1: load after Elementor's own styles.
+	}
+	wp_enqueue_style( 'sylviasdream-child-elementor', $url, $deps, $ver );
 	// The section styles of ordinary pages (about.css) are needed on any page that may hold a widget.
 	if ( ! wp_style_is( 'sylviasdream-child-about', 'enqueued' ) && ( sdc_is_elementor_page() || sdc_widget_is_editor() ) ) {
 		list( $url, $ver ) = sdc_asset( 'assets/css/about.css' );

@@ -98,6 +98,8 @@ function sdc_builder_body_class( $classes ) {
 			$classes[] = 'sd-template-full';
 		} elseif ( 'template-canvas.php' === $template ) {
 			$classes[] = 'sd-template-canvas';
+		} elseif ( defined( 'SDC_EL_FULL_TEMPLATE' ) && SDC_EL_FULL_TEMPLATE === $template ) {
+			$classes[] = 'sd-template-elementor'; // 1.21.1.
 		}
 	}
 	if ( is_front_page() && sdc_front_page_has_blocks() ) {

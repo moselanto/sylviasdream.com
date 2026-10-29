@@ -30,6 +30,13 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Earlier items still open: Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+### 29 Oct (Elementor 1.21.1): bug-fix release, branch feature/elementor-builder
+- [ ] Upload `sylviasdream-child-1.21.1.zip` (Replace active). Open the Dashboard once as administrator (runs the one-time Kit clean-up), then Elementor > Tools > Regenerate CSS & Data.
+- [ ] Check every dark gold button shows its label, with Elementor on: header Give, Home hero and section buttons, Books grid add to cart, book page buy box, cart drawer View cart / Checkout, Cart, Checkout Place order, Give page Dream Partner buttons (click-test links unchanged).
+- [ ] Elementor > Site Settings: Global colours and fonts list the Sylvia's Dream choices; Typography / Links / Buttons / Layout have no values set by the theme (any value set by hand is still there).
+- [ ] Build Home and one inner page in Elementor: sections full width (hero heading whole, highlight cards not breaking words), bands edge to edge, inner content at the normal site width; sticky header, phone bottom bar and cart drawer work; one h1. Page Attributes shows "Elementor full width (Sylvia's Dream)". "Use old version" restores the previous template.
+- [ ] Optional check: `add_filter( 'sdc_perf_feature', ... 'button_safety' ... )` returning false removes `button-safety.css`.
+
 ### 29 Oct (Elementor): child theme 1.21.0, branch feature/elementor-builder
 - [ ] Review and merge the pull request "Whole site editable in Elementor (child 1.21.0)"; CI `php -l` must pass (not run in the build sandbox: no PHP)
 - [ ] Upload `sylviasdream-child-1.21.0.zip` to the test site (core plugin unchanged, 0.4.4)
