@@ -2,9 +2,9 @@
 
 The actual site design. **Activate this theme** (the parent `sylviasdream` must also be installed). Built from the approved prototype v3 (`prototype/index.html`): warm gold and cream, Cormorant Garamond headings, Source Sans 3 body text at 19-20px.
 
-## Elementor (1.21.0, fixes in 1.21.1, 1.21.2 and 1.21.3)
+## Elementor (1.21.0, fixes in 1.21.1, 1.21.2, 1.21.3 and 1.22.0)
 
-Optional. Appearance > Set up page editor installs Elementor and Redux, prepares Elementor's colours and fonts, creates the starter header/footer and builds each main page in Elementor. Widgets: Elementor panel > Sylvia's Dream (25). Options: Appearance > Sylvia's Dream Theme Options. Guide for Sylvia: `docs/ELEMENTOR-EDITING-GUIDE.md`; developer notes: ARCHITECTURE.md section 14.
+Optional. Appearance > Set up page editor installs Elementor and Redux, prepares Elementor's colours and fonts, creates the starter header/footer and builds each main page in Elementor. Widgets: Elementor panel > Sylvia's Dream (26, including **Video** since 1.22.0: paste a YouTube or YouTube Shorts address; it shows the same click-to-play thumbnail as the block pages, 9:16 for Shorts). 1.22.0: "Section from your page" renders its blocks like a normal page (auto-embeds, then blocks, then shortcodes), so YouTube videos, reusable blocks, Jetpack forms and `[sd_partner_progress]` work as on the old page; the click-to-play script loads on Elementor pages and in the Elementor preview; the GoFundMe widget script is loaded on Elementor-built pages. Options: Appearance > Sylvia's Dream Theme Options. Guide for Sylvia: `docs/ELEMENTOR-EDITING-GUIDE.md`; developer notes: ARCHITECTURE.md section 14.
 
 ## Page builder (1.1.0)
 

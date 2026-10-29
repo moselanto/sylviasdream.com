@@ -415,6 +415,21 @@ final class SDC_EW_books_grid extends SDC_Elementor_Widget { const KEY = 'books-
 final class SDC_EW_page_banner extends SDC_Elementor_Widget { const KEY = 'page-banner'; }
 final class SDC_EW_keep_exploring extends SDC_Elementor_Widget { const KEY = 'keep-exploring'; }
 final class SDC_EW_kept_section extends SDC_Elementor_Widget { const KEY = 'kept-section'; }
+/**
+ * 1.22.0: Video widget (loads the click-to-play script with the widget).
+ */
+final class SDC_EW_video extends SDC_Elementor_Widget {
+	const KEY = 'video';
+
+	/**
+	 * Script needed by this widget.
+	 *
+	 * @return string[]
+	 */
+	public function get_script_depends() {
+		return array( 'sylviasdream-child-yt' );
+	}
+}
 final class SDC_EW_site_header extends SDC_Elementor_Widget { const KEY = 'site-header'; }
 final class SDC_EW_site_footer extends SDC_Elementor_Widget { const KEY = 'site-footer'; }
 final class SDC_EW_logo extends SDC_Elementor_Widget { const KEY = 'logo'; }

@@ -378,6 +378,41 @@ function sdc_el_registry() {
 				array( 'links_note', 'links', 'note', __( 'Buttons and links in this section are kept exactly as they were, so payment, Dream Partner and download links always keep working. Ask your web designer if a button should go somewhere else.', 'sylviasdream-child' ) ),
 			),
 		),
+		'video'              => array(
+			'title'  => __( 'Video', 'sylviasdream-child' ),
+			'help'   => __( 'One YouTube video (a normal video or a YouTube Short). It shows a picture with a play button and plays only when a visitor clicks it.', 'sylviasdream-child' ),
+			'icon'   => 'eicon-youtube',
+			'render' => 'sdc_section_video',
+			'fields' => array(
+				array( 'caption', 'texts', 'text', __( 'Words under the video (optional)', 'sylviasdream-child' ), '' ),
+				array( 'title', 'texts', 'text', __( 'Video name read out to visitors who use a screen reader (optional; YouTube\'s own title is used when empty)', 'sylviasdream-child' ), '' ),
+				array( 'photos_note', 'photos', 'note', __( 'The picture comes from YouTube automatically.', 'sylviasdream-child' ) ),
+				array( 'url', 'links', 'text', __( 'YouTube address (copy it from YouTube and paste it here)', 'sylviasdream-child' ), '' ),
+				array(
+					'shape',
+					'settings',
+					'select',
+					__( 'Shape', 'sylviasdream-child' ),
+					'auto',
+					array(
+						'auto'      => __( 'Automatic (tall for YouTube Shorts, wide for others)', 'sylviasdream-child' ),
+						'landscape' => __( 'Wide (16:9)', 'sylviasdream-child' ),
+						'portrait'  => __( 'Tall (9:16, like a phone)', 'sylviasdream-child' ),
+					),
+				),
+				array(
+					'size',
+					'settings',
+					'select',
+					__( 'Width', 'sylviasdream-child' ),
+					'',
+					array(
+						''       => __( 'Full width of its column', 'sylviasdream-child' ),
+						'narrow' => __( 'Narrow, centred', 'sylviasdream-child' ),
+					),
+				),
+			),
+		),
 		'site-header'        => array(
 			'title'  => __( 'Site header (logo, menu, phone menu)', 'sylviasdream-child' ),
 			'help'   => __( 'The complete website header: logo, main menu with the Books mega menu, search, cart, Give button and the phone menu. Use it in an Elementor header template.', 'sylviasdream-child' ),

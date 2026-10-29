@@ -785,6 +785,38 @@ function sdc_el_banner_from_cover( $block, $markup, $with_texts = true ) {
 }
 
 /**
+ * 1.22.0: Video widget settings from a top-level YouTube embed block (address,
+ * caption and the block's own 9:16 / 16:9 shape). Null for other embeds.
+ *
+ * @param array $block Parsed core/embed block.
+ * @return array|null
+ */
+function sdc_el_video_from_embed( $block ) {
+	$attrs = isset( $block['attrs'] ) && is_array( $block['attrs'] ) ? $block['attrs'] : array();
+	$url   = isset( $attrs['url'] ) ? (string) $attrs['url'] : '';
+	$yt    = function_exists( 'sdc_youtube_parse_url' ) ? sdc_youtube_parse_url( $url ) : null;
+	if ( ! $yt ) {
+		return null;
+	}
+	$class = isset( $attrs['className'] ) ? (string) $attrs['className'] : '';
+	$shape = 'auto';
+	if ( false !== strpos( $class, 'wp-embed-aspect-9-16' ) ) {
+		$shape = 'portrait';
+	} elseif ( false !== strpos( $class, 'wp-embed-aspect-16-9' ) ) {
+		$shape = 'landscape';
+	}
+	$caption = sdc_el_xpath_text( (string) $block['innerHTML'], '//figcaption' );
+	return sdc_el_section(
+		'sd-video',
+		array(
+			'url'     => esc_url_raw( $url ),
+			'caption' => $caption,
+			'shape'   => $shape,
+		)
+	);
+}
+
+/**
  * Elementor data built from a page's current content.
  *
  * @param WP_Post $post Page.
@@ -846,6 +878,15 @@ function sdc_el_page_data( $post, $is_home ) {
 			$data[] = sdc_el_section( 'sd-page-banner', sdc_el_banner_from_cover( $block, $markup, true ) );
 			$banner = true;
 			continue;
+		}
+		// 1.22.0: a YouTube embed that is its own section becomes an editable Video
+		// widget. Embeds inside a kept section stay where they are.
+		if ( 'core/embed' === $name ) {
+			$video = sdc_el_video_from_embed( $block );
+			if ( $video ) {
+				$data[] = $video;
+				continue;
+			}
 		}
 		$data[] = sdc_el_kept_section( $markup );
 	}
