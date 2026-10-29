@@ -30,6 +30,20 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Earlier items still open: Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+### 29 Oct: test payments, prices, header, product page, brand, Facebook (core 0.4.4 0f9a92d; child 1.19.2 0f9a92d, 1.19.3 672625c, 1.19.4 1ec3ed1)
+- [x] Core 0.4.4 on dev: "Test payment (no money)" checkout option, switched on in Settings > Sylvia's Dream > Test payments. The gateway is only registered when that box is ticked AND the site is not sylviasdream.com / www.sylviasdream.com; on live the box cannot be saved as on. Test orders get a TEST note and "[TEST, no payment]" in email subjects
+- [x] Dev Checkout page switched to WooCommerce's classic checkout (the Checkout block did not list the test gateway). Recheck on live, where real gateways support the block
+- [x] Full order test passed: order #6686, When the Word Becomes Life (6380, Virtual + Downloadable, file = Media 5646 When-the-Word-Becomes-Life.pdf), A$7.16, Test payment, status Completed with TEST note, download link on the order-received page and in My account > Downloads both worked, PDF opened. "New order" and "Completed order" emails logged as sent (inbox not checked). Only this one product has a downloadable file so far
+- [ ] Download security: the WooCommerce link is per order, but the PDF's own uploads URL (from the old site) still opens directly. Before launch, attach protected copies of the ebook files to products rather than the public uploads files
+- [x] Prices set from Amazon AU Kindle prices (Lightof's PDF of the author store, 29 Oct), except books with a Stripe link, which match their Stripe checkout: One Life 12.99, From Fear to Freedom 4.50, Hidden Key 9.99, From Chance to Choice 9.99, How to Find the Real You 9.99. Others: GYH Renew Your Mind 7.10, Learning to Recognise God's Voice 8.42, Guard Your Heart 8.42, Report of the Lord 8.35, When the Word Becomes Life 7.16, When the River Flows Again 8.42, Wisdom for Soul-Winning 8.42, Fields of Becoming 12.62, 7 Days from Fear to Freedom 1.42, Angelique Finds Her Light 8.41, The King's Way 8.41, All Shall Be Well 7.56, Angelique 8.33, Trusting God Deeper 4.15. Free: SENT, 7 Days to Trusting God, How to Write and Publish. No price (not on Amazon): Fast Forward to Success, Manifesting Miracles Now, When Fear Has the Final Word. Sylvia to confirm
+- [x] Header (1.19.2-1.19.3): top-of-page logo no longer overlaps Home; checked at top and scrolled, submenus open
+- [x] Product page (1.19.3-1.19.4): no quantity box for ebooks, one payment note, full-width buttons, and a short description that only repeats the end of the title (One Life: "The Narrow Path") is hidden. Checked on One Life and When the Word Becomes Life
+- [ ] Product page still to tidy: in test mode books with a Stripe link show both "Buy ebook on Stripe (real payment)" and Add to cart (by design while test payments are on); When the Word Becomes Life is "Uncategorized"; its Kindle link is amazon.com, not amazon.com.au
+- [x] Facebook: https://www.facebook.com/sylviasdream (Sylvia's Dream Books, from Lightof) set in Customizer footer social, Rank Math Facebook Page URL and Additional Profiles (sameAs); footer link shows
+- [x] SEO brand: brand "Sylvia Suhr" (slug sylvia-suhr) on all 25 products; Rank Math > General Settings > WooCommerce > Brand = Product brands; One Life JSON-LD shows brand Sylvia Suhr
+- [ ] Rank Math focus keyword per product (25): not set; no bulk field
+- [ ] Repeat price, brand, Facebook and Rank Math settings on live at launch
+
 ### 28 Oct: test-site fixes after Sylvia's review email (core 0.4.3 b881379, child 1.19.0 b881379, 1.19.1 e979080)
 - [x] Core 0.4.3 and child 1.19.1 active on dev. Reviewer preview switch (Settings > Sylvia's Dream, refuses to turn on at sylviasdream.com) ticked; `SD_PREVIEW_MODE` in wp-config is no longer needed
 - [x] Dev user `sylvia` (sylviasuhr@gmail.com), Contributor, created without the new-user email. Lightof sets/sends her password. Not yet tested by signing in as her
