@@ -2,6 +2,11 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 29 October 2026 (late morning): child theme 1.21.0, whole site editable in Elementor
+- Agnes asked for the whole website to be editable in Elementor by Sylvia, following the Smile Community Centre build (Redux Theme Options + Elementor). Built on branch `feature/elementor-builder` off main: Theme Options (Redux or built-in screen), Elementor header/footer with per-page choice and safe fallback, 25 Sylvia's Dream widgets, set-up screen (plugins, Kit, starters, build each main page), dashboard guide, simple editor screen, plain-English guide `docs/ELEMENTOR-EDITING-GUIDE.md`.
+- Lessons from Smile applied: every widget has a Photos panel (with a note where photos come from elsewhere); a missing Elementor Kit shows a notice and a "Create it now" button.
+- `check-theme.js` OK; PHP not available in the sandbox (no root, no internet): balance script over all 56 child PHP files clean plus manual review; `php -l` left to CI. `build-assets.js` run; zip `sylviasdream-child-1.21.0.zip` built. Not yet uploaded to the test site; nothing changed on live.
+
 
 ## Thursday 29 October 2026: child theme 1.20.0 (Journal, cart drawer, checkout, buy-box fix)
 - Built 1.20.0 from main (2b17bf0): Journal index/archives/single redesign, side cart drawer with AJAX add to cart (single book page too), classic cart/checkout/order-received/Downloads polish with short eBook checkout, and the tall "Buy paperback on Amazon" button fixed. Details in CHANGELOG.

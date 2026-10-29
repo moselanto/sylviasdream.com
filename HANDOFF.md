@@ -1,11 +1,13 @@
 # HANDOFF: start here (for a person or AI agent taking over)
 
-Last updated: Thursday 29 October 2026, about 10:50 Kenya time (EAT, UTC+3). Section 0 is the current state; sections 1 onwards are older background (still valid unless section 0 says otherwise).
+Last updated: Thursday 29 October 2026, about 12:00 Kenya time (EAT, UTC+3). Section 0 is the current state; sections 1 onwards are older background (still valid unless section 0 says otherwise).
 
 ## 0. Latest status (29 Oct 2026) - read this first
+**New 29 Oct (12:00): child theme 1.21.0 on branch `feature/elementor-builder` (pull request open, not merged, not on the test site yet).** The whole site can now be edited in Elementor (free) by Sylvia: Appearance > Sylvia's Dream Theme Options (Redux, or a basic screen without it), Elementor header/footer with per-page choice and safe fallback to the normal header/footer, 25 "Sylvia's Dream" widgets, Appearance > Set up page editor (install Elementor and Redux, create the Kit, starter header/footer, build each main page from its current content), a Dashboard guide box and a simpler editor screen for non-administrators. Optional: without Elementor nothing changes. Stripe and payment links untouched. Core plugin unchanged (0.4.4). Guide for Sylvia: `docs/ELEMENTOR-EDITING-GUIDE.md`; developer notes: `ARCHITECTURE.md` section 14; test list: `project/OPEN-ITEMS.md` "29 Oct (Elementor)". Sylvia needs the Editor role to use Elementor.
+
 **Where things stand:** the new site is built on the test site and Sylvia has reviewed it once (her email of 27 Oct; reply drafted 27 Oct). Her live site sylviasdream.com is **untouched** and must stay that way until she approves launch in writing. Full lists: `project/OPEN-ITEMS.md` (top sections dated 29 Oct and 28 Oct) and `docs/CLIENT-CHECKLIST.md` (what Sylvia must send or approve).
 
-**Versions on the test site (topnotchmall.co.ke/sylviasdream):** child theme **1.20.2**, parent Sylvia's Dream Base 1.0.1, core plugin **0.4.4**, WooCommerce 11.2.1, Rank Math, Jetpack, Password Protected (test site only).
+**Versions on the test site (topnotchmall.co.ke/sylviasdream):** child theme **1.20.2** (repo branch: 1.21.0), parent Sylvia's Dream Base 1.0.1, core plugin **0.4.4**, WooCommerce 11.2.1, Rank Math, Jetpack, Password Protected (test site only).
 
 **Build rule (important):** before zipping the theme always run `node scripts/build-assets.js`. WordPress resets file dates when it unzips, so a stale `style.min.css` wins over `style.css`; the header fix in 1.19.2-1.19.4 never showed until 1.19.5 rebuilt the .min files. `.min` files are gitignored and only live in the release zip.
 

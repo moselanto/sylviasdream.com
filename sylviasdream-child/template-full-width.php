@@ -19,7 +19,9 @@ get_header();
 		the_post();
 		// 1.4.0: pages on this template that do not open with their own banner get the
 		// standard page header (a matching first H1 in the content is then hidden).
-		$sdc_own_header = sdc_content_starts_with_banner( get_the_content() );
+		// 1.21.0: Elementor pages build their own banner (Page top banner widget).
+		$sdc_is_el      = function_exists( 'sdc_is_elementor_page' ) && sdc_is_elementor_page( get_the_ID() );
+		$sdc_own_header = $sdc_is_el || sdc_content_starts_with_banner( get_the_content() );
 		if ( ! $sdc_own_header ) {
 			sdc_page_header( get_the_title(), '', has_excerpt() ? get_the_excerpt() : '' );
 		}
@@ -28,7 +30,9 @@ get_header();
 			<?php the_content(); ?>
 		</div>
 		<?php
-		sdc_related_links();
+		if ( empty( $GLOBALS['sdc_el_has_next'] ) ) {
+			sdc_related_links();
+		}
 	endwhile;
 	?>
 </main>

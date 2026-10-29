@@ -1,0 +1,46 @@
+/*
+ * 1.21.0: Elementor layer (loaded only when Elementor is active).
+ * Elementor header/footer wrappers, small building blocks, editor hints.
+ */
+
+/* Elementor header template: the wrapper is a direct child of <body>, so it
+   (not the inner .site-header) stays at the top while scrolling. */
+.sd-el-header.sd-el-sticky { position: sticky; top: var(--admin-top); z-index: 100; }
+.sd-el-header .site-header { position: relative; top: 0; }
+@media (max-width: 600px) { .admin-bar .sd-el-header.sd-el-sticky { top: 0; } }
+.sd-el-header .elementor-section,
+.sd-el-header .elementor-container,
+.sd-el-header .elementor-column,
+.sd-el-header .elementor-widget-wrap,
+.sd-el-header .elementor-widget-container { overflow: visible; }
+.sd-el-header .elementor-widget-sd-site-header > .elementor-widget-container,
+.sd-el-footer .elementor-widget-sd-site-footer > .elementor-widget-container { padding: 0; }
+
+/* Full-width sections inside Elementor's boxed columns. */
+.elementor-widget-container > .sd-hero,
+.elementor-widget-container > .sd-band,
+.elementor-widget-container > .sd-strip,
+.elementor-widget-container > .sd-section,
+.elementor-widget-container > .sd-pagehead,
+.elementor-widget-container > .sd-next,
+.elementor-widget-container > .sd-home-band { width: 100%; }
+.sd-elementor-page .site-main.sd-builder > .entry-content { max-width: none; padding: 0; }
+.sd-el-old > .alignfull, .sd-el-old > .wp-block-cover.alignfull { margin-left: 0; margin-right: 0; width: 100%; max-width: none; }
+.sd-el-old > .alignwide { max-width: var(--max); margin-left: auto; margin-right: auto; }
+
+/* Building blocks */
+.sd-el-logo { display: inline-flex; }
+.sd-el-logo img { width: 100%; height: auto; }
+.sd-el-menu ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.sd-el-menu--across ul { flex-direction: row; flex-wrap: wrap; gap: 8px 20px; }
+.sd-el-menu a { display: inline-flex; align-items: center; min-height: var(--tap); color: inherit; }
+.sd-el-button--center .sd-btn-row { justify-content: center; }
+.sd-el-button--right .sd-btn-row { justify-content: flex-end; }
+.sd-el-form { max-width: 760px; }
+
+/* Messages shown only inside the editor */
+.sd-el-empty { margin: 0; padding: 18px 20px; border: 2px dashed var(--line); border-radius: var(--r); background: var(--cream-2); color: var(--ink-2); font-size: 1.1875rem; }
+
+@media (prefers-reduced-motion: reduce) {
+	.sd-el-header, .sd-el-header * { transition: none !important; animation: none !important; }
+}

@@ -160,3 +160,13 @@ No API keys, passwords or tokens in the repo. Any future secret must come from a
 - `.github/workflows/checks.yml`: `php -l` on every PHP file in `sylviasdream`, `sylviasdream-child` and `sylviasdream-core` under PHP 8.0-8.3; `node scripts/check-theme.js` on Node 20.
 - `.github/dependabot.yml`: weekly GitHub Actions updates.
 - Release gate: `bash scripts/build-theme-zip.sh` refuses to build if `check-theme.js` fails.
+
+## S15. Elementor layer handlers (child 1.21.0, 29 Oct 2026)
+Review of the new admin handlers and output paths. No AJAX or REST endpoints were added.
+- `admin-post.php?action=sdc_install_plugin&slug=`: `check_admin_referer( 'sdc_install_<slug>' )`, `install_plugins` and `activate_plugins` required, slug `sanitize_key` and limited to the allow-list (elementor, redux-framework); download link only from `plugins_api()` (wordpress.org); `wp_safe_redirect` back. Risk: none beyond core plugin install.
+- `sdc_kit`, `sdc_starters`: nonce + `edit_theme_options`; write only Elementor Kit meta, two options and two `elementor_library` posts.
+- `sdc_build_page` / `sdc_unbuild_page`: per-page nonce, `edit_theme_options` and `edit_post` for that page, page type checked; forces a revision; `post_content` never modified; never runs without the click.
+- Per-page header/footer box: nonce `sdc_layout_save`, `edit_post`, value limited to the allowed choices.
+- Theme Options: Redux saves with its own nonce/capability (`page_permissions` edit_theme_options); the fallback uses the Settings API; linked values sanitised (`sanitize_email`, `esc_url_raw`, `sdc_sanitize_link`, `sanitize_text_field`); extra CSS `wp_strip_all_tags` and printed through `wp_add_inline_style`.
+- Widget output: every value escaped at output (`esc_html`, `esc_attr`, `esc_url`); the stored markup of "Section from your page" is passed through `wp_kses_post` before rendering, so a lower-role editor cannot inject script through Elementor data; payment/download link labels and all hrefs are never editable.
+- Residual: Elementor itself and Redux are third-party plugins (keep them updated); the set-up screen installs plugins only for administrators.

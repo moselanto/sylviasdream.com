@@ -11,6 +11,13 @@
 
 defined( 'ABSPATH' ) || exit;
 
+// 1.21.0: a page built with Elementor is shown full width, like the
+// "Full width (page builder)" template, so Elementor controls the layout.
+if ( function_exists( 'sdc_is_elementor_page' ) && sdc_is_elementor_page( get_queried_object_id() ) ) {
+	require locate_template( 'template-full-width.php' );
+	return;
+}
+
 get_header();
 ?>
 <main id="main-content" class="site-main" tabindex="-1">
