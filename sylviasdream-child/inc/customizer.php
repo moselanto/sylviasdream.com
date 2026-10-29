@@ -396,3 +396,28 @@ function sdc_strip_title( $n ) {
 	$label = sdc_book_count_label();
 	return '0' === $label ? trim( str_replace( '{count}', '', $title ) ) : str_replace( '{count}', $label, $title );
 }
+
+/**
+ * 1.20.2: pages that hold an expanded copy of the trust strip (the dev Home
+ * page) still say "25 titles" as fixed text. Replace a heading that reads
+ * only "<number> titles" with the automatic count.
+ *
+ * @param string $html  Block HTML.
+ * @param array  $block Block.
+ * @return string
+ */
+function sdc_auto_titles_heading( $html, $block ) {
+	if ( 'core/heading' !== ( $block['blockName'] ?? '' ) || is_admin() ) {
+		return $html;
+	}
+	$text = trim( wp_strip_all_tags( $html ) );
+	if ( ! preg_match( '/^\d+\+?\s+titles$/i', $text ) ) {
+		return $html;
+	}
+	$label = sdc_book_count_label();
+	if ( '0' === $label ) {
+		return $html;
+	}
+	return preg_replace( '/>\s*\d+\+?(\s+titles)\s*</i', '>' . esc_html( $label ) . '$1<', $html, 1 );
+}
+add_filter( 'render_block', 'sdc_auto_titles_heading', 10, 2 );
