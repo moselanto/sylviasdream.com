@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.20.2
+Version: 1.20.3
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1556,3 +1556,27 @@ p.sd-card__icon {
 .sd-enquiry .wp-block-button__link, .sd-enquiry button[type="submit"] { min-width: 200px; }
 .sd-band--narrow .sd-lead { max-width: 640px; margin-inline: auto; }
 @media (max-width: 639px) { .sd-band .sd-card--ico { padding: 1.4rem; } }
+
+/* 1.20.3: home trust strip ("25+ titles / Instant download / Readers
+   worldwide"). The three items sat squeezed in the middle with wrapped
+   lines. They now spread across the full content width as three equal
+   panels, each with a gold icon beside left-aligned text, divided by thin
+   rules; on phones they stack. Scoped to the block pattern (.wp-block-group)
+   so the checkout trust row (woocommerce.css) is unaffected. */
+.wp-block-group.sd-trust { padding-block: clamp(1.5rem, 3vw, 2.25rem) !important; }
+.wp-block-group.sd-trust > .wp-block-columns { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 !important; width: 100%; max-width: 1200px !important; margin: 0 auto !important; }
+.wp-block-group.sd-trust > .wp-block-columns > .wp-block-column { display: grid; grid-template-columns: 56px minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 16px; align-content: center; padding: .5rem clamp(1rem, 3vw, 2.5rem); text-align: left !important; border-left: 1px solid var(--line); margin: 0 !important; }
+.wp-block-group.sd-trust > .wp-block-columns > .wp-block-column:first-child { border-left: 0; padding-left: 0; }
+.wp-block-group.sd-trust > .wp-block-columns > .wp-block-column::before { content: ""; grid-row: 1 / span 2; align-self: center; width: 56px; height: 56px; border-radius: 50%; background: var(--gold-l) center / 26px no-repeat; box-shadow: inset 0 0 0 1px rgba(138, 90, 20, .15); }
+.wp-block-group.sd-trust > .wp-block-columns > .wp-block-column:nth-child(1)::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z'/%3E%3Cpath d='M4 20.5V5.5M8 7h8'/%3E%3C/svg%3E"); }
+.wp-block-group.sd-trust > .wp-block-columns > .wp-block-column:nth-child(2)::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3v12M7 10l5 5 5-5'/%3E%3Cpath d='M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2'/%3E%3C/svg%3E"); }
+.wp-block-group.sd-trust > .wp-block-columns > .wp-block-column:nth-child(3)::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z'/%3E%3C/svg%3E"); }
+.wp-block-group.sd-trust > .wp-block-columns > .wp-block-column:nth-child(4)::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20s-7-4.3-9-8.4C1.6 8.4 3.5 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.3 0 5.2 3.4 3.8 6.6C17 15.7 12 20 12 20z'/%3E%3C/svg%3E"); }
+.wp-block-group.sd-trust h3 { text-align: left !important; margin: 0 0 .2rem !important; font-size: clamp(1.2rem, 1rem + .6vw, 1.45rem) !important; line-height: 1.2; }
+.wp-block-group.sd-trust p { text-align: left !important; margin: 0 !important; font-size: .95rem; line-height: 1.45; color: var(--ink-2, #5a4a3a); }
+@media (max-width: 860px) {
+	.wp-block-group.sd-trust > .wp-block-columns { grid-template-columns: 1fr; }
+	.wp-block-group.sd-trust > .wp-block-columns > .wp-block-column { border-left: 0; border-top: 1px solid var(--line); padding: 1rem 0; }
+	.wp-block-group.sd-trust > .wp-block-columns > .wp-block-column:first-child { border-top: 0; padding-top: 0; }
+	.wp-block-group.sd-trust > .wp-block-columns > .wp-block-column:last-child { padding-bottom: 0; }
+}
