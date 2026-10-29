@@ -3,6 +3,11 @@
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
 
+## Thursday 29 October 2026: child theme 1.20.0 (Journal, cart drawer, checkout, buy-box fix)
+- Built 1.20.0 from main (2b17bf0): Journal index/archives/single redesign, side cart drawer with AJAX add to cart (single book page too), classic cart/checkout/order-received/Downloads polish with short eBook checkout, and the tall "Buy paperback on Amazon" button fixed. Details in CHANGELOG.
+- `check-theme.js` OK; `build-assets.js` run; zip `sylviasdream-child-1.20.0.zip` built. No PHP runtime in the sandbox: run `php -l` / CI and smoke-test Home, Books, a book page, Journal, a post, Cart, Checkout and a 404 after upload.
+- Deployer settings: WooCommerce > Settings > Products: tick "Enable AJAX add to cart buttons on archives"; leave "Redirect to the cart page after successful addition" unticked (otherwise the drawer is skipped and the cart page opens).
+
 ## Tuesday 27 October 2026 (midday): core 0.4.2 on dev, social image, Home SEO, WordPress.com check
 - Core 0.4.2 (0a105be): the Jetpack "Prove your humanity" maths box had an inline 50x25px size that hid the typed number on the branded sign-in page; now 6.5rem wide, 48px tall, larger centred text. Uploaded to dev with 0.4.1 and active; Dashboard fine. The maths question did not appear during the test, so the box itself is not yet seen on screen.
 - Core 0.4.1 on dev: two-factor setup shows the QR code next to the key. Setup was opened and cancelled; 2FA stays Off. Phone scan not done.

@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '1.19.5' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '1.20.0' );
 define( 'SYLVIASDREAM_CHILD_DIR', get_stylesheet_directory() );
 define( 'SYLVIASDREAM_CHILD_URI', get_stylesheet_directory_uri() );
 
@@ -102,6 +102,12 @@ function sdc_assets() {
 	if ( sdc_is_about_page() ) {
 		list( $url, $ver ) = sdc_asset( 'assets/css/about.css' );
 		wp_enqueue_style( 'sylviasdream-child-about', $url, array( 'sylviasdream-child-blocks' ), $ver );
+	}
+
+	// 1.20.0: Journal (posts page, post archives and single posts).
+	if ( function_exists( 'sdc_is_journal' ) && sdc_is_journal() ) {
+		list( $url, $ver ) = sdc_asset( 'assets/css/journal.css' );
+		wp_enqueue_style( 'sylviasdream-child-journal', $url, array( 'sylviasdream-child-blocks' ), $ver );
 	}
 
 	list( $url, $ver ) = sdc_asset( 'assets/js/nav.js' );
@@ -228,6 +234,9 @@ require_once SYLVIASDREAM_CHILD_DIR . '/inc/inner-pages.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/languages.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/hero-books.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/cover-alt.php';
+require_once SYLVIASDREAM_CHILD_DIR . '/inc/journal.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require_once SYLVIASDREAM_CHILD_DIR . '/inc/woocommerce.php';
+	require_once SYLVIASDREAM_CHILD_DIR . '/inc/cart-drawer.php';
+	require_once SYLVIASDREAM_CHILD_DIR . '/inc/checkout.php';
 }

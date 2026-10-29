@@ -143,6 +143,13 @@ function sdc_fields() {
 		'shop_note'          => array( 'sdc_shop', __( 'Note under the book grid (blank hides it)', 'sylviasdream-child' ), 'textarea', '' ),
 		'shop_price_note'    => array( 'sdc_shop', __( 'Book page: note beside the price, %s = currency code (blank hides it)', 'sylviasdream-child' ), 'text', 'Charged in %s. Your card converts automatically to your currency.' ),
 		'shop_secure_note'   => array( 'sdc_shop', __( 'Book page: note under the buy buttons for eBooks (blank hides it)', 'sylviasdream-child' ), 'text', 'Secure checkout. Your download link is sent by email after payment.' ),
+		// 1.20.0: cart drawer, checkout and order-received page.
+		'cart_drawer'        => array( 'sdc_shop', __( 'Open a side cart drawer when a book is added and when the header cart is clicked', 'sylviasdream-child' ), 'checkbox', true ),
+		'cart_drawer_note'   => array( 'sdc_shop', __( 'Cart drawer: note for eBook-only carts (blank hides it)', 'sylviasdream-child' ), 'text', 'eBooks are delivered by secure download, so there is no shipping to pay.' ),
+		'checkout_short_form' => array( 'sdc_shop', __( 'Checkout: for eBook-only orders ask only for name, email and country', 'sylviasdream-child' ), 'checkbox', true ),
+		'trust_secure'       => array( 'sdc_shop', __( 'Cart and checkout: secure payment note (blank hides it)', 'sylviasdream-child' ), 'text', 'Secure, encrypted payment' ),
+		'trust_download'     => array( 'sdc_shop', __( 'Cart and checkout: download note for eBooks (blank hides it)', 'sylviasdream-child' ), 'text', 'Instant download after payment' ),
+		'thankyou_download_note' => array( 'sdc_shop', __( 'Order received: note above the download links (blank hides it)', 'sylviasdream-child' ), 'text', 'Your eBook is ready. Use the Download button below. The link is also in your order email.' ),
 
 		// Footer.
 		'footer_about'       => array( 'sdc_footer', __( 'Footer: about text', 'sylviasdream-child' ), 'textarea', 'Faith-based books and devotionals by Sylvia Suhr, helping readers move from fear to lasting peace in Christ.' ),

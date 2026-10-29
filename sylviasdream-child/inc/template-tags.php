@@ -177,7 +177,7 @@ function sdc_cart_link() {
 	/* translators: %d: number of items in the cart. */
 	$label = sprintf( _n( 'Cart, %d item', 'Cart, %d items', $count, 'sylviasdream-child' ), $count );
 	return sprintf(
-		'<a class="sd-cart sd-iconbtn" href="%1$s" aria-label="%2$s">%3$s<span class="sd-cart__count" data-count="%4$d" aria-hidden="true">%4$d</span></a>',
+		'<a class="sd-cart sd-iconbtn" href="%1$s" aria-label="%2$s" aria-controls="sd-minicart" aria-haspopup="dialog">%3$s<span class="sd-cart__count" data-count="%4$d" aria-hidden="true">%4$d</span></a>',
 		esc_url( wc_get_cart_url() ),
 		esc_attr( $label ),
 		wp_kses( sdc_icon( 'cart' ), sdc_svg_kses() ),
