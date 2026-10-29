@@ -182,7 +182,9 @@ function sdc_el_brand_tokens() {
 }
 
 /**
- * Write the brand colours and fonts into the active Kit.
+ * Write the brand colours and fonts into the active Kit as picker choices only
+ * (system_colors, custom_colors, system_typography). 1.21.1: nothing that
+ * produces site-wide CSS is written.
  *
  * @return bool
  */
@@ -220,16 +222,11 @@ function sdc_el_seed_kit() {
 		array( '_id' => 'text', 'title' => __( 'Text', 'sylviasdream-child' ), 'typography_typography' => 'custom', 'typography_font_family' => $sans, 'typography_font_weight' => '400' ),
 		array( '_id' => 'accent', 'title' => __( 'Accent', 'sylviasdream-child' ), 'typography_typography' => 'custom', 'typography_font_family' => $sans, 'typography_font_weight' => '600' ),
 	);
-	$settings['body_color']                   = $c['ink'][1];
-	$settings['body_typography_typography']   = 'custom';
-	$settings['body_typography_font_family']  = $sans;
-	$settings['body_typography_font_size']    = array( 'unit' => 'px', 'size' => 19, 'sizes' => array() );
-	$settings['link_normal_color']            = $c['gold-dark'][1];
-	$settings['container_width']              = array( 'unit' => 'px', 'size' => max( 960, min( 1600, absint( sdc_opt( 'content_width' ) ) ) ), 'sizes' => array() );
-	foreach ( array( 'h1', 'h2', 'h3' ) as $hx ) {
-		$settings[ $hx . '_typography_typography' ]  = 'custom';
-		$settings[ $hx . '_typography_font_family' ] = $serif;
-	}
+	// 1.21.1: only the picker choices above are written. Keys that make Elementor print
+	// site-wide CSS (link and body colours, body and heading fonts, content width,
+	// button styles) are never written: Elementor prints Kit CSS on every page through
+	// the body class elementor-kit-N, and in 1.21.0 the dark gold link colour hid the
+	// labels of the theme's dark gold buttons. See sdc_el_kit_cleanup_1211().
 	update_post_meta( $kit, '_elementor_page_settings', $settings );
 
 	// The theme's own styles stay in charge of colours and fonts.
@@ -239,6 +236,139 @@ function sdc_el_seed_kit() {
 	sdc_el_clear_cache();
 	return true;
 }
+
+/**
+ * Keys 1.21.0 wrote into the Kit that print site-wide CSS, with the exact values
+ * 1.21.0 wrote. Used only by the one-time clean-up below.
+ *
+ * @return array<string,array> key => list of accepted (seeded) values.
+ */
+function sdc_el_kit_1210_values() {
+	$t     = sdc_el_brand_tokens();
+	$c     = $t['colors'];
+	$serif = $t['fonts']['serif'];
+	$sans  = $t['fonts']['sans'];
+	$width = max( 960, min( 1600, absint( sdc_opt( 'content_width' ) ) ) );
+	$vals  = array(
+		'body_color'                  => array( $c['ink'][1], '#231b14' ),
+		'link_normal_color'           => array( $c['gold-dark'][1], '#775014' ),
+		'body_typography_font_family' => array( $sans, 'Source Sans 3' ),
+		'body_typography_font_size'   => array( array( 'unit' => 'px', 'size' => 19 ) ),
+		'container_width'             => array( array( 'unit' => 'px', 'size' => $width ), array( 'unit' => 'px', 'size' => 1200 ) ),
+	);
+	foreach ( array( 'h1', 'h2', 'h3' ) as $hx ) {
+		$vals[ $hx . '_typography_font_family' ] = array( $serif, 'Cormorant Garamond' );
+	}
+	return $vals;
+}
+
+/**
+ * Does a stored Kit value equal one of the values 1.21.0 seeded?
+ *
+ * @param mixed $stored   Stored value.
+ * @param array $accepted Accepted values.
+ * @return bool
+ */
+function sdc_el_kit_value_is_seeded( $stored, $accepted ) {
+	foreach ( $accepted as $want ) {
+		if ( is_array( $want ) ) {
+			if ( is_array( $stored ) && isset( $stored['unit'], $stored['size'] ) && (string) $stored['unit'] === (string) $want['unit'] && (float) $stored['size'] === (float) $want['size'] ) {
+				return true;
+			}
+		} elseif ( is_string( $stored ) && strtolower( trim( $stored ) ) === strtolower( trim( (string) $want ) ) ) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/**
+ * 1.21.1 one-time upgrade (runs once for an administrator on admin_init):
+ * 1. Removes from the active Kit the site-wide keys 1.21.0 seeded (link and body
+ *    colour, body font and size, h1-h3 fonts, content width), but only where the
+ *    stored value still equals what 1.21.0 wrote, so anything a person set by hand
+ *    is kept. A "custom" typography switch is removed only when no other value of
+ *    that group is left. Then clears Elementor's CSS cache.
+ * 2. Moves pages built with "Build this page in Elementor" under 1.21.0 (template
+ *    template-full-width.php) to the full-width Elementor template. Their stored
+ *    previous template is kept, so "Use old version" still restores it.
+ * The option sdc_el_kit_cleanup_1211 records that it has run. It waits (does not
+ * mark itself done) while Elementor is off, so it runs when Elementor is back.
+ */
+function sdc_el_kit_cleanup_1211() {
+	if ( wp_doing_ajax() || get_option( 'sdc_el_kit_cleanup_1211' ) || ! current_user_can( 'edit_theme_options' ) ) {
+		return;
+	}
+	if ( ! did_action( 'elementor/loaded' ) ) {
+		return;
+	}
+	$changed = false;
+	$kit     = sdc_el_kit_id();
+	if ( $kit ) {
+		$settings = get_post_meta( $kit, '_elementor_page_settings', true );
+		if ( is_array( $settings ) ) {
+			foreach ( sdc_el_kit_1210_values() as $key => $accepted ) {
+				if ( array_key_exists( $key, $settings ) && sdc_el_kit_value_is_seeded( $settings[ $key ], $accepted ) ) {
+					unset( $settings[ $key ] );
+					$changed = true;
+				}
+			}
+			foreach ( array( 'body', 'h1', 'h2', 'h3' ) as $group ) {
+				$switch = $group . '_typography_typography';
+				if ( ! isset( $settings[ $switch ] ) || 'custom' !== $settings[ $switch ] ) {
+					continue;
+				}
+				$left = false;
+				foreach ( $settings as $k => $v ) {
+					if ( $k !== $switch && 0 === strpos( (string) $k, $group . '_typography_' ) && '' !== $v && array() !== $v && null !== $v ) {
+						$left = true;
+						break;
+					}
+				}
+				if ( ! $left ) {
+					unset( $settings[ $switch ] );
+					$changed = true;
+				}
+			}
+			if ( $changed ) {
+				update_post_meta( $kit, '_elementor_page_settings', $settings );
+			}
+		}
+	}
+	$pages = get_posts(
+		array(
+			'post_type'      => 'page',
+			'post_status'    => 'any',
+			'posts_per_page' => 100,
+			'fields'         => 'ids',
+			'no_found_rows'  => true,
+			'meta_query'     => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- one-time admin upgrade.
+				'relation' => 'AND',
+				array(
+					'key'   => '_wp_page_template',
+					'value' => 'template-full-width.php',
+				),
+				array(
+					'key'     => '_sdc_old_template',
+					'compare' => 'EXISTS',
+				),
+				array(
+					'key'   => '_elementor_edit_mode',
+					'value' => 'builder',
+				),
+			),
+		)
+	);
+	foreach ( $pages as $pid ) {
+		update_post_meta( (int) $pid, '_wp_page_template', SDC_EL_FULL_TEMPLATE );
+		$changed = true;
+	}
+	update_option( 'sdc_el_kit_cleanup_1211', SYLVIASDREAM_CHILD_VERSION, false );
+	if ( $changed ) {
+		sdc_el_clear_cache();
+	}
+}
+add_action( 'admin_init', 'sdc_el_kit_cleanup_1211', 25 );
 
 /**
  * Clear Elementor's generated CSS (same as Elementor > Tools > Regenerate CSS).
@@ -551,6 +681,110 @@ function sdc_el_xpath_text( $html, $query ) {
 }
 
 /**
+ * 1.21.2: a theme photo address made from the photo's file name, so a banner
+ * photo saved with an older site address (a sub-folder test site, or the live
+ * address) still loads after the page is rebuilt. Other addresses are kept.
+ *
+ * @param string $url Photo address from the page.
+ * @return string
+ */
+function sdc_el_banner_photo_url( $url ) {
+	$url = trim( (string) $url );
+	if ( '' === $url ) {
+		return '';
+	}
+	$path = (string) wp_parse_url( $url, PHP_URL_PATH );
+	if ( function_exists( 'sdc_theme_image' ) && preg_match( '#/themes/[^/]+/assets/images/([a-z]+)\.jpg$#', $path, $m ) ) {
+		$theme = sdc_theme_image( $m[1] );
+		if ( '' !== $theme ) {
+			return $theme;
+		}
+	}
+	return esc_url_raw( $url );
+}
+
+/**
+ * 1.21.2: Page top banner settings from the page's own banner (a Cover block with
+ * the sd-pagehead-cover class): photo (attachment ID + address), focal point,
+ * shade and light words, plus its small heading, h1 and intro line.
+ *
+ * Root cause fixed here: 1.21.0-1.21.1 copied only the Cover's "url" attribute
+ * and its sd-lead text, so a photo stored another way (Media Library ID, the
+ * <img> tag, or a style background) or under an old site address was dropped,
+ * and the focal point was lost.
+ *
+ * @param array  $block      Parsed core/cover block.
+ * @param string $markup     Serialised block.
+ * @param bool   $with_texts Copy the words too (false for the Page header pattern's sample words).
+ * @return array
+ */
+function sdc_el_banner_from_cover( $block, $markup, $with_texts = true ) {
+	$attrs = isset( $block['attrs'] ) && is_array( $block['attrs'] ) ? $block['attrs'] : array();
+	$id    = isset( $attrs['id'] ) ? absint( $attrs['id'] ) : 0;
+	$url   = isset( $attrs['url'] ) ? (string) $attrs['url'] : '';
+	if ( $id && ! wp_attachment_is_image( $id ) ) {
+		$id = 0;
+	}
+	if ( $id ) {
+		$att = wp_get_attachment_url( $id );
+		$url = $att ? (string) $att : $url;
+	}
+	$dom = sdc_old_section_dom( $markup );
+	$xp  = $dom ? new DOMXPath( $dom ) : null;
+	if ( '' === $url && $xp ) {
+		$img = $xp->query( '//img[contains(concat(" ",normalize-space(@class)," ")," wp-block-cover__image-background ")]' );
+		if ( $img && $img->length ) {
+			$url = (string) $img->item( 0 )->getAttribute( 'src' );
+		}
+	}
+	if ( '' === $url && $xp ) {
+		$bg = $xp->query( '//*[contains(@style,"background-image")]' );
+		if ( $bg && $bg->length && preg_match( '/background-image\s*:\s*url\(\s*[\'"]?([^\'")]+)/i', (string) $bg->item( 0 )->getAttribute( 'style' ), $m ) ) {
+			$url = $m[1];
+		}
+	}
+	$url = $id ? esc_url_raw( $url ) : sdc_el_banner_photo_url( $url );
+	// Focal point: the Cover's own, else the theme's banner crop (style.css: center 40%).
+	$position = '50% 40%';
+	if ( isset( $attrs['focalPoint']['x'], $attrs['focalPoint']['y'] ) ) {
+		$position = round( (float) $attrs['focalPoint']['x'] * 100, 2 ) . '% ' . round( (float) $attrs['focalPoint']['y'] * 100, 2 ) . '%';
+	}
+	$position = function_exists( 'sdc_banner_position' ) ? sdc_banner_position( $position ) : '';
+	// The theme draws the same dark shade over every sd-pagehead-cover whatever the
+	// Cover's dim setting (style.css), so the normal shade is the exact match; a
+	// Cover with no shade at all keeps none.
+	$overlay  = ( isset( $attrs['dimRatio'] ) && 0 === (int) $attrs['dimRatio'] ) ? 'none' : 'theme';
+	$settings = array(
+		'image'          => array(
+			'id'  => $id ? $id : '',
+			'url' => $url,
+		),
+		'photo_position' => $position,
+		'overlay'        => $overlay,
+		// Cover banners always have light words (has-white-color / theme rules).
+		'text_colour'    => 'light',
+	);
+	if ( ! $with_texts ) {
+		return $settings;
+	}
+	$class_q = function ( $c ) {
+		return 'contains(concat(" ",normalize-space(@class)," ")," ' . $c . ' ")';
+	};
+	$title = sdc_el_xpath_text( $markup, '//h1' );
+	if ( '' === $title ) {
+		$title = sdc_el_xpath_text( $markup, '//*[self::h2 or self::h3]' );
+	}
+	$intro = sdc_el_xpath_text( $markup, '//*[' . $class_q( 'sd-lead' ) . ']' );
+	if ( '' === $intro ) {
+		$intro = sdc_el_xpath_text( $markup, '//*[' . $class_q( 'wp-block-cover__inner-container' ) . ']//p[not(' . $class_q( 'sd-eyebrow' ) . ') and not(ancestor::nav)]' );
+	}
+	$settings['eyebrow'] = sdc_el_xpath_text( $markup, '//*[' . $class_q( 'sd-eyebrow' ) . ']' );
+	$settings['title']   = $title;
+	$settings['intro']   = $intro;
+	return $settings;
+}
+
+/**
  * Elementor data built from a page's current content.
  *
  * @param WP_Post $post Page.
@@ -584,7 +818,18 @@ function sdc_el_page_data( $post, $is_home ) {
 		if ( 'core/pattern' === $name ) {
 			$slug = isset( $block['attrs']['slug'] ) ? (string) $block['attrs']['slug'] : '';
 			if ( isset( $map[ $slug ] ) ) {
-				$data[] = sdc_el_section( $map[ $slug ] );
+				$settings = array();
+				if ( 'sd-page-banner' === $map[ $slug ] ) {
+					// 1.21.2: the Page header pattern's own photo; its words are sample
+					// text, so the banner keeps the page name and menu section instead.
+					foreach ( parse_blocks( sdc_el_pattern_content( $slug ) ) as $pb ) {
+						if ( isset( $pb['blockName'] ) && 'core/cover' === $pb['blockName'] ) {
+							$settings = sdc_el_banner_from_cover( $pb, serialize_block( $pb ), false );
+							break;
+						}
+					}
+				}
+				$data[] = sdc_el_section( $map[ $slug ], $settings );
 				$banner = $banner || in_array( $map[ $slug ], array( 'sd-page-banner', 'sd-home-hero' ), true );
 				continue;
 			}
@@ -597,15 +842,8 @@ function sdc_el_page_data( $post, $is_home ) {
 		$markup = serialize_block( $block );
 		$class  = isset( $block['attrs']['className'] ) ? (string) $block['attrs']['className'] : '';
 		if ( ! $banner && 'core/cover' === $name && false !== strpos( $class, 'sd-pagehead-cover' ) ) {
-			$data[] = sdc_el_section(
-				'sd-page-banner',
-				array(
-					'eyebrow' => sdc_el_xpath_text( $markup, '//*[contains(concat(" ",normalize-space(@class)," ")," sd-eyebrow ")]' ),
-					'title'   => sdc_el_xpath_text( $markup, '//h1' ),
-					'intro'   => sdc_el_xpath_text( $markup, '//*[contains(concat(" ",normalize-space(@class)," ")," sd-lead ")]' ),
-					'image'   => array( 'id' => isset( $block['attrs']['id'] ) ? absint( $block['attrs']['id'] ) : '', 'url' => isset( $block['attrs']['url'] ) ? (string) $block['attrs']['url'] : '' ),
-				)
-			);
+			// 1.21.2: carry the banner's photo, focal point, shade and light words exactly.
+			$data[] = sdc_el_section( 'sd-page-banner', sdc_el_banner_from_cover( $block, $markup, true ) );
 			$banner = true;
 			continue;
 		}
@@ -647,7 +885,8 @@ function sdc_el_build_page_action() {
 	if ( ! metadata_exists( 'post', $id, '_sdc_old_template' ) ) {
 		update_post_meta( $id, '_sdc_old_template', (string) get_post_meta( $id, '_wp_page_template', true ) );
 	}
-	update_post_meta( $id, '_wp_page_template', 'template-full-width.php' );
+	// 1.21.1: full-width Elementor template (theme header/footer, no content column).
+	update_post_meta( $id, '_wp_page_template', SDC_EL_FULL_TEMPLATE );
 	sdc_el_save_data( $id, $data, 'wp-page' );
 	sdc_el_clear_cache();
 	wp_safe_redirect( add_query_arg( array( 'page' => 'sdc-setup', 'sdc_done' => 'page-ok' ), admin_url( 'themes.php' ) ) );

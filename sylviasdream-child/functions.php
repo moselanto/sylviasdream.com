@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '1.21.0' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '1.21.3' );
 define( 'SYLVIASDREAM_CHILD_DIR', get_stylesheet_directory() );
 define( 'SYLVIASDREAM_CHILD_URI', get_stylesheet_directory_uri() );
 
@@ -123,6 +123,33 @@ function sdc_assets() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'sdc_assets', 20 );
+
+/**
+ * 1.21.1: button safety rule (assets/css/button-safety.css). Keeps the theme's own
+ * buttons (.sd-btn and its variants, the header Give button, block buttons,
+ * WooCommerce and cart drawer buttons, the Sylvia's Dream widget buttons) in their
+ * designed colours whatever an Elementor Kit sets for links or buttons. Loaded
+ * last, after Elementor's front-end and Kit styles when Elementor is active.
+ * On by default; switch off with the `sdc_perf_feature` filter, key `button_safety`.
+ */
+function sdc_button_safety_assets() {
+	if ( ! sdc_perf_on( 'button_safety' ) ) {
+		return;
+	}
+	$deps = array( 'sylviasdream-child' );
+	foreach ( array( 'sylviasdream-child-shop', 'sylviasdream-child-blocks', 'sylviasdream-child-elementor', 'elementor-frontend' ) as $handle ) {
+		if ( wp_style_is( $handle, 'registered' ) || wp_style_is( $handle, 'enqueued' ) ) {
+			$deps[] = $handle;
+		}
+	}
+	$kit = absint( get_option( 'elementor_active_kit' ) );
+	if ( $kit && ( wp_style_is( 'elementor-post-' . $kit, 'registered' ) || wp_style_is( 'elementor-post-' . $kit, 'enqueued' ) ) ) {
+		$deps[] = 'elementor-post-' . $kit;
+	}
+	list( $url, $ver ) = sdc_asset( 'assets/css/button-safety.css' );
+	wp_enqueue_style( 'sylviasdream-child-button-safety', $url, $deps, $ver );
+}
+add_action( 'wp_enqueue_scripts', 'sdc_button_safety_assets', 99 );
 
 /**
  * Preconnect to Google Fonts when they are used.

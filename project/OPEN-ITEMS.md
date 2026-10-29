@@ -30,6 +30,25 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Earlier items still open: Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+### 29 Oct (Elementor 1.21.3)
+- [x] Banner gap: no padding between header and a page's own full-width banner (1.21.3). Check My Story, Author Support, Podcasts, Speaking, Heaven on Earth, Give, Contact and a policy page on desktop and phone
+- [ ] Elementor conversion must keep video/embed previews (My Story "Let's Walk Together" broke with 1.21.2)
+
+### 29 Oct (Elementor 1.21.2): banner photo and light text, branch feature/elementor-builder
+- [ ] Upload `sylviasdream-child-1.21.2.zip` (Replace active); Dashboard once as administrator; Elementor > Tools > Regenerate CSS & Data.
+- [ ] Appearance > Set up page editor: "Build again" Books (and any page built with 1.21.1). Books banner: bible.jpg photo fills the band, dark shade, eyebrow "The bookshop", h1 "Books by Sylvia Suhr", intro line light (cream) and readable, breadcrumb light; one h1.
+- [ ] Then build My Story (hero.jpg), Speaking (hero.jpg), Podcasts (mission.jpg), Author Support (desk.jpg), Heaven on Earth (mission.jpg): same checks, words unchanged, photo crop as before.
+- [ ] Contact: built from the Page header pattern, banner shows bible.jpg with the page name (sample words of the pattern are not copied). Give: no banner block, theme band with give.jpg; preview note stays above it; click-test every Dream Partner button.
+- [ ] In the Page top banner widget: change the photo, "Which part of the photo to show" (e.g. 50% 20%), Shade (darker / lighter / none) and Text colour (dark): the band updates and stays readable.
+- [ ] Phone width: photo still fills the banner (no dark gap under it).
+
+### 29 Oct (Elementor 1.21.1): bug-fix release, branch feature/elementor-builder
+- [ ] Upload `sylviasdream-child-1.21.1.zip` (Replace active). Open the Dashboard once as administrator (runs the one-time Kit clean-up), then Elementor > Tools > Regenerate CSS & Data.
+- [ ] Check every dark gold button shows its label, with Elementor on: header Give, Home hero and section buttons, Books grid add to cart, book page buy box, cart drawer View cart / Checkout, Cart, Checkout Place order, Give page Dream Partner buttons (click-test links unchanged).
+- [ ] Elementor > Site Settings: Global colours and fonts list the Sylvia's Dream choices; Typography / Links / Buttons / Layout have no values set by the theme (any value set by hand is still there).
+- [ ] Build Home and one inner page in Elementor: sections full width (hero heading whole, highlight cards not breaking words), bands edge to edge, inner content at the normal site width; sticky header, phone bottom bar and cart drawer work; one h1. Page Attributes shows "Elementor full width (Sylvia's Dream)". "Use old version" restores the previous template.
+- [ ] Optional check: `add_filter( 'sdc_perf_feature', ... 'button_safety' ... )` returning false removes `button-safety.css`.
+
 ### 29 Oct (Elementor): child theme 1.21.0, branch feature/elementor-builder
 - [ ] Review and merge the pull request "Whole site editable in Elementor (child 1.21.0)"; CI `php -l` must pass (not run in the build sandbox: no PHP)
 - [ ] Upload `sylviasdream-child-1.21.0.zip` to the test site (core plugin unchanged, 0.4.4)

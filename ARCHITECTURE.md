@@ -251,6 +251,7 @@ No custom tables. Content in posts, pages and products; theme settings in theme 
 7. Live: only at launch, per `docs/MIGRATION-PLAN.md`.
 
 ## 14. Elementor editing layer (child 1.21.0)
+1.21.1 notes: the Kit is seeded with picker choices only (`system_colors`, `custom_colors`, `system_typography`), never with keys that print site-wide CSS; `sdc_el_kit_cleanup_1211()` removes the 1.21.0 values once. Pages built in Elementor use `templates/sd-elementor-full-width.php` (`SDC_EL_FULL_TEMPLATE`), previous template in `_sdc_old_template`. `assets/css/button-safety.css` (perf feature `button_safety`) keeps theme buttons in their colours against Kit link/button settings.
 
 Optional. Nothing Elementor-specific runs until Elementor has loaded; without Elementor (or with the filter `sdc_elementor_layer` returning false) the site is exactly 1.20.x.
 

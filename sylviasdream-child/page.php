@@ -11,10 +11,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
-// 1.21.0: a page built with Elementor is shown full width, like the
-// "Full width (page builder)" template, so Elementor controls the layout.
+// 1.21.0: a page built with Elementor is shown full width so Elementor controls
+// the layout. 1.21.1: it uses the Elementor full-width template (no content column).
 if ( function_exists( 'sdc_is_elementor_page' ) && sdc_is_elementor_page( get_queried_object_id() ) ) {
-	require locate_template( 'template-full-width.php' );
+	require locate_template( defined( 'SDC_EL_FULL_TEMPLATE' ) ? SDC_EL_FULL_TEMPLATE : 'template-full-width.php' );
 	return;
 }
 

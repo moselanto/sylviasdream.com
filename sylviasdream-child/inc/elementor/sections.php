@@ -627,7 +627,25 @@ function sdc_section_page_banner( $a ) {
 		$image = (string) sdc_v( $a, 'image_url' );
 	}
 	$GLOBALS['sdc_el_has_banner'] = true;
-	sdc_page_header( $title, (string) sdc_v( $a, 'eyebrow', '' ), (string) sdc_v( $a, 'intro', '' ), $image );
+	// 1.21.2: the band keeps the theme banner classes (sd-pagehead, sd-pagehead--photo)
+	// and adds its text colour and shade, so the light words stay light inside
+	// Elementor and .entry-content (see style.css "1.21.2 banner safety").
+	$colour  = 'dark' === sdc_v( $a, 'text_colour', 'light' ) ? 'dark' : 'light';
+	$overlay = (string) sdc_v( $a, 'overlay', 'theme' );
+	$classes = array( 'sd-pagehead--el', 'dark' === $colour ? 'sd-pagehead--dark-text' : 'sd-pagehead--light' );
+	if ( in_array( $overlay, array( 'darker', 'lighter', 'none' ), true ) ) {
+		$classes[] = 'sd-pagehead--shade-' . $overlay;
+	}
+	sdc_page_header(
+		$title,
+		(string) sdc_v( $a, 'eyebrow', '' ),
+		(string) sdc_v( $a, 'intro', '' ),
+		$image,
+		array(
+			'classes'  => $classes,
+			'position' => (string) sdc_v( $a, 'photo_position', '' ),
+		)
+	);
 }
 
 /**

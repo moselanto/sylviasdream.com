@@ -196,8 +196,11 @@ function sdc_cart_link() {
  *                        section in the main menu, e.g. "About").
  * @param string $intro   Optional intro line.
  * @param string $image   Optional image URL.
+ * @param array  $args    1.21.2: optional display choices from the Page top banner
+ *                        widget: 'classes' (extra sd- classes on the band) and
+ *                        'position' (photo focal point, e.g. "50% 40%").
  */
-function sdc_page_header( $title, $eyebrow = '', $intro = '', $image = '' ) {
+function sdc_page_header( $title, $eyebrow = '', $intro = '', $image = '', $args = array() ) {
 	if ( '' === $eyebrow && function_exists( 'sdc_page_section_label' ) && is_singular() ) {
 		$eyebrow = sdc_page_section_label( get_queried_object_id(), $title );
 	}
@@ -216,10 +219,21 @@ function sdc_page_header( $title, $eyebrow = '', $intro = '', $image = '' ) {
 		$intro = '';
 	}
 	$GLOBALS['sdc_header_title'] = $title;
+	// 1.21.2: extra band classes (light/dark words, shade) and the photo focal point.
+	$extra = '';
+	if ( is_array( $args ) && ! empty( $args['classes'] ) ) {
+		foreach ( (array) $args['classes'] as $c ) {
+			$c = sanitize_html_class( (string) $c );
+			if ( '' !== $c && 0 === strpos( $c, 'sd-' ) ) {
+				$extra .= ' ' . $c;
+			}
+		}
+	}
+	$pos = ( is_array( $args ) && ! empty( $args['position'] ) && function_exists( 'sdc_banner_position' ) ) ? sdc_banner_position( (string) $args['position'] ) : '';
 	?>
-	<header class="sd-pagehead<?php echo $image ? ' sd-pagehead--photo' : ''; ?>">
+	<header class="sd-pagehead<?php echo $image ? ' sd-pagehead--photo' : ''; ?><?php echo esc_attr( $extra ); ?>">
 		<?php if ( $image ) : ?>
-			<img class="sd-pagehead__bg" src="<?php echo esc_url( $image ); ?>"<?php if ( $img['width'] && $img['height'] ) : ?> width="<?php echo (int) $img['width']; ?>" height="<?php echo (int) $img['height']; ?>"<?php endif; ?><?php if ( $img['srcset'] ) : ?> srcset="<?php echo esc_attr( $img['srcset'] ); ?>" sizes="100vw"<?php endif; ?> alt="" decoding="async" fetchpriority="high">
+			<img class="sd-pagehead__bg" src="<?php echo esc_url( $image ); ?>"<?php if ( $pos ) : ?> style="object-position: <?php echo esc_attr( $pos ); ?>"<?php endif; ?><?php if ( $img['width'] && $img['height'] ) : ?> width="<?php echo (int) $img['width']; ?>" height="<?php echo (int) $img['height']; ?>"<?php endif; ?><?php if ( $img['srcset'] ) : ?> srcset="<?php echo esc_attr( $img['srcset'] ); ?>" sizes="100vw"<?php endif; ?> alt="" decoding="async" fetchpriority="high">
 		<?php endif; ?>
 		<div class="sd-wrap sd-pagehead__inner">
 			<nav class="sd-crumbs" aria-label="<?php esc_attr_e( 'Breadcrumb', 'sylviasdream-child' ); ?>">
@@ -237,6 +251,20 @@ function sdc_page_header( $title, $eyebrow = '', $intro = '', $image = '' ) {
 		</div>
 	</header>
 	<?php
+}
+
+/**
+ * 1.21.2: a safe photo focal point ("50% 40%"), or '' when the value is not one.
+ *
+ * @param string $value Focal point.
+ * @return string
+ */
+function sdc_banner_position( $value ) {
+	$value = trim( (string) $value );
+	if ( preg_match( '/^(\d{1,3}(?:\.\d{1,2})?)% (\d{1,3}(?:\.\d{1,2})?)%$/', $value, $m ) && (float) $m[1] <= 100 && (float) $m[2] <= 100 ) {
+		return $m[1] . '% ' . $m[2] . '%';
+	}
+	return '';
 }
 
 /**

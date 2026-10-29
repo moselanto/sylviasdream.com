@@ -18,15 +18,42 @@
 
 /* Full-width sections inside Elementor's boxed columns. */
 .elementor-widget-container > .sd-hero,
+.elementor-widget > .sd-hero,
 .elementor-widget-container > .sd-band,
 .elementor-widget-container > .sd-strip,
 .elementor-widget-container > .sd-section,
 .elementor-widget-container > .sd-pagehead,
 .elementor-widget-container > .sd-next,
 .elementor-widget-container > .sd-home-band { width: 100%; }
-.sd-elementor-page .site-main.sd-builder > .entry-content { max-width: none; padding: 0; }
+/* 1.21.1: pages built in Elementor run full width. The theme's reading column
+   (.entry-content > * at 760px, the builder padding in blocks.css) must not apply
+   to Elementor's own wrapper, or every section is squeezed into 760px (1.21.0 bug:
+   cut-off hero heading, words broken in the highlight cards). Inner content is boxed
+   by each widget's own .sd-wrap at the theme width (--max). */
+body.sd-elementor-page .site-main.sd-builder > .entry-content,
+body.sd-elementor-page .site-main.sd-builder > .entry-content > .elementor,
+body.sd-elementor-page .site-main.sd-builder > .entry-content > .elementor > .elementor-section-wrap { max-width: none; width: 100%; margin: 0; padding: 0; box-sizing: border-box; }
+body.sd-elementor-page .site-main.sd-builder > .entry-content > .elementor > :is(.elementor-section, .e-con, .elementor-element) { max-width: none; margin-left: 0; margin-right: 0; }
+body.sd-elementor-page .site-main.sd-builder { padding: 0; border-radius: 0; overflow: visible; }
+/* Sylvia's Dream sections inside a widget: the band is the full width, nothing
+   around it (Elementor widget spacing, column padding) adds a gap or a frame. */
+.elementor-widget:is([class*="elementor-widget-sd-"]) { margin-bottom: 0; }
+.elementor-widget:is([class*="elementor-widget-sd-"]) > .elementor-widget-container { margin: 0; padding: 0; }
+:is(.elementor-widget-container, .elementor-widget) > :is(.sd-hero, .sd-band, .sd-strip, .sd-section, .sd-pagehead, .sd-next, .sd-home-band, .sd-el-old) { max-width: none; margin-left: 0; margin-right: 0; }
+/* The block versions of these bands get their padding and background from
+   ".entry-content > .sd-home-band"; the widget versions sit one level deeper, so
+   the same design is given to them here (Featured promo, Book showcase). */
+:is(.elementor-widget-container, .elementor-widget) > .sd-home-band { padding: clamp(3.5rem, 8vw, 5.5rem) var(--gutter); background: var(--cream); }
+:is(.elementor-widget-container, .elementor-widget) > .sd-home-band--alt { background: var(--cream-2); border-block: 1px solid var(--line); }
 .sd-el-old > .alignfull, .sd-el-old > .wp-block-cover.alignfull { margin-left: 0; margin-right: 0; width: 100%; max-width: none; }
 .sd-el-old > .alignwide { max-width: var(--max); margin-left: auto; margin-right: auto; }
+/* 1.21.2: a page banner kept as "Section from your page" keeps its Cover photo and
+   light words inside .elementor (Elementor's "img { height: auto }" and the reading
+   column's dark paragraph colour must not reach it). */
+.sd-el-old .wp-block-cover.sd-pagehead-cover img.wp-block-cover__image-background { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; margin: 0; border-radius: 0; box-shadow: none; object-fit: cover; }
+.sd-el-old .wp-block-cover.sd-pagehead-cover .wp-block-cover__inner-container :is(h1, h2) { color: #fff; }
+.sd-el-old .wp-block-cover.sd-pagehead-cover .wp-block-cover__inner-container p:not(.sd-eyebrow) { color: #f6ecd8; }
+.sd-el-old .wp-block-cover.sd-pagehead-cover .wp-block-cover__inner-container .sd-crumbs a { color: #f3e3bf; }
 
 /* Building blocks */
 .sd-el-logo { display: inline-flex; }
