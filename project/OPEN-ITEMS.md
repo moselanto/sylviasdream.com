@@ -30,6 +30,17 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Earlier items still open: Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+### 29 Oct (later): theme 1.19.5-1.20.2, posts credited to Sylvia, titles count
+- [x] 1.19.5 (2b17bf0): rebuilt .min assets. Cause of "header fix not showing": WordPress resets file dates on unzip, so the stale style.min.css was served. ALWAYS run `node scripts/build-assets.js` before zipping
+- [x] Header: logo no longer overlaps Home at top or scrolled (checked after 1.19.5)
+- [x] 1.20.0 (9a33653): Journal index (featured post, cards, topic chips, reading time) and single post (header, readable column, share, author box, prev/next, related, CTA); side cart drawer (AJAX add to cart, remove, subtotal, View cart/Checkout, empty state, accessible); cart and classic checkout restyled, ebook-only checkout asks name, email, country; order-received downloads box; buy-box buttons same height. WooCommerce "AJAX add to cart on archives" ON, "redirect to cart" OFF. Smoke test passed, test order #6692 (no file attached to that book, so no download shown)
+- [x] Test site: user `sylvia` display name "Sylvia Suhr"; all 17 posts (15 published, 2 draft) bulk-reassigned to her; byline and Meet Sylvia box show Sylvia Suhr. Live posts are still by mosemqute: fix at launch only, never re-publish posts on live
+- [x] 1.20.1 (ebc5aa6): Author Support page restyled (cards, Ideal-for panels, framed enquiry form); wording unchanged; form submission not tested
+- [x] 1.20.1-1.20.2 (becaefd): homepage "25 titles" now counts published books automatically ("25+ titles"; multiples of 5 with + from 10 books). Customizer strip heading = "{count} titles"
+- [ ] Kindle/Amazon button: links mixed (7 Days from Fear to Freedom -> amazon.com.au; When the Word Becomes Life and Trusting God Deeper -> amazon.com). Waiting for Lightof: all to amazon.com.au, or visitor's country with AU fallback. Then add an Amazon/Kindle icon
+- [ ] Author Support on phones is long (heading, three text-heavy cards, big message box); consider collapsing cards on mobile
+- [ ] Ebook files for every paid product (protected copies), Stripe buy links for ~20 books, Uncategorized on When the Word Becomes Life, Rank Math focus keywords
+
 ### 29 Oct: test payments, prices, header, product page, brand, Facebook (core 0.4.4 0f9a92d; child 1.19.2 0f9a92d, 1.19.3 672625c, 1.19.4 1ec3ed1)
 - [x] Core 0.4.4 on dev: "Test payment (no money)" checkout option, switched on in Settings > Sylvia's Dream > Test payments. The gateway is only registered when that box is ticked AND the site is not sylviasdream.com / www.sylviasdream.com; on live the box cannot be saved as on. Test orders get a TEST note and "[TEST, no payment]" in email subjects
 - [x] Dev Checkout page switched to WooCommerce's classic checkout (the Checkout block did not list the test gateway). Recheck on live, where real gateways support the block

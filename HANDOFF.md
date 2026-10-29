@@ -1,6 +1,42 @@
 # HANDOFF: start here (for a person or AI agent taking over)
 
-Last updated: Monday 26 October 2026, about 13:50 Kenya time (EAT, UTC+3).
+Last updated: Thursday 29 October 2026, about 10:50 Kenya time (EAT, UTC+3). Section 0 is the current state; sections 1 onwards are older background (still valid unless section 0 says otherwise).
+
+## 0. Latest status (29 Oct 2026) - read this first
+**Where things stand:** the new site is built on the test site and Sylvia has reviewed it once (her email of 27 Oct; reply drafted 27 Oct). Her live site sylviasdream.com is **untouched** and must stay that way until she approves launch in writing. Full lists: `project/OPEN-ITEMS.md` (top sections dated 29 Oct and 28 Oct) and `docs/CLIENT-CHECKLIST.md` (what Sylvia must send or approve).
+
+**Versions on the test site (topnotchmall.co.ke/sylviasdream):** child theme **1.20.2**, parent Sylvia's Dream Base 1.0.1, core plugin **0.4.4**, WooCommerce 11.2.1, Rank Math, Jetpack, Password Protected (test site only).
+
+**Build rule (important):** before zipping the theme always run `node scripts/build-assets.js`. WordPress resets file dates when it unzips, so a stale `style.min.css` wins over `style.css`; the header fix in 1.19.2-1.19.4 never showed until 1.19.5 rebuilt the .min files. `.min` files are gitignored and only live in the release zip.
+
+**Test-site set-up you must know:**
+- All **25 products are Published** on the test site (decision Lightof 28 Oct) so Sylvia can see the shop; the site stays behind its password and noindex. WooCommerce site visibility = Live. On live nothing is published before approval.
+- **Reviewer preview** and **Test payments** switches in Settings > Sylvia's Dream (core 0.4.3/0.4.4). Both refuse to turn on at sylviasdream.com (`sd_core_is_live_site()`); the test gateway "Test payment (no money)" is never registered there.
+- Checkout page uses the **classic** `[woocommerce_checkout]` shortcode (the block checkout did not list the test gateway); Cart is classic too. Recheck on live.
+- WooCommerce > Products: "Enable AJAX add to cart buttons on archives" ON, "Redirect to cart" OFF (cart drawer, 1.20.0).
+- Store notice: "Private preview of the new Sylvia's Dream website. Buy ebook buttons use Sylvia's real Stripe links and take real payments."
+- Users: `moses` (Administrator), `sylvia` (sylviasuhr@gmail.com, **Contributor**, display name Sylvia Suhr; Lightof sends her password). All 17 posts are credited to Sylvia Suhr on the test site. **On live the posts are still by mosemqute:** change the author/display name there only at launch, and never publish or re-publish a post (the Jetpack newsletter emails subscribers).
+- Redirects are still ON on the test site. On live they stay OFF until switch-over day.
+
+**Done 27-29 Oct (newest first; details in OPEN-ITEMS and CHANGELOG):**
+- 1.20.2: homepage "25 titles" now counts published books automatically ("25+ titles"; 27 books still shows 25+, 30 shows 30+). 1.20.1: Author Support page restyled (wording unchanged). Posts reassigned to Sylvia.
+- 1.20.0: Journal index and single post redesign, side cart drawer, cart/checkout to shop standard (ebook-only checkout asks name, email, country), order-received downloads box, buy-box button heights. Smoke test passed, test order #6692.
+- 1.19.x: random Featured Books on each refresh, "Buy ebook (Stripe)" field per product, header logo no longer overlaps the menu, product page tidy (no repeated subtitle, no quantity box for ebooks, one payment note).
+- Core 0.4.3-0.4.4: reviewer preview switch, test payment gateway, `thank-you-for-your-purchase-3` protected.
+- Prices set from Amazon AU Kindle prices (books with a Stripe link use the Stripe checkout price). Brand "Sylvia Suhr" on all products (Rank Math schema). Facebook https://www.facebook.com/sylviasdream in footer and Rank Math.
+- Full test order with download passed (#6686, When the Word Becomes Life).
+- 27 Oct: read-only live audit and launch runbook `docs/LAUNCH-READINESS.md`, live link inventory `docs/LIVE-LINK-INVENTORY.md` (20 Stripe links, 25 download files).
+
+**Pending for Pimofy / next agent (short list):**
+1. **Kindle/Amazon links:** mixed amazon.com and amazon.com.au. Waiting for Lightof's choice: (a) everyone to amazon.com.au, or (b) visitor's own country with AU fallback. Then add a small Amazon/Kindle icon to the button.
+2. Stripe "Buy ebook" links still missing for ~20 books (only One Life, From Fear to Freedom, Hidden Key, From Chance to Choice, How to Find the Real You have them). Source: `docs/LIVE-LINK-INVENTORY.md` (check each label on the live page) or Sylvia.
+3. Ebook files: only When the Word Becomes Life has a downloadable file. Attach protected copies (not the old public uploads URLs) to every paid product.
+4. When the Word Becomes Life is "Uncategorized"; Rank Math focus keywords not set on the 25 products.
+5. Mobile: Author Support page is long on phones; real-phone checks of nav, drawer and checkout still open.
+6. Two-factor for every administrator before launch; WordPress.com sign-in decision (see section 4 and SECURITY-AUDIT).
+7. Launch prep per `docs/LAUNCH-READINESS.md`: confirm the Personal plan renewal now shows 2027, add "Guard Your Heart Renew Your Mind" (live only) to the new site, regenerate `content/live/`, backups, install with Redirects OFF.
+
+**Waiting on Sylvia (send or approve):** see `docs/CLIENT-CHECKLIST.md`, updated 29 Oct.
 
 ## 1. What this project is
 Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suhr** (Christian author and missionary, Australia; ministry Heaven on Earth in Kenya). Custom theme, WooCommerce book shop with secure ebook downloads, Dream Partner giving page, content clean-up and SEO. Fixed price **USD 280** (quotation PMF-QT-2026-0106). The live site stays on the **WordPress.com Personal plan** (plugins and theme uploads are allowed on paid plans since April 2026, see `project/DECISIONS.md`).
