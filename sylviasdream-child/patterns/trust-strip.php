@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 <!-- wp:column -->
 <div class="wp-block-column">
 <!-- wp:heading {"level":3,"textAlign":"center"} -->
-<h3 class="wp-block-heading has-text-align-center">25 titles</h3>
+<h3 class="wp-block-heading has-text-align-center"><?php echo esc_html( function_exists( 'sdc_book_count_label' ) ? sdc_book_count_label() . ' titles' : 'Books' ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"align":"center"} -->
 <p class="has-text-align-center">eBooks, paperbacks and audio</p>

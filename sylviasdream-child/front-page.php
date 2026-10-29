@@ -123,7 +123,7 @@ $sdc_cta_url = sdc_get( 'hero_cta_url' ) ? sdc_link( sdc_get( 'hero_cta_url' ) )
 					<li class="sd-strip__item">
 						<span class="sd-strip__icon"><?php sdc_the_icon( $sdc_icon ); ?></span>
 						<span>
-							<strong><?php echo esc_html( sdc_get( 'strip_' . $sdc_n . '_title' ) ); ?></strong>
+							<strong><?php echo esc_html( sdc_strip_title( $sdc_n ) ); ?></strong>
 							<?php if ( sdc_get( 'strip_' . $sdc_n . '_text' ) ) : ?>
 								<span><?php echo esc_html( sdc_get( 'strip_' . $sdc_n . '_text' ) ); ?></span>
 							<?php endif; ?>

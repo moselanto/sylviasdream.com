@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer.
 Template: sylviasdream
-Version: 1.20.0
+Version: 1.20.1
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1539,3 +1539,20 @@ p.sd-card__icon {
 }
 .sd-buybox form.cart + .sd-btn-row, .sd-buybox .sd-btn-row + .sd-btn-row { margin-top: 10px; }
 .sd-buybox .single_add_to_cart_button.is-loading { opacity: .7; cursor: progress; }
+
+/* 1.20.1: Author Support page polish (wording unchanged). Service cards get
+   a gold top rule, larger icon tile and a tinted "Ideal for" panel pinned
+   to the bottom so the three cards line up; the enquiry band becomes a
+   framed card. Classes come from content/blocks/author-support.html. */
+.sd-cards--3 { align-items: stretch; }
+.sd-band .sd-card--ico { display: flex; flex-direction: column; position: relative; overflow: hidden; border-top: 4px solid var(--gold); padding: clamp(1.6rem, 3vw, 2.2rem); }
+.sd-band .sd-card--ico::before { width: 56px; height: 56px; border-radius: 16px; background-size: 28px; box-shadow: inset 0 0 0 1px rgba(138, 90, 20, .15); }
+.sd-band .sd-card--ico h2, .sd-band .sd-card--ico h3 { font-size: clamp(1.35rem, 1.1rem + .8vw, 1.65rem); line-height: 1.2; margin: 0 0 .75rem; }
+.sd-band .sd-card--ico p { line-height: 1.65; }
+.sd-card__ideal { margin-top: auto !important; padding: .9rem 1rem !important; border-top: 0 !important; border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; background: var(--cream); font-size: .95rem; }
+.sd-enquiry { background: #fff; border: 1px solid var(--line); border-radius: calc(var(--r) * 1.4); box-shadow: var(--shadow-l); padding: clamp(1.5rem, 4vw, 2.75rem); max-width: 760px; margin-inline: auto; }
+.sd-enquiry input[type="text"], .sd-enquiry input[type="email"], .sd-enquiry textarea { width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: .8rem 1rem; background: var(--cream); font: inherit; }
+.sd-enquiry input:focus, .sd-enquiry textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; background: #fff; }
+.sd-enquiry .wp-block-button__link, .sd-enquiry button[type="submit"] { min-width: 200px; }
+.sd-band--narrow .sd-lead { max-width: 640px; margin-inline: auto; }
+@media (max-width: 639px) { .sd-band .sd-card--ico { padding: 1.4rem; } }

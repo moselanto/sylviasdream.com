@@ -71,7 +71,7 @@ function sdc_fields() {
 		'hero_cta2_url'      => array( 'sdc_home', __( 'Hero: second button link', 'sylviasdream-child' ), 'link', '/my-story/' ),
 
 		// Trust strip. Item 4 ("Every purchase helps") is blank until Sylvia approves the wording.
-		'strip_1_title'      => array( 'sdc_strip', __( 'Item 1: heading', 'sylviasdream-child' ), 'text', '25 titles' ),
+		'strip_1_title'      => array( 'sdc_strip', __( 'Item 1: heading', 'sylviasdream-child' ), 'text', '{count} titles' ),
 		'strip_1_text'       => array( 'sdc_strip', __( 'Item 1: text', 'sylviasdream-child' ), 'text', 'eBooks, paperbacks and audio' ),
 		'strip_2_title'      => array( 'sdc_strip', __( 'Item 2: heading', 'sylviasdream-child' ), 'text', 'Instant download' ),
 		'strip_2_text'       => array( 'sdc_strip', __( 'Item 2: text', 'sylviasdream-child' ), 'text', 'Secure link after purchase' ),
@@ -358,3 +358,41 @@ function sdc_customize_register( $wp_customize ) {
 	}
 }
 add_action( 'customize_register', 'sdc_customize_register' );
+
+/**
+ * 1.20.1: number of books for the home trust strip, so "25 titles" grows by
+ * itself as books are published. Rounded down to a multiple of 5 with a "+"
+ * once there are 10 or more (27 books -> "25+").
+ *
+ * @return string
+ */
+function sdc_book_count_label() {
+	$n = 0;
+	if ( post_type_exists( 'product' ) ) {
+		$counts = wp_count_posts( 'product' );
+		$n      = isset( $counts->publish ) ? (int) $counts->publish : 0;
+	}
+	if ( $n < 10 ) {
+		return (string) $n;
+	}
+	return (int) ( floor( $n / 5 ) * 5 ) . '+';
+}
+
+/**
+ * Trust strip heading with {count} replaced. An old saved value such as
+ * "25 titles" is treated as the automatic count too.
+ *
+ * @param int $n Item number.
+ * @return string
+ */
+function sdc_strip_title( $n ) {
+	$title = sdc_get( 'strip_' . (int) $n . '_title' );
+	if ( preg_match( '/^\d+\+?\s+(titles|books)$/i', $title, $m ) ) {
+		$title = '{count} ' . strtolower( $m[1] );
+	}
+	if ( false === strpos( $title, '{count}' ) ) {
+		return $title;
+	}
+	$label = sdc_book_count_label();
+	return '0' === $label ? trim( str_replace( '{count}', '', $title ) ) : str_replace( '{count}', $label, $title );
+}
