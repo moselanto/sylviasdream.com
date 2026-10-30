@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Sylvia's Dream child theme 1.23.0: sign-in and My account area.
+   Sylvia's Dream child theme 1.23.1: sign-in and My account area.
    Loaded only on the WooCommerce My account page (inc/account.php) and
    scoped to body.woocommerce-account, so nothing else on the site changes.
    Uses the theme tokens from style.css (--gold-d, --ink, --cream, --line,
@@ -173,12 +173,32 @@ body.woocommerce-account .woocommerce-password-strength.strong { background: #e9
 body.woocommerce-account .woocommerce-password-hint { display: block; margin-top: 6px; color: var(--ink-2); font-size: .92rem; line-height: 1.45; }
 
 /* ---------- Signed in: layout ---------- */
-body.woocommerce-account.logged-in:not(.sd-account-auth) .woocommerce { display: grid; gap: 28px; align-items: start; }
+/* 1.23.1: every item gets an explicit place. Anything WooCommerce or a plugin
+   prints before the menu (notices, the email-confirmation message) spans the
+   full width, so the menu always sits in the left column and the page in the
+   right one. The menu no longer sticks while scrolling (it overlapped the
+   table on some screens). */
+body.woocommerce-account.logged-in:not(.sd-account-auth) .woocommerce { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; align-items: start; }
+body.woocommerce-account.logged-in:not(.sd-account-auth) .woocommerce > * { grid-column: 1 / -1; min-width: 0; float: none; width: auto; max-width: 100%; margin-left: 0; margin-right: 0; }
+body.woocommerce-account.logged-in:not(.sd-account-auth) .woocommerce > .woocommerce-notices-wrapper:empty { display: none; }
 @media (min-width: 900px) {
-	body.woocommerce-account.logged-in:not(.sd-account-auth) .woocommerce { grid-template-columns: 260px minmax(0, 1fr); gap: 40px; }
-	body.woocommerce-account .sd-account-nav { position: sticky; top: calc(var(--head-h-s) + var(--admin-top) + 24px); }
+	body.woocommerce-account.logged-in:not(.sd-account-auth) .woocommerce { grid-template-columns: 260px minmax(0, 1fr); grid-auto-flow: row dense; gap: 32px 40px; }
+	body.woocommerce-account.logged-in:not(.sd-account-auth) .woocommerce > .woocommerce-MyAccount-navigation { grid-column: 1; }
+	body.woocommerce-account.logged-in:not(.sd-account-auth) .woocommerce > .woocommerce-MyAccount-content { grid-column: 2; }
 }
-body.woocommerce-account .woocommerce-MyAccount-content { min-width: 0; }
+body.woocommerce-account .sd-account-nav { position: static; top: auto; transform: none; z-index: auto; }
+body.woocommerce-account .woocommerce-MyAccount-content { min-width: 0; border: 0; padding: 0; background: none; box-shadow: none; }
+body.woocommerce-account .woocommerce-MyAccount-content table.shop_table { width: 100%; table-layout: auto; border-collapse: separate; border-spacing: 0; overflow: hidden; }
+body.woocommerce-account .woocommerce-MyAccount-content table.shop_table td.download-product a { word-break: normal; overflow-wrap: anywhere; }
+body.woocommerce-account .woocommerce-MyAccount-content table.shop_table td.download-file a,
+body.woocommerce-account .woocommerce-MyAccount-content table.shop_table td .button { width: auto; height: auto; min-width: 0; aspect-ratio: auto; border-radius: 999px; white-space: nowrap; line-height: 1.2; }
+@media (min-width: 768px) {
+	body.woocommerce-account .woocommerce-MyAccount-content table.shop_table td.download-remaining,
+	body.woocommerce-account .woocommerce-MyAccount-content table.shop_table td.download-expires { white-space: nowrap; }
+}
+@media (max-width: 767px) {
+	body.woocommerce-account .woocommerce-MyAccount-content table.shop_table td.download-file a { white-space: normal; overflow-wrap: anywhere; }
+}
 body.woocommerce-account .woocommerce-MyAccount-content > h2,
 body.woocommerce-account .woocommerce-MyAccount-content > h3,
 body.woocommerce-account .woocommerce-Address-title h2,

@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-30 - Child theme 1.23.1: My account layout fixed on scroll
+Agnes reported (screenshot, My ebooks, 30 Oct) that the signed-in My account page broke when scrolling: the menu filled the wide column and floated over the table, while the page content was squeezed into a narrow box and the PDF download button became a circle. Cause: the account grid placed items automatically, so anything printed before the menu (a notice) pushed the menu into the right column; the sticky menu then slid over the table. Fix (account.css only): explicit grid placement (menu left, content right, anything else full width, dense flow), empty notices wrapper hidden, sticky menu removed, tables 100% wide, download and action buttons stay pill-shaped and do not wrap on desktop. No template, PHP logic, Stripe, Dream Partner or download link changed.
+
 ## 2026-10-30 - Child theme 1.23.0: professional sign-in and My account area
 Presentation only, child theme only; core plugin unchanged (0.4.4). No Stripe, Dream Partner, thank-you or download link touched; no endpoint removed; no prices, facts or claims added.
 - **WooCommerce template overrides** in `sylviasdream-child/woocommerce/myaccount/` (copied from current WooCommerce trunk, same `@version` headers, every hook, nonce and field name kept): `form-login.php` (9.9.0), `form-lost-password.php` (9.2.0), `lost-password-confirmation.php` (3.9.0), `form-reset-password.php` (9.2.0), `dashboard.php` (4.4.0), `navigation.php` (9.3.0), `downloads.php` (7.8.0), `orders.php` (9.5.0).
