@@ -2,6 +2,9 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 30 October 2026: child theme 1.23.0, professional sign-in and My account
+- Built on branch `feature/account-login-polish` from main (1.22.0): WooCommerce My account template overrides (sign in, register, lost/reset password, dashboard, navigation, downloads, orders), `inc/account.php`, `account.css`, `account.js`. Core plugin unchanged. `check-theme.js` OK, assets rebuilt, `php -l` left to CI. Not yet on the test site; test list in OPEN-ITEMS "30 Oct (account 1.23.0)".
+
 ## Thursday 29 October 2026 (15:50): child theme 1.22.0, YouTube videos on Elementor pages
 - With 1.21.2, My Story built in Elementor showed the "Let's Walk Together" YouTube Short as a dark box with the bare address. Cause: the "Section from your page" widget rendered blocks with `do_blocks()` only; the YouTube iframe comes from WordPress's auto-embed on `the_content` (priority 8), before the theme facade swaps it for the thumbnail.
 - Fixed on `feature/elementor-builder`: kept sections render like `the_content`; facade also in the Elementor editor and from the address when oEmbed fails; facade script enqueued for Elementor pages and the preview; GoFundMe script for rebuilt Heaven on Earth; new Video widget; top-level embed blocks map to it. Audit of Speaking, Podcasts, Author Support, Heaven on Earth, Give, Contact (and My Story) in CHANGELOG.

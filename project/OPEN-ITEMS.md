@@ -30,6 +30,18 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 - [ ] Earlier items still open: Stripe data per `STRIPE-DATA-REQUEST.md`, ebook files, social links, written approval of wording
 
 ## Pimofy (Moses / next agent)
+### 30 Oct (account 1.23.0): sign-in and My account, branch feature/account-login-polish
+- [ ] Review and merge the PR; CI `php -l` 8.0-8.3 must pass (not run in the build sandbox)
+- [ ] Upload `sylviasdream-child-1.23.0.zip` (Replace active); WooCommerce > Status > Templates shows the 8 child overrides with no "outdated" warning
+- [ ] Signed out /my-account/: centred card, banner and breadcrumb, one h1; show/hide password works by mouse and keyboard; Remember me checkbox; "Secure sign-in" shows (HTTPS)
+- [ ] Wrong password and unknown email: same generic error (core `login_errors`); correct sign-in reaches the dashboard
+- [ ] Forgot password: email arrives; "Check your email" card; reset link opens the new-password card, strength meter shows, save returns to My account with the success notice
+- [ ] If registration is switched on (WooCommerce > Settings > Accounts): side by side on desktop, tabs on a phone; a failed registration reopens Create account
+- [ ] Dashboard greeting and cards; My ebooks (test order #6686 download still works), Orders (cards on phone, View button), Account details save, Addresses if shown; Sign out goes through the nonce link
+- [ ] Header "My downloads" link signed out -> sign in -> lands on My ebooks
+- [ ] Account page built in Elementor (if ever): same look; real-phone check 320-430px
+- [ ] Optional: decide whether "My ebooks" / "Sign out" labels are wanted (filter `sdc_account_menu_labels`)
+
 ### 29 Oct (Elementor 1.22.0): YouTube videos on Elementor pages, Video widget
 - [ ] Upload child theme 1.22.0 (zip from `bash scripts/build-theme-zip.sh`), then Elementor > Tools > Regenerate CSS & Data (and clear the element cache if switched on).
 - [ ] My Story (built): "Let's Walk Together" Short shows the thumbnail and play button, tall 9:16 in its column, plays only on click, keyboard Tab + Enter works, label "Play video: ...".
