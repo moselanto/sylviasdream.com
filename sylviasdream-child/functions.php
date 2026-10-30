@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '1.22.0' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '1.23.0' );
 define( 'SYLVIASDREAM_CHILD_DIR', get_stylesheet_directory() );
 define( 'SYLVIASDREAM_CHILD_URI', get_stylesheet_directory_uri() );
 
@@ -277,4 +277,6 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require_once SYLVIASDREAM_CHILD_DIR . '/inc/woocommerce.php';
 	require_once SYLVIASDREAM_CHILD_DIR . '/inc/cart-drawer.php';
 	require_once SYLVIASDREAM_CHILD_DIR . '/inc/checkout.php';
+	// 1.23.0: sign-in and My account polish (templates in woocommerce/myaccount/).
+	require_once SYLVIASDREAM_CHILD_DIR . '/inc/account.php';
 }

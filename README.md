@@ -1,7 +1,7 @@
 # Sylvia's Dream - sylviasdream.com
 
 ![Parent theme](https://img.shields.io/badge/Parent%20theme-v1.0.1-8A6216)
-![Child theme](https://img.shields.io/badge/Child%20theme-v1.22.0-B8862B)
+![Child theme](https://img.shields.io/badge/Child%20theme-v1.23.0-B8862B)
 ![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.4.4-2B2620)
 ![Elementor](https://img.shields.io/badge/Elementor-optional%2C%2026%20widgets-92003B)
 
