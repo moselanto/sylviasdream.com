@@ -2,6 +2,12 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 30 October 2026: sign-in and My account polish (child theme 1.23.0)
+- **Requested by Agnes (30 Oct).** The My account area gets a professional design using the existing brand tokens, through WooCommerce template overrides in the child theme (presentation only).
+- **Menu labels** "My ebooks" (Downloads) and "Sign out" (Log out); endpoints and their addresses unchanged. Reversible with the `sdc_account_menu_labels` filter.
+- **No duplication of core security.** Generic sign-in errors and the branded wp-login.php stay in sylviasdream-core 0.4.x (27 Oct decision); the child theme only styles.
+- **Trust line** "Secure sign-in" is printed only on HTTPS so it is always true; no other claims on the sign-in screens.
+
 ## 29 October 2026: whole site editable in Elementor (child theme 1.21.0)
 - **Elementor editing requested by Agnes (29 Oct 2026).** Every page, the header and the footer can be edited in Elementor (free) by Sylvia, with "Sylvia's Dream" widgets whose defaults are the current wording, and Sylvia's Dream Theme Options using the free Redux Framework (basic built-in screen without Redux). Replaces the 23 Oct note "Elementor-compatible page templates in case she installs Elementor later": Elementor is now the recommended editor; the block editor and patterns keep working.
 - **Optional and reversible.** Without Elementor the site looks and works exactly as 1.20.x. Pages are built in Elementor only when an administrator clicks "Build this page in Elementor" (Appearance > Set up page editor); a revision is forced first and "Use old version" switches back. Header/footer fall back to the built-in ones if a template is missing or broken.
