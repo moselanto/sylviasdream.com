@@ -2,6 +2,13 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Saturday 31 October 2026: shop tidy, Kindle links, Stripe links (test site only)
+- PR #8 (child 1.23.0 + 1.23.1 account layout fix) merged into `main`.
+- After Sylvia's 31 Oct email: Manifesting Miracles Now unpublished (Draft); duplicate When Fear Has the Final Word (6390) in Trash (restorable); Fast Forward to Success product image = new cover. Be a World Changer cover saved only (question to Sylvia).
+- Kindle: 14 amazon.com links switched to `https://www.amazon.com.au/dp/<same ASIN>`; existing AU links unchanged.
+- Stripe "Buy ebook" links added (label checked on the live page first; no link changed): When the Word Becomes Life `aFa7sLcED5Pz2vO03V7g40i`, Learning to Recognise God's Voice `dRm00jcED91L5I03g77g40h`, Trusting God Deeper `aFa3cv6gfcdXc6ocQH7g403` (from /shop-for-books/), Guard Your Heart Renew Your Mind `14AdR90VV6TDc6o9Ev7g40k`, The King's Way `8x2cN5cED1zjeew17Z7g409`, Wisdom for Soul-Winning `3cI8wP5cbfq9das3g77g40b`, Angelique `aFa8wP1ZZ7XHc6o5of7g402`, All Shall Be Well `dRm00jcEDdi10nGbMD7g404`, Angelique Finds Her Light `dRm00j9sr5Pzb2k2c37g40a`, SENT `bJe9AT3436TDc6obMD7g40c`, Guard Your Heart `7sY00jeMLfq97Q8eYP7g40d`, The Report of the Lord `8x27sL8ona5P8Uc7wn7g40g` (from the live home page). The 5 earlier links unchanged. Code suffixes only (full addresses are on the live pages and in `docs/LIVE-LINK-INVENTORY.md`).
+- No purchase made; live site and Stripe untouched.
+
 ## Friday 30 October 2026: child theme 1.23.0, professional sign-in and My account
 - Built on branch `feature/account-login-polish` from main (1.22.0): WooCommerce My account template overrides (sign in, register, lost/reset password, dashboard, navigation, downloads, orders), `inc/account.php`, `account.css`, `account.js`. Core plugin unchanged. `check-theme.js` OK, assets rebuilt, `php -l` left to CI. Not yet on the test site; test list in OPEN-ITEMS "30 Oct (account 1.23.0)".
 

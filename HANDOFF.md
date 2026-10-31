@@ -40,8 +40,9 @@ Last updated: Thursday 29 October 2026, about 12:00 Kenya time (EAT, UTC+3). Sec
 - 27 Oct: read-only live audit and launch runbook `docs/LAUNCH-READINESS.md`, live link inventory `docs/LIVE-LINK-INVENTORY.md` (20 Stripe links, 25 download files).
 
 **Pending for Pimofy / next agent (short list):**
-1. **Kindle/Amazon links:** mixed amazon.com and amazon.com.au. Waiting for Lightof's choice: (a) everyone to amazon.com.au, or (b) visitor's own country with AU fallback. Then add a small Amazon/Kindle icon to the button.
-2. Stripe "Buy ebook" links still missing for ~20 books (only One Life, From Fear to Freedom, Hidden Key, From Chance to Choice, How to Find the Real You have them). Source: `docs/LIVE-LINK-INVENTORY.md` (check each label on the live page) or Sylvia.
+1. **Kindle/Amazon links: done on the test site 31 Oct.** Decision (Agnes): every Kindle link goes to `https://www.amazon.com.au/dp/<same ASIN>`; 14 amazon.com links switched. Repeat on live at launch. Still to do: a small Amazon/Kindle icon on the button.
+2. **Stripe "Buy ebook" links: 12 copied 31 Oct** from `docs/LIVE-LINK-INVENTORY.md` after checking each live button label (17 books now have one). Still none: When the River Flows Again, Fields of Becoming, 7 Days from Fear to Freedom, Fast Forward to Success (free: How to Write and Publish, 7 Days to Trusting God; Manifesting Miracles Now is Draft). Ask Sylvia; never invent.
+2a. **Old download files (decision 31 Oct, Option A):** new sales use secure downloads; past buyers get new secure links; only then, with Sylvia's written OK, the old public paid files are removed and the old download pages point to the shop. See `project/DECISIONS.md` 31 Oct.
 3. Ebook files: only When the Word Becomes Life has a downloadable file. Attach protected copies (not the old public uploads URLs) to every paid product.
 4. When the Word Becomes Life is "Uncategorized"; Rank Math focus keywords not set on the 25 products.
 5. Mobile: Author Support page is long on phones; real-phone checks of nav, drawer and checkout still open.

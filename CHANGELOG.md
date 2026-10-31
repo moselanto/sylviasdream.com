@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-31 - Test-site content and decisions (no code change, no version bump)
+- **Decisions (Agnes):** old public paid download files retired only via Option A (new sales on secure downloads, past buyers get new secure links, then removal with Sylvia's written OK); all Kindle links to amazon.com.au. Recorded in `project/DECISIONS.md`, `AGENTS.md` rule 7, `HANDOFF.md`.
+- **Test site:** 14 amazon.com Kindle links switched to `amazon.com.au/dp/<same ASIN>`. 12 Stripe "Buy ebook" links copied from live pages per `docs/LIVE-LINK-INVENTORY.md` after checking each live button label (no link changed). Manifesting Miracles Now set to Draft; duplicate When Fear Has the Final Word (6390) moved to Trash; Fast Forward to Success cover added. Live site untouched; Stripe untouched.
+
 ## 2026-10-30 - Child theme 1.23.1: My account layout fixed on scroll
 Agnes reported (screenshot, My ebooks, 30 Oct) that the signed-in My account page broke when scrolling: the menu filled the wide column and floated over the table, while the page content was squeezed into a narrow box and the PDF download button became a circle. Cause: the account grid placed items automatically, so anything printed before the menu (a notice) pushed the menu into the right column; the sticky menu then slid over the table. Fix (account.css only): explicit grid placement (menu left, content right, anything else full width, dense flow), empty notices wrapper hidden, sticky menu removed, tables 100% wide, download and action buttons stay pill-shaped and do not wrap on desktop. No template, PHP logic, Stripe, Dream Partner or download link changed.
 

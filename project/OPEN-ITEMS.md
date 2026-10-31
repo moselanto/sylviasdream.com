@@ -1,4 +1,19 @@
-# Open items (updated 29 October 2026)
+# Open items (updated 31 October 2026)
+
+## 31 Oct: after Sylvia's email (decisions in `project/DECISIONS.md` 31 Oct)
+- [x] Manifesting Miracles Now Draft; duplicate When Fear Has the Final Word (6390) in Trash; Fast Forward to Success cover added
+- [x] Kindle links: all to amazon.com.au on the test site (14 switched). Repeat on live at launch
+- [ ] Amazon/Kindle icon on the Kindle button
+- [x] 12 Stripe "Buy ebook" links copied from live pages (see PROGRESS-LOG 31 Oct); 17 books now have one
+- [ ] Still no Stripe link (ask Sylvia, never invent): When the River Flows Again, Fields of Becoming, 7 Days from Fear to Freedom, Fast Forward to Success (has an AU Kindle link). Free, no link needed: How to Write and Publish, 7 Days to Trusting God. Manifesting Miracles Now is Draft
+- [ ] Check with Sylvia: Trusting God Deeper link (`...403`) and The Report of the Lord link (`...40g`) were matched from /shop-for-books/ and the live home page by label and context; confirm on the purchase test
+- [ ] Be a World Changer: separate ebook (price and file needed) or same as Fast Forward to Success?
+- [ ] Prices: Fast Forward to Success, The Report of the Lord
+- [ ] Old download files, Option A: (1) all paid ebooks on secure downloads with protected files attached; (2) past buyers get new secure links (Sylvia sends, or Pimofy prepares the email); (3) only then, with Sylvia's written OK, remove the old public paid files and point the old thank-you/download pages to the shop
+- [ ] Purchase tests for both routes: Add to cart (test payment) and a Stripe button (real purchase, refunded by Sylvia, on the call)
+- [ ] Newsletter sign-up and welcome email: final acceptance check on live, before public launch and final payment
+- [ ] Send Sylvia the combined document (biography, ministry details, book information, reader reviews)
+- [ ] Dream Partner Stripe links A$15/30/50 monthly + one-off any amount; active monthly partner count (Sylvia)
 
 ## Waiting on Sylvia
 All requests now sit in one email draft, "Everything we need to finish your new website" (26 Oct, unsent, Moses to approve), and in the Town document "Everything we need from Sylvia (26 Oct 2026)".
