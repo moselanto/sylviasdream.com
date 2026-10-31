@@ -1,5 +1,13 @@
 # Open items (updated 31 October 2026)
 
+## 31 Oct (evening): pre-launch checks on the test site
+- [x] Contact form (Contact page, built in Elementor) sends: test message "Pre-launch Test" shows success and is in Jetpack Forms inbox (response 6739). Email notification delivery not yet confirmed: check the notification inbox
+- [x] Author Support enquiry form sends: same test, success, in Jetpack Forms inbox (response 6740). Email delivery not yet confirmed
+- [x] Sylvia's test-site account `sylvia` is already **Editor** (can use Elementor). Users on the test site: `sylvia` (Editor) and `moses` (Administrator) only
+- [ ] Two-factor sign-in for every administrator: `moses` is the only administrator and two-factor is **OFF**. Moses switches it on himself in Users > Profile (authenticator app) and stores the 8 recovery codes offline. Not set up by an agent
+- [ ] Change the `moses` password: it was sent to Sylvia in plain text in the 27 Oct email (same as the preview-gate password). Users > Profile > Set New Password, then "Log Out Everywhere Else". Then Sylvia signs in only as `sylvia` and sets her own password via "Lost your password?"
+- [ ] Protected ebook file still pending: When the Word Becomes Life (6380) still points to the public Media item 5646 `/wp-content/uploads/2026/07/When-the-Word-Becomes-Life.pdf`, which opens without a purchase. Download method is Force downloads (redirect fallback off), but `uploads/2026/07/` is in Approved download directories. Next: upload the PDF through the product's file uploader (stored in `woocommerce_uploads`), keep the same download entry so test order #6686 still works, delete Media 5646 on the test site, remove the `2026/07` approved directory, confirm the old address no longer opens and #6686 still downloads. Live files stay until Option A step 3
+
 ## 31 Oct: after Sylvia's email (decisions in `project/DECISIONS.md` 31 Oct)
 - [x] Manifesting Miracles Now Draft; duplicate When Fear Has the Final Word (6390) in Trash; Fast Forward to Success cover added
 - [x] Kindle links: all to amazon.com.au on the test site (14 switched). Repeat on live at launch
