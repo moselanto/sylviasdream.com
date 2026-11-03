@@ -996,3 +996,23 @@ function sdc_hide_title_echo_excerpt( $excerpt ) {
 	return ( false !== strpos( $norm( $title ), $norm( $text ) ) ) ? '' : $excerpt;
 }
 add_filter( 'woocommerce_short_description', 'sdc_hide_title_echo_excerpt', 20 );
+
+/**
+ * 1.23.2: show Australian dollars as "A$" everywhere WooCommerce prints a
+ * price (book cards, product page, cart, checkout, emails). The shop currency
+ * stays AUD; only the symbol changes, so international readers do not read
+ * "$" as US dollars. Filter `sdc_currency_symbol` to change or return '' to
+ * keep WooCommerce's own symbol.
+ *
+ * @param string $symbol   Symbol.
+ * @param string $currency Currency code.
+ * @return string
+ */
+function sdc_aud_currency_symbol( $symbol, $currency ) {
+	if ( 'AUD' !== $currency ) {
+		return $symbol;
+	}
+	$custom = (string) apply_filters( 'sdc_currency_symbol', 'A$', $currency );
+	return '' !== $custom ? $custom : $symbol;
+}
+add_filter( 'woocommerce_currency_symbol', 'sdc_aud_currency_symbol', 10, 2 );
