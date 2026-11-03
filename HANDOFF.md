@@ -2,7 +2,9 @@
 
 Last updated: Thursday 29 October 2026, about 12:00 Kenya time (EAT, UTC+3). Section 0 is the current state; sections 1 onwards are older background (still valid unless section 0 says otherwise).
 
-## 0. Latest status (31 Oct 2026) - read this first
+## 0. Latest status (3 Nov 2026) - read this first
+**New 3 Nov: child theme 1.23.2** (branch `release/1.23.2`, PR) moves the 31 Oct dashboard-only fixes into the theme (Books "Start here" title shown once; Books banner photo alt text) and adds "A$" prices and the One Life Kindle link to amazon.com.au. After uploading: remove the 31 Oct Additional CSS rule for the mega-menu cover title on the test site. Cross-check results of 31 Oct: `project/OPEN-ITEMS.md` "31 Oct cross-check".
+
 **New 31 Oct (test site, no code change):** PR #8 (child theme 1.23.0-1.23.1, sign-in and My account) is merged into `main`. Shop tidied after Sylvia's 31 Oct email (Manifesting Miracles Now Draft, duplicate When Fear Has the Final Word in Trash, Fast Forward to Success cover added). All Kindle links now go to amazon.com.au; 12 Stripe "Buy ebook" links copied from live pages. Decisions recorded in `project/DECISIONS.md` (31 Oct): old download files retired only via Option A.
 
 **Pre-launch checks, 31 Oct (evening), test site:** both contact forms (Contact and Author Support) passed a test submission (Jetpack Forms responses 6739, 6740; email delivery still to confirm). `sylvia` is already Editor. Still open: two-factor is **off** for `moses` (the only administrator); the `moses` password must be changed because it was emailed to Sylvia on 27 Oct (then "Log Out Everywhere Else", and Sylvia uses only `sylvia`); the protected ebook file for When the Word Becomes Life is pending (still served from public Media 5646 in `uploads/2026/07/`, which is an approved download directory). Steps in `project/OPEN-ITEMS.md` "31 Oct (evening)".

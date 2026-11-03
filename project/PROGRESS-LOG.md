@@ -2,6 +2,12 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Tuesday 3 November 2026: child theme 1.23.2
+- Built on `release/1.23.2` from main: mega-menu fallback cover without duplicate title, `bible.jpg` banner alt text, AUD symbol "A$", One Life Kindle link to amazon.com.au. `check-theme.js` OK, assets rebuilt, `php -l` left to CI. Zip `sylviasdream-child-1.23.2.zip`.
+
+## Saturday 31 October 2026 (night): cross-check live vs test site
+- Compared 72 live public pages/posts with the test site (live sitemap would not load). Fixes and open items in OPEN-ITEMS "31 Oct cross-check". Two fixes were made in the test-site dashboard (Additional CSS, `inc/cover-alt.php`) and are now in child 1.23.2.
+
 ## Saturday 31 October 2026: shop tidy, Kindle links, Stripe links (test site only)
 - PR #8 (child 1.23.0 + 1.23.1 account layout fix) merged into `main`.
 - After Sylvia's 31 Oct email: Manifesting Miracles Now unpublished (Draft); duplicate When Fear Has the Final Word (6390) in Trash (restorable); Fast Forward to Success product image = new cover. Be a World Changer cover saved only (question to Sylvia).

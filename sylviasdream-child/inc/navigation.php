@@ -59,6 +59,8 @@ function sdc_mega_featured_html() {
 		// books with their real covers (taken from the products, whatever their
 		// status). Links go to the book when it can be viewed, otherwise to the
 		// Books page. A CSS-drawn cover is only used when a product has no image.
+		// 1.23.2: the drawn cover no longer prints the title as well, so the
+		// book name shows once (it repeated as "One Life One Life").
 		$picks = array(
 			array( 'The Report of the Lord', '#3a2a12', '#e0b75a' ),
 			array( 'One Life', '#5b3a1a', '#c18b2d' ),
@@ -94,7 +96,7 @@ function sdc_mega_featured_html() {
 				continue;
 			}
 			$items .= sprintf(
-				'<a class="sd-mega__book" href="%1$s"><span class="sd-cover" style="background:linear-gradient(160deg,%2$s 0%%,%2$s 55%%,%3$s 140%%)" aria-hidden="true"><span class="sd-cover__title">%4$s</span></span><span>%4$s</span></a>',
+				'<a class="sd-mega__book" href="%1$s"><span class="sd-cover" style="background:linear-gradient(160deg,%2$s 0%%,%2$s 55%%,%3$s 140%%)" aria-hidden="true"></span><span>%4$s</span></a>',
 				esc_url( $url ),
 				esc_attr( $pick[1] ),
 				esc_attr( $pick[2] ),
