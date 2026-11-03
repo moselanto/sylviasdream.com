@@ -233,7 +233,7 @@ function sdc_page_header( $title, $eyebrow = '', $intro = '', $image = '', $args
 	?>
 	<header class="sd-pagehead<?php echo $image ? ' sd-pagehead--photo' : ''; ?><?php echo esc_attr( $extra ); ?>">
 		<?php if ( $image ) : ?>
-			<img class="sd-pagehead__bg" src="<?php echo esc_url( $image ); ?>"<?php if ( $pos ) : ?> style="object-position: <?php echo esc_attr( $pos ); ?>"<?php endif; ?><?php if ( $img['width'] && $img['height'] ) : ?> width="<?php echo (int) $img['width']; ?>" height="<?php echo (int) $img['height']; ?>"<?php endif; ?><?php if ( $img['srcset'] ) : ?> srcset="<?php echo esc_attr( $img['srcset'] ); ?>" sizes="100vw"<?php endif; ?> alt="" decoding="async" fetchpriority="high">
+			<img class="sd-pagehead__bg" src="<?php echo esc_url( $image ); ?>"<?php if ( $pos ) : ?> style="object-position: <?php echo esc_attr( $pos ); ?>"<?php endif; ?><?php if ( $img['width'] && $img['height'] ) : ?> width="<?php echo (int) $img['width']; ?>" height="<?php echo (int) $img['height']; ?>"<?php endif; ?><?php if ( $img['srcset'] ) : ?> srcset="<?php echo esc_attr( $img['srcset'] ); ?>" sizes="100vw"<?php endif; ?> alt="<?php echo esc_attr( function_exists( 'sdc_theme_photo_alt' ) ? sdc_theme_photo_alt( $image ) : '' ); ?>" decoding="async" fetchpriority="high">
 		<?php endif; ?>
 		<div class="sd-wrap sd-pagehead__inner">
 			<nav class="sd-crumbs" aria-label="<?php esc_attr_e( 'Breadcrumb', 'sylviasdream-child' ); ?>">

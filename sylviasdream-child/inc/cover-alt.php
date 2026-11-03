@@ -159,6 +159,35 @@ add_filter( 'render_block_jetpack/slideshow', 'sdc_fill_alt_from_library', 9 );
 add_filter( 'render_block_core/gallery', 'sdc_fill_alt_from_library', 9 );
 
 /**
+ * 1.23.2: alt text for theme photos, keyed by file name.
+ *
+ * @return array
+ */
+function sdc_theme_photo_alts() {
+	return (array) apply_filters(
+		'sdc_theme_photo_alts',
+		array(
+			'bible.jpg' => __( 'An open Bible and journal by a sunny window', 'sylviasdream-child' ),
+		)
+	);
+}
+
+/**
+ * 1.23.2: alt text for a theme photo address ('' when none is known).
+ *
+ * @param string $src Image address.
+ * @return string
+ */
+function sdc_theme_photo_alt( $src ) {
+	foreach ( sdc_theme_photo_alts() as $file => $alt ) {
+		if ( '' !== $alt && false !== strpos( (string) $src, '/assets/images/' . $file ) ) {
+			return (string) $alt;
+		}
+	}
+	return '';
+}
+
+/**
  * 1.23.2: page banners (cover blocks) that use a theme photo with an empty alt
  * get a plain description of that photo. Found in the 31 Oct cross-check on the
  * Books page banner (bible.jpg). Alt text saved in the block always wins.
@@ -170,12 +199,7 @@ function sdc_cover_theme_photo_alt( $content ) {
 	if ( false === strpos( $content, 'alt=""' ) ) {
 		return $content;
 	}
-	$photos = apply_filters(
-		'sdc_theme_photo_alts',
-		array(
-			'bible.jpg' => __( 'An open Bible and journal by a sunny window', 'sylviasdream-child' ),
-		)
-	);
+	$photos = sdc_theme_photo_alts();
 	return preg_replace_callback(
 		'/<img\b[^>]*>/i',
 		function ( $m ) use ( $photos ) {
