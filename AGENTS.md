@@ -67,3 +67,5 @@ Project in one line: Pimofy Digital (Moses Munyi) is rebuilding sylviasdream.com
     4. `bash scripts/build-theme-zip.sh` to produce the zips.
 31. After deploying to dev, smoke-test Home, the Books page, Contact and a 404 URL, then the relevant QA checklist items. Record results in `project/PROGRESS-LOG.md`.
 32. Keep `HANDOFF.md` section 3, `project/OPEN-ITEMS.md`, `project/DECISIONS.md` and `project/PROGRESS-LOG.md` current in the same commit as the work.
+33. **No code edits in the WordPress dashboard** (added 3 Nov after two 31 Oct dashboard-only fixes nearly got wiped). Do not use Appearance > Theme File Editor, Plugin File Editor or Additional CSS on the test or live site. Every code or style change goes into this repo, then a new zip. If an emergency dashboard edit is ever unavoidable, record it in `project/OPEN-ITEMS.md` the same day and move it into the repo in the next release.
+34. **Never put passwords in emails or this repo.** Send the preview-gate password separately from the link, and give Sylvia only her own `sylvia` sign-in (she sets her own password with "Lost your password?").
