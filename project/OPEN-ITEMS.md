@@ -1,5 +1,31 @@
 # Open items (updated 31 October 2026)
 
+## 3 Nov: status after child 1.23.2
+- [x] Child 1.23.2 uploaded to the test site and verified (banner alt, One Life once in "Start here", A$ on cards/product/cart/checkout, One Life Kindle link amazon.com.au); 31 Oct Additional CSS rule deleted
+- [ ] Merge PR #9 (`release/1.23.2`, CI passed)
+- [ ] Upload the original covers for Guard Your Heart (6381) and Angelique Finds Her Light (6394) as product images (Agnes has the files, 3 Nov)
+- [ ] Send Sylvia the 26-item request list (WhatsApp text prepared 3 Nov; same items as `docs/CLIENT-CHECKLIST.md`) and the reply email to her 31 Oct email (drafted 31 Oct; Moses sends)
+- [ ] Call with Sylvia using the spoken script (Town document "Call with Sylvia: spoken script and checklist", 3 Nov); record her answers here and in DECISIONS
+- [ ] Combined document for Sylvia: biography, ministry details, book information, reader reviews, suggested devotional titles
+- [ ] Shop checkout on live: follow the 3 Nov plan in DECISIONS (confirm plugins and fees on Personal, Sylvia connects Stripe herself)
+- [ ] Still open from 31 Oct: `moses` password change + "Log Out Everywhere Else"; two-factor for `moses`; protected ebook file for 6380
+
+## 31 Oct cross-check: live site vs test site (fixes shipped in child 1.23.2, 3 Nov)
+Done on the test site 31 Oct (content, by hand):
+- [x] Guard Your Heart Renew Your Mind: product description = Sylvia's live text; added to the Books menu; thank-you page `/thank-you-for-your-purchase-3/` restored (her text, original download link unchanged) and excluded from search/sitemap; Kindle link amazon.com.au/dp/B0HL5S3L6M
+- [x] Post "Dream Again - There Is So Much More" (live, 29 Oct) added: same title, slug, date and image (alt text), credited to Sylvia Suhr, Grace For the Journey + Salvation, no subscriber email. All 16 live posts now on the test site
+- [x] "To Ensure You End Up Going to Heaven": Sylvia's current live wording, image alt text
+- [x] Menu: Free Downloads, Free Sample How to Find the Real You, My Autobiography, Going to Heaven added. Review: My Autobiography already redirects to One Life (remove from the menu?)
+- [x] Books "Start here" title shown once and bookshop banner alt text: were dashboard-only on 31 Oct, now in child 1.23.2 (installed 3 Nov; Additional CSS rule deleted)
+- [x] Prices "A$" on cards (child 1.23.2) and One Life Kindle link to amazon.com.au (`content/blocks/book-one-life.html`; One Life page 2766 on the test site fixed 3 Nov)
+Still open:
+- [ ] Guard Your Heart Renew Your Mind has Add to cart but no downloadable file: attach Sylvia's final ebook (protected) or hide Add to cart until then
+- [ ] "Going to Heaven" page mentions a free download but its button has no link: file from Sylvia or remove the button (never invent)
+- [ ] Redesigned pages read differently from live (My Story, One Life, Author Support, Ministry, Podcasts and Videos, Contact, devotionals page, several book pages): mostly the approved redesign; list them in the combined document for Sylvia's written approval
+- [ ] Monday Encouragement post shows the test-site address in its text: correct before anything reaches live (live posts are never re-published)
+- [ ] Draft or merged legacy pages (`new-home`, `sylvias-dream`, Hidden Key 5319, `my-autobiography`): confirm each old address redirects to the right page (`docs/REDIRECT-MAP.md`)
+- [ ] Other amazon.com links in `content/blocks/` (SENT "Buy on Amazon", From Fear to Freedom paperback and French edition): decide whether paperbacks also go to amazon.com.au (31 Oct decision covers Kindle links)
+
 ## 31 Oct (evening): pre-launch checks on the test site
 - [x] Contact form (Contact page, built in Elementor) sends: test message "Pre-launch Test" shows success and is in Jetpack Forms inbox (response 6739). Email notification delivery not yet confirmed: check the notification inbox
 - [x] Author Support enquiry form sends: same test, success, in Jetpack Forms inbox (response 6740). Email delivery not yet confirmed

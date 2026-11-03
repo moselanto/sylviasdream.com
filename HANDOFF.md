@@ -2,7 +2,18 @@
 
 Last updated: Thursday 29 October 2026, about 12:00 Kenya time (EAT, UTC+3). Section 0 is the current state; sections 1 onwards are older background (still valid unless section 0 says otherwise).
 
-## 0. Latest status (31 Oct 2026) - read this first
+## 0. Latest status (3 Nov 2026) - read this first
+**New 3 Nov: child theme 1.23.2 is installed and verified on the test site** (PR #9, branch `release/1.23.2`, CI `php -l` 8.0-8.3 passed; **merge PR #9 into `main`**). It moves the 31 Oct dashboard-only fixes into the theme (Books "Start here" shows One Life once; Books banner photo alt text, also via `sdc_page_header()`), shows prices as "A$" (shop currency still AUD) and points the One Life Kindle link to amazon.com.au. The 31 Oct Additional CSS rule was deleted after install. Checked 3 Nov: banner alt, menu, A$ on cards/product/cart/checkout, One Life Kindle link. Install zip: Town library `projects/sylviasdream/sylviasdream-child-1.23.2 (banner alt fix).zip`.
+
+**Next agent, start here (priority order):**
+1. Merge PR #9. Never edit theme/plugin files or Additional CSS in the test-site dashboard again (AGENTS.md rule 33); every change goes through the repo and a zip.
+2. Security: change the `moses` password (it was emailed to Sylvia on 27 Oct, same as the preview-gate password), then "Log Out Everywhere Else"; Sylvia uses only `sylvia` (Editor). Two-factor is still OFF for `moses`, the only administrator (Moses sets it up himself).
+3. Protected ebook file for When the Word Becomes Life (6380): steps in OPEN-ITEMS "31 Oct (evening)". Waiting for Moses to supply the PDF (Media 5646) to upload through the product.
+4. Original covers for Guard Your Heart and Angelique Finds Her Light: Moses/Agnes has them (3 Nov); upload as the product images when supplied.
+5. Everything still needed from Sylvia: `docs/CLIENT-CHECKLIST.md` (updated 3 Nov; same 26 numbered items as the WhatsApp list prepared for Moses on 3 Nov). Tick only when her written answer or file arrives.
+6. Shop checkout on live (proposal 3 Nov, `project/DECISIONS.md`): WooCommerce Stripe Payment Gateway, Sylvia clicks "Connect with Stripe" herself on launch day; test site keeps "Test payment (no money)".
+7. Open cross-check items: OPEN-ITEMS "31 Oct cross-check" (Still open).
+
 **New 31 Oct (test site, no code change):** PR #8 (child theme 1.23.0-1.23.1, sign-in and My account) is merged into `main`. Shop tidied after Sylvia's 31 Oct email (Manifesting Miracles Now Draft, duplicate When Fear Has the Final Word in Trash, Fast Forward to Success cover added). All Kindle links now go to amazon.com.au; 12 Stripe "Buy ebook" links copied from live pages. Decisions recorded in `project/DECISIONS.md` (31 Oct): old download files retired only via Option A.
 
 **Pre-launch checks, 31 Oct (evening), test site:** both contact forms (Contact and Author Support) passed a test submission (Jetpack Forms responses 6739, 6740; email delivery still to confirm). `sylvia` is already Editor. Still open: two-factor is **off** for `moses` (the only administrator); the `moses` password must be changed because it was emailed to Sylvia on 27 Oct (then "Log Out Everywhere Else", and Sylvia uses only `sylvia`); the protected ebook file for When the Word Becomes Life is pending (still served from public Media 5646 in `uploads/2026/07/`, which is an approved download directory). Steps in `project/OPEN-ITEMS.md` "31 Oct (evening)".
@@ -21,7 +32,7 @@ Last updated: Thursday 29 October 2026, about 12:00 Kenya time (EAT, UTC+3). Sec
 
 **Where things stand:** the new site is built on the test site and Sylvia has reviewed it once (her email of 27 Oct; reply drafted 27 Oct). Her live site sylviasdream.com is **untouched** and must stay that way until she approves launch in writing. Full lists: `project/OPEN-ITEMS.md` (top sections dated 29 Oct and 28 Oct) and `docs/CLIENT-CHECKLIST.md` (what Sylvia must send or approve).
 
-**Versions on the test site (topnotchmall.co.ke/sylviasdream):** child theme **1.20.2** (repo branch: 1.21.2; 1.21.0 was tried and rolled back; 1.21.1 tried, Books banner bug fixed in 1.21.2), parent Sylvia's Dream Base 1.0.1, core plugin **0.4.4**, WooCommerce 11.2.1, Rank Math, Jetpack, Password Protected (test site only).
+**Versions on the test site (topnotchmall.co.ke/sylviasdream), 3 Nov:** child theme **1.23.2** (PR #9 until merged; earlier history: 1.21.0 rolled back, 1.21.1-1.21.3 bug fixes, 1.22.0 videos, 1.23.0-1.23.1 sign-in and My account), parent Sylvia's Dream Base 1.0.1, core plugin **0.4.4**, WooCommerce 11.2.1, Rank Math, Jetpack, Password Protected (test site only).
 
 **Build rule (important):** before zipping the theme always run `node scripts/build-assets.js`. WordPress resets file dates when it unzips, so a stale `style.min.css` wins over `style.css`; the header fix in 1.19.2-1.19.4 never showed until 1.19.5 rebuilt the .min files. `.min` files are gitignored and only live in the release zip.
 

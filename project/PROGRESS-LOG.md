@@ -2,6 +2,14 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Tuesday 3 November 2026: child theme 1.23.2
+- Built on `release/1.23.2` from main: mega-menu fallback cover without duplicate title, `bible.jpg` banner alt text, AUD symbol "A$", One Life Kindle link to amazon.com.au. `check-theme.js` OK, assets rebuilt. PR #9; CI `php -l` 8.0-8.3 passed.
+- First upload: Books banner alt still empty, because Books uses the theme page header (Elementor Page top banner) rather than a cover block. Fixed in `sdc_page_header()` (`sdc_theme_photo_alt()`), zip rebuilt as the same version and uploaded again.
+- Verified on the test site: Books banner alt "An open Bible and journal by a sunny window"; One Life once in "Start here"; A$9.99 on cards, product page, cart and checkout (test cart emptied, no order); One Life page 2766 Kindle link amazon.com.au/dp/B07MLMQ37C. 31 Oct Additional CSS rule deleted. Live site and Stripe untouched.
+
+## Saturday 31 October 2026 (night): cross-check live vs test site
+- Compared 72 live public pages/posts with the test site (live sitemap would not load). Fixes and open items in OPEN-ITEMS "31 Oct cross-check". Two fixes were made in the test-site dashboard (Additional CSS, `inc/cover-alt.php`) and are now in child 1.23.2.
+
 ## Saturday 31 October 2026: shop tidy, Kindle links, Stripe links (test site only)
 - PR #8 (child 1.23.0 + 1.23.1 account layout fix) merged into `main`.
 - After Sylvia's 31 Oct email: Manifesting Miracles Now unpublished (Draft); duplicate When Fear Has the Final Word (6390) in Trash (restorable); Fast Forward to Success product image = new cover. Be a World Changer cover saved only (question to Sylvia).
