@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-05 - Child theme 1.23.5: My Story photo stacks above the text on phones
+Test-site check of 1.23.4 (Customizer phone preview, about 320px): the portrait stayed small beside the text instead of above it. Cause: in the Elementor "Section from your page" widget (and the Customizer preview) the columns get WordPress's flex layout (`flex-wrap: nowrap`) without block-library's under-782px stacking rule. Fix (style.css only): under 782px every `.wp-block-columns.sd-split` (unless set "not stacked on mobile") becomes one column; the existing order rule keeps the photo first. Applies to all split sections, block or Elementor. No PHP, wording or link change.
+
 ## 2026-11-05 - Child theme 1.23.4: photo setting for the My Story "SS" placeholder
 My Story on the test site is built in Elementor, where the introduction is one "Section from your page" widget (monogram, heading, intro text, One Life button together) with text-only controls, so the 1.23.3 block change could not reach it, and Elementor Safe Mode hides the theme widgets. Child theme only; core plugin unchanged (0.4.4). No Stripe, Dream Partner, thank-you or download link touched; no wording changed.
 - **New `inc/story-photo.php`:** a `render_block_core/group` filter prints the chosen photo instead of any group with the class `sd-monogram` (same `sd-photo-round sd-portrait` figure as 1.23.3, `wp_get_attachment_image()` large with srcset, alt from the Media Library, fallback "Sylvia Suhr"). With no photo chosen the monogram shows exactly as before. Filter `sdc_story_photo_id`.
