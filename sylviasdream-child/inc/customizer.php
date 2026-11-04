@@ -178,6 +178,7 @@ function sdc_image_fields() {
 	return array(
 		'hero_image'  => array( 'sdc_home', __( 'Hero: book cover or photo (blank = covers of featured books)', 'sylviasdream-child' ) ),
 		'about_image' => array( 'sdc_about', __( 'Photo of Sylvia (shown only when set)', 'sylviasdream-child' ) ),
+		'story_photo' => array( 'sdc_about', __( 'My Story: photo shown instead of the "SS" placeholder (blank = placeholder)', 'sylviasdream-child' ) ),
 		'hoe_image'   => array( 'sdc_ministry', __( 'Heaven on Earth: background photo (optional)', 'sylviasdream-child' ) ),
 	);
 }

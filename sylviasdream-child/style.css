@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer; whole site editable in Elementor (optional).
 Template: sylviasdream
-Version: 1.23.3
+Version: 1.23.5
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -874,6 +874,13 @@ html.sd-lock, html.sd-lock body { overflow: hidden; }
 .page:not(.home) .entry-content .wp-block-jetpack-contact-form:not(:is(.sd-card, .is-style-sd-card) .wp-block-jetpack-contact-form) { margin: 1.5rem auto 0; padding: clamp(1.25rem, 3vw, 2rem); background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
 /* 1.4.1 follow-ups: banner eyebrows readable on photos. */
 .sd-pagehead .sd-eyebrow, .sd-pagehead-cover .sd-eyebrow, .sd-hero-cover .sd-eyebrow, .wp-block-cover .sd-eyebrow { color: #f3e3bf !important; text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }
+/* 1.23.5: split columns always stack on phones, also in Elementor "Section from your page" and the Customizer preview, where WordPress's
+   flex layout (flex-wrap: nowrap) applies without block-library's stacking rule, which left the My Story photo beside the text. */
+@media (max-width: 781px) {
+	.wp-block-columns.sd-split:not(.is-not-stacked-on-mobile) { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; flex-wrap: wrap !important; }
+	.wp-block-columns.sd-split:not(.is-not-stacked-on-mobile) > .wp-block-column { flex-basis: 100% !important; width: 100% !important; max-width: 100%; }
+	.sd-split .sd-portrait { width: 100%; }
+}
 @media (max-width: 781px) { .sd-split > .wp-block-column:has(.sd-monogram), .sd-split > .wp-block-column:has(.sd-portrait), .sd-split > .wp-block-column:has(.wp-block-image) { order: -1; } }
 
 /* ==========================================================================

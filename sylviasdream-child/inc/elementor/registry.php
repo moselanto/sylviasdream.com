@@ -375,6 +375,7 @@ function sdc_el_registry() {
 				array( 'markup', 'hidden', 'hidden', '', '' ),
 				array( 'texts', 'texts', 'kept_texts', __( 'Words in this section', 'sylviasdream-child' ), array() ),
 				array( 'photos', 'photos', 'kept_photos', __( 'Pictures in this section', 'sylviasdream-child' ), array() ),
+				array( 'story_photo', 'photos', 'media', __( 'Photo instead of the "SS" placeholder (only used when this section has it; leave empty to use the photo in Appearance > Customize)', 'sylviasdream-child' ), array( 'id' => '', 'url' => '' ) ),
 				array( 'links_note', 'links', 'note', __( 'Buttons and links in this section are kept exactly as they were, so payment, Dream Partner and download links always keep working. Ask your web designer if a button should go somewhere else.', 'sylviasdream-child' ) ),
 			),
 		),
