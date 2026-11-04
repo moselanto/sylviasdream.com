@@ -3,6 +3,8 @@
 Last updated: Thursday 29 October 2026, about 12:00 Kenya time (EAT, UTC+3). Section 0 is the current state; sections 1 onwards are older background (still valid unless section 0 says otherwise).
 
 ## 0. Latest status (3 Nov 2026) - read this first
+**New 4 Nov: child theme 1.23.3 (branch `feature/my-story-portrait`, PR open; not on the test site yet).** My Story: the gold "SS" monogram placeholder is replaced by Sylvia's portrait (`assets/images/sylvia-portrait.jpg`, 4:5, same 440px frame). After uploading the zip, paste `sylviasdream-child/content/blocks/my-story.html` into My Story (2665) Code editor (or swap the monogram for the image in the block editor). `content/live/my-story.html` updated too. See CHANGELOG.
+
 **New 3 Nov: child theme 1.23.2 is installed and verified on the test site** (PR #9, branch `release/1.23.2`, CI `php -l` 8.0-8.3 passed; **merge PR #9 into `main`**). It moves the 31 Oct dashboard-only fixes into the theme (Books "Start here" shows One Life once; Books banner photo alt text, also via `sdc_page_header()`), shows prices as "A$" (shop currency still AUD) and points the One Life Kindle link to amazon.com.au. The 31 Oct Additional CSS rule was deleted after install. Checked 3 Nov: banner alt, menu, A$ on cards/product/cart/checkout, One Life Kindle link. Install zip: Town library `projects/sylviasdream/sylviasdream-child-1.23.2 (banner alt fix).zip`.
 
 **Next agent, start here (priority order):**

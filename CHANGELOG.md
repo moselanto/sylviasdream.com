@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-04 - Child theme 1.23.3: Sylvia's portrait on My Story
+Child theme only; core plugin unchanged (0.4.4). No Stripe, Dream Partner, thank-you or download link touched; no page wording changed.
+- **Portrait:** the gold "SS / Sylvia Suhr" monogram placeholder beside "No life surrendered to Him is ever wasted" on My Story is replaced by Sylvia's photo (supplied 4 Nov). New `assets/images/sylvia-portrait.jpg`: 880 x 1100 (4:5, sharp at 2x for the 440px frame), centre-cropped from the 1254 x 1254 original so face, glasses and pearl necklace stay in frame; progressive JPEG, 113 KB.
+- **Markup:** `content/blocks/my-story.html` (dev) and `content/live/my-story.html` (launch pack, site-relative path, no dev address) use a core Image block (`sd-photo-round sd-portrait`) with alt text "Sylvia Suhr, smiling, in a teal top and pearl necklace". Editable and replaceable in the block editor (Replace > Media Library).
+- **CSS:** `style.css` `.sd-portrait` keeps the monogram's frame: 4:5, max 440px (340px on phones), centred, rounded, soft shadow, gold gradient behind while loading (no layout shift); photo shows first on phones like the monogram did. `about.css` adds the thin inset frame line used on the About pages.
+- After uploading the zip: paste `content/blocks/my-story.html` into the My Story page (2665) Code editor, or in the block editor select the monogram group, delete it and insert the image. Pages built in Elementor: "Build again".
+- Checks: `check-theme.js` OK; `build-assets.js` run; `php -l` left to CI.
+
 ## 2026-11-03 - Child theme 1.23.2: fixes from the 31 Oct cross-check
 Moves the dashboard-only fixes made on the test site on 31 Oct into the theme (the next upload would have wiped them) and adds two display fixes. Core plugin unchanged (0.4.4). No Stripe, Dream Partner, thank-you or download link touched; no wording invented.
 - **Books mega menu "Start here":** the CSS-drawn fallback cover no longer prints the book title inside the cover as well as under it, so a book without a product image (One Life) shows its name once (`inc/navigation.php`). Replaces the 31 Oct Additional CSS rule on the test site.
