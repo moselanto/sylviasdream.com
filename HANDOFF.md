@@ -3,7 +3,7 @@
 Last updated: Thursday 29 October 2026, about 12:00 Kenya time (EAT, UTC+3). Section 0 is the current state; sections 1 onwards are older background (still valid unless section 0 says otherwise).
 
 ## 0. Latest status (3 Nov 2026) - read this first
-**New 5 Nov: child theme 1.23.4 (branch `release/1.23.4`, includes 1.23.3).** Photo setting that replaces the My Story "SS" placeholder: Appearance > Customize > Home: about Sylvia > "My Story: photo...", and in Elementor "Section from your page" > Photos. Set to Sylvia's photo (Media 6767) on the test site. Elementor Safe Mode is not a fix here: it hides the theme widgets.
+**New 5 Nov: child theme 1.23.4 (branch `release/1.23.4`, includes 1.23.3).** Photo setting that replaces the My Story "SS" placeholder: Appearance > Customize > Home: about Sylvia > "My Story: photo...", and in Elementor "Section from your page" > Photos. Set to Sylvia's photo, Media 6774 `sylvia-suhr-portrait.jpg` (alt "Sylvia Suhr, smiling, in a teal top and pearl necklace"), on the test site; Media 6767 (`preview.jpg`, same photo, first upload) is kept but no longer used on the checked pages. Elementor Safe Mode is not a fix here: it hides the theme widgets.
 
 **New 4 Nov: child theme 1.23.3 (branch `feature/my-story-portrait`, PR open; not on the test site yet).** My Story: the gold "SS" monogram placeholder is replaced by Sylvia's portrait (`assets/images/sylvia-portrait.jpg`, 4:5, same 440px frame). After uploading the zip, paste `sylviasdream-child/content/blocks/my-story.html` into My Story (2665) Code editor (or swap the monogram for the image in the block editor). `content/live/my-story.html` updated too. See CHANGELOG.
 
