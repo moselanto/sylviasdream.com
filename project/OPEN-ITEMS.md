@@ -4,7 +4,9 @@
 - [x] Portrait on My Story in place of the "SS" placeholder (child 1.23.3-1.23.5, PR #11 merged). Test site: Media 6774 `sylvia-suhr-portrait.jpg` set in Customize > Home: about Sylvia and in the My Story Elementor widget. Media 6767 (`preview.jpg`, same photo) kept, unused on the checked pages; delete only with Moses's OK.
 - [x] Kenya photo (Sylvia with schoolchildren), Media 6779 `sylvia-suhr-kenya-children.jpg`, alt "Sylvia Suhr with schoolchildren in Kenya": replaces the stock mission.jpg on My Story (caption kept: "Rural Kenya, where Heaven on Earth serves") and the ChatGPT image "Heaven on Earth, Kenya" on Heaven on Earth (no caption). Test site only; repeat on live at launch.
 - [ ] **Note only (Sylvia, 4 Nov): "I am aged 82 now."** Do not add her age to any page wording unless Sylvia approves exact wording in writing.
-- [ ] Four more ministry photos and one short video from Sylvia (4 Nov) plus an AI-made image "Speaking to a Kenyan congregation": placement to decide.
+- [x] Four ministry photos from Sylvia (4 Nov), no captions: Media 6786 `sylvia-suhr-kenya-pupils-green-uniforms.jpg`, 6787 `sylvia-suhr-kenya-class-picture-books.jpg`, 6788 `kenya-children-by-brick-wall.jpg`, 6789 `sylvia-suhr-kenya-vegetable-garden.jpg` (titles and alt text set). Heaven on Earth: Elementor Basic Gallery of all four after the main ministry section (4:3, 2 columns desktop, 1 on phone, no links). My Story: garden photo 6789 as a centred Image widget (600px) after the Kenya photo section. Test site only; repeat on live at launch.
+- [ ] Sylvia's short video (4 Nov): put it on her YouTube channel, then add it with the theme Video widget.
+- [x] AI-made image "Speaking to a Kenyan congregation" (ChatGPT): left out (not a real event; decision 5 Nov).
 
 ## 3 Nov: status after child 1.23.2
 - [x] Child 1.23.2 uploaded to the test site and verified (banner alt, One Life once in "Start here", A$ on cards/product/cart/checkout, One Life Kindle link amazon.com.au); 31 Oct Additional CSS rule deleted
