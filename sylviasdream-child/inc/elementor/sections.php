@@ -882,7 +882,14 @@ function sdc_section_old( $a ) {
 	}
 	$markup = wp_kses_post( $markup ); // The stored markup is treated like post content from any author.
 	$markup = sdc_old_section_apply( $markup, sdc_v( $a, 'texts', array() ), sdc_v( $a, 'photos', array() ) );
+	$prev_photo = function_exists( 'sdc_story_photo_override' ) ? sdc_story_photo_override() : 0;
+	if ( function_exists( 'sdc_story_photo_override' ) ) {
+		sdc_story_photo_override( absint( sdc_v( $a, 'story_photo_id', 0 ) ) ); // 1.23.4: widget photo for the SS placeholder.
+	}
 	echo '<div class="entry-content sd-el-old">' . sdc_render_block_markup( $markup ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- kses-filtered block markup rendered by WordPress.
+	if ( function_exists( 'sdc_story_photo_override' ) ) {
+		sdc_story_photo_override( $prev_photo );
+	}
 }
 
 /**
