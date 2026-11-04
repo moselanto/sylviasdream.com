@@ -1,4 +1,10 @@
-# Open items (updated 31 October 2026)
+# Open items (updated 5 November 2026)
+
+## 5 Nov: photos from Sylvia (WhatsApp, 4 Nov)
+- [x] Portrait on My Story in place of the "SS" placeholder (child 1.23.3-1.23.5, PR #11 merged). Test site: Media 6774 `sylvia-suhr-portrait.jpg` set in Customize > Home: about Sylvia and in the My Story Elementor widget. Media 6767 (`preview.jpg`, same photo) kept, unused on the checked pages; delete only with Moses's OK.
+- [x] Kenya photo (Sylvia with schoolchildren), Media 6779 `sylvia-suhr-kenya-children.jpg`, alt "Sylvia Suhr with schoolchildren in Kenya": replaces the stock mission.jpg on My Story (caption kept: "Rural Kenya, where Heaven on Earth serves") and the ChatGPT image "Heaven on Earth, Kenya" on Heaven on Earth (no caption). Test site only; repeat on live at launch.
+- [ ] **Note only (Sylvia, 4 Nov): "I am aged 82 now."** Do not add her age to any page wording unless Sylvia approves exact wording in writing.
+- [ ] Four more ministry photos and one short video from Sylvia (4 Nov) plus an AI-made image "Speaking to a Kenyan congregation": placement to decide.
 
 ## 3 Nov: status after child 1.23.2
 - [x] Child 1.23.2 uploaded to the test site and verified (banner alt, One Life once in "Start here", A$ on cards/product/cart/checkout, One Life Kindle link amazon.com.au); 31 Oct Additional CSS rule deleted
