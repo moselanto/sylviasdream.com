@@ -1,5 +1,18 @@
 # Open items (updated 5 November 2026)
 
+## 5 Nov (later): links, reviews and ebooks from Sylvia (WhatsApp, 5 Nov)
+
+Test site only; repeat on live at launch.
+
+- [x] YouTube channel https://www.youtube.com/@SylviasDream added to the global footer and as a centred "Watch Sylvia's Dream on YouTube" button below the Heaven on Earth videos
+- [x] "Registered" wording removed from Heaven on Earth (page title, banner/breadcrumb, mission and Dream Partner paragraphs) and from Give (mission and Dream Partner paragraphs). Sylvia has no registration details (5 Nov). The charity registration-number setting was already blank. No registration claims remain in the checked page and footer text, FAQs included
+- [ ] GoFundMe buttons: Sylvia's current fundraiser is https://gofund.me/e6fffb40c ("Heaven on Earth Ministries cares for orphans", organiser Sylvia Suhr). Both "Go Fund Me" buttons still point to the old https://gofund.me/dc685ae2. The custom section widgets lock existing links (no editable destination field) and the old link is not in the repo, so it is stored in the page content. Needs a designer-level change (widget link field or page-data edit). The embedded GoFundMe fundraiser was left unchanged
+- [ ] Visual phone check of Heaven on Earth and Give after these edits: text and links checked in the phone preview, screenshots timed out
+- [ ] Reviews (item 3): three received as screenshots. Kerryn (Amazon AU, Kindle, 5 stars, 20 Dec 2025, book not shown, mentions "Angelique"); Lynne Duncan (Goodreads, One Life; typos "Sylivia", "haven't 't"); John Parran (Amazon US, paperback, 4 stars, 7 May 2019, book not shown). Ask Sylvia which books, OK to show names, OK to fix Lynne's typos
+- [ ] Guard Your Heart Renew Your Mind (item 2): two print PDFs received, 6x9 paperback (94 pages) and A4 coil (50 pages), saved to the Town library. No EPUB. Ask Sylvia which is the download for buyers (6x9 suggested)
+- [ ] When the Word Becomes Life: EPUB received (Kindle Create, about 15,000 words, 11 chapters). Not on the site yet. Back matter says "Heaven on Earth - Registered Christian Charity and Church in Kenya" and links www.sylviasdream.com/heavenonearth; registration wording conflicts with the site change above. Review sent to Moses 5 Nov
+- [ ] Sylvia's Kenya video: still to go on her YouTube channel before it is shown on Heaven on Earth
+
 ## 5 Nov: photos from Sylvia (WhatsApp, 4 Nov)
 - [x] Portrait on My Story in place of the "SS" placeholder (child 1.23.3-1.23.5, PR #11 merged). Test site: Media 6774 `sylvia-suhr-portrait.jpg` set in Customize > Home: about Sylvia and in the My Story Elementor widget. Media 6767 (`preview.jpg`, same photo) kept, unused on the checked pages; delete only with Moses's OK.
 - [x] Kenya photo (Sylvia with schoolchildren), Media 6779 `sylvia-suhr-kenya-children.jpg`, alt "Sylvia Suhr with schoolchildren in Kenya": replaces the stock mission.jpg on My Story (caption kept: "Rural Kenya, where Heaven on Earth serves") and the ChatGPT image "Heaven on Earth, Kenya" on Heaven on Earth (no caption). Test site only; repeat on live at launch.
