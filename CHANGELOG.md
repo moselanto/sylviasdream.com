@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-05 - Child theme 1.23.6: GoFundMe button link setting
+Sylvia's current fundraiser is https://gofund.me/e6fffb40c. The "Go Fund Me" buttons on Heaven on Earth and Give pointed to the old https://gofund.me/dc685ae2, and in Elementor they sit inside "Section from your page" widgets, which keep links as they are. Child theme only; core plugin unchanged (0.4.4). No Stripe, Dream Partner, thank-you or download link touched; no wording changed.
+- **New `inc/gofundme-link.php`:** a `render_block_core/button` filter sends every button link to gofund.me or gofundme.com to the address in the new setting. Works in the block editor and in Elementor kept sections (both use `do_blocks()`). Blank setting = links unchanged. Filter `sdc_gofundme_url`.
+- **Setting:** Appearance > Customize > Sylvia's Dream > Home: Heaven on Earth and giving > "GoFundMe button link" (`sdc_gofundme_url`, `esc_url_raw`; only gofund.me / gofundme.com addresses are used).
+- Button labels, ordinary text links and the embedded GoFundMe widget (`gfm-embed`, its data-url and script) are not touched.
+- `content/blocks/give.html` and `heaven-on-earth.html` keep the old address; the setting overrides it on render.
+
 ## 2026-11-05 - Child theme 1.23.5: My Story photo stacks above the text on phones
 Test-site check of 1.23.4 (Customizer phone preview, about 320px): the portrait stayed small beside the text instead of above it. Cause: in the Elementor "Section from your page" widget (and the Customizer preview) the columns get WordPress's flex layout (`flex-wrap: nowrap`) without block-library's under-782px stacking rule. Fix (style.css only): under 782px every `.wp-block-columns.sd-split` (unless set "not stacked on mobile") becomes one column; the existing order rule keeps the photo first. Applies to all split sections, block or Elementor. No PHP, wording or link change.
 
