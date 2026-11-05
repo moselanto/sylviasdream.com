@@ -1,5 +1,22 @@
 # Open items (updated 5 November 2026)
 
+## 5 Nov (afternoon): My Story rebuilt in Elementor, Dream Partner links on Give
+
+Test site only; repeat on live at launch.
+
+- [x] My Story: Milestones, the four "My story" cards and "Let's Walk Together" rebuilt as native Elementor containers and widgets (the old "Section from your page" widgets had no layout controls). Wording, photos, caption and links unchanged; "Partner with us" still goes to the $5 Stripe link. Garden photo (Media 6789) now sits under the Kenya photo (Media 6779, caption "Rural Kenya, where Heaven on Earth serves") beside the timeline. Phone photo container width fixed (100px to 100%). Desktop and phone checked
+- [x] My Story Milestones styled in Elementor: ivory background, gold left accent, 16px corners, 40px padding (24px phone), 17px text in the site's normal font (an Arial override was removed). Desktop and phone checked
+- [x] Child theme 1.23.7 (CSS-only My Story polish) withdrawn: it did not reach the Elementor markup. PR #17 closed without merging; test site back on 1.23.6
+- [x] Dream Partner links (item 6) from Sylvia, 5 Nov. Each opened without paying: monthly, AUD, merchant "Building Heaven on Earth"
+  - A$5/month: https://buy.stripe.com/9B66oHawv3Hr1rK03V7g405 (existing link, unchanged)
+  - A$15/month: https://buy.stripe.com/14AcN5bAz6TD5I03g77g40l
+  - A$30/month: https://buy.stripe.com/9B66oH5cb91LgmEdUL7g40m
+  - A$50/month: https://buy.stripe.com/5kQ00j9sr7XH5I03g77g40n
+- [x] Give page: the locked giving section replaced with editable Elementor content. Four tiers with Sylvia's full descriptions (her wording, sent 5 Nov) and buttons to the links above. Partner progress bar, GoFundMe button, photo, updates and FAQs kept. Desktop and phone checked; no payment made
+- [ ] Give page wording NOT from Sylvia, added 5 Nov: an updated preview notice and a note that gifts are billed monthly in Australian dollars. Needs Moses's or Sylvia's approval, or revert to the previous text
+- [ ] "Give any amount" link (item 6): Sylvia to send later; the any-amount option is left as it was until then
+- [ ] Item 7 (number of active monthly Dream Partners, for the counter) and item 8 (confirm the payment account starting "Bu" and ending "th" is hers): still waiting on Sylvia
+
 ## 5 Nov (later): links, reviews and ebooks from Sylvia (WhatsApp, 5 Nov)
 
 Test site only; repeat on live at launch.
