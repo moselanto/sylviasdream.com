@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '1.23.5' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '1.23.6' );
 define( 'SYLVIASDREAM_CHILD_DIR', get_stylesheet_directory() );
 define( 'SYLVIASDREAM_CHILD_URI', get_stylesheet_directory_uri() );
 
@@ -262,6 +262,7 @@ require_once SYLVIASDREAM_CHILD_DIR . '/inc/languages.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/hero-books.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/cover-alt.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/story-photo.php';
+require_once SYLVIASDREAM_CHILD_DIR . '/inc/gofundme-link.php';
 require_once SYLVIASDREAM_CHILD_DIR . '/inc/journal.php';
 // 1.21.0: Elementor editing layer and Sylvia's Dream Theme Options. Safe without
 // Elementor or Redux (nothing Elementor-specific runs until Elementor loads).

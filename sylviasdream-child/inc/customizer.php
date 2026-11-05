@@ -98,6 +98,7 @@ function sdc_fields() {
 		// Heaven on Earth and Dream Partner bands.
 		'hoe_eyebrow'        => array( 'sdc_ministry', __( 'Heaven on Earth: small heading', 'sylviasdream-child' ), 'text', 'Heaven on Earth, Kenya' ),
 		'hoe_text'           => array( 'sdc_ministry', __( 'Heaven on Earth: statement', 'sylviasdream-child' ), 'textarea', 'Rescuing vulnerable children, educating the next generation and bringing the love of Christ to rural villages.' ),
+		'gofundme_url'       => array( 'sdc_ministry', __( 'GoFundMe button link (Heaven on Earth and Give pages; blank leaves the buttons as they are)', 'sylviasdream-child' ), 'url', '' ),
 		'hoe_cta_label'      => array( 'sdc_ministry', __( 'Heaven on Earth: button label', 'sylviasdream-child' ), 'text', 'About the ministry' ),
 		'hoe_cta_url'        => array( 'sdc_ministry', __( 'Heaven on Earth: button link', 'sylviasdream-child' ), 'link', '/heaven-on-earth/' ),
 		'give_eyebrow'       => array( 'sdc_ministry', __( 'Dream Partners: small heading', 'sylviasdream-child' ), 'text', 'Dream Partners' ),
