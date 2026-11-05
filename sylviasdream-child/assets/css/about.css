@@ -213,3 +213,32 @@
 	.sd-about .entry-content .wp-block-file { flex-direction: column; align-items: stretch; text-align: center; }
 	.sd-about .entry-content .wp-block-file__button { justify-content: center; }
 }
+
+/* 1.23.7: My Story layout polish (layout and spacing only; no wording, links or photos changed). */
+.sd-p-my-story .entry-content > .sd-band,
+.sd-p-my-story .sd-el-old > .sd-band { padding-block: clamp(3rem, 6vw, 5rem); }
+.sd-p-my-story .entry-content > .sd-band.sd-band--narrow,
+.sd-p-my-story .sd-el-old > .sd-band.sd-band--narrow { padding-block: clamp(2.75rem, 5vw, 4.25rem); }
+/* Milestones: the photo fills the column beside the timeline, so no blank gap under it. */
+@media (min-width: 782px) {
+	.sd-p-my-story .sd-split--timeline { align-items: stretch !important; gap: clamp(2rem, 4vw, 3.5rem) !important; }
+	.sd-p-my-story .sd-split--timeline > .wp-block-column { align-self: stretch !important; }
+	.sd-p-my-story .sd-split--timeline .sd-photo-captioned { position: sticky; top: 110px; height: 100%; max-height: 640px; margin: 0; }
+	.sd-p-my-story .sd-split--timeline .sd-photo-captioned img { width: 100%; height: 100% !important; min-height: 420px; aspect-ratio: auto !important; object-fit: cover !important; border-radius: 20px; }
+}
+/* Standalone photos on the page (garden photo): same finish as the other photos. */
+.sd-p-my-story .elementor-widget-image img { border-radius: 20px; box-shadow: 0 16px 40px rgba(60, 40, 10, .12); }
+/* "My story" cards: equal height, even padding. */
+.sd-p-my-story .sd-cards { align-items: stretch; gap: clamp(1rem, 2.5vw, 1.75rem); }
+.sd-p-my-story .sd-cards > .sd-card { height: 100%; display: flex; flex-direction: column; margin: 0 !important; padding: clamp(1.5rem, 3vw, 2.25rem) !important; }
+.sd-p-my-story .sd-cards > .sd-card > :last-child { margin-bottom: 0; }
+/* "Let's Walk Together": when its video does not display, drop the empty half and centre the text. */
+.sd-p-my-story .sd-split > .wp-block-column:has(.wp-block-embed__wrapper):not(:has(.wp-block-embed__wrapper *)) { display: none !important; }
+.sd-p-my-story .sd-split:has(> .wp-block-column .wp-block-embed__wrapper):not(:has(.wp-block-embed__wrapper *)) { justify-content: center; }
+.sd-p-my-story .sd-split:has(> .wp-block-column .wp-block-embed__wrapper):not(:has(.wp-block-embed__wrapper *)) > .wp-block-column { flex: 0 1 720px !important; max-width: 720px; text-align: center; }
+.sd-p-my-story .sd-split:has(> .wp-block-column .wp-block-embed__wrapper):not(:has(.wp-block-embed__wrapper *)) .wp-block-buttons { justify-content: center; }
+.sd-p-my-story .sd-split:has(> .wp-block-column .wp-block-embed__wrapper):not(:has(.wp-block-embed__wrapper *)) .sd-lead { margin-inline: auto; }
+@media (max-width: 781px) {
+	.sd-p-my-story .entry-content > .sd-band,
+	.sd-p-my-story .sd-el-old > .sd-band { padding-block: 3rem; }
+}

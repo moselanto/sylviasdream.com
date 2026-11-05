@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-05 - Child theme 1.23.7: My Story layout polish
+CSS only (`assets/css/about.css`, scoped to `body.sd-p-my-story`). The page's sections are Elementor "Section from your page" widgets whose inner columns and cards have no layout controls, so the polish is done in the theme. No wording, links, photos or payment buttons changed.
+- Section spacing evened out: about 48-80px top and bottom instead of up to 112px.
+- Milestones: the photo beside the timeline stretches to the timeline's height (cover crop, sticky on desktop), so no blank gap is left under it. Phones unchanged (photo stacks).
+- Standalone Image widgets on the page (garden photo) get the same rounded corners and shadow as the other photos.
+- "My story" cards: equal heights and even inner padding.
+- "Let's Walk Together": when its video column shows nothing, the empty half is hidden and the text and button are centred.
+
 ## 2026-11-05 - Child theme 1.23.6: GoFundMe button link setting
 Sylvia's current fundraiser is https://gofund.me/e6fffb40c. The "Go Fund Me" buttons on Heaven on Earth and Give pointed to the old https://gofund.me/dc685ae2, and in Elementor they sit inside "Section from your page" widgets, which keep links as they are. Child theme only; core plugin unchanged (0.4.4). No Stripe, Dream Partner, thank-you or download link touched; no wording changed.
 - **New `inc/gofundme-link.php`:** a `render_block_core/button` filter sends every button link to gofund.me or gofundme.com to the address in the new setting. Works in the block editor and in Elementor kept sections (both use `do_blocks()`). Blank setting = links unchanged. Filter `sdc_gofundme_url`.
