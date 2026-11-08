@@ -1,4 +1,19 @@
-# Open items (updated 5 November 2026)
+# Open items (updated 8 November 2026)
+
+## 6-8 Nov: Sylvia's answers, reviews, posts, ebook downloads
+
+Test site only; repeat on live at launch.
+
+- [x] Photos (item 1) closed: portrait (Media 6774) in the Home "Meet Sylvia" photo spot; the ChatGPT image "Speaking to a Kenyan congregation" placed on Invite Sylvia to Speak with Moses's OK (alt text and media description say it is AI-generated)
+- [x] Item 2 (Sylvia, 6 Nov): buyers may download the 6x9 paperback PDF. Guard Your Heart Renew Your Mind (6393) is now Virtual + Downloadable with the 6x9 PDF uploaded through the product uploader (woocommerce_uploads)
+- [x] When the Word Becomes Life: new PDF from Sylvia (A4, 74 pages, no "Registered" wording, no "Other books" page) put in product 6380's existing download entry (`When-the-Word-Becomes-Life-vczkmp.pdf`, woocommerce_uploads). Test order #6686 downloads it
+- [x] Old public copy: Media 5646 (`uploads/2026/07/When-the-Word-Becomes-Life.pdf`) permanently deleted with Moses's OK; approved download directory `uploads/2026/07/` (entry ID 3) disabled. No product download points there. Signed-out browser still showed a cached copy of the old URL; a cache-busted request returned 404. Re-check in a fresh browser / after cache clear
+- [ ] Book review notes for When the Word Becomes Life (Sylvia asked us to review it): WhatsApp prepared 8 Nov (Bible version notices, Kindle version still says "Registered Christian Charity", Introduction title, two punctuation fixes, chapters 1 and 4 repeat, uneven chapter endings, short lines styled as headings). Moses sends
+- [x] Item 3 (Sylvia, 6 Nov): John Parran's review is for One Life; OK to show names; OK to fix typos. Lynne Duncan (typos "Sylivia" and "haven't 't" fixed) and John Parran added word for word to the existing review cards on the One Life page; no new headings. Desktop and phone checked
+- [ ] Kerryn's review: book still not confirmed (mentions "Angelique"); not on the site
+- [x] Post "Grace for the Journey: You Don't Have to Carry It All" (6297, 22 Oct): Sylvia's picture set as featured image (title and alt text)
+- [x] Post "A Gift You Could Never Earn" (6854): Sylvia published it on live 5 Nov in Grace for the Journey; copied to the test site (same title, slug, date, text, category, author Sylvia Suhr), featured image "A Gift Beyond Earning", no newsletter email sent
+- [ ] Still waiting on Sylvia: other ebook files; fix "Registered" on the Kindle version; Kerryn's book; Kenya video on YouTube; "give any amount" link; OK for the AUD billing line on Give; item 7 partner count; item 8 payment account; questions 9 to 24; her overall feedback on the test site
 
 ## 5 Nov (afternoon): My Story rebuilt in Elementor, Dream Partner links on Give
 
