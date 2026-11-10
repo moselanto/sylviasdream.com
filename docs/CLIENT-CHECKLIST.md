@@ -19,7 +19,7 @@ Updated 10 Nov 2026. The numbers match the WhatsApp request list prepared for Mo
 
 ## Photos and files to send
 - [x] 1. Photos of Sylvia: portrait, Kenya photo and four ministry photos received 4 Nov (placed on the test site; see OPEN-ITEMS 5 Nov)
-- [ ] 2. Final ebook files, PDF or EPUB (not Word), for every paid book. Received: Guard Your Heart Renew Your Mind (two print PDFs, 6x9 and A4 coil; which one buyers get still to confirm), When the Word Becomes Life (EPUB). Also asked 10 Nov: remove "Registered Christian Charity" from the Kindle edition of When the Word Becomes Life
+- [ ] 2. Final ebook files, PDF or EPUB (not Word), for every paid book. Received: Guard Your Heart Renew Your Mind (two print PDFs, 6x9 and A4 coil; the 6x9 is attached on the test site, product 6393, checked 10 Nov; her OK still needed), When the Word Becomes Life (EPUB). Also asked 10 Nov: remove "Registered Christian Charity" from the Kindle edition of When the Word Becomes Life
 - [ ] 3. Reviews: three received 5 Nov as screenshots; asked 10 Nov which book Kerryn's is for (probably Angelique). Still to confirm: names shown, Lynne's typos
 - [x] 4. YouTube and GoFundMe links (5 Nov)
 - [x] 5. Heaven on Earth registration details: she has none (5 Nov); "Registered" wording removed
@@ -36,13 +36,13 @@ Updated 10 Nov 2026. The numbers match the WhatsApp request list prepared for Mo
 - [ ] 10. "Every purchase helps Heaven on Earth" line
 - [ ] 11. Give amounts $5/$15/$30/$50/any and 100 Dream Partners goal
 - [ ] 12. Free books in writing: SENT, book-writing guide, 7 Days to Trusting God
-- [ ] 13. "To Ensure You End Up Going to Heaven": offer a free download? Which file? (button has no link now)
+- [ ] 13. "To Ensure You End Up Going to Heaven": offer a free download? Which file? (empty button removed on the test site 10 Nov; the sentence about a free eBook is unchanged; Meet Jesus suggested in the 10 Nov email)
 - [ ] 14. Privacy Policy, Terms of Sale, Refund Policy
 - [ ] 15. Contact page "Australia" only
 - [ ] 16. Be a World Changer: separate ebook (price + file) or same as Fast Forward to Success?
 - [ ] 17. Fast Forward to Success: in the shop at launch? Price?
 - [ ] 18. No Stripe button yet: When the River Flows Again, Fields of Becoming, 7 Days from Fear to Freedom, Fast Forward to Success. Links, or cart only?
-- [ ] 19. Check all book prices (shown as A$)
+- [ ] 19. Check all book prices (shown as A$). Test site 10 Nov: Guard Your Heart Renew Your Mind 7.10, The Report of the Lord 8.35 (both Amazon AU Kindle prices)
 - [ ] 20. One Life hardcover: exists? Amazon link
 - [ ] 21. Paperback buttons to Amazon Australia too?
 - [ ] 22. Other editions in the shop: French, Spanish, Bahasa Indonesia, Angelique Legacy, The King's Way paperback, large print

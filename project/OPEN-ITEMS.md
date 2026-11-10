@@ -5,7 +5,10 @@
 - [x] Built and committed to main; zips in the Town library (Sylvias Dream/releases). Paid ebooks without a price or a download file cannot be added to the cart and show "Coming soon" (unless they have Sylvia's Stripe "Buy ebook" link). Closes the 31 Oct item "Guard Your Heart has Add to cart but no downloadable file"
 - [x] Installed on the test site 10 Nov (evening) and checked (PROGRESS-LOG). Was: a book with neither file nor Stripe link shows "Coming soon" and no Add to cart; a Stripe book still shows Buy ebook; When the Word Becomes Life still adds to cart and checks out with Test payment; a free book still shows Free download; Settings > Sylvia's Dream shows "Coming soon guard" ticked; the product edit screen warning appears on a coming-soon book
 - [ ] HANDOFF sections 0 and 3 rewritten 10 Nov; keep them current from now on
-- [ ] Records out of date, found in the 10 Nov smoke test: Guard Your Heart Renew Your Mind now shows A$7.10, Add to cart and a Stripe Buy ebook button (so it has a download file attached; which file, 6x9 or A4, still to confirm with Sylvia); The Report of the Lord shows A$8.35 and a Stripe button (OPEN-ITEMS said no price). Check both products in wp-admin and correct the 31 Oct items
+- [x] Records checked in wp-admin 10 Nov (read only, nothing changed):
+  - Guard Your Heart Renew Your Mind = product **6393** (not 6381): A$7.10; one protected download, "Guard Your Heart Renew Your Mind 6x9 paperback.pdf" in `woocommerce_uploads/2026/10/` (the **6x9** version; page count not opened); Stripe Buy ebook link set (`...40k`). Sylvia still to confirm the 6x9 is the file buyers get (item 2)
+  - Guard Your Heart: Understanding the Heart... = product **6381**, a different book: no download file, no Stripe link, so it shows "Coming soon" (core 0.4.5)
+  - The Report of the Lord (6396): A$8.35 regular price (Amazon AU Kindle price set 29 Oct; Sylvia to confirm, item 19), no sale price; Stripe Buy ebook link `...40g` (matches the 31 Oct match from the live site)
 
 ## 10 Nov: follow-up email and WhatsApp reminder to Sylvia (prepared, not sent)
 
@@ -53,7 +56,7 @@ Test site only; repeat on live at launch.
 - [x] GoFundMe buttons: child theme 1.23.6 (PR #16, branch release/1.23.6) adds Customizer > Sylvia's Dream > Home: Heaven on Earth and giving > "GoFundMe button link" (`sdc_gofundme_url`). Installed on the test site 5 Nov and set to https://gofund.me/e6fffb40c; Elementor CSS & Data regenerated. Both "Go Fund Me" buttons on Heaven on Earth and Give verified going to the new address on desktop and phone previews. Old address dc685ae2 still in `content/blocks/give.html` and `heaven-on-earth.html`; the setting overrides it on render. Embedded GoFundMe widget unchanged. At launch: install 1.23.6 on live and set the same link
 - [x] Visual phone check of Heaven on Earth and Give: desktop and phone preview screenshots taken 5 Nov after 1.23.6; layouts render and buttons visible. Real-phone check still suggested
 - [ ] Reviews (item 3): three received as screenshots. Kerryn (Amazon AU, Kindle, 5 stars, 20 Dec 2025, book not shown, mentions "Angelique"); Lynne Duncan (Goodreads, One Life; typos "Sylivia", "haven't 't"); John Parran (Amazon US, paperback, 4 stars, 7 May 2019, book not shown). Ask Sylvia which books, OK to show names, OK to fix Lynne's typos
-- [ ] Guard Your Heart Renew Your Mind (item 2): two print PDFs received, 6x9 paperback (94 pages) and A4 coil (50 pages), saved to the Town library. No EPUB. Ask Sylvia which is the download for buyers (6x9 suggested)
+- [ ] Guard Your Heart Renew Your Mind (item 2): two print PDFs received, 6x9 paperback (94 pages) and A4 coil (50 pages), saved to the Town library. No EPUB. The **6x9 is attached** to product 6393 on the test site (checked 10 Nov); Sylvia to confirm it is the right download (asked in the 10 Nov email)
 - [ ] When the Word Becomes Life: EPUB received (Kindle Create, about 15,000 words, 11 chapters). Not on the site yet. Back matter says "Heaven on Earth - Registered Christian Charity and Church in Kenya" and links www.sylviasdream.com/heavenonearth; registration wording conflicts with the site change above. Review sent to Moses 5 Nov
 - [ ] Sylvia's Kenya video: still to go on her YouTube channel before it is shown on Heaven on Earth
 
@@ -85,9 +88,10 @@ Done on the test site 31 Oct (content, by hand):
 - [x] Prices "A$" on cards (child 1.23.2) and One Life Kindle link to amazon.com.au (`content/blocks/book-one-life.html`; One Life page 2766 on the test site fixed 3 Nov)
 Still open:
 - [x] (10 Nov: core 0.4.5 shows "Coming soon" until a file is attached) Guard Your Heart Renew Your Mind has Add to cart but no downloadable file: attach Sylvia's final ebook (protected) or hide Add to cart until then
-- [ ] "Going to Heaven" page mentions a free download but its button has no link: file from Sylvia or remove the button (never invent)
+- [x] (10 Nov, test site) "To Ensure You End Up Going to Heaven" (page 2458): the empty Button block (no label, no link) and its Buttons wrapper removed. All 11 paragraphs and both images unchanged; front end checked, no buttons left
+- [ ] Going to Heaven: the sentence mentioning a free eBook is still on the page with no download. Waiting on Sylvia (item 13; Meet Jesus booklet suggested in the 10 Nov email). Add a download button only with her approved file, or remove the sentence only with her OK
 - [ ] Redesigned pages read differently from live (My Story, One Life, Author Support, Ministry, Podcasts and Videos, Contact, devotionals page, several book pages): mostly the approved redesign; list them in the combined document for Sylvia's written approval
-- [ ] Monday Encouragement post shows the test-site address in its text: correct before anything reaches live (live posts are never re-published)
+- [x] (10 Nov, test site) Monday Encouragement post (5688, "Grace for the Journey - Monday Encouragement"): the one test-site address in its text (bold plain text, not a link) changed to "sylviasdream.com", matching the live post. Date (22 Jul 2026), author Sylvia Suhr and Published status unchanged; front end checked. Nothing changed on live
 - [ ] Draft or merged legacy pages (`new-home`, `sylvias-dream`, Hidden Key 5319, `my-autobiography`): confirm each old address redirects to the right page (`docs/REDIRECT-MAP.md`)
 - [ ] Other amazon.com links in `content/blocks/` (SENT "Buy on Amazon", From Fear to Freedom paperback and French edition): decide whether paperbacks also go to amazon.com.au (31 Oct decision covers Kindle links)
 
@@ -105,9 +109,9 @@ Still open:
 - [ ] Amazon/Kindle icon on the Kindle button
 - [x] 12 Stripe "Buy ebook" links copied from live pages (see PROGRESS-LOG 31 Oct); 17 books now have one
 - [ ] Still no Stripe link (ask Sylvia, never invent): When the River Flows Again, Fields of Becoming, 7 Days from Fear to Freedom, Fast Forward to Success (has an AU Kindle link). Free, no link needed: How to Write and Publish, 7 Days to Trusting God. Manifesting Miracles Now is Draft
-- [ ] Check with Sylvia: Trusting God Deeper link (`...403`) and The Report of the Lord link (`...40g`) were matched from /shop-for-books/ and the live home page by label and context; confirm on the purchase test
+- [ ] Check with Sylvia: Trusting God Deeper link (`...403`) and The Report of the Lord link (`...40g`, confirmed on product 6396 on 10 Nov) were matched from /shop-for-books/ and the live home page by label and context; confirm on the purchase test
 - [ ] Be a World Changer: separate ebook (price and file needed) or same as Fast Forward to Success?
-- [ ] Prices: Fast Forward to Success, The Report of the Lord
+- [ ] Prices: Fast Forward to Success (The Report of the Lord has A$8.35 on the test site since 29 Oct; Sylvia confirms with item 19)
 - [ ] Old download files, Option A: (1) all paid ebooks on secure downloads with protected files attached; (2) past buyers get new secure links (Sylvia sends, or Pimofy prepares the email); (3) only then, with Sylvia's written OK, remove the old public paid files and point the old thank-you/download pages to the shop
 - [ ] Purchase tests for both routes: Add to cart (test payment) and a Stripe button (real purchase, refunded by Sylvia, on the call)
 - [ ] Newsletter sign-up and welcome email: final acceptance check on live, before public launch and final payment
@@ -126,7 +130,7 @@ All requests now sit in one email draft, "Everything we need to finish your new 
 (Kept in full in Moses's Town document "Things needed from Sylvia"; send it to her when the build is done.)
 - [ ] Covers: When Fear Has the Final Word (6390), Fast Forward to Success (6397), Manifesting Miracles Now (6398) have no cover (From Fear to Freedom received 26 Oct)
 - [ ] Better (sharper) covers for Guard Your Heart (6381) and Angelique Finds Her Light (6394): the current files look soft (27 Oct check)
-- [ ] Price for The Report of the Lord (6396): the product has no price on dev
+- [x] (checked 10 Nov) Price for The Report of the Lord (6396): A$8.35 on the test site (Amazon AU Kindle price, 29 Oct); Sylvia to confirm all prices (item 19)
 - [ ] Confirm titles/subtitles (not on Amazon): When Fear Has the Final Word ("A Devotional on Peace"), Manifesting Miracles Now ("Everyday God Encounters of Selected Authors")
 - [ ] Fast Forward to Success: add a line about her own chapter? (Amazon text describes the whole collection)
 - [ ] Other Amazon editions in the shop or not: French (De la Peur à la Liberté), Spanish (UNA VIDA), Angelique Legacy Edition, The King's Way: God's Plan For Salvation paperback, large-print editions

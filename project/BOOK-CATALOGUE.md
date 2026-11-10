@@ -23,10 +23,10 @@ Source: book list v2 (15 October 2026) sent to Sylvia. **Nothing here is final u
 | 15 | When Fear Has the Final Word: A Devotional on Peace | Devotionals | 4.50 | eBook | English |
 | 16 | Fields of Becoming: From Striving to Rest, From Loss to Life | Fiction | to confirm | eBook, Paperback | English |
 | 17 | When the River Flows Again: Returning to a Spirit-Led Life of Peace, Clarity, and Power | Christian Living | to confirm | eBook, Paperback | English |
-| 18 | Guard Your Heart Renew Your Mind (subtitle to confirm) | Christian Living | to confirm | to confirm | English |
+| 18 | Guard Your Heart Renew Your Mind (subtitle to confirm) | Christian Living | 7.10 on test site (Amazon AU Kindle price; Sylvia to confirm) | eBook (6x9 PDF attached, product 6393), Kindle | English |
 | 19 | Angelique Finds Her Light: A Christian Children's Book | Children | to confirm | to confirm | English |
 | 20 | 7 Days from Fear to Freedom: A Devotional | Devotionals | to confirm | to confirm | English |
-| 21 | The Report of the Lord (subtitle to confirm) | Christian Living | to confirm | to confirm | English |
+| 21 | The Report of the Lord (subtitle to confirm) | Christian Living | 8.35 on test site (Amazon AU Kindle price; Sylvia to confirm) | eBook via Stripe link (product 6396), Kindle, Paperback | English |
 | 22 | Fast Forward to Success: Be a World Changer | Christian Living | to confirm | to confirm | English |
 | 23 | Manifesting Miracles Now: Everyday God Encounters of Selected Authors | Coming soon | - | - | English |
 | 24 | 7 Days to Trusting God with Your Journey: A Faith-Based Devotional | Devotionals | to confirm | to confirm | English |
@@ -100,3 +100,12 @@ Final ebook file (PDF or EPUB, not Word), cover image (Sylvia sending by email),
 
 ## Next step
 When Sylvia answers: make book list v3 (Pimofy library), update the prototype (`prototype/index.html`) and this file in the same commit.
+
+## Test-site check, 10 Nov 2026 (wp-admin, read only)
+| Book | Product | Price (A$) | Download file | Stripe Buy ebook |
+|---|---|---|---|---|
+| Guard Your Heart Renew Your Mind: A 40 Day Journey from Thought to Truth to Transformation | 6393 | 7.10 | "Guard Your Heart Renew Your Mind 6x9 paperback.pdf" (6x9 version, protected `woocommerce_uploads/2026/10/`) | yes (`...40k`) |
+| Guard Your Heart: Understanding the Heart, the Inner Life, and the Miracle of Being Born Again | 6381 | 8.42 (29 Oct list) | none, shows "Coming soon" | none |
+| The Report of the Lord: From the Old Report to the Living Hope of the Risen Christ | 6396 | 8.35 (no sale price) | none (sold by Stripe link) | yes (`...40g`) |
+
+Note: #6 Guard Your Heart (6381) and #18 Guard Your Heart Renew Your Mind (6393) are separate books (Sylvia, 15 Oct). Earlier notes that tied the Renew Your Mind file to 6381 were wrong.

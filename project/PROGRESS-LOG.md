@@ -2,6 +2,10 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Tuesday 10 November 2026 (night): product checks and two launch blockers
+- wp-admin, read only: Guard Your Heart Renew Your Mind is product 6393 (A$7.10, 6x9 PDF attached in `woocommerce_uploads`, Stripe link `...40k`); product 6381 is the separate Guard Your Heart (no file, no Stripe link, "Coming soon"); The Report of the Lord 6396 is A$8.35 with Stripe link `...40g`. BOOK-CATALOGUE, CLIENT-CHECKLIST and OPEN-ITEMS corrected.
+- Test site: Monday Encouragement post 5688, test-site address in its text changed to sylviasdream.com (as on live); date, author and status unchanged. Going to Heaven page 2458: empty button (no label, no link) removed; no wording changed; Meet Jesus not added. Both checked on the front end. Live site untouched; no code or payment link edited.
+
 ## Tuesday 10 November 2026 (evening): child 1.23.8 and core 0.4.5
 - Core `inc/sale-guard.php`: paid ebooks with no price or no download file are not purchasable; product-screen warning; setting "Coming soon guard" (on); schema Offer omitted for them. Child: "Coming soon" price and buy-box message (Customizer `shop_coming_soon`), Stripe and Amazon buttons unchanged.
 - Follow-up email and WhatsApp reminder to Sylvia recorded (CORRESPONDENCE, CLIENT-CHECKLIST, OPEN-ITEMS); not sent, Moses to approve.
