@@ -2,6 +2,11 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Tuesday 10 November 2026: Elementor launch plan, GoFundMe address, protected ebook
+- `docs/MIGRATION-PLAN.md` section 4b: how the Elementor-built pages (My Story, Give, Heaven on Earth, Contact, Books, any header/footer templates) move to sylviasdream.com, since `content/live/` holds only the older block-editor versions. Saved-template export, dev-address and image clean-up, import on live, existing pages updated only in the switch-over window, fallback to `content/live/`.
+- Old GoFundMe address dc685ae2 replaced with e6fffb40c in `content/blocks/` (give, heaven-on-earth), `content/live/` (same two) and `docs/hoe-segments/part2.txt`. No code change; no version bump (page source files only; the Customizer setting from 1.23.6 already overrides the button on render).
+- Test site, When the Word Becomes Life (6380): protection checked and finished. Product already used the protected copy in `woocommerce_uploads/2026/10/`; Media 5646 already gone; removed the leftover disabled `uploads/2026/07/` approved directory. Signed out: old address 404, protected file 403. Order #6686 still downloads from My account. Live site and Stripe untouched.
+
 ## Tuesday 3 November 2026: child theme 1.23.2
 - Built on `release/1.23.2` from main: mega-menu fallback cover without duplicate title, `bible.jpg` banner alt text, AUD symbol "A$", One Life Kindle link to amazon.com.au. `check-theme.js` OK, assets rebuilt. PR #9; CI `php -l` 8.0-8.3 passed.
 - First upload: Books banner alt still empty, because Books uses the theme page header (Elementor Page top banner) rather than a cover block. Fixed in `sdc_page_header()` (`sdc_theme_photo_alt()`), zip rebuilt as the same version and uploaded again.

@@ -73,5 +73,53 @@ Slug differences to respect: on live `/all-shall-be-well/` is the **thank-you pa
 ## 4a. Source documents reconciled (26 Oct)
 Quotation v2 (PMF-QT-2026-0106), cPanel preview guide v1.1 (18 Oct), the process checklist and the call script were checked against this plan. Differences and what wins are in `project/DECISIONS.md` (26 Oct, late). In short: payments rule section 1a wins over the quotation's "replace Stripe links" and the 30-day retirement; new pages may be brought in by Tools > Import (as the guide says) but **existing** pages are updated in place so their URLs never change; the guide's "about one hour" launch assumed import of drafts, while pasting into ~30 existing pages takes 2-3 hours.
 
+## 4b. Elementor-built pages (added 10 Nov 2026)
+
+`content/live/` was written for the block editor (26 Oct). Since then several test-site pages were built or rebuilt in Elementor, so their final layout and wording now live in Elementor data (`_elementor_data` post meta), not in `post_content` and not in `content/live/`. Pasting the block files for these pages on live would bring back the old layout and lose the 5 Nov changes. This section replaces the 29 Oct note "`content/live/` stays the block-editor launch pack" for these pages only.
+
+### Pages affected (confirm in step 1; do not rely on this list alone)
+| Page (test-site ID) | Built in Elementor | Changes not in `content/live/` |
+|---|---|---|
+| My Story (2665) | Yes, rebuilt with native containers 5 Nov | Portrait Media 6774, Kenya photo 6779, garden photo 6789, Milestones styling, "Let's Walk Together" layout |
+| Give (new page on live) | Yes, giving section replaced 5 Nov | Four Dream Partner tiers with Sylvia's 5 Nov wording and her A$5/15/30/50 Stripe links, GoFundMe button, "Registered" wording removed, unapproved preview/billing notes (OPEN-ITEMS 5 Nov) |
+| Heaven on Earth (1932) | Elementor Basic Gallery added 4-5 Nov | Ministry gallery 6786-6789, Kenya photo 6779, YouTube channel button, "Registered" wording removed |
+| Contact (20) | Yes (31 Oct) | Elementor layout around the Jetpack form |
+| Books (3001) | Yes (1.21.x "Build this page") | Page top banner widget settings |
+| Elementor header/footer templates, Kit | If assigned on the test site | Global colours/fonts (picker choices only), header/footer choice |
+
+### Step 1: inventory (test site, before launch)
+1. In WP Admin > Pages, list every page whose row shows "Elementor" (or open each main page and check for "Edit with Elementor" / "Back to WordPress Editor"). Record the final list here and in OPEN-ITEMS.
+2. Elementor > Templates > Theme Builder / Saved Templates: note any header or footer template in use and the page-level header/footer overrides (`_sdc_header` / `_sdc_footer`).
+3. For each page, list every image it uses (Media IDs) and every outgoing link (Stripe, GoFundMe, YouTube, Amazon, internal).
+
+### Step 2: export (test site)
+1. For each page: Edit with Elementor > arrow next to Update > **Save as Template** (name `LAUNCH - <page> - <date>`). Then Elementor > Templates > Saved Templates > **Export** each one to JSON.
+2. Export the Kit's Global Colours and Fonts only (screenshot or Site Settings export). Do not import a whole Kit on live: Elementor's Kit import can overwrite site settings (see the 1.21.0 Kit incident).
+3. Save the JSON files to the private Google Drive folder (they contain payment links), not to Git (AGENTS.md rule 24 and rule 8).
+
+### Step 3: make the exports live-safe (before launch)
+1. In each JSON, replace `https://topnotchmall.co.ke/sylviasdream/` with `https://sylviasdream.com/` and `\\/sylviasdream\\/` paths with `\\/` (same rule as `content/live/`). Search afterwards: no `topnotchmall` and no `/sylviasdream/` may remain.
+2. Every Stripe and Dream Partner link must be the link Sylvia uses on live: book buttons keep the live link and label from the same live page (`#KEEP-LIVE` rule); the A$15/30/50 links are new (Sylvia, 5 Nov, OPEN-ITEMS) and must be click-checked on live without paying.
+3. GoFundMe: https://gofund.me/e6fffb40c (also set in Customizer `sdc_gofundme_url` on live after installing child 1.23.6+).
+4. Remove dev-only wording: the Give preview notice and billing note unless Moses or Sylvia approves them.
+5. Elementor JSON stores image IDs and URLs from the test site. Its importer tries to download images from those URLs, which fails while the test site is behind its password. So upload every image from step 1.3 to live Media first (Phase B step 4), then in the JSON point each image `url` to the live address and `id` to the live Media ID.
+
+### Step 4: live preparation (Phase B, invisible)
+1. Confirm Elementor (free) and Redux install and activate on WordPress.com Personal (OPEN-ITEMS 29 Oct, still unverified). If they cannot, use the fallback below.
+2. Install the child theme (not activated) and set Elementor > Settings so only Pages use Elementor.
+3. Import each JSON at Elementor > Templates > Saved Templates > Import. Importing a template changes no page.
+4. **New pages (Give):** create as Draft, Edit with Elementor, insert the template, Save as Draft, set template "Sylvia's Dream Elementor full width". Preview with Sylvia.
+5. **Existing published pages (My Story, Heaven on Earth, Contact, Books):** do nothing yet. Updating a published page in Elementor publishes it at once, so these wait for Phase C.
+
+### Step 5: switch-over window (Phase C, after the child theme is active)
+1. For each existing page: Edit with Elementor > insert its saved template > check > Update. The page keeps its address. Set its template to the Elementor full-width template.
+2. Publish Give.
+3. Elementor > Tools > Regenerate CSS & Data; clear WordPress.com cache.
+4. On each page: search the rendered page for `#KEEP-LIVE`, `topnotchmall` and `/sylviasdream/` (none may remain); click every Stripe, Dream Partner and GoFundMe button and confirm the same Stripe/GoFundMe page opens (do not pay); phone and desktop check.
+5. Rollback for one page: Elementor > "Back to WordPress Editor" restores the previous `post_content`; or Page revisions.
+
+### Fallback if Elementor cannot run on live
+Use the block-editor files in `content/live/`, after first copying the 5 Nov content changes (table above) back into `sylviasdream-child/content/blocks/` and regenerating `content/live/`. Note the gaps in OPEN-ITEMS and get Moses's OK before launch.
+
 ## 5. Rollback (any time in Phase C)
 Reactivate Twenty Twenty; Redirects OFF; reassign "Top Menu"; reset Settings > Reading to the old front page. Content restore from the same-day backup by hand (hours). Never touch Stripe during a rollback.

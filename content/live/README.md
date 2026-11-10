@@ -4,6 +4,8 @@ Generated 26 Oct 2026 from `sylviasdream-child/content/blocks/` with every dev a
 - `https://topnotchmall.co.ke/sylviasdream/...` -> `https://sylviasdream.com/...`
 - site-relative `/sylviasdream/...` (theme images, buttons) -> `/...`
 
+**10 Nov:** pages built in Elementor on the test site (My Story, Give, Heaven on Earth, Contact, Books) move by Elementor saved templates instead: `docs/MIGRATION-PLAN.md` section 4b. Their files here are the fallback only and lack the 5 Nov changes.
+
 Paste each file into the matching live page's Code editor during the switch-over window (`docs/MIGRATION-PLAN.md` Phase C). Never paste the `content/blocks/` versions on live: those are for the dev site.
 
 Regenerate this folder whenever a file in `content/blocks/` changes (same two replacements), and keep `content/blocks/` as the source.

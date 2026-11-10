@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-10 - Docs and page content: Elementor launch plan, GoFundMe address
+No theme or plugin code changed; versions unchanged (child 1.23.6, core 0.4.4).
+- `docs/MIGRATION-PLAN.md` section 4b: launch plan for Elementor-built pages (inventory, saved-template export, live-safe clean-up, import, switch-over, rollback, fallback to `content/live/`).
+- GoFundMe button address `https://gofund.me/dc685ae2` -> `https://gofund.me/e6fffb40c` in `sylviasdream-child/content/blocks/give.html`, `heaven-on-earth.html`, `content/live/give.html`, `content/live/heaven-on-earth.html`, `docs/hoe-segments/part2.txt`. Embedded GoFundMe widget unchanged.
+- Test site (no code): When the Word Becomes Life ebook confirmed protected; leftover `uploads/2026/07/` approved download directory removed. See PROGRESS-LOG 10 Nov.
+
 ## 2026-11-05 - Child theme 1.23.7: My Story layout polish
 CSS only (`assets/css/about.css`, scoped to `body.sd-p-my-story`). The page's sections are Elementor "Section from your page" widgets whose inner columns and cards have no layout controls, so the polish is done in the theme. No wording, links, photos or payment buttons changed.
 - Section spacing evened out: about 48-80px top and bottom instead of up to 112px.

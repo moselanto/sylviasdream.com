@@ -1,4 +1,12 @@
-# Open items (updated 5 November 2026)
+# Open items (updated 10 November 2026)
+
+## 10 Nov: Elementor migration plan, GoFundMe address, protected ebook
+
+- [x] Launch plan for Elementor-built pages written: `docs/MIGRATION-PLAN.md` section 4b (inventory, export as saved templates, make the JSON live-safe, import on live, publish existing pages only in the switch-over window, fallback to `content/live/`). `content/live/` is no longer the launch pack for My Story, Give, Heaven on Earth, Contact or Books
+- [ ] MIGRATION-PLAN 4b step 1: confirm on the test site which pages and header/footer templates are built in Elementor, and record the final list here
+- [ ] Confirm Elementor (free) and Redux install and activate on WordPress.com Personal (4b step 4.1); if not, use the fallback (copy the 5 Nov changes back into `content/blocks/`, regenerate `content/live/`)
+- [x] Old GoFundMe address `https://gofund.me/dc685ae2` replaced with `https://gofund.me/e6fffb40c` in `sylviasdream-child/content/blocks/give.html`, `heaven-on-earth.html`, `content/live/give.html`, `content/live/heaven-on-earth.html` and `docs/hoe-segments/part2.txt`. The embedded GoFundMe widget (`gfm-embed`, campaign `heaven-on-earth-ministries-cares-for-orphans`) is unchanged. Still set Customizer `sdc_gofundme_url` on live after installing child 1.23.6+
+- [x] When the Word Becomes Life (6380) protected ebook, checked on the test site 10 Nov: the product's download already points to `woocommerce_uploads/2026/10/When-the-Word-Becomes-Life-vczkmp.pdf` (same download entry kept); Media 5646 no longer exists; Force downloads on, redirect fallback off; the `uploads/2026/07/` approved download directory (already disabled) removed, so only the two WooCommerce upload-directory rules remain. Signed out, the old address `/wp-content/uploads/2026/07/When-the-Word-Becomes-Life.pdf` returns 404 and the protected file returns 403 Forbidden. Test order #6686 still Completed (unlimited downloads, no expiry) and its file downloaded from My account > My ebooks. Live files stay until Option A step 3
 
 ## 5 Nov (afternoon): My Story rebuilt in Elementor, Dream Partner links on Give
 
@@ -70,7 +78,7 @@ Still open:
 - [x] Sylvia's test-site account `sylvia` is already **Editor** (can use Elementor). Users on the test site: `sylvia` (Editor) and `moses` (Administrator) only
 - [ ] Two-factor sign-in for every administrator: `moses` is the only administrator and two-factor is **OFF**. Moses switches it on himself in Users > Profile (authenticator app) and stores the 8 recovery codes offline. Not set up by an agent
 - [ ] Change the `moses` password: it was sent to Sylvia in plain text in the 27 Oct email (same as the preview-gate password). Users > Profile > Set New Password, then "Log Out Everywhere Else". Then Sylvia signs in only as `sylvia` and sets her own password via "Lost your password?"
-- [ ] Protected ebook file still pending: When the Word Becomes Life (6380) still points to the public Media item 5646 `/wp-content/uploads/2026/07/When-the-Word-Becomes-Life.pdf`, which opens without a purchase. Download method is Force downloads (redirect fallback off), but `uploads/2026/07/` is in Approved download directories. Next: upload the PDF through the product's file uploader (stored in `woocommerce_uploads`), keep the same download entry so test order #6686 still works, delete Media 5646 on the test site, remove the `2026/07` approved directory, confirm the old address no longer opens and #6686 still downloads. Live files stay until Option A step 3
+- [x] (Done, verified 10 Nov; see the 10 Nov section) Protected ebook file still pending: When the Word Becomes Life (6380) still points to the public Media item 5646 `/wp-content/uploads/2026/07/When-the-Word-Becomes-Life.pdf`, which opens without a purchase. Download method is Force downloads (redirect fallback off), but `uploads/2026/07/` is in Approved download directories. Next: upload the PDF through the product's file uploader (stored in `woocommerce_uploads`), keep the same download entry so test order #6686 still works, delete Media 5646 on the test site, remove the `2026/07` approved directory, confirm the old address no longer opens and #6686 still downloads. Live files stay until Option A step 3
 
 ## 31 Oct: after Sylvia's email (decisions in `project/DECISIONS.md` 31 Oct)
 - [x] Manifesting Miracles Now Draft; duplicate When Fear Has the Final Word (6390) in Trash; Fast Forward to Success cover added
