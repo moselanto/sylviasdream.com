@@ -3,8 +3,9 @@
 ## 10 Nov: child 1.23.8 and core 0.4.5 ("Coming soon" sale guard)
 
 - [x] Built and committed to main; zips in the Town library (Sylvias Dream/releases). Paid ebooks without a price or a download file cannot be added to the cart and show "Coming soon" (unless they have Sylvia's Stripe "Buy ebook" link). Closes the 31 Oct item "Guard Your Heart has Add to cart but no downloadable file"
-- [ ] Install on the test site (Replace current with uploaded), then check: a book with neither file nor Stripe link shows "Coming soon" and no Add to cart; a Stripe book still shows Buy ebook; When the Word Becomes Life still adds to cart and checks out with Test payment; a free book still shows Free download; Settings > Sylvia's Dream shows "Coming soon guard" ticked; the product edit screen warning appears on a coming-soon book
+- [x] Installed on the test site 10 Nov (evening) and checked (PROGRESS-LOG). Was: a book with neither file nor Stripe link shows "Coming soon" and no Add to cart; a Stripe book still shows Buy ebook; When the Word Becomes Life still adds to cart and checks out with Test payment; a free book still shows Free download; Settings > Sylvia's Dream shows "Coming soon guard" ticked; the product edit screen warning appears on a coming-soon book
 - [ ] HANDOFF sections 0 and 3 rewritten 10 Nov; keep them current from now on
+- [ ] Records out of date, found in the 10 Nov smoke test: Guard Your Heart Renew Your Mind now shows A$7.10, Add to cart and a Stripe Buy ebook button (so it has a download file attached; which file, 6x9 or A4, still to confirm with Sylvia); The Report of the Lord shows A$8.35 and a Stripe button (OPEN-ITEMS said no price). Check both products in wp-admin and correct the 31 Oct items
 
 ## 10 Nov: follow-up email and WhatsApp reminder to Sylvia (prepared, not sent)
 

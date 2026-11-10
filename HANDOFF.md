@@ -8,13 +8,13 @@ Rewritten 10 Nov 2026 (Kenya time). This section and section 3 are the current s
 **Where things stand**
 - The new site is built on the test site (https://topnotchmall.co.ke/sylviasdream/, password-gated, noindex). Sylvia's live site sylviasdream.com is **untouched** and stays read-only until she approves the test site **in writing**.
 - Repo `main`: child theme **1.23.8**, core plugin **0.4.5** (10 Nov: "Coming soon" sale guard, see CHANGELOG). Zips in the Town library `Sylvias Dream/releases`.
-- Test site: child **1.23.6** and core **0.4.4** until 1.23.8 / 0.4.5 are installed (check section 3; PROGRESS-LOG records each install). Note: `main` also contains child 1.23.7 (CSS-only My Story polish, `about.css`), which OPEN-ITEMS calls withdrawn because it did not reach the Elementor markup; it is harmless and ships inside 1.23.8.
+- Test site: child **1.23.8** and core **0.4.5**, installed and smoke-tested 10 Nov (PROGRESS-LOG). Note: `main` also contains child 1.23.7 (CSS-only My Story polish, `about.css`), which OPEN-ITEMS calls withdrawn because it did not reach the Elementor markup; it is harmless and ships inside 1.23.8.
 - Pages built in Elementor on the test site: My Story, Give, Heaven on Earth (gallery), Contact, Books (confirm list per `docs/MIGRATION-PLAN.md` 4b step 1). They move to live by Elementor saved templates (MIGRATION-PLAN 4b), not by pasting `content/live/`.
 - Shop: 25 products, Published on the test site only (Draft on live until launch). 17 have Sylvia's Stripe "Buy ebook" link. Only When the Word Becomes Life has a protected download file (verified 10 Nov: old public address 404, protected file 403, order #6686 downloads). With core 0.4.5 every other paid ebook without a Stripe link shows "Coming soon" until its file and price are added.
 - Waiting on Sylvia: her 9 Nov reply was the Meet Jesus booklet only. A follow-up email and WhatsApp reminder (items 2, 3, 6-26) are prepared and need Moses's OK before sending (`project/CORRESPONDENCE.md`, `docs/CLIENT-CHECKLIST.md`).
 
 **Next agent, start here (priority order)**
-1. Install child 1.23.8 and core 0.4.5 on the test site if PROGRESS-LOG does not show it done; smoke-test (AGENTS rule 31) and check one "Coming soon" book, one Stripe book, When the Word Becomes Life (Add to cart still works) and a free book.
+1. Check a free book on the test site still shows Free download with 1.23.8 (not covered by the 10 Nov smoke test), and reconcile Guard Your Heart and The Report of the Lord records (OPEN-ITEMS 10 Nov).
 2. Security (Moses only): change the `moses` password (it was emailed to Sylvia on 27 Oct), "Log Out Everywhere Else", turn on two-factor for `moses`.
 3. When Sylvia answers: record by number in CLIENT-CHECKLIST and OPEN-ITEMS; attach each ebook file through the product's file uploader (protected `woocommerce_uploads`), never as a public Media link.
 4. MIGRATION-PLAN 4b step 1 (Elementor page inventory) and confirm Elementor and Redux run on WordPress.com Personal.
@@ -44,8 +44,8 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | Dev / test site | `https://topnotchmall.co.ke/sylviasdream/` (admin `/sylviasdream/wp-admin/`), password-gated, noindex. All work happens here. Users: `moses` (Administrator, 2FA off, password must change), `sylvia` (Editor). |
 | Live site | sylviasdream.com on WordPress.com Personal (renewed by Sylvia), Twenty Twenty theme, **untouched**. WooCommerce not installed on live. Domain paid to 25 Nov 2027. |
 | Migration | Only after Sylvia's written approval (item 25 in CLIENT-CHECKLIST). Plan: `docs/MIGRATION-PLAN.md` (section 4b for Elementor pages). |
-| Child theme | Repo **1.23.8** (10 Nov). Test site 1.23.6 until 1.23.8 is installed. |
-| Core plugin | Repo **0.4.5** (10 Nov). Test site 0.4.4 until 0.4.5 is installed. |
+| Child theme | **1.23.8** in the repo and on the test site (10 Nov). |
+| Core plugin | **0.4.5** in the repo and on the test site (10 Nov). |
 | Other plugins (test site) | WooCommerce 11.2.1, Elementor (free), Redux, Rank Math, Jetpack, Password Protected (test only). |
 | Products | 25 on the test site (Published there; Draft on live until launch). 17 with a Stripe "Buy ebook" link; 1 protected ebook file (When the Word Becomes Life). Others show "Coming soon" from core 0.4.5. |
 | Giving | Give page (Elementor): A$5/15/30/50 monthly Dream Partner links from Sylvia (5 Nov); "give any amount" link pending; GoFundMe https://gofund.me/e6fffb40c. |

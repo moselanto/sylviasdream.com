@@ -7,6 +7,7 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 - Follow-up email and WhatsApp reminder to Sylvia recorded (CORRESPONDENCE, CLIENT-CHECKLIST, OPEN-ITEMS); not sent, Moses to approve.
 - HANDOFF sections 0 and 3 rewritten; README badges, ARCHITECTURE 4.0a, CHANGELOG updated.
 - `check-theme.js` OK (144 files); assets rebuilt; zips built. `php -l` not run locally (no PHP); CI covers it.
+- Installed on the test site (Replace active/current with uploaded): Themes shows child 1.23.8 active, Plugins shows core 0.4.5 active, Settings > Sylvia's Dream "Coming soon guard" ticked. Smoke test signed in: Home, Books, Contact and a 404 URL fine. When the River Flows Again (6392): "Coming soon" price and buy-box message, no Add to cart, product-screen warning "...until it has a download file". The Report of the Lord: Stripe button kept, A$8.35. When the Word Becomes Life (6380): A$7.16, Add to cart and Stripe button. No code or link edited in the dashboard; no purchase made.
 
 ## Tuesday 10 November 2026: Elementor launch plan, GoFundMe address, protected ebook
 - `docs/MIGRATION-PLAN.md` section 4b: how the Elementor-built pages (My Story, Give, Heaven on Earth, Contact, Books, any header/footer templates) move to sylviasdream.com, since `content/live/` holds only the older block-editor versions. Saved-template export, dev-address and image clean-up, import on live, existing pages updated only in the switch-over window, fallback to `content/live/`.
