@@ -36,6 +36,8 @@ Moses's latest message to Sylvia, replying by number (matches `docs/CLIENT-CHECK
 - 9-24 as in the checklist (wording, "Every purchase helps", Give amounts and goal, free books, Going to Heaven download, policies, "Australia" only, Be a World Changer, Fast Forward to Success, books without a payment button, prices, One Life hardcover, paperbacks to Amazon AU, other editions, Add to cart as main way to buy, past buyers' email)
 - Offered a short call. Signed "God bless, Moses"
 
+**Sylvia's reply (WhatsApp, 9 Nov, shared in Town 10 Nov):** a shared Adobe Acrobat link to a new booklet, with the note "Feel free to share". File `Meet_Jesus_A_Booklet_to_Get_to_Know_Him.pdf` (PDF, 13 pages, about 345 KB): *Meet Jesus: A simple introduction to the God who loves you*, by Sylvia Suhr, Sylvia's Dream Publishing, (c) 2026. Twelve short sections from "You are invited to know Jesus" to "The God who knows your heart loves you", with a prayer of response; cover line "Know His heart. Receive His love." Prints sylviasdream.com; no mention of Heaven on Earth, "Registered" or a price. Saved to the Town library (Sylvias Dream/ebooks), not to Git. She did not answer the numbered items in this message. See OPEN-ITEMS 10 Nov for what to ask before it goes on the site.
+
 Points to reconcile when she answers: the checklist already records (31 Oct) that When Fear Has the Final Word is the same book as From Fear to Freedom and that Manifesting Miracles Now was removed by Sylvia, so their prices and covers may not be needed; Guard Your Heart was sent as two print PDFs (6x9 and A4 coil), so which one buyers download is still open.
 
 ## Latest reply drafted for Moses (17 Oct)

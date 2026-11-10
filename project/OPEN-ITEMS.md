@@ -1,5 +1,11 @@
 # Open items (updated 10 November 2026)
 
+## 10 Nov: new booklet from Sylvia, "Meet Jesus" (WhatsApp, 9 Nov)
+
+- [x] Received: *Meet Jesus: A simple introduction to the God who loves you* (PDF, 13 pages), with her note "Feel free to share". Saved to the Town library (Sylvias Dream/ebooks). Details in `project/CORRESPONDENCE.md`
+- [ ] Ask Sylvia (with Moses's OK, by number): (a) may it be offered on the website as a free download (AGENTS rule 3 needs her written OK for anything free; "Feel free to share" is not yet that)? (b) is it the file for the "To Ensure You End Up Going to Heaven" free-download button (item 13)? (c) also a product in the shop or Free Downloads page only? (d) a cover image for the site, or use the PDF's own cover?
+- [ ] Not added to the test site yet. Never invent a description: use only her own wording from the booklet or her answer
+
 ## 10 Nov: Elementor migration plan, GoFundMe address, protected ebook
 
 - [x] Launch plan for Elementor-built pages written: `docs/MIGRATION-PLAN.md` section 4b (inventory, export as saved templates, make the JSON live-safe, import on live, publish existing pages only in the switch-over window, fallback to `content/live/`). `content/live/` is no longer the launch pack for My Story, Give, Heaven on Earth, Contact or Books
