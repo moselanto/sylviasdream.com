@@ -26,6 +26,18 @@ Summary of the conversation so far (WhatsApp). Private contact details are kept 
 | 17 Oct | Sylvia | Thanked him. Asked which Stripe data is really needed (prefers to share only what is necessary). Asked for a restoration test before handover (site, shop, orders, download permissions, settings). Asked whether restoration help is included in the 3 months and the cost afterwards. Will confirm a call time |
 | 17 Oct | Moses (drafted) | Reply below. **Check with Moses whether it was sent** |
 
+## Follow-up request list sent on WhatsApp (by 10 Nov; Lightof shared the text 10 Nov)
+Moses's latest message to Sylvia, replying by number (matches `docs/CLIENT-CHECKLIST.md`). Items 1, 4 and 5 were left out as answered. Summary:
+- 2) Ebooks for the other books (Guard Your Heart Renew Your Mind and When the Word Becomes Life thanked as done); asked her to remove "Registered Christian Charity" from the When the Word Becomes Life Kindle edition on Amazon
+- 3) Kerryn's review: which book (we think Angelique)
+- 6) "Give any amount" link; OK with the Give page line that gifts are billed monthly in Australian dollars?
+- 7) Number of monthly Dream Partners today; 8) confirm the "Bu...th" payment account is hers
+- Prices and covers for Fast Forward to Success, Manifesting Miracles Now and When Fear Has the Final Word; her thoughts on the whole site
+- 9-24 as in the checklist (wording, "Every purchase helps", Give amounts and goal, free books, Going to Heaven download, policies, "Australia" only, Be a World Changer, Fast Forward to Success, books without a payment button, prices, One Life hardcover, paperbacks to Amazon AU, other editions, Add to cart as main way to buy, past buyers' email)
+- Offered a short call. Signed "God bless, Moses"
+
+Points to reconcile when she answers: the checklist already records (31 Oct) that When Fear Has the Final Word is the same book as From Fear to Freedom and that Manifesting Miracles Now was removed by Sylvia, so their prices and covers may not be needed; Guard Your Heart was sent as two print PDFs (6x9 and A4 coil), so which one buyers download is still open.
+
 ## Latest reply drafted for Moses (17 Oct)
 > Dear Sylvia,
 >

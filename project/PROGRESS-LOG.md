@@ -5,6 +5,7 @@ Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private bui
 ## Tuesday 10 November 2026: Elementor launch plan, GoFundMe address, protected ebook
 - `docs/MIGRATION-PLAN.md` section 4b: how the Elementor-built pages (My Story, Give, Heaven on Earth, Contact, Books, any header/footer templates) move to sylviasdream.com, since `content/live/` holds only the older block-editor versions. Saved-template export, dev-address and image clean-up, import on live, existing pages updated only in the switch-over window, fallback to `content/live/`.
 - Old GoFundMe address dc685ae2 replaced with e6fffb40c in `content/blocks/` (give, heaven-on-earth), `content/live/` (same two) and `docs/hoe-segments/part2.txt`. No code change; no version bump (page source files only; the Customizer setting from 1.23.6 already overrides the button on render).
+- Moses's latest WhatsApp follow-up to Sylvia (items 2, 3, 6-24 open; 1, 4, 5 treated as answered) recorded in `project/CORRESPONDENCE.md`; `docs/CLIENT-CHECKLIST.md` updated (1, 4, 5 ticked; 2, 3, 6 partly received).
 - Test site, When the Word Becomes Life (6380): protection checked and finished. Product already used the protected copy in `woocommerce_uploads/2026/10/`; Media 5646 already gone; removed the leftover disabled `uploads/2026/07/` approved directory. Signed out: old address 404, protected file 403. Order #6686 still downloads from My account. Live site and Stripe untouched.
 
 ## Tuesday 3 November 2026: child theme 1.23.2

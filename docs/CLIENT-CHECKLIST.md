@@ -18,11 +18,11 @@ Updated 3 Nov 2026. The numbers match the WhatsApp request list prepared for Mos
 - [ ] WordPress.com Personal plan renewal: she says renewed; check Upgrades > Purchases shows 2027
 
 ## Photos and files to send
-- [ ] 1. Photos of Sylvia (original files, not screenshots): portrait for About / My Story, one for Home, one speaking or teaching for Invite Sylvia to Speak; Kenya ministry photos for Heaven on Earth if available (only photos she has permission to use, especially with children)
-- [ ] 2. Final ebook files, PDF or EPUB (not Word), for every paid book; Guard Your Heart Renew Your Mind most urgent (it has Add to cart but no file)
-- [ ] 3. Up to 3 reader reviews: exact words, book, display name, reader's permission
-- [ ] 4. YouTube and GoFundMe links
-- [ ] 5. Heaven on Earth registration details, exactly as to be shown
+- [x] 1. Photos of Sylvia: portrait, Kenya photo and four ministry photos received 4 Nov (placed on the test site; see OPEN-ITEMS 5 Nov)
+- [ ] 2. Final ebook files, PDF or EPUB (not Word), for every paid book. Received: Guard Your Heart Renew Your Mind (two print PDFs, 6x9 and A4 coil; which one buyers get still to confirm), When the Word Becomes Life (EPUB). Also asked 10 Nov: remove "Registered Christian Charity" from the Kindle edition of When the Word Becomes Life
+- [ ] 3. Reviews: three received 5 Nov as screenshots; asked 10 Nov which book Kerryn's is for (probably Angelique). Still to confirm: names shown, Lynne's typos
+- [x] 4. YouTube and GoFundMe links (5 Nov)
+- [x] 5. Heaven on Earth registration details: she has none (5 Nov); "Registered" wording removed
 
 ## Dream Partners and payments
 - [ ] 6. Monthly Dream Partner Stripe links A$15, A$30, A$50 (like the A$5 link) and one-off "give any amount" link (she creates them; we can guide on a call)
