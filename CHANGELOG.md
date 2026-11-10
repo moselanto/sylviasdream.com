@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-10 - Child theme 1.23.8 and core plugin 0.4.5: "Coming soon" for ebooks that are not ready
+A reader could add a paid ebook to the cart and pay although it had no download file (Guard Your Heart) or no price (The Report of the Lord). Now such books cannot be bought and say "Coming soon". No Stripe, Dream Partner, thank-you or download link changed; no wording changed except the new message.
+- **Core 0.4.5, new `inc/sale-guard.php`:** a simple downloadable or virtual product that is not free (`_sdc_free_download` empty) and has no price (empty or 0) or no download file is not purchasable (`woocommerce_is_purchasable`, priority 40, after the theme filters). WooCommerce therefore refuses add-to-cart and removes such items from existing carts. Helpers `sd_core_ebook_missing()` (returns `price` / `file`) and `sd_core_ebook_coming_soon()`. Warning on the product edit screen naming what is missing. Switch: Settings > Sylvia's Dream > "Coming soon guard" (on by default) or filter `sd_core_sale_guard_enabled`; filter `sd_core_ebook_missing` per product.
+- **Core 0.4.5, `inc/schema.php`:** no `Offer` in the Book JSON-LD for a coming-soon ebook (unless it has a Stripe buy link).
+- **Child 1.23.8, `inc/woocommerce.php`:** `sdc_book_coming_soon()` (core guard, and no Stripe buy link, and not free). Price slot on cards and the book page shows "Coming soon" (`woocommerce_get_price_html`, 30); buy box shows the Customizer message where Add to cart was (`woocommerce_single_product_summary`, 30); the currency note is hidden for these books. Card button already reads "View the book". Amazon buttons and the Stripe "Buy ebook" button are unchanged.
+- **Child 1.23.8, Customizer:** Sylvia's Dream > Shop > "Book page: message for an ebook that is not ready yet" (`shop_coming_soon`, default "This ebook is coming soon.").
+- **Child 1.23.8, `assets/css/woocommerce.css`:** `.sd-price-soon`, `.sd-buybox__soon`.
+- Also in 1.23.8: the 1.23.7 `about.css` change already on `main` (CSS only, scoped to My Story).
+- Docs: HANDOFF sections 0 and 3 rewritten (stale 26 Oct-5 Nov notes moved out), ARCHITECTURE, README, OPEN-ITEMS, PROGRESS-LOG.
+- Checks: `node scripts/check-theme.js` OK (144 files, 33 block files); assets rebuilt; zips `sylviasdream-child-1.23.8.zip`, `sylviasdream-core-0.4.5.zip` (Town library Sylvias Dream/releases). `php -l` not available in the build sandbox; CI runs it on PHP 8.0-8.3.
+
 ## 2026-11-10 - Docs and page content: Elementor launch plan, GoFundMe address
 No theme or plugin code changed; versions unchanged (child 1.23.6, core 0.4.4).
 - `docs/MIGRATION-PLAN.md` section 4b: launch plan for Elementor-built pages (inventory, saved-template export, live-safe clean-up, import, switch-over, rollback, fallback to `content/live/`).

@@ -22,6 +22,7 @@ function sd_core_defaults() {
 		'redirects_enabled' => 0,
 		'preview_enabled'   => 0,
 		'test_payments_enabled' => 0,
+		'sale_guard_enabled' => 1,
 		'protected_slugs'   => implode( "\n", sd_core_default_protected_slugs() ),
 		'og_default_image'  => '',
 	);
@@ -79,6 +80,7 @@ function sd_core_sanitize( $in ) {
 		'redirects_enabled' => empty( $in['redirects_enabled'] ) ? 0 : 1,
 		'preview_enabled'   => ( empty( $in['preview_enabled'] ) || sd_core_is_live_site() ) ? 0 : 1,
 		'test_payments_enabled' => ( empty( $in['test_payments_enabled'] ) || sd_core_is_live_site() ) ? 0 : 1,
+		'sale_guard_enabled' => empty( $in['sale_guard_enabled'] ) ? 0 : 1,
 		'protected_slugs'   => implode( "\n", $slugs ),
 		'og_default_image'  => esc_url_raw( trim( (string) ( $in['og_default_image'] ?? '' ) ), array( 'http', 'https' ) ),
 	);
@@ -120,6 +122,8 @@ function sd_core_render_settings() {
 					<?php else : ?>
 						<label><input type="checkbox" name="sd_core[test_payments_enabled]" value="1" <?php checked( 1, (int) sd_core_opt( 'test_payments_enabled' ) ); ?>> <?php esc_html_e( 'Add a "Test payment (no money)" option at checkout so reviewers can order and download without paying. Test site only.', 'sylviasdream-core' ); ?></label>
 					<?php endif; ?></td></tr>
+				<tr><th scope="row"><?php esc_html_e( 'Coming soon guard', 'sylviasdream-core' ); ?></th>
+					<td><label><input type="checkbox" name="sd_core[sale_guard_enabled]" value="1" <?php checked( 1, (int) sd_core_opt( 'sale_guard_enabled' ) ); ?>> <?php esc_html_e( 'Ebooks with no price or no download file show "Coming soon" and cannot be added to the cart. Stripe and Amazon buttons are not affected.', 'sylviasdream-core' ); ?></label></td></tr>
 				<tr><th scope="row"><label for="sd-ps"><?php esc_html_e( 'Download / thank-you page slugs', 'sylviasdream-core' ); ?></label></th>
 					<td><textarea id="sd-ps" class="large-text code" rows="10" name="sd_core[protected_slugs]"><?php echo esc_textarea( sd_core_opt( 'protected_slugs' ) ); ?></textarea>
 					<p class="description"><?php esc_html_e( 'One per line. These pages stay working for past buyers but are hidden from search engines and the sitemap.', 'sylviasdream-core' ); ?></p></td></tr>

@@ -143,6 +143,7 @@ function sdc_fields() {
 		'shop_search_placeholder' => array( 'sdc_shop', __( 'Book search: placeholder text', 'sylviasdream-child' ), 'text', 'Search by title or topic, e.g. fear, missions, healing' ),
 		'shop_note'          => array( 'sdc_shop', __( 'Note under the book grid (blank hides it)', 'sylviasdream-child' ), 'textarea', '' ),
 		'shop_price_note'    => array( 'sdc_shop', __( 'Book page: note beside the price, %s = currency code (blank hides it)', 'sylviasdream-child' ), 'text', 'Charged in %s. Your card converts automatically to your currency.' ),
+		'shop_coming_soon'   => array( 'sdc_shop', __( 'Book page: message for an ebook that is not ready yet (no price or no file)', 'sylviasdream-child' ), 'text', 'This ebook is coming soon.' ),
 		'shop_secure_note'   => array( 'sdc_shop', __( 'Book page: note under the buy buttons for eBooks (blank hides it)', 'sylviasdream-child' ), 'text', 'Secure checkout. Your download link is sent by email after payment.' ),
 		// 1.20.0: cart drawer, checkout and order-received page.
 		'cart_drawer'        => array( 'sdc_shop', __( 'Open a side cart drawer when a book is added and when the header cart is clicked', 'sylviasdream-child' ), 'checkbox', true ),

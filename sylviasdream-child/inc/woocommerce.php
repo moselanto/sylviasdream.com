@@ -574,7 +574,7 @@ function sdc_buybox_open() {
  */
 function sdc_buybox_price_note() {
 	global $product;
-	if ( ! $product instanceof WC_Product || '' === $product->get_price_html() || '' !== sdc_product_free_download( $product ) ) {
+	if ( ! $product instanceof WC_Product || '' === $product->get_price_html() || '' !== sdc_product_free_download( $product ) || sdc_book_coming_soon( $product ) ) {
 		return;
 	}
 	$note = sdc_get( 'shop_price_note' );
@@ -1016,3 +1016,52 @@ function sdc_aud_currency_symbol( $symbol, $currency ) {
 	return '' !== $custom ? $custom : $symbol;
 }
 add_filter( 'woocommerce_currency_symbol', 'sdc_aud_currency_symbol', 10, 2 );
+
+/**
+ * 1.23.8: "Coming soon" for paid ebooks the core plugin (0.4.5 sale guard)
+ * marks as not ready (no price or no download file). Books with Sylvia's
+ * Stripe "Buy ebook" link or a free download are never shown as coming soon.
+ *
+ * @param WC_Product|null $product Product.
+ * @return bool
+ */
+function sdc_book_coming_soon( $product ) {
+	if ( ! $product instanceof WC_Product || ! function_exists( 'sd_core_ebook_coming_soon' ) ) {
+		return false;
+	}
+	if ( '' !== sdc_product_buy_link( $product ) || '' !== sdc_product_free_download( $product ) ) {
+		return false;
+	}
+	return (bool) sd_core_ebook_coming_soon( $product );
+}
+
+/**
+ * Price slot says "Coming soon" (cards, book page, related books).
+ *
+ * @param string     $html    Price HTML.
+ * @param WC_Product $product Product.
+ * @return string
+ */
+function sdc_coming_soon_price_html( $html, $product ) {
+	if ( is_admin() && ! wp_doing_ajax() ) {
+		return $html;
+	}
+	return sdc_book_coming_soon( $product ) ? '<span class="sd-price-soon">' . esc_html__( 'Coming soon', 'sylviasdream-child' ) . '</span>' : $html;
+}
+add_filter( 'woocommerce_get_price_html', 'sdc_coming_soon_price_html', 30, 2 );
+
+/**
+ * Message in the buy box where Add to cart would be. Amazon buttons still show.
+ */
+function sdc_coming_soon_buybox() {
+	global $product;
+	if ( ! sdc_book_coming_soon( $product ) ) {
+		return;
+	}
+	$text = sdc_get( 'shop_coming_soon' );
+	if ( '' === $text ) {
+		$text = __( 'This ebook is coming soon.', 'sylviasdream-child' );
+	}
+	echo '<p class="sd-buybox__soon" role="status">' . esc_html( $text ) . '</p>';
+}
+add_action( 'woocommerce_single_product_summary', 'sdc_coming_soon_buybox', 30 );

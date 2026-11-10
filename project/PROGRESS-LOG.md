@@ -2,6 +2,12 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Tuesday 10 November 2026 (evening): child 1.23.8 and core 0.4.5
+- Core `inc/sale-guard.php`: paid ebooks with no price or no download file are not purchasable; product-screen warning; setting "Coming soon guard" (on); schema Offer omitted for them. Child: "Coming soon" price and buy-box message (Customizer `shop_coming_soon`), Stripe and Amazon buttons unchanged.
+- Follow-up email and WhatsApp reminder to Sylvia recorded (CORRESPONDENCE, CLIENT-CHECKLIST, OPEN-ITEMS); not sent, Moses to approve.
+- HANDOFF sections 0 and 3 rewritten; README badges, ARCHITECTURE 4.0a, CHANGELOG updated.
+- `check-theme.js` OK (144 files); assets rebuilt; zips built. `php -l` not run locally (no PHP); CI covers it.
+
 ## Tuesday 10 November 2026: Elementor launch plan, GoFundMe address, protected ebook
 - `docs/MIGRATION-PLAN.md` section 4b: how the Elementor-built pages (My Story, Give, Heaven on Earth, Contact, Books, any header/footer templates) move to sylviasdream.com, since `content/live/` holds only the older block-editor versions. Saved-template export, dev-address and image clean-up, import on live, existing pages updated only in the switch-over window, fallback to `content/live/`.
 - Old GoFundMe address dc685ae2 replaced with e6fffb40c in `content/blocks/` (give, heaven-on-earth), `content/live/` (same two) and `docs/hoe-segments/part2.txt`. No code change; no version bump (page source files only; the Customizer setting from 1.23.6 already overrides the button on render).

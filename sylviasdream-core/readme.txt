@@ -2,7 +2,7 @@
 Contributors: pimofydigital
 Requires at least: 6.4
 Requires PHP: 8.0
-Stable tag: 0.4.2
+Stable tag: 0.4.5
 License: GPLv2 or later
 
 Site functions for sylviasdream.com that must survive a theme change.
@@ -21,11 +21,25 @@ Site functions for sylviasdream.com that must survive a theme change.
 * Two-factor authentication (inc/two-factor.php): optional per user, from Users > Profile > Two-factor authentication. Setup shows a locally drawn QR code (inc/qr-svg.php) plus the key. Time-based 6-digit codes from Google Authenticator, Microsoft Authenticator, Authy or similar; 8 one-time recovery codes. Emergency switch: define( 'SD_2FA_DISABLE', true ); in wp-config.php.
 * Admin branding (inc/admin-brand.php): "Sylvia's Dream" admin colour scheme (default for new users only), footer credit, Welcome dashboard widget with quick links, WordPress logo menu hidden for non-administrators.
 
+* Coming soon guard (inc/sale-guard.php): a paid ebook with no price or no download file cannot be added to the cart; the theme shows "Coming soon". Free books, Stripe buttons and Amazon buttons are not affected. Switch: Settings > Sylvia's Dream > Coming soon guard, or the sd_core_sale_guard_enabled filter.
+
 Settings: Settings > Sylvia's Dream.
 
 Third-party code: inc/lib/qrcode.php is a namespaced port of the MIT-licensed QR Code Generator by Kazuhiko Arase (github.com/kazuhikoarase/qrcode-generator); licence in inc/lib/qrcode-LICENSE.txt.
 
 == Changelog ==
+
+= 0.4.5 =
+Coming soon guard: paid ebooks with no price or no download file are not purchasable (woocommerce_is_purchasable, priority 40); warning on the product edit screen; setting on by default. Helpers sd_core_ebook_missing() and sd_core_ebook_coming_soon() for the theme.
+
+= 0.4.4 =
+Test payment (no money) gateway for the test site only.
+
+= 0.4.3 =
+Reviewer preview switch; thank-you-for-your-purchase-3 protected.
+
+= 0.4.2 =
+Readable "Prove your humanity" box on the branded sign-in page.
 
 = 0.4.1 =
 Two-factor setup now shows a QR code of the otpauth:// address, drawn on this server as inline SVG (no external service). The key and the link stay as a fallback.

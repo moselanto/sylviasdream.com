@@ -81,7 +81,9 @@ function sd_core_schema_book( $product_id ) {
 	}
 	// 0.1.2: a published book with a price also carries an Offer (price, currency,
 	// availability), so search engines can show it as an ebook for sale.
-	if ( 'publish' === $product->get_status() && '' !== (string) $product->get_price() ) {
+	// 0.4.5: no Offer for an ebook the sale guard marks as coming soon (unless it has Sylvia's Stripe link).
+	$coming_soon = function_exists( 'sd_core_ebook_coming_soon' ) && sd_core_ebook_coming_soon( $product ) && '' === (string) $product->get_meta( '_sdc_buy_link' );
+	if ( ! $coming_soon && 'publish' === $product->get_status() && '' !== (string) $product->get_price() ) {
 		$node['offers'] = array(
 			'@type'         => 'Offer',
 			'price'         => wc_format_decimal( $product->get_price(), wc_get_price_decimals() ),

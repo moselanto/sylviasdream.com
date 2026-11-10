@@ -1,5 +1,11 @@
 # Open items (updated 10 November 2026)
 
+## 10 Nov: child 1.23.8 and core 0.4.5 ("Coming soon" sale guard)
+
+- [x] Built and committed to main; zips in the Town library (Sylvias Dream/releases). Paid ebooks without a price or a download file cannot be added to the cart and show "Coming soon" (unless they have Sylvia's Stripe "Buy ebook" link). Closes the 31 Oct item "Guard Your Heart has Add to cart but no downloadable file"
+- [ ] Install on the test site (Replace current with uploaded), then check: a book with neither file nor Stripe link shows "Coming soon" and no Add to cart; a Stripe book still shows Buy ebook; When the Word Becomes Life still adds to cart and checks out with Test payment; a free book still shows Free download; Settings > Sylvia's Dream shows "Coming soon guard" ticked; the product edit screen warning appears on a coming-soon book
+- [ ] HANDOFF sections 0 and 3 rewritten 10 Nov; keep them current from now on
+
 ## 10 Nov: follow-up email and WhatsApp reminder to Sylvia (prepared, not sent)
 
 - [x] Email draft "Your new website: the last few things we need" and a short WhatsApp reminder prepared (details in `project/CORRESPONDENCE.md`). New items 25 (written go-ahead to move to sylviasdream.com) and 26 (dates for final tests and launch day) added; Meet Jesus free-download question added; price/cover requests for Manifesting Miracles Now and When Fear Has the Final Word removed (31 Oct records)
@@ -77,7 +83,7 @@ Done on the test site 31 Oct (content, by hand):
 - [x] Books "Start here" title shown once and bookshop banner alt text: were dashboard-only on 31 Oct, now in child 1.23.2 (installed 3 Nov; Additional CSS rule deleted)
 - [x] Prices "A$" on cards (child 1.23.2) and One Life Kindle link to amazon.com.au (`content/blocks/book-one-life.html`; One Life page 2766 on the test site fixed 3 Nov)
 Still open:
-- [ ] Guard Your Heart Renew Your Mind has Add to cart but no downloadable file: attach Sylvia's final ebook (protected) or hide Add to cart until then
+- [x] (10 Nov: core 0.4.5 shows "Coming soon" until a file is attached) Guard Your Heart Renew Your Mind has Add to cart but no downloadable file: attach Sylvia's final ebook (protected) or hide Add to cart until then
 - [ ] "Going to Heaven" page mentions a free download but its button has no link: file from Sylvia or remove the button (never invent)
 - [ ] Redesigned pages read differently from live (My Story, One Life, Author Support, Ministry, Podcasts and Videos, Contact, devotionals page, several book pages): mostly the approved redesign; list them in the combined document for Sylvia's written approval
 - [ ] Monday Encouragement post shows the test-site address in its text: correct before anything reaches live (live posts are never re-published)

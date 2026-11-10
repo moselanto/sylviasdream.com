@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Sylvia's Dream Core
  * Plugin URI:  https://sylviasdream.com
- * Description: Site functions that must survive a theme change: download-page protection, redirects, structured data, social sharing tags, security hardening, branded sign-in screens, two-factor authentication, light admin branding, reviewer preview mode and the Dream Partner progress bar.
- * Version:     0.4.4
+ * Description: Site functions that must survive a theme change: download-page protection, redirects, structured data, social sharing tags, security hardening, branded sign-in screens, two-factor authentication, light admin branding, reviewer preview mode, the ebook "Coming soon" sale guard and the Dream Partner progress bar.
+ * Version:     0.4.5
  * Author:      Pimofy Digital
  * Author URI:  https://pimofydigital.com
  * License:     GPL-2.0-or-later
@@ -16,7 +16,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SD_CORE_VERSION', '0.4.4' );
+define( 'SD_CORE_VERSION', '0.4.5' );
 define( 'SD_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SD_CORE_URL', plugin_dir_url( __FILE__ ) );
 
@@ -34,3 +34,4 @@ require_once SD_CORE_DIR . 'inc/login.php';
 require_once SD_CORE_DIR . 'inc/admin-brand.php';
 require_once SD_CORE_DIR . 'inc/preview.php';
 require_once SD_CORE_DIR . 'inc/test-payments.php';
+require_once SD_CORE_DIR . 'inc/sale-guard.php';

@@ -86,6 +86,9 @@ Templates: `header.php`, `footer.php`, `front-page.php`, `page.php`, `template-f
 | `admin-brand.php` | Admin colour scheme, footer, Welcome widget, toolbar tidy (section 7.4) | `admin_init`, `user_register`, `admin_footer_text`, `wp_dashboard_setup`, `admin_bar_menu` 999 |
 | `preview.php` | Reviewer preview mode (section 8) | `pre_get_posts` 20, `posts_where`, WooCommerce filters, `wp_robots` 100 |
 
+### 4.0a Sale guard (`inc/sale-guard.php`, 0.4.5)
+A simple downloadable or virtual product that is not free (`_sdc_free_download` empty) and has no price (empty or 0) or no download file returns false from `woocommerce_is_purchasable` (priority 40). `sd_core_ebook_missing( $product )` returns `price` / `file`; `sd_core_ebook_coming_soon( $product )` adds the on/off switch (option `sale_guard_enabled`, default 1; filter `sd_core_sale_guard_enabled`). Product edit screen shows a warning. The child theme (`sdc_book_coming_soon()`, 1.23.8) shows "Coming soon" in the price slot and buy box unless the book has a Stripe buy link. The Stripe and Amazon buttons are links, not the cart, so the guard never touches them. Schema omits the Offer for coming-soon books.
+
 ### 4.1 Settings (option `sd_core`)
 
 | Key | Default | Use |

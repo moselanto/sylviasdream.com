@@ -1,8 +1,8 @@
 # Sylvia's Dream - sylviasdream.com
 
 ![Parent theme](https://img.shields.io/badge/Parent%20theme-v1.0.1-8A6216)
-![Child theme](https://img.shields.io/badge/Child%20theme-v1.23.5-B8862B)
-![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.4.4-2B2620)
+![Child theme](https://img.shields.io/badge/Child%20theme-v1.23.8-B8862B)
+![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.4.5-2B2620)
 ![Elementor](https://img.shields.io/badge/Elementor-optional%2C%2026%20widgets-92003B)
 
 Last updated: 29 October 2026. 1.21.1 fixes the 1.21.0 Elementor bugs (blank buttons, narrow pages). 1.21.0 adds optional Elementor editing: see `docs/ELEMENTOR-EDITING-GUIDE.md` (for Sylvia) and `ARCHITECTURE.md` section 14.
@@ -28,15 +28,15 @@ Status: **dev build, pre-launch.** Migration to the live site happens only after
 | Package | Folder | Version in repo | Role |
 |---|---|---|---|
 | Sylvia's Dream Base (parent theme) | [`sylviasdream/`](sylviasdream) | 1.0.1 | Minimal shell: document structure, menus, template fallbacks. Never activated on its own. |
-| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 1.23.5 | **The theme to activate.** All design: templates, CSS, patterns, navigation, WooCommerce styling, performance layer. |
-| Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.4.4 | Behaviour that must survive a theme change: download-page protection, redirects, structured data, social sharing tags, security hardening, branded sign-in screens, two-factor authentication, admin branding, reviewer preview mode, Dream Partner progress. |
+| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 1.23.8 | **The theme to activate.** All design: templates, CSS, patterns, navigation, WooCommerce styling, performance layer. |
+| Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.4.5 | Behaviour that must survive a theme change: ebook "Coming soon" sale guard, download-page protection, redirects, structured data, social sharing tags, security hardening, branded sign-in screens, two-factor authentication, admin branding, reviewer preview mode, Dream Partner progress. |
 
 Versions are defined in two places each and must match:
 
 - Child theme: `Version:` in `sylviasdream-child/style.css` and `SYLVIASDREAM_CHILD_VERSION` in `sylviasdream-child/functions.php` (checked by `scripts/check-theme.js`).
 - Core plugin: `Version:` in the header of `sylviasdream-core/sylviasdream-core.php`, `SD_CORE_VERSION` in the same file, and `Stable tag` in `sylviasdream-core/readme.txt`.
 
-Deployment state (from `HANDOFF.md`): child 1.17.0 and core 0.3.0 zips are in the Town library collection `projects/sylviasdream` and are **not yet uploaded to dev**. Dev was last on child 1.16.3 and core 0.2.1. History: [`CHANGELOG.md`](CHANGELOG.md). Core 0.4.0 (sign-in screens, two-factor authentication, admin branding) is built as `sylviasdream-core-0.4.0.zip` in the same collection and not yet uploaded to dev. Core 0.4.1 (QR code on the two-factor setup screen) is committed to main; zip not built yet.
+Deployment state: see `HANDOFF.md` sections 0 and 3 (current versions on main and on the test site). History: [`CHANGELOG.md`](CHANGELOG.md).
 
 ### Two-factor authentication (core 0.4.0)
 

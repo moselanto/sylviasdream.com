@@ -473,3 +473,7 @@ html.sd-minicart-open .sd-dock { visibility: hidden; }
 	.woocommerce table.woocommerce-MyAccount-downloads td.download-file, .woocommerce table.woocommerce-table--order-downloads td.download-file { justify-content: stretch; }
 	.woocommerce table.woocommerce-MyAccount-downloads td.download-file a, .woocommerce table.woocommerce-table--order-downloads td.download-file a { flex: 1; justify-content: center; }
 }
+
+/* 1.23.8: ebooks not ready yet (core 0.4.5 sale guard) */
+.sd-price-soon { display: inline-block; font-weight: 600; color: var(--wp--preset--color--gold-dark, #8a6a1f); letter-spacing: .02em; }
+.sd-buybox__soon { margin: 12px 0; padding: 14px 16px; border-radius: 12px; background: #faf6ec; border: 1px solid #e8dcc0; font-weight: 600; text-align: center; }
