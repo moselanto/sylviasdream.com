@@ -3,6 +3,7 @@
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
 ## Tuesday 10 November 2026 (late): Elementor inventory
+- Follow-up check, read only: the other 52 pages (43 published, 9 drafts) all have Header and Footer "Use the website setting"; none uses starter 6701/6702. All 72 pages checked. MIGRATION-PLAN 4b and OPEN-ITEMS updated.
 - Read-only check in wp-admin: 9 pages built in Elementor (Home, Shop For Books, Contact, My Story, Invite Sylvia to speak, Podcasts and Videos, Author Support, Heaven on Earth, Give 6428); header/footer are the built-in theme ones; starter templates 6701/6702 unused; Elementor 4.3.5, Redux 4.5.16. MIGRATION-PLAN 4b and OPEN-ITEMS updated. Nothing changed on the site.
 
 ## Tuesday 10 November 2026 (night): product checks and two launch blockers
