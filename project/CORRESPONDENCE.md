@@ -38,6 +38,18 @@ Moses's latest message to Sylvia, replying by number (matches `docs/CLIENT-CHECK
 
 **Sylvia's reply (WhatsApp, 9 Nov, shared in Town 10 Nov):** a shared Adobe Acrobat link to a new booklet, with the note "Feel free to share". File `Meet_Jesus_A_Booklet_to_Get_to_Know_Him.pdf` (PDF, 13 pages, about 345 KB): *Meet Jesus: A simple introduction to the God who loves you*, by Sylvia Suhr, Sylvia's Dream Publishing, (c) 2026. Twelve short sections from "You are invited to know Jesus" to "The God who knows your heart loves you", with a prayer of response; cover line "Know His heart. Receive His love." Prints sylviasdream.com; no mention of Heaven on Earth, "Registered" or a price. Saved to the Town library (Sylvias Dream/ebooks), not to Git. She did not answer the numbered items in this message. See OPEN-ITEMS 10 Nov for what to ask before it goes on the site.
 
+## Follow-up email and WhatsApp reminder prepared (10 Nov, not yet sent)
+After her 9 Nov reply (booklet only, no numbered answers), two messages were prepared for Moses to approve and send:
+- **Email** to Sylvia, subject "Your new website: the last few things we need" (draft in Lightof's mailbox). Same numbers as the WhatsApp list. Changes from the WhatsApp list:
+  - New first question: may Meet Jesus be offered on the website as a free download (not added until she says yes)
+  - Item 2 now asks which Guard Your Heart file readers download (6x9 suggested) and says When the Word Becomes Life is done
+  - Item 3 also asks to show reviewers' names and to correct the spelling slips in Lynne's review
+  - Item 13 asks whether Meet Jesus is the free download for "To Ensure You End Up Going to Heaven"
+  - **New item 25:** her written go-ahead to move the website to sylviasdream.com, plus her thoughts on it
+  - **New item 26:** a day for the final tests together and for launch day (Kenya afternoon = Melbourne evening)
+  - **Removed:** the price and cover requests for Manifesting Miracles Now (page removed by Sylvia, product Draft, 31 Oct) and When Fear Has the Final Word (same book as From Fear to Freedom, 31 Oct). Only the Fast Forward to Success price is still asked (with 17)
+- **WhatsApp reminder** (send after the email): thanks for the booklet, asks about the free download, says the full list was emailed, and names the priority items 8, 9-10, 14, 2 (with the Guard Your Heart file) and 6-7. Signed "God bless, Moses".
+
 Points to reconcile when she answers: the checklist already records (31 Oct) that When Fear Has the Final Word is the same book as From Fear to Freedom and that Manifesting Miracles Now was removed by Sylvia, so their prices and covers may not be needed; Guard Your Heart was sent as two print PDFs (6x9 and A4 coil), so which one buyers download is still open.
 
 ## Latest reply drafted for Moses (17 Oct)

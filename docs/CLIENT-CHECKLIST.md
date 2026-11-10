@@ -1,6 +1,6 @@
 # What we need from Sylvia
 
-Updated 3 Nov 2026. The numbers match the WhatsApp request list prepared for Moses on 3 Nov, so Sylvia can reply by number. Detail and status: [`../project/OPEN-ITEMS.md`](../project/OPEN-ITEMS.md); decisions: [`../project/DECISIONS.md`](../project/DECISIONS.md). Tick an item only when her written answer or file has arrived. Never send passwords with this list.
+Updated 10 Nov 2026. The numbers match the WhatsApp request list prepared for Moses on 3 Nov, so Sylvia can reply by number. **10 Nov:** after her 9 Nov reply (Meet Jesus booklet only), a follow-up email and WhatsApp reminder were prepared with items 2, 3, 6-26 open (see `project/CORRESPONDENCE.md`); items 1, 4 and 5 are answered. Detail and status: [`../project/OPEN-ITEMS.md`](../project/OPEN-ITEMS.md); decisions: [`../project/DECISIONS.md`](../project/DECISIONS.md). Tick an item only when her written answer or file has arrived. Never send passwords with this list.
 
 ## Done or no longer needed
 - [x] Signed acceptance (quotation v2) and USD 112 deposit, PMF-QT-2026-0106
@@ -25,7 +25,9 @@ Updated 3 Nov 2026. The numbers match the WhatsApp request list prepared for Mos
 - [x] 5. Heaven on Earth registration details: she has none (5 Nov); "Registered" wording removed
 
 ## Dream Partners and payments
-- [ ] 6. Monthly Dream Partner Stripe links A$15, A$30, A$50 (like the A$5 link) and one-off "give any amount" link (she creates them; we can guide on a call)
+- [ ] 6. Monthly Dream Partner Stripe links A$15, A$30, A$50 received 5 Nov (on Give, test site). Still open: one-off "give any amount" link, and her OK for the Give line that gifts are billed monthly in Australian dollars
+- [ ] 6a. Price for Fast Forward to Success (with 17). The 10 Nov email no longer asks for Manifesting Miracles Now or When Fear Has the Final Word prices/covers (31 Oct records)
+- [ ] 6c. Meet Jesus booklet (received 9 Nov): may it be a free download? (10 Nov email; see also 13)
 - [ ] 7. Number of active monthly Dream Partners today (counter start, now 0 of 100)
 - [ ] 8. Confirm the WordPress.com payment account ("Bu...th") is hers
 
@@ -48,8 +50,9 @@ Updated 3 Nov 2026. The numbers match the WhatsApp request list prepared for Mos
 - [ ] 24. Past buyers' new download links: she sends the email, or we prepare it (Option A, DECISIONS 31 Oct)
 
 ## Next steps
-- [ ] 25. She signs in only as `sylvia` and sets her own password ("Lost your password?"); we change the `moses` password first
-- [ ] 26. Dates for the final tests together and for launch day (Kenya afternoon = Australia evening)
+- [ ] 25. Her written go-ahead to move the website to sylviasdream.com, and her thoughts on it (asked in the 10 Nov email)
+- [ ] 26. Dates for the final tests together and for launch day (Kenya afternoon = Australia evening; asked in the 10 Nov email)
+- [ ] (Not sent to her) She signs in only as `sylvia` and sets her own password ("Lost your password?"); we change the `moses` password first
 
 ## Approvals before launch and final payment (in writing)
 - [ ] The whole test site (go-ahead to move to sylviasdream.com)

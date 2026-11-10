@@ -1,5 +1,11 @@
 # Open items (updated 10 November 2026)
 
+## 10 Nov: follow-up email and WhatsApp reminder to Sylvia (prepared, not sent)
+
+- [x] Email draft "Your new website: the last few things we need" and a short WhatsApp reminder prepared (details in `project/CORRESPONDENCE.md`). New items 25 (written go-ahead to move to sylviasdream.com) and 26 (dates for final tests and launch day) added; Meet Jesus free-download question added; price/cover requests for Manifesting Miracles Now and When Fear Has the Final Word removed (31 Oct records)
+- [ ] Moses approves and sends the email first, then the WhatsApp reminder (AGENTS rule 19)
+- [ ] Record her answers by number in `docs/CLIENT-CHECKLIST.md` and here
+
 ## 10 Nov: new booklet from Sylvia, "Meet Jesus" (WhatsApp, 9 Nov)
 
 - [x] Received: *Meet Jesus: A simple introduction to the God who loves you* (PDF, 13 pages), with her note "Feel free to share". Saved to the Town library (Sylvias Dream/ebooks). Details in `project/CORRESPONDENCE.md`
