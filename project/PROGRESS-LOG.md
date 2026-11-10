@@ -2,6 +2,9 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Tuesday 10 November 2026 (late): Elementor inventory
+- Read-only check in wp-admin: 9 pages built in Elementor (Home, Shop For Books, Contact, My Story, Invite Sylvia to speak, Podcasts and Videos, Author Support, Heaven on Earth, Give 6428); header/footer are the built-in theme ones; starter templates 6701/6702 unused; Elementor 4.3.5, Redux 4.5.16. MIGRATION-PLAN 4b and OPEN-ITEMS updated. Nothing changed on the site.
+
 ## Tuesday 10 November 2026 (night): product checks and two launch blockers
 - wp-admin, read only: Guard Your Heart Renew Your Mind is product 6393 (A$7.10, 6x9 PDF attached in `woocommerce_uploads`, Stripe link `...40k`); product 6381 is the separate Guard Your Heart (no file, no Stripe link, "Coming soon"); The Report of the Lord 6396 is A$8.35 with Stripe link `...40g`. BOOK-CATALOGUE, CLIENT-CHECKLIST and OPEN-ITEMS corrected.
 - Test site: Monday Encouragement post 5688, test-site address in its text changed to sylviasdream.com (as on live); date, author and status unchanged. Going to Heaven page 2458: empty button (no label, no link) removed; no wording changed; Meet Jesus not added. Both checked on the front end. Live site untouched; no code or payment link edited.

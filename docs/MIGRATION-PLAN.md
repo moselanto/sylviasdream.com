@@ -77,17 +77,28 @@ Quotation v2 (PMF-QT-2026-0106), cPanel preview guide v1.1 (18 Oct), the process
 
 `content/live/` was written for the block editor (26 Oct). Since then several test-site pages were built or rebuilt in Elementor, so their final layout and wording now live in Elementor data (`_elementor_data` post meta), not in `post_content` and not in `content/live/`. Pasting the block files for these pages on live would bring back the old layout and lose the 5 Nov changes. This section replaces the 29 Oct note "`content/live/` stays the block-editor launch pack" for these pages only.
 
-### Pages affected (confirm in step 1; do not rely on this list alone)
-| Page (test-site ID) | Built in Elementor | Changes not in `content/live/` |
-|---|---|---|
-| My Story (2665) | Yes, rebuilt with native containers 5 Nov | Portrait Media 6774, Kenya photo 6779, garden photo 6789, Milestones styling, "Let's Walk Together" layout |
-| Give (new page on live) | Yes, giving section replaced 5 Nov | Four Dream Partner tiers with Sylvia's 5 Nov wording and her A$5/15/30/50 Stripe links, GoFundMe button, "Registered" wording removed, unapproved preview/billing notes (OPEN-ITEMS 5 Nov) |
-| Heaven on Earth (1932) | Elementor Basic Gallery added 4-5 Nov | Ministry gallery 6786-6789, Kenya photo 6779, YouTube channel button, "Registered" wording removed |
-| Contact (20) | Yes (31 Oct) | Elementor layout around the Jetpack form |
-| Books (3001) | Yes (1.21.x "Build this page") | Page top banner widget settings |
-| Elementor header/footer templates, Kit | If assigned on the test site | Global colours/fonts (picker choices only), header/footer choice |
+### Pages built in Elementor (checked in wp-admin on the test site, 10 Nov, read only)
+All nine are Published on the test site and use the page template "Elementor full width (Sylvia's Dream)". The Pages list marks each as Elementor and Appearance > Set up page editor lists each as "Built in Elementor".
 
-### Step 1: inventory (test site, before launch)
+| Page (test-site ID) | On live today? | Changes not in `content/live/` (known) |
+|---|---|---|
+| Home (6365, front page) | New page on live (live front page is the old "Sylvia's Dream" page) | Elementor layout of the home sections |
+| Shop For Books / Books (3001) | Exists (`/shop-for-books/`) | Page top banner widget settings |
+| Contact (20) | Exists | Elementor layout around the Jetpack form |
+| My Story (2665) | Exists | Portrait Media 6774, Kenya photo 6779, garden photo 6789, Milestones styling, "Let's Walk Together" layout (5 Nov) |
+| Invite Sylvia to speak (6511) | New page on live | Elementor layout |
+| Podcasts and Videos (1366) | Exists | Elementor layout, video cards |
+| Author Support & Publishing Services (6235) | Exists | Elementor layout (wording kept exactly) |
+| Heaven on Earth - Christian Charity and Church in Kenya (1932) | Exists | Ministry gallery 6786-6789, Kenya photo 6779, YouTube channel button, "Registered" wording removed |
+| Give (6428) | New page on live | Four Dream Partner tiers with Sylvia's 5 Nov wording and her A$5/15/30/50 Stripe links, GoFundMe button, "Registered" wording removed, unapproved preview/billing notes (OPEN-ITEMS 5 Nov) |
+
+Not built in Elementor (Default template, move with `content/live/` or by hand as before): Grace for the Journey 5593, Journal 6368 (posts page), SENT 4686, From Fear to Freedom 4231, One Life 2766, The Hidden Key 6171, Kenya Ministry Training Manual 4303, Privacy Policy 3, Terms of Sale 6432, Refund Policy 6434 (Refund and Returns Policy 6375 is a Draft), WooCommerce Shop/Cart/Checkout/My account, other book, download and thank-you pages. 72 pages in total (62 published, 10 drafts); 63 are not Elementor. Note: the block editor shows an "Edit with Elementor" button on every page; that alone does not mean a page is built in Elementor.
+
+Headers and footers: the site-wide header and footer are the **built-in Sylvia's Dream header/footer** (Appearance > Sylvia's Dream Theme Options), not Elementor. The Elementor library holds "Sylvia's Dream header (starter)" 6701 and "Sylvia's Dream footer (starter)" 6702 (Published, type Section) and "Default Kit" 6699. The starters are not chosen site-wide and not on any of the 20 main pages checked (all set to "Use the website setting"); the other 52 pages' overrides were not opened. So no header or footer template needs to move at launch; the theme's built-in header and footer come with the child theme and Customizer settings.
+
+Versions on the test site: Elementor 4.3.5, Redux Framework 4.5.16 (both active). Live needs the same or newer.
+
+### Step 1: inventory (test site, before launch) - done 10 Nov (table above); repeat just before launch in case more pages are built
 1. In WP Admin > Pages, list every page whose row shows "Elementor" (or open each main page and check for "Edit with Elementor" / "Back to WordPress Editor"). Record the final list here and in OPEN-ITEMS.
 2. Elementor > Templates > Theme Builder / Saved Templates: note any header or footer template in use and the page-level header/footer overrides (`_sdc_header` / `_sdc_footer`).
 3. For each page, list every image it uses (Media IDs) and every outgoing link (Stripe, GoFundMe, YouTube, Amazon, internal).
@@ -108,12 +119,12 @@ Quotation v2 (PMF-QT-2026-0106), cPanel preview guide v1.1 (18 Oct), the process
 1. Confirm Elementor (free) and Redux install and activate on WordPress.com Personal (OPEN-ITEMS 29 Oct, still unverified). If they cannot, use the fallback below.
 2. Install the child theme (not activated) and set Elementor > Settings so only Pages use Elementor.
 3. Import each JSON at Elementor > Templates > Saved Templates > Import. Importing a template changes no page.
-4. **New pages (Give):** create as Draft, Edit with Elementor, insert the template, Save as Draft, set template "Sylvia's Dream Elementor full width". Preview with Sylvia.
-5. **Existing published pages (My Story, Heaven on Earth, Contact, Books):** do nothing yet. Updating a published page in Elementor publishes it at once, so these wait for Phase C.
+4. **New pages (Home, Invite Sylvia to speak, Give):** create as Draft, Edit with Elementor, insert the template, Save as Draft, set template "Sylvia's Dream Elementor full width". Preview with Sylvia.
+5. **Existing published pages (Shop For Books, Contact, My Story, Podcasts and Videos, Author Support, Heaven on Earth):** do nothing yet. Updating a published page in Elementor publishes it at once, so these wait for Phase C.
 
 ### Step 5: switch-over window (Phase C, after the child theme is active)
 1. For each existing page: Edit with Elementor > insert its saved template > check > Update. The page keeps its address. Set its template to the Elementor full-width template.
-2. Publish Give.
+2. Publish Home (then Settings > Reading), Invite Sylvia to speak and Give.
 3. Elementor > Tools > Regenerate CSS & Data; clear WordPress.com cache.
 4. On each page: search the rendered page for `#KEEP-LIVE`, `topnotchmall` and `/sylviasdream/` (none may remain); click every Stripe, Dream Partner and GoFundMe button and confirm the same Stripe/GoFundMe page opens (do not pay); phone and desktop check.
 5. Rollback for one page: Elementor > "Back to WordPress Editor" restores the previous `post_content`; or Page revisions.
