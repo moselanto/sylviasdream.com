@@ -33,7 +33,7 @@ Project in one line: Pimofy Digital (Moses Munyi) is rebuilding sylviasdream.com
 
 10. **No changes to the live site before backups.** Take the full backup set in `docs/BACKUP-AND-LAUNCH.md` section 1 before every live step, and a fresh set on switch-over day.
 11. **Migration only after Sylvia's written approval** of the dev site. Until then the live site is read-only.
-12. **Products stay Draft until launch.** Never publish a product on dev or live before launch day. The core plugin's preview mode shows drafts to signed-in reviewers without changing their status.
+12. **Products stay Draft on live until launch.** Never publish a product on the live site before launch day. On the password-gated, noindex test site (topnotchmall.co.ke/sylviasdream/) products may be Published so Sylvia can review the shop (decision 11 Nov 2026); never remove the password gate or noindex while they are. The core plugin's preview mode can still show drafts to signed-in reviewers without changing their status.
 13. `SD_PREVIEW_MODE` is for the **dev site only**. Never define it on live.
 14. Redirects stay **OFF** (Settings > Sylvia's Dream) until the switch-over window on launch day.
 15. Never sync a local or dev database over production. Deploy code only.

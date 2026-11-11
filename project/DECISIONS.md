@@ -2,6 +2,9 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 11 November 2026: products Published on the test site
+- **AGENTS.md rule 12 changed** (Lightsof, 11 Nov): products may be Published on the password-gated, noindex test site so Sylvia can review the shop; they stay Draft on live until launch day. Why: the test site already had them Published for review, which conflicted with the old wording (Draft on dev and live). The password gate and noindex must stay on while products are Published there.
+
 ## 11 November 2026: Meet Jesus, bio wording, registration
 - **Meet Jesus is delivered through Sylvia's own subscribe post** (Sylvia, 11 Nov): sylviasdream.com/2026/11/10/meet-jesus/ ; subscribers are taken to the download. Not a shop product. The Going to Heaven page links to that post at launch (her yes to item 13). Why: it grows her subscriber list and she built it herself.
 - **Bio wording** (Sylvia, 11 Nov, item 9): age 82 and her sentence about returning to Kenya, used as she wrote it (only the apostrophe in "weeks' time" added). Child 1.23.9.

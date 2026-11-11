@@ -84,7 +84,8 @@ Call time; signed acceptance and deposit; WordPress invite; Stripe items; book l
 - Registration line: yes to "Heaven on Earth Ministries is registered in Kenya (Reg. No. 35364, 2011)." for Heaven on Earth and Give (relayed by Lightsof, 11 Nov).
 - Reply prepared 11 Nov (answers 8, thanks, asks wording for the registration line); Moses to approve before sending.
 
-### 11 Nov WhatsApp reply to Sylvia (prepared; Moses to approve, then send)
+### 11 Nov WhatsApp reply to Sylvia (final; Moses to approve, then send)
+Registration paragraph removed 11 Nov: Sylvia had already said yes to the line (now on Heaven on Earth and Give).
 ```
 Dear Sylvia,
 
@@ -100,8 +101,6 @@ Meet Jesus: lovely. We will link the Going to Heaven page to your post, so reade
 
 8) You do not need a number. It is the Stripe account connected to your website for payments. In WordPress.com go to Tools, then Monetize (or Earn), then Payment settings, and you will see the name of the connected Stripe account. If it is your account, just reply yes. If you are not sure, a photo of that screen is fine.
 
-Thank you for the Heaven on Earth registration (Reg. No. 35364, registered in Kenya in 2011). May we add this line to the Heaven on Earth page and the Give page: "Heaven on Earth Ministries is registered in Kenya (Reg. No. 35364, 2011)."? Yes or no is fine.
-
 To launch, we still need:
 
 25) Your OK in writing that we may move the new website to sylviasdream.com
@@ -113,4 +112,4 @@ The other questions in my email can wait until after launch.
 God bless,
 Moses
 ```
-Note: the registration question in this text was answered yes (relayed by Lightsof 11 Nov) and the line is already on the test site. If not yet sent, remove that paragraph before sending. The menu path in item 8 was not verified against her account.
+Note: the menu path in item 8 was not verified against her account.

@@ -40,7 +40,6 @@ Rewritten Wednesday 11 November 2026 (Kenya time). Sections 0 and 3 are the curr
 
 ### How to work
 - **Handover checklist for the next agent:** (1) read AGENTS.md, this section 0, DECISIONS (newest first), OPEN-ITEMS (top sections are current); (2) check the latest GitHub Actions "Checks" run on `main` is green (it runs `php -l` on PHP 8.0-8.3) before installing any zip; (3) the test site is reached by the Town browser; wp-admin and cPanel sign-ins are entered by Lightsof when asked; (4) release zips live in the Town library `Sylvias Dream/releases` (child 1.23.10 is the current one).
-- **Known rule conflict to resolve with Moses:** AGENTS.md rule 12 says products stay Draft on dev too, but on the test site they were Published (with password gate and noindex) so Sylvia can review the shop. Keep them Draft on live until launch either way.
 - Read AGENTS.md, this section, `project/DECISIONS.md`, `project/OPEN-ITEMS.md` first.
 - Code: edit in the repo, bump versions, `bash scripts/build-theme-zip.sh`, also parse-check PHP, commit to `main` with CHANGELOG, HANDOFF, OPEN-ITEMS, DECISIONS, PROGRESS-LOG in the same commit; save zips to the Town library; install via Appearance > Themes > Upload > Replace. If wp-admin dies, replace the theme folder via cPanel File Manager (`/public_html/sylviasdream/wp-content/themes`).
 - Wording: only Sylvia's own words or her written yes; record each answer by number.
