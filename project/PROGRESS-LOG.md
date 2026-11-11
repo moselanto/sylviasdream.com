@@ -2,6 +2,13 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (02:40): live templates imported, /home/ checked, WooCommerce trial
+- Live: the 9 live-safe templates imported into Elementor > Saved Templates (IDs 6410 Home, 6412 Shop For Books, 6414 Contact, 6419 My Story, 6421 Invite Sylvia to speak, 6423 Podcasts and Videos, 6425 Author Support, 6430 Heaven on Earth, 6432 Give); none inserted into a page.
+- /home/: front page is page 5022 "Sylvia's Dream"; page 2 (`/home/`) is linked from the Primary menu "Home"; Top Menu "Home" points to `/sylvias-dream/`. New Home draft 6404 slug changed home -> `welcome` (still Draft). Decision in DECISIONS 12 Nov.
+- WooCommerce 11.3.0 installed and activated: its Shop 6436, Cart 6437, Checkout 6438, My account 6439 set to Draft at once (Refund policy 6440 already Draft); site visibility already Live. Signed-out `/shop/` still showed an empty product archive, so WooCommerce was **deactivated** (installed, inactive). `/cart/` 404 after that; plain `/shop/` still showed the archive once (likely cache; a cache-busting request redirected home): re-check.
+- Product CSV import refused by WordPress.com ("not allowed to upload this file type"); 0 products created. Prepared CSV (all Draft, no IDs, no download files, test-site image URLs) kept in the session; plan is XML import at launch (DECISIONS).
+- Menus unchanged (Top Menu 32 items, Primary 17); no WooCommerce page in any menu. Home page unchanged for visitors.
+
 ## Thursday 12 November 2026 (02:20): Elementor templates exported; Phase B media and drafts on live
 - Test site: Elementor 4.3.5 -> 4.4.0 and Redux 4.5.16 -> 4.5.18 (match live); Elementor DB update done; front end and wp-admin fine. The 9 Elementor pages saved as templates `LAUNCH - <page> - 2026-11-12` and exported to JSON; no page changed.
 - JSON made live-safe (MIGRATION-PLAN 4b step 3): every `topnotchmall.co.ke/sylviasdream/` and `/sylviasdream/` address replaced with `sylviasdream.com/` or `/`; none remain in any file. Image URLs and IDs pointed at the live Media Library (map in MIGRATION-PLAN 4b). Stripe/GoFundMe links unchanged. Originals and live-safe copies in the Town library `Sylvias Dream/launch-templates` (private; not in Git, they contain payment links).

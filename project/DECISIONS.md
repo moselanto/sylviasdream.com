@@ -2,6 +2,11 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 12 November 2026: /home/ slug and WooCommerce timing on live
+- **Old page 2 "Sylvia's Dream" keeps `/home/`; the new Home draft (6404) uses slug `welcome`** (recommended by the agent, recorded 12 Nov; Lightsof asked for a recommendation). Findings: the live front page is page **5022** "Sylvia's Dream" (Settings > Reading, static), not page 2; posts page is "Free Resource for Mission Training". Page 2 (`/home/`) is linked from the **Primary** menu "Home" item and is the source page of past contact-form entries. The Top Menu "Home" item points to `/sylvias-dream/`. Why: renaming page 2 would break a live, linked address; the new Home becomes the static front page at launch and is served at `/`, so its slug is never seen. At launch: Settings > Reading front page = 6404; leave pages 2 and 5022 published until Sylvia decides, then redirect `/home/` and `/sylvias-dream/` to `/` (add to REDIRECT-MAP) rather than delete.
+- **WooCommerce stays installed but inactive until the launch window.** On 12 Nov activation published Shop/Cart/Checkout/My account (set to Draft at once: 6436-6439, policy 6440 Draft) but the product archive at `/shop/` stayed public with the Shop page in Draft, so WooCommerce was deactivated. Site visibility was already "Live". Why: no visible change before launch (runbook Phase B 6 says "close to launch").
+- **Product import on live via WordPress XML, not CSV:** WordPress.com rejected the CSV upload ("not allowed to upload this file type"). Plan: at launch, export products from the test site with Tools > Export > Products (WXR), set every `wp:status` to `draft`, import with Tools > Import > WordPress after activating WooCommerce. Download files attached afterwards on live (BUYER-TRANSITION-PLAN).
+
 ## 12 November 2026: core 0.4.6 security switches
 - **XML-RPC blocking, two-step sign-in and the login limit are switchable in Settings > Sylvia's Dream** (Lightsof, 12 Nov), **off by default on WordPress.com**, on elsewhere. Why: on WordPress.com Personal wp-config.php cannot be edited, and Jetpack (her 24 newsletter subscribers, the Meet Jesus subscribe post, WordPress.com sign-in) may rely on XML-RPC. Live admins use WordPress.com two-step sign-in instead (HANDOFF 27 Oct note). Only core 0.4.6 or later goes on live.
 

@@ -5,10 +5,12 @@
 - [x] Core 0.4.6 active on live (switches off, Redirects off, Dream Partners 1); parent + child themes uploaded, not active; Elementor 4.4.0 and Redux 4.5.18 active; Jetpack, newsletter, Meet Jesus form and thank-you noindex checked (PROGRESS-LOG 12 Nov 01:45)
 - [x] Test site Elementor 4.4.0 / Redux 4.5.18; 9 templates exported and made live-safe (library `Sylvias Dream/launch-templates`, 12 Nov)
 - [x] Live: 9 missing media uploaded (6395-6403); empty Drafts Home 6404, Give 6406, Invite Sylvia to speak 6408, not in menus
-- [ ] **Slug clash:** an older published live page "Sylvia's Dream" already uses `/home/`. Decide before launch: rename the old page's slug or give the new Home another slug (the new Home becomes the front page via Settings > Reading, so its slug is not shown in the menu)
+- [x] **Slug clash resolved 12 Nov:** new Home draft 6404 slug is `welcome`; old page 2 keeps `/home/` (DECISIONS 12 Nov). At launch: front page = 6404, later redirect `/home/` and `/sylvias-dream/` to `/` with Sylvia's OK
 - [ ] **Give template wording:** contains the test-only note "Private preview: Dream Partner buttons use Sylvia's live Stripe links..." Remove it at insertion unless Moses/Sylvia approve (MIGRATION-PLAN 4b step 3.4)
-- [ ] Import the 9 live-safe JSON files on live (Elementor > Templates > Import) and insert them into the Drafts and existing pages in Live Preview / launch window (MIGRATION-PLAN 4b steps 4-5)
-- [ ] WooCommerce close to launch with its pages set to Draft, products imported as Draft (Phase B step 6)
+- [x] 9 live-safe templates imported on live (Saved Templates 6410-6432, 12 Nov). Insert them into the Drafts and existing pages in Live Preview / launch window (MIGRATION-PLAN 4b steps 4-5)
+- [ ] **WooCommerce on live:** installed (11.3.0) but **inactive** since 12 Nov: activation exposed an empty `/shop/` archive. Its pages 6436-6439 are Draft. Re-check signed-out `/shop/` returns 404/home (possible cache). Activate only in the launch window
+- [ ] **Products on live:** CSV upload is blocked on WordPress.com. At launch: test site Tools > Export > Products (XML), set all statuses to draft, live Tools > Import > WordPress; then attach the two protected ebook files and check Stripe links (`_sdc_buy_link`), free-download links (now sylviasdream.com addresses) and images
+- [ ] Top Menu "Home" item points to `/sylvias-dream/` and shows original title "From Fear to Freedom": check with Sylvia before rebuilding menus
 - [ ] One real test subscription on the Meet Jesus form with a test address (not yet done; would add a subscriber)
 
 ## 12 Nov: Sylvia's go-ahead to launch (WhatsApp)
