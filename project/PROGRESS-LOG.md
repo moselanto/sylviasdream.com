@@ -2,6 +2,12 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Wednesday 11 November 2026 (morning): 1.23.9 install broke the test site; 1.23.10 fix ready
+- Child 1.23.9 zip built from main and saved to the Town library (Sylvias Dream/releases). Installed on the test site ("Replace installed with uploaded", 1.23.8 -> 1.23.9, "Theme updated successfully"). Straight after, wp-admin and the front end showed "There has been a critical error" (HTTP 500).
+- Cause: the apostrophe in "weeks' time" ended the single-quoted PHP string in `inc/customizer.php` (About "Second paragraph" default). Not caught because `php -l` is not available in the build sandbox and check-theme.js does not parse PHP.
+- Fix: child 1.23.10 (typographic apostrophe, wording unchanged), PHP-parser check of all child and core PHP files (no errors), zip in the library. Committed 8a3e9f5.
+- **Test site still down.** wp-admin cannot load, so 1.23.10 must go in through cPanel File Manager (topnotchmall.co.ke:2083): upload the zip to the /sylviasdream/ install's wp-content/themes, delete only `sylviasdream-child`, extract. The cPanel sign-in was rejected and the retry was cancelled. Then check Home, My Story and Invite Sylvia to speak still show 82, and that Books and Contact load. Live site untouched.
+
 ## Wednesday 11 November 2026: Sylvia's answers, child 1.23.9
 - Sylvia answered 2, 9, 10, 13, 14 on WhatsApp, published her Meet Jesus subscribe post on live, asked where to find the payment account (8), and sent the Heaven on Earth registration (Reg. No. 35364, Kenya, 2011). Recorded in OPEN-ITEMS, CLIENT-CHECKLIST, DECISIONS, CORRESPONDENCE.
 - Child 1.23.9: age 82 and her Kenya-return sentence in the About text, My Story and Invite Sylvia to Speak defaults.

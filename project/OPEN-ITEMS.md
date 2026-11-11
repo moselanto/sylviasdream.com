@@ -1,5 +1,11 @@
 # Open items (updated 11 November 2026)
 
+## 11 Nov: test site down after child 1.23.9 (URGENT)
+
+- [ ] Install child **1.23.10** through cPanel File Manager (wp-admin shows a critical error). Never install 1.23.9 (PHP parse error in `inc/customizer.php`). Then clear Elementor cache and check Home, My Story, Invite Sylvia to speak show 82; Books and Contact load
+- [ ] Do not send Sylvia the 11 Nov WhatsApp (it says "the site now says you are 82" and she may open the site) until the test site is back
+- [ ] Add a PHP parse check to `scripts/check-theme.js` so the build fails on PHP syntax errors
+
 ## 11 Nov: Sylvia's answers (WhatsApp, 11 Nov, 04:52-08:08 Melbourne-time messages)
 
 - [x] **Meet Jesus:** she published her own post on live, https://sylviasdream.com/2026/11/10/meet-jesus/ ; readers subscribe and are then taken to the download. So the booklet is free, delivered through her subscribe post, not as a shop product. Do not upload the PDF to the shop
