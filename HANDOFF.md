@@ -2,44 +2,47 @@
 
 Last updated: Wednesday 11 November 2026 (EAT, UTC+3). Sections 0 and 3 are the current state; sections 4 onwards are older background (still valid unless section 0 says otherwise).
 
-## 0. Latest status (11 Nov 2026) - read this first
-Rewritten Wednesday 11 November 2026 (Kenya time). Sections 0 and 3 are the current state. Daily detail: `project/PROGRESS-LOG.md`; open items: `project/OPEN-ITEMS.md`; Sylvia's answers by number: `docs/CLIENT-CHECKLIST.md`; decisions: `project/DECISIONS.md`.
+## 0. Latest status (12 Nov 2026, 03:00 EAT) - read this first
+Rewritten Thursday 12 November 2026. Sections 0 and 3 are the current state. Detail: `project/PROGRESS-LOG.md` (newest first), `project/OPEN-ITEMS.md` (top sections current), `project/DECISIONS.md`, `docs/CLIENT-CHECKLIST.md` (Sylvia's answers by number), `docs/MIGRATION-PLAN.md` (launch steps, live media map).
 
 ### Where we are
-- **Build is essentially finished on the test site** (https://topnotchmall.co.ke/sylviasdream/, password-gated, noindex). Live sylviasdream.com is **untouched** until Sylvia's written go-ahead (item 25).
-- **Versions:** child theme **1.23.10** (in `main`, library, active on test). Core plugin **0.4.6** in `main` and the library (12 Nov: Security switches for XML-RPC, two-step sign-in and login limit, off by default on WordPress.com, so it is safe to activate on live with Jetpack); the test site still runs core 0.4.5 (install 0.4.6 there first and check Settings > Sylvia's Dream keeps all three switches on). **Never install child 1.23.9** (PHP parse error; it took the test site down on 11 Nov until 1.23.10 was put in through cPanel).
-- **Elementor:** 9 pages built in Elementor (Home 6365, Shop For Books 3001, Contact 20, My Story 2665, Invite Sylvia to speak 6511, Podcasts and Videos 1366, Author Support 6235, Heaven on Earth 1932, Give 6428). All open in the editor and are editable (checked 11 Nov); no current errors. All 72 pages use the theme's built-in header and footer (no overrides). Editor takes about 80-90 s to open: server-side (see "Remaining").
-- **Server (test):** PHP 8.2, PHP memory 512M; `WP_MEMORY_LIMIT` set to 256M in `wp-config.php` 11 Nov (backup `wp-config.php.bak-20261111`).
-- **Sylvia's answers so far (11 Nov):** 2 (use the 6x9 Guard Your Heart file), 9 (wording OK, age now 82, plus her Kenya-return sentence, done), 10 yes, 13 yes (Meet Jesus is the free download, via her own subscribe post https://sylviasdream.com/2026/11/10/meet-jesus/), 14 yes, 5 (Heaven on Earth Ministries, Reg. No. 35364, Kenya 2011; approved line now on Heaven on Earth and Give). Item 8 she asked where to find the payment account (explained in the 11 Nov WhatsApp).
-- **Shop:** 25 products (Published on test, Draft on live until launch). 17 with Sylvia's Stripe "Buy ebook" link. Protected download files: When the Word Becomes Life, Guard Your Heart Renew Your Mind (6x9). Paid ebooks with no file and no Stripe link show "Coming soon" (core 0.4.5).
+- **Sylvia gave written go-ahead to move (12 Nov, item 25)** and confirmed the payment account (item 8). We are in **Phase B** (invisible live preparation). **Visitors still see the old site** (Twenty Twenty theme).
+- **Test site** (https://topnotchmall.co.ke/sylviasdream/, password-gated, noindex): build finished. Child theme **1.23.10**, core **0.4.6**, Elementor 4.4.0, Redux 4.5.18. 9 Elementor pages, all editable. Never install child 1.23.9 (PHP parse error).
+- **Live sylviasdream.com (WordPress.com Personal)** - done so far:
+  - Backup: content XML, newsletter CSV (54 records / 24 subscribers), MailPoet CSV in the Town library `Sylvias Dream/backups`; all **254 media files (306.7 MB)** on the topnotchmall server in `/home/topnotch/sylviasdream-live-backup-2026-11-12/media` (outside public_html).
+  - Core 0.4.6 **active** with XML-RPC, two-step sign-in, login limit and Redirects **off**; Dream Partners = 1. Jetpack connection, newsletter, Meet Jesus subscribe form and thank-you noindex all checked OK.
+  - Parent theme Sylvia's Dream Base 1.0.1 and child 1.23.10 uploaded, **not active**. Elementor 4.4.0 and Redux 4.5.18 active (no page built).
+  - 9 missing media uploaded (IDs 6395-6403; map in MIGRATION-PLAN 4b).
+  - Empty **Drafts**: Home 6404 (slug `welcome`; old page 2 keeps `/home/`, DECISIONS 12 Nov), Give 6406, Invite Sylvia to speak 6408. Not in any menu.
+  - 9 live-safe launch templates in Elementor > Saved Templates (6410 Home, 6412 Shop For Books, 6414 Contact, 6419 My Story, 6421 Invite, 6423 Podcasts, 6425 Author Support, 6430 Heaven on Earth, 6432 Give). Not inserted anywhere.
+  - WooCommerce 11.3.0 **installed but inactive** (activation exposed `/shop/`); its pages 6436-6439 Draft. After cache clear `/shop/` redirects home (12 Nov).
+  - Products **not imported**: CSV upload blocked on WordPress.com. Ready instead: `Products live draft 12 Nov 2026.xml` in the Town library `Sylvias Dream/launch-templates` (24 products all `draft`, trashed duplicate removed, product links swapped to sylviasdream.com, 26 image attachments still point to the test site so the importer can fetch them, protected download files removed).
+- **Sylvia's answers:** done 1, 2 (6x9 Guard Your Heart), 4, 5 (Reg. No. 35364 line on Heaven on Earth/Give), 7 (1 Dream Partner), 8, 9, 10, 13, 14, 25. Fast Forward Lulu paperback link received (items 16/17 still to confirm). Launch-critical open: **26** (dates; she offered to meet 12 Nov at 7 or 8 pm Melbourne = 11 am / 12 noon Kenya, WhatsApp prepared in CORRESPONDENCE).
 
 ### What is remaining (in order)
-**A. Now (no Sylvia needed)**
-1. Send Sylvia the 11 Nov WhatsApp (CORRESPONDENCE 11 Nov) and, if Moses wants, the 10 Nov email; Moses approves first (AGENTS rule 19).
-2. Security (Moses only): change the `moses` password (emailed to Sylvia 27 Oct), "Log Out Everywhere Else", turn on two-factor.
-3. Ask the host (topnotchmall.co.ke) to enable OPcache for ea-php82 and check server response time; then re-time the Elementor editor (target under 15 s).
-4. Next child release (1.23.11): mirror the registration line in `content/blocks/heaven-on-earth.html` and `give.html`; add a PHP parse step to `scripts/check-theme.js` so a syntax error fails the build (`php -l` is not available in the agent sandbox; `/tmp/lint.js` with `php-parser` was used on 11 Nov).
-5. Check a free book still shows "Free download" (not covered by the 10 Nov smoke test).
-6. Site Health tidy-ups on test: remove inactive plugins/themes after checking them, look at the late scheduled event. Keep "discourage search engines" ON on test.
-7. Upload original covers for Guard Your Heart (6381) and Angelique Finds Her Light (6394) when Agnes sends them.
+**A. Before the launch window**
+1. Moses: agree the call/launch window with Sylvia (item 26); private preview on that call (Live Preview of child theme + draft previews).
+2. Moses security: change `moses` password on test, "Log Out Everywhere Else", set up two-factor; live admins use WordPress.com two-step sign-in.
+3. Test site: ask host to enable OPcache (editor opens in 80-90 s).
+4. Next child release 1.23.11: mirror registration line in `content/blocks/heaven-on-earth.html` and `give.html`; add a PHP parse step to `scripts/check-theme.js`.
+5. Confirm with Sylvia: Fast Forward / Be a World Changer one book? (16), price (17); Top Menu "Home" item points to `/sylvias-dream/`.
+6. Give template contains the test-only "Private preview: ..." note: remove at insertion unless approved.
 
-**B. Waiting on Sylvia (launch-critical first)**
-- Done 12 Nov: **25** written go-ahead to move ("Please move the new website to sylviasdream.com") and **8** yes. Open: **26** dates for final tests and launch day (she offered to meet 12 Nov).
-- Can follow after launch: 3, 6 (give-any-amount link, monthly wording), 6a/17 Fast Forward to Success price, 7 Dream Partner count, 11, 12, 15, 16, 18-24, remaining ebook files (2). Books without files stay "Coming soon", so they do not block launch.
-- After her Kenya trip: reword "in a few weeks' time" in the About paragraph (Customizer, Home Elementor widget, `about-sylvia.php`, `customizer.php`).
+**B. Launch window (about 3 h, Kenya afternoon = Melbourne evening; MIGRATION-PLAN Phase C)**
+1. Fresh backup (content XML, subscribers).
+2. Activate WooCommerce; set its pages Draft/assign; check Site visibility Live; Tools > Import > WordPress the products XML (all draft); attach the two protected ebook files; check images, Stripe `_sdc_buy_link` and free-download links.
+3. Activate child theme 1.23.10; insert saved templates into Home 6404, Give 6406, Invite 6408 and the 6 existing pages (MIGRATION-PLAN 4b step 5); Settings > Reading front page = 6404.
+4. Publish products; menus; Kindle links amazon.com.au; Going to Heaven links to `/2026/11/10/meet-jesus/`; Redirects ON per REDIRECT-MAP (add `/home/` and `/sylvias-dream/` -> `/` only with Sylvia's OK).
+5. Click-test every Stripe, Dream Partner and GoFundMe button (do not pay); Sylvia connects her own Stripe for the cart; one real purchase she refunds; QA checklists; clear WordPress.com cache.
 
-**C. Launch (only after item 25, follow `docs/MIGRATION-PLAN.md`)**
-1. Full backup of live (`docs/BACKUP-AND-LAUNCH.md`); confirm Elementor and Redux install on WordPress.com Personal.
-2. Prepare live without changing what visitors see: install child 1.23.x, core 0.4.5, WooCommerce, Elementor, Redux (themes/plugins inactive until the window).
-3. Launch window (about 3 h, Kenya afternoon = Melbourne evening): activate theme, bring the 9 Elementor pages over as saved templates (MIGRATION-PLAN 4b), publish products, link Going to Heaven to `/2026/11/10/meet-jesus/`, Kindle links to amazon.com.au, redirects (`docs/REDIRECT-MAP.md`), click-test every Stripe and Dream Partner button, Sylvia connects her own Stripe for the cart, one real purchase she refunds.
-4. Re-check Elementor pages and header/footer settings on live (OPEN-ITEMS).
-
-**D. Handover**
-- Past buyers' new download links (Option A, item 24), then old public files removed with her written OK.
-- Restore test with Sylvia, training (she signs in as `sylvia` only), balance USD 168 due.
+**C. After launch / handover**
+- Past buyers' new download links (item 24, Option A), then old public files removed with her written OK.
+- Restore test, training (she signs in as `sylvia`), balance USD 168 due. Delete test copy after handover.
+- After her Kenya trip: reword "in a few weeks' time" in the About paragraph.
+- Remaining Sylvia items after launch: 3, 6, 11, 12, 15, 16-24, ebook files (2).
 
 ### How to work
-- **Handover checklist for the next agent:** (1) read AGENTS.md, this section 0, DECISIONS (newest first), OPEN-ITEMS (top sections are current); (2) check the latest GitHub Actions "Checks" run on `main` is green (it runs `php -l` on PHP 8.0-8.3) before installing any zip; (3) the test site is reached by the Town browser; wp-admin and cPanel sign-ins are entered by Lightsof when asked; (4) release zips live in the Town library `Sylvias Dream/releases` (child 1.23.10 is the current one).
+- **Handover checklist for the next agent:** (1) read AGENTS.md, this section 0, DECISIONS (newest first), OPEN-ITEMS (top sections are current); (2) check the latest GitHub Actions "Checks" run on `main` is green (it runs `php -l` on PHP 8.0-8.3) before installing any zip; (3) the test site is reached by the Town browser; wp-admin and cPanel sign-ins are entered by Lightsof when asked; (4) release zips live in the Town library `Sylvias Dream/releases` (child 1.23.10, core 0.4.6 current); launch files (templates, products XML) in `Sylvias Dream/launch-templates`; live backups in `Sylvias Dream/backups` and on the topnotchmall server; (5) the live site is reached through WordPress.com (my.wordpress.com/sites/sylviasdream.com), session already signed in or Lightsof signs in.
 - Read AGENTS.md, this section, `project/DECISIONS.md`, `project/OPEN-ITEMS.md` first.
 - Code: edit in the repo, bump versions, `bash scripts/build-theme-zip.sh`, also parse-check PHP, commit to `main` with CHANGELOG, HANDOFF, OPEN-ITEMS, DECISIONS, PROGRESS-LOG in the same commit; save zips to the Town library; install via Appearance > Themes > Upload > Replace. If wp-admin dies, replace the theme folder via cPanel File Manager (`/public_html/sylviasdream/wp-content/themes`).
 - Wording: only Sylvia's own words or her written yes; record each answer by number.
@@ -69,7 +72,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | Live site | sylviasdream.com on WordPress.com Personal, Twenty Twenty theme still active. **Phase B (12 Nov):** core 0.4.6 active (switches off), themes uploaded not active, Elementor 4.4.0 and Redux 4.5.18 active, 9 missing media uploaded, empty Drafts Home 6404 (slug welcome), Give 6406, Invite 6408, 9 launch templates in Saved Templates; WooCommerce 11.3.0 installed but **inactive** (exposed /shop/); products not imported (CSV blocked, use XML at launch). No visible change. Sylvia published "Meet Jesus" there 10 Nov. Domain paid to 25 Nov 2027. |
 | Migration | Only after item 25 (written go-ahead). `docs/MIGRATION-PLAN.md` (4b for Elementor pages). |
 | Child theme | **1.23.10** in the repo and on the test site (11 Nov). 1.23.9 is broken, never install. |
-| Core plugin | **0.4.6** in the repo and library (12 Nov, WordPress.com-safe switches); test site on 0.4.5. Live: install 0.4.6, never 0.4.5. |
+| Core plugin | **0.4.6** in the repo, on the test site (switches on) and active on live (switches off), 12 Nov. Never use 0.4.5 on live. |
 | Other plugins (test) | WooCommerce, Elementor 4.3.5 (free), Redux 4.5.16, Rank Math, Jetpack, Password Protected (test only). |
 | Server (test) | PHP 8.2, memory 512M, WP_MEMORY_LIMIT 256M, OPcache off (ask host), no page cache. |
 | Products | 25 (Published on test; Draft on live). 17 with Stripe link; protected files for When the Word Becomes Life and Guard Your Heart Renew Your Mind (6x9); others "Coming soon". |

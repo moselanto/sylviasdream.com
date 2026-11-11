@@ -2,6 +2,11 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (02:55): /shop/ re-check, products XML, HANDOFF rewrite
+- Live, signed out: `/shop/` first still showed the empty archive (cached); WooCommerce confirmed inactive; WordPress.com Hosting > Caching > Clear all; then `/shop/` and `/shop/?nocache=...` both redirect to the home page.
+- Test site: Tools > Export > Products (WXR). Prepared `Products live draft 12 Nov 2026.xml` (24 products set to draft, trashed "When Fear Has the Final Word" removed, `_downloadable_files` removed for the 2 protected ebooks, product links swapped to sylviasdream.com, 26 image attachments left pointing at the test site so the importer can fetch them). Saved to the Town library `Sylvias Dream/launch-templates`. Nothing imported on live.
+- HANDOFF section 0 rewritten for the next agent (status, done, remaining in order).
+
 ## Thursday 12 November 2026 (02:40): live templates imported, /home/ checked, WooCommerce trial
 - Live: the 9 live-safe templates imported into Elementor > Saved Templates (IDs 6410 Home, 6412 Shop For Books, 6414 Contact, 6419 My Story, 6421 Invite Sylvia to speak, 6423 Podcasts and Videos, 6425 Author Support, 6430 Heaven on Earth, 6432 Give); none inserted into a page.
 - /home/: front page is page 5022 "Sylvia's Dream"; page 2 (`/home/`) is linked from the Primary menu "Home"; Top Menu "Home" points to `/sylvias-dream/`. New Home draft 6404 slug changed home -> `welcome` (still Draft). Decision in DECISIONS 12 Nov.
