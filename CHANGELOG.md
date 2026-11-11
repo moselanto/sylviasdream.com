@@ -1,5 +1,9 @@
 # Changelog
 
+## Child theme 1.23.10 (11 Nov 2026)
+- Fix: 1.23.9 crashed the site ("critical error") because the apostrophe in "weeks' time" ended the single-quoted PHP string in `inc/customizer.php` (About "Second paragraph" default). It now uses a typographic apostrophe (also in `patterns/about-sylvia.php`). Wording unchanged. 1.23.9 must not be installed.
+- PHP files now also checked with a PHP parser (php-parser, 68 child and 17 core files, no errors) before building, because `php -l` is not available in the build sandbox.
+
 ## Child theme 1.23.9 (11 Nov 2026)
 - Sylvia's answer to item 9 (WhatsApp, 11 Nov): age updated to 82 and her new sentence added. About paragraph (pattern `about-sylvia.php` and Customizer default `about_text_2`): "Today, at eighty-two, ... Sylvia will be returning to Kenya in a few weeks' time to continue the work she began and visit and encourage other ministries." Photo note "Eighty-two and still becoming"; My Story timeline "Today, age 82" and stat 82; Invite Sylvia to Speak "still becoming at eighty-two".
 - Content only; no layout, payment or Stripe change. Saved Customizer and Elementor text on the test site is updated separately (PROGRESS-LOG 11 Nov).

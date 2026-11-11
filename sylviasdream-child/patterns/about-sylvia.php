@@ -43,7 +43,7 @@ defined( 'ABSPATH' ) || exit;
 <p class="sd-lead">Sylvia was born in post-war England, the youngest of six children. She came to know Jesus at thirty-eight and was called to ministry at fifty-seven.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
-<p>She travelled to Kenya often, preaching the gospel and visiting prisons, churches and schools. She helped establish Heaven on Earth Ministries for orphans and children in remote villages. Today, at eighty-two, she writes from Australia to help readers trust God more deeply. Sylvia will be returning to Kenya in a few weeks' time to continue the work she began and visit and encourage other ministries.</p>
+<p>She travelled to Kenya often, preaching the gospel and visiting prisons, churches and schools. She helped establish Heaven on Earth Ministries for orphans and children in remote villages. Today, at eighty-two, she writes from Australia to help readers trust God more deeply. Sylvia will be returning to Kenya in a few weeks’ time to continue the work she began and visit and encourage other ministries.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
