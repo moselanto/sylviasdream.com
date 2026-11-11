@@ -2,6 +2,11 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 11 November 2026: Meet Jesus, bio wording, registration
+- **Meet Jesus is delivered through Sylvia's own subscribe post** (Sylvia, 11 Nov): sylviasdream.com/2026/11/10/meet-jesus/ ; subscribers are taken to the download. Not a shop product. The Going to Heaven page links to that post at launch (her yes to item 13). Why: it grows her subscriber list and she built it herself.
+- **Bio wording** (Sylvia, 11 Nov, item 9): age 82 and her sentence about returning to Kenya, used as she wrote it (only the apostrophe in "weeks' time" added). Child 1.23.9.
+- **Registration:** Heaven on Earth Ministries, Reg. No. 35364, registered in Kenya 2011 (Sylvia via Joshua, 11 Nov). Supersedes "she has none" (5 Nov). Not on the site until she approves exact wording.
+
 ## 3 November 2026: 1.23.2, A$ prices, shop checkout plan, no dashboard code edits
 - **Prices show "A$"** (Agnes, 3 Nov): AUD symbol filter in the child theme (`sdc_aud_currency_symbol()`, filter `sdc_currency_symbol`). Currency and prices unchanged. Why: international readers read "$" as US dollars.
 - **No code edits in the dashboard** (AGENTS.md rule 33). Why: the 31 Oct Additional CSS rule and `inc/cover-alt.php` edit existed only on the test site and the next theme upload would have removed them; both now live in 1.23.2.

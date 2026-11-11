@@ -75,3 +75,10 @@ Points to reconcile when she answers: the checklist already records (31 Oct) tha
 
 ## Waiting for from Sylvia
 Call time; signed acceptance and deposit; WordPress invite; Stripe items; book list answers; covers and ebook files. Full list: `OPEN-ITEMS.md`.
+
+## 11 Nov: Sylvia's answers (WhatsApp)
+- Meet Jesus: she created a post on live that leads people to subscribe and then to the download: https://sylviasdream.com/2026/11/10/meet-jesus/
+- 2: use the 6x9 copy. 9: "I am now 82", with revised paragraph adding "Sylvia will be returning to Kenya in a few weeks time to continue the work she began and visit and encourage other ministries." 10: yes. 13: yes. 14: yes.
+- 8: "Where do I find this payment account number?"
+- Later: "I will contact Joshua to get the registration number"; then "Heaven on Earth Ministries, Reg. No. 35364, Registered year 2011 (Registered in Kenya)".
+- Reply prepared 11 Nov (answers 8, thanks, asks wording for the registration line); Moses to approve before sending.

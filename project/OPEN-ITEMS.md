@@ -1,4 +1,16 @@
-# Open items (updated 10 November 2026)
+# Open items (updated 11 November 2026)
+
+## 11 Nov: Sylvia's answers (WhatsApp, 11 Nov, 04:52-08:08 Melbourne-time messages)
+
+- [x] **Meet Jesus:** she published her own post on live, https://sylviasdream.com/2026/11/10/meet-jesus/ ; readers subscribe and are then taken to the download. So the booklet is free, delivered through her subscribe post, not as a shop product. Do not upload the PDF to the shop
+- [x] **2:** use the 6x9 copy of Guard Your Heart Renew Your Mind (already attached, product 6393). Item closed for this book; other ebook files still open
+- [ ] **8:** she asked where to find the payment account. Answer sent with Moses's OK (CORRESPONDENCE 11 Nov): she does not need a number; it is the Stripe account connected under WordPress.com Payments. Waiting for her "yes"
+- [x] **9:** approved with changes: age now 82, plus her new sentence about returning to Kenya. Done in child 1.23.9 and on the test site. **Time-sensitive:** "in a few weeks' time" must be reworded after her trip (ask her)
+- [x] **10:** yes, "Every purchase helps Heaven on Earth"
+- [x] **13:** yes, Meet Jesus is the free download for "To Ensure You End Up Going to Heaven". At launch the page links to her post `/2026/11/10/meet-jesus/` (exists only on live; button label to agree with her). Not added on the test site because the post is not there
+- [x] **14:** yes, Privacy Policy, Terms of Sale and Refund Policy approved
+- [ ] **5 (reopened):** Heaven on Earth Ministries, Reg. No. 35364, registered in Kenya in 2011 (via Joshua). Nothing added to site wording yet; ask her to approve exact wording and where it goes (Heaven on Earth page, Give page). Also affects the Kindle "Registered Christian Charity" question (item 2): "registered" is now supported, "charity" is not confirmed
+- [ ] Still open: 3, 6, 6a, 7, 8, 11, 12, 15-26 (25 = written go-ahead, 26 = dates)
 
 ## 10 Nov: child 1.23.8 and core 0.4.5 ("Coming soon" sale guard)
 

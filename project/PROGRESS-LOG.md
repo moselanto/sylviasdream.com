@@ -2,6 +2,10 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Wednesday 11 November 2026: Sylvia's answers, child 1.23.9
+- Sylvia answered 2, 9, 10, 13, 14 on WhatsApp, published her Meet Jesus subscribe post on live, asked where to find the payment account (8), and sent the Heaven on Earth registration (Reg. No. 35364, Kenya, 2011). Recorded in OPEN-ITEMS, CLIENT-CHECKLIST, DECISIONS, CORRESPONDENCE.
+- Child 1.23.9: age 82 and her Kenya-return sentence in the About text, My Story and Invite Sylvia to Speak defaults.
+
 ## Tuesday 10 November 2026 (late): Elementor inventory
 - Follow-up check, read only: the other 52 pages (43 published, 9 drafts) all have Header and Footer "Use the website setting"; none uses starter 6701/6702. All 72 pages checked. MIGRATION-PLAN 4b and OPEN-ITEMS updated.
 - Read-only check in wp-admin: 9 pages built in Elementor (Home, Shop For Books, Contact, My Story, Invite Sylvia to speak, Podcasts and Videos, Author Support, Heaven on Earth, Give 6428); header/footer are the built-in theme ones; starter templates 6701/6702 unused; Elementor 4.3.5, Redux 4.5.16. MIGRATION-PLAN 4b and OPEN-ITEMS updated. Nothing changed on the site.

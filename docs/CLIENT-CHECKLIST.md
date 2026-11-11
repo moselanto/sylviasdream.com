@@ -1,6 +1,6 @@
 # What we need from Sylvia
 
-Updated 10 Nov 2026. The numbers match the WhatsApp request list prepared for Moses on 3 Nov, so Sylvia can reply by number. **10 Nov:** after her 9 Nov reply (Meet Jesus booklet only), a follow-up email and WhatsApp reminder were prepared with items 2, 3, 6-26 open (see `project/CORRESPONDENCE.md`); items 1, 4 and 5 are answered. Detail and status: [`../project/OPEN-ITEMS.md`](../project/OPEN-ITEMS.md); decisions: [`../project/DECISIONS.md`](../project/DECISIONS.md). Tick an item only when her written answer or file has arrived. Never send passwords with this list.
+Updated 11 Nov 2026 (answers to 2, 9, 10, 13, 14 received 11 Nov; see OPEN-ITEMS). The numbers match the WhatsApp request list prepared for Moses on 3 Nov, so Sylvia can reply by number. **10 Nov:** after her 9 Nov reply (Meet Jesus booklet only), a follow-up email and WhatsApp reminder were prepared with items 2, 3, 6-26 open (see `project/CORRESPONDENCE.md`); items 1, 4 and 5 are answered. Detail and status: [`../project/OPEN-ITEMS.md`](../project/OPEN-ITEMS.md); decisions: [`../project/DECISIONS.md`](../project/DECISIONS.md). Tick an item only when her written answer or file has arrived. Never send passwords with this list.
 
 ## Done or no longer needed
 - [x] Signed acceptance (quotation v2) and USD 112 deposit, PMF-QT-2026-0106
@@ -19,25 +19,25 @@ Updated 10 Nov 2026. The numbers match the WhatsApp request list prepared for Mo
 
 ## Photos and files to send
 - [x] 1. Photos of Sylvia: portrait, Kenya photo and four ministry photos received 4 Nov (placed on the test site; see OPEN-ITEMS 5 Nov)
-- [ ] 2. Final ebook files, PDF or EPUB (not Word), for every paid book. Received: Guard Your Heart Renew Your Mind (two print PDFs, 6x9 and A4 coil; the 6x9 is attached on the test site, product 6393, checked 10 Nov; her OK still needed), When the Word Becomes Life (EPUB). Also asked 10 Nov: remove "Registered Christian Charity" from the Kindle edition of When the Word Becomes Life
+- [ ] 2. (11 Nov: 6x9 confirmed for Guard Your Heart Renew Your Mind) Final ebook files, PDF or EPUB (not Word), for every paid book. Received: Guard Your Heart Renew Your Mind (two print PDFs, 6x9 and A4 coil; the 6x9 is attached on the test site, product 6393, checked 10 Nov; her OK still needed), When the Word Becomes Life (EPUB). Also asked 10 Nov: remove "Registered Christian Charity" from the Kindle edition of When the Word Becomes Life
 - [ ] 3. Reviews: three received 5 Nov as screenshots; asked 10 Nov which book Kerryn's is for (probably Angelique). Still to confirm: names shown, Lynne's typos
 - [x] 4. YouTube and GoFundMe links (5 Nov)
-- [x] 5. Heaven on Earth registration details: she has none (5 Nov); "Registered" wording removed
+- [ ] 5. Heaven on Earth registration: 11 Nov she sent Reg. No. 35364, registered in Kenya 2011. Exact site wording still to approve
 
 ## Dream Partners and payments
 - [ ] 6. Monthly Dream Partner Stripe links A$15, A$30, A$50 received 5 Nov (on Give, test site). Still open: one-off "give any amount" link, and her OK for the Give line that gifts are billed monthly in Australian dollars
 - [ ] 6a. Price for Fast Forward to Success (with 17). The 10 Nov email no longer asks for Manifesting Miracles Now or When Fear Has the Final Word prices/covers (31 Oct records)
-- [ ] 6c. Meet Jesus booklet (received 9 Nov): may it be a free download? (10 Nov email; see also 13)
+- [x] 6c. (11 Nov: free, through her subscribe post sylviasdream.com/2026/11/10/meet-jesus/) Meet Jesus booklet (received 9 Nov): may it be a free download? (10 Nov email; see also 13)
 - [ ] 7. Number of active monthly Dream Partners today (counter start, now 0 of 100)
-- [ ] 8. Confirm the WordPress.com payment account ("Bu...th") is hers
+- [ ] 8. (11 Nov: she asked where to find it; explained) Confirm the WordPress.com payment account ("Bu...th") is hers
 
 ## Questions (yes / no)
-- [ ] 9. Wording on Home, My Story, Invite Sylvia to Speak
-- [ ] 10. "Every purchase helps Heaven on Earth" line
+- [x] 9. (11 Nov: yes, age 82 + Kenya return sentence; done 1.23.9) Wording on Home, My Story, Invite Sylvia to Speak
+- [x] 10. (11 Nov: yes) "Every purchase helps Heaven on Earth" line
 - [ ] 11. Give amounts $5/$15/$30/$50/any and 100 Dream Partners goal
 - [ ] 12. Free books in writing: SENT, book-writing guide, 7 Days to Trusting God
-- [ ] 13. "To Ensure You End Up Going to Heaven": offer a free download? Which file? (empty button removed on the test site 10 Nov; the sentence about a free eBook is unchanged; Meet Jesus suggested in the 10 Nov email)
-- [ ] 14. Privacy Policy, Terms of Sale, Refund Policy
+- [x] 13. (11 Nov: yes, Meet Jesus via her post; link at launch) "To Ensure You End Up Going to Heaven": offer a free download? Which file? (empty button removed on the test site 10 Nov; the sentence about a free eBook is unchanged; Meet Jesus suggested in the 10 Nov email)
+- [x] 14. (11 Nov: yes) Privacy Policy, Terms of Sale, Refund Policy
 - [ ] 15. Contact page "Australia" only
 - [ ] 16. Be a World Changer: separate ebook (price + file) or same as Fast Forward to Success?
 - [ ] 17. Fast Forward to Success: in the shop at launch? Price?

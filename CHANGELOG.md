@@ -1,5 +1,9 @@
 # Changelog
 
+## Child theme 1.23.9 (11 Nov 2026)
+- Sylvia's answer to item 9 (WhatsApp, 11 Nov): age updated to 82 and her new sentence added. About paragraph (pattern `about-sylvia.php` and Customizer default `about_text_2`): "Today, at eighty-two, ... Sylvia will be returning to Kenya in a few weeks' time to continue the work she began and visit and encourage other ministries." Photo note "Eighty-two and still becoming"; My Story timeline "Today, age 82" and stat 82; Invite Sylvia to Speak "still becoming at eighty-two".
+- Content only; no layout, payment or Stripe change. Saved Customizer and Elementor text on the test site is updated separately (PROGRESS-LOG 11 Nov).
+
 ## 2026-11-10 - Child theme 1.23.8 and core plugin 0.4.5: "Coming soon" for ebooks that are not ready
 A reader could add a paid ebook to the cart and pay although it had no download file (Guard Your Heart) or no price (The Report of the Lord). Now such books cannot be bought and say "Coming soon". No Stripe, Dream Partner, thank-you or download link changed; no wording changed except the new message.
 - **Core 0.4.5, new `inc/sale-guard.php`:** a simple downloadable or virtual product that is not free (`_sdc_free_download` empty) and has no price (empty or 0) or no download file is not purchasable (`woocommerce_is_purchasable`, priority 40, after the theme filters). WooCommerce therefore refuses add-to-cart and removes such items from existing carts. Helpers `sd_core_ebook_missing()` (returns `price` / `file`) and `sd_core_ebook_coming_soon()`. Warning on the product edit screen naming what is missing. Switch: Settings > Sylvia's Dream > "Coming soon guard" (on by default) or filter `sd_core_sale_guard_enabled`; filter `sd_core_ebook_missing` per product.
