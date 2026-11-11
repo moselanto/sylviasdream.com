@@ -66,7 +66,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | Area | Status |
 |---|---|
 | Dev / test site | `https://topnotchmall.co.ke/sylviasdream/` (admin `/sylviasdream/wp-admin/`), password-gated, noindex. Users: `moses` (Administrator, 2FA off, password must change), `sylvia` (Editor). cPanel: topnotchmall.co.ke:2083 (Lightsof signs in). |
-| Live site | sylviasdream.com on WordPress.com Personal, Twenty Twenty theme, **untouched**. Sylvia published "Meet Jesus" there 10 Nov. Domain paid to 25 Nov 2027. |
+| Live site | sylviasdream.com on WordPress.com Personal, Twenty Twenty theme still active. **Phase B started 12 Nov:** core 0.4.6 active (switches off), themes uploaded not active, Elementor 4.4.0 and Redux 4.5.18 active; no visible change. Sylvia published "Meet Jesus" there 10 Nov. Domain paid to 25 Nov 2027. |
 | Migration | Only after item 25 (written go-ahead). `docs/MIGRATION-PLAN.md` (4b for Elementor pages). |
 | Child theme | **1.23.10** in the repo and on the test site (11 Nov). 1.23.9 is broken, never install. |
 | Core plugin | **0.4.6** in the repo and library (12 Nov, WordPress.com-safe switches); test site on 0.4.5. Live: install 0.4.6, never 0.4.5. |

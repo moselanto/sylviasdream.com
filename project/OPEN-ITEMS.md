@@ -1,5 +1,12 @@
 # Open items (updated 12 November 2026)
 
+## 12 Nov: Phase B on live (started)
+
+- [x] Core 0.4.6 active on live (switches off, Redirects off, Dream Partners 1); parent + child themes uploaded, not active; Elementor 4.4.0 and Redux 4.5.18 active; Jetpack, newsletter, Meet Jesus form and thank-you noindex checked (PROGRESS-LOG 12 Nov 01:45)
+- [ ] Update test site Elementor to 4.4.0 and Redux to 4.5.18, then export the 9 Elementor pages as saved templates and make them live-safe (MIGRATION-PLAN 4b steps 2-3)
+- [ ] Upload missing media to live, create new pages as Drafts (Home, Give, Invite Sylvia to speak), WooCommerce close to launch with its pages set to Draft, products imported as Draft (Phase B steps 4-7)
+- [ ] One real test subscription on the Meet Jesus form with a test address (not yet done; would add a subscriber)
+
 ## 12 Nov: Sylvia's go-ahead to launch (WhatsApp)
 
 - [x] **8:** yes, the connected payment (Stripe) account is hers

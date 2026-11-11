@@ -2,6 +2,13 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (01:45): Phase B started on live sylviasdream.com
+- Installed: Sylvia's Dream Core 0.4.6 (activated), parent theme Sylvia's Dream Base 1.0.1 and child 1.23.10 (uploaded, **not activated**; active theme still Twenty Twenty), Elementor 4.4.0 and Redux Framework 4.5.18 from the plugin directory (activated; Elementor onboarding skipped, no page edited).
+- Settings > Sylvia's Dream on live: XML-RPC, two-step sign-in, login limit and Redirects all unticked (WordPress.com defaults), Dream Partners so far = 1 (goal 100). Saved and re-checked after signing out and in.
+- Top Menu: "Automatically add new top-level pages" was already unticked; menu saved unchanged.
+- Checks: Home, Meet Jesus and Heaven on Earth (Dream Partner section) look the same before/after; Jetpack Connection Tests all pass; Newsletter overview (24 subscribers) and subscribers (54 records) load; Meet Jesus subscribe form renders (no test subscription sent); /all-shall-be-well/ opens with its Download PDF link and has robots noindex, nofollow; WordPress.com sign-out/sign-in works. /give/ is 404 on live (page does not exist there yet; pre-existing).
+- Version note: live has Elementor 4.4.0 / Redux 4.5.18, test has 4.3.5 / 4.5.16. Update the test site to the same versions before exporting the Elementor templates (MIGRATION-PLAN 4b step 2).
+
 ## Thursday 12 November 2026 (01:30): core 0.4.6 on test; live media backup stored
 - Test site: core 0.4.6 installed ("Replace current with uploaded"), active, no critical error. Settings > Sylvia's Dream shows all three Security switches ticked (XML-RPC off, two-step sign-in, login limit); nothing saved. Two-step sign-in section present on the `moses` profile (status Off: moses not enrolled yet, so a code sign-in was not tested); branded sign-in page loads with the login-limit notice.
 - Live media backup: the server downloaded the files itself with a temporary one-off script (only `https://sylviasdream.com/wp-content/uploads/` URLs from `urls.txt`) in `public_html/sd-tmp-a9265136`; folder and script deleted afterwards (address now 404). Result in `/home/topnotch/sylviasdream-live-backup-2026-11-12/media`: **254 files, 306.7 MB**, 0 failed, year folders 2019-2026. Outside public_html, not web-accessible.
