@@ -2,6 +2,9 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Wednesday 11 November 2026 (late morning): status and launch plan
+- HANDOFF sections 0 and 3 rewritten: where things stand, what remains (now / waiting on Sylvia / launch / handover) and how to work. README badges at child 1.23.10.
+
 ## Wednesday 11 November 2026 (midday): registration line, Elementor health check, memory limit
 - Sylvia's yes confirmed (relayed by Lightsof): "Heaven on Earth Ministries is registered in Kenya (Reg. No. 35364, 2011)." added as a new Text Editor widget on Heaven on Earth 1932 (after the intro section, before the photo gallery) and Give 6428 (after the giving options, below GoFundMe, before Updates). No existing widget, button or payment link changed. Checked desktop and Elementor phone preview.
 - Elementor health check (read only): all 9 Elementor pages open in the editor and their text fields (including "Section from your page") are editable. No current errors found: System Info shows no warnings; its log holds only old JS errors (29 Oct, 5 Nov) and two old warnings inside Elementor itself. No error_log files in the site folders. Site Health: 1 critical issue (no page cache, slow server response), plus OPcache off, PHP 8.2, inactive plugins/themes, late cron event.
