@@ -2,6 +2,11 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (01:30): core 0.4.6 on test; live media backup stored
+- Test site: core 0.4.6 installed ("Replace current with uploaded"), active, no critical error. Settings > Sylvia's Dream shows all three Security switches ticked (XML-RPC off, two-step sign-in, login limit); nothing saved. Two-step sign-in section present on the `moses` profile (status Off: moses not enrolled yet, so a code sign-in was not tested); branded sign-in page loads with the login-limit notice.
+- Live media backup: the server downloaded the files itself with a temporary one-off script (only `https://sylviasdream.com/wp-content/uploads/` URLs from `urls.txt`) in `public_html/sd-tmp-a9265136`; folder and script deleted afterwards (address now 404). Result in `/home/topnotch/sylviasdream-live-backup-2026-11-12/media`: **254 files, 306.7 MB**, 0 failed, year folders 2019-2026. Outside public_html, not web-accessible.
+- Backup step 1 now complete apart from screenshots (kept in the browser session only).
+
 ## Thursday 12 November 2026 (01:15): core 0.4.6; media folder still empty
 - Core plugin 0.4.6 built: Settings > Sylvia's Dream "Security switches" for XML-RPC, two-step sign-in and login limit; off by default on WordPress.com, on elsewhere (test site unchanged). PHP parse-checked (no errors); zip in the Town library `Sylvias Dream/releases`. Not installed anywhere yet.
 - Media backup: cPanel File Manager shows `/home/topnotch/sylviasdream-live-backup-2026-11-12/media` empty after refresh (no zip parts found; only `urls.txt` in the parent folder). Nothing extracted or deleted. Re-upload the 13 parts into that exact folder, then extract and count (expect 254 files, about 308 MB).
