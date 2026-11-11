@@ -22,7 +22,7 @@ Updated 11 Nov 2026 (answers to 2, 9, 10, 13, 14 received 11 Nov; see OPEN-ITEMS
 - [ ] 2. (11 Nov: 6x9 confirmed for Guard Your Heart Renew Your Mind) Final ebook files, PDF or EPUB (not Word), for every paid book. Received: Guard Your Heart Renew Your Mind (two print PDFs, 6x9 and A4 coil; the 6x9 is attached on the test site, product 6393, checked 10 Nov; her OK still needed), When the Word Becomes Life (EPUB). Also asked 10 Nov: remove "Registered Christian Charity" from the Kindle edition of When the Word Becomes Life
 - [ ] 3. Reviews: three received 5 Nov as screenshots; asked 10 Nov which book Kerryn's is for (probably Angelique). Still to confirm: names shown, Lynne's typos
 - [x] 4. YouTube and GoFundMe links (5 Nov)
-- [ ] 5. Heaven on Earth registration: 11 Nov she sent Reg. No. 35364, registered in Kenya 2011. Exact site wording still to approve
+- [x] 5. Heaven on Earth registration: Reg. No. 35364, registered in Kenya 2011. Wording approved 11 Nov: "Heaven on Earth Ministries is registered in Kenya (Reg. No. 35364, 2011)." on Heaven on Earth and Give (to add once the test site is back)
 
 ## Dream Partners and payments
 - [ ] 6. Monthly Dream Partner Stripe links A$15, A$30, A$50 received 5 Nov (on Give, test site). Still open: one-off "give any amount" link, and her OK for the Give line that gifts are billed monthly in Australian dollars

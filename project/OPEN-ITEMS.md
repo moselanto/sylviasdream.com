@@ -1,5 +1,12 @@
 # Open items (updated 11 November 2026)
 
+## 11 Nov: Elementor speed (open)
+
+- [x] Registration line on Heaven on Earth and Give (11 Nov). Mirror it in `content/blocks/heaven-on-earth.html` and `give.html` in the next child release
+- [x] All 9 Elementor pages editable, no current errors (PROGRESS-LOG 11 Nov). WP memory limit raised to 256M
+- [ ] Editor takes 80-90 s to open. Ask the host (topnotchmall.co.ke) to enable OPcache for ea-php82 and check server response time; then re-time the editor
+- [ ] Site Health tidy-ups: remove inactive plugins/themes (after checking which), late scheduled event. Leave "discourage search engines" ON on the test site
+
 ## 11 Nov: test site down after child 1.23.9 (resolved)
 
 - [x] Child **1.23.10** installed through cPanel File Manager 11 Nov; site back, 82 checked on Home, My Story, Invite Sylvia to speak; Books and Contact load (PROGRESS-LOG). Never install 1.23.9

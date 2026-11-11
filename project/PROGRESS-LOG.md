@@ -2,6 +2,12 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Wednesday 11 November 2026 (midday): registration line, Elementor health check, memory limit
+- Sylvia's yes confirmed (relayed by Lightsof): "Heaven on Earth Ministries is registered in Kenya (Reg. No. 35364, 2011)." added as a new Text Editor widget on Heaven on Earth 1932 (after the intro section, before the photo gallery) and Give 6428 (after the giving options, below GoFundMe, before Updates). No existing widget, button or payment link changed. Checked desktop and Elementor phone preview.
+- Elementor health check (read only): all 9 Elementor pages open in the editor and their text fields (including "Section from your page") are editable. No current errors found: System Info shows no warnings; its log holds only old JS errors (29 Oct, 5 Nov) and two old warnings inside Elementor itself. No error_log files in the site folders. Site Health: 1 critical issue (no page cache, slow server response), plus OPcache off, PHP 8.2, inactive plugins/themes, late cron event.
+- wp-config.php: backup `wp-config.php.bak-20261111`, then added `define( 'WP_MEMORY_LIMIT', '256M' );` (was 40M). Site and wp-admin fine; System Info shows 256M.
+- Editor still slow to open (about 80-90 seconds on Home, Author Support, Heaven on Earth). Theme queries are small and cached, so the likely cause is the server (no OPcache, slow response). Next: ask the host to enable OPcache for ea-php82 and check server load.
+
 ## Wednesday 11 November 2026 (late morning): test site restored on child 1.23.10
 - Lightsof signed in to cPanel; in File Manager, `/public_html/sylviasdream/wp-content/themes`: old `sylviasdream-child` (1.23.9) moved to Trash, 1.23.10 zip uploaded and extracted. Nothing else touched.
 - Appearance > Themes: Sylvia's Dream 1.23.10 active (child of Sylvia's Dream Base). Elementor > Tools > Clear Files & Data run (no page-cache plugin found).
