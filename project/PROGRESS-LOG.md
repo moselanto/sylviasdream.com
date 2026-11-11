@@ -2,6 +2,11 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (01:00): Sylvia's extra answers, media backup storage, Phase B held
+- Sylvia: 1 Dream Partner (item 7); Lulu paperback link for "Fast Forward: Be a World Changer" (items 16/17). Recorded.
+- Media backup: folder `/home/topnotch/sylviasdream-live-backup-2026-11-12/media` created outside public_html and `urls.txt` uploaded; the 13 zip parts could not be uploaded (browser tool 10 MB limit, no cPanel Terminal). Media still safe on the live site; parts kept in the Town thread.
+- Phase B not started: waiting for the media backup, and core 0.4.5 must not be activated on WordPress.com until it has an XML-RPC switch (OPEN-ITEMS 12 Nov).
+
 ## Thursday 12 November 2026 (00:40-01:00): live backup, step 1 (read only)
 - Live sylviasdream.com, nothing changed. Saved to the Town library `Sylvias Dream/backups`: All content XML (4.4 MB), Jetpack newsletter subscribers CSV (54 records, 24 confirmed subscribers per Newsletter overview), MailPoet CSV (2 unconfirmed). Author Support text copied (session record).
 - Media: WordPress.com media export needs Business/Commerce (not upgraded). Instead all 254 attachment files listed in the XML (308 MB) were downloaded from their public URLs into the agent sandbox; library upload failed (file size limit), so a permanent home is still needed.

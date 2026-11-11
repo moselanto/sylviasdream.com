@@ -116,3 +116,5 @@ Note: the menu path in item 8 was not verified against her account.
 
 ## 12 Nov: go-ahead (WhatsApp, relayed by Lightsof)
 - "8. Yes. 25. Please move the new website to sylviasdream.com I can meet with you today. Please give me a time that suits you."
+- 00:41: "Link for Fast Forward." https://www.lulu.com/shop/sylvia-suhr/fast-forward-be-a-world-changer-sylvia-suhr/paperback/product-wnr5wk.html?page=1&pageSize=4
+- 00:50: "I have 1 Dream Partner"

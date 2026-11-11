@@ -28,7 +28,7 @@ Updated 11 Nov 2026 (answers to 2, 9, 10, 13, 14 received 11 Nov; see OPEN-ITEMS
 - [ ] 6. Monthly Dream Partner Stripe links A$15, A$30, A$50 received 5 Nov (on Give, test site). Still open: one-off "give any amount" link, and her OK for the Give line that gifts are billed monthly in Australian dollars
 - [ ] 6a. Price for Fast Forward to Success (with 17). The 10 Nov email no longer asks for Manifesting Miracles Now or When Fear Has the Final Word prices/covers (31 Oct records)
 - [x] 6c. (11 Nov: free, through her subscribe post sylviasdream.com/2026/11/10/meet-jesus/) Meet Jesus booklet (received 9 Nov): may it be a free download? (10 Nov email; see also 13)
-- [ ] 7. Number of active monthly Dream Partners today (counter start, now 0 of 100)
+- [x] 7. (12 Nov: 1 Dream Partner; set counter to 1) Number of active monthly Dream Partners today (counter start, now 0 of 100)
 - [x] 8. (12 Nov: yes) Confirm the WordPress.com payment account ("Bu...th") is hers
 
 ## Questions (yes / no)
@@ -39,8 +39,8 @@ Updated 11 Nov 2026 (answers to 2, 9, 10, 13, 14 received 11 Nov; see OPEN-ITEMS
 - [x] 13. (11 Nov: yes, Meet Jesus via her post; link at launch) "To Ensure You End Up Going to Heaven": offer a free download? Which file? (empty button removed on the test site 10 Nov; the sentence about a free eBook is unchanged; Meet Jesus suggested in the 10 Nov email)
 - [x] 14. (11 Nov: yes) Privacy Policy, Terms of Sale, Refund Policy
 - [ ] 15. Contact page "Australia" only
-- [ ] 16. Be a World Changer: separate ebook (price + file) or same as Fast Forward to Success?
-- [ ] 17. Fast Forward to Success: in the shop at launch? Price?
+- [ ] 16. (12 Nov: she sent the Lulu paperback link for "Fast Forward: Be a World Changer", which suggests one book; confirm with her) Be a World Changer: separate ebook (price + file) or same as Fast Forward to Success?
+- [ ] 17. (12 Nov: paperback link https://www.lulu.com/shop/sylvia-suhr/fast-forward-be-a-world-changer-sylvia-suhr/paperback/product-wnr5wk.html; ebook price still needed) Fast Forward to Success: in the shop at launch? Price?
 - [ ] 18. No Stripe button yet: When the River Flows Again, Fields of Becoming, 7 Days from Fear to Freedom, Fast Forward to Success. Links, or cart only?
 - [ ] 19. Check all book prices (shown as A$). Test site 10 Nov: Guard Your Heart Renew Your Mind 7.10, The Report of the Lord 8.35 (both Amazon AU Kindle prices)
 - [ ] 20. One Life hardcover: exists? Amazon link

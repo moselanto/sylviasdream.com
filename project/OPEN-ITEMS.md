@@ -4,6 +4,10 @@
 
 - [x] **8:** yes, the connected payment (Stripe) account is hers
 - [x] **25:** written go-ahead: "Please move the new website to sylviasdream.com". Launch may now be prepared per `docs/MIGRATION-PLAN.md` (backups first)
+- [ ] **7:** she has **1** monthly Dream Partner (12 Nov). Set Settings > Sylvia's Dream "current partners" to 1 on test now and on live at launch
+- [ ] **Fast Forward:** she sent the Lulu paperback link (12 Nov): https://www.lulu.com/shop/sylvia-suhr/fast-forward-be-a-world-changer-sylvia-suhr/paperback/product-wnr5wk.html . Title on Lulu is "Fast Forward: Be a World Changer", so Fast Forward to Success and Be a World Changer may be one book (item 16): confirm with her before merging products. Add the link as the paperback button on Fast Forward (test site) once confirmed which product it belongs to; ebook price still open (17)
+- [ ] **Live media backup:** 254 files (308 MB) downloaded from the live site's public URLs on 12 Nov and split into 13 zip parts (25 MB each, in the Town thread). Not yet on the topnotchmall server: the browser upload tool takes 10 MB per file and cPanel has no Terminal. Folder ready: `/home/topnotch/sylviasdream-live-backup-2026-11-12/media` (+ `urls.txt`). Upload the 13 zips by hand in File Manager, extract, check 254 files
+- [ ] **Core plugin on WordPress.com (blocker for Phase B step 2):** core 0.4.5 switches off XML-RPC by default and the only off-switch is `SD_SECURITY_DISABLE` in wp-config.php, which WordPress.com Personal does not allow. Jetpack (newsletter subscribers, Meet Jesus subscribe post) may need XML-RPC. Build core 0.4.6 with Settings > Sylvia's Dream switches for XML-RPC, two-factor and login limit (off by default on WordPress.com) before activating on live
 - [ ] **26:** she offered to meet today (12 Nov). Agree a time (Kenya morning/midday = Melbourne evening), then fix the launch window
 - [ ] Before the launch window: full live backup set (`docs/BACKUP-AND-LAUNCH.md`), confirm Elementor and Redux install on WordPress.com Personal, change `moses` password and turn on two-factor, final re-check of Elementor pages/header-footer settings
 
