@@ -2,6 +2,12 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (00:40-01:00): live backup, step 1 (read only)
+- Live sylviasdream.com, nothing changed. Saved to the Town library `Sylvias Dream/backups`: All content XML (4.4 MB), Jetpack newsletter subscribers CSV (54 records, 24 confirmed subscribers per Newsletter overview), MailPoet CSV (2 unconfirmed). Author Support text copied (session record).
+- Media: WordPress.com media export needs Business/Commerce (not upgraded). Instead all 254 attachment files listed in the XML (308 MB) were downloaded from their public URLs into the agent sandbox; library upload failed (file size limit), so a permanent home is still needed.
+- Screenshots taken in the browser session (pages 60: 56 published/4 drafts; posts 20; menus Top Menu and Primary; widgets; Customizer panels; Settings; plugins 11; theme Twenty Twenty). They could not be copied to the library.
+- Plan: WordPress.com Personal, renews 29 Oct 2027 (A$60). Upload Plugin and Upload Theme screens are available (nothing installed).
+
 ## Thursday 12 November 2026: Sylvia's go-ahead
 - Sylvia answered 8 (yes) and 25 ("Please move the new website to sylviasdream.com"), and offered to meet today. Recorded in CLIENT-CHECKLIST, OPEN-ITEMS, DECISIONS, CORRESPONDENCE, HANDOFF. Live site still untouched.
 
