@@ -2,6 +2,11 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Wednesday 11 November 2026 (late morning): test site restored on child 1.23.10
+- Lightsof signed in to cPanel; in File Manager, `/public_html/sylviasdream/wp-content/themes`: old `sylviasdream-child` (1.23.9) moved to Trash, 1.23.10 zip uploaded and extracted. Nothing else touched.
+- Appearance > Themes: Sylvia's Dream 1.23.10 active (child of Sylvia's Dream Base). Elementor > Tools > Clear Files & Data run (no page-cache plugin found).
+- Front end checked: Home "Eighty-two and still becoming" and "Today, at eighty-two"; My Story "Today, age 82" and 82 stat; Invite Sylvia to speak "still becoming at eighty-two". No 81 / eighty-one. Books and Contact load. One 504 on My Story, fine on retry. No content, Customizer, payment or Stripe change.
+
 ## Wednesday 11 November 2026 (morning): 1.23.9 install broke the test site; 1.23.10 fix ready
 - Child 1.23.9 zip built from main and saved to the Town library (Sylvias Dream/releases). Installed on the test site ("Replace installed with uploaded", 1.23.8 -> 1.23.9, "Theme updated successfully"). Straight after, wp-admin and the front end showed "There has been a critical error" (HTTP 500).
 - Cause: the apostrophe in "weeks' time" ended the single-quoted PHP string in `inc/customizer.php` (About "Second paragraph" default). Not caught because `php -l` is not available in the build sandbox and check-theme.js does not parse PHP.

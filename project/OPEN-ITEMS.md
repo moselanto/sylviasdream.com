@@ -1,9 +1,9 @@
 # Open items (updated 11 November 2026)
 
-## 11 Nov: test site down after child 1.23.9 (URGENT)
+## 11 Nov: test site down after child 1.23.9 (resolved)
 
-- [ ] Install child **1.23.10** through cPanel File Manager (wp-admin shows a critical error). Never install 1.23.9 (PHP parse error in `inc/customizer.php`). Then clear Elementor cache and check Home, My Story, Invite Sylvia to speak show 82; Books and Contact load
-- [ ] Do not send Sylvia the 11 Nov WhatsApp (it says "the site now says you are 82" and she may open the site) until the test site is back
+- [x] Child **1.23.10** installed through cPanel File Manager 11 Nov; site back, 82 checked on Home, My Story, Invite Sylvia to speak; Books and Contact load (PROGRESS-LOG). Never install 1.23.9
+- [x] Test site back, so the 11 Nov WhatsApp to Sylvia can go once Moses approves
 - [ ] Add a PHP parse check to `scripts/check-theme.js` so the build fails on PHP syntax errors
 
 ## 11 Nov: Sylvia's answers (WhatsApp, 11 Nov, 04:52-08:08 Melbourne-time messages)
@@ -15,7 +15,7 @@
 - [x] **10:** yes, "Every purchase helps Heaven on Earth"
 - [x] **13:** yes, Meet Jesus is the free download for "To Ensure You End Up Going to Heaven". At launch the page links to her post `/2026/11/10/meet-jesus/` (exists only on live; button label to agree with her). Not added on the test site because the post is not there
 - [x] **14:** yes, Privacy Policy, Terms of Sale and Refund Policy approved
-- [ ] **5 (reopened):** Heaven on Earth Ministries, Reg. No. 35364, registered in Kenya in 2011 (via Joshua). Nothing added to site wording yet; ask her to approve exact wording and where it goes (Heaven on Earth page, Give page). Also affects the Kindle "Registered Christian Charity" question (item 2): "registered" is now supported, "charity" is not confirmed
+- [ ] **5: approved 11 Nov (yes relayed by Lightsof; keep Sylvia's written yes in CORRESPONDENCE).** Add exactly "Heaven on Earth Ministries is registered in Kenya (Reg. No. 35364, 2011)." to Heaven on Earth (Elementor page 1932) and Give (Elementor page 6428) in wp-admin, as page content, once the test site is back on 1.23.10. Then mirror it in `content/blocks/heaven-on-earth.html` and `give.html` in the next child release. Previous note:  Heaven on Earth Ministries, Reg. No. 35364, registered in Kenya in 2011 (via Joshua). Nothing added to site wording yet; ask her to approve exact wording and where it goes (Heaven on Earth page, Give page). Also affects the Kindle "Registered Christian Charity" question (item 2): "registered" is now supported, "charity" is not confirmed
 - [ ] Still open: 3, 6, 6a, 7, 8, 11, 12, 15-26 (25 = written go-ahead, 26 = dates)
 
 ## 10 Nov: child 1.23.8 and core 0.4.5 ("Coming soon" sale guard)
