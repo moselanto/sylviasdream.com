@@ -1,5 +1,11 @@
 # Changelog
 
+## Core plugin 0.4.6 (12 Nov 2026)
+- Settings > Sylvia's Dream: new "Security switches" for XML-RPC blocking (`xmlrpc_block`), two-step sign-in (`two_factor_enabled`) and the failed sign-in limit (`login_limit_enabled`). Applied through the `sd_core_security_feature` filter (priority 5); a switch can only turn a feature off, and `SD_SECURITY_DISABLE` / `SD_2FA_DISABLE` still work.
+- Defaults: **off on WordPress.com** (detected by `sd_core_is_wpcom()`: `IS_ATOMIC`, `ATOMIC_CLIENT_ID`, `WPCOMSH_VERSION` or `IS_WPCOM`; filter `sd_core_is_wpcom`), on elsewhere. The test site keeps its current behaviour (all on) because its saved settings have no value for the new keys and it is not WordPress.com.
+- Why: on WordPress.com Personal wp-config.php cannot be edited, and Jetpack (newsletter, subscribe forms, WordPress.com sign-in) may need XML-RPC, so 0.4.5 was not safe to activate on live.
+- PHP parse-checked (php-parser, 17 core + 68 child files, no errors). Zip in the Town library `Sylvias Dream/releases`.
+
 ## Child theme 1.23.10 (11 Nov 2026)
 - Fix: 1.23.9 crashed the site ("critical error") because the apostrophe in "weeks' time" ended the single-quoted PHP string in `inc/customizer.php` (About "Second paragraph" default). It now uses a typographic apostrophe (also in `patterns/about-sylvia.php`). Wording unchanged. 1.23.9 must not be installed.
 - PHP files now also checked with a PHP parser (php-parser, 68 child and 17 core files, no errors) before building, because `php -l` is not available in the build sandbox.

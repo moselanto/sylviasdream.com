@@ -2,6 +2,10 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (01:15): core 0.4.6; media folder still empty
+- Core plugin 0.4.6 built: Settings > Sylvia's Dream "Security switches" for XML-RPC, two-step sign-in and login limit; off by default on WordPress.com, on elsewhere (test site unchanged). PHP parse-checked (no errors); zip in the Town library `Sylvias Dream/releases`. Not installed anywhere yet.
+- Media backup: cPanel File Manager shows `/home/topnotch/sylviasdream-live-backup-2026-11-12/media` empty after refresh (no zip parts found; only `urls.txt` in the parent folder). Nothing extracted or deleted. Re-upload the 13 parts into that exact folder, then extract and count (expect 254 files, about 308 MB).
+
 ## Thursday 12 November 2026 (01:00): Sylvia's extra answers, media backup storage, Phase B held
 - Sylvia: 1 Dream Partner (item 7); Lulu paperback link for "Fast Forward: Be a World Changer" (items 16/17). Recorded.
 - Media backup: folder `/home/topnotch/sylviasdream-live-backup-2026-11-12/media` created outside public_html and `urls.txt` uploaded; the 13 zip parts could not be uploaded (browser tool 10 MB limit, no cPanel Terminal). Media still safe on the live site; parts kept in the Town thread.

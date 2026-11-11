@@ -248,8 +248,8 @@ add_filter( 'auth_cookie_expiration', 'sd_core_auth_cookie_expiration', 20, 3 );
  * ---------------------------------------------------------------------- */
 
 if ( sd_core_security_on( 'xmlrpc' ) ) {
-	// Note: the Jetpack connection uses its own endpoint on WordPress.com; on a
-	// self-hosted Jetpack site switch this off if Jetpack reports an XML-RPC error.
+	// 0.4.6: switch in Settings > Sylvia's Dream (off by default on WordPress.com,
+	// where Jetpack may need XML-RPC). Also off with SD_SECURITY_DISABLE 'xmlrpc'.
 	add_filter( 'xmlrpc_enabled', '__return_false' );
 	add_filter(
 		'xmlrpc_methods',

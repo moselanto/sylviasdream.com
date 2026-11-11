@@ -2,10 +2,10 @@
 
 ![Parent theme](https://img.shields.io/badge/Parent%20theme-v1.0.1-8A6216)
 ![Child theme](https://img.shields.io/badge/Child%20theme-v1.23.10-B8862B)
-![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.4.5-2B2620)
+![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.4.6-2B2620)
 ![Elementor](https://img.shields.io/badge/Elementor-optional%2C%2026%20widgets-92003B)
 
-Last updated: 11 November 2026. Current: child theme 1.23.10, core plugin 0.4.5 (both on the test site). **Start with [`HANDOFF.md`](HANDOFF.md) section 0** for status, what remains and how to work. Never install child 1.23.9 (PHP parse error). Elementor editing: `docs/ELEMENTOR-EDITING-GUIDE.md`.
+Last updated: 11 November 2026. Current: child theme 1.23.10, core plugin 0.4.6 (core 0.4.6 not yet installed anywhere; test site runs 0.4.5). **Start with [`HANDOFF.md`](HANDOFF.md) section 0** for status, what remains and how to work. Never install child 1.23.9 (PHP parse error). Elementor editing: `docs/ELEMENTOR-EDITING-GUIDE.md`.
 
 ## 1. What this project is
 
@@ -29,7 +29,7 @@ Status: **dev build, pre-launch.** Migration to the live site happens only after
 |---|---|---|---|
 | Sylvia's Dream Base (parent theme) | [`sylviasdream/`](sylviasdream) | 1.0.1 | Minimal shell: document structure, menus, template fallbacks. Never activated on its own. |
 | Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 1.23.10 | **The theme to activate.** All design: templates, CSS, patterns, navigation, WooCommerce styling, performance layer. |
-| Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.4.5 | Behaviour that must survive a theme change: ebook "Coming soon" sale guard, download-page protection, redirects, structured data, social sharing tags, security hardening, branded sign-in screens, two-factor authentication, admin branding, reviewer preview mode, Dream Partner progress. |
+| Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.4.6 | Behaviour that must survive a theme change: ebook "Coming soon" sale guard, download-page protection, redirects, structured data, social sharing tags, security hardening, branded sign-in screens, two-factor authentication, admin branding, reviewer preview mode, Dream Partner progress. |
 
 Versions are defined in two places each and must match:
 

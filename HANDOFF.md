@@ -7,7 +7,7 @@ Rewritten Wednesday 11 November 2026 (Kenya time). Sections 0 and 3 are the curr
 
 ### Where we are
 - **Build is essentially finished on the test site** (https://topnotchmall.co.ke/sylviasdream/, password-gated, noindex). Live sylviasdream.com is **untouched** until Sylvia's written go-ahead (item 25).
-- **Versions:** child theme **1.23.10**, core plugin **0.4.5**, in `main`, in the Town library (`Sylvias Dream/releases`) and active on the test site. **Never install child 1.23.9** (PHP parse error; it took the test site down on 11 Nov until 1.23.10 was put in through cPanel).
+- **Versions:** child theme **1.23.10** (in `main`, library, active on test). Core plugin **0.4.6** in `main` and the library (12 Nov: Security switches for XML-RPC, two-step sign-in and login limit, off by default on WordPress.com, so it is safe to activate on live with Jetpack); the test site still runs core 0.4.5 (install 0.4.6 there first and check Settings > Sylvia's Dream keeps all three switches on). **Never install child 1.23.9** (PHP parse error; it took the test site down on 11 Nov until 1.23.10 was put in through cPanel).
 - **Elementor:** 9 pages built in Elementor (Home 6365, Shop For Books 3001, Contact 20, My Story 2665, Invite Sylvia to speak 6511, Podcasts and Videos 1366, Author Support 6235, Heaven on Earth 1932, Give 6428). All open in the editor and are editable (checked 11 Nov); no current errors. All 72 pages use the theme's built-in header and footer (no overrides). Editor takes about 80-90 s to open: server-side (see "Remaining").
 - **Server (test):** PHP 8.2, PHP memory 512M; `WP_MEMORY_LIMIT` set to 256M in `wp-config.php` 11 Nov (backup `wp-config.php.bak-20261111`).
 - **Sylvia's answers so far (11 Nov):** 2 (use the 6x9 Guard Your Heart file), 9 (wording OK, age now 82, plus her Kenya-return sentence, done), 10 yes, 13 yes (Meet Jesus is the free download, via her own subscribe post https://sylviasdream.com/2026/11/10/meet-jesus/), 14 yes, 5 (Heaven on Earth Ministries, Reg. No. 35364, Kenya 2011; approved line now on Heaven on Earth and Give). Item 8 she asked where to find the payment account (explained in the 11 Nov WhatsApp).
@@ -69,7 +69,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | Live site | sylviasdream.com on WordPress.com Personal, Twenty Twenty theme, **untouched**. Sylvia published "Meet Jesus" there 10 Nov. Domain paid to 25 Nov 2027. |
 | Migration | Only after item 25 (written go-ahead). `docs/MIGRATION-PLAN.md` (4b for Elementor pages). |
 | Child theme | **1.23.10** in the repo and on the test site (11 Nov). 1.23.9 is broken, never install. |
-| Core plugin | **0.4.5** in the repo and on the test site (10 Nov). |
+| Core plugin | **0.4.6** in the repo and library (12 Nov, WordPress.com-safe switches); test site on 0.4.5. Live: install 0.4.6, never 0.4.5. |
 | Other plugins (test) | WooCommerce, Elementor 4.3.5 (free), Redux 4.5.16, Rank Math, Jetpack, Password Protected (test only). |
 | Server (test) | PHP 8.2, memory 512M, WP_MEMORY_LIMIT 256M, OPcache off (ask host), no page cache. |
 | Products | 25 (Published on test; Draft on live). 17 with Stripe link; protected files for When the Word Becomes Life and Guard Your Heart Renew Your Mind (6x9); others "Coming soon". |

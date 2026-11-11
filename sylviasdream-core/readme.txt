@@ -2,7 +2,7 @@
 Contributors: pimofydigital
 Requires at least: 6.4
 Requires PHP: 8.0
-Stable tag: 0.4.5
+Stable tag: 0.4.6
 License: GPLv2 or later
 
 Site functions for sylviasdream.com that must survive a theme change.
@@ -28,6 +28,9 @@ Settings: Settings > Sylvia's Dream.
 Third-party code: inc/lib/qrcode.php is a namespaced port of the MIT-licensed QR Code Generator by Kazuhiko Arase (github.com/kazuhikoarase/qrcode-generator); licence in inc/lib/qrcode-LICENSE.txt.
 
 == Changelog ==
+
+= 0.4.6 =
+* Settings > Sylvia's Dream: on/off switches for XML-RPC blocking, two-step sign-in and the failed sign-in limit. Off by default on WordPress.com (Jetpack, newsletter and WordPress.com sign-in), on by default elsewhere. Existing sites keep their current behaviour.
 
 = 0.4.5 =
 Coming soon guard: paid ebooks with no price or no download file are not purchasable (woocommerce_is_purchasable, priority 40); warning on the product edit screen; setting on by default. Helpers sd_core_ebook_missing() and sd_core_ebook_coming_soon() for the theme.

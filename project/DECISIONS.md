@@ -2,6 +2,9 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 12 November 2026: core 0.4.6 security switches
+- **XML-RPC blocking, two-step sign-in and the login limit are switchable in Settings > Sylvia's Dream** (Lightsof, 12 Nov), **off by default on WordPress.com**, on elsewhere. Why: on WordPress.com Personal wp-config.php cannot be edited, and Jetpack (her 24 newsletter subscribers, the Meet Jesus subscribe post, WordPress.com sign-in) may rely on XML-RPC. Live admins use WordPress.com two-step sign-in instead (HANDOFF 27 Oct note). Only core 0.4.6 or later goes on live.
+
 ## 12 November 2026: go-ahead to move the new site to sylviasdream.com
 - **Sylvia approved the move in writing** (WhatsApp, relayed by Lightsof 12 Nov): "Please move the new website to sylviasdream.com". She also confirmed the payment account is hers (item 8). This satisfies AGENTS rule 11 (migration only after her written approval). Launch still follows `docs/MIGRATION-PLAN.md` and `docs/BACKUP-AND-LAUNCH.md`: backups first, live untouched until the agreed window.
 

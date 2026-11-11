@@ -9,12 +9,38 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * Is this site hosted on WordPress.com (Atomic / Jetpack-managed)?
+ *
+ * 0.4.6: on WordPress.com the Jetpack connection, newsletter and sign-in may
+ * rely on XML-RPC, and wp-config.php cannot be edited, so the hardening
+ * switches below default to off there.
+ *
+ * @return bool
+ */
+function sd_core_is_wpcom() {
+	$wpcom = ( defined( 'IS_ATOMIC' ) && IS_ATOMIC )
+		|| defined( 'ATOMIC_CLIENT_ID' )
+		|| defined( 'WPCOMSH_VERSION' )
+		|| ( defined( 'IS_WPCOM' ) && IS_WPCOM );
+	/**
+	 * Override WordPress.com detection.
+	 *
+	 * @param bool $wpcom Detected value.
+	 */
+	return (bool) apply_filters( 'sd_core_is_wpcom', $wpcom );
+}
+
+/**
  * Option defaults.
  *
  * @return array<string,mixed>
  */
 function sd_core_defaults() {
+	$hardening = sd_core_is_wpcom() ? 0 : 1;
 	return array(
+		'xmlrpc_block'        => $hardening,
+		'two_factor_enabled'  => $hardening,
+		'login_limit_enabled' => $hardening,
 		'partners_current'  => 0,
 		'partners_goal'     => 100,
 		'charity_name'      => 'Heaven on Earth Ministries',
@@ -81,6 +107,9 @@ function sd_core_sanitize( $in ) {
 		'preview_enabled'   => ( empty( $in['preview_enabled'] ) || sd_core_is_live_site() ) ? 0 : 1,
 		'test_payments_enabled' => ( empty( $in['test_payments_enabled'] ) || sd_core_is_live_site() ) ? 0 : 1,
 		'sale_guard_enabled' => empty( $in['sale_guard_enabled'] ) ? 0 : 1,
+		'xmlrpc_block'        => empty( $in['xmlrpc_block'] ) ? 0 : 1,
+		'two_factor_enabled'  => empty( $in['two_factor_enabled'] ) ? 0 : 1,
+		'login_limit_enabled' => empty( $in['login_limit_enabled'] ) ? 0 : 1,
 		'protected_slugs'   => implode( "\n", $slugs ),
 		'og_default_image'  => esc_url_raw( trim( (string) ( $in['og_default_image'] ?? '' ) ), array( 'http', 'https' ) ),
 	);
@@ -108,6 +137,15 @@ function sd_core_render_settings() {
 				<tr><th scope="row"><label for="sd-cr"><?php esc_html_e( 'Charity registration number', 'sylviasdream-core' ); ?></label></th>
 					<td><input id="sd-cr" class="regular-text" type="text" name="sd_core[charity_reg]" value="<?php echo esc_attr( sd_core_opt( 'charity_reg' ) ); ?>">
 					<p class="description"><?php esc_html_e( 'Shown with [sd_charity_reg]. Leave blank until confirmed.', 'sylviasdream-core' ); ?></p></td></tr>
+				<tr><th scope="row"><?php esc_html_e( 'Security switches', 'sylviasdream-core' ); ?></th>
+					<td>
+						<?php if ( sd_core_is_wpcom() ) : ?>
+							<p class="description"><?php esc_html_e( 'This site is on WordPress.com. Keep these off unless you have checked that Jetpack, the newsletter and WordPress.com sign-in still work after switching one on.', 'sylviasdream-core' ); ?></p>
+						<?php endif; ?>
+						<label><input type="checkbox" name="sd_core[xmlrpc_block]" value="1" <?php checked( 1, (int) sd_core_opt( 'xmlrpc_block' ) ); ?>> <?php esc_html_e( 'Switch off XML-RPC', 'sylviasdream-core' ); ?></label><br>
+						<label><input type="checkbox" name="sd_core[two_factor_enabled]" value="1" <?php checked( 1, (int) sd_core_opt( 'two_factor_enabled' ) ); ?>> <?php esc_html_e( 'Two-step sign-in (authenticator app codes)', 'sylviasdream-core' ); ?></label><br>
+						<label><input type="checkbox" name="sd_core[login_limit_enabled]" value="1" <?php checked( 1, (int) sd_core_opt( 'login_limit_enabled' ) ); ?>> <?php esc_html_e( 'Limit failed sign-in attempts', 'sylviasdream-core' ); ?></label>
+					</td></tr>
 				<tr><th scope="row"><?php esc_html_e( 'Redirects', 'sylviasdream-core' ); ?></th>
 					<td><label><input type="checkbox" name="sd_core[redirects_enabled]" value="1" <?php checked( 1, (int) sd_core_opt( 'redirects_enabled' ) ); ?>> <?php esc_html_e( 'Turn on old-page redirects (launch day only)', 'sylviasdream-core' ); ?></label></td></tr>
 				<tr><th scope="row"><?php esc_html_e( 'Reviewer preview', 'sylviasdream-core' ); ?></th>
@@ -147,3 +185,24 @@ function sd_core_is_live_site() {
 	$host = strtolower( (string) wp_parse_url( home_url(), PHP_URL_HOST ) );
 	return (bool) apply_filters( 'sd_core_is_live_site', in_array( $host, array( 'sylviasdream.com', 'www.sylviasdream.com' ), true ) );
 }
+
+/**
+ * 0.4.6: apply the Settings switches to the hardening features. A switch can
+ * only turn a feature off; SD_SECURITY_DISABLE and SD_2FA_DISABLE still work.
+ *
+ * @param bool   $on      Whether the feature is on.
+ * @param string $feature Feature key.
+ * @return bool
+ */
+function sd_core_settings_switches( $on, $feature ) {
+	$map = array(
+		'xmlrpc'      => 'xmlrpc_block',
+		'two_factor'  => 'two_factor_enabled',
+		'login_limit' => 'login_limit_enabled',
+	);
+	if ( $on && isset( $map[ $feature ] ) && ! sd_core_opt( $map[ $feature ] ) ) {
+		return false;
+	}
+	return $on;
+}
+add_filter( 'sd_core_security_feature', 'sd_core_settings_switches', 5, 2 );
