@@ -9,8 +9,8 @@ WordPress + WooCommerce (books, cart, secure downloads) + Jetpack (Forms, Newsle
 | Package | Version | Owns |
 |---|---|---|
 | `sylviasdream/` parent theme | 1.0.1 | Document structure, menu locations, fallbacks. Never activated alone. |
-| `sylviasdream-child/` child theme | 1.21.0 | All presentation, navigation, WooCommerce styling, performance layer. |
-| `sylviasdream-core/` plugin | 0.4.4 | Download protection, redirects, schema, social tags, security hardening, reviewer preview, Dream Partner progress. |
+| `sylviasdream-child/` child theme | 1.23.10 | All presentation, navigation, WooCommerce styling, performance layer. |
+| `sylviasdream-core/` plugin | 0.4.5 | Ebook "Coming soon" sale guard, download protection, redirects, schema, social tags, security hardening, reviewer preview, Dream Partner progress. |
 
 ## The one rule
 

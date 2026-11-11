@@ -5,7 +5,7 @@
 ![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.4.5-2B2620)
 ![Elementor](https://img.shields.io/badge/Elementor-optional%2C%2026%20widgets-92003B)
 
-Last updated: 29 October 2026. 1.21.1 fixes the 1.21.0 Elementor bugs (blank buttons, narrow pages). 1.21.0 adds optional Elementor editing: see `docs/ELEMENTOR-EDITING-GUIDE.md` (for Sylvia) and `ARCHITECTURE.md` section 14.
+Last updated: 11 November 2026. Current: child theme 1.23.10, core plugin 0.4.5 (both on the test site). **Start with [`HANDOFF.md`](HANDOFF.md) section 0** for status, what remains and how to work. Never install child 1.23.9 (PHP parse error). Elementor editing: `docs/ELEMENTOR-EDITING-GUIDE.md`.
 
 ## 1. What this project is
 

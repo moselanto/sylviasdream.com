@@ -2,6 +2,9 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Wednesday 11 November 2026 (noon): handover check
+- Handover pass for the next agent: ARCHITECTURE-ESSENTIALS versions (child 1.23.10, core 0.4.5), README "last updated" points to HANDOFF section 0, HANDOFF adds a handover checklist (CI check before installs, sign-ins, library zips) and flags the AGENTS rule 12 vs test-site Published products conflict, CORRESPONDENCE holds the full 11 Nov WhatsApp text.
+
 ## Wednesday 11 November 2026 (late morning): status and launch plan
 - HANDOFF sections 0 and 3 rewritten: where things stand, what remains (now / waiting on Sylvia / launch / handover) and how to work. README badges at child 1.23.10.
 

@@ -83,3 +83,34 @@ Call time; signed acceptance and deposit; WordPress invite; Stripe items; book l
 - Later: "I will contact Joshua to get the registration number"; then "Heaven on Earth Ministries, Reg. No. 35364, Registered year 2011 (Registered in Kenya)".
 - Registration line: yes to "Heaven on Earth Ministries is registered in Kenya (Reg. No. 35364, 2011)." for Heaven on Earth and Give (relayed by Lightsof, 11 Nov).
 - Reply prepared 11 Nov (answers 8, thanks, asks wording for the registration line); Moses to approve before sending.
+
+### 11 Nov WhatsApp reply to Sylvia (prepared; Moses to approve, then send)
+```
+Dear Sylvia,
+
+Thank you so much, this helps a lot.
+
+Meet Jesus: lovely. We will link the Going to Heaven page to your post, so readers subscribe and then get the booklet.
+
+2) We will use the 6x9 copy.
+
+9) Done. The site now says you are 82 and that you will be returning to Kenya in a few weeks' time. After your trip, please tell us how you would like that sentence to read.
+
+10, 13 and 14: thank you, noted.
+
+8) You do not need a number. It is the Stripe account connected to your website for payments. In WordPress.com go to Tools, then Monetize (or Earn), then Payment settings, and you will see the name of the connected Stripe account. If it is your account, just reply yes. If you are not sure, a photo of that screen is fine.
+
+Thank you for the Heaven on Earth registration (Reg. No. 35364, registered in Kenya in 2011). May we add this line to the Heaven on Earth page and the Give page: "Heaven on Earth Ministries is registered in Kenya (Reg. No. 35364, 2011)."? Yes or no is fine.
+
+To launch, we still need:
+
+25) Your OK in writing that we may move the new website to sylviasdream.com
+
+26) A day for the final tests together and for launch day. Our afternoon in Kenya is your evening in Melbourne.
+
+The other questions in my email can wait until after launch.
+
+God bless,
+Moses
+```
+Note: the registration question in this text was answered yes (relayed by Lightsof 11 Nov) and the line is already on the test site. If not yet sent, remove that paragraph before sending. The menu path in item 8 was not verified against her account.
