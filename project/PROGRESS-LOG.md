@@ -2,6 +2,9 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026: Sylvia's go-ahead
+- Sylvia answered 8 (yes) and 25 ("Please move the new website to sylviasdream.com"), and offered to meet today. Recorded in CLIENT-CHECKLIST, OPEN-ITEMS, DECISIONS, CORRESPONDENCE, HANDOFF. Live site still untouched.
+
 ## Wednesday 11 November 2026 (after noon): rule 12, final WhatsApp
 - AGENTS.md rule 12: products may be Published on the password-gated test site, Draft on live until launch (DECISIONS 11 Nov); HANDOFF conflict note removed. 11 Nov WhatsApp finalised without the registration paragraph (CORRESPONDENCE).
 

@@ -113,3 +113,6 @@ God bless,
 Moses
 ```
 Note: the menu path in item 8 was not verified against her account.
+
+## 12 Nov: go-ahead (WhatsApp, relayed by Lightsof)
+- "8. Yes. 25. Please move the new website to sylviasdream.com I can meet with you today. Please give me a time that suits you."

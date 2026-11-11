@@ -1,4 +1,11 @@
-# Open items (updated 11 November 2026)
+# Open items (updated 12 November 2026)
+
+## 12 Nov: Sylvia's go-ahead to launch (WhatsApp)
+
+- [x] **8:** yes, the connected payment (Stripe) account is hers
+- [x] **25:** written go-ahead: "Please move the new website to sylviasdream.com". Launch may now be prepared per `docs/MIGRATION-PLAN.md` (backups first)
+- [ ] **26:** she offered to meet today (12 Nov). Agree a time (Kenya morning/midday = Melbourne evening), then fix the launch window
+- [ ] Before the launch window: full live backup set (`docs/BACKUP-AND-LAUNCH.md`), confirm Elementor and Redux install on WordPress.com Personal, change `moses` password and turn on two-factor, final re-check of Elementor pages/header-footer settings
 
 ## 11 Nov: Elementor speed (open)
 

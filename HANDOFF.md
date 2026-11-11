@@ -24,7 +24,7 @@ Rewritten Wednesday 11 November 2026 (Kenya time). Sections 0 and 3 are the curr
 7. Upload original covers for Guard Your Heart (6381) and Angelique Finds Her Light (6394) when Agnes sends them.
 
 **B. Waiting on Sylvia (launch-critical first)**
-- **25** written go-ahead to move to sylviasdream.com; **26** dates for final tests and launch day; **8** "yes" that the connected Stripe account is hers.
+- Done 12 Nov: **25** written go-ahead to move ("Please move the new website to sylviasdream.com") and **8** yes. Open: **26** dates for final tests and launch day (she offered to meet 12 Nov).
 - Can follow after launch: 3, 6 (give-any-amount link, monthly wording), 6a/17 Fast Forward to Success price, 7 Dream Partner count, 11, 12, 15, 16, 18-24, remaining ebook files (2). Books without files stay "Coming soon", so they do not block launch.
 - After her Kenya trip: reword "in a few weeks' time" in the About paragraph (Customizer, Home Elementor widget, `about-sylvia.php`, `customizer.php`).
 
@@ -74,7 +74,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | Server (test) | PHP 8.2, memory 512M, WP_MEMORY_LIMIT 256M, OPcache off (ask host), no page cache. |
 | Products | 25 (Published on test; Draft on live). 17 with Stripe link; protected files for When the Word Becomes Life and Guard Your Heart Renew Your Mind (6x9); others "Coming soon". |
 | Giving | Give page (Elementor): A$5/15/30/50 monthly Dream Partner links; registration line added 11 Nov; "give any amount" link pending; GoFundMe https://gofund.me/e6fffb40c. |
-| Sylvia's answers | Done: 1, 2 (partly), 4, 5, 9, 10, 13, 14. Launch-critical open: 25, 26, 8. |
+| Sylvia's answers | Done: 1, 2 (partly), 4, 5, 8, 9, 10, 13, 14, **25 (written go-ahead to move, 12 Nov)**. Launch-critical open: 26 (dates; she offered to meet 12 Nov). |
 
 ## 4. What is pending (older background, superseded by section 0 "What is remaining")
 **Build work (Pimofy / next agent)**

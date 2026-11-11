@@ -29,7 +29,7 @@ Updated 11 Nov 2026 (answers to 2, 9, 10, 13, 14 received 11 Nov; see OPEN-ITEMS
 - [ ] 6a. Price for Fast Forward to Success (with 17). The 10 Nov email no longer asks for Manifesting Miracles Now or When Fear Has the Final Word prices/covers (31 Oct records)
 - [x] 6c. (11 Nov: free, through her subscribe post sylviasdream.com/2026/11/10/meet-jesus/) Meet Jesus booklet (received 9 Nov): may it be a free download? (10 Nov email; see also 13)
 - [ ] 7. Number of active monthly Dream Partners today (counter start, now 0 of 100)
-- [ ] 8. (11 Nov: she asked where to find it; explained) Confirm the WordPress.com payment account ("Bu...th") is hers
+- [x] 8. (12 Nov: yes) Confirm the WordPress.com payment account ("Bu...th") is hers
 
 ## Questions (yes / no)
 - [x] 9. (11 Nov: yes, age 82 + Kenya return sentence; done 1.23.9) Wording on Home, My Story, Invite Sylvia to Speak
@@ -50,7 +50,7 @@ Updated 11 Nov 2026 (answers to 2, 9, 10, 13, 14 received 11 Nov; see OPEN-ITEMS
 - [ ] 24. Past buyers' new download links: she sends the email, or we prepare it (Option A, DECISIONS 31 Oct)
 
 ## Next steps
-- [ ] 25. Her written go-ahead to move the website to sylviasdream.com, and her thoughts on it (asked in the 10 Nov email)
+- [x] 25. (12 Nov, WhatsApp: "Please move the new website to sylviasdream.com") Her written go-ahead to move the website to sylviasdream.com, and her thoughts on it (asked in the 10 Nov email)
 - [ ] 26. Dates for the final tests together and for launch day (Kenya afternoon = Australia evening; asked in the 10 Nov email)
 - [ ] (Not sent to her) She signs in only as `sylvia` and sets her own password ("Lost your password?"); we change the `moses` password first
 

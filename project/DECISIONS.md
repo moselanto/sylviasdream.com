@@ -2,6 +2,9 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 12 November 2026: go-ahead to move the new site to sylviasdream.com
+- **Sylvia approved the move in writing** (WhatsApp, relayed by Lightsof 12 Nov): "Please move the new website to sylviasdream.com". She also confirmed the payment account is hers (item 8). This satisfies AGENTS rule 11 (migration only after her written approval). Launch still follows `docs/MIGRATION-PLAN.md` and `docs/BACKUP-AND-LAUNCH.md`: backups first, live untouched until the agreed window.
+
 ## 11 November 2026: products Published on the test site
 - **AGENTS.md rule 12 changed** (Lightsof, 11 Nov): products may be Published on the password-gated, noindex test site so Sylvia can review the shop; they stay Draft on live until launch day. Why: the test site already had them Published for review, which conflicted with the old wording (Draft on dev and live). The password gate and noindex must stay on while products are Published there.
 
