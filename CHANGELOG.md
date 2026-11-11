@@ -1,5 +1,10 @@
 # Changelog
 
+## Child theme 1.23.11 (12 Nov 2026)
+- Approved registration line "Heaven on Earth Ministries is registered in Kenya (Reg. No. 35364, 2011)." added to `content/blocks/heaven-on-earth.html` (after the mission paragraph) and `content/blocks/give.html` (below the Go Fund Me button), and to the matching `content/live/` files, so the repo matches the test site (Elementor text widgets added 11 Nov). Class `sd-registration`, normal paragraph styling.
+- `scripts/check-theme.js` check 5: every PHP file in the base theme, child theme and core plugin must parse. Uses `php -l` when PHP is installed (GitHub Actions), otherwise the `php-parser` npm package (`npm install --no-save php-parser@3` or `NODE_PATH`); with neither the check fails, so `build-theme-zip.sh` cannot build a zip with a PHP syntax error. Tested: a deliberate syntax error fails the build.
+- No PHP or CSS change in the theme itself.
+
 ## Core plugin 0.4.6 (12 Nov 2026)
 - Settings > Sylvia's Dream: new "Security switches" for XML-RPC blocking (`xmlrpc_block`), two-step sign-in (`two_factor_enabled`) and the failed sign-in limit (`login_limit_enabled`). Applied through the `sd_core_security_feature` filter (priority 5); a switch can only turn a feature off, and `SD_SECURITY_DISABLE` / `SD_2FA_DISABLE` still work.
 - Defaults: **off on WordPress.com** (detected by `sd_core_is_wpcom()`: `IS_ATOMIC`, `ATOMIC_CLIENT_ID`, `WPCOMSH_VERSION` or `IS_WPCOM`; filter `sd_core_is_wpcom`), on elsewhere. The test site keeps its current behaviour (all on) because its saved settings have no value for the new keys and it is not WordPress.com.

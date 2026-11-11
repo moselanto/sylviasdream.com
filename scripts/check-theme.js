@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 /*
- * Repository checks that need no PHP:
+ * Repository checks (PHP itself is optional, see check 5):
  *  - every *.json in the themes parses
  *  - block comments (<!-- wp:x --> ... <!-- /wp:x -->) are balanced and
  *    correctly nested in patterns/*.php and content/blocks/*.html
  *  - block attribute JSON parses
  *  - no CSS class names starting with "ad-" (ad blockers hide them)
  *  - style.css Version matches SYLVIASDREAM_CHILD_VERSION
+ *  - every PHP file parses (php -l when PHP is installed, otherwise the
+ *    php-parser npm package; if neither is available the check FAILS)
  * Run: node scripts/check-theme.js
  */
 'use strict';
@@ -81,8 +83,36 @@ if (fs.existsSync(path.join(child, 'style.css'))) {
   if (!css || !php || css[1] !== php[1]) err(child, `version mismatch: style.css ${css && css[1]} vs functions.php ${php && php[1]}`);
 }
 
+// 5. PHP syntax (1.23.11). A syntax error must fail the build: 1.23.9 shipped
+// one and took the test site down. Uses `php -l` when PHP is installed (CI),
+// otherwise the php-parser npm package (`npm install --no-save php-parser@3`
+// or NODE_PATH pointing at it). With neither available the check fails.
+const { spawnSync } = require('child_process');
+const phpFiles = files.filter((f) => f.endsWith('.php'));
+const phpProbe = spawnSync('php', ['-v'], { encoding: 'utf8' });
+let phpChecked = 'none';
+if (!phpProbe.error && phpProbe.status === 0) {
+  phpChecked = 'php -l';
+  for (const f of phpFiles) {
+    const r = spawnSync('php', ['-l', f], { encoding: 'utf8' });
+    if (r.status !== 0) err(f, `PHP syntax error: ${((r.stderr || '') + (r.stdout || '')).trim().split('\n')[0]}`);
+  }
+} else {
+  let Engine = null;
+  try { Engine = require('php-parser'); } catch (e) { Engine = null; }
+  if (!Engine) {
+    err(root, 'PHP syntax not checked: install PHP or run "npm install --no-save php-parser@3" (or set NODE_PATH) and run again');
+  } else {
+    phpChecked = 'php-parser';
+    const parser = new Engine({ parser: { php8: true, extractDoc: false, suppressErrors: false }, ast: { withPositions: false } });
+    for (const f of phpFiles) {
+      try { parser.parseCode(fs.readFileSync(f, 'utf8'), f); } catch (e) { err(f, `PHP syntax error: ${e.message}`); }
+    }
+  }
+}
+
 if (errors.length) {
   console.error(errors.map((e) => `ERROR ${e}`).join('\n'));
   process.exit(1);
 }
-console.log(`OK: ${files.length} files checked, ${blockFiles.length} block files.`);
+console.log(`OK: ${files.length} files checked, ${blockFiles.length} block files, ${phpFiles.length} PHP files (${phpChecked}).`);

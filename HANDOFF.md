@@ -7,7 +7,7 @@ Rewritten Thursday 12 November 2026. Sections 0 and 3 are the current state. Det
 
 ### Where we are
 - **Sylvia gave written go-ahead to move (12 Nov, item 25)** and confirmed the payment account (item 8). We are in **Phase B** (invisible live preparation). **Visitors still see the old site** (Twenty Twenty theme).
-- **Test site** (https://topnotchmall.co.ke/sylviasdream/, password-gated, noindex): build finished. Child theme **1.23.10**, core **0.4.6**, Elementor 4.4.0, Redux 4.5.18. 9 Elementor pages, all editable. Never install child 1.23.9 (PHP parse error).
+- **Test site** (https://topnotchmall.co.ke/sylviasdream/, password-gated, noindex): build finished. Child theme **1.23.10** installed (**1.23.11** built 12 Nov: registration line in block files + PHP parse check in the build; content-only, install when convenient), core **0.4.6**, Elementor 4.4.0, Redux 4.5.18. 9 Elementor pages, all editable. Never install child 1.23.9 (PHP parse error).
 - **Live sylviasdream.com (WordPress.com Personal)** - done so far:
   - Backup: content XML, newsletter CSV (54 records / 24 subscribers), MailPoet CSV in the Town library `Sylvias Dream/backups`; all **254 media files (306.7 MB)** on the topnotchmall server in `/home/topnotch/sylviasdream-live-backup-2026-11-12/media` (outside public_html).
   - Core 0.4.6 **active** with XML-RPC, two-step sign-in, login limit and Redirects **off**; Dream Partners = 1. Jetpack connection, newsletter, Meet Jesus subscribe form and thank-you noindex all checked OK.
@@ -24,7 +24,7 @@ Rewritten Thursday 12 November 2026. Sections 0 and 3 are the current state. Det
 1. Moses: agree the call/launch window with Sylvia (item 26); private preview on that call (Live Preview of child theme + draft previews).
 2. Moses security: change `moses` password on test, "Log Out Everywhere Else", set up two-factor; live admins use WordPress.com two-step sign-in.
 3. Test site: ask host to enable OPcache (editor opens in 80-90 s).
-4. Next child release 1.23.11: mirror registration line in `content/blocks/heaven-on-earth.html` and `give.html`; add a PHP parse step to `scripts/check-theme.js`.
+4. ~~Child 1.23.11~~ built 12 Nov (registration line in block files, PHP parse check). Install 1.23.11 on test, then use 1.23.11 (not 1.23.10) on live at launch.
 5. Confirm with Sylvia: Fast Forward / Be a World Changer one book? (16), price (17); Top Menu "Home" item points to `/sylvias-dream/`.
 6. Give template contains the test-only "Private preview: ..." note: remove at insertion unless approved.
 
@@ -44,7 +44,7 @@ Rewritten Thursday 12 November 2026. Sections 0 and 3 are the current state. Det
 ### How to work
 - **Handover checklist for the next agent:** (1) read AGENTS.md, this section 0, DECISIONS (newest first), OPEN-ITEMS (top sections are current); (2) check the latest GitHub Actions "Checks" run on `main` is green (it runs `php -l` on PHP 8.0-8.3) before installing any zip; (3) the test site is reached by the Town browser; wp-admin and cPanel sign-ins are entered by Lightsof when asked; (4) release zips live in the Town library `Sylvias Dream/releases` (child 1.23.10, core 0.4.6 current); launch files (templates, products XML) in `Sylvias Dream/launch-templates`; live backups in `Sylvias Dream/backups` and on the topnotchmall server; (5) the live site is reached through WordPress.com (my.wordpress.com/sites/sylviasdream.com), session already signed in or Lightsof signs in.
 - Read AGENTS.md, this section, `project/DECISIONS.md`, `project/OPEN-ITEMS.md` first.
-- Code: edit in the repo, bump versions, `bash scripts/build-theme-zip.sh`, also parse-check PHP, commit to `main` with CHANGELOG, HANDOFF, OPEN-ITEMS, DECISIONS, PROGRESS-LOG in the same commit; save zips to the Town library; install via Appearance > Themes > Upload > Replace. If wp-admin dies, replace the theme folder via cPanel File Manager (`/public_html/sylviasdream/wp-content/themes`).
+- Code: edit in the repo, bump versions, `bash scripts/build-theme-zip.sh` (it now fails on any PHP syntax error; needs PHP or `npm install --no-save php-parser@3` / NODE_PATH), commit to `main` with CHANGELOG, HANDOFF, OPEN-ITEMS, DECISIONS, PROGRESS-LOG in the same commit; save zips to the Town library; install via Appearance > Themes > Upload > Replace. If wp-admin dies, replace the theme folder via cPanel File Manager (`/public_html/sylviasdream/wp-content/themes`).
 - Wording: only Sylvia's own words or her written yes; record each answer by number.
 - Content edits on Elementor pages: add new widgets rather than restructuring the "Section from your page" widgets.
 
@@ -71,7 +71,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | Dev / test site | `https://topnotchmall.co.ke/sylviasdream/` (admin `/sylviasdream/wp-admin/`), password-gated, noindex. Users: `moses` (Administrator, 2FA off, password must change), `sylvia` (Editor). cPanel: topnotchmall.co.ke:2083 (Lightsof signs in). |
 | Live site | sylviasdream.com on WordPress.com Personal, Twenty Twenty theme still active. **Phase B (12 Nov):** core 0.4.6 active (switches off), themes uploaded not active, Elementor 4.4.0 and Redux 4.5.18 active, 9 missing media uploaded, empty Drafts Home 6404 (slug welcome), Give 6406, Invite 6408, 9 launch templates in Saved Templates; WooCommerce 11.3.0 installed but **inactive** (exposed /shop/); products not imported (CSV blocked, use XML at launch). No visible change. Sylvia published "Meet Jesus" there 10 Nov. Domain paid to 25 Nov 2027. |
 | Migration | Only after item 25 (written go-ahead). `docs/MIGRATION-PLAN.md` (4b for Elementor pages). |
-| Child theme | **1.23.10** in the repo and on the test site (11 Nov). 1.23.9 is broken, never install. |
+| Child theme | **1.23.11** in the repo and library (12 Nov); test site and live (uploaded, inactive) have 1.23.10. 1.23.9 is broken, never install. |
 | Core plugin | **0.4.6** in the repo, on the test site (switches on) and active on live (switches off), 12 Nov. Never use 0.4.5 on live. |
 | Other plugins (test) | WooCommerce, Elementor 4.3.5 (free), Redux 4.5.16, Rank Math, Jetpack, Password Protected (test only). |
 | Server (test) | PHP 8.2, memory 512M, WP_MEMORY_LIMIT 256M, OPcache off (ask host), no page cache. |

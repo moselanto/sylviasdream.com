@@ -2,6 +2,11 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (03:10): child 1.23.11 built
+- Registration line added to `content/blocks/heaven-on-earth.html` (after the mission paragraph) and `give.html` (below Go Fund Me), and the matching `content/live/` files.
+- `scripts/check-theme.js` check 5: PHP parse (`php -l` or php-parser; fails if neither). Tested: without a parser it fails; with php-parser 92 PHP files pass; a deliberate syntax error is reported as an ERROR.
+- Built `sylviasdream-child-1.23.11.zip` (check-theme OK, assets minified) and saved it to the Town library `Sylvias Dream/releases`. Not installed anywhere yet.
+
 ## Thursday 12 November 2026 (02:55): /shop/ re-check, products XML, HANDOFF rewrite
 - Live, signed out: `/shop/` first still showed the empty archive (cached); WooCommerce confirmed inactive; WordPress.com Hosting > Caching > Clear all; then `/shop/` and `/shop/?nocache=...` both redirect to the home page.
 - Test site: Tools > Export > Products (WXR). Prepared `Products live draft 12 Nov 2026.xml` (24 products set to draft, trashed "When Fear Has the Final Word" removed, `_downloadable_files` removed for the 2 protected ebooks, product links swapped to sylviasdream.com, 26 image attachments left pointing at the test site so the importer can fetch them). Saved to the Town library `Sylvias Dream/launch-templates`. Nothing imported on live.

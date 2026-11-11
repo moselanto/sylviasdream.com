@@ -2,6 +2,10 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 12 November 2026: PHP syntax check is mandatory in the build
+- **`scripts/check-theme.js` fails when any PHP file does not parse, and also fails when it cannot check PHP at all** (Lightsof, 12 Nov; child 1.23.11). Uses `php -l` if PHP is installed, else the `php-parser` npm package. Why: child 1.23.9 shipped a PHP parse error that took the test site down on 11 Nov; a check that silently skips is not a check.
+- Registration line kept in the repo block files (`content/blocks/heaven-on-earth.html`, `give.html`) so the repo matches the approved site wording (Sylvia's yes, 11 Nov).
+
 ## 12 November 2026: /home/ slug and WooCommerce timing on live
 - **Old page 2 "Sylvia's Dream" keeps `/home/`; the new Home draft (6404) uses slug `welcome`** (recommended by the agent, recorded 12 Nov; Lightsof asked for a recommendation). Findings: the live front page is page **5022** "Sylvia's Dream" (Settings > Reading, static), not page 2; posts page is "Free Resource for Mission Training". Page 2 (`/home/`) is linked from the **Primary** menu "Home" item and is the source page of past contact-form entries. The Top Menu "Home" item points to `/sylvias-dream/`. Why: renaming page 2 would break a live, linked address; the new Home becomes the static front page at launch and is served at `/`, so its slug is never seen. At launch: Settings > Reading front page = 6404; leave pages 2 and 5022 published until Sylvia decides, then redirect `/home/` and `/sylvias-dream/` to `/` (add to REDIRECT-MAP) rather than delete.
 - **WooCommerce stays installed but inactive until the launch window.** On 12 Nov activation published Shop/Cart/Checkout/My account (set to Draft at once: 6436-6439, policy 6440 Draft) but the product archive at `/shop/` stayed public with the Shop page in Draft, so WooCommerce was deactivated. Site visibility was already "Live". Why: no visible change before launch (runbook Phase B 6 says "close to launch").

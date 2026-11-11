@@ -1,5 +1,11 @@
 # Open items (updated 12 November 2026)
 
+## 12 Nov: child 1.23.11
+
+- [x] Registration line copied into `content/blocks/heaven-on-earth.html`, `give.html` (and `content/live/`); `check-theme.js` now fails on PHP syntax errors. Zip in the Town library `Sylvias Dream/releases`
+- [ ] Install 1.23.11 on the test site (Replace current with uploaded) and check Heaven on Earth and Give still show the line once (the pages are Elementor, so the block files do not change them)
+- [ ] On live, replace the uploaded 1.23.10 with 1.23.11 before activating the theme
+
 ## 12 Nov: Phase B on live (started)
 
 - [x] Core 0.4.6 active on live (switches off, Redirects off, Dream Partners 1); parent + child themes uploaded, not active; Elementor 4.4.0 and Redux 4.5.18 active; Jetpack, newsletter, Meet Jesus form and thank-you noindex checked (PROGRESS-LOG 12 Nov 01:45)
@@ -35,7 +41,7 @@
 
 - [x] Child **1.23.10** installed through cPanel File Manager 11 Nov; site back, 82 checked on Home, My Story, Invite Sylvia to speak; Books and Contact load (PROGRESS-LOG). Never install 1.23.9
 - [x] Test site back, so the 11 Nov WhatsApp to Sylvia can go once Moses approves
-- [ ] Add a PHP parse check to `scripts/check-theme.js` so the build fails on PHP syntax errors
+- [x] PHP parse check added to `scripts/check-theme.js` (child 1.23.11, 12 Nov)
 
 ## 11 Nov: Sylvia's answers (WhatsApp, 11 Nov, 04:52-08:08 Melbourne-time messages)
 
