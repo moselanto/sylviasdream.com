@@ -2,6 +2,12 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (02:20): Elementor templates exported; Phase B media and drafts on live
+- Test site: Elementor 4.3.5 -> 4.4.0 and Redux 4.5.16 -> 4.5.18 (match live); Elementor DB update done; front end and wp-admin fine. The 9 Elementor pages saved as templates `LAUNCH - <page> - 2026-11-12` and exported to JSON; no page changed.
+- JSON made live-safe (MIGRATION-PLAN 4b step 3): every `topnotchmall.co.ke/sylviasdream/` and `/sylviasdream/` address replaced with `sylviasdream.com/` or `/`; none remain in any file. Image URLs and IDs pointed at the live Media Library (map in MIGRATION-PLAN 4b). Stripe/GoFundMe links unchanged. Originals and live-safe copies in the Town library `Sylvias Dream/launch-templates` (private; not in Git, they contain payment links).
+- Live: 9 missing media uploaded (IDs 6395-6403, two ChatGPT images got a `-1` suffix); kenya-family.jpg already there (ID 1949). Library now 263 items.
+- Live: empty Drafts created (Save draft only): Home 6404 (slug home), Give 6406 (give), Invite Sylvia to speak 6408 (invite-sylvia-to-speak). Not in Top Menu or Primary. Signed-out checks: home page unchanged, /give/ and /invite-sylvia-to-speak/ still 404. Templates not inserted yet: their widgets come from the child theme, which is not active on live (insert in Live Preview or the launch window).
+
 ## Thursday 12 November 2026 (01:45): Phase B started on live sylviasdream.com
 - Installed: Sylvia's Dream Core 0.4.6 (activated), parent theme Sylvia's Dream Base 1.0.1 and child 1.23.10 (uploaded, **not activated**; active theme still Twenty Twenty), Elementor 4.4.0 and Redux Framework 4.5.18 from the plugin directory (activated; Elementor onboarding skipped, no page edited).
 - Settings > Sylvia's Dream on live: XML-RPC, two-step sign-in, login limit and Redirects all unticked (WordPress.com defaults), Dream Partners so far = 1 (goal 100). Saved and re-checked after signing out and in.

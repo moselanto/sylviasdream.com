@@ -115,6 +115,22 @@ Versions on the test site: Elementor 4.3.5, Redux Framework 4.5.16 (both active)
 4. Remove dev-only wording: the Give preview notice and billing note unless Moses or Sylvia approves them.
 5. Elementor JSON stores image IDs and URLs from the test site. Its importer tries to download images from those URLs, which fails while the test site is behind its password. So upload every image from step 1.3 to live Media first (Phase B step 4), then in the JSON point each image `url` to the live address and `id` to the live Media ID.
 
+### Live media map (12 Nov 2026, used in the live-safe JSON)
+| Test-site file | Live file | Live ID |
+|---|---|---|
+| 2023/10/kenya-family.jpg | 2023/10/kenya-family.jpg (already on live) | 1949 |
+| 2026/10/ChatGPT-Image-Oct-1-2026-10_29_13-PM-1024x768.png | 2026/11/ChatGPT-Image-Oct-1-2026-10_29_13-PM-1024x768-1.png | 6395 |
+| 2026/10/ChatGPT-Image-Oct-9-2026-01_24_56-PM-1024x576.png | 2026/11/ChatGPT-Image-Oct-9-2026-01_24_56-PM-1024x576-1.png | 6396 |
+| 2026/11/Speaking-to-a-Kenyan-congregation.png | same path | 6397 |
+| 2026/11/kenya-children-by-brick-wall.jpg | same path | 6398 |
+| 2026/11/sylvia-suhr-kenya-children.jpg | same path | 6399 |
+| 2026/11/sylvia-suhr-kenya-class-picture-books.jpg | same path | 6400 |
+| 2026/11/sylvia-suhr-kenya-pupils-green-uniforms.jpg | same path | 6401 |
+| 2026/11/sylvia-suhr-kenya-vegetable-garden.jpg | same path | 6402 |
+| 2026/11/sylvia-suhr-portrait.jpg | same path | 6403 |
+Theme images (`/wp-content/themes/sylviasdream-child/assets/images/...`) need no upload: they ship with the child theme (uploaded to live 12 Nov).
+Live Drafts: Home 6404, Give 6406, Invite Sylvia to speak 6408 (empty until templates are inserted).
+
 ### Step 4: live preparation (Phase B, invisible)
 1. Confirm Elementor (free) and Redux install and activate on WordPress.com Personal (OPEN-ITEMS 29 Oct, still unverified). If they cannot, use the fallback below.
 2. Install the child theme (not activated) and set Elementor > Settings so only Pages use Elementor.
