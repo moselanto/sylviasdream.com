@@ -1,5 +1,8 @@
 # Changelog
 
+## Child theme 1.23.25 (13 Nov 2026) - TEST SITE ONLY until approved
+- Book (product) pages, styling only: "About this book" centred with the description in a white card, larger first paragraph, list items as tiles; the empty Jetpack "Related" heading hidden; the subscribe box tidied (gold rounded button); Reviews in a matching card; larger product title. No wording, price, link or Stripe change. File: `assets/css/woocommerce.css`.
+
 ## Child theme 1.23.24 (12 Nov 2026) - TEST SITE ONLY until approved
 - Checkout: Apple Pay, Google Pay and Link now sit in one even row of three equal-width buttons, vertically centred, 12px apart (stacked full width under 480px). Replaces the 1.23.23 auto-fit grid. Styling only: the Stripe buttons, wording, links and Stripe settings are unchanged. File: `assets/css/woocommerce.css`.
 

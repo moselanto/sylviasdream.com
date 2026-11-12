@@ -525,3 +525,21 @@ html.sd-minicart-open .sd-dock { visibility: hidden; }
 	.woocommerce-checkout .wc-block-components-express-payment__event-buttons { flex-wrap: wrap; }
 	.woocommerce-checkout .wc-block-components-express-payment__event-buttons > li { flex-basis: 100% !important; }
 }
+
+/* 1.23.25 (test first): book (product) page polish. Styling only. */
+.single-product .sd-product-description { max-width: 820px; }
+.single-product .sd-product-description > h2 { text-align: center; font-size: clamp(1.9rem, 3.2vw, 2.4rem); margin-bottom: 1.5rem; }
+.single-product .sd-product-description .sd-prose { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: clamp(1.5rem, 4vw, 2.75rem); box-shadow: 0 14px 34px rgba(60, 40, 10, .07); font-size: 1.06rem; line-height: 1.8; }
+.single-product .sd-product-description .sd-prose > p:first-child { font-size: 1.18rem; color: var(--ink); }
+.single-product .sd-product-description .sd-prose ul li { background: var(--cream, #fbf7ef); border: 1px solid var(--line); border-radius: 12px; padding: .7rem 1rem .7rem 2.6rem; }
+.single-product .sd-product-description .sd-prose ul li::before { left: .9rem; top: .95rem; }
+.single-product .sd-product-description .jp-relatedposts:not(:has(.jp-relatedposts-post)) { display: none !important; }
+.single-product .sd-product-description .sd-prose .wp-block-jetpack-subscriptions { max-width: 520px; margin-inline: auto; }
+.single-product .sd-product-description .sd-prose .wp-block-group.has-border-color { margin: 2.5rem 0 0 !important; padding-top: 1.5rem !important; border-top: 1px solid var(--line) !important; }
+.single-product .sd-product-description .sd-prose .wp-block-group.has-border-color > hr { display: none; }
+.single-product .sd-product-description .sd-prose .wp-block-jetpack-subscriptions .wp-block-button__link { border-radius: 999px !important; background: var(--gold-d) !important; color: #fff !important; border: 0 !important; }
+.single-product .sd-product-reviews { max-width: 820px; width: 100%; margin: 2.5rem auto 0; padding: clamp(1.5rem, 4vw, 2.5rem); background: #fff; border: 1px solid var(--line); border-radius: 22px; }
+.single-product .sd-product-reviews .woocommerce-Reviews-title { font-size: clamp(1.6rem, 2.6vw, 2rem); margin-top: 0; }
+.single-product .sd-product-reviews textarea, .single-product .sd-product-reviews input[type=text], .single-product .sd-product-reviews input[type=email] { border-radius: 10px; }
+.single-product div.product .product_title { font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.12; }
+.single-product div.product .product_meta { font-size: .9rem; color: var(--ink-2, #5b4f40); }
