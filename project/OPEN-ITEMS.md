@@ -1,5 +1,17 @@
 # Open items (updated 12 November 2026)
 
+## 12 Nov: call with Sylvia (Stripe, prices)
+
+- [x] Stripe connected by Sylvia (enabled, test mode off); Cart 6437 and Checkout 6438 published; protected files attached to 6393 and 6451
+- [ ] **Add to cart hidden on books with a Buy ebook link** (theme design). Moses to decide: child release showing Add to cart beside Buy ebook when a file is attached, or remove the buy link on those books with Sylvia's written OK. Until then the real test purchase uses Buy ebook, and the cart route is untested
+- [ ] Real test purchase and refund by Sylvia: record order/payment and refund, and check no WordPress.com fee
+- [x] 5.1 All Shall Be Well A$5.99 (live product 6458 updated 12 Nov)
+- [ ] 5.2 SENT free: get Sylvia's written OK (WhatsApp), then set SENT free on live; her old SENT page Stripe button changes only with her written OK
+- [x] 5.3 Title is From Fear to Freedom; Stripe name "Freedom From Fear" is Sylvia's to change (we never edit Stripe)
+- [x] 5.4 The Report of the Lord A$8.35 confirmed
+- [ ] Remaining answers: 5.5 Fast Forward (same book? ebook price), 6.1 reviews, 6.2 Kenya trip wording, 6.3 Invite picture, 6.4 give any amount link, 6.5 past buyers email
+- [ ] Finish paused fixes: point Heaven on Earth 1932 at live patterns 6939 (slider) and 6937 (form), remove the stray GoFundMe embed.js link, verify Home portrait and From Chance to Choice image signed out
+
 ## 12 Nov: NEW SITE LIVE (launched 03:40-04:50 EAT) - what is left
 
 - [x] Theme 1.23.11 active, 9 Elementor pages, products published, menus, Customizer, theme options, WooCommerce settings, policy pages, redirects, Meet Jesus button, My account (PROGRESS-LOG 12 Nov 03:40-04:50)

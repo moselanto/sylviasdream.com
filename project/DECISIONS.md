@@ -2,6 +2,12 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 12 Nov 2026: Sylvia's price answers on the call
+- All Shall Be Well ebook price is A$5.99 (matches her Stripe payment page); website updated.
+- The Report of the Lord stays A$8.35.
+- The book's title is From Fear to Freedom; the Stripe product name is left for Sylvia to change herself.
+- SENT is to be free (verbal); applied only after her written OK (AGENTS rule 3).
+
 ## 12 November 2026: launch before the call
 - **Footer shows the Contact Sylvia link, not the sign-up form** (Lightsof, 12 Nov, to match the test site). Customizer `footer_news_form` off.
 - **Home hero keeps the cover block with the background photo and the fixed three books** From Fear to Freedom, One Life, SENT (Lightsof, 12 Nov), not the random-book banner widget.

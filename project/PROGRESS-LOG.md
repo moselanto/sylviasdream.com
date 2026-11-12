@@ -2,6 +2,13 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (12:30-13:15): call with Sylvia - Stripe connected, cart live, price answers
+- Before the call: Stripe add-on installed on live by Lightsof (WooCommerce > Settings > Payments). Sylvia then connected her own existing Stripe account herself; checked: Stripe enabled, test mode off. No Stripe setting edited by Pimofy.
+- Published Cart 6437 and Checkout 6438. Attached the protected ebook files through WooCommerce's protected upload (`woocommerce_uploads/2026/11/`): Guard Your Heart Renew Your Mind (6393, A$7.10) and When the Word Becomes Life (6451, A$7.16). WordPress.com caches cleared.
+- Signed out: both books still show **Buy ebook** and no Add to cart. Cause: by design, `sdc_buy_link_not_purchasable` (child `inc/woocommerce.php`) hides the cart button on any product with a Stripe buy link (`_sdc_buy_link`), and both have one. Empty-cart checkout redirect to Cart is normal WooCommerce. Decision needed (Moses): theme option to show Add to cart beside Buy ebook when a download file is attached, or (with Sylvia's written OK) remove the buy link from those products.
+- Sylvia's answers (call brief 5.1-5.4): 5.1 All Shall Be Well = **A$5.99** (live product 6458 changed A$7.56 -> A$5.99, verified signed out, Buy ebook link unchanged); 5.2 SENT should be **free** (not changed: needs her written OK, and the old SENT page's paid A$5.99 Stripe button stays until she approves); 5.3 correct title **From Fear to Freedom** (website already uses it; the Stripe name "Freedom From Fear" is hers to change); 5.4 The Report of the Lord **A$8.35 confirmed**.
+- Earlier today (paused fix task, partial): live synced patterns 6937 (HoE contact form) and 6939 (HoE slideshow 1) created but page 1932 not yet pointed at them; stray GoFundMe embed.js link still on 1932; Home 6404 Meet Sylvia portrait set; From Chance to Choice (6457) product image set; featured images set on posts 6351 and 6297 (dates unchanged).
+
 ## Thursday 12 November 2026 (12:10): launch call script
 - Spoken script v3 for the call with Sylvia written (`project/call-scripts/2026-11-12-sylvia-launch-call-v3.md`, also a Town document): show the live site, she connects her own Stripe (WooCommerce > Settings > Payments), one real ebook purchase + download + refund, optional test gift, price questions (All Shall Be Well, SENT paid button, "Freedom From Fear" name), Manifesting Miracles Now, hiding old home pages 2 and 5022, old payment links after 30 days, past buyers list, approval, USD 168 balance, training date. Based on v2 (pre-build call).
 
