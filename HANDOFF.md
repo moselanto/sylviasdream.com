@@ -12,13 +12,13 @@ Rewritten Thursday 12 November 2026. Sections 0 and 3 are the current state. Det
 - Test site (topnotchmall.co.ke/sylviasdream/, password-gated) stays as the reference build (child 1.23.10 there).
 
 ### What is remaining (in order)
-1. Site icon check (logo already replaced by Lightsof). Footer, mega menu and hero covers fixed 12 Nov (PROGRESS-LOG 06:00-09:30).
+1. Fix the Heaven on Earth video cards (dark area above thumbnails on live), then cross-check every live page against test (OPEN-ITEMS). Logo, site icon, footer, mega menu, hero covers, phone Subscribe button and the Heaven on Earth slider are done (PROGRESS-LOG 12 Nov 06:00-10:45).
 2. Call with Sylvia: she connects her own Stripe for the cart; publish Cart/Checkout; attach the 2 protected ebooks; one real purchase she refunds.
 3. Confirm prices with Sylvia (All Shall Be Well, SENT free vs paid, "Freedom From Fear" name) - never edit Stripe.
 4. Real-phone checks; footer contact vs newsletter decision.
 5. Moses security (change `moses` password on test, 2FA); live admins use WordPress.com two-step sign-in.
 6. After launch: past buyers' new links (item 24), restore test, training, USD 168 balance, open Sylvia items (3, 6, 11, 12, 15-24), reword "in a few weeks' time" after her trip.
-7. Lessons: import Elementor templates only while the child theme is active; menus rebuilt by hand need the `sd-mega` class on Books; do not swap the home hero to the "big welcome banner" widget (random books, no background photo).
+7. Lessons: import Elementor templates only while the child theme is active; menus rebuilt by hand need the `sd-mega` class on Books; do not swap the home hero to the "big welcome banner" widget (random books, no background photo); kept sections with `wp:block` refs need the synced pattern recreated on live (Heaven on Earth slider: test 6637 -> live 6924); keep Jetpack's floating Subscribe button off.
 
 ### How to work
 - **Handover checklist for the next agent:** (1) read AGENTS.md, this section 0, DECISIONS (newest first), OPEN-ITEMS (top sections are current); (2) check the latest GitHub Actions "Checks" run on `main` is green (it runs `php -l` on PHP 8.0-8.3) before installing any zip; (3) the test site is reached by the Town browser; wp-admin and cPanel sign-ins are entered by Lightsof when asked; (4) release zips live in the Town library `Sylvias Dream/releases` (child 1.23.10, core 0.4.6 current); launch files (templates, products XML) in `Sylvias Dream/launch-templates`; live backups in `Sylvias Dream/backups` and on the topnotchmall server; (5) the live site is reached through WordPress.com (my.wordpress.com/sites/sylviasdream.com), session already signed in or Lightsof signs in.

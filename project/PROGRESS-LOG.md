@@ -2,6 +2,14 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (09:30-10:45): more post-launch fixes on live
+- **Phone: floating Subscribe button** (Jetpack) sat on top of the theme's bottom bar and covered Give. Turned off Jetpack > Newsletter > Settings > Subscriptions > "Floating button on bottom corner" (overlay and in-post pop-up were already off). Newsletter, subscribers and the homepage newsletter section unchanged. Signed-out check OK.
+- **Heaven on Earth "Life at Heaven on Earth" slider** (11 photos, arrows, pause, 1/11 counter) was missing on live: the kept section calls a synced pattern (`wp:block ref 6637`) that existed only on the test site. Created live synced pattern **"HoE slideshow 2", ID 6924**, same markup, using the 11 photos already in the live Media Library; page 1932 now references 6924. Signed-out check: all 11 slides, arrows and pause work. Lesson: kept sections that use `wp:block` refs need the pattern recreated on the target site (test IDs do not exist on live).
+- **Logo:** `SDM_Header_Logo_960w_ForLightBG.png` uploaded to live and set in Customize > Site Identity > Logo (no separate retina/mobile/sticky logo fields on test or live). Signed-out desktop loads the new file; phone preview in the Customizer also OK.
+- **Site icon (favicon):** the test icon file could not be fetched, so a 512x512 icon was made from the dove in the new logo (repo `project/assets/sylviasdream-site-icon-512.png`) and set in Site Identity > Site Icon. Live serves `cropped-sylviasdream-site-icon-512.png` for the favicon and Apple touch icon. Swap for the test-site icon later if Moses or Sylvia prefer it.
+- Caches cleared after each change.
+- **Not fixed:** Heaven on Earth "From the field" video cards on live have a tall dark area above each thumbnail (test shows compact thumbnail cards). The kept widget has no size setting; needs a theme fix (likely WordPress.com's own YouTube embed markup vs the theme's yt-facade CSS). Not yet investigated in code.
+
 ## Thursday 12 November 2026 (06:00-09:30): post-launch fixes on live
 - **Footer (child 1.23.12):** live showed the Jetpack sign-up form under "Weekly encouragement in your inbox" because Jetpack exists on WordPress.com; test shows the "Contact Sylvia" link. New Customizer checkbox `footer_news_form` (default off) now decides; off shows the link. Uploaded to live (Replace current), "Footer: Newsletter sign-up" widget area confirmed empty, caches cleared, signed-out check OK (link to /contact/, no form). The homepage newsletter section and Jetpack's floating Subscribe button are unchanged.
 - **My account 6439 published** so "My downloads" (/my-account/downloads/) shows the sign-in page instead of 404. Cart 6437 and Checkout 6438 still Draft.

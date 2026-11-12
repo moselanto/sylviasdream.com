@@ -5,7 +5,11 @@
 - [x] Theme 1.23.11 active, 9 Elementor pages, products published, menus, Customizer, theme options, WooCommerce settings, policy pages, redirects, Meet Jesus button, My account (PROGRESS-LOG 12 Nov 03:40-04:50)
 - [x] Footer Contact Sylvia link (1.23.12), My account published, Books mega menu Start here (sd-mega class), home hero covers From Fear to Freedom / One Life / SENT over the background photo (1.23.13) - PROGRESS-LOG 12 Nov 06:00-09:30
 - [x] Header logo replaced by Lightsof (Sylvia's Dream Ministry)
-- [ ] **Site icon:** check it is the test one (`cropped-android-chrome-512x512-1.png`); earlier note: upload `SDM_Header_Logo_960w_ForLightBG.png` and `cropped-android-chrome-512x512-1.png` (test site uploads 2026/10) to live and set them in Customize > Site Identity. Live still shows the old cropped logo
+- [x] Logo and site icon set on live (12 Nov 10:30; icon made from the logo dove, see PROGRESS-LOG)
+- [x] Jetpack floating Subscribe button off (covered Give on phones); Heaven on Earth photo slider restored (pattern 6924)
+- [ ] **Heaven on Earth video cards:** tall dark area above each "From the field" thumbnail on live (test is fine). Needs a theme CSS fix in the repo (child 1.23.14), check WordPress.com YouTube embed markup
+- [ ] **Cross-check every live page against test** (Lightsof asked 12 Nov): Home, Shop For Books, each book page, My Story, Give, Heaven on Earth, Invite, Podcasts and Videos, Author Support, Contact, Going to Heaven, Meet Jesus, policies, My account. Look especially for other `wp:block` refs to test-only patterns and missing images
+- [ ] (old note) Site icon originally on test: `cropped-android-chrome-512x512-1.png`; earlier note: upload `SDM_Header_Logo_960w_ForLightBG.png` and `cropped-android-chrome-512x512-1.png` (test site uploads 2026/10) to live and set them in Customize > Site Identity. Live still shows the old cropped logo
 - [ ] **Sylvia on the call:** she connects her own Stripe (WooCommerce Stripe Payment Gateway, she signs in herself), then publish Cart 6437 and Checkout 6438, attach the 2 protected ebook files (When the Word Becomes Life, Guard Your Heart Renew Your Mind 6x9) to their products, one real purchase she refunds
 - [ ] **Prices to confirm with Sylvia:** All Shall Be Well site A$7.56 vs Stripe $5.99; SENT listed Free in the catalogue but its old page has a paid A$5.99 Stripe button; From Fear to Freedom Stripe product is named "Freedom From Fear". Do not change Stripe
 - [ ] Phone checks on a real phone (iPhone and Android): header, mega menu, bottom bar, Give, book page
