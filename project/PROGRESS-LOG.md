@@ -2,6 +2,11 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (22:30-22:55): child 1.23.18 regression, fixed in 1.23.19
+- Child **1.23.18** (Contact columns keep equal widths; WordPress.com loads no core Columns CSS for the kept section, so opening an FAQ squeezed the form and Send button) installed on test and live about 22:35. **Error:** the build step overwrote `assets/css/about.css` with only the new Contact rules, so all inner pages using it (Contact, Give, Heaven on Earth, My Story, To ensure you end up going to Heaven, book/resource pages) lost their page styling on test and live for about 20 minutes.
+- Child **1.23.19** installed on test, then live (restores the full about.css from 1.23.17 plus the 1.23.18 Contact rules); caches cleared. Signed out on live: Contact matches test, round social icons back, opening each question no longer resizes the form or Send button; Give, Heaven on Earth and My Story styling matches test again; To ensure you end up going to Heaven is single-column like test with its live buttons.
+- Design notes from that check (no changes made): To ensure you end up going to Heaven: long unbroken text, oversized all-caps title, book and portrait images stacked at the end. Heaven on Earth: photo grids/slideshows dominate, uneven section lengths, needs tighter spacing. Give: text-heavy donation cards, uneven whitespace, mixed button styles.
+
 ## Thursday 12 November 2026 (22:20-22:30): free PDF check, favicon, Kenya manual PDF attempt
 - Read-only check signed out of every PDF linked on the 188 live sitemap pages, plus every PDF address in the live export (21 files). Only one broken link: **uploads/2026/03/Kenya_Training_Manual.pdf** (404), linked from /kenya-ministry-training-manual-free-download/. The test site has it at the same path (Media Library name Kenya_Training_Manual-1.pdf). All other PDFs return 200 (linked: free-sample-how-to-find-the-real-you, free-7-day-devotional, sent (2), thank-you-for-your-purchase, thank-you-for-your-purchase-2).
 - Favicon: Nuracrown's 512x512 gold rounded square with white dove uploaded and set as the live Site Icon (attachment 6999); caches cleared; signed-out site icon tags point to it and the image loads.

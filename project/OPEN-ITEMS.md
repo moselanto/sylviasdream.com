@@ -1,5 +1,11 @@
 # Open items (updated 12 November 2026)
 
+## 12 Nov 22:55
+
+- [x] Child 1.23.19 restores about.css (1.23.18 regression); Contact form/Send button and social icons verified
+- [ ] Design pass for To ensure you end up going to Heaven, Heaven on Earth and Give (proposal sent to Nuracrown, waiting for go-ahead)
+- [ ] Kenya manual PDF: still waiting for the file
+
 ## 12 Nov 22:20
 
 - [x] Image descriptions use the test site wording (Home portrait, Invite Sylvia, My Story Kenya photos)
