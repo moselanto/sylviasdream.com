@@ -12,7 +12,7 @@ Rewritten Thursday 12 November 2026. Sections 0 and 3 are the current state. Det
 - Test site (topnotchmall.co.ke/sylviasdream/, password-gated) stays as the reference build (child 1.23.10 there).
 
 ### What is remaining (in order)
-1. Child **1.23.16** is installed on test and live (12 Nov 17:30); 1.23.15 added Add to cart beside Buy ebook, 1.23.16 removed the stray GoFundMe script link on Heaven on Earth. Live vs test audit finished 12 Nov 18:20: open fixes (Journal Posts page, WooCommerce Shop page, Manifesting Miracles Now cover, Grace for the Journey layout, alt text) are in OPEN-ITEMS and need approval. Book pages One Life / From Fear to Freedom / SENT are prepared and wait for Moses's choices.
+1. Child **1.23.16** is installed on test and live (12 Nov 17:30); 1.23.15 added Add to cart beside Buy ebook, 1.23.16 removed the stray GoFundMe script link on Heaven on Earth. Live vs test audit finished 12 Nov 18:20: Journal (6961, Posts page), WooCommerce Shop page (3001) and Grace for the Journey layout done 12 Nov 18:40; Manifesting Miracles Now cover and alt text still open in OPEN-ITEMS. Book pages One Life / From Fear to Freedom / SENT are prepared and wait for Moses's choices.
 2. Call with Sylvia: she connects her own Stripe for the cart; publish Cart/Checkout; attach the 2 protected ebooks; one real purchase she refunds.
 3. Confirm prices with Sylvia (All Shall Be Well, SENT free vs paid, "Freedom From Fear" name) - never edit Stripe.
 4. Real-phone checks; footer contact vs newsletter decision.

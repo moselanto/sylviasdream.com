@@ -2,6 +2,13 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (18:20-18:40): Journal, Shop page, Grace for the Journey on live
+- Journal: no Journal page existed on live (not in Trash either), so **Journal page 6961** was created and published at /journal/ and set as the Posts page (Settings > Reading, was 4717). No post edited or republished. Signed out: /journal/ shows the archive (10 per page, original dates, pagination); /sent-3/ shows its own mission-training content and free downloads again.
+- WooCommerce Shop page setting changed from draft 6436 to **3001 Shop For Books**; draft 6436 left as it was. Signed out: empty cart Return to shop goes to /shop-for-books/ and opens the catalog.
+- Grace for the Journey (5593): original saved first as unpublished draft **6964** "BACKUP - Grace for the Journey - before layout migration - 2026-11-12". Test layout applied: "Reflections and encouragement" banner (live theme Bible image), six latest-article cards in three columns with dates and excerpts, newsletter call to action and existing sign-up section. Card artwork uses existing live images; bottom artwork stays live attachment 5603; three articles without featured images stay text-only. Page publish date kept.
+- All 18 published posts compared before and after: dates, statuses, modified times and featured images unchanged. No newsletter sign-up submitted. No Stripe, Buy ebook, Dream Partner, GoFundMe or thank-you link changed.
+- WordPress.com object and edge caches cleared after each change; all checks signed out.
+
 ## Thursday 12 November 2026 (17:00-18:20): child 1.23.16 live, live vs test audit finished
 - Child **1.23.16** installed on test, then live (1.23.15 -> 1.23.16); WordPress.com object and edge caches cleared. Signed out on live Heaven on Earth: no embed.js text or link; GoFundMe widget loads with its fundraiser and Donate now; Go Fund Me button still https://gofund.me/e6fffb40c; Dream Partner Stripe link unchanged; monthly giving still /give/; contact form and sliders present. No page content, payment settings or donation links edited.
 - Read-only audit, 66 live pages vs 62 test, 24 live products vs 23 test. Nothing on live changed. Findings (fixes need approval):
