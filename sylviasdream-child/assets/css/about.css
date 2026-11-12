@@ -1,5 +1,263 @@
+/**
+ * Sylvia's Dream 1.9.0: About pages polish.
+ * Loaded on every ordinary page and the Journal (body class "sd-about", see
+ * sdc_is_about_page()); not on Home or the WooCommerce shop pages. Styling only.
+ */
 
+/* ---------- Page banner ---------- */
+.sd-about .sd-pagehead-cover { padding-top: clamp(88px, 11vw, 150px) !important; padding-bottom: clamp(64px, 8vw, 104px) !important; }
+.sd-about .sd-pagehead-cover > .wp-block-cover__background { background: linear-gradient(100deg, rgba(31, 24, 17, .88) 0%, rgba(31, 24, 17, .66) 55%, rgba(31, 24, 17, .40) 100%) !important; }
+.sd-about .sd-pagehead-cover .sd-eyebrow { display: inline-flex; align-items: center; gap: .75rem; }
+.sd-about .sd-pagehead-cover .sd-eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--gold); }
+.sd-about .sd-pagehead-cover h1 { max-width: 860px; letter-spacing: -.01em; text-wrap: balance; }
+.sd-about .sd-pagehead-cover p.sd-lead { max-width: 640px; margin-top: 1rem !important; font-size: clamp(1.1rem, 1.6vw, 1.3rem) !important; line-height: 1.6; color: #f6ecd8 !important; }
 
+/* ---------- Section rhythm ---------- */
+.sd-about .entry-content > .sd-band, .sd-about .entry-content > .wp-block-group.sd-band { padding-block: clamp(4rem, 8vw, 6.5rem); }
+.sd-about .entry-content > .sd-band.sd-band--narrow { padding-block: clamp(3.25rem, 6vw, 5rem); }
+.sd-about .entry-content .sd-band:not(.sd-quote-band):not(.sd-band--alt) + .sd-band:not(.sd-quote-band):not(.sd-band--alt) { background: #fff; }
+.sd-about .entry-content .sd-band.sd-band--alt { background: var(--cream-2); }
+.sd-about .entry-content .sd-band h2 { font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.12; letter-spacing: -.01em; text-wrap: balance; margin-bottom: 1rem; }
+.sd-about .entry-content .sd-band h2.has-text-align-center { max-width: 780px; margin-inline: auto; }
+.sd-about .entry-content .sd-band h2.has-text-align-center::after { content: ""; display: block; width: 56px; height: 3px; margin: 1.1rem auto 0; border-radius: 3px; background: var(--gold); }
+.sd-about .entry-content .sd-band p.sd-lead.has-text-align-center { max-width: 720px; margin-inline: auto; }
+.sd-about .entry-content .sd-band .sd-eyebrow { font-size: .78rem !important; letter-spacing: .18em; font-weight: 700; }
+.sd-about .entry-content .sd-split > .wp-block-column > p:not(.sd-eyebrow) { max-width: 66ch; }
+.sd-about .entry-content .sd-split { gap: clamp(2rem, 6vw, 4.5rem); }
+.sd-about .entry-content .sd-band .wp-block-buttons { margin-top: 1.75rem; gap: 12px; }
+.sd-about .entry-content .wp-block-button__link { min-height: 52px; padding: 14px 28px; display: inline-flex; align-items: center; justify-content: center; }
+
+/* ---------- Cards ---------- */
+.sd-about .entry-content .sd-cards { gap: clamp(1rem, 2.5vw, 1.75rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.sd-about .entry-content .sd-band .sd-card { position: relative; border-radius: 18px; border-color: var(--line); background: #fff; box-shadow: 0 1px 2px rgba(60, 40, 10, .04), 0 12px 32px rgba(60, 40, 10, .07); transition: transform .25s var(--ease), box-shadow .25s, border-color .25s; }
+.sd-about .entry-content .sd-band .sd-card::after { content: ""; position: absolute; left: 24px; right: 24px; top: -1px; height: 3px; border-radius: 0 0 3px 3px; background: linear-gradient(90deg, var(--gold), var(--gold-l)); opacity: 0; transition: opacity .25s; }
+.sd-about .entry-content .sd-band .sd-card:hover { transform: translateY(-4px); border-color: var(--gold-l); box-shadow: var(--shadow-l); }
+.sd-about .entry-content .sd-band .sd-card:hover::after { opacity: 1; }
+.sd-about .entry-content .sd-band .sd-card h3 { font-size: clamp(1.35rem, 2.2vw, 1.6rem); line-height: 1.2; margin: 0 0 .6rem; }
+.sd-about .entry-content .sd-band .sd-card p { line-height: 1.65; }
+.sd-about .entry-content .sd-card__icon { width: 52px; height: 52px; border-radius: 50%; background: var(--ink); color: var(--gold-l); font-size: 1.35rem; box-shadow: 0 0 0 6px var(--gold-l); }
+.sd-about .entry-content .sd-card--ico::before { width: 54px; height: 54px; border-radius: 14px; }
+.sd-about .page .entry-content p.sd-card__ideal, .sd-about .entry-content p.sd-card__ideal { margin-top: auto !important; padding: .9rem 1rem; border: 0; border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; background: var(--cream); font-size: .95rem !important; line-height: 1.5; }
+
+/* ---------- My Story ---------- */
+.sd-about .sd-monogram { position: relative; border-radius: 24px; box-shadow: var(--shadow-l); }
+.sd-about .sd-monogram::after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(138, 90, 20, .25); border-radius: 16px; pointer-events: none; }
+.sd-about .entry-content .sd-portrait img { border-radius: 24px; box-shadow: var(--shadow-l); }
+.sd-about .entry-content .sd-portrait::after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(255, 255, 255, .55); border-radius: 16px; pointer-events: none; }
+.sd-about .entry-content .sd-split--timeline { align-items: center; }
+.sd-about .entry-content .sd-timeline { padding-left: 40px !important; }
+.sd-about .entry-content .sd-timeline::before { left: 12px; width: 2px; }
+.sd-about .entry-content .sd-timeline li { margin-bottom: 1rem !important; padding: 1rem 1.25rem; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: 0 6px 18px rgba(60, 40, 10, .05); }
+.sd-about .entry-content .sd-timeline li::before { left: -36px; top: 1.3rem; }
+.sd-about .entry-content .sd-timeline li strong { font-size: 1.35rem; }
+.sd-about .entry-content .sd-photo-round img { border-radius: 20px; box-shadow: var(--shadow-l); }
+.sd-about .entry-content .sd-stat { align-items: center; text-align: center; border-top: 3px solid var(--gold); }
+.sd-about .page .entry-content p.sd-stat__num, .sd-about .entry-content p.sd-stat__num { font-size: clamp(3rem, 6vw, 4rem) !important; }
+.sd-about .entry-content .sd-stat:hover { transform: none; }
+.sd-about .entry-content .sd-quote-band { padding-block: clamp(4.5rem, 9vw, 7rem) !important; }
+.sd-about .entry-content .sd-quote-band .sd-band__inner, .sd-about .entry-content .sd-band--alt.sd-band--narrow .sd-band__inner { position: relative; }
+.sd-about .entry-content .sd-quote-band .sd-band__inner::before,
+.sd-about .entry-content .sd-band--narrow .sd-band__inner:has(.sd-quote-band__text)::before { content: "\201C"; display: block; margin: 0 auto .25rem; font-family: var(--serif); font-size: 5.5rem; line-height: .8; color: var(--gold); text-align: center; }
+.sd-about .entry-content .sd-quote-band__text { max-width: 820px; margin-inline: auto !important; text-wrap: balance; }
+
+/* ---------- Video pages ---------- */
+.sd-about .entry-content .sd-video-card { padding: 12px 12px 1.4rem; border: 1px solid var(--line); border-radius: 18px; background: #fff; box-shadow: 0 12px 32px rgba(60, 40, 10, .07); }
+.sd-about .entry-content .sd-video-card > :not(.wp-block-embed) { padding-inline: .6rem; }
+.sd-about .entry-content .sd-video-card .wp-block-embed__wrapper,
+.sd-about .entry-content .sd-video-more .wp-block-embed__wrapper,
+.sd-about .entry-content .sd-split .wp-block-embed__wrapper { overflow: hidden; border-radius: 12px; background: var(--ink); }
+.sd-about .entry-content .sd-video-more .wp-block-embed { padding: 8px; border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: 0 8px 22px rgba(60, 40, 10, .06); transition: transform .25s var(--ease), box-shadow .25s; }
+.sd-about .entry-content .sd-video-more .wp-block-embed:hover { transform: translateY(-3px); box-shadow: var(--shadow-l); }
+.sd-about .page .entry-content p.sd-note, .sd-about .entry-content p.sd-note { display: flex; align-items: center; gap: .6rem; max-width: 720px; margin-inline: auto !important; background: #fff; border: 1px solid var(--line); color: var(--ink-2); font-size: .92rem !important; }
+.sd-about .entry-content p.sd-note::before { content: ""; flex: none; width: 20px; height: 20px; border-radius: 50%; background: var(--gold-l) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a5a14' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M12 11v6M12 7.5v.01'/%3E%3C/svg%3E") center / 14px no-repeat; }
+
+/* ---------- Speaking ---------- */
+.sd-about .entry-content .sd-checks { padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 3vw, 1.75rem) .6rem !important; border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: 0 10px 26px rgba(60, 40, 10, .06); }
+.sd-about .entry-content .sd-checks li { padding-left: 2.2rem; margin-bottom: 1rem; font-weight: 600; color: var(--ink); }
+.sd-about .entry-content .sd-checks li::before { width: 1.4rem; height: 1.4rem; top: .1em; }
+.sd-about .entry-content .sd-card__link a::after { content: ""; }
+
+/* ---------- Forms (Author Support enquiry, My Story contact) ---------- */
+.sd-about .entry-content .sd-enquiry { max-width: 760px; margin-inline: auto; padding: clamp(1.75rem, 4vw, 3rem); border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: var(--shadow-l); }
+.sd-about .entry-content .sd-enquiry .wp-block-jetpack-contact-form { margin: 0 !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; background: none !important; }
+.sd-about .entry-content .wp-block-jetpack-contact-form input[type=text],
+.sd-about .entry-content .wp-block-jetpack-contact-form input[type=email],
+.sd-about .entry-content .wp-block-jetpack-contact-form input[type=tel],
+.sd-about .entry-content .wp-block-jetpack-contact-form textarea,
+.sd-about .entry-content .wp-block-jetpack-contact-form select { min-height: 52px; padding: 12px 16px; border: 1px solid #d9ccb1; border-radius: 12px; background: var(--cream); font-size: 1rem; transition: border-color .2s, background .2s, box-shadow .2s; }
+.sd-about .entry-content .wp-block-jetpack-contact-form textarea { min-height: 150px; }
+.sd-about .entry-content .wp-block-jetpack-contact-form :is(input, textarea, select):focus { outline: none; border-color: var(--gold-d); background: #fff; box-shadow: 0 0 0 4px rgba(184, 134, 43, .22); }
+.sd-about .entry-content .wp-block-jetpack-contact-form :is(button, .wp-block-button__link) { min-height: 52px; padding: 14px 32px; border-radius: 999px; }
+
+/* ---------- Phones ---------- */
+@media (max-width: 781px) {
+	.sd-about .sd-pagehead-cover .sd-eyebrow::before { width: 22px; }
+	.sd-about .entry-content .sd-band h2 { font-size: clamp(1.8rem, 7vw, 2.2rem); }
+	.sd-about .entry-content .sd-timeline li { padding: .9rem 1rem; }
+	.sd-about .entry-content .sd-band .sd-card:hover, .sd-about .entry-content .sd-video-more .wp-block-embed:hover { transform: none; }
+	.sd-about .entry-content .wp-block-buttons > .wp-block-button { flex: 1 1 100%; }
+	.sd-about .entry-content .wp-block-buttons > .wp-block-button .wp-block-button__link { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.sd-about .entry-content .sd-card, .sd-about .entry-content .sd-video-more .wp-block-embed { transition: none; }
+	.sd-about .entry-content .sd-card:hover, .sd-about .entry-content .sd-video-more .wp-block-embed:hover { transform: none; }
+}
+
+/* ---------- 1.9.1: fixes from the page printouts ---------- */
+/* Card headings: one alignment (left) whether they fit on one line or wrap. */
+.sd-about .entry-content .sd-band .sd-cards:not(.sd-cards--4) > .sd-card :is(h2, h3, h4) { text-align: left !important; margin-left: 0 !important; margin-right: 0 !important; max-width: none !important; width: auto !important; }
+/* Card paragraphs: clear space between paragraphs inside a card. */
+.sd-about .entry-content .sd-band .sd-card p + p { margin-top: .8rem !important; }
+.sd-about .entry-content .sd-band .sd-card p { margin-bottom: 0; }
+/* Podcasts "About the interview": a band nested inside a band becomes a tidy card, not an empty slab. */
+.sd-about .entry-content .sd-band .sd-band { width: auto !important; max-width: none !important; margin: clamp(2rem, 4vw, 3rem) 0 0 !important; padding: clamp(1.5rem, 4vw, 2.75rem) !important; border: 1px solid var(--line); border-radius: 20px; background: #fff !important; box-shadow: 0 12px 32px rgba(60, 40, 10, .07); text-align: left; }
+.sd-about .entry-content .sd-band .sd-band .sd-band__inner { max-width: none; }
+.sd-about .entry-content .sd-band .sd-band .sd-split { align-items: flex-start !important; }
+.sd-about .entry-content .sd-band .sd-band .wp-block-column { align-self: flex-start !important; }
+/* More videos: five players; the last row of two sits centred on wide screens. */
+@media (min-width: 1024px) {
+	.sd-about .entry-content .sd-video-more { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+	.sd-about .entry-content .sd-video-more > * { grid-column: span 2 !important; }
+	.sd-about .entry-content .sd-video-more > :nth-child(3n+1):nth-last-child(2) { grid-column: 2 / span 2 !important; }
+	.sd-about .entry-content .sd-video-more > :nth-child(3n+1):last-child { grid-column: 3 / span 2 !important; }
+}
+
+/* 1.9.2: on dev the More videos players sit inside a nested .sd-video-grid (display: contents);
+   apply the same 3 + centred 2 layout to those players too. */
+@media (min-width: 1024px) {
+	.sd-about .entry-content .sd-video-more > .sd-video-grid { grid-column: auto !important; }
+	.sd-about .entry-content .sd-video-more > .sd-video-grid > * { grid-column: span 2 !important; }
+	.sd-about .entry-content .sd-video-more > .sd-video-grid > :nth-child(3n+1):nth-last-child(2) { grid-column: 2 / span 2 !important; }
+	.sd-about .entry-content .sd-video-more > .sd-video-grid > :nth-child(3n+1):last-child { grid-column: 3 / span 2 !important; }
+}
+
+/* ==========================================================================
+   1.10.0: the same polish on Give, Heaven on Earth, Kenya Ministry Training
+   Manual, Contact and Grace for the Journey, plus page fixes from the
+   printouts. Page classes: .sd-p-<slug>. Styling only, no wording.
+   ========================================================================== */
+
+/* ---------- Give ---------- */
+.sd-about .entry-content .sd-givebox { border-radius: 22px !important; box-shadow: var(--shadow-l) !important; border-color: var(--gold-l) !important; }
+.sd-about .entry-content .sd-amounts { gap: 12px; }
+.sd-about .entry-content .sd-amount { border-radius: 16px !important; border: 1px solid var(--line) !important; background: var(--cream) !important; transition: border-color .2s, box-shadow .2s, transform .2s var(--ease); }
+.sd-about .entry-content .sd-amount:hover, .sd-about .entry-content .sd-amount:focus-within { border-color: var(--gold) !important; box-shadow: 0 8px 22px rgba(60, 40, 10, .10); transform: translateY(-2px); }
+.sd-about .entry-content .sd-goal { border-radius: 18px; border-top: 3px solid var(--gold) !important; }
+.sd-about .entry-content .sd-impact > * { border-radius: 14px !important; border: 1px solid var(--gold-l); }
+.sd-p-give .entry-content .sd-split--give { align-items: flex-start !important; gap: clamp(2rem, 5vw, 4rem); }
+
+/* ---------- FAQ accordions (Give, Heaven on Earth, Contact) ---------- */
+.sd-about .entry-content .sd-faqs { max-width: 820px; margin-inline: auto; }
+.sd-about .entry-content details.sd-faq, .sd-about .entry-content .sd-faq { margin: 0 0 10px !important; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: 0 4px 14px rgba(60, 40, 10, .04); transition: border-color .2s, box-shadow .2s; }
+.sd-about .entry-content details.sd-faq[open] { border-color: var(--gold-l); box-shadow: 0 10px 26px rgba(60, 40, 10, .08); }
+.sd-about .entry-content details.sd-faq > summary { min-height: 56px; display: flex; align-items: center; padding: 14px 20px; font-weight: 700; cursor: pointer; }
+.sd-about .entry-content details.sd-faq > :not(summary) { padding: 0 20px 16px; margin: 0; color: var(--ink-2); }
+
+/* ---------- Kenya Ministry Training Manual ---------- */
+.sd-p-kenya-ministry-training-manual-free-download .entry-content .sd-split .wp-block-image img { max-width: 400px; margin-inline: auto; border-radius: 10px; box-shadow: 0 24px 50px rgba(40, 28, 12, .28); }
+.sd-p-kenya-ministry-training-manual-free-download .entry-content .sd-split .wp-block-image { text-align: center; }
+.sd-about .entry-content .sd-download { max-width: 760px; margin-inline: auto; padding: clamp(1.75rem, 4vw, 2.75rem) !important; border-radius: 22px; border-top: 3px solid var(--gold) !important; text-align: center; box-shadow: var(--shadow-l); }
+.sd-about .entry-content .sd-download .wp-block-buttons { justify-content: center; }
+
+/* ---------- Heaven on Earth ---------- */
+.sd-about .entry-content .sd-callout { padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 3vw, 2rem) !important; border: 1px solid var(--line); border-left: 4px solid var(--gold) !important; border-radius: 0 16px 16px 0 !important; background: #fff; box-shadow: 0 10px 26px rgba(60, 40, 10, .06); }
+.sd-about .entry-content .sd-cards--4 > .sd-card { align-items: center; text-align: center; border-top: 3px solid var(--gold); }
+.sd-about .entry-content .gfm-embed { max-width: 460px; margin-inline: auto; }
+.sd-about .entry-content .wp-block-jetpack-slideshow { border-radius: 18px; overflow: hidden; }
+
+/* ---------- Grace for the Journey ---------- */
+:is(.sd-p-grace-for-the-journey, .sd-p-journal) .sd-post { border-radius: 18px; }
+:is(.sd-p-grace-for-the-journey, .sd-p-journal) .sd-post__media img { aspect-ratio: 16 / 10; width: 100%; object-fit: cover; }
+:is(.sd-p-grace-for-the-journey, .sd-p-journal) .sd-post__body { padding: 1.25rem 1.4rem 1.5rem; }
+:is(.sd-p-grace-for-the-journey, .sd-p-journal) .sd-post__title { font-size: clamp(1.25rem, 2vw, 1.45rem); line-height: 1.25; text-wrap: balance; }
+:is(.sd-p-grace-for-the-journey, .sd-p-journal) .sd-post__excerpt { color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.sd-p-grace-for-the-journey .entry-content > :is(p, h2, h3, figure):not(.alignfull):not(.alignwide) { max-width: 720px; margin-inline: auto; }
+.sd-p-grace-for-the-journey .entry-content figure.wp-block-image img { border-radius: 18px; box-shadow: var(--shadow-l); }
+
+/* ---------- Contact ---------- */
+.sd-p-contact .entry-content .wp-block-columns:has(.wp-block-jetpack-contact-form) > .wp-block-column:has(.wp-block-jetpack-contact-form) > * { border-radius: 22px; box-shadow: var(--shadow-l); }
+.sd-p-contact .entry-content .sd-card { border-radius: 18px; }
+
+@media (max-width: 781px) {
+	.sd-about .entry-content .sd-amount:hover { transform: none; }
+	.sd-p-kenya-ministry-training-manual-free-download .entry-content .sd-split .wp-block-image img { max-width: 280px; }
+}
+
+/* 1.10.1: Give amount tiles: the button sits at the foot of each tile, so the four buttons line up. */
+.sd-about .entry-content .sd-amount { display: flex !important; flex-direction: column; height: 100%; }
+.sd-about .entry-content .sd-amount > .wp-block-buttons, .sd-about .entry-content .sd-amount > .wp-block-button { margin-top: auto !important; padding-top: .75rem; }
+
+/* ==========================================================================
+   1.11.0: the polish now covers every ordinary page (book pages, free
+   downloads, thank-you pages, policies, Shop For Books) and the Journal.
+   ========================================================================== */
+/* Long text pages (policies, older book and download pages): comfortable measure and rhythm. */
+.sd-about .entry-content > :is(p, ul, ol, h2, h3, h4, blockquote, .wp-block-table):not(.alignfull):not(.alignwide) { max-width: 760px; margin-inline: auto; }
+.sd-about .entry-content > :is(h2, h3) { margin-top: 2.2em; text-wrap: balance; }
+.sd-about .entry-content > p { line-height: 1.75; }
+.sd-about .entry-content > blockquote, .sd-about .entry-content > .wp-block-quote { padding: 1rem 1.4rem; border-left: 4px solid var(--gold); border-radius: 0 14px 14px 0; background: #fff; box-shadow: 0 8px 22px rgba(60, 40, 10, .06); }
+.sd-about .entry-content > .wp-block-table table { border-collapse: collapse; width: 100%; }
+.sd-about .entry-content > .wp-block-table :is(th, td) { padding: .7rem .9rem; border: 1px solid var(--line); }
+/* Images in older pages: rounded with a soft shadow; book covers keep their own shape. */
+.sd-about .entry-content > .wp-block-image img, .sd-about .entry-content .wp-block-media-text__media img { border-radius: 14px; box-shadow: 0 14px 34px rgba(40, 28, 12, .14); }
+.sd-about .entry-content .sd-book-cover img { border-radius: 6px; box-shadow: 0 24px 50px rgba(40, 28, 12, .28); }
+/* File download blocks on download and thank-you pages: a clear card with a full button. */
+.sd-about .entry-content .wp-block-file { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; max-width: 760px; margin: 1.5rem auto; padding: 1.1rem 1.25rem; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 0 14px 14px 0; background: #fff; box-shadow: 0 8px 22px rgba(60, 40, 10, .06); }
+.sd-about .entry-content .wp-block-file > a:not(.wp-block-file__button) { font-weight: 700; color: var(--ink); }
+.sd-about .entry-content .wp-block-file__button { color: #fff !important; min-height: 48px; display: inline-flex; align-items: center; padding: 10px 22px; border-radius: 999px; background: var(--gold-d); color: #fff; font-weight: 700; text-decoration: none; }
+/* Book pages: the book hero split gets the same calm spacing. */
+.sd-about .entry-content .sd-book-hero { gap: clamp(2rem, 6vw, 4.5rem); }
+/* Journal listing. */
+.sd-p-journal .sd-posts, .sd-p-journal .sd-post-grid { gap: clamp(1rem, 2.5vw, 1.75rem); }
+@media (max-width: 781px) {
+	.sd-about .entry-content .wp-block-file { flex-direction: column; align-items: stretch; text-align: center; }
+	.sd-about .entry-content .wp-block-file__button { justify-content: center; }
+}
+
+/* 1.23.7: My Story layout polish (layout and spacing only; no wording, links or photos changed). */
+.sd-p-my-story .entry-content > .sd-band,
+.sd-p-my-story .sd-el-old > .sd-band { padding-block: clamp(3rem, 6vw, 5rem); }
+.sd-p-my-story .entry-content > .sd-band.sd-band--narrow,
+.sd-p-my-story .sd-el-old > .sd-band.sd-band--narrow { padding-block: clamp(2.75rem, 5vw, 4.25rem); }
+/* Milestones: the photo fills the column beside the timeline, so no blank gap under it. */
+@media (min-width: 782px) {
+	.sd-p-my-story .sd-split--timeline { align-items: stretch !important; gap: clamp(2rem, 4vw, 3.5rem) !important; }
+	.sd-p-my-story .sd-split--timeline > .wp-block-column { align-self: stretch !important; }
+	.sd-p-my-story .sd-split--timeline .sd-photo-captioned { position: sticky; top: 110px; height: 100%; max-height: 640px; margin: 0; }
+	.sd-p-my-story .sd-split--timeline .sd-photo-captioned img { width: 100%; height: 100% !important; min-height: 420px; aspect-ratio: auto !important; object-fit: cover !important; border-radius: 20px; }
+}
+/* Standalone photos on the page (garden photo): same finish as the other photos. */
+.sd-p-my-story .elementor-widget-image img { border-radius: 20px; box-shadow: 0 16px 40px rgba(60, 40, 10, .12); }
+/* "My story" cards: equal height, even padding. */
+.sd-p-my-story .sd-cards { align-items: stretch; gap: clamp(1rem, 2.5vw, 1.75rem); }
+.sd-p-my-story .sd-cards > .sd-card { height: 100%; display: flex; flex-direction: column; margin: 0 !important; padding: clamp(1.5rem, 3vw, 2.25rem) !important; }
+.sd-p-my-story .sd-cards > .sd-card > :last-child { margin-bottom: 0; }
+/* "Let's Walk Together": when its video does not display, drop the empty half and centre the text. */
+.sd-p-my-story .sd-split > .wp-block-column:has(.wp-block-embed__wrapper):not(:has(.wp-block-embed__wrapper *)) { display: none !important; }
+.sd-p-my-story .sd-split:has(> .wp-block-column .wp-block-embed__wrapper):not(:has(.wp-block-embed__wrapper *)) { justify-content: center; }
+.sd-p-my-story .sd-split:has(> .wp-block-column .wp-block-embed__wrapper):not(:has(.wp-block-embed__wrapper *)) > .wp-block-column { flex: 0 1 720px !important; max-width: 720px; text-align: center; }
+.sd-p-my-story .sd-split:has(> .wp-block-column .wp-block-embed__wrapper):not(:has(.wp-block-embed__wrapper *)) .wp-block-buttons { justify-content: center; }
+.sd-p-my-story .sd-split:has(> .wp-block-column .wp-block-embed__wrapper):not(:has(.wp-block-embed__wrapper *)) .sd-lead { margin-inline: auto; }
+@media (max-width: 781px) {
+	.sd-p-my-story .entry-content > .sd-band,
+	.sd-p-my-story .sd-el-old > .sd-band { padding-block: 3rem; }
+}
+
+/* 1.23.17: Contact page on WordPress.com. The old saved social-links block
+   renders inside an Elementor kept section, where WordPress.com does not load
+   the core Social Icons stylesheet, so the icons showed as a bulleted list
+   without their round frames. Full styling here so live matches the test site.
+   The form column no longer stretches to the FAQ column, so opening a
+   question (+) no longer makes the message box taller. */
+.sd-about .entry-content ul.wp-block-social-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; list-style: none; margin: 1.25rem 0 0; padding: 0; }
+.sd-about .entry-content .wp-block-social-links .wp-social-link { list-style: none; display: inline-flex; margin: 0; padding: 0; border-radius: 9999px; background: #fff !important; color: var(--gold-d) !important; border: 1px solid var(--line); transition: background .2s, color .2s, border-color .2s; }
+.sd-about .entry-content .wp-block-social-links .wp-social-link::before,
+.sd-about .entry-content .wp-block-social-links .wp-social-link::marker { content: none; }
+.sd-about .entry-content .wp-block-social-links .wp-social-link a { display: flex; align-items: center; justify-content: center; padding: 10px; line-height: 0; color: inherit !important; border-radius: inherit; text-decoration: none; box-shadow: none; }
+.sd-about .entry-content .wp-block-social-links .wp-social-link svg { width: 20px; height: 20px; fill: currentColor; }
+.sd-about .entry-content .wp-block-social-links .wp-social-link:hover { background: var(--gold-d) !important; color: #fff !important; border-color: var(--gold-d); }
+.sd-p-contact .entry-content .wp-block-columns:has(.wp-block-jetpack-contact-form) { align-items: flex-start !important; }
+.sd-p-contact .entry-content .wp-block-jetpack-contact-form textarea { flex-grow: 0 !important; height: auto; min-height: 150px; }
 /* 1.23.18: Contact columns. WordPress.com does not load the core Columns
    stylesheet for this kept section, so the two columns sized to their content:
    opening a question (+) widened the left column and squeezed the form and its

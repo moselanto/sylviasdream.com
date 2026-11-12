@@ -1,5 +1,9 @@
 # Changelog
 
+## Child theme 1.23.19 (12 Nov 2026) - urgent fix
+- **1.23.18 shipped an `assets/css/about.css` that contained only the new Contact rules**: a build-script error overwrote the file instead of adding to it, so every inner page that uses this stylesheet (Contact, Give, Heaven on Earth, My Story, About, book and resource pages) lost its page styling on test and live from about 22:30 to the 1.23.19 install. 1.23.19 restores the full file (1.23.17 content) plus the 1.23.18 Contact column rules. No other change.
+- Lesson: file edits for a release are checked with a line-count diff before building (`git diff --stat` / wc -l).
+
 ## Child theme 1.23.18 (12 Nov 2026)
 - Contact page on live: opening "I did not receive my download link" (or any question) widened the left column and squeezed the form, making the Send message button smaller. WordPress.com does not load the core Columns stylesheet for this Elementor kept section, so the columns sized to their content. The Contact columns now use equal fixed widths like core (stacked under 782px), and the form column aligns to the top. 1.23.17's form-column rule targeted `.wp-block-jetpack-contact-form`, but live renders `.jetpack-contact-form-container`; both are now covered.
 - File: `assets/css/about.css`. CSS only, Contact page only; no wording or form change.
