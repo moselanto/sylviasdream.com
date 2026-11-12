@@ -100,4 +100,11 @@
 .sd-yt__btn:hover .sd-yt__play, .sd-yt__btn:focus-visible .sd-yt__play { transform: scale(1.08); }
 .sd-yt__btn:focus-visible { outline: 3px solid #e0b75a; outline-offset: -3px; }
 .wp-block-embed__wrapper > .sd-yt { position: absolute; inset: 0; aspect-ratio: auto; }
+/* 1.23.14: WordPress.com (Jetpack) wraps YouTube iframes in <span class="embed-youtube">, so the
+   facade is not a direct child of the wrapper and sat below the wrapper's empty 16:9 spacer (tall
+   dark area above each thumbnail on live). Make that span fill the frame like the iframe would. */
+.wp-block-embed.wp-has-aspect-ratio .wp-block-embed__wrapper { position: relative; }
+.wp-block-embed.wp-has-aspect-ratio .wp-block-embed__wrapper > .embed-youtube { position: absolute; inset: 0; display: block !important; margin: 0; line-height: 0; }
+.wp-block-embed__wrapper > .embed-youtube > .sd-yt,
+.wp-block-embed__wrapper > .embed-youtube > iframe { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; border: 0; }
 .sd-preview-note { margin: 0 0 1.5rem; padding: .85rem 1.1rem; border-left: 4px solid #775014; background: #fcf3df; color: #3a2a12; font-size: 1rem; }

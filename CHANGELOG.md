@@ -1,5 +1,9 @@
 # Changelog
 
+## Child theme 1.23.14 (12 Nov 2026)
+- Fix: Heaven on Earth "From the field" videos on live showed a tall dark area above each thumbnail. WordPress.com (Jetpack) wraps YouTube iframes in `<span class="embed-youtube">`, so the click-to-play facade (`.sd-yt`) was not a direct child of `.wp-block-embed__wrapper` and sat below the wrapper's empty 16:9 spacer. The span now fills the frame (position absolute, inset 0) and the facade or iframe inside it fills the span. Same fix applies to any YouTube embed on live (Podcasts and Videos, My Story). The test site (no span) is unchanged.
+- File: `assets/css/blocks.css`. CSS only; no wording, payment or Stripe change.
+
 ## Child theme 1.23.13 (12 Nov 2026)
 - Home hero covers (the "sd-hero-cover" cover block with the background photo): when a book page (`from-fear-to-freedom-3`, `one-life`, `sent`) has no "sd-book-cover" image, as on the older live pages, the cover now comes from the matching published product (name starting From Fear to Freedom / One Life / SENT; filter `sdc_hero_book_products`). Before, live found no covers, so the hero showed none. Same three books, same order, as the test site.
 - File: `inc/hero-books.php`. No wording, payment or Stripe change.

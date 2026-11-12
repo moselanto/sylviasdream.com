@@ -1,11 +1,11 @@
 # Sylvia's Dream - sylviasdream.com
 
 ![Parent theme](https://img.shields.io/badge/Parent%20theme-v1.0.1-8A6216)
-![Child theme](https://img.shields.io/badge/Child%20theme-v1.23.11-B8862B)
+![Child theme](https://img.shields.io/badge/Child%20theme-v1.23.14-B8862B)
 ![Core plugin](https://img.shields.io/badge/Core%20plugin-v0.4.6-2B2620)
 ![Elementor](https://img.shields.io/badge/Elementor-optional%2C%2026%20widgets-92003B)
 
-Last updated: 11 November 2026. Current: child theme 1.23.11, core plugin 0.4.6 (core 0.4.6 not yet installed anywhere; test site runs 0.4.5). **Start with [`HANDOFF.md`](HANDOFF.md) section 0** for status, what remains and how to work. Never install child 1.23.9 (PHP parse error). Elementor editing: `docs/ELEMENTOR-EDITING-GUIDE.md`.
+Last updated: 12 November 2026. Current: child theme 1.23.14 in the repo (live runs 1.23.13), core plugin 0.4.6 (live and test). The new site has been live on sylviasdream.com since 12 Nov 2026. **Start with [`HANDOFF.md`](HANDOFF.md) section 0** for status, what remains and how to work. Never install child 1.23.9 (PHP parse error). Elementor editing: `docs/ELEMENTOR-EDITING-GUIDE.md`.
 
 ## 1. What this project is
 
@@ -19,7 +19,7 @@ A rebuild of **sylviasdream.com**, the website of **Sylvia Suhr**, Christian aut
 | Dev site | https://topnotchmall.co.ke/sylviasdream/ (admin `/sylviasdream/wp-admin/`), password-gated, hidden from search. All build work happens here. |
 | Live site | https://sylviasdream.com on the **WordPress.com Personal plan**. Untouched until Sylvia approves the dev site in writing. Still runs Twenty Twenty. |
 
-Status: **dev build, pre-launch.** Migration to the live site happens only after Sylvia reviews and approves the dev site ([`docs/MIGRATION-PLAN.md`](docs/MIGRATION-PLAN.md)). All 25 WooCommerce products on dev are **Draft** and stay Draft until launch.
+Status: **live since 12 November 2026** (launched after Sylvia's written go-ahead). Products are published on live; Cart and Checkout stay Draft until Sylvia connects Stripe. Current state and remaining work: [`HANDOFF.md`](HANDOFF.md) section 0.
 
 **Taking over?** Read [`HANDOFF.md`](HANDOFF.md) first, then [`AGENTS.md`](AGENTS.md). The working rules in AGENTS.md are mandatory.
 
@@ -28,7 +28,7 @@ Status: **dev build, pre-launch.** Migration to the live site happens only after
 | Package | Folder | Version in repo | Role |
 |---|---|---|---|
 | Sylvia's Dream Base (parent theme) | [`sylviasdream/`](sylviasdream) | 1.0.1 | Minimal shell: document structure, menus, template fallbacks. Never activated on its own. |
-| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 1.23.11 | **The theme to activate.** All design: templates, CSS, patterns, navigation, WooCommerce styling, performance layer. |
+| Sylvia's Dream (child theme) | [`sylviasdream-child/`](sylviasdream-child) | 1.23.14 | **The theme to activate.** All design: templates, CSS, patterns, navigation, WooCommerce styling, performance layer. |
 | Sylvia's Dream Core (plugin) | [`sylviasdream-core/`](sylviasdream-core) | 0.4.6 | Behaviour that must survive a theme change: ebook "Coming soon" sale guard, download-page protection, redirects, structured data, social sharing tags, security hardening, branded sign-in screens, two-factor authentication, admin branding, reviewer preview mode, Dream Partner progress. |
 
 Versions are defined in two places each and must match:

@@ -1,6 +1,13 @@
 # Progress log
 
-Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
+Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy).
+
+## Thursday 12 November 2026 (11:15): child 1.23.14 built (Heaven on Earth video fix)
+- Cause of the dark area above each "From the field" thumbnail on live: WordPress.com (Jetpack) wraps YouTube iframes in `<span class="embed-youtube">`. The theme's click-to-play facade replaces the iframe inside that span, so the rule `.wp-block-embed__wrapper > .sd-yt` no longer matched; the wrapper's empty 16:9 spacer (dark background) showed, with the 16:9 thumbnail below it. The test site has no span, so it was fine there.
+- Fix in `assets/css/blocks.css`: the span fills the frame (absolute, inset 0) and the facade or iframe inside it fills the span. CSS only; no wording, payment or Stripe change. Versions bumped to 1.23.14; `check-theme.js` OK; zip saved to the Town library `Sylvias Dream/releases`.
+- Not installed yet: test site first, then live (Appearance > Themes > Upload > Replace current), clear WordPress.com caches, check Heaven on Earth, Podcasts and Videos and My Story signed out.
+- Docs: README status and badges, ARCHITECTURE-ESSENTIALS and HANDOFF section 3 brought up to date (they still described pre-launch / 1.23.11).
+- Session note: Lightsof signed the agent in to test wp-admin (`moses`; dashboard warns 2FA off), cPanel and WordPress.com (`mosemqute`) in the Town browser.
 
 ## Thursday 12 November 2026 (09:30-10:45): more post-launch fixes on live
 - **Phone: floating Subscribe button** (Jetpack) sat on top of the theme's bottom bar and covered Give. Turned off Jetpack > Newsletter > Settings > Subscriptions > "Floating button on bottom corner" (overlay and in-post pop-up were already off). Newsletter, subscribers and the homepage newsletter section unchanged. Signed-out check OK.
