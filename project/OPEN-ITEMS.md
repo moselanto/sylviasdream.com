@@ -1,4 +1,12 @@
-# Open items (updated 12 November 2026)
+# Open items
+
+## 13 Nov 00:55
+
+- [x] Child 1.23.26 live (full-width book descriptions on all book pages, phone menu)
+- [x] One Life and Guard Your Heart rearranged descriptions live
+- [x] SENT free: paid button removed from /sent/ (backup 7008)
+- [ ] Rearrange the other book descriptions on test (existing wording only), screenshots, then approval for live
+ (updated 12 November 2026)
 
 ## 12 Nov 22:55
 

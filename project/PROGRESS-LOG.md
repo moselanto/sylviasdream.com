@@ -2,6 +2,13 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (00:35-00:55): child 1.23.26 live, two descriptions live, SENT paid button removed
+- Nuracrown checked the phone bottom menu on test and approved **1.23.26** (full-width book descriptions on every book page, phone menu polish). Installed on live (from 1.23.25); caches cleared. One Life, Guard Your Heart and From Fear to Freedom checked signed out: wording, prices (A$12.99, A$8.42, A$4.50), Stripe and Amazon/Kindle links unchanged.
+- One Life (6447) and Guard Your Heart (6452) descriptions on live replaced with the rearranged test versions (existing wording only; One Life reader quotes removed; Guard Your Heart repeated title/subtitle/byline removed; Also by links to the live product pages). Original descriptions backed up in the Town session report. Prices, Stripe and Amazon/Kindle links unchanged.
+- Cross-check of all 24 live book pages (fresh fetch): every page is a book page with the "About this book" section and loads the same 1.23.26 theme files, so the full-width layout applies to all; a screenshot of Guard Your Heart showing the old narrow layout and old text predates the update.
+- **SENT is free** (Sylvia's written answer 5.2; Nuracrown confirmed 13 Nov, replacing Moses's option A). Live /sent/ (4686): backup draft **7008**; only the "buy ebook stripe" button (...g40c) removed; Amazon and both free download buttons kept and working; nothing changed in Stripe (link stays in Sylvia's account). Verified signed out; caches cleared.
+- Still to do: rearrange the other book descriptions on test (approved), then screenshots.
+
 ## Friday 13 November 2026 (00:15-00:25): child 1.23.25 (book page polish) approved and live
 - **1.23.25 installed on live** (from 1.23.24); caches cleared. Signed out, before vs after: One Life (A$12.99) and Guard Your Heart (A$8.42) wording and prices unchanged; Stripe ...g401 and ...g40d, Amazon AU paperback and Kindle links unchanged; related-book suggestions vary per load. No content, price or Stripe change.
 - Next on test: 1.23.26 (full-width descriptions on every book page, phone bottom bar polish) and rearranged One Life / Guard Your Heart descriptions (existing wording only; One Life reader quotes removed per Nuracrown).

@@ -168,3 +168,6 @@ Reconciled with the project documents (quotation v2, cPanel preview guide v1.1, 
 
 ## 12 Nov 2026: book pages (Moses)
 - One Life: Kobo link dropped. Reviews sections removed from One Life and From Fear to Freedom. SENT: option A, the paid Stripe button stays next to the free downloads (rule 7). Button labels kept exactly as on the old live pages.
+
+## 13 Nov 2026: SENT is free (supersedes 12 Nov option A)
+- Sylvia's written answer 5.2 says SENT is free; Nuracrown confirmed on 13 Nov. The paid "buy ebook stripe" button (buy.stripe.com/...g40c) was removed from the live /sent/ page (backup draft 7008). The Stripe payment link itself was not touched and stays in Sylvia's Stripe account.
