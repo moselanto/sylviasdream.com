@@ -3,7 +3,8 @@
 ## 12 Nov 22:55
 
 - [x] Child 1.23.19 restores about.css (1.23.18 regression); Contact form/Send button and social icons verified
-- [ ] Design pass for To ensure you end up going to Heaven, Heaven on Earth and Give (proposal sent to Nuracrown, waiting for go-ahead)
+- [x] Design pass for To ensure you end up going to Heaven, Heaven on Earth and Give: 1.23.21 approved and live 12 Nov 23:15
+- [ ] Give page further polish (1.23.22) on test, screenshots for approval
 - [ ] Kenya manual PDF: still waiting for the file
 
 ## 12 Nov 22:20

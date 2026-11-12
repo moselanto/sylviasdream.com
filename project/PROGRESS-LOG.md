@@ -2,6 +2,10 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (23:00-23:20): design pass 1.23.20/1.23.21 approved and live
+- Child **1.23.20** (styling pass for To ensure you end up going to Heaven, Heaven on Earth, Give) and **1.23.21** (prayer card width, book cover not cropped) built and installed on test first; desktop before/after screenshots sent to Nuracrown; approved 12 Nov. Mobile screenshots not possible with the browser tool.
+- **1.23.21 installed on live** (from 1.23.19); object and edge caches cleared. Signed out on all three pages: wording identical (prayer page title shown in sentence case by CSS only), all main-content links unchanged, Dream Partner ...g405 and Give $15 ...g40l / $30 ...g40m / $50 ...g40n Stripe links unchanged, Go Fund Me https://gofund.me/e6fffb40c unchanged, Meet Jesus and free eBook buttons kept. No payment pages opened.
+
 ## Thursday 12 November 2026 (22:30-22:55): child 1.23.18 regression, fixed in 1.23.19
 - Child **1.23.18** (Contact columns keep equal widths; WordPress.com loads no core Columns CSS for the kept section, so opening an FAQ squeezed the form and Send button) installed on test and live about 22:35. **Error:** the build step overwrote `assets/css/about.css` with only the new Contact rules, so all inner pages using it (Contact, Give, Heaven on Earth, My Story, To ensure you end up going to Heaven, book/resource pages) lost their page styling on test and live for about 20 minutes.
 - Child **1.23.19** installed on test, then live (restores the full about.css from 1.23.17 plus the 1.23.18 Contact rules); caches cleared. Signed out on live: Contact matches test, round social icons back, opening each question no longer resizes the form or Send button; Give, Heaven on Earth and My Story styling matches test again; To ensure you end up going to Heaven is single-column like test with its live buttons.
