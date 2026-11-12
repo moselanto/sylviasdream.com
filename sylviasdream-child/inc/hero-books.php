@@ -32,25 +32,61 @@ function sdc_book_page_cover_id( $page ) {
 }
 
 /**
+ * 1.23.13: published product whose name starts with $name and has an image.
+ *
+ * @param string $name Start of the product name.
+ * @return WC_Product|null
+ */
+function sdc_hero_book_product( $name ) {
+	if ( '' === $name || ! function_exists( 'wc_get_products' ) ) {
+		return null;
+	}
+	foreach ( wc_get_products( array( 'status' => 'publish', 'limit' => 10, 's' => $name ) ) as $product ) {
+		if ( 0 === stripos( $product->get_name(), $name ) && $product->get_image_id() ) {
+			return $product;
+		}
+	}
+	return null;
+}
+
+/**
  * HTML for the hero covers, or '' when fewer than two covers are found.
  *
  * @return string
  */
 function sdc_hero_books_html() {
 	$slugs = (array) apply_filters( 'sdc_hero_book_pages', array( 'from-fear-to-freedom-3', 'one-life', 'sent' ) );
+	// 1.23.13: product to use when a book page has no "sd-book-cover" image
+	// (the older live pages), matched by the start of the product name.
+	$names = (array) apply_filters(
+		'sdc_hero_book_products',
+		array(
+			'from-fear-to-freedom-3' => 'From Fear to Freedom',
+			'one-life'               => 'One Life',
+			'sent'                   => 'SENT',
+		)
+	);
 	$items = array();
 	foreach ( $slugs as $slug ) {
-		$page = get_page_by_path( sanitize_title( $slug ) );
-		if ( ! $page || 'publish' !== $page->post_status ) {
-			continue;
+		$page   = get_page_by_path( sanitize_title( $slug ) );
+		$page   = ( $page && 'publish' === $page->post_status ) ? $page : null;
+		$img_id = $page ? sdc_book_page_cover_id( $page ) : 0;
+		$url    = $page ? get_permalink( $page ) : '';
+		$title  = $page ? get_the_title( $page ) : '';
+		if ( ! $img_id && ! empty( $names[ $slug ] ) ) {
+			$product = sdc_hero_book_product( (string) $names[ $slug ] );
+			if ( $product ) {
+				$img_id = (int) $product->get_image_id();
+				$url    = $url ? $url : $product->get_permalink();
+				$title  = $title ? $title : $product->get_name();
+			}
 		}
-		$img_id = sdc_book_page_cover_id( $page );
-		if ( ! $img_id ) {
+		if ( ! $img_id || ! $url ) {
 			continue;
 		}
 		$items[] = array(
-			'url'   => get_permalink( $page ),
-			'title' => get_the_title( $page ),
+			'url'   => $url,
+			'title' => $title,
 			'img'   => $img_id,
 		);
 	}

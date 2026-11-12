@@ -6,19 +6,19 @@ Last updated: Wednesday 11 November 2026 (EAT, UTC+3). Sections 0 and 3 are the 
 Rewritten Thursday 12 November 2026. Sections 0 and 3 are the current state. Detail: `project/PROGRESS-LOG.md` (newest first), `project/OPEN-ITEMS.md` (top sections current), `project/DECISIONS.md`, `docs/CLIENT-CHECKLIST.md` (Sylvia's answers by number), `docs/MIGRATION-PLAN.md` (launch steps, live media map).
 
 ### Where we are
-- **THE NEW SITE IS LIVE on sylviasdream.com (12 Nov 2026, 03:40-04:50 EAT)**, launched early at Lightsof's request after Sylvia's written go-ahead (item 25). Child theme **1.23.11** and core **0.4.6** active (security switches off, redirects on, Dream Partners 1), Elementor 4.4.0, Redux 4.5.18, WooCommerce 11.3.0 (AUD).
+- **THE NEW SITE IS LIVE on sylviasdream.com (12 Nov 2026, 03:40-04:50 EAT)**, launched early at Lightsof's request after Sylvia's written go-ahead (item 25). Child theme **1.23.13** (footer Contact link 1.23.12, hero covers 1.23.13) and core **0.4.6** active (security switches off, redirects on, Dream Partners 1), Elementor 4.4.0, Redux 4.5.18, WooCommerce 11.3.0 (AUD).
 - Live pages from the launch templates: Home 6404 (front page), Give 6406, Invite Sylvia to speak 6408, Shop For Books 3001, Contact 20, My Story 2665, Podcasts and Videos 1366, Author Support 6235, Heaven on Earth 1932. Policy pages 6826/6830/6833. 24 products published. Menus Primary / Footer Books / Footer About / Footer Policies as on test. My account 6439 published; **Cart 6437 and Checkout 6438 Draft** until Sylvia connects Stripe, so books sell through her Stripe "Buy ebook" buttons for now (Add to cart cannot show: no ebook files attached on live yet).
 - Backups before launch: content XML (library `Sylvias Dream/backups`, plus a fresh export 12 Nov 03:30 in the session), 254 media files on the topnotchmall server outside public_html. Rollback: Appearance > Themes > activate Twenty Twenty, Settings > Reading front page 5022, menus "Primary (old)" / Top Menu.
 - Test site (topnotchmall.co.ke/sylviasdream/, password-gated) stays as the reference build (child 1.23.10 there).
 
 ### What is remaining (in order)
-1. Logo and site icon on live (files from test uploads 2026/10; agent download was refused, needs the files attached or a manual upload).
+1. Site icon check (logo already replaced by Lightsof). Footer, mega menu and hero covers fixed 12 Nov (PROGRESS-LOG 06:00-09:30).
 2. Call with Sylvia: she connects her own Stripe for the cart; publish Cart/Checkout; attach the 2 protected ebooks; one real purchase she refunds.
 3. Confirm prices with Sylvia (All Shall Be Well, SENT free vs paid, "Freedom From Fear" name) - never edit Stripe.
 4. Real-phone checks; footer contact vs newsletter decision.
 5. Moses security (change `moses` password on test, 2FA); live admins use WordPress.com two-step sign-in.
 6. After launch: past buyers' new links (item 24), restore test, training, USD 168 balance, open Sylvia items (3, 6, 11, 12, 15-24), reword "in a few weeks' time" after her trip.
-7. Lesson for any future Elementor move: import templates only while the child theme is active (otherwise Elementor strips the Sylvia's Dream widgets).
+7. Lessons: import Elementor templates only while the child theme is active; menus rebuilt by hand need the `sd-mega` class on Books; do not swap the home hero to the "big welcome banner" widget (random books, no background photo).
 
 ### How to work
 - **Handover checklist for the next agent:** (1) read AGENTS.md, this section 0, DECISIONS (newest first), OPEN-ITEMS (top sections are current); (2) check the latest GitHub Actions "Checks" run on `main` is green (it runs `php -l` on PHP 8.0-8.3) before installing any zip; (3) the test site is reached by the Town browser; wp-admin and cPanel sign-ins are entered by Lightsof when asked; (4) release zips live in the Town library `Sylvias Dream/releases` (child 1.23.10, core 0.4.6 current); launch files (templates, products XML) in `Sylvias Dream/launch-templates`; live backups in `Sylvias Dream/backups` and on the topnotchmall server; (5) the live site is reached through WordPress.com (my.wordpress.com/sites/sylviasdream.com), session already signed in or Lightsof signs in.

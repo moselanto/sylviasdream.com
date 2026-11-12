@@ -1,5 +1,13 @@
 # Changelog
 
+## Child theme 1.23.13 (12 Nov 2026)
+- Home hero covers (the "sd-hero-cover" cover block with the background photo): when a book page (`from-fear-to-freedom-3`, `one-life`, `sent`) has no "sd-book-cover" image, as on the older live pages, the cover now comes from the matching published product (name starting From Fear to Freedom / One Life / SENT; filter `sdc_hero_book_products`). Before, live found no covers, so the hero showed none. Same three books, same order, as the test site.
+- File: `inc/hero-books.php`. No wording, payment or Stripe change.
+
+## Child theme 1.23.12 (12 Nov 2026)
+- Footer matches the test site on WordPress.com: under the newsletter line it now shows the "Contact Sylvia" link (Customizer `contact_cta_label`, `contact_url`) instead of the Jetpack sign-up form. The form only shows when the new Customizer checkbox "Footer: show the Jetpack sign-up form..." (`footer_news_form`, default off) is ticked. Before, the form showed whenever Jetpack was present (live), and the link only where it was not (test). A widget in "Footer: Newsletter sign-up" still overrides both.
+- Files: `inc/customizer.php`, `template-parts/site-footer.php`. No wording, payment or Stripe change.
+
 ## Child theme 1.23.11 (12 Nov 2026)
 - Approved registration line "Heaven on Earth Ministries is registered in Kenya (Reg. No. 35364, 2011)." added to `content/blocks/heaven-on-earth.html` (after the mission paragraph) and `content/blocks/give.html` (below the Go Fund Me button), and to the matching `content/live/` files, so the repo matches the test site (Elementor text widgets added 11 Nov). Class `sd-registration`, normal paragraph styling.
 - `scripts/check-theme.js` check 5: every PHP file in the base theme, child theme and core plugin must parse. Uses `php -l` when PHP is installed (GitHub Actions), otherwise the `php-parser` npm package (`npm install --no-save php-parser@3` or `NODE_PATH`); with neither the check fails, so `build-theme-zip.sh` cannot build a zip with a PHP syntax error. Tested: a deliberate syntax error fails the build.

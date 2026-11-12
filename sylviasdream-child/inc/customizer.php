@@ -161,6 +161,7 @@ function sdc_fields() {
 		'footer_credit'      => array( 'sdc_footer', __( 'Footer: credit line', 'sylviasdream-child' ), 'text', 'Website by Pimofy Digital.' ),
 		'footer_payment_badges' => array( 'sdc_footer', __( 'Footer: payment badges, separated by commas (blank hides the row)', 'sylviasdream-child' ), 'text', 'VISA, Mastercard, AMEX, Apple Pay, Google Pay, PayPal' ),
 		'footer_news_title'  => array( 'sdc_footer', __( 'Footer: newsletter line (blank hides it)', 'sylviasdream-child' ), 'text', 'Weekly encouragement in your inbox' ),
+		'footer_news_form'   => array( 'sdc_footer', __( 'Footer: show the Jetpack sign-up form under the newsletter line (off shows the Contact Sylvia link)', 'sylviasdream-child' ), 'checkbox', false ),
 		'contact_email'      => array( 'sdc_footer', __( 'Footer: contact email', 'sylviasdream-child' ), 'email', '' ),
 		'social_facebook'    => array( 'sdc_footer', __( 'Facebook URL', 'sylviasdream-child' ), 'url', '' ),
 		'social_instagram'   => array( 'sdc_footer', __( 'Instagram URL', 'sylviasdream-child' ), 'url', 'https://www.instagram.com/sylviasuhr/' ),

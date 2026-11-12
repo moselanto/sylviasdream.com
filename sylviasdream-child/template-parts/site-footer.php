@@ -66,7 +66,7 @@ $sdc_badges    = array_filter( array_map( 'trim', explode( ',', sdc_get( 'footer
 				<?php elseif ( $sdc_news ) : ?>
 					<div class="sd-footer__newsletter">
 						<p class="sd-footer__news-title"><?php echo esc_html( $sdc_news ); ?></p>
-						<?php if ( shortcode_exists( 'jetpack_subscription_form' ) ) : ?>
+						<?php if ( sdc_get( 'footer_news_form' ) && shortcode_exists( 'jetpack_subscription_form' ) ) : ?>
 							<?php echo do_shortcode( '[jetpack_subscription_form show_subscribers_total="false" button_on_newline="false" show_only_email_and_button="true"]' ); ?>
 						<?php elseif ( $sdc_contact && sdc_get( 'contact_cta_label' ) ) : ?>
 							<a class="sd-footer__news-link" href="<?php echo esc_url( $sdc_contact ); ?>"><?php echo esc_html( sdc_get( 'contact_cta_label' ) ); ?> <span aria-hidden="true">&rarr;</span></a>

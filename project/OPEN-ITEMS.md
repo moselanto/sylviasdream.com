@@ -3,11 +3,12 @@
 ## 12 Nov: NEW SITE LIVE (launched 03:40-04:50 EAT) - what is left
 
 - [x] Theme 1.23.11 active, 9 Elementor pages, products published, menus, Customizer, theme options, WooCommerce settings, policy pages, redirects, Meet Jesus button, My account (PROGRESS-LOG 12 Nov 03:40-04:50)
-- [ ] **Logo and site icon:** upload `SDM_Header_Logo_960w_ForLightBG.png` and `cropped-android-chrome-512x512-1.png` (test site uploads 2026/10) to live and set them in Customize > Site Identity. Live still shows the old cropped logo
+- [x] Footer Contact Sylvia link (1.23.12), My account published, Books mega menu Start here (sd-mega class), home hero covers From Fear to Freedom / One Life / SENT over the background photo (1.23.13) - PROGRESS-LOG 12 Nov 06:00-09:30
+- [x] Header logo replaced by Lightsof (Sylvia's Dream Ministry)
+- [ ] **Site icon:** check it is the test one (`cropped-android-chrome-512x512-1.png`); earlier note: upload `SDM_Header_Logo_960w_ForLightBG.png` and `cropped-android-chrome-512x512-1.png` (test site uploads 2026/10) to live and set them in Customize > Site Identity. Live still shows the old cropped logo
 - [ ] **Sylvia on the call:** she connects her own Stripe (WooCommerce Stripe Payment Gateway, she signs in herself), then publish Cart 6437 and Checkout 6438, attach the 2 protected ebook files (When the Word Becomes Life, Guard Your Heart Renew Your Mind 6x9) to their products, one real purchase she refunds
 - [ ] **Prices to confirm with Sylvia:** All Shall Be Well site A$7.56 vs Stripe $5.99; SENT listed Free in the catalogue but its old page has a paid A$5.99 Stripe button; From Fear to Freedom Stripe product is named "Freedom From Fear". Do not change Stripe
 - [ ] Phone checks on a real phone (iPhone and Android): header, mega menu, bottom bar, Give, book page
-- [ ] Footer: test footer shows a "Contact Sylvia" link under the newsletter line, live shows a newsletter form: decide which
 - [ ] Manifesting Miracles Now product has no cover (placeholder), same as test
 - [ ] Past buyers' new download links (item 24) after Stripe/cart is connected
 
