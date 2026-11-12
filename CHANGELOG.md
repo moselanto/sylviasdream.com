@@ -1,5 +1,8 @@
 # Changelog
 
+## Child theme 1.23.24 (12 Nov 2026) - TEST SITE ONLY until approved
+- Checkout: Apple Pay, Google Pay and Link now sit in one even row of three equal-width buttons, vertically centred, 12px apart (stacked full width under 480px). Replaces the 1.23.23 auto-fit grid. Styling only: the Stripe buttons, wording, links and Stripe settings are unchanged. File: `assets/css/woocommerce.css`.
+
 ## Child theme 1.23.23 (12 Nov 2026) - TEST SITE ONLY until approved
 - Checkout polish, styling only (no wording, link or Stripe setting change): wider balanced two-column layout with a sticky order summary card; smaller product title in the summary; express pay buttons (Apple Pay, Google Pay, Link) in one even row; each step (Contact, Billing, Payment) as a white card with consistent headings; taller, rounded fields; full-width gold Place order button. File: `assets/css/woocommerce.css`.
 

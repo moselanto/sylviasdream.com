@@ -511,3 +511,17 @@ html.sd-minicart-open .sd-dock { visibility: hidden; }
 .woocommerce-checkout .wc-block-components-checkout-place-order-button { width: 100%; min-height: 56px; border-radius: 999px !important; font-size: 1.05rem; font-weight: 700; }
 .woocommerce-checkout .wc-block-checkout__actions_row { flex-direction: column-reverse; align-items: stretch; gap: 14px; }
 .woocommerce-checkout .wc-block-checkout__actions_row .wc-block-components-checkout-return-to-cart-button { align-self: center; }
+
+/* 1.23.24 (test first): express pay buttons (Apple Pay, Google Pay, Link) in one even row.
+   Live markup: ul.wc-block-components-express-payment__event-buttons > li#express-payment-method-express_checkout_element_* > div > div.StripeElement > div.__PrivateStripeElement > iframe.
+   Replaces the 1.23.23 auto-fit grid (which let the three Stripe frames size and sit unevenly). */
+.woocommerce-checkout .wc-block-components-express-payment__event-buttons { display: flex !important; flex-wrap: nowrap; align-items: center; gap: 12px; margin: 0; padding: 0; list-style: none; grid-template-columns: none; }
+.woocommerce-checkout .wc-block-components-express-payment__event-buttons > li { flex: 1 1 0 !important; min-width: 0 !important; width: auto !important; max-width: none !important; margin: 0 !important; padding: 0 !important; display: flex; align-items: center; }
+.woocommerce-checkout .wc-block-components-express-payment__event-buttons > li > div,
+.woocommerce-checkout .wc-block-components-express-payment__event-buttons .StripeElement,
+.woocommerce-checkout .wc-block-components-express-payment__event-buttons .__PrivateStripeElement { width: 100% !important; min-width: 0 !important; margin: 0 !important; }
+.woocommerce-checkout .wc-block-components-express-payment__event-buttons .__PrivateStripeElement iframe { display: block; width: 100% !important; min-width: 0 !important; vertical-align: middle; }
+@media (max-width: 480px) {
+	.woocommerce-checkout .wc-block-components-express-payment__event-buttons { flex-wrap: wrap; }
+	.woocommerce-checkout .wc-block-components-express-payment__event-buttons > li { flex-basis: 100% !important; }
+}
