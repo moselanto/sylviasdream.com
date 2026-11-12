@@ -1,5 +1,8 @@
 # Changelog
 
+## Child theme 1.23.22 (12 Nov 2026) - TEST SITE ONLY until approved
+- Give page polish, styling only: "Goal" line as a gold pill label; larger headings; "Where your giving goes" items as tiles; progress card centred beside the intro with a thicker bar; the four monthly cards in an even 4-column grid (2 on tablets, 1 on phones) with equal heights. File: `assets/css/about.css`.
+
 ## Child theme 1.23.21 (12 Nov 2026) - TEST SITE ONLY until approved
 - To ensure you end up going to Heaven: the prayer card paragraphs now share one width (no stepped edges) and the book cover is shown whole instead of cropped. File: `assets/css/about.css`.
 

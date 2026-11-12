@@ -328,3 +328,23 @@
 .sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > p:nth-child(n+2):nth-child(-n+9) { width: 100%; max-width: none !important; box-sizing: border-box; justify-self: stretch; }
 .sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > figure.wp-block-image { align-self: start; }
 .sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > figure.wp-block-image img { aspect-ratio: auto !important; height: auto !important; object-fit: contain; }
+
+/* 1.23.22 (test first): Give page polish. Styling only. */
+.sd-p-give .e-con-inner > p:first-child { display: inline-block; margin: 0 0 .75rem; padding: 6px 14px; border-radius: 999px; background: var(--gold-l, #f3e6c8); color: var(--gold-d); font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.sd-p-give .e-con-inner h2 { font-size: clamp(2.2rem, 4vw, 3.1rem); line-height: 1.1; margin: 0 0 1.1rem; color: var(--ink); }
+.sd-p-give .e-con-inner h3 { font-size: clamp(1.4rem, 2.2vw, 1.75rem); line-height: 1.2; margin: 1.75rem 0 .75rem; color: var(--ink); }
+.sd-p-give .e-con-inner ul { padding-left: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem 1.25rem; }
+.sd-p-give .e-con-inner ul li { padding: .75rem 1rem; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.sd-p-give .e-con:has(> .sd-give-card), .sd-p-give .e-con-inner:has(> .sd-give-card) { align-items: center !important; gap: clamp(2rem, 5vw, 4rem) !important; }
+.sd-p-give .sd-give-card { padding: clamp(1.75rem, 3vw, 2.5rem) !important; border-radius: 22px !important; background: #fff; border: 1px solid var(--line); box-shadow: 0 18px 40px rgba(60, 40, 10, .10); }
+.sd-p-give .sd-progress__bar { height: 14px; border-radius: 999px; overflow: hidden; }
+.sd-p-give .sd-progress__label { margin-top: .9rem; text-align: center; font-weight: 700; font-size: 1.05rem; color: var(--ink); }
+.sd-p-give .e-con:has(> .e-con .elementor-widget-button):not(:has(.sd-give-card)) { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem) !important; align-items: stretch !important; }
+.sd-p-give .e-con:has(> .e-con .elementor-widget-button):not(:has(.sd-give-card)) > .e-con { width: auto !important; max-width: none !important; margin: 0 !important; }
+.sd-p-give .e-con:has(.elementor-widget-button):not(:has(.e-con)) h3 { margin-top: 0; padding-bottom: .75rem; border-bottom: 1px solid var(--line); }
+.sd-p-give .elementor-widget-text-editor:has(h3):not(:has(p ~ p ~ p)) h3, .sd-p-give .elementor-widget-text-editor:has(> .elementor-widget-container > h3:only-of-type) { text-align: center; }
+@media (max-width: 1024px) { .sd-p-give .e-con:has(> .e-con .elementor-widget-button):not(:has(.sd-give-card)) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+	.sd-p-give .e-con:has(> .e-con .elementor-widget-button):not(:has(.sd-give-card)) { grid-template-columns: 1fr; }
+	.sd-p-give .e-con-inner ul { grid-template-columns: 1fr; }
+}
