@@ -276,3 +276,55 @@
 .sd-p-contact .entry-content .wp-block-columns > .wp-block-column { min-width: 0; overflow-wrap: break-word; }
 .sd-p-contact .entry-content .wp-block-columns:has(.jetpack-contact-form-container) { align-items: flex-start !important; }
 .sd-p-contact .entry-content .jetpack-contact-form-container textarea { flex-grow: 0 !important; height: auto; min-height: 150px; }
+
+/* ==========================================================================
+   1.23.20: design pass (test site first, approval before live).
+   Styling only: no wording, link, Stripe, Dream Partner or GoFundMe change.
+   ========================================================================== */
+
+/* --- To ensure you end up going to Heaven -------------------------------- */
+.sd-p-to-ensure-you-end-up-going-to-heaven .sd-pagehead__title { text-transform: lowercase; letter-spacing: 0; font-size: clamp(2.1rem, 4.4vw, 3.4rem); max-width: 18ch; }
+.sd-p-to-ensure-you-end-up-going-to-heaven .sd-pagehead__title::first-letter { text-transform: uppercase; }
+.sd-p-to-ensure-you-end-up-going-to-heaven .sd-page-body .entry-content { max-width: 760px; margin-inline: auto; display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(1rem, 3vw, 2rem); }
+.sd-p-to-ensure-you-end-up-going-to-heaven .sd-page-body .entry-content > * { grid-column: 1 / -1; margin-inline: 0; max-width: none; }
+.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > p:first-child { text-align: center; font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(1.7rem, 3vw, 2.2rem) !important; line-height: 1.2; color: var(--ink); margin: 0 0 1.75rem; }
+.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > p:nth-child(n+2):nth-child(-n+9) { margin: 0; padding: 0 clamp(1.25rem, 4vw, 2.75rem) 1em; background: #fff; border-inline: 1px solid var(--line); font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(1.15rem, 1.6vw, 1.3rem); line-height: 1.75; color: var(--ink-2, #3b3226); }
+.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > p:nth-child(2) { padding-top: clamp(1.75rem, 4vw, 2.5rem); border-top: 1px solid var(--line); border-radius: 22px 22px 0 0; box-shadow: inset 0 4px 0 var(--gold, #b8862b); }
+.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > p:nth-child(9) { padding-bottom: clamp(1.75rem, 4vw, 2.5rem); border-bottom: 1px solid var(--line); border-radius: 0 0 22px 22px; font-style: italic; font-weight: 600; box-shadow: 0 18px 40px rgba(60, 40, 10, .08); }
+.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > p:nth-child(10) { text-align: center; margin: clamp(2.5rem, 6vw, 3.75rem) 0 .5rem; font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(1.6rem, 2.8vw, 2rem); line-height: 1.25; color: var(--ink); }
+.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > p:nth-child(11) { text-align: center; font-size: 1.12rem !important; line-height: 1.7; max-width: 60ch; margin: 0 auto 1.5rem; }
+.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > .wp-block-buttons { justify-content: center; margin: .5rem 0 2rem; }
+.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > figure.wp-block-image { grid-column: auto; order: 1; margin: 0 0 1.5rem; }
+.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > .wp-block-buttons ~ .wp-block-buttons { order: 2; }
+.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > figure.wp-block-image img { width: 100% !important; height: 100% !important; aspect-ratio: 3 / 4 !important; object-fit: cover; border-radius: 18px; box-shadow: 0 18px 40px rgba(60, 40, 10, .12); }
+@media (max-width: 640px) {
+	.sd-p-to-ensure-you-end-up-going-to-heaven .sd-page-body .entry-content { grid-template-columns: 1fr; }
+	.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > figure.wp-block-image img { aspect-ratio: auto !important; height: auto !important; }
+}
+
+/* --- Heaven on Earth ------------------------------------------------------ */
+.sd-p-heaven-on-earth .sd-band { padding-block: clamp(3rem, 6vw, 5rem) !important; }
+.sd-p-heaven-on-earth .sd-band__inner > .wp-block-heading, .sd-p-heaven-on-earth .sd-band__inner > .sd-lead { max-width: 48rem; }
+.sd-p-heaven-on-earth .sd-band__inner > .has-text-align-center { margin-inline: auto; }
+.sd-p-heaven-on-earth .wp-block-jetpack-slideshow { max-width: 1000px; margin: 2rem auto 0; border-radius: 18px; overflow: hidden; box-shadow: 0 18px 40px rgba(60, 40, 10, .12); }
+.sd-p-heaven-on-earth .wp-block-jetpack-slideshow_image { max-height: 560px; width: 100%; object-fit: cover; }
+.sd-p-heaven-on-earth .wp-block-gallery { gap: 12px !important; }
+.sd-p-heaven-on-earth .wp-block-gallery .wp-block-image img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; }
+.sd-p-heaven-on-earth .wp-block-columns { gap: clamp(1.5rem, 4vw, 3rem) !important; }
+.sd-p-heaven-on-earth .sd-card { border-radius: 18px; box-shadow: 0 12px 30px rgba(60, 40, 10, .07); }
+.sd-p-heaven-on-earth .sd-faq { max-width: 820px; margin-inline: auto; }
+
+/* --- Give ---------------------------------------------------------------- */
+.sd-p-give .e-con:has(.elementor-widget-button):not(:has(.e-con)) { display: flex !important; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: clamp(1.25rem, 2.5vw, 1.75rem) !important; box-shadow: 0 12px 30px rgba(60, 40, 10, .07); }
+.sd-p-give .e-con:has(.elementor-widget-button):not(:has(.e-con)) h3 { font-size: 1.6rem; color: var(--gold-d); margin: 0 0 .75rem; }
+.sd-p-give .e-con:has(.elementor-widget-button):not(:has(.e-con)) p { font-size: .98rem; line-height: 1.6; margin: 0 0 .6rem; }
+.sd-p-give .e-con:has(.elementor-widget-button):not(:has(.e-con)) .elementor-widget-button { margin-top: auto !important; padding-top: 1rem; }
+.sd-p-give .elementor-button { display: flex !important; width: 100%; justify-content: center; min-height: 50px; align-items: center; padding: 12px 22px !important; border-radius: 999px !important; background: var(--gold-d) !important; color: #fff !important; font-weight: 700; font-size: 1rem !important; }
+.sd-p-give .elementor-button:hover { background: var(--ink, #2b2116) !important; }
+.sd-p-give p > a[href*="buy.stripe.com"]:only-child, .sd-p-give p > a[href*="gofund.me"]:only-child { display: inline-flex; align-items: center; min-height: 48px; padding: 10px 24px; border-radius: 999px; border: 2px solid var(--gold-d); color: var(--gold-d); font-weight: 700; text-decoration: none; }
+.sd-p-give p > a[href*="buy.stripe.com"]:only-child:hover, .sd-p-give p > a[href*="gofund.me"]:only-child:hover { background: var(--gold-d); color: #fff; }
+
+/* 1.23.21: prayer card paragraphs share one width; book cover no longer cropped. */
+.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > p:nth-child(n+2):nth-child(-n+9) { width: 100%; max-width: none !important; box-sizing: border-box; justify-self: stretch; }
+.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > figure.wp-block-image { align-self: start; }
+.sd-p-to-ensure-you-end-up-going-to-heaven .entry-content > figure.wp-block-image img { aspect-ratio: auto !important; height: auto !important; object-fit: contain; }

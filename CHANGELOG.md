@@ -1,5 +1,15 @@
 # Changelog
 
+## Child theme 1.23.21 (12 Nov 2026) - TEST SITE ONLY until approved
+- To ensure you end up going to Heaven: the prayer card paragraphs now share one width (no stepped edges) and the book cover is shown whole instead of cropped. File: `assets/css/about.css`.
+
+## Child theme 1.23.20 (12 Nov 2026) - TEST SITE ONLY until approved
+- Design pass, styling only (no wording, link, Stripe, Dream Partner or GoFundMe change), scoped to three pages by body class:
+  - To ensure you end up going to Heaven: title in sentence case at a calmer size; text limited to 760px and centred; the prayer set as one white card with a gold top line in serif; "Did you pray this prayer?" as a centred heading; buttons centred; the book and portrait images side by side (stacked on phones) with the download button below.
+  - Heaven on Earth: equal section spacing, slideshows capped at 1000px wide / 560px tall with rounded corners, tidy gallery tiles, wider column gaps, softer cards, FAQ narrowed.
+  - Give: monthly cards as equal white cards with the button at the bottom; all Give buttons full-width gold pills; the text Stripe and Go Fund Me links shown as outline pill buttons (same addresses).
+- File: `assets/css/about.css` (appended; file checked by line count before building).
+
 ## Child theme 1.23.19 (12 Nov 2026) - urgent fix
 - **1.23.18 shipped an `assets/css/about.css` that contained only the new Contact rules**: a build-script error overwrote the file instead of adding to it, so every inner page that uses this stylesheet (Contact, Give, Heaven on Earth, My Story, About, book and resource pages) lost its page styling on test and live from about 22:30 to the 1.23.19 install. 1.23.19 restores the full file (1.23.17 content) plus the 1.23.18 Contact column rules. No other change.
 - Lesson: file edits for a release are checked with a line-count diff before building (`git diff --stat` / wc -l).
