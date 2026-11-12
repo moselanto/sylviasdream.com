@@ -2,6 +2,15 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (13:00-13:45): child 1.23.15 live, Heaven on Earth fixed, book pages prepared
+- Child **1.23.15** (Option A) installed on test, then live (Replace current). Signed out: Guard Your Heart Renew Your Mind (6393) and When the Word Becomes Life (6451) show Add to cart beside the unchanged Buy ebook; All Shall Be Well (no file) shows Buy ebook only. Guest checkout reached with When the Word Becomes Life (A$7.16): Stripe card fields shown, live mode. Cart emptied, no order placed.
+- SENT product on live already free (blank price, Free download sent-ebook-final.pdf); nothing changed. Old /sent/ page paid Stripe button unchanged.
+- Heaven on Earth 1932 now references live synced patterns **6939** (six-photo slider, was 6636) and **6937** (updates form, was 6639); 6924 unchanged. Signed out: slider advances, form shows. Elementor data backup saved in the Town session before the change.
+- Verified signed out: Home Meet Sylvia uses sylvia-suhr-portrait-1.jpg; From Chance to Choice cover shows in shop and on its product page.
+- **Still open:** the `gofundme.com/static/js/embed.js` text link still renders on Heaven on Earth although the anchor was removed from saved content (WordPress.com turns the page's script tag into a link). Needs a render-side fix (theme filter stripping that script/link; the theme already loads the GoFundMe script).
+- Book pages One Life, From Fear to Freedom, SENT prepared from `content/live/` with every `#KEEP-LIVE` button filled from the same live page (same link and label); One Life keeps its From Chance to Choice Stripe button. Files in the Town library `Sylvias Dream/launch-templates/book-pages-prepared-12-Nov` (not in Git: payment links). Review document for Moses; nothing published.
+- Caches cleared after the changes.
+
 ## Thursday 12 November 2026 (12:30-13:15): call with Sylvia - Stripe connected, cart live, price answers
 - Before the call: Stripe add-on installed on live by Lightsof (WooCommerce > Settings > Payments). Sylvia then connected her own existing Stripe account herself; checked: Stripe enabled, test mode off. No Stripe setting edited by Pimofy.
 - Published Cart 6437 and Checkout 6438. Attached the protected ebook files through WooCommerce's protected upload (`woocommerce_uploads/2026/11/`): Guard Your Heart Renew Your Mind (6393, A$7.10) and When the Word Becomes Life (6451, A$7.16). WordPress.com caches cleared.

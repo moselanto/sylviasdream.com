@@ -1,5 +1,14 @@
 # Open items (updated 12 November 2026)
 
+## 12 Nov 13:45: after 1.23.15
+
+- [x] Child 1.23.15 on test and live; Add to cart beside Buy ebook on books with a file; checkout shows Stripe (live mode)
+- [x] Heaven on Earth slider (6939) and updates form (6937) restored; Home portrait and From Chance to Choice cover verified
+- [ ] Heaven on Earth: stray GoFundMe embed.js text link still renders. Theme fix (child 1.23.16): strip that script/link in the rendered kept section; GoFundMe widget and buttons stay
+- [ ] Book pages One Life / From Fear to Freedom / SENT: Moses to approve the prepared versions (Kobo link, reviews section, SENT paid button option A/B, labels), then paste on live and click-test every Stripe button
+- [ ] Real cart purchase by Sylvia (Add to cart route) and refund
+- [ ] Compare remaining live pages and every product page against test (not yet done)
+
 ## 12 Nov: call with Sylvia (Stripe, prices)
 
 - [x] Stripe connected by Sylvia (enabled, test mode off); Cart 6437 and Checkout 6438 published; protected files attached to 6393 and 6451
