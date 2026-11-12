@@ -2,6 +2,10 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (00:15-00:25): child 1.23.25 (book page polish) approved and live
+- **1.23.25 installed on live** (from 1.23.24); caches cleared. Signed out, before vs after: One Life (A$12.99) and Guard Your Heart (A$8.42) wording and prices unchanged; Stripe ...g401 and ...g40d, Amazon AU paperback and Kindle links unchanged; related-book suggestions vary per load. No content, price or Stripe change.
+- Next on test: 1.23.26 (full-width descriptions on every book page, phone bottom bar polish) and rearranged One Life / Guard Your Heart descriptions (existing wording only; One Life reader quotes removed per Nuracrown).
+
 ## Friday 13 November 2026 (00:00-00:10): child 1.23.24 (express pay row) approved and live
 - Live markup read first (read only): ul.wc-block-components-express-payment__event-buttons > three li#express-payment-method-express_checkout_element_{applePay,googlePay,link} > div > div.StripeElement > div.__PrivateStripeElement > iframe. 1.23.24 replaces the 1.23.23 auto-fit grid with one flex row of three equal-width items (stacked under 480px). Installed on test (no express buttons there), approved by Nuracrown.
 - **1.23.24 installed on live** (from 1.23.23); object and edge caches cleared. Signed out with one A$7.10 eBook, before vs after: wording and main-content links identical; total A$7.10; Stripe card fields present; Live mode; Apple Pay, Google Pay and Link present; Place order never clicked; no order; cart emptied. No WooCommerce or Stripe setting opened.
