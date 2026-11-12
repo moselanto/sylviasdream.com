@@ -1,5 +1,9 @@
 # Changelog
 
+## Child theme 1.23.18 (12 Nov 2026)
+- Contact page on live: opening "I did not receive my download link" (or any question) widened the left column and squeezed the form, making the Send message button smaller. WordPress.com does not load the core Columns stylesheet for this Elementor kept section, so the columns sized to their content. The Contact columns now use equal fixed widths like core (stacked under 782px), and the form column aligns to the top. 1.23.17's form-column rule targeted `.wp-block-jetpack-contact-form`, but live renders `.jetpack-contact-form-container`; both are now covered.
+- File: `assets/css/about.css`. CSS only, Contact page only; no wording or form change.
+
 ## Child theme 1.23.17 (12 Nov 2026)
 - Contact page on live: the Instagram and Facebook icons showed as a small bulleted list without their round white frames. The page's saved Social Icons block renders inside an Elementor kept section, where WordPress.com does not load the core Social Icons stylesheet. The theme now styles them fully (no bullet, round white frame, gold icon, gold on hover), matching the test site.
 - Contact page: opening a question (+) made the message box on the right taller, because the form column stretched to the height of the left column. The columns holding the contact form now align to the top and the message box keeps its own height.
