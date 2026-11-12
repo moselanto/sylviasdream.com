@@ -1,5 +1,10 @@
 # Changelog
 
+## Child theme 1.23.16 (12 Nov 2026)
+- Fix: Heaven on Earth on live showed a stray text link to `https://www.gofundme.com/static/js/embed.js` under the GoFundMe widget. WordPress.com does not keep the page's `<script>` tag and showed its address instead; removing the link from saved content did not help because the section regenerates it. The rendered page now drops only that script address (as a link, a bare address or a leftover script tag) in `the_content`, `render_block`, Elementor output and "Section from your page" (`sdc_render_block_markup`). The theme still loads the GoFundMe script itself, so the widget works.
+- Not touched: the GoFundMe widget (`div.gfm-embed`), donation buttons (gofund.me / gofundme.com/f/ links), Dream Partner link, Stripe links. Saved content unchanged. Filter `sdc_strip_gofundme_script_link` (return false) switches it off.
+- Files: new `inc/gofundme-script-link.php`, `functions.php`, `inc/elementor/sections.php`.
+
 ## Child theme 1.23.15 (12 Nov 2026)
 - Shop (decision 12 Nov, Option A): a book with a protected download file attached now shows **Add to cart** beside Sylvia's existing **Buy ebook** button. Before, any book with a Stripe buy link (`_sdc_buy_link`) was made not purchasable, so the cart could not be used on live after Sylvia connected Stripe. `sdc_buy_link_not_purchasable()` now keeps the book purchasable when `is_downloadable()` and `has_file()`. Books without a file are unchanged (Buy ebook only). The Buy ebook button and its link are unchanged.
 - File: `inc/woocommerce.php`. No wording, price or Stripe change.

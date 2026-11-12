@@ -921,6 +921,10 @@ function sdc_render_block_markup( $markup ) {
 	if ( false !== strpos( $html, 'gfm-embed' ) && preg_match( '#class="gfm-embed"[^>]*data-url="https://www\.gofundme\.com/#', $html ) && function_exists( 'sdc_enqueue_gofundme' ) ) {
 		sdc_enqueue_gofundme();
 	}
+	// 1.23.16: drop the GoFundMe script address WordPress.com shows as a text link.
+	if ( function_exists( 'sdc_strip_gofundme_script_link' ) ) {
+		$html = sdc_strip_gofundme_script_link( $html );
+	}
 	return $html;
 }
 
