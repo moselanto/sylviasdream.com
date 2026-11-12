@@ -2,6 +2,11 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (23:45-23:55): child 1.23.23 (checkout polish) approved and live
+- 1.23.23 installed on test first (test checkout shows only "Test payment", no express buttons; Town withholds checkout screenshots, so Nuracrown reviewed the test checkout himself and approved).
+- **1.23.23 installed on live** (from 1.23.22); object and edge caches cleared. Signed out with one eBook (Guard Your Heart Renew Your Mind) in the cart, before vs after: wording and main-content links identical; total A$7.10; Stripe card fields present, "Live mode", Stripe amount US$5.01 with A$7.10 in its currency selector (unchanged, not touched); Apple Pay, Google Pay and Link present (3 express frames before and after). No settings opened, no payment details entered, no button clicked, no order placed; cart emptied.
+- Not verified: whether the express pay buttons sit in one even row (no screenshots allowed on checkout); Nuracrown to check by eye.
+
 ## Thursday 12 November 2026 (23:40): child 1.23.22 (Give polish) approved and live
 - Nuracrown checked the test Give page (four monthly cards in one even row) and approved. **1.23.22 installed on live** (from 1.23.21); caches cleared. Signed out on /give/: wording identical; main-content links unchanged; Dream Partner and A$5/15/30/50 Stripe links and Go Fund Me https://gofund.me/e6fffb40c unchanged; four cards in one even desktop row with aligned buttons. No payment pages opened.
 - Checkout polish started as 1.23.23 on the test site only (waiting for approval).

@@ -4,7 +4,9 @@
 
 - [x] Child 1.23.19 restores about.css (1.23.18 regression); Contact form/Send button and social icons verified
 - [x] Design pass for To ensure you end up going to Heaven, Heaven on Earth and Give: 1.23.21 approved and live 12 Nov 23:15
-- [ ] Give page further polish (1.23.22) on test, screenshots for approval
+- [x] Give polish 1.23.22 live (12 Nov 23:40)
+- [x] Checkout polish 1.23.23 live (12 Nov 23:50)
+- [ ] Check by eye on live checkout that Apple Pay / Google Pay / Link sit in one even row
 - [ ] Kenya manual PDF: still waiting for the file
 
 ## 12 Nov 22:20
