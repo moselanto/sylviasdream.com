@@ -1,5 +1,8 @@
 # Changelog
 
+## Child theme 1.23.28 (13 Nov 2026) - TEST SITE ONLY until approved
+- Shop page: the book grid follows the search box and topic list directly, as on the test site; the "Explore Sylvia's Books" showcase card (text, link, QR code) moves below the books. Styling only. File: `assets/css/woocommerce.css`.
+
 ## Child theme 1.23.27 (13 Nov 2026) - TEST SITE ONLY until approved
 - Shop page (/shop-for-books/): the Shop page's saved content (old copy of the header photo, title, search box and topic chips) was shown as the shop description above the books, so they appeared twice with a large photo before the grid. Those duplicates are hidden; the "Explore Sylvia's Books" showcase text, link and QR code stay as a compact card. Styling only, page content unchanged. File: `assets/css/woocommerce.css`.
 

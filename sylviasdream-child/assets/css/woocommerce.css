@@ -567,3 +567,13 @@ html.sd-minicart-open .sd-dock { visibility: hidden; }
 .woocommerce-shop .page-description > figure { grid-column: 2; grid-row: 1 / span 4; text-align: center; font-size: .8rem; }
 .woocommerce-shop .page-description > figure img { width: 120px !important; }
 @media (max-width: 640px) { .woocommerce-shop .page-description { grid-template-columns: 1fr; } .woocommerce-shop .page-description > figure { grid-column: 1; grid-row: auto; } }
+
+/* 1.23.28 (test first): Shop page order like the test site. The book grid now comes straight
+   after the search box and topics; the "Explore Sylvia's Books" showcase card moves below the
+   books (and their page numbers). Styling only. */
+.woocommerce-shop .sd-section--shop { display: flex; flex-direction: column; }
+.woocommerce-shop .sd-section--shop > .page-description { order: 20; margin: clamp(2rem, 5vw, 3rem) 0 0; }
+.woocommerce-shop .sd-section--shop > .woocommerce-result-count { align-self: flex-start; margin: 0 0 1rem; }
+.woocommerce-shop .sd-section--shop > .woocommerce-ordering { align-self: flex-end; margin: -2.75rem 0 1rem; }
+.woocommerce-shop .sd-section--shop > ul.products { width: 100%; }
+@media (max-width: 640px) { .woocommerce-shop .sd-section--shop > .woocommerce-ordering { align-self: stretch; margin-top: 0; } }

@@ -2,6 +2,13 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (01:00-02:00): shop page fixed (1.23.27, 1.23.28), descriptions 12 of 22 on test
+- Shop page cause: page 3001's saved content (old copy of header photo, title, search, topic chips, plus the "Explore Sylvia's Books" showcase with QR) is printed by WooCommerce as the shop description above the books, so header/search/topics showed twice with a large photo.
+- **1.23.27** (hide the duplicated header/search/topics; showcase as a card) approved by Nuracrown and installed on live; signed out: one header, one search, one topic list; book grid, prices, links unchanged.
+- **1.23.28** (book grid directly under search/topics like the test site; showcase card moved below the books and page numbers) installed on test then live at Nuracrown's request ("need to look better like this"); caches cleared; signed out: wording, links, prices and covers unchanged; sort control tidy. No page content edited.
+- Book descriptions on TEST (existing wording only): 9 rearranged (7 Days from Fear to Freedom, 7 Days to Trusting God, All Shall Be Well, Angelique Finds Her Light, From Chance to Choice, From Fear to Freedom, Guard Your Heart Renew Your Mind, How to Find the Real You, How to Write and Publish), 3 left as is (Angelique: A Journey of Becoming, Fast Forward to Success, Fields of Becoming). Original descriptions backed up in the Town session report. 10 still to do.
+- Close-out brief for Sylvia (Word, fill-in boxes) and a WhatsApp cover message prepared; to be sent only with Moses's OK.
+
 ## Friday 13 November 2026 (00:35-00:55): child 1.23.26 live, two descriptions live, SENT paid button removed
 - Nuracrown checked the phone bottom menu on test and approved **1.23.26** (full-width book descriptions on every book page, phone menu polish). Installed on live (from 1.23.25); caches cleared. One Life, Guard Your Heart and From Fear to Freedom checked signed out: wording, prices (A$12.99, A$8.42, A$4.50), Stripe and Amazon/Kindle links unchanged.
 - One Life (6447) and Guard Your Heart (6452) descriptions on live replaced with the rearranged test versions (existing wording only; One Life reader quotes removed; Guard Your Heart repeated title/subtitle/byline removed; Also by links to the live product pages). Original descriptions backed up in the Town session report. Prices, Stripe and Amazon/Kindle links unchanged.
