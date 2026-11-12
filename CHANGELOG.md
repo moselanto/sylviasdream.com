@@ -1,5 +1,8 @@
 # Changelog
 
+## Child theme 1.23.27 (13 Nov 2026) - TEST SITE ONLY until approved
+- Shop page (/shop-for-books/): the Shop page's saved content (old copy of the header photo, title, search box and topic chips) was shown as the shop description above the books, so they appeared twice with a large photo before the grid. Those duplicates are hidden; the "Explore Sylvia's Books" showcase text, link and QR code stay as a compact card. Styling only, page content unchanged. File: `assets/css/woocommerce.css`.
+
 ## Child theme 1.23.26 (13 Nov 2026) - TEST SITE ONLY until approved
 - Book pages: "About this book" card and Reviews now use the full page width on every book page; list points in two columns on desktop. File: `assets/css/woocommerce.css`.
 - Phone bottom bar: white bar with a fine top line and soft shadow; the stray dark line above the current item removed; current page shown as a gold pill behind its icon; four evenly spaced items with equal icon size; Give as a raised round gold button with a white ring. File: `style.css`.

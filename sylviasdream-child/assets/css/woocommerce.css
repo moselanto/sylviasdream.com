@@ -551,3 +551,19 @@ html.sd-minicart-open .sd-dock { visibility: hidden; }
 	.single-product .sd-product-description .sd-prose ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem 1rem; }
 	.single-product .sd-product-description .sd-prose ul li { margin: 0; }
 }
+
+/* 1.23.27 (test first): Shop page. The Shop page's own saved content (an old copy of the
+   page header, search box and topic chips) shows as the shop description above the books,
+   so the photo, title, search and chips appeared twice. Hide only those duplicates; the
+   "Explore Sylvia's Books" showcase text, link and QR code stay, as a tidy card. */
+.woocommerce-shop .page-description > header,
+.woocommerce-shop .page-description > form,
+.woocommerce-shop .page-description > nav,
+.woocommerce-shop .page-description > br { display: none !important; }
+.woocommerce-shop .page-description > p:empty { display: none; }
+.woocommerce-shop .page-description { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .25rem 2rem; margin: 0 0 2rem; padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 3vw, 2rem); background: #fff; border: 1px solid var(--line); border-radius: 18px; }
+.woocommerce-shop .page-description > * { grid-column: 1; margin: 0; }
+.woocommerce-shop .page-description > h2 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
+.woocommerce-shop .page-description > figure { grid-column: 2; grid-row: 1 / span 4; text-align: center; font-size: .8rem; }
+.woocommerce-shop .page-description > figure img { width: 120px !important; }
+@media (max-width: 640px) { .woocommerce-shop .page-description { grid-template-columns: 1fr; } .woocommerce-shop .page-description > figure { grid-column: 1; grid-row: auto; } }
