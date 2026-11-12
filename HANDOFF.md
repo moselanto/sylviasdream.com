@@ -12,7 +12,7 @@ Rewritten Thursday 12 November 2026. Sections 0 and 3 are the current state. Det
 - Test site (topnotchmall.co.ke/sylviasdream/, password-gated) stays as the reference build (child 1.23.10 there).
 
 ### What is remaining (in order)
-1. Child **1.23.14** (video fix) is installed on test and live (12 Nov 11:40). Live vs test audit done: fix the differences listed in OPEN-ITEMS 12 Nov (Heaven on Earth patterns 6636/6639 and GoFundMe link, From Chance to Choice image, Home images, old book pages, Invite image). Logo, site icon, footer, mega menu, hero covers, phone Subscribe button and the Heaven on Earth slider are done (PROGRESS-LOG 12 Nov 06:00-10:45).
+1. Child **1.23.16** is installed on test and live (12 Nov 17:30); 1.23.15 added Add to cart beside Buy ebook, 1.23.16 removed the stray GoFundMe script link on Heaven on Earth. Live vs test audit finished 12 Nov 18:20: open fixes (Journal Posts page, WooCommerce Shop page, Manifesting Miracles Now cover, Grace for the Journey layout, alt text) are in OPEN-ITEMS and need approval. Book pages One Life / From Fear to Freedom / SENT are prepared and wait for Moses's choices.
 2. Call with Sylvia: she connects her own Stripe for the cart; publish Cart/Checkout; attach the 2 protected ebooks; one real purchase she refunds.
 3. Confirm prices with Sylvia (All Shall Be Well, SENT free vs paid, "Freedom From Fear" name) - never edit Stripe.
 4. Real-phone checks; footer contact vs newsletter decision.
@@ -50,7 +50,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | Dev / test site | `https://topnotchmall.co.ke/sylviasdream/` (admin `/sylviasdream/wp-admin/`), password-gated, noindex. Users: `moses` (Administrator, 2FA off, password must change), `sylvia` (Editor). cPanel: topnotchmall.co.ke:2083 (Lightsof signs in). |
 | Live site | sylviasdream.com on WordPress.com Personal, Twenty Twenty theme still active. **Phase B (12 Nov):** core 0.4.6 active (switches off), themes uploaded not active, Elementor 4.4.0 and Redux 4.5.18 active, 9 missing media uploaded, empty Drafts Home 6404 (slug welcome), Give 6406, Invite 6408, 9 launch templates in Saved Templates; WooCommerce 11.3.0 installed but **inactive** (exposed /shop/); products not imported (CSV blocked, use XML at launch). No visible change. Sylvia published "Meet Jesus" there 10 Nov. Domain paid to 25 Nov 2027. |
 | Migration | Only after item 25 (written go-ahead). `docs/MIGRATION-PLAN.md` (4b for Elementor pages). |
-| Child theme | **1.23.15** in the repo and library, installed on test and live (12 Nov 13:00): Add to cart beside Buy ebook when a file is attached. 1.23.9 is broken, never install. |
+| Child theme | **1.23.16** in the repo and library, installed on test and live (12 Nov 17:30). 1.23.15 added Add to cart beside Buy ebook; 1.23.16 removes the stray GoFundMe script link. 1.23.9 is broken, never install. |
 | Core plugin | **0.4.6** in the repo, on the test site (switches on) and active on live (switches off), 12 Nov. Never use 0.4.5 on live. |
 | Other plugins (test) | WooCommerce, Elementor 4.3.5 (free), Redux 4.5.16, Rank Math, Jetpack, Password Protected (test only). |
 | Server (test) | PHP 8.2, memory 512M, WP_MEMORY_LIMIT 256M, OPcache off (ask host), no page cache. |

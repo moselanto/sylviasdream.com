@@ -1,5 +1,16 @@
 # Open items (updated 12 November 2026)
 
+## 12 Nov 18:20: after 1.23.16 and the live vs test audit
+
+- [x] Heaven on Earth stray GoFundMe embed.js link gone (child 1.23.16, live and test)
+- [x] Live vs test audit of remaining pages and all products (read only)
+- [ ] Journal: publish on live and set as Posts page (fixes /journal/ 404 and /sent-3/) - approval needed
+- [ ] WooCommerce Shop page: point to 3001 /shop-for-books/ or publish dedicated Shop - approval needed
+- [ ] Manifesting Miracles Now (6463) cover: confirm artwork with Sylvia, then assign
+- [ ] Grace for the Journey (5593): migrate the new layout - approval needed
+- [ ] Alt text tidy (Home portrait, speaking image, My Story Kenya photos)
+- [ ] Book pages One Life / From Fear to Freedom / SENT: waiting for Moses's actual choices (Kobo, reviews, SENT A/B, labels)
+
 ## 12 Nov 13:45: after 1.23.15
 
 - [x] Child 1.23.15 on test and live; Add to cart beside Buy ebook on books with a file; checkout shows Stripe (live mode)

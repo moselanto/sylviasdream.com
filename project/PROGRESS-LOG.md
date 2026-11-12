@@ -2,6 +2,18 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (17:00-18:20): child 1.23.16 live, live vs test audit finished
+- Child **1.23.16** installed on test, then live (1.23.15 -> 1.23.16); WordPress.com object and edge caches cleared. Signed out on live Heaven on Earth: no embed.js text or link; GoFundMe widget loads with its fundraiser and Donate now; Go Fund Me button still https://gofund.me/e6fffb40c; Dream Partner Stripe link unchanged; monthly giving still /give/; contact form and sliders present. No page content, payment settings or donation links edited.
+- Read-only audit, 66 live pages vs 62 test, 24 live products vs 23 test. Nothing on live changed. Findings (fixes need approval):
+  - High: /journal/ is 404 on live; live Posts page is 4717 "Free Resource for Mission Training", so /sent-3/ shows the post archive instead of its own content. Fix: publish Journal and set it as Posts page (no post republished).
+  - High: WooCommerce Shop page is draft 6436, so Cart "Return to shop" goes to ?page_id=6436 (redirected to a product). Fix: set Shop to 3001 (/shop-for-books/) or publish the dedicated Shop page.
+  - Medium: Manifesting Miracles Now (product 6463) has no product image. Test legacy page uses 2022/06/c4a11af3-5284-42ad-aa0e-b792a08ff6ea.png; assign it if Sylvia confirms it is the cover. Keep Coming soon.
+  - Medium: Grace for the Journey (5593) on live keeps the old static layout; test has cards and newsletter section. Needs the page migrated, not just images.
+  - Low: stale or empty alt text (Home portrait says open Bible and journal; speaking image; My Story Kenya photos).
+  - Earlier export image warnings (author-support, invite-sylvia-to-speak, my-story, Home) are resolved: live images load under *-1 filenames.
+  - All 23 shared products have matching covers. Only synced blocks used on live: 6924, 6937, 6939, all published.
+  - All Shall Be Well slugs differ between sites (sales 4216, thank-you 3431): never copy by slug or change Stripe thank-you destinations.
+
 ## Thursday 12 November 2026 (13:00-13:45): child 1.23.15 live, Heaven on Earth fixed, book pages prepared
 - Child **1.23.15** (Option A) installed on test, then live (Replace current). Signed out: Guard Your Heart Renew Your Mind (6393) and When the Word Becomes Life (6451) show Add to cart beside the unchanged Buy ebook; All Shall Be Well (no file) shows Buy ebook only. Guest checkout reached with When the Word Becomes Life (A$7.16): Stripe card fields shown, live mode. Cart emptied, no order placed.
 - SENT product on live already free (blank price, Free download sent-ebook-final.pdf); nothing changed. Old /sent/ page paid Stripe button unchanged.
