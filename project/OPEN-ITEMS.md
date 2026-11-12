@@ -1,12 +1,15 @@
 # Open items (updated 12 November 2026)
 
-## 12 Nov: LAUNCH IN PROGRESS (started 03:30 EAT)
+## 12 Nov: NEW SITE LIVE (launched 03:40-04:50 EAT) - what is left
 
-- [x] Part 1: fresh backup, child 1.23.11 on live (inactive), WooCommerce active (pages Draft)
-- [ ] **Products import by hand** (agent upload tool blocks XML): Tools > Import > WordPress with `Products live draft 12 Nov 2026.xml`, attachments ticked; check 24 products, all Draft
-- [ ] Part 2: activate child 1.23.11; insert templates into Home 6404, Give 6406 (remove "Private preview" note), Invite 6408 and the 6 existing Elementor pages; publish; front page = 6404; publish products; menus
-- [ ] Part 3: Redirects ON, Going to Heaven link to Meet Jesus post, cache clear, QA and click-test every Stripe / Dream Partner / GoFundMe button (no payment)
-- [ ] With Sylvia on the call: she connects her own Stripe for the cart, cart pages published, one real purchase she refunds
+- [x] Theme 1.23.11 active, 9 Elementor pages, products published, menus, Customizer, theme options, WooCommerce settings, policy pages, redirects, Meet Jesus button, My account (PROGRESS-LOG 12 Nov 03:40-04:50)
+- [ ] **Logo and site icon:** upload `SDM_Header_Logo_960w_ForLightBG.png` and `cropped-android-chrome-512x512-1.png` (test site uploads 2026/10) to live and set them in Customize > Site Identity. Live still shows the old cropped logo
+- [ ] **Sylvia on the call:** she connects her own Stripe (WooCommerce Stripe Payment Gateway, she signs in herself), then publish Cart 6437 and Checkout 6438, attach the 2 protected ebook files (When the Word Becomes Life, Guard Your Heart Renew Your Mind 6x9) to their products, one real purchase she refunds
+- [ ] **Prices to confirm with Sylvia:** All Shall Be Well site A$7.56 vs Stripe $5.99; SENT listed Free in the catalogue but its old page has a paid A$5.99 Stripe button; From Fear to Freedom Stripe product is named "Freedom From Fear". Do not change Stripe
+- [ ] Phone checks on a real phone (iPhone and Android): header, mega menu, bottom bar, Give, book page
+- [ ] Footer: test footer shows a "Contact Sylvia" link under the newsletter line, live shows a newsletter form: decide which
+- [ ] Manifesting Miracles Now product has no cover (placeholder), same as test
+- [ ] Past buyers' new download links (item 24) after Stripe/cart is connected
 
 ## 12 Nov: child 1.23.11
 

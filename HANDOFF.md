@@ -6,40 +6,19 @@ Last updated: Wednesday 11 November 2026 (EAT, UTC+3). Sections 0 and 3 are the 
 Rewritten Thursday 12 November 2026. Sections 0 and 3 are the current state. Detail: `project/PROGRESS-LOG.md` (newest first), `project/OPEN-ITEMS.md` (top sections current), `project/DECISIONS.md`, `docs/CLIENT-CHECKLIST.md` (Sylvia's answers by number), `docs/MIGRATION-PLAN.md` (launch steps, live media map).
 
 ### Where we are
-- **Sylvia gave written go-ahead to move (12 Nov, item 25)** and confirmed the payment account (item 8). We are in **Phase B** (invisible live preparation). **Visitors still see the old site** (Twenty Twenty theme).
-- **Test site** (https://topnotchmall.co.ke/sylviasdream/, password-gated, noindex): build finished. Child theme **1.23.10** installed (**1.23.11** built 12 Nov: registration line in block files + PHP parse check in the build; content-only, install when convenient), core **0.4.6**, Elementor 4.4.0, Redux 4.5.18. 9 Elementor pages, all editable. Never install child 1.23.9 (PHP parse error).
-- **Live sylviasdream.com (WordPress.com Personal)** - done so far:
-  - Backup: content XML, newsletter CSV (54 records / 24 subscribers), MailPoet CSV in the Town library `Sylvias Dream/backups`; all **254 media files (306.7 MB)** on the topnotchmall server in `/home/topnotch/sylviasdream-live-backup-2026-11-12/media` (outside public_html).
-  - Core 0.4.6 **active** with XML-RPC, two-step sign-in, login limit and Redirects **off**; Dream Partners = 1. Jetpack connection, newsletter, Meet Jesus subscribe form and thank-you noindex all checked OK.
-  - Parent theme Sylvia's Dream Base 1.0.1 and child 1.23.10 uploaded, **not active**. Elementor 4.4.0 and Redux 4.5.18 active (no page built).
-  - 9 missing media uploaded (IDs 6395-6403; map in MIGRATION-PLAN 4b).
-  - Empty **Drafts**: Home 6404 (slug `welcome`; old page 2 keeps `/home/`, DECISIONS 12 Nov), Give 6406, Invite Sylvia to speak 6408. Not in any menu.
-  - 9 live-safe launch templates in Elementor > Saved Templates (6410 Home, 6412 Shop For Books, 6414 Contact, 6419 My Story, 6421 Invite, 6423 Podcasts, 6425 Author Support, 6430 Heaven on Earth, 6432 Give). Not inserted anywhere.
-  - WooCommerce 11.3.0 **installed but inactive** (activation exposed `/shop/`); its pages 6436-6439 Draft. After cache clear `/shop/` redirects home (12 Nov).
-  - Products **not imported**: CSV upload blocked on WordPress.com. Ready instead: `Products live draft 12 Nov 2026.xml` in the Town library `Sylvias Dream/launch-templates` (24 products all `draft`, trashed duplicate removed, product links swapped to sylviasdream.com, 26 image attachments still point to the test site so the importer can fetch them, protected download files removed).
-- **Sylvia's answers:** done 1, 2 (6x9 Guard Your Heart), 4, 5 (Reg. No. 35364 line on Heaven on Earth/Give), 7 (1 Dream Partner), 8, 9, 10, 13, 14, 25. Fast Forward Lulu paperback link received (items 16/17 still to confirm). Launch-critical open: **26** (dates; she offered to meet 12 Nov at 7 or 8 pm Melbourne = 11 am / 12 noon Kenya, WhatsApp prepared in CORRESPONDENCE).
+- **THE NEW SITE IS LIVE on sylviasdream.com (12 Nov 2026, 03:40-04:50 EAT)**, launched early at Lightsof's request after Sylvia's written go-ahead (item 25). Child theme **1.23.11** and core **0.4.6** active (security switches off, redirects on, Dream Partners 1), Elementor 4.4.0, Redux 4.5.18, WooCommerce 11.3.0 (AUD).
+- Live pages from the launch templates: Home 6404 (front page), Give 6406, Invite Sylvia to speak 6408, Shop For Books 3001, Contact 20, My Story 2665, Podcasts and Videos 1366, Author Support 6235, Heaven on Earth 1932. Policy pages 6826/6830/6833. 24 products published. Menus Primary / Footer Books / Footer About / Footer Policies as on test. My account 6439 published; **Cart 6437 and Checkout 6438 Draft** until Sylvia connects Stripe, so books sell through her Stripe "Buy ebook" buttons for now (Add to cart cannot show: no ebook files attached on live yet).
+- Backups before launch: content XML (library `Sylvias Dream/backups`, plus a fresh export 12 Nov 03:30 in the session), 254 media files on the topnotchmall server outside public_html. Rollback: Appearance > Themes > activate Twenty Twenty, Settings > Reading front page 5022, menus "Primary (old)" / Top Menu.
+- Test site (topnotchmall.co.ke/sylviasdream/, password-gated) stays as the reference build (child 1.23.10 there).
 
 ### What is remaining (in order)
-**A. Before the launch window**
-1. Moses: agree the call/launch window with Sylvia (item 26); private preview on that call (Live Preview of child theme + draft previews).
-2. Moses security: change `moses` password on test, "Log Out Everywhere Else", set up two-factor; live admins use WordPress.com two-step sign-in.
-3. Test site: ask host to enable OPcache (editor opens in 80-90 s).
-4. ~~Child 1.23.11~~ built 12 Nov (registration line in block files, PHP parse check). Install 1.23.11 on test, then use 1.23.11 (not 1.23.10) on live at launch.
-5. Confirm with Sylvia: Fast Forward / Be a World Changer one book? (16), price (17); Top Menu "Home" item points to `/sylvias-dream/`.
-6. Give template contains the test-only "Private preview: ..." note: remove at insertion unless approved.
-
-**B. Launch window (about 3 h, Kenya afternoon = Melbourne evening; MIGRATION-PLAN Phase C)**
-1. Fresh backup (content XML, subscribers).
-2. Activate WooCommerce; set its pages Draft/assign; check Site visibility Live; Tools > Import > WordPress the products XML (all draft); attach the two protected ebook files; check images, Stripe `_sdc_buy_link` and free-download links.
-3. Activate child theme 1.23.10; insert saved templates into Home 6404, Give 6406, Invite 6408 and the 6 existing pages (MIGRATION-PLAN 4b step 5); Settings > Reading front page = 6404.
-4. Publish products; menus; Kindle links amazon.com.au; Going to Heaven links to `/2026/11/10/meet-jesus/`; Redirects ON per REDIRECT-MAP (add `/home/` and `/sylvias-dream/` -> `/` only with Sylvia's OK).
-5. Click-test every Stripe, Dream Partner and GoFundMe button (do not pay); Sylvia connects her own Stripe for the cart; one real purchase she refunds; QA checklists; clear WordPress.com cache.
-
-**C. After launch / handover**
-- Past buyers' new download links (item 24, Option A), then old public files removed with her written OK.
-- Restore test, training (she signs in as `sylvia`), balance USD 168 due. Delete test copy after handover.
-- After her Kenya trip: reword "in a few weeks' time" in the About paragraph.
-- Remaining Sylvia items after launch: 3, 6, 11, 12, 15, 16-24, ebook files (2).
+1. Logo and site icon on live (files from test uploads 2026/10; agent download was refused, needs the files attached or a manual upload).
+2. Call with Sylvia: she connects her own Stripe for the cart; publish Cart/Checkout; attach the 2 protected ebooks; one real purchase she refunds.
+3. Confirm prices with Sylvia (All Shall Be Well, SENT free vs paid, "Freedom From Fear" name) - never edit Stripe.
+4. Real-phone checks; footer contact vs newsletter decision.
+5. Moses security (change `moses` password on test, 2FA); live admins use WordPress.com two-step sign-in.
+6. After launch: past buyers' new links (item 24), restore test, training, USD 168 balance, open Sylvia items (3, 6, 11, 12, 15-24), reword "in a few weeks' time" after her trip.
+7. Lesson for any future Elementor move: import templates only while the child theme is active (otherwise Elementor strips the Sylvia's Dream widgets).
 
 ### How to work
 - **Handover checklist for the next agent:** (1) read AGENTS.md, this section 0, DECISIONS (newest first), OPEN-ITEMS (top sections are current); (2) check the latest GitHub Actions "Checks" run on `main` is green (it runs `php -l` on PHP 8.0-8.3) before installing any zip; (3) the test site is reached by the Town browser; wp-admin and cPanel sign-ins are entered by Lightsof when asked; (4) release zips live in the Town library `Sylvias Dream/releases` (child 1.23.10, core 0.4.6 current); launch files (templates, products XML) in `Sylvias Dream/launch-templates`; live backups in `Sylvias Dream/backups` and on the topnotchmall server; (5) the live site is reached through WordPress.com (my.wordpress.com/sites/sylviasdream.com), session already signed in or Lightsof signs in.

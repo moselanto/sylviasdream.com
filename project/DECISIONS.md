@@ -2,6 +2,12 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 12 November 2026: launch before the call
+- **Launched early** (Lightsof, 12 Nov ~03:30 EAT, "Launch now; Sylvia connects Stripe for the cart on the call"), on Sylvia's written go-ahead (item 25). Cart and Checkout stay Draft and no ebook files are attached on live, so Add to cart cannot show; books sell through Sylvia's existing Stripe "Buy ebook" buttons until she connects Stripe herself.
+- **My account published** (agent, 12 Nov) so "My downloads" links work (sign-in only; no payments involved).
+- **Policy "Draft for Sylvia's review" notices removed** (Sylvia approved the policy pages, item 14, 11 Nov); Privacy Policy "Last updated: 11 November 2026".
+- **"Meet Jesus" button** on the Going to Heaven page, linking to her Meet Jesus post (Sylvia's yes to item 13, 11 Nov).
+
 ## 12 November 2026: PHP syntax check is mandatory in the build
 - **`scripts/check-theme.js` fails when any PHP file does not parse, and also fails when it cannot check PHP at all** (Lightsof, 12 Nov; child 1.23.11). Uses `php -l` if PHP is installed, else the `php-parser` npm package. Why: child 1.23.9 shipped a PHP parse error that took the test site down on 11 Nov; a check that silently skips is not a check.
 - Registration line kept in the repo block files (`content/blocks/heaven-on-earth.html`, `give.html`) so the repo matches the approved site wording (Sylvia's yes, 11 Nov).
