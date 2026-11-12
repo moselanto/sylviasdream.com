@@ -2,6 +2,12 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (00:00-00:10): child 1.23.24 (express pay row) approved and live
+- Live markup read first (read only): ul.wc-block-components-express-payment__event-buttons > three li#express-payment-method-express_checkout_element_{applePay,googlePay,link} > div > div.StripeElement > div.__PrivateStripeElement > iframe. 1.23.24 replaces the 1.23.23 auto-fit grid with one flex row of three equal-width items (stacked under 480px). Installed on test (no express buttons there), approved by Nuracrown.
+- **1.23.24 installed on live** (from 1.23.23); object and edge caches cleared. Signed out with one A$7.10 eBook, before vs after: wording and main-content links identical; total A$7.10; Stripe card fields present; Live mode; Apple Pay, Google Pay and Link present; Place order never clicked; no order; cart emptied. No WooCommerce or Stripe setting opened.
+- Inside Stripe's own widget (not theme-controlled): USD quote moved US$5.01 -> US$5.02 with the exchange rate (0.7056 -> 0.7070); the optional "Secure, fast checkout with Link" prompt in the card section did not show after (the express Link button still shows). Watch on Nuracrown's check.
+- Express row alignment to be confirmed by eye by Nuracrown (checkout screenshots are blocked).
+
 ## Thursday 12 November 2026 (23:45-23:55): child 1.23.23 (checkout polish) approved and live
 - 1.23.23 installed on test first (test checkout shows only "Test payment", no express buttons; Town withholds checkout screenshots, so Nuracrown reviewed the test checkout himself and approved).
 - **1.23.23 installed on live** (from 1.23.22); object and edge caches cleared. Signed out with one eBook (Guard Your Heart Renew Your Mind) in the cart, before vs after: wording and main-content links identical; total A$7.10; Stripe card fields present, "Live mode", Stripe amount US$5.01 with A$7.10 in its currency selector (unchanged, not touched); Apple Pay, Google Pay and Link present (3 express frames before and after). No settings opened, no payment details entered, no button clicked, no order placed; cart emptied.

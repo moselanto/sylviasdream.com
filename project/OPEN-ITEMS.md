@@ -6,7 +6,7 @@
 - [x] Design pass for To ensure you end up going to Heaven, Heaven on Earth and Give: 1.23.21 approved and live 12 Nov 23:15
 - [x] Give polish 1.23.22 live (12 Nov 23:40)
 - [x] Checkout polish 1.23.23 live (12 Nov 23:50)
-- [ ] Check by eye on live checkout that Apple Pay / Google Pay / Link sit in one even row
+- [ ] Check by eye on live checkout that Apple Pay / Google Pay / Link sit in one even row (1.23.24 live 13 Nov 00:10); also note whether the "Secure, fast checkout with Link" prompt shows in the card section
 - [ ] Kenya manual PDF: still waiting for the file
 
 ## 12 Nov 22:20
