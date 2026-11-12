@@ -7,18 +7,10 @@
 - [x] Header logo replaced by Lightsof (Sylvia's Dream Ministry)
 - [x] Logo and site icon set on live (12 Nov 10:30; icon made from the logo dove, see PROGRESS-LOG)
 - [x] Jetpack floating Subscribe button off (covered Give on phones); Heaven on Earth photo slider restored (pattern 6924)
-- [x] **Child 1.23.14 installed on test and live (12 Nov 11:40)**, caches cleared, videos OK signed out on desktop; phone width still to check on a real phone
-- [ ] **Heaven on Earth synced patterns 6636 (six-slide carousel) and 6639 (updates form)** exist only on test: recreate on live as synced patterns from the test markup and point page 1932 at the new IDs (as done for 6637 -> 6924)
-- [ ] **Heaven on Earth raw GoFundMe script link** (`gofundme.com/static/js/embed.js` printed as text on live): remove that link from the page; the theme already loads the GoFundMe script on Elementor pages
-- [ ] **From Chance to Choice product image** missing on live: upload the test cover and set it as the product image
-- [ ] **Home differences:** Meet Sylvia image (Bible instead of portrait), latest reflections without images, featured books order. Check Customizer/section image and post featured images
-- [ ] **Book pages** `/one-life/`, `/from-fear-to-freedom-3/`, `/sent/` still old layout: paste `content/live/` versions with every `#KEEP-LIVE` button filled from the same live page (Moses's OK first)
-- [ ] **Invite Sylvia image** differs from test (test = AI illustration): confirm which is approved
-- [ ] Pages published on test only: journal, manifesting-miracles-now, all-shall-be-well-2-3: decide if live needs them
-- [x] (was) **Heaven on Earth video cards:** tall dark area above each "From the field" thumbnail on live (test is fine). **Fix built in child 1.23.14** (12 Nov 11:15): WordPress.com wraps YouTube iframes in `span.embed-youtube`, so the facade sat below the wrapper's 16:9 spacer; the span now fills the frame. To do: install 1.23.14 on test, then live (Replace current), clear WordPress.com caches, check Heaven on Earth, Podcasts and Videos and My Story signed out on desktop and phone
+- [ ] **Heaven on Earth video cards:** tall dark area above each "From the field" thumbnail on live (test is fine). Needs a theme CSS fix in the repo (child 1.23.14), check WordPress.com YouTube embed markup
 - [ ] **Cross-check every live page against test** (Lightsof asked 12 Nov): Home, Shop For Books, each book page, My Story, Give, Heaven on Earth, Invite, Podcasts and Videos, Author Support, Contact, Going to Heaven, Meet Jesus, policies, My account. Look especially for other `wp:block` refs to test-only patterns and missing images
 - [ ] (old note) Site icon originally on test: `cropped-android-chrome-512x512-1.png`; earlier note: upload `SDM_Header_Logo_960w_ForLightBG.png` and `cropped-android-chrome-512x512-1.png` (test site uploads 2026/10) to live and set them in Customize > Site Identity. Live still shows the old cropped logo
-- [ ] **Sylvia on the call:** she connects her own Stripe (WooCommerce Stripe Payment Gateway, she signs in herself), then publish Cart 6437 and Checkout 6438, attach the 2 protected ebook files (When the Word Becomes Life, Guard Your Heart Renew Your Mind 6x9) to their products, one real purchase she refunds
+- [ ] **Sylvia on the call** (script: `project/call-scripts/2026-11-12-sylvia-launch-call-v3.md`, Moses to see it first): she connects her own Stripe (WooCommerce Stripe Payment Gateway, she signs in herself), then publish Cart 6437 and Checkout 6438, attach the 2 protected ebook files (When the Word Becomes Life, Guard Your Heart Renew Your Mind 6x9) to their products, one real purchase she refunds
 - [ ] **Prices to confirm with Sylvia:** All Shall Be Well site A$7.56 vs Stripe $5.99; SENT listed Free in the catalogue but its old page has a paid A$5.99 Stripe button; From Fear to Freedom Stripe product is named "Freedom From Fear". Do not change Stripe
 - [ ] Phone checks on a real phone (iPhone and Android): header, mega menu, bottom bar, Give, book page
 - [ ] Manifesting Miracles Now product has no cover (placeholder), same as test
