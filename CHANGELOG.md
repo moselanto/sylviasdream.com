@@ -1,5 +1,10 @@
 # Changelog
 
+## Child theme 1.23.17 (12 Nov 2026)
+- Contact page on live: the Instagram and Facebook icons showed as a small bulleted list without their round white frames. The page's saved Social Icons block renders inside an Elementor kept section, where WordPress.com does not load the core Social Icons stylesheet. The theme now styles them fully (no bullet, round white frame, gold icon, gold on hover), matching the test site.
+- Contact page: opening a question (+) made the message box on the right taller, because the form column stretched to the height of the left column. The columns holding the contact form now align to the top and the message box keeps its own height.
+- File: `assets/css/about.css`. CSS only; no wording, form, payment or Stripe change.
+
 ## Child theme 1.23.16 (12 Nov 2026)
 - Fix: Heaven on Earth on live showed a stray text link to `https://www.gofundme.com/static/js/embed.js` under the GoFundMe widget. WordPress.com does not keep the page's `<script>` tag and showed its address instead; removing the link from saved content did not help because the section regenerates it. The rendered page now drops only that script address (as a link, a bare address or a leftover script tag) in `the_content`, `render_block`, Elementor output and "Section from your page" (`sdc_render_block_markup`). The theme still loads the GoFundMe script itself, so the widget works.
 - Not touched: the GoFundMe widget (`div.gfm-embed`), donation buttons (gofund.me / gofundme.com/f/ links), Dream Partner link, Stripe links. Saved content unchanged. Filter `sdc_strip_gofundme_script_link` (return false) switches it off.

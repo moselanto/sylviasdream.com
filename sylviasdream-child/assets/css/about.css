@@ -242,3 +242,19 @@
 	.sd-p-my-story .entry-content > .sd-band,
 	.sd-p-my-story .sd-el-old > .sd-band { padding-block: 3rem; }
 }
+
+/* 1.23.17: Contact page on WordPress.com. The old saved social-links block
+   renders inside an Elementor kept section, where WordPress.com does not load
+   the core Social Icons stylesheet, so the icons showed as a bulleted list
+   without their round frames. Full styling here so live matches the test site.
+   The form column no longer stretches to the FAQ column, so opening a
+   question (+) no longer makes the message box taller. */
+.sd-about .entry-content ul.wp-block-social-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; list-style: none; margin: 1.25rem 0 0; padding: 0; }
+.sd-about .entry-content .wp-block-social-links .wp-social-link { list-style: none; display: inline-flex; margin: 0; padding: 0; border-radius: 9999px; background: #fff !important; color: var(--gold-d) !important; border: 1px solid var(--line); transition: background .2s, color .2s, border-color .2s; }
+.sd-about .entry-content .wp-block-social-links .wp-social-link::before,
+.sd-about .entry-content .wp-block-social-links .wp-social-link::marker { content: none; }
+.sd-about .entry-content .wp-block-social-links .wp-social-link a { display: flex; align-items: center; justify-content: center; padding: 10px; line-height: 0; color: inherit !important; border-radius: inherit; text-decoration: none; box-shadow: none; }
+.sd-about .entry-content .wp-block-social-links .wp-social-link svg { width: 20px; height: 20px; fill: currentColor; }
+.sd-about .entry-content .wp-block-social-links .wp-social-link:hover { background: var(--gold-d) !important; color: #fff !important; border-color: var(--gold-d); }
+.sd-p-contact .entry-content .wp-block-columns:has(.wp-block-jetpack-contact-form) { align-items: flex-start !important; }
+.sd-p-contact .entry-content .wp-block-jetpack-contact-form textarea { flex-grow: 0 !important; height: auto; min-height: 150px; }
