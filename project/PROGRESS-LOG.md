@@ -2,6 +2,10 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (23:40): child 1.23.22 (Give polish) approved and live
+- Nuracrown checked the test Give page (four monthly cards in one even row) and approved. **1.23.22 installed on live** (from 1.23.21); caches cleared. Signed out on /give/: wording identical; main-content links unchanged; Dream Partner and A$5/15/30/50 Stripe links and Go Fund Me https://gofund.me/e6fffb40c unchanged; four cards in one even desktop row with aligned buttons. No payment pages opened.
+- Checkout polish started as 1.23.23 on the test site only (waiting for approval).
+
 ## Thursday 12 November 2026 (23:00-23:20): design pass 1.23.20/1.23.21 approved and live
 - Child **1.23.20** (styling pass for To ensure you end up going to Heaven, Heaven on Earth, Give) and **1.23.21** (prayer card width, book cover not cropped) built and installed on test first; desktop before/after screenshots sent to Nuracrown; approved 12 Nov. Mobile screenshots not possible with the browser tool.
 - **1.23.21 installed on live** (from 1.23.19); object and edge caches cleared. Signed out on all three pages: wording identical (prayer page title shown in sentence case by CSS only), all main-content links unchanged, Dream Partner ...g405 and Give $15 ...g40l / $30 ...g40m / $50 ...g40n Stripe links unchanged, Go Fund Me https://gofund.me/e6fffb40c unchanged, Meet Jesus and free eBook buttons kept. No payment pages opened.
