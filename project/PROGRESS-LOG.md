@@ -2,6 +2,12 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (03:30): launch started (part 1), paused at product import
+- Lightsof chose to launch now (Sylvia's written go-ahead 12 Nov; cart payments to be connected by Sylvia on the call).
+- Live: fresh All content export taken; child theme replaced with **1.23.11** (still inactive, Twenty Twenty active); **WooCommerce 11.3.0 activated**, pages 6436-6439 confirmed Draft, site visibility Live, no payments set up. Signed out: home unchanged, /cart/ 404.
+- **Blocked:** the agent's browser upload tool refuses XML files (even renamed .txt), so the products file could not be imported. Lightsof to import `Products live draft 12 Nov 2026.xml` by hand: Tools > Import > WordPress > choose file > assign to Sylvia's admin user > tick "Download and import file attachments" > Submit. Then the agent continues with part 2 (activate theme, insert templates, publish).
+- Note: while WooCommerce is active the empty `/shop/` archive may be public again.
+
 ## Thursday 12 November 2026 (03:10): child 1.23.11 built
 - Registration line added to `content/blocks/heaven-on-earth.html` (after the mission paragraph) and `give.html` (below Go Fund Me), and the matching `content/live/` files.
 - `scripts/check-theme.js` check 5: PHP parse (`php -l` or php-parser; fails if neither). Tested: without a parser it fails; with php-parser 92 PHP files pass; a deliberate syntax error is reported as an ERROR.
