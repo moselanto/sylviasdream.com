@@ -477,3 +477,37 @@ html.sd-minicart-open .sd-dock { visibility: hidden; }
 /* 1.23.8: ebooks not ready yet (core 0.4.5 sale guard) */
 .sd-price-soon { display: inline-block; font-weight: 600; color: var(--wp--preset--color--gold-dark, #8a6a1f); letter-spacing: .02em; }
 .sd-buybox__soon { margin: 12px 0; padding: 14px 16px; border-radius: 12px; background: #faf6ec; border: 1px solid #e8dcc0; font-weight: 600; text-align: center; }
+
+/* 1.23.23 (test first): Checkout polish. Styling only; Stripe fields and settings untouched. */
+.woocommerce-checkout .wc-block-checkout { max-width: 1180px; margin-inline: auto; }
+.woocommerce-checkout .wc-block-components-sidebar-layout { gap: clamp(1.5rem, 4vw, 3rem); align-items: flex-start; }
+@media (min-width: 900px) {
+	.woocommerce-checkout .wc-block-components-sidebar-layout .wc-block-components-main { flex: 1 1 58%; width: auto !important; padding-right: 0 !important; }
+	.woocommerce-checkout .wc-block-components-sidebar-layout .wc-block-components-sidebar { flex: 0 0 38%; width: auto !important; position: sticky; top: 110px; padding-left: 0 !important; }
+}
+.woocommerce-checkout .wc-block-components-sidebar .wp-block-woocommerce-checkout-order-summary-block,
+.woocommerce-checkout .wc-block-components-sidebar .wc-block-components-totals-wrapper:first-child { border-radius: 18px; }
+.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block { background: #fff; border: 1px solid var(--line, #e6dccb) !important; border-radius: 18px; box-shadow: 0 14px 34px rgba(60, 40, 10, .08); overflow: hidden; }
+.woocommerce-checkout .wc-block-components-order-summary-item__description .wc-block-components-product-name { font-family: inherit; font-size: 1rem !important; line-height: 1.35; font-weight: 700; }
+.woocommerce-checkout .wc-block-components-order-summary-item__description .wc-block-components-product-metadata { font-size: .85rem; }
+.woocommerce-checkout .wc-block-components-order-summary-item__image img { border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,.12); }
+.woocommerce-checkout .wc-block-components-totals-footer-item .wc-block-components-totals-item__label,
+.woocommerce-checkout .wc-block-components-totals-footer-item .wc-block-components-totals-item__value { font-size: 1.2rem; font-weight: 700; }
+.woocommerce-checkout .wc-block-components-express-payment { margin-bottom: 1.5rem; }
+.woocommerce-checkout .wc-block-components-express-payment__event-buttons { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+.woocommerce-checkout .wc-block-components-express-payment__event-buttons > li { margin: 0 !important; width: auto !important; }
+.woocommerce-checkout .wc-block-components-express-payment-continue-rule { margin: 1.25rem 0 1.75rem; text-transform: none; font-size: .9rem; }
+.woocommerce-checkout .wc-block-components-checkout-step { margin-bottom: 2rem; padding: clamp(1.25rem, 2.5vw, 1.75rem); background: #fff; border: 1px solid var(--line, #e6dccb); border-radius: 18px; }
+.woocommerce-checkout .wc-block-components-checkout-step::after { display: none !important; }
+.woocommerce-checkout .wc-block-components-checkout-step__container::after { display: none !important; }
+.woocommerce-checkout .wc-block-components-checkout-step__heading { margin: 0 0 1rem !important; }
+.woocommerce-checkout .wc-block-components-checkout-step__title { font-size: clamp(1.45rem, 2.2vw, 1.75rem) !important; line-height: 1.2; }
+.woocommerce-checkout .wc-block-components-checkout-step__title::before { display: none !important; }
+.woocommerce-checkout .wc-block-components-checkout-step__content { padding-left: 0 !important; }
+.woocommerce-checkout .wc-block-components-text-input input,
+.woocommerce-checkout .wc-block-components-combobox .components-combobox-control input,
+.woocommerce-checkout .wc-blocks-components-select select { min-height: 52px; border-radius: 10px !important; }
+.woocommerce-checkout .wc-block-components-address-form { gap: 14px 16px; }
+.woocommerce-checkout .wc-block-components-checkout-place-order-button { width: 100%; min-height: 56px; border-radius: 999px !important; font-size: 1.05rem; font-weight: 700; }
+.woocommerce-checkout .wc-block-checkout__actions_row { flex-direction: column-reverse; align-items: stretch; gap: 14px; }
+.woocommerce-checkout .wc-block-checkout__actions_row .wc-block-components-checkout-return-to-cart-button { align-self: center; }

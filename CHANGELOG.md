@@ -1,5 +1,8 @@
 # Changelog
 
+## Child theme 1.23.23 (12 Nov 2026) - TEST SITE ONLY until approved
+- Checkout polish, styling only (no wording, link or Stripe setting change): wider balanced two-column layout with a sticky order summary card; smaller product title in the summary; express pay buttons (Apple Pay, Google Pay, Link) in one even row; each step (Contact, Billing, Payment) as a white card with consistent headings; taller, rounded fields; full-width gold Place order button. File: `assets/css/woocommerce.css`.
+
 ## Child theme 1.23.22 (12 Nov 2026) - TEST SITE ONLY until approved
 - Give page polish, styling only: "Goal" line as a gold pill label; larger headings; "Where your giving goes" items as tiles; progress card centred beside the intro with a thicker bar; the four monthly cards in an even 4-column grid (2 on tablets, 1 on phones) with equal heights. File: `assets/css/about.css`.
 
