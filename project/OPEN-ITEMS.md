@@ -3,7 +3,7 @@
 ## 13 Nov 02:00
 
 - [x] Shop page duplicates fixed and grid first (1.23.27 + 1.23.28 live)
-- [ ] Rearrange the remaining 10 book descriptions on test (Manifesting Miracles Now first: check its book page), then approval and copy to live
+- [ ] All 22 book descriptions rearranged on test (13 Nov 02:20); waiting for approval, then copy to live
 - [ ] Send the close-out brief + WhatsApp message to Sylvia after Moses approves
 
 

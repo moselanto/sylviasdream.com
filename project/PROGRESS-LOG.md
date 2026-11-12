@@ -2,6 +2,11 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (02:00-02:20): remaining 10 book descriptions on test
+- TEST only, existing wording only. Rearranged 9: Learning to Recognise God's Voice (6379), SENT (6382), The Hidden Key to Healing and Breakthrough (6378), The King's Way (6384), The Report of the Lord (6396), Trusting God Deeper (6389), When the River Flows Again (6392), When the Word Becomes Life (6380), Wisdom for Soul-Winning (6383). Repeated top titles removed where they only repeated the product title; list intros as headings; quotes with a reference as blockquotes.
+- Manifesting Miracles Now (6398) is a **draft** product on test (not published), which is why it has no book page; description left unchanged (already prose; would need new wording). Live 6463 is published as Coming soon.
+- All 22 done on test (18 rearranged, 4 left as is). Original descriptions backed up in the Town session report. Waiting for Nuracrown's approval before copying to live.
+
 ## Friday 13 November 2026 (01:00-02:00): shop page fixed (1.23.27, 1.23.28), descriptions 12 of 22 on test
 - Shop page cause: page 3001's saved content (old copy of header photo, title, search, topic chips, plus the "Explore Sylvia's Books" showcase with QR) is printed by WooCommerce as the shop description above the books, so header/search/topics showed twice with a large photo.
 - **1.23.27** (hide the duplicated header/search/topics; showcase as a card) approved by Nuracrown and installed on live; signed out: one header, one search, one topic list; book grid, prices, links unchanged.
