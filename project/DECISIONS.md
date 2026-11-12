@@ -2,6 +2,10 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 12 Nov 2026: cart beside Buy ebook (Option A) and SENT free
+- **Option A** (Lightsof for Moses, 12 Nov): books with a protected download file show Add to cart beside Sylvia's existing Buy ebook button (child 1.23.15). Her Buy ebook buttons and links are unchanged. Option B (removing buy links) not taken.
+- **SENT is free** (Sylvia on the call, confirmed by Lightsof 12 Nov). The SENT product is set free on live; the old SENT page's paid Stripe button is not removed or changed (AGENTS rule 7) until a separate decision.
+
 ## 12 Nov 2026: Sylvia's price answers on the call
 - All Shall Be Well ebook price is A$5.99 (matches her Stripe payment page); website updated.
 - The Report of the Lord stays A$8.35.

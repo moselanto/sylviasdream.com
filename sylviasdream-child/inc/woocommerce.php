@@ -951,6 +951,13 @@ function sdc_buy_link_not_purchasable( $purchasable, $product ) {
 	if ( function_exists( 'sd_core_test_payments_active' ) && sd_core_test_payments_active() ) {
 		return $purchasable;
 	}
+	// 1.23.15 (decision 12 Nov, Option A): once Sylvia's own Stripe account is
+	// connected to the shop, a book with a protected download file attached can
+	// also be bought through the cart. Add to cart then shows beside her
+	// existing Buy ebook button, which stays exactly as it is.
+	if ( $product instanceof WC_Product && $product->is_downloadable() && $product->has_file() ) {
+		return $purchasable;
+	}
 	return ( $product instanceof WC_Product && '' !== sdc_product_buy_link( $product ) ) ? false : $purchasable;
 }
 add_filter( 'woocommerce_is_purchasable', 'sdc_buy_link_not_purchasable', 20, 2 );

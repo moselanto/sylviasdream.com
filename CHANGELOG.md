@@ -1,5 +1,9 @@
 # Changelog
 
+## Child theme 1.23.15 (12 Nov 2026)
+- Shop (decision 12 Nov, Option A): a book with a protected download file attached now shows **Add to cart** beside Sylvia's existing **Buy ebook** button. Before, any book with a Stripe buy link (`_sdc_buy_link`) was made not purchasable, so the cart could not be used on live after Sylvia connected Stripe. `sdc_buy_link_not_purchasable()` now keeps the book purchasable when `is_downloadable()` and `has_file()`. Books without a file are unchanged (Buy ebook only). The Buy ebook button and its link are unchanged.
+- File: `inc/woocommerce.php`. No wording, price or Stripe change.
+
 ## Child theme 1.23.14 (12 Nov 2026)
 - Fix: Heaven on Earth "From the field" videos on live showed a tall dark area above each thumbnail. WordPress.com (Jetpack) wraps YouTube iframes in `<span class="embed-youtube">`, so the click-to-play facade (`.sd-yt`) was not a direct child of `.wp-block-embed__wrapper` and sat below the wrapper's empty 16:9 spacer. The span now fills the frame (position absolute, inset 0) and the facade or iframe inside it fills the span. Same fix applies to any YouTube embed on live (Podcasts and Videos, My Story). The test site (no span) is unchanged.
 - File: `assets/css/blocks.css`. CSS only; no wording, payment or Stripe change.
