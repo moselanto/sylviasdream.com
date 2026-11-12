@@ -5,7 +5,8 @@
 - [x] Image descriptions use the test site wording (Home portrait, Invite Sylvia, My Story Kenya photos)
 - [x] Child 1.23.17: Contact social icons styled like test; FAQ no longer stretches the message box
 - [x] Kenya Ministry Training Manual (4303) has the test layout; backup draft 6994
-- [ ] Kenya manual PDF 404 on live (uploads/2026/03/Kenya_Training_Manual.pdf): upload the test copy to live and point the download button at it (approval needed: the link address changes)
+- [ ] Kenya manual PDF 404 on live (uploads/2026/03/Kenya_Training_Manual.pdf): approved 12 Nov; copy from test failed (download capture and Upload from URL 'Memory exceeded'). Waiting for the PDF file, then upload to live and repoint the button on 4303. Only broken free PDF on live (checked 12 Nov 22:25)
+- [x] Favicon: gold dove set as live Site Icon (6999), 12 Nov 22:25
 
 ## 12 Nov 18:20: after 1.23.16 and the live vs test audit
 
