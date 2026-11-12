@@ -2,6 +2,15 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Thursday 12 November 2026 (18:45-19:35): book pages One Life, From Fear to Freedom, SENT replaced on live; image descriptions
+- Moses's decisions (12 Nov): Kobo link on One Life dropped; reviews sections removed; SENT option A (paid Stripe button stays next to the free downloads); button labels kept as on the old live pages. Final files (reviews removed from the prepared versions) in the Town library `Sylvias Dream/launch-templates/book-pages-final-12-Nov` (not in Git: payment links).
+- One Life (2766): backup draft **6969**; whole content replaced in the Code editor; live cover 2026/10/one-life-683x1024.png already existed. Signed out: no #KEEP-LIVE, no Kobo, no reviews. Stripe: both "Buy Instant Download (Stripe)" -> ...g401 (One Life, A$12.99); "buy chance to choice now (stripe)" -> ...g408 (From Chance to Choice, A$9.99).
+- From Fear to Freedom (4231): backup draft **6975**; content replaced; both images existed. No invalid blocks, no #KEEP-LIVE; title, slug and date kept. Stripe: "Buy Instant Download (Stripe)" -> ...g407 (Stripe product still named "Freedom From Fear", A$4.50; renaming is Sylvia's); "direct Stripe download" -> ...g400 (How to Find the Real You, A$9.99).
+- SENT (4686): backup draft **6980**; content replaced; both covers existed; title, slug and date kept. Stripe: "buy ebook stripe" -> ...g40c (SENT, A$5.99). Free download Bahasa and Free download for missionaries PDFs open (contents not viewable in the test browser).
+- Every Stripe page opened only; no payment details entered, nothing paid. No other pages or posts edited.
+- Image descriptions (alt text only) on live: Home portrait sylvia-suhr-portrait-1.jpg "Sylvia Suhr"; Invite Sylvia Speaking-to-a-Kenyan-congregation-1.png "A speaker addressing a congregation"; My Story sylvia-suhr-kenya-children-1.jpg "Children gathered together" and sylvia-suhr-kenya-vegetable-garden-1.jpg "Vegetable garden". Plain descriptions of what each photo shows (test wording not compared). No other content changed.
+- WordPress.com object and edge caches cleared after each change; all checks signed out.
+
 ## Thursday 12 November 2026 (18:20-18:40): Journal, Shop page, Grace for the Journey on live
 - Journal: no Journal page existed on live (not in Trash either), so **Journal page 6961** was created and published at /journal/ and set as the Posts page (Settings > Reading, was 4717). No post edited or republished. Signed out: /journal/ shows the archive (10 per page, original dates, pagination); /sent-3/ shows its own mission-training content and free downloads again.
 - WooCommerce Shop page setting changed from draft 6436 to **3001 Shop For Books**; draft 6436 left as it was. Signed out: empty cart Return to shop goes to /shop-for-books/ and opens the catalog.

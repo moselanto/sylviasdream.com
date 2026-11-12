@@ -165,3 +165,6 @@ Reconciled with the project documents (quotation v2, cPanel preview guide v1.1, 
 - Approvals before publishing: Heaven on Earth purchase wording, biography, ministry information.
 - Author Support wording kept exactly.
 - Large, readable text, especially on phones.
+
+## 12 Nov 2026: book pages (Moses)
+- One Life: Kobo link dropped. Reviews sections removed from One Life and From Fear to Freedom. SENT: option A, the paid Stripe button stays next to the free downloads (rule 7). Button labels kept exactly as on the old live pages.

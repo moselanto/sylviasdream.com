@@ -8,15 +8,15 @@
 - [x] WooCommerce Shop page set to 3001 /shop-for-books/; Return to shop verified (12 Nov 18:30)
 - [ ] Manifesting Miracles Now (6463) cover: confirm artwork with Sylvia, then assign
 - [x] Grace for the Journey (5593) test layout on live; backup draft 6964 (12 Nov 18:40)
-- [ ] Alt text tidy (Home portrait, speaking image, My Story Kenya photos)
-- [ ] Book pages One Life / From Fear to Freedom / SENT: waiting for Moses's actual choices (Kobo, reviews, SENT A/B, labels)
+- [x] Alt text fixed on live: Home portrait, speaking image, My Story Kenya photos (12 Nov 19:35). Optional: Sylvia may want richer wording (names, places)
+- [x] Book pages One Life / From Fear to Freedom / SENT replaced on live per Moses (Kobo dropped, reviews removed, SENT option A, labels kept); backups 6969 / 6975 / 6980; Stripe buttons click-tested (12 Nov 19:30)
 
 ## 12 Nov 13:45: after 1.23.15
 
 - [x] Child 1.23.15 on test and live; Add to cart beside Buy ebook on books with a file; checkout shows Stripe (live mode)
 - [x] Heaven on Earth slider (6939) and updates form (6937) restored; Home portrait and From Chance to Choice cover verified
 - [ ] Heaven on Earth: stray GoFundMe embed.js text link still renders. Theme fix (child 1.23.16): strip that script/link in the rendered kept section; GoFundMe widget and buttons stay
-- [ ] Book pages One Life / From Fear to Freedom / SENT: Moses to approve the prepared versions (Kobo link, reviews section, SENT paid button option A/B, labels), then paste on live and click-test every Stripe button
+- [x] Book pages approved by Moses and live (see 12 Nov 19:30)
 - [ ] Real cart purchase by Sylvia (Add to cart route) and refund
 - [ ] Compare remaining live pages and every product page against test (not yet done)
 
