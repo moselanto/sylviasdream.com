@@ -543,3 +543,11 @@ html.sd-minicart-open .sd-dock { visibility: hidden; }
 .single-product .sd-product-reviews textarea, .single-product .sd-product-reviews input[type=text], .single-product .sd-product-reviews input[type=email] { border-radius: 10px; }
 .single-product div.product .product_title { font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.12; }
 .single-product div.product .product_meta { font-size: .9rem; color: var(--ink-2, #5b4f40); }
+
+/* 1.23.26 (test first): book page description and reviews use the full page width, on every book page. */
+.single-product .sd-product-description, .single-product .sd-product-reviews { max-width: none; width: 100%; }
+.single-product .sd-product-description .sd-prose { max-width: none; }
+@media (min-width: 900px) {
+	.single-product .sd-product-description .sd-prose ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem 1rem; }
+	.single-product .sd-product-description .sd-prose ul li { margin: 0; }
+}

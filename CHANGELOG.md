@@ -1,5 +1,10 @@
 # Changelog
 
+## Child theme 1.23.26 (13 Nov 2026) - TEST SITE ONLY until approved
+- Book pages: "About this book" card and Reviews now use the full page width on every book page; list points in two columns on desktop. File: `assets/css/woocommerce.css`.
+- Phone bottom bar: white bar with a fine top line and soft shadow; the stray dark line above the current item removed; current page shown as a gold pill behind its icon; four evenly spaced items with equal icon size; Give as a raised round gold button with a white ring. File: `style.css`.
+- Styling only.
+
 ## Child theme 1.23.25 (13 Nov 2026) - TEST SITE ONLY until approved
 - Book (product) pages, styling only: "About this book" centred with the description in a white card, larger first paragraph, list items as tiles; the empty Jetpack "Related" heading hidden; the subscribe box tidied (gold rounded button); Reviews in a matching card; larger product title. No wording, price, link or Stripe change. File: `assets/css/woocommerce.css`.
 
