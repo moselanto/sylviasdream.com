@@ -2,6 +2,10 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (15:00-15:35): Fast Forward removed on test; Linktree request
+- Sylvia (14:58): no file for Fast Forward, remove it. TEST product 6397 set to Draft (not deleted). Still referencing it on TEST: legacy page 636 /fast-forward-to-success/ (Lulu bit.ly links), unassigned "Top Menu" 22 item, Christian Living category (product still assigned), Rank Math link index on Home 6365 (not visible). Live (product 6465 and its legacy page) waits for approval. A2 ebook price question is no longer needed.
+- Sylvia asked for Linktree https://linktr.ee/sylvia_suhr . Theme Options > Contact and social links has only Facebook, Instagram, YouTube, Patreon and Amazon fields, so the footer icon needs a small child-theme change (new Linktree field + icon). Contact page 20 has a Social Links block (Instagram, Patreon) but Elementor would not load. Nothing changed.
+
 ## Friday 13 November 2026 (11:30-13:50): Give any amount and The King's Way to LIVE
 - Approved by Nuracrown. LIVE Give page 6406: "Give any amount" button added directly after the $5/month call to action, below the monthly cards (elementor-button classes, new tab, https://buy.stripe.com/6oU4gz6gf0vfc6og2T7g40o). All 42 existing link labels and destinations unchanged.
 - LIVE The King's Way product 6455: Product description replaced with the rearranged test version (test 6384). Price A$8.41, Stripe and Kindle links unchanged; status Published.
