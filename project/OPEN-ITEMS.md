@@ -4,7 +4,7 @@
 
 - [x] Shop page duplicates fixed and grid first (1.23.27 + 1.23.28 live)
 - [x] 13 Nov 11:05 A2/A3/A5 and 17 descriptions copied to live; Manifesting Miracles Now drafted on live. Give any amount and The King's Way went live 13 Nov 13:50. 13 Nov 14:30 Nuracrown: A4 Kenya wording and A3 reviews closed (Sylvia says what she sent is OK; home page sentence unchanged, Kerryn review not placed). Open: A1 refund confirmation. A2 dropped: Sylvia asked to remove Fast Forward (test 6397 Draft 13 Nov 15:30; live 6465 + legacy page waiting for approval). Linktree: child 1.23.29 live 13 Nov 15:50 (done)
-- [x] Child 1.23.30 live 13 Nov about 17:45 (Home Meet Sylvia photo framed like My Story; desktop checked signed out). [ ] Phone-width check of Home by eye (browser tool cannot resize)
+- [x] Child 1.23.30 live 13 Nov about 17:45 (Home Meet Sylvia photo framed like My Story; desktop checked signed out; phone-width check done 13 Nov 17:50 by Nuracrown on a real phone, looks right)
 - [x] (superseded) 13 Nov 10:00 Sylvia answers: copy A2 Lulu button, A3 One Life reviews, A5 alt to live after approval; A6 Give any amount button blocked (Elementor loading); A8 remove Manifesting Miracles Now on live (6463 draft, legacy page 4118); waiting on Sylvia for A4 Kenya wording, Kerryn review book, A1 refund
 - [ ] All 22 book descriptions rearranged on test (13 Nov 02:20); waiting for approval, then copy to live
 - [ ] Send the close-out brief + WhatsApp message to Sylvia after Moses approves
