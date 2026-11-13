@@ -2,6 +2,11 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (evening): handover guide and Sylvia check message
+- Handover guide and training plan built as a Word document in the close-out brief v2 style (Parts A-G: what the site does, signing in, step-by-step editing, orders/refunds, do-not-change, quick reference, 60-minute training plan). Library: `Sylvias Dream/Website handover guide and training plan for Sylvia.docx` (file sh73a9h1e9k3wvqqjmryaqckj58j5c06). Updated vs the Town doc draft: Fast Forward Lulu mention removed, Linktree and Give any amount added. Draft for Moses's approval; not sent.
+- WhatsApp message asking Sylvia to look through the live site (Home, Books, book pages, My Story, Give, Heaven on Earth, Contact) and reply "All OK" or send changes; Nuracrown confirms it has been sent.
+- Repo handover refreshed for the next agent: HANDOFF section 0 rewritten (13 Nov 23:20), DECISIONS 13 Nov entry, OPEN-ITEMS current list.
+
 ## Friday 13 November 2026 (19:10-19:55): audit fixes on LIVE
 - Nuracrown approved the audit fixes for live (keep the All Shall Be Well thank-you page).
 - Live changes:

@@ -1,6 +1,6 @@
 # Open items
 
-## 13 Nov 02:00
+## 13 Nov 02:00 (current; updated 13 Nov 23:20)
 
 - [x] Shop page duplicates fixed and grid first (1.23.27 + 1.23.28 live)
 - [x] 13 Nov 11:05 A2/A3/A5 and 17 descriptions copied to live; Manifesting Miracles Now drafted on live. Give any amount and The King's Way went live 13 Nov 13:50. 13 Nov 14:30 Nuracrown: A4 Kenya wording and A3 reviews closed (Sylvia says what she sent is OK; home page sentence unchanged, Kerryn review not placed). Open: A1 refund confirmation. A2 dropped: Sylvia asked to remove Fast Forward (test 6397 Draft 13 Nov 15:30; live 6465 + legacy page waiting for approval). Linktree: child 1.23.29 live 13 Nov 15:50 (done)
@@ -9,8 +9,11 @@
 - [ ] Rank Math installed on live 13 Nov (Redirections only): Moses to confirm keeping it
 - [x] Child 1.23.30 live 13 Nov about 17:45 (Home Meet Sylvia photo framed like My Story; desktop checked signed out; phone-width check done 13 Nov 17:50 by Nuracrown on a real phone, looks right)
 - [x] (superseded) 13 Nov 10:00 Sylvia answers: copy A2 Lulu button, A3 One Life reviews, A5 alt to live after approval; A6 Give any amount button blocked (Elementor loading); A8 remove Manifesting Miracles Now on live (6463 draft, legacy page 4118); waiting on Sylvia for A4 Kenya wording, Kerryn review book, A1 refund
-- [ ] All 22 book descriptions rearranged on test (13 Nov 02:20); waiting for approval, then copy to live
-- [ ] Send the close-out brief + WhatsApp message to Sylvia after Moses approves
+- [x] Book descriptions rearranged on test (13 Nov 02:20) and all 18 copied to live 13 Nov 11:05-13:50
+- [x] Sylvia asked on WhatsApp to look through the live site and send changes (13 Nov evening). [ ] Waiting for her reply
+- [ ] Close-out brief v2 and handover guide docx (library: Sylvias Dream/Website handover guide and training plan for Sylvia.docx) need Moses's approval before they go to Sylvia
+- [ ] A1: Sylvia to confirm the test purchase refund
+- [ ] Training session (~60 min, handover guide Part G); USD 168 balance invoice; test `moses` password change + 2FA; GoFundMe embed.js text link on Heaven on Earth (render-side fix, do not retry content edit)
 
 
 ## 13 Nov 00:55

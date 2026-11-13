@@ -2,6 +2,14 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 13 Nov 2026: audit fixes, removals and plugins
+- **Fast Forward to Success removed** (Sylvia, 13 Nov 14:58: no file): product and old page set to Draft on test and live; /fast-forward-to-success/ redirects to /shop-for-books/. A2 ebook price question dropped.
+- **Audit fixes approved** by Nuracrown (13 Nov): old duplicate pages drafted with 301 redirects; Shop for Books single H1; search descriptions only from Sylvia's existing sentences; When the Word Becomes Life in Christian Living.
+- **Keep** /all-shall-be-well-2/ (thank-you/download page) and live /sent-3/ (download links): never draft or redirect.
+- **Rank Math SEO free installed on live** for redirects only (Redirections module); Moses to confirm keeping it.
+- **Child 1.23.29 (Linktree) and 1.23.30 (Meet Sylvia photo)** approved by Nuracrown and live.
+- A3 reviews and A4 Kenya wording closed (Sylvia: what she sent is OK).
+
 ## 12 Nov 2026: cart beside Buy ebook (Option A) and SENT free
 - **Option A** (Lightsof for Moses, 12 Nov): books with a protected download file show Add to cart beside Sylvia's existing Buy ebook button (child 1.23.15). Her Buy ebook buttons and links are unchanged. Option B (removing buy links) not taken.
 - **SENT is free** (Sylvia on the call, confirmed by Lightsof 12 Nov). The SENT product is set free on live; the old SENT page's paid Stripe button is not removed or changed (AGENTS rule 7) until a separate decision.

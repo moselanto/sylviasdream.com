@@ -1,8 +1,41 @@
 # HANDOFF: start here (for a person or AI agent taking over)
 
-Last updated: Wednesday 11 November 2026 (EAT, UTC+3). Sections 0 and 3 are the current state; sections 4 onwards are older background (still valid unless section 0 says otherwise).
+Last updated: Friday 13 November 2026, 23:20 EAT (UTC+3). Section 0 is the current state; older sections are background (valid unless section 0 says otherwise).
 
-## 0. Latest status (12 Nov 2026, 03:00 EAT) - read this first
+## 0. Latest status (13 Nov 2026, 23:20 EAT) - read this first
+The new site is LIVE on sylviasdream.com (WordPress.com Personal) since 12 Nov. Test site https://topnotchmall.co.ke/sylviasdream/ (password-gated) is the reference build. Detail: `project/PROGRESS-LOG.md` (newest first), `project/OPEN-ITEMS.md` (top section "13 Nov 02:00" is current), `project/DECISIONS.md`.
+
+### Versions now
+- Child theme **1.23.30** on test and live (live 13 Nov ~17:45; Home Meet Sylvia photo framed like My Story; phone checked by Nuracrown). 1.23.29 (Linktree footer icon, field `social_linktree`, default https://linktr.ee/sylvia_suhr) live 13 Nov 15:50.
+- Core plugin 0.4.6 (test switches on, live switches off).
+- Live plugins added 13 Nov: **Rank Math SEO free 1.0.282**, only the Redirections module on (no account connected) - needed for 301s; Moses to confirm keeping it.
+
+### Done on 13 Nov (live)
+- All 18 rearranged book descriptions live; Give page "Give any amount" button (https://buy.stripe.com/6oU4gz6gf0vfc6og2T7g40o); The King's Way description.
+- Manifesting Miracles Now: product 6463 Draft, page 4118 Draft. Fast Forward to Success: product 6465 Draft, page 636 Draft (Sylvia has no file; asked for removal).
+- Site audit (88 sitemap URLs, all 200) and fixes, test then live: Shop for Books page 3001 title "Shop for Books" and content heading "Books by Sylvia Suhr" H1 -> H2; search descriptions on Shop 3001, Journal 6961, post 6330 Dream Again (Sylvia's own sentences; post Updated only); When the Word Becomes Life 6451 in Christian Living (not Uncategorized).
+- Live drafts + 301 redirects (Rank Math > Redirections): 4141 /from-chance-to-choice-2/ -> From Chance to Choice product; 5860 /free-ebook/ -> /free-7-day-devotional/; 5022 /sylvia-suhr-helping-you-find-peace-purpose-and-freedom-in-christ/ -> /; 636 /fast-forward-to-success/ -> /shop-for-books/.
+- KEEP (never draft/redirect): /all-shall-be-well-2/ (All Shall Be Well thank-you/download page) and live /sent-3/ page 4717 (English/Bahasa ebook and mission-guide downloads).
+- Sylvia's answers: A3 reviews and A4 Kenya wording closed; A2 dropped. Sylvia has been asked (WhatsApp) to look through the live site and send any changes.
+
+### Remaining (in order)
+1. Wait for Sylvia's site check reply; apply any changes test first, then live with approval.
+2. A1: Sylvia to confirm she refunded the test purchase.
+3. Kenya Ministry Training Manual PDF 404: the Download button on /kenya-ministry-training-manual-free-download/ links /wp-content/uploads/2026/03/Kenya_Training_Manual.pdf (missing). Needs the file from Sylvia. (Menu link is correct.)
+4. Moses: approve the close-out brief v2 and the handover guide (`Sylvias Dream/Website handover guide and training plan for Sylvia.docx`, library file sh73a9h1e9k3wvqqjmryaqckj58j5c06) before anything goes to Sylvia; confirm keeping Rank Math.
+5. Training session with Sylvia (~60 min, plan in the handover guide Part G).
+6. Security: change test `moses` password, enable 2FA; live admins use WordPress.com two-step sign-in.
+7. GoFundMe embed.js text link on Heaven on Earth: needs a render-side fix in the theme; content edits fail, do not retry.
+8. USD 168 balance invoice.
+9. Test-only leftovers: legacy page 636 drafted on test too; unassigned Top Menu 22 on test was repointed (items 6939-6942).
+
+### How to work (unchanged)
+- Test first, then live only after Nuracrown/Moses approve; before and after screenshots; signed-out checks; clear cache via WordPress.com Hosting > Caching > Clear all.
+- Never touch Stripe, Buy ebook, Dream Partner, GoFundMe or thank-you links; never Publish/re-publish posts on live (Jetpack emails subscribers); anything free needs Sylvia's written OK; draft, never delete; styling in child-theme CSS; never invent wording; never mention the repo to Sylvia.
+- Code: edit repo, bump version, `bash scripts/build-theme-zip.sh`, commit with CHANGELOG, HANDOFF, OPEN-ITEMS, PROGRESS-LOG in the same commit. Install: Appearance > Themes > Upload > Replace current.
+- The browser tool cannot resize to phone width or capture checkout; ask Nuracrown to check those by eye.
+
+## 0b. Earlier status (12 Nov 2026, 03:00 EAT) - superseded by section 0
 Rewritten Thursday 12 November 2026. Sections 0 and 3 are the current state. Detail: `project/PROGRESS-LOG.md` (newest first), `project/OPEN-ITEMS.md` (top sections current), `project/DECISIONS.md`, `docs/CLIENT-CHECKLIST.md` (Sylvia's answers by number), `docs/MIGRATION-PLAN.md` (launch steps, live media map).
 
 ### Where we are
@@ -44,18 +77,19 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 5. [`project/README.md`](project/README.md), [`project/DECISIONS.md`](project/DECISIONS.md), [`project/OPEN-ITEMS.md`](project/OPEN-ITEMS.md).
 6. Runbooks in `docs/` (`DEPLOYMENT.md`, `BACKUP-AND-LAUNCH.md`, `QA-CHECKLIST.md`, `REDIRECT-MAP.md`).
 
-## 3. Current status (11 November 2026)
+## 3. Status table (11 November 2026; see section 0 for 13 Nov changes)
 | Area | Status |
 |---|---|
 | Dev / test site | `https://topnotchmall.co.ke/sylviasdream/` (admin `/sylviasdream/wp-admin/`), password-gated, noindex. Users: `moses` (Administrator, 2FA off, password must change), `sylvia` (Editor). cPanel: topnotchmall.co.ke:2083 (Lightsof signs in). |
 | Live site | sylviasdream.com on WordPress.com Personal, Twenty Twenty theme still active. **Phase B (12 Nov):** core 0.4.6 active (switches off), themes uploaded not active, Elementor 4.4.0 and Redux 4.5.18 active, 9 missing media uploaded, empty Drafts Home 6404 (slug welcome), Give 6406, Invite 6408, 9 launch templates in Saved Templates; WooCommerce 11.3.0 installed but **inactive** (exposed /shop/); products not imported (CSV blocked, use XML at launch). No visible change. Sylvia published "Meet Jesus" there 10 Nov. Domain paid to 25 Nov 2027. |
 | Migration | Only after item 25 (written go-ahead). `docs/MIGRATION-PLAN.md` (4b for Elementor pages). |
-| Child theme | **1.23.30** on test and live (live 13 Nov about 17:45, Home Meet Sylvia photo frame; phone check by eye pending). 1.23.29 Linktree went live 13 Nov 15:50. 1.23.28 on test and live (13 Nov 01:55; shop page fixes 1.23.27-1.23.28 on top of 1.23.26, full-width book descriptions and phone menu on top of 1.23.25 book pages, 1.23.24 express pay row, 1.23.23 checkout, 1.23.22 Give, 1.23.21 design pass). Test may run a newer test-only build awaiting approval (see CHANGELOG). 1.23.18 is broken (inner-page stylesheet emptied), never install. 1.23.15 added Add to cart beside Buy ebook; 1.23.16 removed the stray GoFundMe script link; 1.23.17 styles the Contact social icons and stops the FAQ stretching the form. 1.23.9 is broken, never install. |
+| Child theme | **1.23.30** on test and live (live 13 Nov about 17:45, Home Meet Sylvia photo frame; phone checked). 1.23.29 Linktree live 13 Nov 15:50. 1.23.18 and 1.23.9 are broken, never install. |
 | Core plugin | **0.4.6** in the repo, on the test site (switches on) and active on live (switches off), 12 Nov. Never use 0.4.5 on live. |
 | Other plugins (test) | WooCommerce, Elementor 4.3.5 (free), Redux 4.5.16, Rank Math, Jetpack, Password Protected (test only). |
+| Plugins added on live 13 Nov | Rank Math SEO free 1.0.282 (Redirections module only, 4 redirects). |
 | Server (test) | PHP 8.2, memory 512M, WP_MEMORY_LIMIT 256M, OPcache off (ask host), no page cache. |
 | Products | 25 (Published on test; Draft on live). 17 with Stripe link; protected files for When the Word Becomes Life and Guard Your Heart Renew Your Mind (6x9); others "Coming soon". |
-| Giving | Give page (Elementor): A$5/15/30/50 monthly Dream Partner links; registration line added 11 Nov; "give any amount" link pending; GoFundMe https://gofund.me/e6fffb40c. |
+| Giving | Give page 6406 (live): A$5/15/30/50 monthly Dream Partner links + "Give any amount" (https://buy.stripe.com/6oU4gz6gf0vfc6og2T7g40o, live 13 Nov); GoFundMe https://gofund.me/e6fffb40c. |
 | Sylvia's answers | Done: 1, 2 (partly), 4, 5, 8, 9, 10, 13, 14, **25 (written go-ahead to move, 12 Nov)**. Launch-critical open: 26 (dates; she offered to meet 12 Nov). |
 
 ## 4. What is pending (older background, superseded by section 0 "What is remaining")
