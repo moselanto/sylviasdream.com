@@ -2,6 +2,20 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (19:10-19:55): audit fixes on LIVE
+- Nuracrown approved the audit fixes for live (keep the All Shall Be Well thank-you page).
+- Live changes:
+  - Shop for Books page 3001: title "Shop For Books" -> "Shop for Books"; content heading "Books by Sylvia Suhr" H1 -> H2 (same styling); search description added. Signed out: one H1.
+  - Journal page 6961 and post 6330 (Dream Again) search descriptions added, same sentences as test (post: Update only, "Post updated", not re-published).
+  - Product 6451 When the Word Becomes Life: Christian Living on, Uncategorized off; price A$7.16 and Stripe/Kindle links unchanged.
+  - Product 6465 Fast Forward to Success -> Draft (shop shows 22 products, was 23).
+  - Drafted (not deleted) with 301 redirects: 4141 /from-chance-to-choice-2/ -> From Chance to Choice product (1); 5860 /free-ebook/ -> /free-7-day-devotional/ (2); 5022 /sylvia-suhr-helping-you-find-peace-purpose-and-freedom-in-christ/ -> / (3); 636 /fast-forward-to-success/ -> /shop-for-books/ (4). All checked signed out.
+  - NEW PLUGIN: live had no redirect tool, so Rank Math SEO (free, 1.0.282) was installed and activated with only the Redirections module enabled; no Rank Math account connected, setup wizard skipped.
+  - Kept: /all-shall-be-well-2/ (thank-you page) and /sent-3/ page 4717 (on live it holds the English/Bahasa ebook and mission-guide download links), no redirect.
+  - Kenya: Primary menu item 6863 already points to /kenya-ministry-training-manual-free-download/; no menu change. Correction to the audit: the missing PDF (/wp-content/uploads/2026/03/Kenya_Training_Manual.pdf, 404) is linked from the download button ON that page, not the menu. Still needs the file from Sylvia.
+  - No menus, Stripe, Buy ebook, Dream Partner, GoFundMe or thank-you links changed. Caches cleared (object + edge); signed-out checks passed.
+- Screenshots (partial; final public captures timed out): Shop before qx8ak85cszr50y0szhbc6cc3b18j4e3k, H1 before qx854p114gky6d2rhh7rjfw2fs8j5amx, H2 after qx85886v53kwk2kg481badxke98j5p00, Shop description qx81btq9bjbqtya0931xetagh58j5dz6, WWBL before qx86ka04yhs48wpjtnwd1bn81s8j41n0, Journal description qx883pqbx6wa54ss9p6jtw8zjh8j40gt, Dream Again description qx822aj4dvg0kenzrya60hmfbs8j5kvc.
+
 ## Friday 13 November 2026 (18:00-19:10): audit fixes on TEST
 - Nuracrown asked for a full cross-check. Crawl of all 88 live sitemap URLs: all 200, no critical errors. Issues: Kenya manual PDF 404 (menu link), Shop for Books two H1s, old duplicate pages public, missing meta descriptions (Shop, Journal, Dream Again post), When the Word Becomes Life in Uncategorized, Fast Forward still live. Empty alt on mega-menu/cart covers is intentional (title text beside the image). Amazon/Instagram/Patreon errors were bot blocking.
 - Nuracrown approved all six fixes. TEST changes (no live changes):
