@@ -2,6 +2,14 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (10:15-11:05): Sylvia's answers and 17 descriptions to LIVE
+- TEST Give page 6428: "Give any amount" button added after the monthly buttons (new tab, https://buy.stripe.com/6oU4gz6gf0vfc6og2T7g40o). 11 existing links unchanged. Not on live yet.
+- LIVE (approved by Nuracrown): Fast Forward 6465 "Buy paperback on Lulu" (short description); One Life 6447 "What readers are saying" cards (Lynne Duncan, John Parran); Invite Sylvia 6408 image 6757 alt "Sylvia Suhr speaking to a Kenyan congregation".
+- LIVE Manifesting Miracles Now: product 6463 set to Draft; old page 4118 was already in Trash, restored as Draft (not deleted). Both URLs 404 signed out; shop shows 23 products; Coming soon category empty.
+- LIVE descriptions copied from test (Product description only) for 17 books: 6462, 6466, 6458, 6461, 6457, 6448, 6393, 6456, 6467, 6450, 6453, 6449, 6464, 6460, 6392, 6451, 6454. Live originals backed up in the Town session report. Prices, Stripe and Amazon links untouched.
+- The King's Way (live) skipped: live text has "http://www.sylviasdream.com" where test has "www.sylviasdream.com".
+- WordPress.com object and edge caches cleared. Checked signed out.
+
 ## Friday 13 November 2026 (06:15-10:10): Sylvia's answers to the close-out brief
 - A1 test purchase (From Fear to Freedom): Sylvia says success. Refund not yet confirmed.
 - A2 Fast Forward: Lulu paperback https://www.lulu.com/shop/sylvia-suhr/fast-forward-be-a-world-changer-sylvia-suhr/paperback/product-wnr5wk.html . TEST product 6397 now has "Buy paperback on Lulu" in the short description. Ebook stays Coming soon (no price given).
