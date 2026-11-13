@@ -6,7 +6,7 @@ Last updated: Friday 13 November 2026, 23:20 EAT (UTC+3). Section 0 is the curre
 The new site is LIVE on sylviasdream.com (WordPress.com Personal) since 12 Nov. Test site https://topnotchmall.co.ke/sylviasdream/ (password-gated) is the reference build. Detail: `project/PROGRESS-LOG.md` (newest first), `project/OPEN-ITEMS.md` (top section "13 Nov 02:00" is current), `project/DECISIONS.md`.
 
 ### Versions now
-- Child theme **1.23.31** on TEST only (speed: no Elementor Google Fonts, no dashicons for visitors; waiting for approval for live). **1.23.30** on live (live 13 Nov ~17:45; Home Meet Sylvia photo framed like My Story; phone checked by Nuracrown). 1.23.29 (Linktree footer icon, field `social_linktree`, default https://linktr.ee/sylvia_suhr) live 13 Nov 15:50.
+- Child theme **1.23.31** on test and live (live 14 Nov ~00:45; Elementor Google Fonts removed; dashicons removal NOT effective on live - WordPress.com masterbar CSS depends on it, follow-up release needed). 1.23.30 (live 13 Nov ~17:45; Home Meet Sylvia photo framed like My Story; phone checked by Nuracrown). 1.23.29 (Linktree footer icon, field `social_linktree`, default https://linktr.ee/sylvia_suhr) live 13 Nov 15:50.
 - Core plugin 0.4.6 (test switches on, live switches off).
 - Live plugins added 13 Nov: **Rank Math SEO free 1.0.282**, only the Redirections module on (no account connected) - needed for 301s; Moses to confirm keeping it.
 
@@ -19,7 +19,7 @@ The new site is LIVE on sylviasdream.com (WordPress.com Personal) since 12 Nov. 
 - Sylvia's answers: A3 reviews and A4 Kenya wording closed; A2 dropped. Sylvia has been asked (WhatsApp) to look through the live site and send any changes.
 
 ### Remaining (in order)
-0. Speed (Nuracrown's target: 1-3 s load): 1.23.31 on test, approve for live. Biggest remaining cost is on book pages: the WooCommerce Stripe plugin's express checkout (Apple/Google Pay) loads stripe.js (~1.1 MB), React, lodash, wp-data and the checkout scripts on every product page. Turning express checkout off on product pages is a Stripe plugin setting: needs Moses's decision (AGENTS rule: never change Stripe settings without approval). Page HTML is already edge-cached by WordPress.com (x-ac HIT).
+0. Speed (Nuracrown's target: 1-3 s load): 1.23.31 live 14 Nov. PageSpeed run scheduled 14 Nov ~11:30 EAT. Dashicons follow-up release needed. Biggest remaining cost is on book pages: the WooCommerce Stripe plugin's express checkout (Apple/Google Pay) loads stripe.js (~1.1 MB), React, lodash, wp-data and the checkout scripts on every product page. Turning express checkout off on product pages is a Stripe plugin setting: needs Moses's decision (AGENTS rule: never change Stripe settings without approval). Page HTML is already edge-cached by WordPress.com (x-ac HIT).
 1. Wait for Sylvia's site check reply; apply any changes test first, then live with approval.
 2. A1: Sylvia to confirm she refunded the test purchase.
 3. Kenya Ministry Training Manual PDF 404: the Download button on /kenya-ministry-training-manual-free-download/ links /wp-content/uploads/2026/03/Kenya_Training_Manual.pdf (missing). Needs the file from Sylvia. (Menu link is correct.)
@@ -84,7 +84,7 @@ Pimofy Digital (Moses Munyi) is rebuilding **sylviasdream.com** for **Sylvia Suh
 | Dev / test site | `https://topnotchmall.co.ke/sylviasdream/` (admin `/sylviasdream/wp-admin/`), password-gated, noindex. Users: `moses` (Administrator, 2FA off, password must change), `sylvia` (Editor). cPanel: topnotchmall.co.ke:2083 (Lightsof signs in). |
 | Live site | sylviasdream.com on WordPress.com Personal, Twenty Twenty theme still active. **Phase B (12 Nov):** core 0.4.6 active (switches off), themes uploaded not active, Elementor 4.4.0 and Redux 4.5.18 active, 9 missing media uploaded, empty Drafts Home 6404 (slug welcome), Give 6406, Invite 6408, 9 launch templates in Saved Templates; WooCommerce 11.3.0 installed but **inactive** (exposed /shop/); products not imported (CSV blocked, use XML at launch). No visible change. Sylvia published "Meet Jesus" there 10 Nov. Domain paid to 25 Nov 2027. |
 | Migration | Only after item 25 (written go-ahead). `docs/MIGRATION-PLAN.md` (4b for Elementor pages). |
-| Child theme | **1.23.31** on test only (speed release, awaiting approval); **1.23.30** on live (live 13 Nov about 17:45, Home Meet Sylvia photo frame; phone checked). 1.23.29 Linktree live 13 Nov 15:50. 1.23.18 and 1.23.9 are broken, never install. |
+| Child theme | **1.23.31** on test and live (14 Nov; dashicons still loads for visitors, follow-up needed); 1.23.30 before (live 13 Nov about 17:45, Home Meet Sylvia photo frame; phone checked). 1.23.29 Linktree live 13 Nov 15:50. 1.23.18 and 1.23.9 are broken, never install. |
 | Core plugin | **0.4.6** in the repo, on the test site (switches on) and active on live (switches off), 12 Nov. Never use 0.4.5 on live. |
 | Other plugins (test) | WooCommerce, Elementor 4.3.5 (free), Redux 4.5.16, Rank Math, Jetpack, Password Protected (test only). |
 | Plugins added on live 13 Nov | Rank Math SEO free 1.0.282 (Redirections module only, 4 redirects). |

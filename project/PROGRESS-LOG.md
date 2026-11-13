@@ -2,6 +2,13 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Saturday 14 November 2026 (00:00-01:00): child 1.23.31 on LIVE
+- Nuracrown approved 1.23.31 for live. Installed via Replace current (was 1.23.30); Theme Details shows 1.23.31; parent Base 1.0.1 kept. WordPress.com object + edge caches cleared. Signed out of live and WordPress.com afterwards.
+- Signed-out checks of Home, Shop for Books, One Life, Contact: no errors, fonts look the same. `elementor-gf-` links: Home 2 -> 0, Contact 2 -> 0, Shop 0, One Life 0. PASSED.
+- `dashicons-css` is STILL printed for visitors on all four pages (confirmed again by a plain signed-out fetch). Likely cause: WordPress.com's `wp-calypso-bridge-masterbar` stylesheet (also printed for visitors) lists dashicons as a dependency, so the dequeue is overridden. Fix needs a follow-up release (remove the dependency for signed-out visitors), test first.
+- Screenshots (signed out): Home before qx8b1hddg3nd9cs2dr8d9zty9d8j5cbk / after qx85e11vy2kh3ecak2qkfn5gn58j5bqd; Shop before qx807hwgpxtq1yvvybk486eqj18j52qe / after qx84w8beb2ynm7gh1r8rr2q9z58j551w; One Life before qx87zmrrfcnjeyz6b9pmpxt3jn8j4ywy / after qx873vthcpbzhqyh57661kf3nd8j51wq; Contact before qx85f1dkrydfzm3z4sh50nqwch8j4kqe / after qx86w7ttt75g6ma3ey3ms51chn8j4ctj.
+- PageSpeed Insights: API still at its daily limit at 00:55 EAT; run scheduled for after the reset (Saturday 14 Nov about 11:30 EAT) for Home, Shop for Books, One Life, Journal, mobile and desktop.
+
 ## Friday 13 November 2026 (20:00-23:40): speed pass, child 1.23.31 on TEST
 - Nuracrown asked to improve speed in code only, target 1-3 s load. PageSpeed Insights API returned quota exceeded, so a manual inventory was taken of live Home, Shop, a book page and Journal.
 - Baseline (live, from the sandbox, mobile UA): HTML is already edge-cached by WordPress.com (x-ac HIT, brotli); time to first byte about 1.8 s from the sandbox's location (network distance, not code). Home 18 stylesheets + 21 scripts, book page 15 + 45 scripts.
