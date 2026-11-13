@@ -448,3 +448,37 @@ function sdc_trim_wc_assets() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'sdc_trim_wc_assets', 100 );
+
+/* 1.23.31 speed pass ----------------------------------------------------- */
+
+/**
+ * Elementor prints its own Google Fonts stylesheets for Cormorant Garamond and
+ * Source Sans 3 with every weight (100-900, roman and italic: two extra
+ * render-blocking requests and many font files). The theme already loads the
+ * same two families (with display=swap and a preload), so Elementor's copy is
+ * skipped whenever the theme's fonts are on. Untick "use Google Fonts" in the
+ * Customizer and Elementor's fonts come back automatically.
+ */
+function sdc_skip_elementor_google_fonts( $print ) {
+	if ( sdc_perf_on( 'elementor_fonts' ) && function_exists( 'sdc_get_bool' ) && sdc_get_bool( 'use_google_fonts' ) && ! is_admin() ) {
+		return false;
+	}
+	return $print;
+}
+add_filter( 'elementor/frontend/print_google_fonts', 'sdc_skip_elementor_google_fonts' );
+
+/**
+ * Dashicons (57 KB, render-blocking) are only needed by the admin toolbar.
+ * Visitors who are not signed in never see it, so skip the file for them.
+ */
+function sdc_skip_dashicons_for_visitors() {
+	if ( ! sdc_perf_on( 'dashicons' ) || is_user_logged_in() || is_admin_bar_showing() ) {
+		return;
+	}
+	if ( function_exists( 'is_account_page' ) && ( is_account_page() || is_checkout() ) ) {
+		return; // Some payment/account add-ons use dashicons on these pages.
+	}
+	wp_dequeue_style( 'dashicons' );
+}
+add_action( 'wp_enqueue_scripts', 'sdc_skip_dashicons_for_visitors', 100 );
+

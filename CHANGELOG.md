@@ -1,5 +1,11 @@
 # Changelog
 
+## Child theme 1.23.31 (13 Nov 2026) - TEST SITE ONLY until approved
+- Speed: Elementor no longer prints its own Google Fonts stylesheets (Cormorant Garamond and Source Sans 3, every weight 100-900 roman + italic; two render-blocking requests and many font files) when the theme's Google Fonts are on; the theme already loads the same families with display=swap and a preload. Filter `elementor/frontend/print_google_fonts`, perf feature `elementor_fonts`. Unticking "use Google Fonts" in the Customizer brings Elementor's fonts back.
+- Theme font URL now also includes Cormorant Garamond 400 and 400 italic and Source Sans 3 italic 400, so Elementor text set to those weights keeps its look.
+- Speed: dashicons.css (57 KB, render-blocking) skipped for visitors who are not signed in and have no admin bar (kept on My account and Checkout). Perf feature `dashicons`.
+- Files: `inc/performance.php`, `functions.php`, `style.css`.
+
 ## Child theme 1.23.30 (13 Nov 2026) - on test and live (live 13 Nov, approved by Nuracrown)
 - Home "Meet Sylvia" photo now framed like the My Story portrait: 4:5 frame (max 440px, 340px on phones), 24px rounded corners, soft shadow and a fine white inner line. The "Eighty-two and still becoming" note stays over the photo. Styling only. File: `style.css`.
 

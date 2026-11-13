@@ -2,6 +2,8 @@
 
 ## 13 Nov 02:00 (current; updated 13 Nov 23:20)
 
+- [ ] Speed (target 1-3 s): child 1.23.31 on TEST (Elementor Google Fonts off, dashicons off for visitors); approve for live, then measure with PageSpeed Insights (API quota was used up 13 Nov). Signed-out dashicons check on test blocked by the site password gate
+- [ ] Speed decision for Moses: Stripe express checkout (Apple/Google Pay) on book pages loads ~1.5 MB of JS (stripe.js, React, checkout scripts); switching it off on product pages is a Stripe plugin setting - not changed
 - [x] Shop page duplicates fixed and grid first (1.23.27 + 1.23.28 live)
 - [x] 13 Nov 11:05 A2/A3/A5 and 17 descriptions copied to live; Manifesting Miracles Now drafted on live. Give any amount and The King's Way went live 13 Nov 13:50. 13 Nov 14:30 Nuracrown: A4 Kenya wording and A3 reviews closed (Sylvia says what she sent is OK; home page sentence unchanged, Kerryn review not placed). Open: A1 refund confirmation. A2 dropped: Sylvia asked to remove Fast Forward (test 6397 Draft 13 Nov 15:30; live 6465 + legacy page waiting for approval). Linktree: child 1.23.29 live 13 Nov 15:50 (done)
 - [x] Audit fixes (13 Nov): done on TEST and LIVE (live: 4 drafts + 4 redirects via new Rank Math Redirections module, Shop title + H2, 3 search descriptions, WWBL category, Fast Forward 6465 + page 636 drafted). Kept /all-shall-be-well-2/ and live /sent-3/ (download links)

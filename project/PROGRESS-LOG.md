@@ -2,6 +2,16 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (20:00-23:40): speed pass, child 1.23.31 on TEST
+- Nuracrown asked to improve speed in code only, target 1-3 s load. PageSpeed Insights API returned quota exceeded, so a manual inventory was taken of live Home, Shop, a book page and Journal.
+- Baseline (live, from the sandbox, mobile UA): HTML is already edge-cached by WordPress.com (x-ac HIT, brotli); time to first byte about 1.8 s from the sandbox's location (network distance, not code). Home 18 stylesheets + 21 scripts, book page 15 + 45 scripts.
+- Causes found: (1) Elementor printed two extra Google Fonts stylesheets with every weight of both families (duplicate of the theme's fonts); (2) dashicons.css (57 KB) loaded for all visitors; (3) book pages load Stripe express checkout: stripe.js ~1.1 MB, upe-classic 131 KB, React/ReactDOM 213 KB, lodash, wp-data, checkout scripts (Stripe plugin setting, not changed); (4) Gutenberg block-library CSS 140 KB and Jetpack/WooCommerce analytics (platform, left).
+- Already in place from earlier releases: emoji off, LCP preload, YouTube facade, deferred theme scripts, WooCommerce styles trimmed on non-shop pages, logo with a 480px phone source.
+- Child **1.23.31**: Elementor Google Fonts off when theme fonts are on; theme font URL adds Cormorant 400/400i and Source Sans 400i; dashicons skipped for signed-out visitors. Zip in library `Sylvias Dream/releases/sylviasdream-child-1.23.31.zip` (file sh72ey4s59txastd8v8qx0xxb98j470c).
+- Installed on TEST only (Theme Details 1.23.31). Checked signed in: Home, Shop for Books, One Life, Contact render, no errors, fonts look the same; `elementor-gf-` stylesheets 2 -> 0 on Home, Shop and Contact. Signed-out dashicons check blocked by the test password gate.
+- Screenshots: Home before qx8es3egxx4njbqse86sgj99618j4f7g / after qx84zgek2njyf28j5ya2adt2558j5tzs; Shop before qx85dt8cjmdkkf6xkdjncd23dh8j5249 / after qx86eppd3jt67smfnwdm37k0g98j4gv5; One Life after qx8bpm80jr3efpbf4zcafdjzh18j576h; Contact before qx86yac3vrhvngezm8bxnnsfwx8j4y5x / after qx89fg5807xerq8n144awnzt5d8j45at.
+- Waiting: approval for live; Moses's decision on Stripe express checkout on book pages.
+
 ## Friday 13 November 2026 (evening): handover guide and Sylvia check message
 - Handover guide and training plan built as a Word document in the close-out brief v2 style (Parts A-G: what the site does, signing in, step-by-step editing, orders/refunds, do-not-change, quick reference, 60-minute training plan). Library: `Sylvias Dream/Website handover guide and training plan for Sylvia.docx` (file sh73a9h1e9k3wvqqjmryaqckj58j5c06). Updated vs the Town doc draft: Fast Forward Lulu mention removed, Linktree and Give any amount added. Draft for Moses's approval; not sent.
 - WhatsApp message asking Sylvia to look through the live site (Home, Books, book pages, My Story, Give, Heaven on Earth, Contact) and reply "All OK" or send changes; Nuracrown confirms it has been sent.
