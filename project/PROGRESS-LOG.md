@@ -2,6 +2,17 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (06:15-10:10): Sylvia's answers to the close-out brief
+- A1 test purchase (From Fear to Freedom): Sylvia says success. Refund not yet confirmed.
+- A2 Fast Forward: Lulu paperback https://www.lulu.com/shop/sylvia-suhr/fast-forward-be-a-world-changer-sylvia-suhr/paperback/product-wnr5wk.html . TEST product 6397 now has "Buy paperback on Lulu" in the short description. Ebook stays Coming soon (no price given).
+- A3 reviews: Lynne Duncan (Goodreads) and John Parran (Amazon paperback 2019) added to TEST One Life product 6376 as "What readers are saying" cards, with two typos fixed. Kerryn (Kindle, AU, 20 Dec 2025): which book is still unconfirmed.
+- A4 Kenya: Sylvia asked what was meant. Home page sentence "Sylvia will be returning to Kenya in a few weeks' time ..." Asked her for travel date and wording.
+- A5: the chosen picture is already on Invite Sylvia (test 6511, media 6847). Alt text set. Duplicate upload 6926 not used.
+- A6 give-any-amount link https://buy.stripe.com/6oU4gz6gf0vfc6og2T7g40o : NOT added yet. Test Give page 6428 Elementor editor stuck on Loading; nothing changed.
+- A7 past-buyers email: Sylvia wrote her own; she sends it from her email.
+- A8 Manifesting Miracles Now cancelled. Test 6398 is a draft. Still shown on test legacy page 4118 and in the shop / Coming soon category (signed-in view only). Live 6463 to be set to draft after approval.
+- A9 Stripe rename: Sylvia says done.
+
 ## Friday 13 November 2026 (02:00-02:20): remaining 10 book descriptions on test
 - TEST only, existing wording only. Rearranged 9: Learning to Recognise God's Voice (6379), SENT (6382), The Hidden Key to Healing and Breakthrough (6378), The King's Way (6384), The Report of the Lord (6396), Trusting God Deeper (6389), When the River Flows Again (6392), When the Word Becomes Life (6380), Wisdom for Soul-Winning (6383). Repeated top titles removed where they only repeated the product title; list intros as headings; quotes with a reference as blockquotes.
 - Manifesting Miracles Now (6398) is a **draft** product on test (not published), which is why it has no book page; description left unchanged (already prose; would need new wording). Live 6463 is published as Coming soon.
