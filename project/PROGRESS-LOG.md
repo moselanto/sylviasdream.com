@@ -2,6 +2,19 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (18:00-19:10): audit fixes on TEST
+- Nuracrown asked for a full cross-check. Crawl of all 88 live sitemap URLs: all 200, no critical errors. Issues: Kenya manual PDF 404 (menu link), Shop for Books two H1s, old duplicate pages public, missing meta descriptions (Shop, Journal, Dream Again post), When the Word Becomes Life in Uncategorized, Fast Forward still live. Empty alt on mega-menu/cart covers is intentional (title text beside the image). Amazon/Instagram/Patreon errors were bot blocking.
+- Nuracrown approved all six fixes. TEST changes (no live changes):
+  - Kenya menu item 6598 already points to /kenya-ministry-training-manual-free-download/ on test (live still points to the missing PDF).
+  - Shop page 3001 title "Shop For Books" -> "Shop for Books". Test already has only one H1 ("Books by Sylvia Suhr"); live has two.
+  - Drafted (not deleted) with Rank Math 301 redirects (Redirections module switched on): 4141 /from-chance-to-choice-2/ -> From Chance to Choice product (1); 4717 /sent-3/ -> /sent/ (2); 5860 /free-ebook/ -> /free-7-day-devotional/ (3); 5022 /sylvia-suhr-helping-you-find-peace-purpose-and-freedom-in-christ/ -> home (4); 636 /fast-forward-to-success/ -> /shop-for-books/ (5). All redirects tested.
+  - NOT changed: /all-shall-be-well-2/ is page 3431 "All Shall Be Well Thank you" (buyer download page) - must stay. Audit listing was wrong.
+  - Unassigned Top Menu 22: items 6328->6940, 6325->6941, 6343->6942 repointed to the redirect targets; 6335 reparented; Author Support 6348 was removed by mistake and recreated as 6939 (same label/link). Menu 22 stays unassigned; Primary 21 and footers 26/27/52 unchanged.
+  - Meta descriptions (Sylvia's own sentences): Shop 3001 "Faith-filled books for readers seeking a deeper relationship with God, renewed identity, freedom from fear and courage for the journey ahead."; Journal 6368 "Weekly devotional writing from Sylvia on trust, peace and walking with God. Receive Sylvia's devotional letter, new book announcements and news from Kenya."; post 6744 Dream Again "I am able to do immeasurably more than you could ever imagine or think according to the power working within you. Dream again. Awake! There is so much more!" (Update only, not re-published).
+  - Product 6380 When the Word Becomes Life: Christian Living on, Uncategorized off. Price and Stripe/Kindle links unchanged.
+  - Fast Forward product 6397 was already Draft.
+- Waiting: Nuracrown's approval to repeat on live (live IDs differ; live also needs the Kenya link and Shop H1 fix).
+
 ## Friday 13 November 2026 (about 17:45): child 1.23.30 (Home Meet Sylvia photo) on LIVE
 - Nuracrown approved 1.23.30 for live. Installed sylviasdream-child-1.23.30.zip on live via Appearance > Themes > Upload > Replace current (was 1.23.29); Theme Details confirms 1.23.30 active. WordPress.com object and edge caches cleared.
 - Signed-out desktop check of Home: no errors; Meet Sylvia portrait shows the 4:5 frame, rounded corners, soft shadow and inner white line; note still over the photo; section wording, both buttons and their links unchanged. No page content, settings or links edited. Signed out of live and WordPress.com afterwards.
