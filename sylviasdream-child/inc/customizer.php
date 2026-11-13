@@ -168,6 +168,7 @@ function sdc_fields() {
 		'social_youtube'     => array( 'sdc_footer', __( 'YouTube URL', 'sylviasdream-child' ), 'url', '' ),
 		'social_patreon'     => array( 'sdc_footer', __( 'Patreon URL', 'sylviasdream-child' ), 'url', 'https://www.patreon.com/c/sylviasdream' ),
 		'social_amazon'      => array( 'sdc_footer', __( 'Amazon author page URL', 'sylviasdream-child' ), 'url', '' ),
+		'social_linktree'    => array( 'sdc_footer', __( 'Linktree URL', 'sylviasdream-child' ), 'url', 'https://linktr.ee/sylvia_suhr' ),
 	);
 	return $f;
 }

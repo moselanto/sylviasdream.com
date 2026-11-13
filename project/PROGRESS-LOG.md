@@ -2,6 +2,10 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (15:35-15:45): child 1.23.29 (Linktree) on test
+- Nuracrown approved option 1 for Sylvia's Linktree. Child **1.23.29**: "Linktree address" field in Theme Options > Contact and social links (also Customizer footer settings and the fallback settings screen), default https://linktr.ee/sylvia_suhr; footer social icons show a Linktree icon, new tab, screen-reader label "Linktree (opens in a new tab)". Zip in `Sylvias Dream/releases`.
+- Installed on TEST only; field saved with https://linktr.ee/sylvia_suhr; Facebook, Instagram, YouTube and Patreon links unchanged; Home, One Life and Contact load without errors. Live waits for approval.
+
 ## Friday 13 November 2026 (15:00-15:35): Fast Forward removed on test; Linktree request
 - Sylvia (14:58): no file for Fast Forward, remove it. TEST product 6397 set to Draft (not deleted). Still referencing it on TEST: legacy page 636 /fast-forward-to-success/ (Lulu bit.ly links), unassigned "Top Menu" 22 item, Christian Living category (product still assigned), Rank Math link index on Home 6365 (not visible). Live (product 6465 and its legacy page) waits for approval. A2 ebook price question is no longer needed.
 - Sylvia asked for Linktree https://linktr.ee/sylvia_suhr . Theme Options > Contact and social links has only Facebook, Instagram, YouTube, Patreon and Amazon fields, so the footer icon needs a small child-theme change (new Linktree field + icon). Contact page 20 has a Social Links block (Instagram, Patreon) but Elementor would not load. Nothing changed.

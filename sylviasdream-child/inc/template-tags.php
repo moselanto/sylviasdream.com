@@ -30,6 +30,7 @@ function sdc_icon( $name ) {
 		'youtube'   => '<rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/>',
 		'patreon'   => '<circle cx="14.5" cy="9.5" r="5.5"/><path d="M4 3.5v17"/>',
 		'amazon'    => '<path d="M4 15c4.5 3 11.5 3 16 0"/><path d="M17 13.5l3 1.5-1 3"/><path d="M8 4h8v7H8z"/>',
+		'linktree'  => '<path d="M12 3v18"/><path d="M5 6l7 5 7-5"/><path d="M4 12h16"/><path d="M5 18l7-5 7 5"/>',
 		'arrow'     => '<path d="M5 12h14M13 6l6 6-6 6"/>',
 	);
 	return isset( $icons[ $name ] ) ? $open . $icons[ $name ] . '</svg>' : '';
@@ -136,6 +137,7 @@ function sdc_social_links() {
 		'youtube'   => 'YouTube',
 		'patreon'   => 'Patreon',
 		'amazon'    => __( 'Amazon author page', 'sylviasdream-child' ),
+		'linktree'  => 'Linktree',
 	);
 	$items    = '';
 	foreach ( $networks as $key => $label ) {

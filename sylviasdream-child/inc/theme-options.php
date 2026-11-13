@@ -31,6 +31,7 @@ function sdc_opt_mod_map() {
 		'social_youtube'   => 'social_youtube',
 		'social_patreon'   => 'social_patreon',
 		'social_amazon'    => 'social_amazon',
+		'social_linktree'  => 'social_linktree',
 		'tagline'          => 'tagline',
 		'give_label'       => 'give_label',
 		'give_url'         => 'give_url',
@@ -351,7 +352,7 @@ function sdc_opt_redux_config() {
 		array( 'id' => 'give_url', 'type' => 'text', 'title' => __( 'Give button goes to', 'sylviasdream-child' ), 'subtitle' => __( 'A page of this website such as /give/. Payment links themselves are not changed here.', 'sylviasdream-child' ), 'default' => sdc_get( 'give_url' ) ),
 		array( 'id' => 'contact_email', 'type' => 'text', 'title' => __( 'Contact email', 'sylviasdream-child' ), 'default' => sdc_get( 'contact_email' ) ),
 	);
-	foreach ( array( 'facebook' => 'Facebook', 'instagram' => 'Instagram', 'youtube' => 'YouTube', 'patreon' => 'Patreon', 'amazon' => __( 'Amazon author page', 'sylviasdream-child' ) ) as $k => $label ) {
+	foreach ( array( 'facebook' => 'Facebook', 'instagram' => 'Instagram', 'youtube' => 'YouTube', 'patreon' => 'Patreon', 'amazon' => __( 'Amazon author page', 'sylviasdream-child' ), 'linktree' => 'Linktree' ) as $k => $label ) {
 		$contact[] = array(
 			'id'      => 'social_' . $k,
 			'type'    => 'text',
@@ -545,6 +546,7 @@ function sdc_opt_fallback_page() {
 					'social_youtube'   => __( 'YouTube address', 'sylviasdream-child' ),
 					'social_patreon'   => __( 'Patreon address', 'sylviasdream-child' ),
 					'social_amazon'    => __( 'Amazon author page address', 'sylviasdream-child' ),
+					'social_linktree'  => __( 'Linktree address', 'sylviasdream-child' ),
 				);
 				foreach ( $texts as $key => $label ) :
 					?>

@@ -50,7 +50,7 @@ To remove a part: right-click it on the page and choose **Delete**.
 | Books, prices and book covers | **Products** on the left. Click the book's name. |
 | A new devotional | **Posts**, then **Add New**. |
 | The menu at the top | **Appearance**, then **Menus**. |
-| Facebook, Instagram and your email address | **Appearance**, then **Sylvia's Dream Theme Options**, then **Contact and social links**. |
+| Facebook, Instagram, Linktree and your email address | **Appearance**, then **Sylvia's Dream Theme Options**, then **Contact and social links**. |
 | The number of Dream Partners | **Settings**, then **Sylvia's Dream**. |
 
 ## Please do not change

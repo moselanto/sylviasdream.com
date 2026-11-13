@@ -1,5 +1,8 @@
 # Changelog
 
+## Child theme 1.23.29 (13 Nov 2026) - TEST SITE ONLY until approved
+- Linktree (Sylvia's request, 13 Nov): new "Linktree address" field in Theme Options > Contact and social links (and the Customizer footer settings and the fallback settings screen), default https://linktr.ee/sylvia_suhr. The footer social icons show a Linktree icon, labelled "Linktree (opens in a new tab)" for screen readers, opening in a new tab. Elementor "Social icons" help text mentions Linktree. No other link changed. Files: `inc/template-tags.php`, `inc/theme-options.php`, `inc/customizer.php`, `inc/elementor/registry.php`.
+
 ## Child theme 1.23.28 (13 Nov 2026) - TEST SITE ONLY until approved
 - Shop page: the book grid follows the search box and topic list directly, as on the test site; the "Explore Sylvia's Books" showcase card (text, link, QR code) moves below the books. Styling only. File: `assets/css/woocommerce.css`.
 

@@ -497,7 +497,7 @@ function sdc_el_registry() {
 		),
 		'social-icons'       => array(
 			'title'  => __( 'Social icons', 'sylviasdream-child' ),
-			'help'   => __( 'Facebook, Instagram, YouTube, Patreon, Amazon and email icons. Only the ones with an address are shown.', 'sylviasdream-child' ),
+			'help'   => __( 'Facebook, Instagram, YouTube, Patreon, Amazon, Linktree and email icons. Only the ones with an address are shown.', 'sylviasdream-child' ),
 			'icon'   => 'eicon-social-icons',
 			'render' => 'sdc_el_render_social',
 			'fields' => array(
