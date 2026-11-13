@@ -3,7 +3,7 @@
 ## 13 Nov 02:00
 
 - [x] Shop page duplicates fixed and grid first (1.23.27 + 1.23.28 live)
-- [x] 13 Nov 11:05 A2/A3/A5 and 17 descriptions copied to live; Manifesting Miracles Now drafted on live. Open: Give any amount to live (approval), The King's Way live description (http:// difference), A4 Kenya wording, Kerryn review book, A1 refund
+- [x] 13 Nov 11:05 A2/A3/A5 and 17 descriptions copied to live; Manifesting Miracles Now drafted on live. Give any amount and The King's Way went live 13 Nov 13:50. Open: A4 Kenya wording, Kerryn review book, A1 refund
 - [x] (superseded) 13 Nov 10:00 Sylvia answers: copy A2 Lulu button, A3 One Life reviews, A5 alt to live after approval; A6 Give any amount button blocked (Elementor loading); A8 remove Manifesting Miracles Now on live (6463 draft, legacy page 4118); waiting on Sylvia for A4 Kenya wording, Kerryn review book, A1 refund
 - [ ] All 22 book descriptions rearranged on test (13 Nov 02:20); waiting for approval, then copy to live
 - [ ] Send the close-out brief + WhatsApp message to Sylvia after Moses approves

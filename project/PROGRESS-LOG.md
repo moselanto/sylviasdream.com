@@ -2,6 +2,12 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (11:30-13:50): Give any amount and The King's Way to LIVE
+- Approved by Nuracrown. LIVE Give page 6406: "Give any amount" button added directly after the $5/month call to action, below the monthly cards (elementor-button classes, new tab, https://buy.stripe.com/6oU4gz6gf0vfc6og2T7g40o). All 42 existing link labels and destinations unchanged.
+- LIVE The King's Way product 6455: Product description replaced with the rearranged test version (test 6384). Price A$8.41, Stripe and Kindle links unchanged; status Published.
+- WordPress.com object and edge caches cleared; both pages checked signed out.
+- All 18 rearranged book descriptions are now live.
+
 ## Friday 13 November 2026 (10:15-11:05): Sylvia's answers and 17 descriptions to LIVE
 - TEST Give page 6428: "Give any amount" button added after the monthly buttons (new tab, https://buy.stripe.com/6oU4gz6gf0vfc6og2T7g40o). 11 existing links unchanged. Not on live yet.
 - LIVE (approved by Nuracrown): Fast Forward 6465 "Buy paperback on Lulu" (short description); One Life 6447 "What readers are saying" cards (Lynne Duncan, John Parran); Invite Sylvia 6408 image 6757 alt "Sylvia Suhr speaking to a Kenyan congregation".
