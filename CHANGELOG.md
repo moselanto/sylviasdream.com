@@ -1,6 +1,10 @@
 # Changelog
 
-## Child theme 1.23.31 (13 Nov 2026) - TEST SITE ONLY until approved
+## Child theme 1.23.32 (14 Nov 2026) - TEST SITE ONLY until approved
+- Audiobooks: new product field "Audiobook on Spotify" (`_sdc_spotify_audiobook`, Products > General tab). Accepts open.spotify.com / spotify.link only, https, and drops the `?si=` share-tracking code. When filled, the book page shows a "Listen to the audiobook on Spotify" button (Spotify icon, opens in a new tab, screen-reader note) in the Amazon button row. Files: `inc/woocommerce.php`, `style.css`.
+- Speed follow-up: dashicons were still printed for visitors on live because WordPress.com's `wp-calypso-bridge-masterbar` stylesheet lists dashicons as a dependency. For signed-out visitors with no admin bar, that dependency is now removed before dequeuing (also runs on `wp_print_styles`). File: `inc/performance.php`.
+
+## Child theme 1.23.31 (13 Nov 2026) - on test and live (live 14 Nov)
 - Speed: Elementor no longer prints its own Google Fonts stylesheets (Cormorant Garamond and Source Sans 3, every weight 100-900 roman + italic; two render-blocking requests and many font files) when the theme's Google Fonts are on; the theme already loads the same families with display=swap and a preload. Filter `elementor/frontend/print_google_fonts`, perf feature `elementor_fonts`. Unticking "use Google Fonts" in the Customizer brings Elementor's fonts back.
 - Theme font URL now also includes Cormorant Garamond 400 and 400 italic and Source Sans 3 italic 400, so Elementor text set to those weights keeps its look.
 - Speed: dashicons.css (57 KB, render-blocking) skipped for visitors who are not signed in and have no admin bar (kept on My account and Checkout). Perf feature `dashicons`.

@@ -478,7 +478,17 @@ function sdc_skip_dashicons_for_visitors() {
 	if ( function_exists( 'is_account_page' ) && ( is_account_page() || is_checkout() ) ) {
 		return; // Some payment/account add-ons use dashicons on these pages.
 	}
+	// 1.23.32: WordPress.com's masterbar stylesheet lists dashicons as a
+	// dependency, which brought it back after the dequeue. Visitors never
+	// see the masterbar, so drop that dependency for them as well.
+	$styles = wp_styles();
+	foreach ( array( 'wp-calypso-bridge-masterbar', 'masterbar', 'admin-bar' ) as $handle ) {
+		if ( isset( $styles->registered[ $handle ] ) ) {
+			$styles->registered[ $handle ]->deps = array_values( array_diff( (array) $styles->registered[ $handle ]->deps, array( 'dashicons' ) ) );
+		}
+	}
 	wp_dequeue_style( 'dashicons' );
 }
 add_action( 'wp_enqueue_scripts', 'sdc_skip_dashicons_for_visitors', 100 );
+add_action( 'wp_print_styles', 'sdc_skip_dashicons_for_visitors', 1 );
 

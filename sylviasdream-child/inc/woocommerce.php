@@ -450,6 +450,45 @@ function sdc_product_amazon_links( $product ) {
 }
 
 /**
+ * 1.23.32: Spotify audiobook link (meta key _sdc_spotify_audiobook).
+ *
+ * @param string $url URL.
+ * @return bool
+ */
+function sdc_is_spotify_url( $url ) {
+	$host = strtolower( (string) wp_parse_url( (string) $url, PHP_URL_HOST ) );
+	return in_array( $host, array( 'open.spotify.com', 'spotify.link' ), true );
+}
+
+/**
+ * Clean a Spotify link: https only, drop the ?si= share-tracking code.
+ *
+ * @param string $url URL.
+ * @return string
+ */
+function sdc_clean_spotify_url( $url ) {
+	$url = esc_url_raw( trim( (string) $url ), array( 'https' ) );
+	if ( '' === $url || ! sdc_is_spotify_url( $url ) ) {
+		return '';
+	}
+	return remove_query_arg( 'si', $url );
+}
+
+/**
+ * The audiobook link saved on the product, or ''.
+ *
+ * @param WC_Product $product Product.
+ * @return string
+ */
+function sdc_product_spotify_link( $product ) {
+	if ( ! $product instanceof WC_Product ) {
+		return '';
+	}
+	$url = (string) $product->get_meta( '_sdc_spotify_audiobook' );
+	return ( $url && sdc_is_spotify_url( $url ) ) ? $url : '';
+}
+
+/**
  * Product edit screen, General tab: Subtitle and Amazon links.
  */
 function sdc_product_admin_fields() {
@@ -494,6 +533,16 @@ function sdc_product_admin_fields() {
 			)
 		);
 	}
+	woocommerce_wp_text_input(
+		array(
+			'id'          => '_sdc_spotify_audiobook',
+			'label'       => __( 'Audiobook on Spotify', 'sylviasdream-child' ),
+			'type'        => 'url',
+			'placeholder' => 'https://open.spotify.com/show/...',
+			'desc_tip'    => true,
+			'description' => __( 'Spotify address of the audiobook only. Leave blank to hide the Listen on Spotify button.', 'sylviasdream-child' ),
+		)
+	);
 	echo '</div>';
 }
 add_action( 'woocommerce_product_options_general_product_data', 'sdc_product_admin_fields' );
@@ -525,6 +574,9 @@ function sdc_product_admin_save( $product ) {
 		}
 		$url = esc_url_raw( trim( wp_unslash( $_POST[ $key ] ) ), array( 'https', 'http' ) );
 		$product->update_meta_data( $key, ( $url && sdc_is_amazon_url( $url ) ) ? $url : '' );
+	}
+	if ( isset( $_POST['_sdc_spotify_audiobook'] ) ) {
+		$product->update_meta_data( '_sdc_spotify_audiobook', sdc_clean_spotify_url( wp_unslash( $_POST['_sdc_spotify_audiobook'] ) ) );
 	}
 	// phpcs:enable
 }
@@ -597,8 +649,9 @@ function sdc_buybox_price_note() {
  */
 function sdc_amazon_buttons() {
 	global $product;
-	$links = sdc_product_amazon_links( $product );
-	if ( ! $links ) {
+	$links   = sdc_product_amazon_links( $product );
+	$spotify = sdc_product_spotify_link( $product );
+	if ( ! $links && '' === $spotify ) {
 		return;
 	}
 	echo '<div class="sd-btn-row sd-buybox__amazon">';
@@ -608,6 +661,15 @@ function sdc_amazon_buttons() {
 			esc_url( $link['url'] ),
 			esc_html( $link['label'] ),
 			esc_html__( '(opens Amazon in a new tab)', 'sylviasdream-child' )
+		);
+	}
+	if ( '' !== $spotify ) {
+		printf(
+			'<a class="sd-btn sd-btn--ghost sd-btn--spotify" href="%1$s" target="_blank" rel="noopener">%2$s%3$s<span class="screen-reader-text"> %4$s</span></a>',
+			esc_url( $spotify ),
+			'<svg class="sd-btn__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21Zm4.8 15.15a.66.66 0 0 1-.9.22c-2.47-1.5-5.58-1.85-9.25-1.01a.66.66 0 1 1-.29-1.28c4.01-.92 7.46-.52 10.22 1.17.31.19.41.59.22.9Zm1.28-2.85a.82.82 0 0 1-1.13.27c-2.83-1.74-7.14-2.24-10.48-1.23a.82.82 0 1 1-.48-1.57c3.82-1.16 8.57-.6 11.82 1.4.39.24.51.75.27 1.13Zm.11-2.97C14.8 8.81 9.2 8.62 5.96 9.6a.98.98 0 1 1-.57-1.88c3.72-1.13 9.9-.91 13.8 1.4a.98.98 0 0 1-1 1.69Z"/></svg>',
+			esc_html__( 'Listen to the audiobook on Spotify', 'sylviasdream-child' ),
+			esc_html__( '(opens Spotify in a new tab)', 'sylviasdream-child' )
 		);
 	}
 	echo '</div>';

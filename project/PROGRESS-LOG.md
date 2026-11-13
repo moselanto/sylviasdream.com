@@ -2,6 +2,13 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Saturday 14 November 2026 (02:20-02:45): Spotify audiobooks + new Angelique cover on TEST (child 1.23.32)
+- Sylvia (via Nuracrown, WhatsApp): One Life and Angelique have audiobooks on Spotify; sent the "best cover" for Angelique (Legacy Edition). Nuracrown: "we need to update and improve".
+- Child **1.23.32**: product field "Audiobook on Spotify" and a "Listen to the audiobook on Spotify" button on book pages (Spotify links only, ?si= dropped, new tab); dashicons dependency fix for visitors (WordPress.com masterbar). Zip: library `Sylvias Dream/releases/sylviasdream-child-1.23.32.zip` (file sh75cs15ykrxj51aqrfxtc0jyn8j4pez).
+- TEST: 1.23.32 active. One Life product 6376 Spotify https://open.spotify.com/show/68AvP080lXfLZtSsQ48fRH; Angelique product 6388 Spotify https://open.spotify.com/show/244Ycpny4KDV6bvEGxxFdd. New Angelique cover uploaded as media 6948 (alt "Book cover of Angelique: A Journey of Becoming by Sylvia Suhr") and set as product image; old cover 6403 kept, unattached; gallery empty as before. Prices (One Life A$12.99, Angelique A$8.33), Stripe and Amazon/Kindle links unchanged. Buttons checked: right show, new tab. New cover shows on the book page and Shop for Books.
+- Screenshots: One Life before qx82fv9q7z6gt618dpxh9xhxqx8j4n49 / after qx8ejje1kwvpntm7dzatetfngh8j5wx1; Angelique before qx8a822zm0w9g5jcpnn3ydg6rn8j5fns / after qx87rqaekp68epxf343ym4cvb58j4wj5; Shop Angelique card before qx893wtwk58cjn37f8pgc0ypsd8j486x / after qx83x54enc60yfaqhvhd11yhwn8j5e9v.
+- Waiting: approval for live. Dashicons fix can only be confirmed signed out on live (test has a password gate).
+
 ## Saturday 14 November 2026 (00:00-01:00): child 1.23.31 on LIVE
 - Nuracrown approved 1.23.31 for live. Installed via Replace current (was 1.23.30); Theme Details shows 1.23.31; parent Base 1.0.1 kept. WordPress.com object + edge caches cleared. Signed out of live and WordPress.com afterwards.
 - Signed-out checks of Home, Shop for Books, One Life, Contact: no errors, fonts look the same. `elementor-gf-` links: Home 2 -> 0, Contact 2 -> 0, Shop 0, One Life 0. PASSED.

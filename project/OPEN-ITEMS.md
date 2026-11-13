@@ -2,6 +2,7 @@
 
 ## 13 Nov 02:00 (current; updated 13 Nov 23:20)
 
+- [ ] Sylvia 14 Nov: Spotify audiobook links for One Life (https://open.spotify.com/show/68AvP080lXfLZtSsQ48fRH) and Angelique (https://open.spotify.com/show/244Ycpny4KDV6bvEGxxFdd) + new Angelique cover. Child 1.23.32 + content done on TEST; waiting for approval for LIVE (also carries the dashicons fix)
 - [x] Child 1.23.31 live 14 Nov ~00:45: Elementor Google Fonts gone for visitors (checked signed out)
 - [ ] Dashicons still printed for visitors on live (WordPress.com masterbar CSS depends on it): follow-up release, test first
 - [ ] PageSpeed Insights on live (Home, Shop, One Life, Journal; mobile + desktop) after the API daily limit resets (scheduled 14 Nov ~11:30 EAT); log results vs 1-3 s target
