@@ -2,6 +2,12 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (about 17:45): child 1.23.30 (Home Meet Sylvia photo) on LIVE
+- Nuracrown approved 1.23.30 for live. Installed sylviasdream-child-1.23.30.zip on live via Appearance > Themes > Upload > Replace current (was 1.23.29); Theme Details confirms 1.23.30 active. WordPress.com object and edge caches cleared.
+- Signed-out desktop check of Home: no errors; Meet Sylvia portrait shows the 4:5 frame, rounded corners, soft shadow and inner white line; note still over the photo; section wording, both buttons and their links unchanged. No page content, settings or links edited. Signed out of live and WordPress.com afterwards.
+- Screenshots: before `qx8fnj0t9a0c0ccx9d0p3bfxdn8j5enr`, desktop after `qx84fctxgrgnns50j0zvst65q98j4m5g`.
+- Phone-width check NOT done: the browser tool cannot resize to phone width. Nuracrown to check Home on a phone by eye.
+
 ## Friday 13 November 2026 (15:55-16:05): child 1.23.30 (Home Meet Sylvia photo) on test
 - Nuracrown asked for the Home "Meet Sylvia" photo to be styled like the My Story portrait. Child **1.23.30** (style.css only): 4:5 frame, max 440px (340px on phones), 24px corners, soft shadow, fine white inner line; the "Eighty-two and still becoming" note stays over the photo.
 - Installed on TEST only; wording, photo and both buttons (Read Sylvia's story, One Life: the memoir) unchanged. Live waits for approval.

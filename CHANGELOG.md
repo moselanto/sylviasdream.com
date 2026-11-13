@@ -1,6 +1,6 @@
 # Changelog
 
-## Child theme 1.23.30 (13 Nov 2026) - TEST SITE ONLY until approved
+## Child theme 1.23.30 (13 Nov 2026) - on test and live (live 13 Nov, approved by Nuracrown)
 - Home "Meet Sylvia" photo now framed like the My Story portrait: 4:5 frame (max 440px, 340px on phones), 24px rounded corners, soft shadow and a fine white inner line. The "Eighty-two and still becoming" note stays over the photo. Styling only. File: `style.css`.
 
 ## Child theme 1.23.29 (13 Nov 2026) - live 13 Nov 15:50
