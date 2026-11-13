@@ -2,6 +2,14 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Friday 13 November 2026 (15:55-16:05): child 1.23.30 (Home Meet Sylvia photo) on test
+- Nuracrown asked for the Home "Meet Sylvia" photo to be styled like the My Story portrait. Child **1.23.30** (style.css only): 4:5 frame, max 440px (340px on phones), 24px corners, soft shadow, fine white inner line; the "Eighty-two and still becoming" note stays over the photo.
+- Installed on TEST only; wording, photo and both buttons (Read Sylvia's story, One Life: the memoir) unchanged. Live waits for approval.
+
+## Friday 13 November 2026 (15:45-15:55): child 1.23.29 (Linktree) live
+- Approved by Nuracrown. Installed 1.23.29 on LIVE (from 1.23.28). Theme Options Linktree already https://linktr.ee/sylvia_suhr (nothing saved). Object and edge caches cleared.
+- Signed out on Home, One Life and Contact: footer link https://linktr.ee/sylvia_suhr, new tab, label "Linktree (opens in a new tab)"; Facebook, Instagram, YouTube, Patreon unchanged; One Life A$12.99, Buy ebook ...g401 and Amazon unchanged.
+
 ## Friday 13 November 2026 (15:35-15:45): child 1.23.29 (Linktree) on test
 - Nuracrown approved option 1 for Sylvia's Linktree. Child **1.23.29**: "Linktree address" field in Theme Options > Contact and social links (also Customizer footer settings and the fallback settings screen), default https://linktr.ee/sylvia_suhr; footer social icons show a Linktree icon, new tab, screen-reader label "Linktree (opens in a new tab)". Zip in `Sylvias Dream/releases`.
 - Installed on TEST only; field saved with https://linktr.ee/sylvia_suhr; Facebook, Instagram, YouTube and Patreon links unchanged; Home, One Life and Contact load without errors. Live waits for approval.

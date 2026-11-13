@@ -5,7 +5,7 @@ Author: Pimofy Digital
 Author URI: https://pimofydigital.com
 Description: Author and ministry theme for Sylvia's Dream (Sylvia Suhr). Warm gold and cream design from the approved prototype, large readable text, sticky header with accessible dropdowns and mobile drawer, WooCommerce book shop, devotionals and Heaven on Earth giving. All text editable in the Customizer; whole site editable in Elementor (optional).
 Template: sylviasdream
-Version: 1.23.29
+Version: 1.23.30
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -1641,3 +1641,9 @@ p.sd-card__icon {
 	.sd-dock__item--give svg, .sd-dock__item--give[aria-current="page"] svg { width: 22px; height: 22px; padding: 11px; margin-top: -26px; border-radius: 50%; background: var(--gold-d); color: #fff; border: 3px solid #fff; box-shadow: 0 8px 18px rgba(138, 90, 20, .35); }
 	.sd-dock__item--give:active svg { transform: scale(.96); }
 }
+
+/* 1.23.30: Home "Meet Sylvia" photo framed like the My Story portrait (4:5, rounded, soft shadow, fine inner white line). Styling only. */
+.home .sd-photo-wrap > .sd-photo-round { position: relative; max-width: 440px; margin: 0 auto !important; }
+.home .sd-photo-wrap > .sd-photo-round img { display: block; width: 100%; height: auto !important; aspect-ratio: 4 / 5 !important; object-fit: cover; object-position: 50% 30%; border-radius: 24px; box-shadow: var(--shadow-l); background: linear-gradient(160deg, #f6e7c4 0%, #e3c27f 55%, #c9a052 100%); }
+.home .sd-photo-wrap > .sd-photo-round::after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(255, 255, 255, .55); border-radius: 16px; pointer-events: none; }
+@media (max-width: 781px) { .home .sd-photo-wrap > .sd-photo-round { max-width: 340px; } }
