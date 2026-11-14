@@ -2,6 +2,10 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Saturday 14 November 2026 (14:18 and 18:18 EAT): PageSpeed retries blocked
+- Google PageSpeed Insights API (no key) returned 429 "Quota exceeded ... Queries per day" for all 12 runs (Home, Shop for Books, /one-life/, Journal, One Life book, When the Word Becomes Life book; mobile and desktop), at 14:18 and again at 18:18 EAT. Same result as 13 Nov. The keyless quota is shared and exhausted; not rescheduled again.
+- No new speed scores for child 1.23.34. Options: run pagespeed.web.dev by hand and log the results, or add a free Google Cloud API key (`&key=`) to the script.
+
 ## Saturday 14 November 2026 (04:45-05:00): handover guide v2 and training agenda
 - Handover guide updated to v2 (`docs/handover/handover-guide-for-sylvia-v2.docx`; library `Sylvias Dream/Website handover guide and training plan for Sylvia v2.docx`), plain language, facts from this log only:
   - A1 table: new rows Audiobooks (Listen on Spotify on One Life and Angelique), Google and sharing (page titles/descriptions, share picture with her name, "Christian Books & Devotionals" and three covers), Books taken off (Fast Forward to Success and Manifesting Miracles Now, kept as drafts; old Fast Forward address goes to the Books page).

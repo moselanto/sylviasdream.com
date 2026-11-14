@@ -4,12 +4,12 @@
 
 - [x] Page titles/descriptions (11 pages) + social share banner: TEST and LIVE 14 Nov (live banner media 7046)
 - [x] Child 1.23.34 live 14 Nov ~03:35: One Life and Angelique load no Stripe/express/React scripts; When the Word Becomes Life and Guard Your Heart Renew Your Mind keep them, Add to cart and Apple Pay/Google Pay buttons (signed out)
-- [ ] PageSpeed (mobile + desktop) on live Home, Shop, One Life, When the Word Becomes Life, Journal after the API limit resets (scheduled 14 Nov ~11:40 EAT)
+- [ ] PageSpeed (mobile + desktop) on live Home, Shop, One Life, When the Word Becomes Life, Journal: BLOCKED - keyless Google API returned 429 (daily quota) on 13 Nov and twice on 14 Nov (14:18, 18:18 EAT); no more auto-retries. Next: run pagespeed.web.dev by hand, or add a free Google Cloud API key
 - [x] Stripe Buy ebook pages (14 Nov, read-only): payment link pages show Card, Apple Pay and Link in the hosted browser; Google Pay not shown there (depends on browser/wallet)
 - [x] (LIVE 14 Nov ~02:50, child 1.23.32: products 6447 and 6459, cover media 7038) Sylvia 14 Nov: Spotify audiobook links for One Life (https://open.spotify.com/show/68AvP080lXfLZtSsQ48fRH) and Angelique (https://open.spotify.com/show/244Ycpny4KDV6bvEGxxFdd) + new Angelique cover. Child 1.23.32 + content done on TEST; waiting for approval for LIVE (also carries the dashicons fix)
 - [x] Child 1.23.31 live 14 Nov ~00:45: Elementor Google Fonts gone for visitors (checked signed out)
 - [x] Child 1.23.33 live 14 Nov ~03:05: 'Listen on Spotify' on One Life and Angelique; dashicons-css gone for visitors on Home, both book pages and Shop (checked signed out)
-- [ ] PageSpeed Insights on live (Home, Shop, One Life, Journal; mobile + desktop) after the API daily limit resets (scheduled 14 Nov ~11:30 EAT); log results vs 1-3 s target
+- [ ] PageSpeed Insights on live (Home, Shop, One Life, Journal; mobile + desktop): see line above (API quota blocked 14 Nov); log results vs 1-3 s target once run
 - [ ] Speed decision for Moses: Stripe express checkout (Apple/Google Pay) on book pages loads ~1.5 MB of JS (stripe.js, React, checkout scripts); switching it off on product pages is a Stripe plugin setting - not changed
 - [x] Shop page duplicates fixed and grid first (1.23.27 + 1.23.28 live)
 - [x] 13 Nov 11:05 A2/A3/A5 and 17 descriptions copied to live; Manifesting Miracles Now drafted on live. Give any amount and The King's Way went live 13 Nov 13:50. 13 Nov 14:30 Nuracrown: A4 Kenya wording and A3 reviews closed (Sylvia says what she sent is OK; home page sentence unchanged, Kerryn review not placed). Open: A1 refund confirmation. A2 dropped: Sylvia asked to remove Fast Forward (test 6397 Draft 13 Nov 15:30; live 6465 + legacy page waiting for approval). Linktree: child 1.23.29 live 13 Nov 15:50 (done)
