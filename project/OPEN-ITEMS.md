@@ -19,7 +19,7 @@
 - [x] Child 1.23.30 live 13 Nov about 17:45 (Home Meet Sylvia photo framed like My Story; desktop checked signed out; phone-width check done 13 Nov 17:50 by Nuracrown on a real phone, looks right)
 - [x] (superseded) 13 Nov 10:00 Sylvia answers: copy A2 Lulu button, A3 One Life reviews, A5 alt to live after approval; A6 Give any amount button blocked (Elementor loading); A8 remove Manifesting Miracles Now on live (6463 draft, legacy page 4118); waiting on Sylvia for A4 Kenya wording, Kerryn review book, A1 refund
 - [x] Book descriptions rearranged on test (13 Nov 02:20) and all 18 copied to live 13 Nov 11:05-13:50
-- [x] Sylvia asked on WhatsApp to look through the live site and send changes (13 Nov evening). [ ] Waiting for her reply
+- [x] Sylvia asked on WhatsApp to look through the live site and send changes (13 Nov evening). [ ] Waiting for her reply (14 Nov: she sent Spotify links + Angelique cover, done live; reply drafted asking her to finish the check and send 'All OK' or changes)
 - [ ] Close-out brief v2 and handover guide docx (library: Sylvias Dream/Website handover guide and training plan for Sylvia.docx) need Moses's approval before they go to Sylvia
 - [ ] A1: Sylvia to confirm the test purchase refund
 - [ ] Training session (~60 min, handover guide Part G); USD 168 balance invoice; test `moses` password change + 2FA; GoFundMe embed.js text link on Heaven on Earth (render-side fix, do not retry content edit)

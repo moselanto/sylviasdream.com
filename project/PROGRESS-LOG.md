@@ -2,6 +2,12 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Saturday 14 November 2026 (04:25-04:45): reply to Sylvia drafted; repo check
+- Sylvia (WhatsApp 14 Nov 02:17-02:21) sent the One Life and Angelique Spotify audiobook links and the new Angelique cover in reply to the 13 Nov 16:26 site-check message (both already live, see entries below).
+- WhatsApp reply drafted for Nuracrown to send: thanks her, says both books now have a "Listen on Spotify" button and the new Angelique cover shows on its page and the Books page, gives the two links, and asks her to finish checking Home, Books, a few book pages, My Story, Give, Heaven on Earth and Contact and reply "All OK" or send changes; training session after that. No mention of test site, repo or technical terms.
+- Links checked signed out before sending: https://sylviasdream.com/product/one-life-the-narrow-path/ and https://sylviasdream.com/product/angelique-a-journey-of-becoming/ both return 200 with no redirect, canonical equals the URL, and each Spotify button points to the right show.
+- Still waiting: Sylvia's "All OK" or change list (OPEN-ITEMS).
+
 ## Saturday 14 November 2026 (04:00-04:25): page titles, descriptions and social banner on LIVE
 - Nuracrown approved for live. Rank Math on live: Titles & Meta was already available (no separate module switch); Redirections stays on; no other modules turned on. Separator "|".
 - Banner uploaded to live as media 7046 (1200x630, alt "Sylvia Suhr: Christian Books & Devotionals, Sylvia's Dream"); set as Global OpenGraph Thumbnail (default share image) and Home social image.

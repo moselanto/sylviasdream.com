@@ -2,7 +2,7 @@
 
 Last updated: Saturday 14 November 2026, 04:25 EAT (UTC+3). Section 0 is the current state; older sections are background (valid unless section 0 says otherwise).
 
-## 0. Latest status (14 Nov 2026, 04:25 EAT) - read this first
+## 0. Latest status (14 Nov 2026, 04:45 EAT) - read this first
 The new site is LIVE on sylviasdream.com (WordPress.com, launched 12 Nov). Test site https://topnotchmall.co.ke/sylviasdream/ (password-gated) is the reference build and always gets changes first. Detail: `project/PROGRESS-LOG.md` (newest first), `project/OPEN-ITEMS.md` (top section "Current list"), `project/DECISIONS.md`, `CHANGELOG.md`.
 
 ### Versions now
@@ -25,7 +25,7 @@ The new site is LIVE on sylviasdream.com (WordPress.com, launched 12 Nov). Test 
 
 ### Pending (in order)
 1. PageSpeed Insights (API daily limit hit 13-14 Nov): run scheduled ~14:20 EAT 14 Nov for Home, Shop, One Life page, Journal, One Life book, When the Word Becomes Life (mobile + desktop); log vs 1-3 s target.
-2. Sylvia's reply to the site check; apply changes test first.
+2. Sylvia's reply to the site check (14 Nov she sent Spotify links + Angelique cover, done; reply drafted asking her to finish the check); apply any changes test first.
 3. A1: Sylvia to confirm the test purchase refund.
 4. Kenya Ministry Training Manual PDF 404 (Download button on /kenya-ministry-training-manual-free-download/ links /wp-content/uploads/2026/03/Kenya_Training_Manual.pdf) - needs the file from Sylvia.
 5. Moses: approve close-out brief v2 and handover guide before they go to Sylvia; confirm keeping Rank Math.
