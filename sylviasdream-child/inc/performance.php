@@ -512,3 +512,92 @@ function sdc_drop_dashicons_tag( $tag, $handle ) {
 }
 add_filter( 'style_loader_tag', 'sdc_drop_dashicons_tag', 99, 2 );
 
+/* 1.23.34: Stripe express checkout only on cart books -------------------- */
+
+/**
+ * Does this book page need the Stripe Apple Pay / Google Pay (express
+ * checkout) scripts? Only books that can be bought through the cart show
+ * those buttons: today When the Word Becomes Life and Guard Your Heart Renew
+ * Your Mind (a protected download file is attached, see
+ * sdc_buy_link_not_purchasable()). Decision: Moses, 14 Nov 2026 (option 2).
+ * No Stripe setting is changed; the scripts simply are not loaded on the
+ * other book pages, which never show the buttons.
+ *
+ * @return bool True when the scripts should stay.
+ */
+function sdc_product_needs_express_checkout() {
+	if ( ! function_exists( 'is_product' ) || ! is_product() ) {
+		return true; // Cart, checkout and every other page: unchanged.
+	}
+	$product = wc_get_product( get_queried_object_id() );
+	if ( ! $product instanceof WC_Product ) {
+		return true;
+	}
+	$needs = $product->is_downloadable() && $product->has_file() && $product->is_purchasable();
+	return (bool) apply_filters( 'sdc_product_needs_express_checkout', $needs, $product );
+}
+
+/**
+ * Is this script/style one of the Stripe express checkout files?
+ *
+ * @param string $src Source URL.
+ * @return bool
+ */
+function sdc_is_stripe_express_asset( $src ) {
+	$src = (string) $src;
+	return false !== strpos( $src, '/woocommerce-gateway-stripe/' ) || false !== strpos( $src, 'js.stripe.com' );
+}
+
+/**
+ * On book pages without Add to cart, skip the Stripe express checkout
+ * scripts and styles and the WooCommerce checkout helpers the Stripe
+ * plugin pulls in there (React, lodash and wp-data then drop out too,
+ * because nothing else on the page needs them).
+ */
+function sdc_trim_stripe_express_assets() {
+	if ( ! sdc_perf_on( 'stripe_express' ) || is_admin() || sdc_product_needs_express_checkout() ) {
+		return;
+	}
+	$scripts = wp_scripts();
+	foreach ( (array) $scripts->queue as $handle ) {
+		$reg = isset( $scripts->registered[ $handle ] ) ? $scripts->registered[ $handle ] : null;
+		if ( $reg && sdc_is_stripe_express_asset( $reg->src ) ) {
+			wp_dequeue_script( $handle );
+		}
+	}
+	foreach ( array( 'stripe', 'wc-checkout', 'wc-country-select', 'wc-address-i18n', 'wc-custom-place-order-button' ) as $handle ) {
+		wp_dequeue_script( $handle );
+	}
+	$styles = wp_styles();
+	foreach ( (array) $styles->queue as $handle ) {
+		$reg = isset( $styles->registered[ $handle ] ) ? $styles->registered[ $handle ] : null;
+		if ( $reg && sdc_is_stripe_express_asset( $reg->src ) ) {
+			wp_dequeue_style( $handle );
+		}
+	}
+}
+add_action( 'wp_enqueue_scripts', 'sdc_trim_stripe_express_assets', 1000 );
+add_action( 'wp_print_scripts', 'sdc_trim_stripe_express_assets', 1 );
+add_action( 'wp_print_footer_scripts', 'sdc_trim_stripe_express_assets', 1 );
+
+/**
+ * Drop the matching <link rel="preload"> hints on those pages.
+ *
+ * @param array $resources Preload resources.
+ * @return array
+ */
+function sdc_trim_stripe_express_preload( $resources ) {
+	if ( ! sdc_perf_on( 'stripe_express' ) || sdc_product_needs_express_checkout() ) {
+		return $resources;
+	}
+	return array_values(
+		array_filter(
+			(array) $resources,
+			function ( $r ) {
+				return ! ( is_array( $r ) && isset( $r['href'] ) && sdc_is_stripe_express_asset( $r['href'] ) );
+			}
+		)
+	);
+}
+add_filter( 'wp_preload_resources', 'sdc_trim_stripe_express_preload', 99 );
+

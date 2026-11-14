@@ -2,6 +2,10 @@
 
 Newest first. Each entry: what was decided, who decided, and why.
 
+## 14 Nov 2026: Stripe express checkout scripts only on cart books
+- **Option 2** (Moses, via Nuracrown): load the Stripe Apple Pay / Google Pay scripts only on books that can be bought through the cart (When the Word Becomes Life, Guard Your Heart Renew Your Mind); other book pages skip them. Done in the child theme (1.23.34); no Stripe setting changed. Options 1 (keep) and 3 (turn off in Stripe settings) not taken.
+- Spotify button label "Listen on Spotify" (Nuracrown).
+
 ## 13 Nov 2026: audit fixes, removals and plugins
 - **Fast Forward to Success removed** (Sylvia, 13 Nov 14:58: no file): product and old page set to Draft on test and live; /fast-forward-to-success/ redirects to /shop-for-books/. A2 ebook price question dropped.
 - **Audit fixes approved** by Nuracrown (13 Nov): old duplicate pages drafted with 301 redirects; Shop for Books single H1; search descriptions only from Sylvia's existing sentences; When the Word Becomes Life in Christian Living.

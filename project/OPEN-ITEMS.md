@@ -2,6 +2,8 @@
 
 ## 13 Nov 02:00 (current; updated 13 Nov 23:20)
 
+- [ ] Child 1.23.34 (Stripe express scripts only on cart books) on TEST. Test loads no Stripe scripts on any book page (before or after), so the effect can only be confirmed on live: after approval, check signed out that One Life/Angelique have no js.stripe.com or /woocommerce-gateway-stripe/ scripts and When the Word Becomes Life/Guard Your Heart Renew Your Mind keep them and their express buttons
+- [x] Stripe Buy ebook pages (14 Nov, read-only): payment link pages show Card, Apple Pay and Link in the hosted browser; Google Pay not shown there (depends on browser/wallet)
 - [x] (LIVE 14 Nov ~02:50, child 1.23.32: products 6447 and 6459, cover media 7038) Sylvia 14 Nov: Spotify audiobook links for One Life (https://open.spotify.com/show/68AvP080lXfLZtSsQ48fRH) and Angelique (https://open.spotify.com/show/244Ycpny4KDV6bvEGxxFdd) + new Angelique cover. Child 1.23.32 + content done on TEST; waiting for approval for LIVE (also carries the dashicons fix)
 - [x] Child 1.23.31 live 14 Nov ~00:45: Elementor Google Fonts gone for visitors (checked signed out)
 - [x] Child 1.23.33 live 14 Nov ~03:05: 'Listen on Spotify' on One Life and Angelique; dashicons-css gone for visitors on Home, both book pages and Shop (checked signed out)

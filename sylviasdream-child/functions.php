@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SYLVIASDREAM_CHILD_VERSION', '1.23.33' );
+define( 'SYLVIASDREAM_CHILD_VERSION', '1.23.34' );
 define( 'SYLVIASDREAM_CHILD_DIR', get_stylesheet_directory() );
 define( 'SYLVIASDREAM_CHILD_URI', get_stylesheet_directory_uri() );
 
