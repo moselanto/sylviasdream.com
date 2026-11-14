@@ -2,6 +2,16 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Saturday 14 November 2026 (04:45-05:00): handover guide v2 and training agenda
+- Handover guide updated to v2 (`docs/handover/handover-guide-for-sylvia-v2.docx`; library `Sylvias Dream/Website handover guide and training plan for Sylvia v2.docx`), plain language, facts from this log only:
+  - A1 table: new rows Audiobooks (Listen on Spotify on One Life and Angelique), Google and sharing (page titles/descriptions, share picture with her name, "Christian Books & Devotionals" and three covers), Books taken off (Fast Forward to Success and Manifesting Miracles Now, kept as drafts; old Fast Forward address goes to the Books page).
+  - C5 step 5: Audiobook on Spotify box (paste the Spotify address, empty hides the button).
+  - New C10: change a page's Google title/description (Pages > page name > Rank Math SEO > Edit Snippet > Update); ask before changing the site-wide share picture.
+  - F1 quick reference: audiobook link and Google title rows. E1: Rank Math SEO settings and Redirections added to "ask us first". G1 Books row mentions the audiobook box. Contents C1-C10. Subtitle "Updated 14 November 2026".
+  - To check by eye before sending: the exact location of the Rank Math box for Elementor pages (opened from the page name, not Edit with Elementor).
+- Training agenda (`docs/handover/training-session-agenda.docx`; library `Sylvias Dream/Website training session agenda for Sylvia.docx`): about 60 minutes by video call, after Sylvia's "All OK": welcome/tour 5, signing in + two-step 10, words and pictures 15, books and audiobooks 10, devotionals (no publishing) 5, Google titles and orders 5, staying safe 5, questions 5; plus what to have ready and what happens after.
+- Both are drafts for Moses's approval; not sent to Sylvia.
+
 ## Saturday 14 November 2026 (04:25-04:45): reply to Sylvia drafted; repo check
 - Sylvia (WhatsApp 14 Nov 02:17-02:21) sent the One Life and Angelique Spotify audiobook links and the new Angelique cover in reply to the 13 Nov 16:26 site-check message (both already live, see entries below).
 - WhatsApp reply drafted for Nuracrown to send: thanks her, says both books now have a "Listen on Spotify" button and the new Angelique cover shows on its page and the Books page, gives the two links, and asks her to finish checking Home, Books, a few book pages, My Story, Give, Heaven on Earth and Contact and reply "All OK" or send changes; training session after that. No mention of test site, repo or technical terms.

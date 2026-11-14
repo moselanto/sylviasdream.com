@@ -29,7 +29,7 @@ The new site is LIVE on sylviasdream.com (WordPress.com, launched 12 Nov). Test 
 3. A1: Sylvia to confirm the test purchase refund.
 4. Kenya Ministry Training Manual PDF 404 (Download button on /kenya-ministry-training-manual-free-download/ links /wp-content/uploads/2026/03/Kenya_Training_Manual.pdf) - needs the file from Sylvia.
 5. Moses: approve close-out brief v2 and handover guide before they go to Sylvia; confirm keeping Rank Math.
-6. Update the handover guide for new items (Listen on Spotify field, Rank Math titles/descriptions, Fast Forward removed).
+6. Handover guide v2 and training agenda done 14 Nov (`docs/handover/`); waiting for Moses's approval, then send to Sylvia and book the session after her "All OK".
 7. Training session with Sylvia (~60 min, plan in handover guide Part G); USD 168 balance invoice.
 8. Security: change test `moses` password, enable 2FA; live admins use WordPress.com two-step sign-in.
 9. GoFundMe embed.js text link on Heaven on Earth: needs a render-side theme fix; content edits fail, do not retry.
