@@ -1,6 +1,10 @@
 # Changelog
 
-## Child theme 1.23.32 (14 Nov 2026) - TEST SITE ONLY until approved
+## Child theme 1.23.33 (14 Nov 2026) - TEST SITE ONLY until approved
+- Spotify button label shortened to "Listen on Spotify" (Nuracrown). File: `inc/woocommerce.php`.
+- Dashicons, second attempt: 1.23.32 did not remove dashicons for visitors on live, so for signed-out visitors (no admin bar, not on My account/Checkout) the dashicons `<link>` tag itself is dropped via `style_loader_tag`. File: `inc/performance.php`.
+
+## Child theme 1.23.32 (14 Nov 2026) - on test and live (live 14 Nov ~02:50)
 - Audiobooks: new product field "Audiobook on Spotify" (`_sdc_spotify_audiobook`, Products > General tab). Accepts open.spotify.com / spotify.link only, https, and drops the `?si=` share-tracking code. When filled, the book page shows a "Listen to the audiobook on Spotify" button (Spotify icon, opens in a new tab, screen-reader note) in the Amazon button row. Files: `inc/woocommerce.php`, `style.css`.
 - Speed follow-up: dashicons were still printed for visitors on live because WordPress.com's `wp-calypso-bridge-masterbar` stylesheet lists dashicons as a dependency. For signed-out visitors with no admin bar, that dependency is now removed before dequeuing (also runs on `wp_print_styles`). File: `inc/performance.php`.
 

@@ -492,3 +492,23 @@ function sdc_skip_dashicons_for_visitors() {
 add_action( 'wp_enqueue_scripts', 'sdc_skip_dashicons_for_visitors', 100 );
 add_action( 'wp_print_styles', 'sdc_skip_dashicons_for_visitors', 1 );
 
+/**
+ * 1.23.33: belt and braces. On WordPress.com dashicons was still printed for
+ * visitors after 1.23.32, so for signed-out visitors (no admin bar, not on
+ * My account / Checkout) the dashicons <link> tag itself is dropped.
+ *
+ * @param string $tag    Link tag.
+ * @param string $handle Style handle.
+ * @return string
+ */
+function sdc_drop_dashicons_tag( $tag, $handle ) {
+	if ( 'dashicons' !== $handle || ! sdc_perf_on( 'dashicons' ) || is_admin() || is_user_logged_in() || is_admin_bar_showing() ) {
+		return $tag;
+	}
+	if ( function_exists( 'is_account_page' ) && ( is_account_page() || is_checkout() ) ) {
+		return $tag;
+	}
+	return '';
+}
+add_filter( 'style_loader_tag', 'sdc_drop_dashicons_tag', 99, 2 );
+

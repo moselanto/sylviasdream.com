@@ -2,6 +2,13 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Saturday 14 November 2026 (02:45-03:00): 1.23.32 on LIVE; 1.23.33 (label) on TEST
+- Nuracrown approved 1.23.32 for live. Installed (was 1.23.31). One Life product 6447 Spotify https://open.spotify.com/show/68AvP080lXfLZtSsQ48fRH; Angelique product 6459 Spotify https://open.spotify.com/show/244Ycpny4KDV6bvEGxxFdd. New Angelique cover uploaded as media 7038 (alt text set) and set as product image; old cover 6469 kept; gallery empty as before. Prices (A$12.99, A$8.33), Stripe and Amazon/Kindle unchanged. Caches cleared; signed out afterwards.
+- Signed-out checks: both Spotify buttons open the right show in a new tab; new cover on the Angelique page and Shop for Books. Dashicons NOT gone: `dashicons-css` still on Home, both book pages and Shop (confirmed by a plain fetch too; no admin-bar body class).
+- Live screenshots (signed out): One Life before qx83rms38vb7bjv0pf59p45vwd8j5dms / after qx8fkznw6erzhntjzg2dmnra498j55v8; Angelique before qx80dhc2tp61fzkhw9b3wqg2b98j5smp / after qx8a4zk805s11npm39we31nwjx8j50ta; Shop Angelique card before qx8d7evys3kz82rm3kxv15jned8j4xcx / after qx840gshwdkfdhw7b9gcg9r6jh8j41ht.
+- Nuracrown asked for the button label "Listen on Spotify" on test. Child **1.23.33**: label changed; also drops the dashicons link tag for signed-out visitors (second fix). Zip: library `Sylvias Dream/releases/sylviasdream-child-1.23.33.zip` (file sh76sj9x0vcjww8greahzcy5v98j4nmv). Installed on TEST only; both buttons read "Listen on Spotify" and open the right show in a new tab; no errors. Screenshots: One Life before qx8bsmett5va2hfe5m34pyx35n8j5kav / after qx8a5y0na52ct9vwd6c4bhfbe58j579m; Angelique before qx86er4sg5d8vtsnz64f397qf18j5vvd / after qx83rhqxttqck69xywefp2q7858j4s79.
+- Waiting: approval of 1.23.33 for live, then a signed-out dashicons check on live.
+
 ## Saturday 14 November 2026 (02:20-02:45): Spotify audiobooks + new Angelique cover on TEST (child 1.23.32)
 - Sylvia (via Nuracrown, WhatsApp): One Life and Angelique have audiobooks on Spotify; sent the "best cover" for Angelique (Legacy Edition). Nuracrown: "we need to update and improve".
 - Child **1.23.32**: product field "Audiobook on Spotify" and a "Listen to the audiobook on Spotify" button on book pages (Spotify links only, ?si= dropped, new tab); dashicons dependency fix for visitors (WordPress.com masterbar). Zip: library `Sylvias Dream/releases/sylviasdream-child-1.23.32.zip` (file sh75cs15ykrxj51aqrfxtc0jyn8j4pez).

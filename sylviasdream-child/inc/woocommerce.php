@@ -668,7 +668,7 @@ function sdc_amazon_buttons() {
 			'<a class="sd-btn sd-btn--ghost sd-btn--spotify" href="%1$s" target="_blank" rel="noopener">%2$s%3$s<span class="screen-reader-text"> %4$s</span></a>',
 			esc_url( $spotify ),
 			'<svg class="sd-btn__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21Zm4.8 15.15a.66.66 0 0 1-.9.22c-2.47-1.5-5.58-1.85-9.25-1.01a.66.66 0 1 1-.29-1.28c4.01-.92 7.46-.52 10.22 1.17.31.19.41.59.22.9Zm1.28-2.85a.82.82 0 0 1-1.13.27c-2.83-1.74-7.14-2.24-10.48-1.23a.82.82 0 1 1-.48-1.57c3.82-1.16 8.57-.6 11.82 1.4.39.24.51.75.27 1.13Zm.11-2.97C14.8 8.81 9.2 8.62 5.96 9.6a.98.98 0 1 1-.57-1.88c3.72-1.13 9.9-.91 13.8 1.4a.98.98 0 0 1-1 1.69Z"/></svg>',
-			esc_html__( 'Listen to the audiobook on Spotify', 'sylviasdream-child' ),
+			esc_html__( 'Listen on Spotify', 'sylviasdream-child' ),
 			esc_html__( '(opens Spotify in a new tab)', 'sylviasdream-child' )
 		);
 	}
