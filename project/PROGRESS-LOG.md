@@ -2,6 +2,12 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Saturday 14 November 2026 (03:00-03:10): child 1.23.33 on LIVE
+- Nuracrown approved 1.23.33 for live. Installed (was 1.23.32); Theme Details 1.23.33; parent 1.0.1. Object + edge caches cleared; signed out afterwards.
+- Signed out: One Life and Angelique buttons read "Listen on Spotify" with the right show URLs (One Life 68AvP080lXfLZtSsQ48fRH, Angelique 244Ycpny4KDV6bvEGxxFdd), new tab + noopener. One Life click-through opened the right show; the hosted browser did not surface Angelique's new tab, so its link was confirmed by a plain fetch instead (Spotify page title "Angelique: A Journey of Becoming - Listen to the Audiobook by Sylvia Suhr").
+- Dashicons: `dashicons-css` 0 on Home, One Life, Angelique and Shop for Books (was 1). Confirmed by the browser and a separate signed-out fetch. No errors.
+- Screenshots (signed out): One Life before qx8abem1daq6mfr3276xbqms118j6pb3 / after qx88zdcfs6z6v3xt7hvstr3pjx8j6m0r; Angelique before qx82tfn82baw0fcew5ymqr7wyh8j708c / after qx80hm4dvwb5tssae86h1mc1nh8j6p1b.
+
 ## Saturday 14 November 2026 (02:45-03:00): 1.23.32 on LIVE; 1.23.33 (label) on TEST
 - Nuracrown approved 1.23.32 for live. Installed (was 1.23.31). One Life product 6447 Spotify https://open.spotify.com/show/68AvP080lXfLZtSsQ48fRH; Angelique product 6459 Spotify https://open.spotify.com/show/244Ycpny4KDV6bvEGxxFdd. New Angelique cover uploaded as media 7038 (alt text set) and set as product image; old cover 6469 kept; gallery empty as before. Prices (A$12.99, A$8.33), Stripe and Amazon/Kindle unchanged. Caches cleared; signed out afterwards.
 - Signed-out checks: both Spotify buttons open the right show in a new tab; new cover on the Angelique page and Shop for Books. Dashicons NOT gone: `dashicons-css` still on Home, both book pages and Shop (confirmed by a plain fetch too; no admin-bar body class).

@@ -4,8 +4,7 @@
 
 - [x] (LIVE 14 Nov ~02:50, child 1.23.32: products 6447 and 6459, cover media 7038) Sylvia 14 Nov: Spotify audiobook links for One Life (https://open.spotify.com/show/68AvP080lXfLZtSsQ48fRH) and Angelique (https://open.spotify.com/show/244Ycpny4KDV6bvEGxxFdd) + new Angelique cover. Child 1.23.32 + content done on TEST; waiting for approval for LIVE (also carries the dashicons fix)
 - [x] Child 1.23.31 live 14 Nov ~00:45: Elementor Google Fonts gone for visitors (checked signed out)
-- [ ] Dashicons still printed for visitors on live after 1.23.32 (dependency fix not enough). 1.23.33 on TEST drops the link tag for visitors; confirm signed out on live after approval
-- [ ] Child 1.23.33 (button label 'Listen on Spotify') on TEST; approve for live
+- [x] Child 1.23.33 live 14 Nov ~03:05: 'Listen on Spotify' on One Life and Angelique; dashicons-css gone for visitors on Home, both book pages and Shop (checked signed out)
 - [ ] PageSpeed Insights on live (Home, Shop, One Life, Journal; mobile + desktop) after the API daily limit resets (scheduled 14 Nov ~11:30 EAT); log results vs 1-3 s target
 - [ ] Speed decision for Moses: Stripe express checkout (Apple/Google Pay) on book pages loads ~1.5 MB of JS (stripe.js, React, checkout scripts); switching it off on product pages is a Stripe plugin setting - not changed
 - [x] Shop page duplicates fixed and grid first (1.23.27 + 1.23.28 live)

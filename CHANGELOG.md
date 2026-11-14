@@ -1,6 +1,6 @@
 # Changelog
 
-## Child theme 1.23.33 (14 Nov 2026) - TEST SITE ONLY until approved
+## Child theme 1.23.33 (14 Nov 2026) - on test and live (live 14 Nov ~03:05)
 - Spotify button label shortened to "Listen on Spotify" (Nuracrown). File: `inc/woocommerce.php`.
 - Dashicons, second attempt: 1.23.32 did not remove dashicons for visitors on live, so for signed-out visitors (no admin bar, not on My account/Checkout) the dashicons `<link>` tag itself is dropped via `style_loader_tag`. File: `inc/performance.php`.
 
