@@ -2,6 +2,13 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Saturday 14 November 2026 (03:40-04:00): page titles, descriptions and social banner on TEST
+- Nuracrown asked for the Home title "Sylvia Suhr: Christian Books & Devotionals | Sylvia's Dream", better titles/descriptions, and a professional social banner.
+- Social share banner 1200x630 built from site assets (logo, One Life / From Fear to Freedom / Guard Your Heart Renew Your Mind covers, brand fonts Cormorant Garamond + Source Sans 3). Text: "Christian Author · Speaker · Missionary" (existing Home description), "Sylvia Suhr", "Christian Books & Devotionals", and Sylvia's own Home sentence "Faith-based books and devotionals written from more than twenty years of mission work across Africa and Asia." Library: `Sylvias Dream/Sylvias Dream social share banner 1200x630.jpg`.
+- TEST (Rank Math): banner uploaded as media 6951 (alt "Sylvia Suhr: Christian Books & Devotionals, Sylvia's Dream"), set as Global OpenGraph Thumbnail and Home social image; separator set to "|". Titles/descriptions saved on 11 pages: Home 6365, Shop 3001, My Story 2665, Give 6428, Heaven on Earth 1932, Contact 20, Invite 6511, Journal 6368, Podcasts 1366, Author Support 6235, Free Downloads 2592. New descriptions use Sylvia's existing sentences only (Home, Give, Contact, Invite, Podcasts, Free Downloads); others kept. Verified Home source: title, one meta description, og:image = banner.
+- Screenshots: Home snippet before qx890rspgt36k8m8kk8xvz286s8j63vc / after qx8em4tajfv233j4hm4kt3k8zd8j72mj; Global Meta before qx81kv72wneq7nz16vs5xyz45x8j6tr6 / after qx8dqmv4mn3m7avr2evha7jr618j6v11; Contact snippet after qx8a75pz98jadq71g1gcw9g7ms8j7v84.
+- Live: waiting for approval. Live Rank Math has only the Redirections module on; the Titles & Meta module must be switched on first (check live search descriptions set 13 Nov carry over).
+
 ## Saturday 14 November 2026 (03:30-03:40): child 1.23.34 on LIVE
 - Nuracrown approved 1.23.34 for live. Signed-out baseline (plain fetch, before): all four book pages loaded js.stripe.com stripe.js, /woocommerce-gateway-stripe/ scripts, react-dom and checkout.min.js.
 - Installed (was 1.23.33); Theme Details 1.23.34; parent 1.0.1. Object + edge caches cleared; signed out afterwards.

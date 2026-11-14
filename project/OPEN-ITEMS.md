@@ -2,6 +2,7 @@
 
 ## 13 Nov 02:00 (current; updated 13 Nov 23:20)
 
+- [ ] Page titles/descriptions (11 pages) + social share banner done on TEST 14 Nov; approve for LIVE (needs Rank Math Titles & Meta module on live)
 - [x] Child 1.23.34 live 14 Nov ~03:35: One Life and Angelique load no Stripe/express/React scripts; When the Word Becomes Life and Guard Your Heart Renew Your Mind keep them, Add to cart and Apple Pay/Google Pay buttons (signed out)
 - [ ] PageSpeed (mobile + desktop) on live Home, Shop, One Life, When the Word Becomes Life, Journal after the API limit resets (scheduled 14 Nov ~11:40 EAT)
 - [x] Stripe Buy ebook pages (14 Nov, read-only): payment link pages show Card, Apple Pay and Link in the hosted browser; Google Pay not shown there (depends on browser/wallet)
