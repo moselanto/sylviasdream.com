@@ -1,41 +1,45 @@
 # HANDOFF: start here (for a person or AI agent taking over)
 
-Last updated: Friday 13 November 2026, 23:20 EAT (UTC+3). Section 0 is the current state; older sections are background (valid unless section 0 says otherwise).
+Last updated: Saturday 14 November 2026, 04:25 EAT (UTC+3). Section 0 is the current state; older sections are background (valid unless section 0 says otherwise).
 
-## 0. Latest status (13 Nov 2026, 23:20 EAT) - read this first
-The new site is LIVE on sylviasdream.com (WordPress.com Personal) since 12 Nov. Test site https://topnotchmall.co.ke/sylviasdream/ (password-gated) is the reference build. Detail: `project/PROGRESS-LOG.md` (newest first), `project/OPEN-ITEMS.md` (top section "13 Nov 02:00" is current), `project/DECISIONS.md`.
+## 0. Latest status (14 Nov 2026, 04:25 EAT) - read this first
+The new site is LIVE on sylviasdream.com (WordPress.com, launched 12 Nov). Test site https://topnotchmall.co.ke/sylviasdream/ (password-gated) is the reference build and always gets changes first. Detail: `project/PROGRESS-LOG.md` (newest first), `project/OPEN-ITEMS.md` (top section "Current list"), `project/DECISIONS.md`, `CHANGELOG.md`.
 
 ### Versions now
-- Child theme **1.23.34** on test and live (live 14 Nov ~03:35; Stripe express checkout scripts load only on the two cart books, verified signed out on live). 1.23.33 (live 14 Nov ~03:05; 'Listen on Spotify' buttons; dashicons gone for visitors, confirmed signed out). 1.23.32 (14 Nov ~02:50; Spotify audiobook buttons on One Life 6447 and Angelique 6459, new Angelique cover media 7038, old 6469 kept; dashicons still printed for visitors). 1.23.31 (live 14 Nov ~00:45; Elementor Google Fonts removed; dashicons removal NOT effective on live - WordPress.com masterbar CSS depends on it, follow-up release needed). 1.23.30 (live 13 Nov ~17:45; Home Meet Sylvia photo framed like My Story; phone checked by Nuracrown). 1.23.29 (Linktree footer icon, field `social_linktree`, default https://linktr.ee/sylvia_suhr) live 13 Nov 15:50.
-- Core plugin 0.4.6 (test switches on, live switches off).
-- Live plugins added 13 Nov: **Rank Math SEO free 1.0.282**, only the Redirections module on (no account connected) - needed for 301s; Moses to confirm keeping it.
+- Child theme **1.23.34** on test and live. Parent Base 1.0.1. Core plugin 0.4.6 (test switches on, live switches off).
+- Release zips: library `Sylvias Dream/releases/` (1.23.29-1.23.34). Build: `bash scripts/build-theme-zip.sh` (bump version in `style.css` AND `functions.php` SYLVIASDREAM_CHILD_VERSION or the build fails).
+- Live plugins added 13-14 Nov: **Rank Math SEO free 1.0.282** - Redirections (4 x 301) and Titles & Meta (titles, descriptions, share image). Moses to confirm keeping it.
 
-### Done on 13 Nov (live)
-- All 18 rearranged book descriptions live; Give page "Give any amount" button (https://buy.stripe.com/6oU4gz6gf0vfc6og2T7g40o); The King's Way description.
-- Manifesting Miracles Now: product 6463 Draft, page 4118 Draft. Fast Forward to Success: product 6465 Draft, page 636 Draft (Sylvia has no file; asked for removal).
-- Site audit (88 sitemap URLs, all 200) and fixes, test then live: Shop for Books page 3001 title "Shop for Books" and content heading "Books by Sylvia Suhr" H1 -> H2; search descriptions on Shop 3001, Journal 6961, post 6330 Dream Again (Sylvia's own sentences; post Updated only); When the Word Becomes Life 6451 in Christian Living (not Uncategorized).
-- Live drafts + 301 redirects (Rank Math > Redirections): 4141 /from-chance-to-choice-2/ -> From Chance to Choice product; 5860 /free-ebook/ -> /free-7-day-devotional/; 5022 /sylvia-suhr-helping-you-find-peace-purpose-and-freedom-in-christ/ -> /; 636 /fast-forward-to-success/ -> /shop-for-books/.
-- KEEP (never draft/redirect): /all-shall-be-well-2/ (All Shall Be Well thank-you/download page) and live /sent-3/ page 4717 (English/Bahasa ebook and mission-guide downloads).
-- Sylvia's answers: A3 reviews and A4 Kenya wording closed; A2 dropped. Sylvia has been asked (WhatsApp) to look through the live site and send any changes.
+### What changed 13-14 Nov (all on test first, then live with Nuracrown's approval)
+- 1.23.29 Linktree footer icon; 1.23.30 Home "Meet Sylvia" photo framed like My Story.
+- Site audit (88 URLs all 200): Shop for Books single H1 + title; search descriptions; When the Word Becomes Life in Christian Living; Fast Forward to Success product 6465 + page 636 Draft; old pages drafted with 301s (live: 4141 /from-chance-to-choice-2/ -> product, 5860 /free-ebook/ -> /free-7-day-devotional/, 5022 /sylvia-suhr-helping-you-find-peace-purpose-and-freedom-in-christ/ -> /, 636 /fast-forward-to-success/ -> /shop-for-books/).
+- Speed: 1.23.31 no Elementor Google Fonts (theme loads same fonts); 1.23.33 dashicons removed for signed-out visitors (link tag dropped); 1.23.34 Stripe express checkout (Apple/Google Pay) scripts only on the two cart books (When the Word Becomes Life, Guard Your Heart Renew Your Mind) - Moses option 2, no Stripe setting changed. Book pages without cart went from ~777 KB to ~300 KB of JS/CSS.
+- Audiobooks: 1.23.32/1.23.33 product field "Audiobook on Spotify" + "Listen on Spotify" button. Live: One Life 6447 -> https://open.spotify.com/show/68AvP080lXfLZtSsQ48fRH ; Angelique 6459 -> https://open.spotify.com/show/244Ycpny4KDV6bvEGxxFdd . New Angelique cover (Legacy Edition) live media 7038 (old 6469 kept).
+- SEO: 11 page titles/descriptions (Home "Sylvia Suhr: Christian Books & Devotionals | Sylvia's Dream"), separator "|", social share banner 1200x630 (repo `content/social/sylvias-dream-social-share-1200x630.jpg`, live media 7046) as default + Home share image. Descriptions use only Sylvia's existing sentences.
+- Handover guide docx (library `Sylvias Dream/Website handover guide and training plan for Sylvia.docx`) - draft for Moses.
+- Sylvia asked (WhatsApp) to check the live site and send changes.
 
-### Remaining (in order)
-- Sylvia 14 Nov: One Life and Angelique audiobooks on Spotify, new Angelique cover (Legacy Edition, library `Sylvias Dream/Angelique A Journey of Becoming cover Legacy Edition.jpg`). Done on TEST with 1.23.32 (products 6376, 6388; new cover media 6948, old cover 6403 kept). Live after approval: install 1.23.32, set the two Spotify fields and the new Angelique cover on the live products (find by title).
-0. Speed (Nuracrown's target: 1-3 s load): 1.23.31 live 14 Nov. PageSpeed run scheduled 14 Nov ~11:30 EAT. Dashicons removed for visitors in 1.23.33 (live). Biggest remaining cost is on book pages: the WooCommerce Stripe plugin's express checkout (Apple/Google Pay) loads stripe.js (~1.1 MB), React, lodash, wp-data and the checkout scripts on every product page. Turning express checkout off on product pages is a Stripe plugin setting: needs Moses's decision (AGENTS rule: never change Stripe settings without approval). Page HTML is already edge-cached by WordPress.com (x-ac HIT).
-1. Wait for Sylvia's site check reply; apply any changes test first, then live with approval.
-2. A1: Sylvia to confirm she refunded the test purchase.
-3. Kenya Ministry Training Manual PDF 404: the Download button on /kenya-ministry-training-manual-free-download/ links /wp-content/uploads/2026/03/Kenya_Training_Manual.pdf (missing). Needs the file from Sylvia. (Menu link is correct.)
-4. Moses: approve the close-out brief v2 and the handover guide (`Sylvias Dream/Website handover guide and training plan for Sylvia.docx`, library file sh73a9h1e9k3wvqqjmryaqckj58j5c06) before anything goes to Sylvia; confirm keeping Rank Math.
-5. Training session with Sylvia (~60 min, plan in the handover guide Part G).
-6. Security: change test `moses` password, enable 2FA; live admins use WordPress.com two-step sign-in.
-7. GoFundMe embed.js text link on Heaven on Earth: needs a render-side fix in the theme; content edits fail, do not retry.
-8. USD 168 balance invoice.
-9. Test-only leftovers: legacy page 636 drafted on test too; unassigned Top Menu 22 on test was repointed (items 6939-6942).
+### KEEP - never draft, redirect or change
+- /all-shall-be-well-2/ (All Shall Be Well thank-you/download page) and live /sent-3/ page 4717 (ebook + mission-guide downloads).
+- Stripe settings, Buy ebook (buy.stripe.com) links, Dream Partner links, GoFundMe, thank-you pages.
 
-### How to work (unchanged)
-- Test first, then live only after Nuracrown/Moses approve; before and after screenshots; signed-out checks; clear cache via WordPress.com Hosting > Caching > Clear all.
-- Never touch Stripe, Buy ebook, Dream Partner, GoFundMe or thank-you links; never Publish/re-publish posts on live (Jetpack emails subscribers); anything free needs Sylvia's written OK; draft, never delete; styling in child-theme CSS; never invent wording; never mention the repo to Sylvia.
-- Code: edit repo, bump version, `bash scripts/build-theme-zip.sh`, commit with CHANGELOG, HANDOFF, OPEN-ITEMS, PROGRESS-LOG in the same commit. Install: Appearance > Themes > Upload > Replace current.
-- The browser tool cannot resize to phone width or capture checkout; ask Nuracrown to check those by eye.
+### Pending (in order)
+1. PageSpeed Insights (API daily limit hit 13-14 Nov): run scheduled ~14:20 EAT 14 Nov for Home, Shop, One Life page, Journal, One Life book, When the Word Becomes Life (mobile + desktop); log vs 1-3 s target.
+2. Sylvia's reply to the site check; apply changes test first.
+3. A1: Sylvia to confirm the test purchase refund.
+4. Kenya Ministry Training Manual PDF 404 (Download button on /kenya-ministry-training-manual-free-download/ links /wp-content/uploads/2026/03/Kenya_Training_Manual.pdf) - needs the file from Sylvia.
+5. Moses: approve close-out brief v2 and handover guide before they go to Sylvia; confirm keeping Rank Math.
+6. Update the handover guide for new items (Listen on Spotify field, Rank Math titles/descriptions, Fast Forward removed).
+7. Training session with Sylvia (~60 min, plan in handover guide Part G); USD 168 balance invoice.
+8. Security: change test `moses` password, enable 2FA; live admins use WordPress.com two-step sign-in.
+9. GoFundMe embed.js text link on Heaven on Earth: needs a render-side theme fix; content edits fail, do not retry.
+10. Speed ideas not done: Gutenberg block-library CSS (140 KB) on Elementor pages; Jetpack/WooCommerce analytics scripts (platform).
+
+### How to work
+- Test first, then live only after Nuracrown/Moses approve; before/after screenshots; signed-out checks (plain fetch is a good second check); clear cache via WordPress.com Caching > Clear all.
+- Never Publish/re-publish posts on live (Jetpack emails subscribers); anything free needs Sylvia's written OK; draft, never delete; styling in child-theme CSS; never invent wording; never mention the repo to Sylvia or contact her without Moses's approval.
+- Commit code with CHANGELOG, HANDOFF, OPEN-ITEMS and PROGRESS-LOG in the same commit. Install: Appearance > Themes > Upload > Replace current.
+- The hosted browser cannot resize to phone width or open some new tabs; ask Nuracrown to check phones by eye.
 
 ## 0b. Earlier status (12 Nov 2026, 03:00 EAT) - superseded by section 0
 Rewritten Thursday 12 November 2026. Sections 0 and 3 are the current state. Detail: `project/PROGRESS-LOG.md` (newest first), `project/OPEN-ITEMS.md` (top sections current), `project/DECISIONS.md`, `docs/CLIENT-CHECKLIST.md` (Sylvia's answers by number), `docs/MIGRATION-PLAN.md` (launch steps, live media map).

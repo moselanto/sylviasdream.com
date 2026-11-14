@@ -2,6 +2,14 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Saturday 14 November 2026 (04:00-04:25): page titles, descriptions and social banner on LIVE
+- Nuracrown approved for live. Rank Math on live: Titles & Meta was already available (no separate module switch); Redirections stays on; no other modules turned on. Separator "|".
+- Banner uploaded to live as media 7046 (1200x630, alt "Sylvia Suhr: Christian Books & Devotionals, Sylvia's Dream"); set as Global OpenGraph Thumbnail (default share image) and Home social image.
+- Same 11 titles/descriptions as test saved on live pages: Home 6404, Shop 3001, My Story 2665, Give 6406, Heaven on Earth 1932, Contact 20, Invite 6408, Journal 6961, Podcasts 1366, Author Support 6235, Free Downloads 2592. 13 Nov descriptions kept (Shop 3001, Journal 6961, Dream Again post 6330, not re-published).
+- Caches cleared; signed out. Signed-out fetch confirms: Home title "Sylvia Suhr: Christian Books & Devotionals | Sylvia's Dream", one meta description each, Home and Journal og:image = banner; Give/Contact/Shop keep their own page images; Dream Again title now "... | Sylvia's Dream".
+- Before (signed out, plain fetch): titles were "<Page> - Sylvia's Dream", Home description "Christian Author · Speaker · Missionary", Home had no og:image.
+- Screenshots: Rank Math modules before qx8b95sxn17ah3t8fvfm4pjytn8j7b66; Home snippet before qx809ssnvdnhxask2ger60m1gx8j78sr / after qx8d00yj3k55bkya0x9g5zxvk98j7b15; Global Meta after qx89m0p9f50zhebvhs8xen2bmn8j7j0n; Contact snippet after qx87myz4cdty7pm3yaqgnvdh3s8j7pw7.
+
 ## Saturday 14 November 2026 (03:40-04:00): page titles, descriptions and social banner on TEST
 - Nuracrown asked for the Home title "Sylvia Suhr: Christian Books & Devotionals | Sylvia's Dream", better titles/descriptions, and a professional social banner.
 - Social share banner 1200x630 built from site assets (logo, One Life / From Fear to Freedom / Guard Your Heart Renew Your Mind covers, brand fonts Cormorant Garamond + Source Sans 3). Text: "Christian Author · Speaker · Missionary" (existing Home description), "Sylvia Suhr", "Christian Books & Devotionals", and Sylvia's own Home sentence "Faith-based books and devotionals written from more than twenty years of mission work across Africa and Asia." Library: `Sylvias Dream/Sylvias Dream social share banner 1200x630.jpg`.

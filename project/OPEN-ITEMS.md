@@ -1,8 +1,8 @@
 # Open items
 
-## 13 Nov 02:00 (current; updated 13 Nov 23:20)
+## Current list (updated 14 Nov 04:25)
 
-- [ ] Page titles/descriptions (11 pages) + social share banner done on TEST 14 Nov; approve for LIVE (needs Rank Math Titles & Meta module on live)
+- [x] Page titles/descriptions (11 pages) + social share banner: TEST and LIVE 14 Nov (live banner media 7046)
 - [x] Child 1.23.34 live 14 Nov ~03:35: One Life and Angelique load no Stripe/express/React scripts; When the Word Becomes Life and Guard Your Heart Renew Your Mind keep them, Add to cart and Apple Pay/Google Pay buttons (signed out)
 - [ ] PageSpeed (mobile + desktop) on live Home, Shop, One Life, When the Word Becomes Life, Journal after the API limit resets (scheduled 14 Nov ~11:40 EAT)
 - [x] Stripe Buy ebook pages (14 Nov, read-only): payment link pages show Card, Apple Pay and Link in the hosted browser; Google Pay not shown there (depends on browser/wallet)
@@ -15,7 +15,7 @@
 - [x] 13 Nov 11:05 A2/A3/A5 and 17 descriptions copied to live; Manifesting Miracles Now drafted on live. Give any amount and The King's Way went live 13 Nov 13:50. 13 Nov 14:30 Nuracrown: A4 Kenya wording and A3 reviews closed (Sylvia says what she sent is OK; home page sentence unchanged, Kerryn review not placed). Open: A1 refund confirmation. A2 dropped: Sylvia asked to remove Fast Forward (test 6397 Draft 13 Nov 15:30; live 6465 + legacy page waiting for approval). Linktree: child 1.23.29 live 13 Nov 15:50 (done)
 - [x] Audit fixes (13 Nov): done on TEST and LIVE (live: 4 drafts + 4 redirects via new Rank Math Redirections module, Shop title + H2, 3 search descriptions, WWBL category, Fast Forward 6465 + page 636 drafted). Kept /all-shall-be-well-2/ and live /sent-3/ (download links)
 - [ ] Kenya manual PDF 404: linked from the download button on /kenya-ministry-training-manual-free-download/ (not the menu). Needs the file from Sylvia
-- [ ] Rank Math installed on live 13 Nov (Redirections only): Moses to confirm keeping it
+- [ ] Rank Math on live (installed 13 Nov; now used for redirects AND titles/descriptions/share image since 14 Nov): Moses to confirm keeping it
 - [x] Child 1.23.30 live 13 Nov about 17:45 (Home Meet Sylvia photo framed like My Story; desktop checked signed out; phone-width check done 13 Nov 17:50 by Nuracrown on a real phone, looks right)
 - [x] (superseded) 13 Nov 10:00 Sylvia answers: copy A2 Lulu button, A3 One Life reviews, A5 alt to live after approval; A6 Give any amount button blocked (Elementor loading); A8 remove Manifesting Miracles Now on live (6463 draft, legacy page 4118); waiting on Sylvia for A4 Kenya wording, Kerryn review book, A1 refund
 - [x] Book descriptions rearranged on test (13 Nov 02:20) and all 18 copied to live 13 Nov 11:05-13:50
