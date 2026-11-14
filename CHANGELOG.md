@@ -1,6 +1,6 @@
 # Changelog
 
-## Child theme 1.23.34 (14 Nov 2026) - TEST SITE ONLY until approved
+## Child theme 1.23.34 (14 Nov 2026) - on test and live (live 14 Nov ~03:35)
 - Speed (Moses, 14 Nov, option 2): on book pages that cannot be bought through the cart (no protected download file), the Stripe express checkout (Apple Pay / Google Pay) scripts and styles (any src under `/woocommerce-gateway-stripe/` or `js.stripe.com`) and the WooCommerce checkout helpers the Stripe plugin pulls in there (`stripe`, `wc-checkout`, `wc-country-select`, `wc-address-i18n`, `wc-custom-place-order-button`) are not loaded; matching preload hints are dropped. Books with Add to cart (today When the Word Becomes Life and Guard Your Heart Renew Your Mind), cart, checkout and all other pages are unchanged. No Stripe setting changed. Filter `sdc_product_needs_express_checkout`, perf feature `stripe_express`. File: `inc/performance.php`.
 
 ## Child theme 1.23.33 (14 Nov 2026) - on test and live (live 14 Nov ~03:05)

@@ -2,6 +2,13 @@
 
 Newest first. Dev site = `https://topnotchmall.co.ke/sylviasdream/` (private build copy). The live site sylviasdream.com has not been changed.
 
+## Saturday 14 November 2026 (03:30-03:40): child 1.23.34 on LIVE
+- Nuracrown approved 1.23.34 for live. Signed-out baseline (plain fetch, before): all four book pages loaded js.stripe.com stripe.js, /woocommerce-gateway-stripe/ scripts, react-dom and checkout.min.js.
+- Installed (was 1.23.33); Theme Details 1.23.34; parent 1.0.1. Object + edge caches cleared; signed out afterwards.
+- Signed-out after: One Life and Angelique: js.stripe.com 0, Stripe gateway 0, react-dom 0 (no Add to cart, as before). When the Word Becomes Life and Guard Your Heart Renew Your Mind: js.stripe.com 1, gateway 2, react-dom 1, Add to cart + Apple Pay/Google Pay visible. No errors. Nothing clicked or paid; no settings changed.
+- Screenshots (signed out): One Life before qx84cm38yvagk58bd0381c704s8j7691 / after qx84a8wh80sw6hj5sgnq4seefn8j6npx; Angelique after qx846t488v23fp1yvm7c6qsvk18j7vaz; When the Word Becomes Life buy area before qx8a5jhsv9tb54zaxh1v473hmh8j7dtm / after qx8exnxnwa9fx0gyeehzjmkmh18j6v15; Guard Your Heart Renew Your Mind buy area after qx8285vbj6f2vnfgk2vssq73718j6b2n.
+- PageSpeed for One Life and When the Word Becomes Life added to the run scheduled after the API daily limit resets (~11:40 EAT).
+
 ## Saturday 14 November 2026 (03:10-03:30): child 1.23.34 on TEST; Stripe payment page check
 - Measured live book pages: ~777 KB JS+CSS transferred, of which ~480 KB (1.8 MB unpacked) is Stripe express checkout + checkout/React/lodash/wp-data, loaded on every book page; express buttons only render on the two cart books. Moses picked option 2.
 - Child **1.23.34** (see CHANGELOG): skip Stripe express assets on book pages without Add to cart. Zip: library `Sylvias Dream/releases/sylviasdream-child-1.23.34.zip` (file sh788k8vab84x35y83a1aperqh8j6jmd). Installed on TEST only (Theme Details 1.23.34, no errors). Test result inconclusive: on test, none of the four book pages loaded js.stripe.com or /woocommerce-gateway-stripe/ scripts either before or after (test has no live Stripe express checkout), and react-dom stays on all four (loaded by something else on test). Cart books still show Add to cart. Must be verified on live after approval. Screenshots: One Life before qx81fcm41zq2ycm41jawchvphh8j6rgq / after qx83sc5s71eezvygv628hhr2yd8j62rw (When the Word Becomes Life captures returned no shareable link).
